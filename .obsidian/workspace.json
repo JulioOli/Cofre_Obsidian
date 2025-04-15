@@ -1,0 +1,254 @@
+{
+  "main": {
+    "id": "b6e2b575216ebc17",
+    "type": "split",
+    "children": [
+      {
+        "id": "d20c78a48ed3ba47",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "799fb89b3528f921",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ],
+        "stacked": true
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "15e3a17005224c0e",
+    "type": "split",
+    "children": [
+      {
+        "id": "af5241331848a272",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "37ddf9b6efc53763",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "4b74dbeb3a25a81c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#estudo",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5f6f8b6884c4dd3d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "4c6b79e31931cc50",
+            "type": "leaf",
+            "state": {
+              "type": "tagfolder-view",
+              "state": {},
+              "icon": "stacked-levels",
+              "title": "Tag Folder"
+            }
+          },
+          {
+            "id": "1fe0cd025c79467f",
+            "type": "leaf",
+            "state": {
+              "type": "tagfolder-view",
+              "state": {},
+              "icon": "stacked-levels",
+              "title": "Tag Folder"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 341.5
+  },
+  "right": {
+    "id": "32b6af9a8435c285",
+    "type": "split",
+    "children": [
+      {
+        "id": "d70650c2e2c3bcfc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9ba9d87780530b69",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "ba11b38ef6e3a24f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída"
+            }
+          },
+          {
+            "id": "90ef09ab374e5e40",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "98986248890fea97",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "7a13625c6c404a12",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "workspaces:Manage workspace layouts": false
+    }
+  },
+  "active": "37ddf9b6efc53763",
+  "lastOpenFiles": [
+    "03-Templates/New note.md",
+    "03-Templates/empty note.md",
+    "00-Cadernos (zettlelkasten)/panaceia - o que se emprega para remediar dificuldades..md",
+    "00-Cadernos (zettlelkasten)/software.md",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim.md",
+    "Salvar ou Criar arquivo no NvChad.md",
+    "Notas (zettlelkasten)/Subir e Descer os Containers.md",
+    "Usando copilot no nvim.md",
+    "teste.md",
+    "Notas (zettlelkasten)/Linux.md",
+    "Notas (zettlelkasten)/Remapear a tecla 'Enter' -> xmodmap -e \"keycode 22 = Return\".md",
+    "Notas (zettlelkasten)/lsb_release -a (mostra a versão do ubuntu).md",
+    "03-Templates/EasyView - template pra idéias só no titulo.md",
+    "Notas (zettlelkasten)/zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip).md",
+    "00-Cadernos (zettlelkasten)/how to take Smart notes.md",
+    "00-Cadernos (zettlelkasten)/a mais alta forma de filosofia.md",
+    "00-Cadernos (zettlelkasten)/nick é viadinho.md",
+    "Notas (zettlelkasten)/Remapear a tecla 'BackSpace' -> xmodmap -e \"keycode 22 = BackSpace\".md",
+    "Notas (zettlelkasten)/MOC - Projeto ES/Fazer como se fosse um empresa gráfica focada em fazer cartões de visita -> vai fazer o orçamento baseado no número de cartões..md",
+    "Notas (zettlelkasten)/MOC - Projeto ES/Trabalho ES.md",
+    "Notas (zettlelkasten)/MOC - Projeto ES/oq são Funções Evidentes e Ocultas.md",
+    "Notas (zettlelkasten)/MOC - Projeto ES/UML (Unified Modeling Language - Linguagem de Modelagem Unificada).md",
+    "Notas (zettlelkasten)/MOC - Projeto ES/Tipos de casos de uso.md",
+    "Notas (zettlelkasten)/MOC - Projeto ES/Passo a Passo que ele pede na prova.md",
+    "Notas (zettlelkasten)/MOC - Projeto ES/Mandar uma mensagem de verificação de término de solicitação por e-mail (mandar o cartão de visita pronto pra aprovação do cliente)..md",
+    "Notas (zettlelkasten)/MOC - Projeto ES/Fazer Diagrama de Sequência.md",
+    "Notas (zettlelkasten)/MOC - Projeto ES",
+    "Notas (zettlelkasten)",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",
+    "01-Anexos/Pasted image 20241229012432.png",
+    "01-Anexos/rombo_no_primeiro_ano_de_governo.png",
+    "01-Anexos/despesasDeixadasPeloBozo.png",
+    "01-Anexos/rombo nas contas públicas.png",
+    "Sem título.canvas",
+    "01-Anexos/Gerou investimentos.png",
+    "01-Anexos/Investimentos.png",
+    "01-Anexos/gasta demais?.png",
+    "01-Anexos/Resposta.png",
+    "01-Anexos/Pasted image 20241222200739.png",
+    "00-Cadernos (zettlelkasten)/Nós",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/TCC Millhouse.canvas",
+    "01-Anexos/Pasted image 20240522201654.png",
+    "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais/Relação SO-Cyberpunk.canvas",
+    "Cadernos (zettlelkasten)/MOC - ES_Aula",
+    "Cadernos (zettlelkasten)/MOC - SQL",
+    "Referências (da onde eu tirei a ideia)/Slides-aula-6.pdf",
+    "Referências (da onde eu tirei a ideia)/The_Mentalist_S01E22_x265_720p_BluRay_30NAMA.pt-br.srt",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias",
+    "Cadernos (zettlelkasten)/MOC - Segurança da Informação",
+    "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais"
+  ]
+}

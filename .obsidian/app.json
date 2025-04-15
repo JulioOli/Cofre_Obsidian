@@ -1,0 +1,10 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00-Cadernos (zettlelkasten)",
+  "attachmentFolderPath": "01-Anexos",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "newLinkFormat": "relative",
+  "showLineNumber": false,
+  "spellcheck": false
+}
