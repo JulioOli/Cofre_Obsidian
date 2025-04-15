@@ -11,7 +11,14 @@
       "query": "tag:#só_titulo  ",
       "color": {
         "a": 1,
-        "rgb": 2982841
+        "rgb": 2596819
+      }
+    },
+    {
+      "query": "tag:#nota_maiorzinha  ",
+      "color": {
+        "a": 1,
+        "rgb": 15247660
       }
     }
   ],
@@ -25,6 +32,6 @@
   "repelStrength": 16.3541666666667,
   "linkStrength": 0.151041666666667,
   "linkDistance": 30,
-  "scale": 0.20461219752432958,
+  "scale": 0.30691829628649436,
   "close": true
 }

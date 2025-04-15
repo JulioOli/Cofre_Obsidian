@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d20c78a48ed3ba47",
+        "id": "94f325ee12e477c5",
         "type": "tabs",
         "children": [
           {
-            "id": "799fb89b3528f921",
+            "id": "d187df1fb7445103",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "00-Cadernos (zettlelkasten)/Fazendo um push no repositório.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Fazendo um push no repositório"
             }
           }
         ],
@@ -80,23 +84,12 @@
               "icon": "stacked-levels",
               "title": "Tag Folder"
             }
-          },
-          {
-            "id": "1fe0cd025c79467f",
-            "type": "leaf",
-            "state": {
-              "type": "tagfolder-view",
-              "state": {},
-              "icon": "stacked-levels",
-              "title": "Tag Folder"
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 341.5
+    "width": 301.5
   },
   "right": {
     "id": "32b6af9a8435c285",
@@ -156,12 +149,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "00-Cadernos (zettlelkasten)/Fazendo um push no repositório.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Fazendo um push no repositório"
             }
           },
           {
@@ -197,34 +191,34 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "37ddf9b6efc53763",
+  "active": "d187df1fb7445103",
   "lastOpenFiles": [
     "03-Templates/New note.md",
     "03-Templates/empty note.md",
-    "00-Cadernos (zettlelkasten)/panaceia - o que se emprega para remediar dificuldades..md",
-    "00-Cadernos (zettlelkasten)/software.md",
-    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim.md",
-    "Salvar ou Criar arquivo no NvChad.md",
-    "Notas (zettlelkasten)/Subir e Descer os Containers.md",
+    "00-Cadernos (zettlelkasten)/Fazendo um push no repositório.md",
+    "00-Cadernos (zettlelkasten)/rmdir (remove-apaga uma pasta).md",
+    "zippar.md",
+    "teclado.md",
+    "Notas (zettlelkasten)/zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip).md",
+    "Linux.md",
+    "Notas (zettlelkasten)/neofetch - comando pra ver as specs do PC.md",
+    "Notas (zettlelkasten)/Minhas Especificações do PC.md",
+    "xkill - comando para fechar um programa.md",
+    "remover.md",
+    "neovim.md",
     "Usando copilot no nvim.md",
+    "criar pastas.md",
+    "Notas (zettlelkasten)/Subir e Descer os Containers.md",
+    "Salvar ou Criar arquivo no NvChad.md",
     "teste.md",
     "Notas (zettlelkasten)/Linux.md",
     "Notas (zettlelkasten)/Remapear a tecla 'Enter' -> xmodmap -e \"keycode 22 = Return\".md",
     "Notas (zettlelkasten)/lsb_release -a (mostra a versão do ubuntu).md",
     "03-Templates/EasyView - template pra idéias só no titulo.md",
-    "Notas (zettlelkasten)/zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip).md",
+    "00-Cadernos (zettlelkasten)/software.md",
     "00-Cadernos (zettlelkasten)/how to take Smart notes.md",
     "00-Cadernos (zettlelkasten)/a mais alta forma de filosofia.md",
     "00-Cadernos (zettlelkasten)/nick é viadinho.md",
-    "Notas (zettlelkasten)/Remapear a tecla 'BackSpace' -> xmodmap -e \"keycode 22 = BackSpace\".md",
-    "Notas (zettlelkasten)/MOC - Projeto ES/Fazer como se fosse um empresa gráfica focada em fazer cartões de visita -> vai fazer o orçamento baseado no número de cartões..md",
-    "Notas (zettlelkasten)/MOC - Projeto ES/Trabalho ES.md",
-    "Notas (zettlelkasten)/MOC - Projeto ES/oq são Funções Evidentes e Ocultas.md",
-    "Notas (zettlelkasten)/MOC - Projeto ES/UML (Unified Modeling Language - Linguagem de Modelagem Unificada).md",
-    "Notas (zettlelkasten)/MOC - Projeto ES/Tipos de casos de uso.md",
-    "Notas (zettlelkasten)/MOC - Projeto ES/Passo a Passo que ele pede na prova.md",
-    "Notas (zettlelkasten)/MOC - Projeto ES/Mandar uma mensagem de verificação de término de solicitação por e-mail (mandar o cartão de visita pronto pra aprovação do cliente)..md",
-    "Notas (zettlelkasten)/MOC - Projeto ES/Fazer Diagrama de Sequência.md",
     "Notas (zettlelkasten)/MOC - Projeto ES",
     "Notas (zettlelkasten)",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
