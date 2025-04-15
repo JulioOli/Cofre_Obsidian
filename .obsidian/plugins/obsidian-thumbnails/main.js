@@ -65,7 +65,6 @@ var ThumbySettingTab = class extends import_obsidian.PluginSettingTab {
     containerEl.empty();
     containerEl.createEl("h2", { text: "Thumbnails Settings" });
     console.log(this.plugin.settings);
-    const attachmentLocation = this.app.vault.getConfig("attachmentFolderPath");
     new import_obsidian.Setting(containerEl).setName("Save Thumbnail Info").setDesc("Save thumbnail information inside your note, so they work offline").addToggle((toggle) => toggle.setValue(this.plugin.settings.storeInfo).onChange((value) => __async(this, null, function* () {
       this.plugin.settings.storeInfo = value;
       yield this.plugin.saveSettings();
@@ -84,6 +83,7 @@ var ThumbySettingTab = class extends import_obsidian.PluginSettingTab {
           yield this.plugin.saveSettings();
         })));
         if (this.plugin.settings.imageLocation === "defaultAttachment") {
+          const attachmentLocation = this.app.vault.getConfig("attachmentFolderPath");
           new import_obsidian.Setting(containerEl).setName("Default attachment location").setDesc("Options > Files & Links > Default location for new attachments").addText((text) => text.setValue(attachmentLocation).setDisabled(true)).setClass("default-attachment-info");
         } else if (this.plugin.settings.imageLocation === "specifiedFolder") {
           new import_obsidian.Setting(containerEl).setName("Image Folder").setDesc("The folder where thumbnail images should be saved").addText((text) => text.setPlaceholder("ex: Files/Thumbnails").setValue(this.plugin.settings.imageFolder).onChange((value) => __async(this, null, function* () {
@@ -93,17 +93,47 @@ var ThumbySettingTab = class extends import_obsidian.PluginSettingTab {
         }
       }
     }
+    new import_obsidian.Setting(containerEl).setName("Responsive Mobile-Style Thumbnails").setDesc("Switch to mobile-style thumbnails on narrow screens (title below the image)").addToggle((toggle) => toggle.setValue(this.plugin.settings.responsiveCardStyle).onChange((value) => __async(this, null, function* () {
+      this.plugin.settings.responsiveCardStyle = value;
+      yield this.plugin.saveSettings();
+      this.display();
+    })));
+    new import_obsidian.Setting(containerEl).setName("YouTube API Key (optional)").setDesc("An API Key for the YouTube Data API").addExtraButton((btn) => btn.setIcon("info").setTooltip("A few videos have been discovered that can't be found the normal way. If you provide an API key for the YouTube Data API, this plugin will use the API as a backup.", { placement: "top" }).setDisabled(true)).addText((text) => text.setValue(this.plugin.settings.youtubeApiKey).onChange((value) => __async(this, null, function* () {
+      this.plugin.settings.youtubeApiKey = value;
+      yield this.plugin.saveSettings();
+    })));
   }
 };
 
 // main.ts
 var DEFAULT_SETTINGS = {
-  storeInfo: false,
+  storeInfo: true,
   saveImages: false,
   imageLocation: "defaultAttachment",
-  imageFolder: ""
+  imageFolder: "",
+  responsiveCardStyle: true,
+  youtubeApiKey: ""
+};
+var URL_TYPES = {
+  youtube: [
+    { match: "https://www.youtube.com/watch?v=", idPattern: /v=([-\w\d]+)/ },
+    { match: "https://youtu.be/", idPattern: /youtu.be\/([-\w\d]+)/ },
+    { match: "youtube.com/shorts/", idPattern: /shorts\/([-\w\d]+)/ },
+    { match: "youtube.com/live/", idPattern: /live\/(\w+)/ }
+  ],
+  vimeo: [
+    { match: "https://vimeo.com/", idPattern: /vimeo.com\/([\w\d]+)/ }
+  ]
 };
 var ThumbyPlugin = class extends import_obsidian2.Plugin {
+  constructor() {
+    super(...arguments);
+    this.editorObserver = new ResizeObserver((entries) => {
+      for (const editor of entries) {
+        this.responsiveCardCheck(editor.target);
+      }
+    });
+  }
   loadSettings() {
     return __async(this, null, function* () {
       this.settings = Object.assign({}, DEFAULT_SETTINGS, yield this.loadData());
@@ -112,14 +142,77 @@ var ThumbyPlugin = class extends import_obsidian2.Plugin {
   saveSettings() {
     return __async(this, null, function* () {
       yield this.saveData(this.settings);
+      this.responsiveCardCheckAllEditors();
     });
+  }
+  responsiveCardCheckAllEditors() {
+    const editors = document.querySelectorAll(".workspace-leaf .view-content");
+    for (const key in editors) {
+      if (Object.prototype.hasOwnProperty.call(editors, key)) {
+        const editor = editors[key];
+        this.responsiveCardCheck(editor);
+      }
+    }
+  }
+  responsiveCardCheck(editor) {
+    const vidBlocks = editor.querySelectorAll(".block-language-vid");
+    for (const key in vidBlocks) {
+      if (Object.prototype.hasOwnProperty.call(vidBlocks, key)) {
+        const block = vidBlocks[key];
+        if (this.settings.responsiveCardStyle && block && block.offsetWidth < 290) {
+          block.addClass("thumbnail-card-style");
+        } else {
+          block.removeClass("thumbnail-card-style");
+        }
+      }
+    }
+  }
+  setEditorResizeObservers() {
+    if (!this.editorObserver)
+      return;
+    this.editorObserver.disconnect();
+    const editorElems = document.querySelectorAll(".workspace-leaf .view-content");
+    for (const key in editorElems) {
+      if (Object.prototype.hasOwnProperty.call(editorElems, key)) {
+        const editor = editorElems[key];
+        this.editorObserver.observe(editor);
+      }
+    }
+  }
+  waitForVidBlockLoad(view, callback) {
+    let intervalCount = 0;
+    const interval = window.setInterval(() => {
+      const elements = view.contentEl.querySelectorAll(".block-language-vid");
+      if (elements.length > 0) {
+        window.clearInterval(interval);
+        callback();
+      }
+      if (intervalCount > 20) {
+        window.clearInterval(interval);
+      }
+      intervalCount++;
+    }, 100);
+    this.registerInterval(interval);
   }
   onload() {
     return __async(this, null, function* () {
       yield this.loadSettings();
       this.addSettingTab(new ThumbySettingTab(this.app, this));
+      this.app.workspace.onLayoutReady(() => {
+        this.setEditorResizeObservers();
+        this.registerEvent(this.app.workspace.on("file-open", () => {
+          this.setEditorResizeObservers();
+        }));
+      });
+      const activeView = this.app.workspace.getActiveViewOfType(import_obsidian2.MarkdownView);
+      if (activeView) {
+        this.waitForVidBlockLoad(activeView, () => {
+          this.responsiveCardCheck(activeView.contentEl);
+        });
+      }
       this.registerMarkdownCodeBlockProcessor("vid", (source, el, ctx) => __async(this, null, function* () {
         var _a, _b, _c;
+        this.createDummyBlock(el);
         const sourceLines = source.trim().split("\n");
         const url = sourceLines[0];
         let info;
@@ -130,6 +223,7 @@ var ThumbyPlugin = class extends import_obsidian2.Plugin {
           info = yield this.getVideoInfo(url);
         }
         if (info.networkError && !info.infoStored) {
+          this.removeDummyBlock(el);
           const url2 = source.trim().split("\n")[0];
           el.createEl("a", { text: url2, href: url2 });
           return;
@@ -137,13 +231,15 @@ var ThumbyPlugin = class extends import_obsidian2.Plugin {
         const sourcePath = typeof ctx == "string" ? ctx : (_c = (_b = ctx == null ? void 0 : ctx.sourcePath) != null ? _b : (_a = this.app.workspace.getActiveFile()) == null ? void 0 : _a.path) != null ? _c : "";
         if (!info.vidFound) {
           const component = new import_obsidian2.MarkdownRenderChild(el);
-          import_obsidian2.MarkdownRenderer.renderMarkdown(`>[!WARNING] Cannot find video
+          this.removeDummyBlock(el);
+          import_obsidian2.MarkdownRenderer.render(this.app, `>[!WARNING] Cannot find video
 >${info.url}`, el, sourcePath, component);
           return;
         }
         if (this.hasManyUrls(sourceLines)) {
           const component = new import_obsidian2.MarkdownRenderChild(el);
-          import_obsidian2.MarkdownRenderer.renderMarkdown(`>[!WARNING] Cannot accept multiple URLs yet`, el, sourcePath, component);
+          this.removeDummyBlock(el);
+          import_obsidian2.MarkdownRenderer.render(this.app, `>[!WARNING] Cannot accept multiple video URLs`, el, sourcePath, component);
           return;
         }
         if (this.settings.storeInfo && !info.infoStored) {
@@ -152,6 +248,7 @@ var ThumbyPlugin = class extends import_obsidian2.Plugin {
         if (!this.settings.storeInfo && sourceLines.length > 1) {
           this.removeStoredInfo(info, el, ctx);
         }
+        this.removeDummyBlock(el);
         this.createThumbnail(el, info);
       }));
       this.addCommand({
@@ -161,7 +258,7 @@ var ThumbyPlugin = class extends import_obsidian2.Plugin {
           const clipText = yield navigator.clipboard.readText();
           const id = yield this.getVideoId(clipText);
           if (id === "") {
-            new import_obsidian2.Notice("No valid video in clipboard");
+            new import_obsidian2.Notice("No valid video in clipboard", 2e3);
             return;
           }
           editor.replaceSelection(`\`\`\`vid
@@ -169,9 +266,26 @@ ${clipText}
 \`\`\``);
         })
       });
+      this.addCommand({
+        id: "insert-video-title-link",
+        name: "Insert video title link from URL in clipboard",
+        editorCallback: (editor, view) => __async(this, null, function* () {
+          const clipText = yield navigator.clipboard.readText();
+          const id = yield this.getVideoId(clipText);
+          if (id === "") {
+            new import_obsidian2.Notice("No valid video in clipboard", 2e3);
+            return;
+          }
+          const info = yield this.getVideoInfo(clipText);
+          editor.replaceSelection(`[${info.title}](${info.url})`);
+        })
+      });
     });
   }
   onunload() {
+    if (this.editorObserver) {
+      this.editorObserver.disconnect();
+    }
   }
   hasManyUrls(lines) {
     return lines.length > 1 && lines.every((e) => /^((https*:\/\/)|(www\.))+\S*$/.test(e.trim()));
@@ -180,19 +294,68 @@ ${clipText}
     let thumbnailUrl = info.thumbnail;
     if (this.pathIsLocal(thumbnailUrl)) {
       const file = this.app.vault.getAbstractFileByPath(thumbnailUrl);
-      thumbnailUrl = this.app.vault.getResourcePath(file);
+      if (file) {
+        thumbnailUrl = this.app.vault.getResourcePath(file);
+      }
     }
-    const container = el.createEl("a", { href: info.url });
-    container.addClass("thumbnail");
-    container.createEl("img", { attr: { "src": thumbnailUrl } }).addClass("thumbnail-img");
-    const textBox = container.createDiv();
-    textBox.addClass("thumbnail-text");
-    textBox.createDiv({ text: info.title, title: info.title }).addClass("thumbnail-title");
-    textBox.createEl("a", { text: info.author, href: info.authorUrl, title: info.author }).addClass("thumbnail-author");
+    const container = el.createEl("a", {
+      href: info.url,
+      cls: "thumbnail"
+    });
+    const imgContainer = container.createDiv({
+      cls: "thumbnail-img-container"
+    });
+    imgContainer.createEl("img", {
+      attr: { src: thumbnailUrl },
+      cls: "thumbnail-img"
+    });
+    const iconsContainer = imgContainer.createDiv({
+      cls: "img-icons-container"
+    });
+    const textBox = container.createDiv({ cls: "thumbnail-text" });
+    textBox.createDiv({
+      text: info.title,
+      title: info.title,
+      cls: "thumbnail-title"
+    });
+    textBox.createEl("a", {
+      text: info.author,
+      href: info.authorUrl,
+      title: info.author,
+      cls: "thumbnail-author"
+    });
+    const isInPlaylist = this.isInPlaylist(info.url);
+    if (isInPlaylist) {
+      const graphic = iconsContainer.createSvg("svg", {
+        attr: { height: "24", width: "24", viewBox: "0 0 24 24" },
+        cls: "thumbnail-playlist-svg"
+      });
+      const titleTag = graphic.createSvg("title");
+      titleTag.textContent = "In a playlist";
+      graphic.createSvg("path", {
+        attr: {
+          stroke: "white",
+          d: "M22 7H2v1h20V7zm-9 5H2v-1h11v1zm0 4H2v-1h11v1zm2 3v-8l7 4-7 4z"
+        }
+      });
+    }
     const timestamp = this.getTimestamp(info.url);
     if (timestamp !== "") {
-      container.createDiv({ text: timestamp }).addClass("timestamp");
+      iconsContainer.createDiv({ text: timestamp, cls: "timestamp" });
     }
+  }
+  createDummyBlock(el) {
+    const container = el.createDiv();
+    container.addClass("dummy-container");
+  }
+  removeDummyBlock(el) {
+    const dummy = el.querySelector(".dummy-container");
+    if (dummy) {
+      el.removeChild(dummy);
+    }
+  }
+  isInPlaylist(url) {
+    return url.contains("&list=") || url.contains("?list=");
   }
   getTimestamp(url) {
     let tIndex = url.indexOf("?t=");
@@ -246,26 +409,46 @@ ${clipText}
     if (input.length !== 5) {
       return info;
     }
+    const parsedInput = {
+      Url: "",
+      Title: "",
+      Author: "",
+      Thumbnail: "",
+      AuthorUrl: ""
+    };
     for (const [i, line] of input.entries()) {
       if (i !== 0) {
-        const sepIndex = line.indexOf(": ");
-        if (sepIndex === -1) {
+        const matches = line.match(/(\w+): (.+)/);
+        if (matches === null) {
           return info;
         }
-        const d = line.substring(sepIndex + 2);
-        input[i] = d;
+        const key = matches[1];
+        const val = matches[2];
+        parsedInput[key] = val;
+      } else {
+        parsedInput["Url"] = input[0];
       }
     }
-    info.url = input[0];
-    info.title = input[1];
-    info.author = input[2];
-    info.thumbnail = input[3];
-    info.authorUrl = input[4];
+    for (const key in parsedInput) {
+      if (Object.prototype.hasOwnProperty.call(parsedInput, key)) {
+        const value = parsedInput[key];
+        if (!value || value === "") {
+          return info;
+        }
+      }
+    }
+    info.url = parsedInput["Url"];
+    info.title = parsedInput["Title"];
+    info.author = parsedInput["Author"];
+    info.thumbnail = parsedInput["Thumbnail"];
+    info.authorUrl = parsedInput["AuthorUrl"];
     info.vidFound = true;
     if (this.pathIsLocal(info.thumbnail)) {
       const existingFile = this.app.vault.getAbstractFileByPath(info.thumbnail);
       if (existingFile) {
         info.imageSaved = true;
+      } else if (this.settings.saveImages) {
+        return info;
       }
       if (!this.settings.saveImages) {
         return info;
@@ -289,7 +472,7 @@ ${clipText}
 ${info.url}
 Title: ${info.title}
 Author: ${info.author}
-ThumbnailUrl: ${info.thumbnail}
+Thumbnail: ${info.thumbnail}
 AuthorUrl: ${info.authorUrl}
 \`\`\``;
       const view = this.app.workspace.getActiveViewOfType(import_obsidian2.MarkdownView);
@@ -310,14 +493,26 @@ AuthorUrl: ${info.authorUrl}
     return __async(this, null, function* () {
       const id = yield this.getVideoId(info.url);
       let filePath = "";
+      const currentNote = this.app.workspace.getActiveFile();
       if (this.settings.imageLocation === "specifiedFolder") {
         filePath = `${this.settings.imageFolder}/${id}.jpg`;
       } else {
-        filePath = `${this.app.vault.getConfig("attachmentFolderPath")}/${id}.jpg`;
+        filePath = yield this.app.vault.getAvailablePathForAttachments(id, "jpg", currentNote);
+        const pathRegex = /(.*) \d+\.jpg/;
+        filePath = filePath.replace(pathRegex, "$1.jpg");
       }
       const existingFile = this.app.vault.getAbstractFileByPath(filePath);
       if (existingFile) {
         return existingFile.path;
+      }
+      const folderMatch = filePath.match(/(.+)\/.+\.jpg/);
+      if (folderMatch) {
+        const folderPath = folderMatch[1];
+        const existingFolder = this.app.vault.getAbstractFileByPath(folderPath);
+        if (this.settings.imageLocation === "specifiedFolder" && !existingFolder) {
+          new import_obsidian2.Notice(`Thumbnails: The folder you specified (${this.settings.imageFolder}) does not exist.`);
+          return info.thumbnail;
+        }
       }
       const reqParam = {
         url: info.thumbnail
@@ -327,13 +522,17 @@ AuthorUrl: ${info.authorUrl}
         const req = yield (0, import_obsidian2.requestUrl)(reqParam);
         if (req.status === 200) {
           file = yield this.app.vault.createBinary(filePath, req.arrayBuffer);
+        } else {
         }
       } catch (error) {
+        console.log(error);
         return info.thumbnail;
       }
-      console.log(`Path ${file.path}`);
-      const localUrl = file.path;
-      return localUrl;
+      if (file) {
+        const localUrl = file.path;
+        return localUrl;
+      }
+      return info.thumbnail;
     });
   }
   getTrimmedResourcePath(file) {
@@ -376,8 +575,18 @@ ${info.url}
         imageSaved: false
       };
       let reqUrl = "";
-      const isYoutube = url.includes("https://www.youtube.com/watch?v=") || url.includes("https://youtu.be/") || url.includes("youtube.com/shorts/");
-      const isVimeo = url.includes("https://vimeo.com/");
+      let isYoutube = false;
+      for (const type of URL_TYPES.youtube) {
+        if (url.includes(type.match)) {
+          isYoutube = true;
+        }
+      }
+      let isVimeo = false;
+      for (const type of URL_TYPES.vimeo) {
+        if (url.includes(type.match)) {
+          isVimeo = true;
+        }
+      }
       if (isYoutube) {
         reqUrl = `https://www.youtube.com/oembed?format=json&url=${url}`;
       } else if (isVimeo) {
@@ -387,20 +596,51 @@ ${info.url}
       }
       try {
         const reqParam = {
-          url: reqUrl
+          url: reqUrl,
+          throw: false
         };
         const res = yield (0, import_obsidian2.requestUrl)(reqParam);
         if (res.status === 200) {
+          info.title = res.json.title;
+          info.author = res.json.author_name;
+          info.authorUrl = res.json.author_url;
+          info.vidFound = true;
+        } else if (this.settings.youtubeApiKey && isYoutube) {
+          console.log("Thumbnails: Oembed failed, using YouTube API");
+          const videoId = yield this.getVideoId(url);
+          const youtubeUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${this.settings.youtubeApiKey}`;
+          const youtubeReqParam = {
+            url: youtubeUrl,
+            throw: false
+          };
+          const youtubeApiRes = yield (0, import_obsidian2.requestUrl)(youtubeReqParam);
+          if (youtubeApiRes.status === 200) {
+            const vidSnippet = youtubeApiRes.json.items[0].snippet;
+            info.authorUrl = "javascript:void(0)";
+            const channelQueryUrl = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${vidSnippet.channelId}&key=${this.settings.youtubeApiKey}`;
+            const channelQueryParam = {
+              url: channelQueryUrl,
+              throw: false
+            };
+            const channelQueryRes = yield (0, import_obsidian2.requestUrl)(channelQueryParam);
+            if (channelQueryRes.status === 200) {
+              const channelSnippet = channelQueryRes.json.items[0].snippet;
+              const channelCustomUrl = channelSnippet.customUrl;
+              const channelUrl = `https://www.youtube.com/${channelCustomUrl}`;
+              info.authorUrl = channelUrl;
+            }
+            info.title = vidSnippet.title;
+            info.author = vidSnippet.channelTitle;
+            info.vidFound = true;
+          }
+        }
+        if (info.vidFound) {
           if (isYoutube) {
             const videoId = yield this.getVideoId(url);
             info.thumbnail = `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
           } else {
             info.thumbnail = res.json.thumbnail_url;
           }
-          info.title = res.json.title;
-          info.author = res.json.author_name;
-          info.authorUrl = res.json.author_url;
-          info.vidFound = true;
         }
       } catch (error) {
         console.error(error);
@@ -412,23 +652,17 @@ ${info.url}
   getVideoId(url) {
     return __async(this, null, function* () {
       let id = "";
-      if (url.includes("https://www.youtube.com/watch?v=")) {
-        const matches = url.match(/v=([-\w\d]+)/);
-        if (matches !== null) {
-          id = matches[1];
+      for (const type of URL_TYPES.youtube) {
+        if (url.includes(type.match)) {
+          const matches = url.match(type.idPattern);
+          if (matches !== null) {
+            id = matches[1];
+          }
         }
-      } else if (url.includes("https://youtu.be/")) {
-        const matches = url.match(/youtu.be\/([-\w\d]+)/);
-        if (matches !== null) {
-          id = matches[1];
-        }
-      } else if (url.includes("youtube.com/shorts/")) {
-        const matches = url.match(/shorts\/([-\w\d]+)/);
-        if (matches !== null) {
-          id = matches[1];
-        }
-      } else if (url.includes("https://vimeo.com/")) {
-        const matches = url.match(/vimeo.com\/([\w\d]+)/);
+      }
+      const vimeoType = URL_TYPES.vimeo[0];
+      if (url.includes(vimeoType.match)) {
+        const matches = url.match(vimeoType.idPattern);
         if (matches !== null) {
           id = matches[1];
           if (!/^[0-9]+$/.exec(id)) {
@@ -457,3 +691,5 @@ ${info.url}
     });
   }
 };
+
+/* nosourcemap */

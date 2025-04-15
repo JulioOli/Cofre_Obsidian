@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiZoomToSelection",
       "LiLayoutTemplate",
       "LiPen",
       "LiPaperclip",
@@ -30,7 +31,8 @@
     "iconsInLinksEnabled": true,
     "iconIdentifier": ":",
     "lucideIconPackType": "native",
-    "debugMode": false
+    "debugMode": false,
+    "useInternalPlugins": false
   },
   "00-Cadernos (zettlelkasten)": "LiNotebook",
   "01-Anexos": "LiPaperclip",
