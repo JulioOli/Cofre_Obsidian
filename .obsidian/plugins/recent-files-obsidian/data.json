@@ -1,44 +1,60 @@
 {
   "recentFiles": [
     {
-      "basename": "análise léxica",
-      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
-    },
-    {
-      "basename": "erros lexicos",
-      "path": "00-Cadernos (zettlelkasten)/erros lexicos.md"
-    },
-    {
-      "basename": "entrada estranhamente válida",
-      "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
-    },
-    {
-      "basename": "A análise léxica é usualmente implementada a partir de Gramática regular",
-      "path": "00-Cadernos (zettlelkasten)/A análise léxica é usualmente implementada a partir de Gramática regular.md"
+      "basename": "fase de análise",
+      "path": "00-Cadernos (zettlelkasten)/fase de análise.md"
     },
     {
       "basename": "analisador léxico",
       "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
     },
     {
+      "basename": "Reais",
+      "path": "00-Cadernos (zettlelkasten)/Reais.md"
+    },
+    {
+      "basename": "analise sintática",
+      "path": "00-Cadernos (zettlelkasten)/analise sintática.md"
+    },
+    {
+      "basename": "erros lexicos",
+      "path": "00-Cadernos (zettlelkasten)/erros lexicos.md"
+    },
+    {
       "basename": "não distingimos erros lexicos",
       "path": "00-Cadernos (zettlelkasten)/não distingimos erros lexicos.md"
     },
     {
-      "basename": "Reais",
-      "path": "00-Cadernos (zettlelkasten)/Reais.md"
+      "basename": "análise léxica",
+      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
     },
     {
       "basename": "Strings",
       "path": "00-Cadernos (zettlelkasten)/Strings.md"
     },
     {
-      "basename": "00-New note",
-      "path": "03-Templates/00-New note.md"
+      "basename": "follow",
+      "path": "00-Cadernos (zettlelkasten)/follow.md"
+    },
+    {
+      "basename": "Relações em uma Gramática",
+      "path": "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md"
+    },
+    {
+      "basename": "first",
+      "path": "00-Cadernos (zettlelkasten)/first.md"
     },
     {
       "basename": "01-Comment",
       "path": "03-Templates/01-Comment.md"
+    },
+    {
+      "basename": "00-New note",
+      "path": "03-Templates/00-New note.md"
+    },
+    {
+      "basename": "entrada estranhamente válida",
+      "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
     }
   ],
   "omittedPaths": [],

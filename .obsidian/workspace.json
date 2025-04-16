@@ -4,25 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "649a5d598ddb4379",
+        "id": "e2970b80081760e7",
         "type": "tabs",
         "children": [
           {
-            "id": "6919d4c755d39f73",
+            "id": "1d948dfd735017f6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-Cadernos (zettlelkasten)/análise léxica.md",
+                "file": "00-Cadernos (zettlelkasten)/fase de análise.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "análise léxica"
+              "title": "fase de análise"
             }
           }
-        ],
-        "stacked": true
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,12 +105,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 301.5,
-    "collapsed": true
+    "width": 301.5
   },
   "right": {
     "id": "32b6af9a8435c285",
@@ -218,15 +216,15 @@
     "type": "floating",
     "children": [
       {
-        "id": "9d60cc574927d496",
+        "id": "45fc663560118b77",
         "type": "window",
         "children": [
           {
-            "id": "bd23833aa9516939",
+            "id": "1845ed858ced7fbd",
             "type": "tabs",
             "children": [
               {
-                "id": "6c6e3a20308d5a21",
+                "id": "210bf165ce1c0190",
                 "type": "leaf",
                 "state": {
                   "type": "graph",
@@ -239,43 +237,45 @@
           }
         ],
         "direction": "vertical",
-        "x": 660,
-        "y": 256,
-        "width": 600,
-        "height": 600,
+        "x": 448,
+        "y": 156,
+        "width": 1024,
+        "height": 800,
         "maximize": true,
         "zoom": 0
       }
     ]
   },
-  "active": "6919d4c755d39f73",
+  "active": "210bf165ce1c0190",
   "lastOpenFiles": [
-    "00-Cadernos (zettlelkasten)/análise léxica.md",
-    "00-Cadernos (zettlelkasten)/erros lexicos.md",
-    "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md",
-    "00-Cadernos (zettlelkasten)/A análise léxica é usualmente implementada a partir de Gramática regular.md",
+    "00-Cadernos (zettlelkasten)/fase de análise.md",
     "00-Cadernos (zettlelkasten)/analisador léxico.md",
-    "00-Cadernos (zettlelkasten)/não distingimos erros lexicos.md",
     "00-Cadernos (zettlelkasten)/Reais.md",
+    "00-Cadernos (zettlelkasten)/analise sintática.md",
+    "00-Cadernos (zettlelkasten)/erros lexicos.md",
+    "00-Cadernos (zettlelkasten)/não distingimos erros lexicos.md",
+    "00-Cadernos (zettlelkasten)/análise léxica.md",
     "00-Cadernos (zettlelkasten)/Strings.md",
-    "03-Templates/00-New note.md",
-    "pininfo.md",
+    "00-Cadernos (zettlelkasten)/follow.md",
+    "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md",
+    "00-Cadernos (zettlelkasten)/first.md",
     "03-Templates/01-Comment.md",
+    "03-Templates/00-New note.md",
+    "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md",
+    "00-Cadernos (zettlelkasten)/Untitled.md",
+    "00-Cadernos (zettlelkasten)/Untitled 1.md",
+    "00-Cadernos (zettlelkasten)/Untitled 2.md",
+    "00-Cadernos (zettlelkasten)/Untitled 3.md",
+    "00-Cadernos (zettlelkasten)/A análise léxica é usualmente implementada a partir de Gramática regular.md",
+    "01-Anexos/Pasted image 20250415154250.png",
+    "01-Anexos/Pasted image 20250415154155.png",
+    "pininfo.md",
     "00-Cadernos (zettlelkasten)/exemplo -> fi.md",
     "00-Cadernos (zettlelkasten)/analisador léxico (AL).md",
     "00-Cadernos (zettlelkasten)/SQL/SELECT.md",
     "00-Cadernos (zettlelkasten)/remover.md",
     "00-Cadernos (zettlelkasten)/rmdir (remove-apaga uma pasta).md",
     "00-Cadernos (zettlelkasten)/Linux.md",
-    "00-Cadernos (zettlelkasten)/neovim.md",
-    "00-Cadernos (zettlelkasten)/SQL/DOUBLE PRECISION.md",
-    "00-Cadernos (zettlelkasten)/SQL/SMALLINT.md",
-    "00-Cadernos (zettlelkasten)/SQL/CHAR(n).md",
-    "00-Cadernos (zettlelkasten)/SQL/DECIMAL (precisão, decimal) ou NUMERIC (precisão, decimal).md",
-    "00-Cadernos (zettlelkasten)/SQL/BLOB.md",
-    "00-Cadernos (zettlelkasten)/SQL/DATE.md",
-    "00-Cadernos (zettlelkasten)/SQL/VARCHAR(n) ou CHAR VARYING(n) ou CHARACTER VARYING(n)..md",
-    "00-Cadernos (zettlelkasten)/SQL/INTEGER.md",
     "Notas (zettlelkasten)/MOC - Projeto ES",
     "Notas (zettlelkasten)",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
@@ -289,10 +289,8 @@
     "01-Anexos/Investimentos.png",
     "01-Anexos/gasta demais?.png",
     "01-Anexos/Resposta.png",
-    "01-Anexos/Pasted image 20241222200739.png",
     "00-Cadernos (zettlelkasten)/Nós",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/TCC Millhouse.canvas",
-    "01-Anexos/Pasted image 20240522201654.png",
     "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais/Relação SO-Cyberpunk.canvas",
     "Cadernos (zettlelkasten)/MOC - ES_Aula",
     "Cadernos (zettlelkasten)/MOC - SQL",

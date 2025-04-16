@@ -6,17 +6,39 @@
   "hideUnresolved": false,
   "showOrphans": false,
   "collapse-color-groups": true,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "file:analise sintática",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "file:análise léxica",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "line:(erros lexicos)",
+      "color": {
+        "a": 1,
+        "rgb": 14732626
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": 0,
+  "textFadeMultiplier": -1,
   "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.317708333333333,
-  "repelStrength": 12.0833333333333,
-  "linkStrength": 0.578125,
-  "linkDistance": 250,
+  "lineSizeMultiplier": 0.891145833333333,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 10.4166666666667,
+  "linkStrength": 0,
+  "linkDistance": 30,
   "scale": 0.6905661666446123,
-  "close": false
+  "close": true
 }

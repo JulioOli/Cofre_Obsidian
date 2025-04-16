@@ -1,0 +1,11 @@
+/* --- Aumenta a altura do Graph Banner --- */
+.graph-banner {
+    height: 450px !important;  /* Altere para 300px, 400px, etc. */
+    max-height: none !important;
+}
+
+/* --- Garante que a imagem não fique distorcida --- */
+.graph-banner img {
+    object-fit: cover !important;
+    width: 150% !important;
+}

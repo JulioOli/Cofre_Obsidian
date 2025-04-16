@@ -274,7 +274,16 @@ var DEFAULT_COLORS = [
   new TextColor("#00ffff", `cyan`, "default", false, false, 0, 0, "C"),
   new TextColor("#ff00ff", `magenta`, "default", false, false, 0, 0, "M"),
   new TextColor("#ffff00", `yellow`, "default", false, false, 0, 0, "Y"),
-  new TextColor("#000000", `black`, "default", false, false, 0, 0, "K")
+  new TextColor("#000000", `black`, "default", false, false, 0, 0, "K"),
+ // Versões mais claras
+  new TextColor("#ff6666", `light-red`, "default", false, false, 0, 0, "L"),
+  new TextColor("#66ff66", `light-green`, "default", false, false, 0, 0, "L"),
+  new TextColor("#6666ff", `light-blue`, "default", false, false, 0, 0, "L"),
+  new TextColor("#66ffff", `light-cyan`, "default", false, false, 0, 0, "L"),
+  new TextColor("#ff66ff", `light-magenta`, "default", false, false, 0, 0, "L"),
+  new TextColor("#ffff66", `light-yellow`, "default", false, false, 0, 0, "L"),
+  new TextColor("#666666", `light-black`, "default", false, false, 0, 0, "L")
+
 ];
 var DEFAULT_SETTINGS = {
   themes: [new TextColorTheme("builtin", BUILTIN_COLORS), new TextColorTheme("default", DEFAULT_COLORS)],

@@ -1,7 +1,8 @@
 {
-  "accentColor": "#7ce9ce",
+  "accentColor": "#00e0a8",
   "cssTheme": "Things",
   "enabledCssSnippets": [
-    "Colored Sidebar Items"
+    "Colored Sidebar Items",
+    "graph-banner-custom"
   ]
 }

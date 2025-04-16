@@ -13,12 +13,12 @@ settings:
 */
 
 :root {
-	--banner-margin-bottom: 16px;
+	--banner-margin-bottom: 10px;
 }
 
 .graph-banner-content {
 	width: auto;
-	height: var(--banner-height, 20vh) !important;
+	height: var(--banner-height, 35vh) !important;
 	margin-block-end: var(--banner-margin-bottom);
 }
 
