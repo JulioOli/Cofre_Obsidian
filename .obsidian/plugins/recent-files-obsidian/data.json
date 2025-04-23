@@ -1,60 +1,84 @@
 {
   "recentFiles": [
     {
-      "basename": "fase de análise",
-      "path": "00-Cadernos (zettlelkasten)/fase de análise.md"
-    },
-    {
-      "basename": "analisador léxico",
-      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
-    },
-    {
-      "basename": "Reais",
-      "path": "00-Cadernos (zettlelkasten)/Reais.md"
-    },
-    {
-      "basename": "analise sintática",
-      "path": "00-Cadernos (zettlelkasten)/analise sintática.md"
-    },
-    {
       "basename": "erros lexicos",
       "path": "00-Cadernos (zettlelkasten)/erros lexicos.md"
     },
     {
-      "basename": "não distingimos erros lexicos",
-      "path": "00-Cadernos (zettlelkasten)/não distingimos erros lexicos.md"
+      "basename": "análise sintática",
+      "path": "00-Cadernos (zettlelkasten)/análise sintática.md"
     },
     {
-      "basename": "análise léxica",
-      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
+      "basename": "ASD preditiva (LL(1))",
+      "path": "00-Cadernos (zettlelkasten)/ASD preditiva (LL(1)).md"
     },
     {
-      "basename": "Strings",
-      "path": "00-Cadernos (zettlelkasten)/Strings.md"
+      "basename": "fatoração à esquerda",
+      "path": "00-Cadernos (zettlelkasten)/fatoração à esquerda.md"
     },
     {
-      "basename": "follow",
-      "path": "00-Cadernos (zettlelkasten)/follow.md"
+      "basename": "Gramática LL(1)",
+      "path": "00-Cadernos (zettlelkasten)/Gramática LL(1).md"
     },
     {
-      "basename": "Relações em uma Gramática",
-      "path": "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md"
+      "basename": "recursão à esquerda",
+      "path": "00-Cadernos (zettlelkasten)/recursão à esquerda.md"
+    },
+    {
+      "basename": "ASD com retrocesso",
+      "path": "00-Cadernos (zettlelkasten)/ASD com retrocesso.md"
+    },
+    {
+      "basename": "analisador sintático Descendente",
+      "path": "00-Cadernos (zettlelkasten)/analisador sintático Descendente.md"
+    },
+    {
+      "basename": "analisador sintático Ascendente",
+      "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
+    },
+    {
+      "basename": "Determinando os Follows",
+      "path": "00-Cadernos (zettlelkasten)/Determinando os Follows.md"
     },
     {
       "basename": "first",
       "path": "00-Cadernos (zettlelkasten)/first.md"
     },
     {
-      "basename": "01-Comment",
-      "path": "03-Templates/01-Comment.md"
+      "basename": "Relações em uma Gramática",
+      "path": "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md"
     },
     {
-      "basename": "00-New note",
-      "path": "03-Templates/00-New note.md"
+      "basename": "follow",
+      "path": "00-Cadernos (zettlelkasten)/follow.md"
+    },
+    {
+      "basename": "não especificamos eles",
+      "path": "00-Cadernos (zettlelkasten)/não especificamos eles.md"
+    },
+    {
+      "basename": "Strings",
+      "path": "00-Cadernos (zettlelkasten)/Strings.md"
+    },
+    {
+      "basename": "Reais",
+      "path": "00-Cadernos (zettlelkasten)/Reais.md"
     },
     {
       "basename": "entrada estranhamente válida",
       "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
+    },
+    {
+      "basename": "analisador léxico",
+      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
+    },
+    {
+      "basename": "análise léxica",
+      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
+    },
+    {
+      "basename": "New note",
+      "path": "03-Templates/New note.md"
     }
   ],
   "omittedPaths": [],

@@ -4,7 +4,7 @@
   "ignoreDocTags": "",
   "ignoreTags": "",
   "hideOnRootTags": "",
-  "sortType": "CTIME_DESC",
+  "sortType": "CTIME_ASC",
   "sortExactFirst": false,
   "sortTypeTag": "NAME_DESC",
   "expandLimit": 0,
