@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "68da52cc8d71bd10",
+        "id": "d0af084f2e66fe0c",
         "type": "tabs",
         "children": [
           {
-            "id": "c81d6dd088c06539",
+            "id": "bafafe89845926b9",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -17,8 +17,7 @@
               "title": "Graph view"
             }
           }
-        ],
-        "stacked": true
+        ]
       }
     ],
     "direction": "vertical"
@@ -28,7 +27,7 @@
     "type": "split",
     "children": [
       {
-        "id": "af5241331848a272",
+        "id": "f56c9acd403fc3c6",
         "type": "tabs",
         "children": [
           {
@@ -50,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#estudo",
+                "query": "tag:só_titulo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -59,16 +58,6 @@
               },
               "icon": "lucide-search",
               "title": "Search"
-            }
-          },
-          {
-            "id": "4c6b79e31931cc50",
-            "type": "leaf",
-            "state": {
-              "type": "tagfolder-view",
-              "state": {},
-              "icon": "stacked-levels",
-              "title": "Tag Folder"
             }
           },
           {
@@ -82,7 +71,7 @@
             }
           },
           {
-            "id": "bfc559c2fa970cda",
+            "id": "4c6b79e31931cc50",
             "type": "leaf",
             "state": {
               "type": "tagfolder-view",
@@ -102,7 +91,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -208,38 +197,42 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c81d6dd088c06539",
+  "active": "bafafe89845926b9",
   "lastOpenFiles": [
-    "00-Cadernos (zettlelkasten)/erros lexicos.md",
-    "00-Cadernos (zettlelkasten)/análise sintática.md",
-    "00-Cadernos (zettlelkasten)/ASD preditiva (LL(1)).md",
-    "00-Cadernos (zettlelkasten)/fatoração à esquerda.md",
-    "00-Cadernos (zettlelkasten)/Gramática LL(1).md",
-    "00-Cadernos (zettlelkasten)/recursão à esquerda.md",
-    "00-Cadernos (zettlelkasten)/ASD com retrocesso.md",
-    "00-Cadernos (zettlelkasten)/analisador sintático Descendente.md",
-    "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md",
-    "00-Cadernos (zettlelkasten)/Determinando os Follows.md",
-    "00-Cadernos (zettlelkasten)/first.md",
-    "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md",
-    "00-Cadernos (zettlelkasten)/follow.md",
-    "00-Cadernos (zettlelkasten)/não especificamos eles.md",
-    "00-Cadernos (zettlelkasten)/Strings.md",
-    "00-Cadernos (zettlelkasten)/Reais.md",
-    "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md",
-    "00-Cadernos (zettlelkasten)/analisador léxico.md",
-    "00-Cadernos (zettlelkasten)/análise léxica.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/software.md",
+    "00-Cadernos (zettlelkasten)/ES1.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/zip nome_do_zip.zip item_1.txt item_2.txt (compacta um arquivo em um zip).md",
+    "00-Cadernos (zettlelkasten)/Compiladores/rmdir (remove-apaga uma pasta).md",
+    "00-Cadernos (zettlelkasten)/Compiladores/htop -> mostra o \"gerenciador de tarefas\".md",
+    "00-Cadernos (zettlelkasten)/Compiladores/sudo dpkg -i nome_do_pacote.deb  -->  instala arquivos .deb.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/criar pastas.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Usando copilot no nvim.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Salvar ou Criar arquivo no NvChad.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/achar uma pasta ou arquivo que eu só lembro parte do nome.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/panaceia - o que se emprega para remediar dificuldades..md",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/a linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, você tem que desenvolver o seu discurso..md",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/how to take Smart notes.md",
+    "00-Cadernos (zettlelkasten)/Untitled.md",
     "pininfo.md",
-    "00-Cadernos (zettlelkasten)/Analisador Sintático.md",
-    "03-Templates/New note.md",
-    "00-Cadernos (zettlelkasten)/fase de análise.md",
-    "03-Templates/01-Comment.md",
-    "01-Anexos/Pasted image 20250418170712.png",
-    "01-Anexos/Pasted image 20250417103656.png",
-    "00-Cadernos (zettlelkasten)/Untitled 2.md",
-    "00-Cadernos (zettlelkasten)/Untitled 3.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/a mais alta forma de filosofia.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/nunca interrompa o seu inimigo enquanto ele estiver cometendo um erro - Sung Tsu.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Desinstalar um programa -> sudo apt-get remove nome_do_pacote.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Remapear a tecla 'BackSpace' -> xmodmap -e \"keycode 22 = BackSpace\".md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Remapear a tecla 'Enter' -> xmodmap -e \"keycode 22 = Return\".md",
+    "00-Cadernos (zettlelkasten)/Compiladores/neofetch - comando pra ver as specs do PC.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/lsb_release -a (mostra a versão do ubuntu).md",
+    "00-Cadernos (zettlelkasten)/Compiladores/zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip).md",
+    "00-Cadernos (zettlelkasten)/Compiladores/zippar.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/neovim.md",
+    "01-Anexos/Pasted image 20250423210329.png",
+    "01-Anexos/03-Templates",
     "01-Anexos/Pasted image 20250415154250.png",
     "01-Anexos/Pasted image 20250415154155.png",
+    "01-Anexos/Pasted image 20250418170712.png",
+    "01-Anexos/Pasted image 20250417103656.png",
+    "00-Cadernos (zettlelkasten)/Compiladores",
+    "01-Anexos/rh7GIPgaCkM.jpg",
     "Notas (zettlelkasten)/MOC - Projeto ES",
     "Notas (zettlelkasten)",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
@@ -249,8 +242,6 @@
     "01-Anexos/despesasDeixadasPeloBozo.png",
     "01-Anexos/rombo nas contas públicas.png",
     "Sem título.canvas",
-    "01-Anexos/Gerou investimentos.png",
-    "01-Anexos/Investimentos.png",
     "00-Cadernos (zettlelkasten)/Nós",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/TCC Millhouse.canvas",
     "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais/Relação SO-Cyberpunk.canvas",
@@ -258,8 +249,6 @@
     "Cadernos (zettlelkasten)/MOC - SQL",
     "Referências (da onde eu tirei a ideia)/Slides-aula-6.pdf",
     "Referências (da onde eu tirei a ideia)/The_Mentalist_S01E22_x265_720p_BluRay_30NAMA.pt-br.srt",
-    "00-Cadernos (zettlelkasten)/Coisas Aleatórias",
-    "Cadernos (zettlelkasten)/MOC - Segurança da Informação",
-    "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais"
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias"
   ]
 }

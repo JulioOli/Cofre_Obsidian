@@ -1,80 +1,140 @@
 {
   "recentFiles": [
     {
-      "basename": "erros lexicos",
-      "path": "00-Cadernos (zettlelkasten)/erros lexicos.md"
+      "basename": "software",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/software.md"
     },
     {
-      "basename": "análise sintática",
-      "path": "00-Cadernos (zettlelkasten)/análise sintática.md"
+      "basename": "zip nome_do_zip.zip item_1.txt item_2.txt (compacta um arquivo em um zip)",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/zip nome_do_zip.zip item_1.txt item_2.txt (compacta um arquivo em um zip).md"
     },
     {
-      "basename": "ASD preditiva (LL(1))",
-      "path": "00-Cadernos (zettlelkasten)/ASD preditiva (LL(1)).md"
+      "basename": "rmdir (remove-apaga uma pasta)",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/rmdir (remove-apaga uma pasta).md"
     },
     {
-      "basename": "fatoração à esquerda",
-      "path": "00-Cadernos (zettlelkasten)/fatoração à esquerda.md"
+      "basename": "htop -> mostra o \"gerenciador de tarefas\"",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/htop -> mostra o \"gerenciador de tarefas\".md"
     },
     {
-      "basename": "Gramática LL(1)",
-      "path": "00-Cadernos (zettlelkasten)/Gramática LL(1).md"
+      "basename": "sudo dpkg -i nome_do_pacote.deb  -->  instala arquivos .deb",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/sudo dpkg -i nome_do_pacote.deb  -->  instala arquivos .deb.md"
     },
     {
-      "basename": "recursão à esquerda",
-      "path": "00-Cadernos (zettlelkasten)/recursão à esquerda.md"
+      "basename": "criar pastas",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/criar pastas.md"
     },
     {
-      "basename": "ASD com retrocesso",
-      "path": "00-Cadernos (zettlelkasten)/ASD com retrocesso.md"
+      "basename": "Usando copilot no nvim",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Usando copilot no nvim.md"
     },
     {
-      "basename": "analisador sintático Descendente",
-      "path": "00-Cadernos (zettlelkasten)/analisador sintático Descendente.md"
+      "basename": "Salvar ou Criar arquivo no NvChad",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Salvar ou Criar arquivo no NvChad.md"
+    },
+    {
+      "basename": "achar uma pasta ou arquivo que eu só lembro parte do nome",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/achar uma pasta ou arquivo que eu só lembro parte do nome.md"
+    },
+    {
+      "basename": "panaceia - o que se emprega para remediar dificuldades.",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/panaceia - o que se emprega para remediar dificuldades..md"
+    },
+    {
+      "basename": "a linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, você tem que desenvolver o seu discurso.",
+      "path": "00-Cadernos (zettlelkasten)/Coisas Aleatórias/a linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, você tem que desenvolver o seu discurso..md"
+    },
+    {
+      "basename": "Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim",
+      "path": "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim.md"
+    },
+    {
+      "basename": "how to take Smart notes",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/how to take Smart notes.md"
+    },
+    {
+      "basename": "a mais alta forma de filosofia",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/a mais alta forma de filosofia.md"
+    },
+    {
+      "basename": "nunca interrompa o seu inimigo enquanto ele estiver cometendo um erro - Sung Tsu",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/nunca interrompa o seu inimigo enquanto ele estiver cometendo um erro - Sung Tsu.md"
+    },
+    {
+      "basename": "Desinstalar um programa -> sudo apt-get remove nome_do_pacote",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Desinstalar um programa -> sudo apt-get remove nome_do_pacote.md"
+    },
+    {
+      "basename": "Remapear a tecla 'BackSpace' -> xmodmap -e \"keycode 22 = BackSpace\"",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Remapear a tecla 'BackSpace' -> xmodmap -e \"keycode 22 = BackSpace\".md"
+    },
+    {
+      "basename": "Remapear a tecla 'Enter' -> xmodmap -e \"keycode 22 = Return\"",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Remapear a tecla 'Enter' -> xmodmap -e \"keycode 22 = Return\".md"
+    },
+    {
+      "basename": "neofetch - comando pra ver as specs do PC",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/neofetch - comando pra ver as specs do PC.md"
+    },
+    {
+      "basename": "lsb_release -a (mostra a versão do ubuntu)",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/lsb_release -a (mostra a versão do ubuntu).md"
+    },
+    {
+      "basename": "zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip)",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip).md"
+    },
+    {
+      "basename": "Linguagem Compilada",
+      "path": "00-Cadernos (zettlelkasten)/Linguagem Compilada.md"
+    },
+    {
+      "basename": "linguagem interpretada",
+      "path": "00-Cadernos (zettlelkasten)/linguagem interpretada.md"
     },
     {
       "basename": "analisador sintático Ascendente",
-      "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/analisador sintático Ascendente.md"
+    },
+    {
+      "basename": "recursão à esquerda",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/recursão à esquerda.md"
+    },
+    {
+      "basename": "ASD com retrocesso",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/ASD com retrocesso.md"
+    },
+    {
+      "basename": "Subir e Descer os Containers",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md"
+    },
+    {
+      "basename": "Minhas Especificações do PC",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Minhas Especificações do PC.md"
+    },
+    {
+      "basename": "fatoração à esquerda",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/fatoração à esquerda.md"
+    },
+    {
+      "basename": "ASD preditiva (LL(1))",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/ASD preditiva (LL(1)).md"
+    },
+    {
+      "basename": "analisador sintático Descendente",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/analisador sintático Descendente.md"
     },
     {
       "basename": "Determinando os Follows",
-      "path": "00-Cadernos (zettlelkasten)/Determinando os Follows.md"
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Determinando os Follows.md"
+    },
+    {
+      "basename": "máximo de páginas aceitas pelo deepseek",
+      "path": "00-Cadernos (zettlelkasten)/máximo de páginas aceitas pelo deepseek.md"
     },
     {
       "basename": "first",
-      "path": "00-Cadernos (zettlelkasten)/first.md"
-    },
-    {
-      "basename": "Relações em uma Gramática",
-      "path": "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md"
-    },
-    {
-      "basename": "follow",
-      "path": "00-Cadernos (zettlelkasten)/follow.md"
-    },
-    {
-      "basename": "não especificamos eles",
-      "path": "00-Cadernos (zettlelkasten)/não especificamos eles.md"
-    },
-    {
-      "basename": "Strings",
-      "path": "00-Cadernos (zettlelkasten)/Strings.md"
-    },
-    {
-      "basename": "Reais",
-      "path": "00-Cadernos (zettlelkasten)/Reais.md"
-    },
-    {
-      "basename": "entrada estranhamente válida",
-      "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
-    },
-    {
-      "basename": "analisador léxico",
-      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
-    },
-    {
-      "basename": "análise léxica",
-      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/first.md"
     },
     {
       "basename": "New note",
