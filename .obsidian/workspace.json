@@ -86,12 +86,21 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "f60834f5329323a2",
+            "type": "leaf",
+            "state": {
+              "type": "tagfolder-view",
+              "state": {},
+              "icon": "stacked-levels",
+              "title": "Tag Folder"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -197,7 +206,7 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "bafafe89845926b9",
+  "active": "37ddf9b6efc53763",
   "lastOpenFiles": [
     "00-Cadernos (zettlelkasten)/Compiladores/software.md",
     "00-Cadernos (zettlelkasten)/ES1.md",
