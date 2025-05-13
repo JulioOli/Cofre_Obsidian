@@ -48,5 +48,14 @@
       ],
       "key": "S"
     }
+  ],
+  "obsidian-thumbnails:insert-thumbnail-from-clipboard": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "L"
+    }
   ]
 }

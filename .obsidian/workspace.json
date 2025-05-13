@@ -8,13 +8,59 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bafafe89845926b9",
+            "id": "4d59fbd23430b570",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "00-Cadernos (zettlelkasten)/Compiladores/Minhas Especificações do PC.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Minhas Especificações do PC"
+            }
+          },
+          {
+            "id": "db69899ea363da37",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-Cadernos (zettlelkasten)/Compiladores/análise sintática.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "análise sintática"
+            }
+          },
+          {
+            "id": "461a3a9185ce1071",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Subir e Descer os Containers"
+            }
+          },
+          {
+            "id": "6c991e52e9350c2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-Cadernos (zettlelkasten)/Compiladores/software.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "software"
             }
           }
         ]
@@ -86,21 +132,12 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "f60834f5329323a2",
-            "type": "leaf",
-            "state": {
-              "type": "tagfolder-view",
-              "state": {},
-              "icon": "stacked-levels",
-              "title": "Tag Folder"
+              "icon": "clock",
+              "title": "Recent Files"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -206,34 +243,36 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "37ddf9b6efc53763",
+  "active": "4d59fbd23430b570",
   "lastOpenFiles": [
+    "00-Cadernos (zettlelkasten)/Compiladores/Minhas Especificações do PC.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Salvar ou Criar arquivo no NvChad.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Usando copilot no nvim.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/follow.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/análise sintática.md",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/a linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, você tem que desenvolver o seu discurso..md",
+    "00-Cadernos (zettlelkasten)/Compiladores/first.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md",
     "00-Cadernos (zettlelkasten)/Compiladores/software.md",
+    "00-Cadernos (zettlelkasten)/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md",
+    "01-Anexos/qP07oyFTRXc.jpg",
+    "00-Cadernos (zettlelkasten)/memorizar coisas é tipo você fazendo um caminho por uma floresta, quanto mais vc fizer esse caminho, mais marcado no chão ele fica, então fica mais fácil de chegar no final.md",
+    "00-Cadernos (zettlelkasten)/Compiladores/Relações em uma Gramática.md",
+    "00-Cadernos (zettlelkasten)/A linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, a coisa mais importante que você deve desenvolder é o seu discurso..md",
+    "01-Anexos/1Te0jULowV8.jpg",
     "00-Cadernos (zettlelkasten)/ES1.md",
     "00-Cadernos (zettlelkasten)/Compiladores/zip nome_do_zip.zip item_1.txt item_2.txt (compacta um arquivo em um zip).md",
     "00-Cadernos (zettlelkasten)/Compiladores/rmdir (remove-apaga uma pasta).md",
     "00-Cadernos (zettlelkasten)/Compiladores/htop -> mostra o \"gerenciador de tarefas\".md",
     "00-Cadernos (zettlelkasten)/Compiladores/sudo dpkg -i nome_do_pacote.deb  -->  instala arquivos .deb.md",
     "00-Cadernos (zettlelkasten)/Compiladores/criar pastas.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Usando copilot no nvim.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Salvar ou Criar arquivo no NvChad.md",
     "00-Cadernos (zettlelkasten)/Compiladores/achar uma pasta ou arquivo que eu só lembro parte do nome.md",
     "00-Cadernos (zettlelkasten)/Compiladores/panaceia - o que se emprega para remediar dificuldades..md",
-    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/a linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, você tem que desenvolver o seu discurso..md",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim.md",
     "00-Cadernos (zettlelkasten)/Compiladores/how to take Smart notes.md",
-    "00-Cadernos (zettlelkasten)/Untitled.md",
     "pininfo.md",
     "00-Cadernos (zettlelkasten)/Compiladores/a mais alta forma de filosofia.md",
     "00-Cadernos (zettlelkasten)/Compiladores/nunca interrompa o seu inimigo enquanto ele estiver cometendo um erro - Sung Tsu.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Desinstalar um programa -> sudo apt-get remove nome_do_pacote.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Remapear a tecla 'BackSpace' -> xmodmap -e \"keycode 22 = BackSpace\".md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Remapear a tecla 'Enter' -> xmodmap -e \"keycode 22 = Return\".md",
-    "00-Cadernos (zettlelkasten)/Compiladores/neofetch - comando pra ver as specs do PC.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/lsb_release -a (mostra a versão do ubuntu).md",
-    "00-Cadernos (zettlelkasten)/Compiladores/zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip).md",
-    "00-Cadernos (zettlelkasten)/Compiladores/zippar.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/neovim.md",
     "01-Anexos/Pasted image 20250423210329.png",
     "01-Anexos/03-Templates",
     "01-Anexos/Pasted image 20250415154250.png",
@@ -248,8 +287,6 @@
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",
     "01-Anexos/Pasted image 20241229012432.png",
     "01-Anexos/rombo_no_primeiro_ano_de_governo.png",
-    "01-Anexos/despesasDeixadasPeloBozo.png",
-    "01-Anexos/rombo nas contas públicas.png",
     "Sem título.canvas",
     "00-Cadernos (zettlelkasten)/Nós",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/TCC Millhouse.canvas",

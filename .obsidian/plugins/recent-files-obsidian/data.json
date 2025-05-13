@@ -1,8 +1,52 @@
 {
   "recentFiles": [
     {
+      "basename": "Minhas Especificações do PC",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Minhas Especificações do PC.md"
+    },
+    {
+      "basename": "Salvar ou Criar arquivo no NvChad",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Salvar ou Criar arquivo no NvChad.md"
+    },
+    {
+      "basename": "Usando copilot no nvim",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Usando copilot no nvim.md"
+    },
+    {
+      "basename": "follow",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/follow.md"
+    },
+    {
+      "basename": "análise sintática",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/análise sintática.md"
+    },
+    {
+      "basename": "first",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/first.md"
+    },
+    {
+      "basename": "Subir e Descer os Containers",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md"
+    },
+    {
       "basename": "software",
       "path": "00-Cadernos (zettlelkasten)/Compiladores/software.md"
+    },
+    {
+      "basename": "Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC)",
+      "path": "00-Cadernos (zettlelkasten)/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md"
+    },
+    {
+      "basename": "memorizar coisas é tipo você fazendo um caminho por uma floresta, quanto mais vc fizer esse caminho, mais marcado no chão ele fica, então fica mais fácil de chegar no final",
+      "path": "00-Cadernos (zettlelkasten)/memorizar coisas é tipo você fazendo um caminho por uma floresta, quanto mais vc fizer esse caminho, mais marcado no chão ele fica, então fica mais fácil de chegar no final.md"
+    },
+    {
+      "basename": "Relações em uma Gramática",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Relações em uma Gramática.md"
+    },
+    {
+      "basename": "A linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, a coisa mais importante que você deve desenvolder é o seu discurso.",
+      "path": "00-Cadernos (zettlelkasten)/A linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, a coisa mais importante que você deve desenvolder é o seu discurso..md"
     },
     {
       "basename": "zip nome_do_zip.zip item_1.txt item_2.txt (compacta um arquivo em um zip)",
@@ -25,24 +69,12 @@
       "path": "00-Cadernos (zettlelkasten)/Compiladores/criar pastas.md"
     },
     {
-      "basename": "Usando copilot no nvim",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Usando copilot no nvim.md"
-    },
-    {
-      "basename": "Salvar ou Criar arquivo no NvChad",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Salvar ou Criar arquivo no NvChad.md"
-    },
-    {
       "basename": "achar uma pasta ou arquivo que eu só lembro parte do nome",
       "path": "00-Cadernos (zettlelkasten)/Compiladores/achar uma pasta ou arquivo que eu só lembro parte do nome.md"
     },
     {
       "basename": "panaceia - o que se emprega para remediar dificuldades.",
       "path": "00-Cadernos (zettlelkasten)/Compiladores/panaceia - o que se emprega para remediar dificuldades..md"
-    },
-    {
-      "basename": "a linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, você tem que desenvolver o seu discurso.",
-      "path": "00-Cadernos (zettlelkasten)/Coisas Aleatórias/a linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, você tem que desenvolver o seu discurso..md"
     },
     {
       "basename": "Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim",
@@ -105,14 +137,6 @@
       "path": "00-Cadernos (zettlelkasten)/Compiladores/ASD com retrocesso.md"
     },
     {
-      "basename": "Subir e Descer os Containers",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md"
-    },
-    {
-      "basename": "Minhas Especificações do PC",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Minhas Especificações do PC.md"
-    },
-    {
       "basename": "fatoração à esquerda",
       "path": "00-Cadernos (zettlelkasten)/Compiladores/fatoração à esquerda.md"
     },
@@ -131,10 +155,6 @@
     {
       "basename": "máximo de páginas aceitas pelo deepseek",
       "path": "00-Cadernos (zettlelkasten)/máximo de páginas aceitas pelo deepseek.md"
-    },
-    {
-      "basename": "first",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/first.md"
     },
     {
       "basename": "New note",
