@@ -37,5 +37,6 @@
   "00-Cadernos (zettlelkasten)": "LiNotebook",
   "01-Anexos": "LiPaperclip",
   "02-Referências (da onde eu tirei a ideia)": "LiPen",
-  "03-Templates": "LiLayoutTemplate"
+  "03-Templates": "LiLayoutTemplate",
+  "00-Zettlelkasten": "LiNotebook"
 }

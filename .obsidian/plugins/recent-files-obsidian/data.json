@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "New note",
+      "path": "03-Templates/New note.md"
+    },
+    {
       "basename": "Minhas Especificações do PC",
       "path": "00-Cadernos (zettlelkasten)/Compiladores/Minhas Especificações do PC.md"
     },
@@ -155,10 +159,6 @@
     {
       "basename": "máximo de páginas aceitas pelo deepseek",
       "path": "00-Cadernos (zettlelkasten)/máximo de páginas aceitas pelo deepseek.md"
-    },
-    {
-      "basename": "New note",
-      "path": "03-Templates/New note.md"
     }
   ],
   "omittedPaths": [],
