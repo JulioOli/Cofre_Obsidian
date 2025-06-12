@@ -4,5 +4,6 @@
   "enabledCssSnippets": [
     "Colored Sidebar Items",
     "graph-banner-custom"
-  ]
+  ],
+  "theme": "moonstone"
 }

@@ -4,20 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "88d06d2f9abb9686",
+        "id": "68da52cc8d71bd10",
         "type": "tabs",
         "children": [
           {
-            "id": "6e290fb1d3f20492",
+            "id": "97a4941f7fe07f83",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "00-Cadernos (zettlelkasten)/análise léxica.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "análise léxica"
             }
           }
-        ]
+        ],
+        "stacked": true
       }
     ],
     "direction": "vertical"
@@ -27,7 +32,7 @@
     "type": "split",
     "children": [
       {
-        "id": "f56c9acd403fc3c6",
+        "id": "af5241331848a272",
         "type": "tabs",
         "children": [
           {
@@ -36,7 +41,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "byCreatedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -49,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:só_titulo",
+                "query": "tag:#estudo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -58,16 +63,6 @@
               },
               "icon": "lucide-search",
               "title": "Search"
-            }
-          },
-          {
-            "id": "938680aa0066b6a7",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
             }
           },
           {
@@ -81,6 +76,26 @@
             }
           },
           {
+            "id": "938680aa0066b6a7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "bfc559c2fa970cda",
+            "type": "leaf",
+            "state": {
+              "type": "tagfolder-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
             "id": "e3f0987a9dd030be",
             "type": "leaf",
             "state": {
@@ -91,7 +106,7 @@
             }
           },
           {
-            "id": "b84e55ee0f472043",
+            "id": "19042f3270672374",
             "type": "leaf",
             "state": {
               "type": "tagfolder-view",
@@ -104,7 +119,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5
+    "width": 301.5,
+    "collapsed": true
   },
   "right": {
     "id": "32b6af9a8435c285",
@@ -206,51 +222,85 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "6e290fb1d3f20492",
+  "floating": {
+    "id": "2b1c40eae04e702a",
+    "type": "floating",
+    "children": [
+      {
+        "id": "bd2f7094f3c7683d",
+        "type": "window",
+        "children": [
+          {
+            "id": "2ef5ba193af60ae3",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "01f2499b9f0b4879",
+                "type": "leaf",
+                "state": {
+                  "type": "graph",
+                  "state": {},
+                  "icon": "lucide-git-fork",
+                  "title": "Graph view"
+                }
+              }
+            ],
+            "stacked": true
+          }
+        ],
+        "direction": "vertical",
+        "x": 818,
+        "y": 352,
+        "width": 1102,
+        "height": 1048,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "01f2499b9f0b4879",
   "lastOpenFiles": [
+    "00-Cadernos (zettlelkasten)/análise léxica.md",
+    "00-Cadernos (zettlelkasten)/recursão à esquerda.md",
     "03-Templates/New note.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Minhas Especificações do PC.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Salvar ou Criar arquivo no NvChad.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Usando copilot no nvim.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/follow.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/análise sintática.md",
-    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/a linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, você tem que desenvolver o seu discurso..md",
-    "00-Cadernos (zettlelkasten)/Compiladores/first.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/software.md",
-    "00-Cadernos (zettlelkasten)/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md",
-    "01-Anexos/qP07oyFTRXc.jpg",
-    "00-Cadernos (zettlelkasten)/memorizar coisas é tipo você fazendo um caminho por uma floresta, quanto mais vc fizer esse caminho, mais marcado no chão ele fica, então fica mais fácil de chegar no final.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/Relações em uma Gramática.md",
-    "00-Cadernos (zettlelkasten)/A linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, a coisa mais importante que você deve desenvolder é o seu discurso..md",
-    "01-Anexos/1Te0jULowV8.jpg",
-    "00-Cadernos (zettlelkasten)/ES1.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/zip nome_do_zip.zip item_1.txt item_2.txt (compacta um arquivo em um zip).md",
-    "00-Cadernos (zettlelkasten)/Compiladores/rmdir (remove-apaga uma pasta).md",
-    "00-Cadernos (zettlelkasten)/Compiladores/htop -> mostra o \"gerenciador de tarefas\".md",
-    "00-Cadernos (zettlelkasten)/Compiladores/sudo dpkg -i nome_do_pacote.deb  -->  instala arquivos .deb.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/criar pastas.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/achar uma pasta ou arquivo que eu só lembro parte do nome.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/panaceia - o que se emprega para remediar dificuldades..md",
-    "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/how to take Smart notes.md",
+    "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md",
+    "00-Cadernos (zettlelkasten)/analisador léxico.md",
+    "00-Cadernos (zettlelkasten)/análise sintática.md",
+    "00-Cadernos (zettlelkasten)/follow.md",
+    "00-Cadernos (zettlelkasten)/Determinando os Follows.md",
+    "00-Cadernos (zettlelkasten)/Reais.md",
+    "00-Cadernos (zettlelkasten)/erros lexicos.md",
+    "00-Cadernos (zettlelkasten)/ASD preditiva (LL(1)).md",
+    "00-Cadernos (zettlelkasten)/fatoração à esquerda.md",
+    "00-Cadernos (zettlelkasten)/Gramática LL(1).md",
+    "00-Cadernos (zettlelkasten)/ASD com retrocesso.md",
+    "00-Cadernos (zettlelkasten)/analisador sintático Descendente.md",
+    "00-Cadernos (zettlelkasten)/first.md",
+    "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md",
+    "00-Cadernos (zettlelkasten)/não especificamos eles.md",
+    "00-Cadernos (zettlelkasten)/Strings.md",
+    "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md",
     "pininfo.md",
-    "00-Cadernos (zettlelkasten)/Compiladores/a mais alta forma de filosofia.md",
-    "01-Anexos/Pasted image 20250423210329.png",
-    "01-Anexos/03-Templates",
-    "01-Anexos/Pasted image 20250415154250.png",
-    "01-Anexos/Pasted image 20250415154155.png",
+    "00-Cadernos (zettlelkasten)/Analisador Sintático.md",
+    "00-Cadernos (zettlelkasten)/fase de análise.md",
+    "03-Templates/01-Comment.md",
     "01-Anexos/Pasted image 20250418170712.png",
     "01-Anexos/Pasted image 20250417103656.png",
-    "00-Cadernos (zettlelkasten)/Compiladores",
-    "01-Anexos/rh7GIPgaCkM.jpg",
+    "00-Cadernos (zettlelkasten)/Untitled 2.md",
+    "00-Cadernos (zettlelkasten)/Untitled 3.md",
+    "01-Anexos/Pasted image 20250415154250.png",
+    "01-Anexos/Pasted image 20250415154155.png",
     "Notas (zettlelkasten)/MOC - Projeto ES",
     "Notas (zettlelkasten)",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",
     "01-Anexos/Pasted image 20241229012432.png",
     "01-Anexos/rombo_no_primeiro_ano_de_governo.png",
+    "01-Anexos/despesasDeixadasPeloBozo.png",
+    "01-Anexos/rombo nas contas públicas.png",
     "Sem título.canvas",
+    "01-Anexos/Gerou investimentos.png",
+    "01-Anexos/Investimentos.png",
     "00-Cadernos (zettlelkasten)/Nós",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/TCC Millhouse.canvas",
     "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais/Relação SO-Cyberpunk.canvas",
@@ -258,6 +308,8 @@
     "Cadernos (zettlelkasten)/MOC - SQL",
     "Referências (da onde eu tirei a ideia)/Slides-aula-6.pdf",
     "Referências (da onde eu tirei a ideia)/The_Mentalist_S01E22_x265_720p_BluRay_30NAMA.pt-br.srt",
-    "00-Cadernos (zettlelkasten)/Coisas Aleatórias"
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias",
+    "Cadernos (zettlelkasten)/MOC - Segurança da Informação",
+    "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais"
   ]
 }

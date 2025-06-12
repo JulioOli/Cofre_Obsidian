@@ -1,22 +1,58 @@
 {
   "collapse-filter": true,
-  "search": "",
+  "search": "-file:New note",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": false,
+  "showOrphans": true,
   "collapse-color-groups": true,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "file:erros lexicos",
+      "color": {
+        "a": 1,
+        "rgb": 16705793
+      }
+    },
+    {
+      "query": "file:Relações",
+      "color": {
+        "a": 1,
+        "rgb": 16705793
+      }
+    },
+    {
+      "query": "file:ASD preditiva (LL(1))",
+      "color": {
+        "a": 1,
+        "rgb": 14570208
+      }
+    },
+    {
+      "query": "tag:#card ",
+      "color": {
+        "a": 1,
+        "rgb": 6073814
+      }
+    },
+    {
+      "query": "tag:#no_card",
+      "color": {
+        "a": 1,
+        "rgb": 10027008
+      }
+    }
+  ],
   "collapse-display": true,
-  "showArrow": false,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
+  "showArrow": true,
+  "textFadeMultiplier": -2,
+  "nodeSizeMultiplier": 0.993229166666667,
+  "lineSizeMultiplier": 0.533854166666667,
   "collapse-forces": true,
-  "centerStrength": 0.338541666666667,
-  "repelStrength": 17.7083333333333,
-  "linkStrength": 0.84375,
+  "centerStrength": 0,
+  "repelStrength": 0,
+  "linkStrength": 0,
   "linkDistance": 30,
-  "scale": 0.951942851539588,
-  "close": true
+  "scale": 0.46822130772748016,
+  "close": false
 }

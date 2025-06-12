@@ -1,8 +1,80 @@
 {
   "recentFiles": [
     {
+      "basename": "análise léxica",
+      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
+    },
+    {
+      "basename": "recursão à esquerda",
+      "path": "00-Cadernos (zettlelkasten)/recursão à esquerda.md"
+    },
+    {
       "basename": "New note",
       "path": "03-Templates/New note.md"
+    },
+    {
+      "basename": "analisador sintático Ascendente",
+      "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
+    },
+    {
+      "basename": "Participantes",
+      "path": "00-Zettlelkasten/Participantes.md"
+    },
+    {
+      "basename": "Conceitos do domínio",
+      "path": "00-Zettlelkasten/Conceitos do domínio.md"
+    },
+    {
+      "basename": "c) Modelo Conceitual",
+      "path": "00-Zettlelkasten/c) Modelo Conceitual.md"
+    },
+    {
+      "basename": "Teste Caixa-Branca",
+      "path": "00-Zettlelkasten/Teste Caixa-Branca.md"
+    },
+    {
+      "basename": "Teste Caixa-Preta",
+      "path": "00-Zettlelkasten/Teste Caixa-Preta.md"
+    },
+    {
+      "basename": "classes e interfaces",
+      "path": "00-Zettlelkasten/classes e interfaces.md"
+    },
+    {
+      "basename": "b) Explique os critérios de teste caixa branca e caixa preta.",
+      "path": "00-Zettlelkasten/b) Explique os critérios de teste caixa branca e caixa preta..md"
+    },
+    {
+      "basename": "a) Casos de uso Expandidos",
+      "path": "00-Zettlelkasten/a) Casos de uso Expandidos.md"
+    },
+    {
+      "basename": "relacionamentos principais",
+      "path": "00-Zettlelkasten/relacionamentos principais.md"
+    },
+    {
+      "basename": "d) Evolução do Modelo Conceitual pro Modelo de Classes",
+      "path": "00-Zettlelkasten/d) Evolução do Modelo Conceitual pro Modelo de Classes.md"
+    },
+    {
+      "basename": "b) Diagrama de Sequência",
+      "path": "00-Zettlelkasten/b) Diagrama de Sequência.md"
+    },
+    {
+      "basename": "Sequência de Mensagens (Fluxo Típico)",
+      "path": "00-Zettlelkasten/Sequência de Mensagens (Fluxo Típico).md"
+    },
+    {
+      "basename": "Parte 2 - Sequência típica de eventos",
+      "path": "00-Zettlelkasten/Parte 2 - Sequência típica de eventos.md"
+    },
+    {
+      "basename": "Parte 1 - Caso de Uso",
+      "path": "00-Zettlelkasten/Parte 1 - Caso de Uso.md"
+    },
+    {
+      "basename": "Parte 3 - Sequências Alternativas",
+      "path": "00-Zettlelkasten/Parte 3 - Sequências Alternativas.md"
     },
     {
       "basename": "Minhas Especificações do PC",
@@ -127,38 +199,6 @@
     {
       "basename": "linguagem interpretada",
       "path": "00-Cadernos (zettlelkasten)/linguagem interpretada.md"
-    },
-    {
-      "basename": "analisador sintático Ascendente",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/analisador sintático Ascendente.md"
-    },
-    {
-      "basename": "recursão à esquerda",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/recursão à esquerda.md"
-    },
-    {
-      "basename": "ASD com retrocesso",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/ASD com retrocesso.md"
-    },
-    {
-      "basename": "fatoração à esquerda",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/fatoração à esquerda.md"
-    },
-    {
-      "basename": "ASD preditiva (LL(1))",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/ASD preditiva (LL(1)).md"
-    },
-    {
-      "basename": "analisador sintático Descendente",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/analisador sintático Descendente.md"
-    },
-    {
-      "basename": "Determinando os Follows",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Determinando os Follows.md"
-    },
-    {
-      "basename": "máximo de páginas aceitas pelo deepseek",
-      "path": "00-Cadernos (zettlelkasten)/máximo de páginas aceitas pelo deepseek.md"
     }
   ],
   "omittedPaths": [],

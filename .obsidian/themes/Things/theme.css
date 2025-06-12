@@ -40,9 +40,10 @@ body {
   --truemint: #73dec5;
   --AzulPastel: #B3E5FC;
   --rosaPastel: #F8BBD0;
-    --branco: #e4e9ed;
+  --branco: #e4e9ed;
+  --cinzaescuro: #282424;
 
-  --h1-color: var(--branco);
+  --h1-color: var(--cinzaescuro);
   --h2-color: var(--AmareloPastel);
   --h3-color: var(--truemint);
   --h4-color: var(--strawberry);

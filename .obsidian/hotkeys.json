@@ -57,5 +57,13 @@
       ],
       "key": "L"
     }
+  ],
+  "workspace:new-tab": [
+    {
+      "modifiers": [
+        "Meta"
+      ],
+      "key": "T"
+    }
   ]
 }
