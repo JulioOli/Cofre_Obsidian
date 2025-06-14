@@ -41,6 +41,13 @@
         "a": 1,
         "rgb": 10027008
       }
+    },
+    {
+      "query": "file:Ascendente",
+      "color": {
+        "a": 1,
+        "rgb": 13385278
+      }
     }
   ],
   "collapse-display": true,
@@ -54,5 +61,5 @@
   "linkStrength": 0,
   "linkDistance": 30,
   "scale": 0.46822130772748016,
-  "close": false
+  "close": true
 }

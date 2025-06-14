@@ -274,16 +274,7 @@ var DEFAULT_COLORS = [
   new TextColor("#00ffff", `cyan`, "default", false, false, 0, 0, "C"),
   new TextColor("#ff00ff", `magenta`, "default", false, false, 0, 0, "M"),
   new TextColor("#ffff00", `yellow`, "default", false, false, 0, 0, "Y"),
-  new TextColor("#000000", `black`, "default", false, false, 0, 0, "K"),
- // Versões mais claras
-  new TextColor("#ff6666", `light-red`, "default", false, false, 0, 0, "L"),
-  new TextColor("#66ff66", `light-green`, "default", false, false, 0, 0, "L"),
-  new TextColor("#6666ff", `light-blue`, "default", false, false, 0, 0, "L"),
-  new TextColor("#66ffff", `light-cyan`, "default", false, false, 0, 0, "L"),
-  new TextColor("#ff66ff", `light-magenta`, "default", false, false, 0, 0, "L"),
-  new TextColor("#ffff66", `light-yellow`, "default", false, false, 0, 0, "L"),
-  new TextColor("#666666", `light-black`, "default", false, false, 0, 0, "L")
-
+  new TextColor("#000000", `black`, "default", false, false, 0, 0, "K")
 ];
 var DEFAULT_SETTINGS = {
   themes: [new TextColorTheme("builtin", BUILTIN_COLORS), new TextColorTheme("default", DEFAULT_COLORS)],
@@ -1011,9 +1002,13 @@ function applyColor(tColor, editor) {
   }
   let selections = editor.listSelections();
   selections.forEach((element) => {
-    let selected = editor.getRange(element.anchor, element.head);
+    let anchorpos = element.anchor.line + element.anchor.ch;
+    let headpos = element.head.line + element.head.ch;
+    let start = anchorpos < headpos ? element.anchor : element.head;
+    let end = anchorpos < headpos ? element.head : element.anchor;
+    let selected = editor.getRange(start, end);
     let coloredText = `${prefix}${selected}${suffix}`;
-    editor.replaceRange(coloredText, element.anchor, element.head);
+    editor.replaceRange(coloredText, start, end);
     try {
       let pos = editor.getCursor();
       pos.ch = pos.ch + 1;
@@ -1200,7 +1195,7 @@ var FastTextColorPlugin = class extends import_obsidian8.Plugin {
     this.colorMenu.setAttribute("style", attributes);
     this.colorMenu.setAttribute("id", "fast-color-menu");
     this.colorMenu.addClass("fast-color-menu");
-    (_a = document.body.querySelector(".mod-vertical.mod-root")) == null ? void 0 : _a.insertAdjacentElement("afterbegin", this.colorMenu);
+    (_a = activeDocument.body.querySelector(".mod-vertical.mod-root")) == null ? void 0 : _a.insertAdjacentElement("afterbegin", this.colorMenu);
     let colors = getColors(this.settings);
     for (let i = 0; i < colors.length; i++) {
       this.createColorItem(this.colorMenu, colors[i], i + 1, editor);

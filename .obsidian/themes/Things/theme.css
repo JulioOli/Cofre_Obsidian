@@ -39,15 +39,16 @@ body {
   --menta: #A5D6A7;
   --truemint: #73dec5;
   --AzulPastel: #B3E5FC;
+  --Azuldahora: #2596be;
   --rosaPastel: #F8BBD0;
   --branco: #e4e9ed;
   --cinzaescuro: #282424;
 
   --h1-color: var(--cinzaescuro);
-  --h2-color: var(--AmareloPastel);
+  --h2-color: var(--yellow);
   --h3-color: var(--truemint);
-  --h4-color: var(--strawberry);
-  --h5-color: var(--LilasPastel);
+  --h4-color: var(--Azuldahora);
+  --h5-color: var(--strawberry);
   --h6-color: var(--lime);
 
   --strong-color: var(--lime);

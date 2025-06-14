@@ -1,8 +1,44 @@
 {
   "recentFiles": [
     {
+      "basename": "entrada estranhamente válida",
+      "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
+    },
+    {
+      "basename": "follow",
+      "path": "00-Cadernos (zettlelkasten)/follow.md"
+    },
+    {
       "basename": "análise léxica",
       "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
+    },
+    {
+      "basename": "Determinando os Follows",
+      "path": "00-Cadernos (zettlelkasten)/Determinando os Follows.md"
+    },
+    {
+      "basename": "análise sintática",
+      "path": "00-Cadernos (zettlelkasten)/análise sintática.md"
+    },
+    {
+      "basename": "analisador léxico",
+      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
+    },
+    {
+      "basename": "Relações em uma Gramática",
+      "path": "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md"
+    },
+    {
+      "basename": "erros lexicos",
+      "path": "00-Cadernos (zettlelkasten)/erros lexicos.md"
+    },
+    {
+      "basename": "Strings",
+      "path": "00-Cadernos (zettlelkasten)/Strings.md"
+    },
+    {
+      "basename": "não especificamos eles",
+      "path": "00-Cadernos (zettlelkasten)/não especificamos eles.md"
     },
     {
       "basename": "recursão à esquerda",
@@ -163,42 +199,6 @@
     {
       "basename": "a mais alta forma de filosofia",
       "path": "00-Cadernos (zettlelkasten)/Compiladores/a mais alta forma de filosofia.md"
-    },
-    {
-      "basename": "nunca interrompa o seu inimigo enquanto ele estiver cometendo um erro - Sung Tsu",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/nunca interrompa o seu inimigo enquanto ele estiver cometendo um erro - Sung Tsu.md"
-    },
-    {
-      "basename": "Desinstalar um programa -> sudo apt-get remove nome_do_pacote",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Desinstalar um programa -> sudo apt-get remove nome_do_pacote.md"
-    },
-    {
-      "basename": "Remapear a tecla 'BackSpace' -> xmodmap -e \"keycode 22 = BackSpace\"",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Remapear a tecla 'BackSpace' -> xmodmap -e \"keycode 22 = BackSpace\".md"
-    },
-    {
-      "basename": "Remapear a tecla 'Enter' -> xmodmap -e \"keycode 22 = Return\"",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Remapear a tecla 'Enter' -> xmodmap -e \"keycode 22 = Return\".md"
-    },
-    {
-      "basename": "neofetch - comando pra ver as specs do PC",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/neofetch - comando pra ver as specs do PC.md"
-    },
-    {
-      "basename": "lsb_release -a (mostra a versão do ubuntu)",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/lsb_release -a (mostra a versão do ubuntu).md"
-    },
-    {
-      "basename": "zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip)",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/zip -r nome_do_arquivo.zip pasta_1 pasta_2 (compacta uma pasta inteira em um zip).md"
-    },
-    {
-      "basename": "Linguagem Compilada",
-      "path": "00-Cadernos (zettlelkasten)/Linguagem Compilada.md"
-    },
-    {
-      "basename": "linguagem interpretada",
-      "path": "00-Cadernos (zettlelkasten)/linguagem interpretada.md"
     }
   ],
   "omittedPaths": [],
