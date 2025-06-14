@@ -107,6 +107,16 @@
             "state": {
               "type": "tagfolder-view",
               "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "e636b9a957d7a4f3",
+            "type": "leaf",
+            "state": {
+              "type": "tagfolder-view",
+              "state": {},
               "icon": "stacked-levels",
               "title": "Tag Folder"
             }
