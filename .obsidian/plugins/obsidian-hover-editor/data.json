@@ -2,7 +2,7 @@
   "defaultMode": "preview",
   "autoPin": "onMove",
   "triggerDelay": 300,
-  "closeDelay": 600,
+  "closeDelay": 450,
   "autoFocus": true,
   "rollDown": false,
   "snapToEdges": false,

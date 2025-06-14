@@ -65,5 +65,14 @@
       ],
       "key": "T"
     }
+  ],
+  "file-explorer:new-file": [],
+  "obsidian-hover-editor:open-new-popover": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "N"
+    }
   ]
 }
