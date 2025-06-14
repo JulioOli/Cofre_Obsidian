@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "68da52cc8d71bd10",
+        "id": "2bcfc03e72007b94",
         "type": "tabs",
         "children": [
           {
-            "id": "97a4941f7fe07f83",
+            "id": "e925734c1e93d80c",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -107,26 +107,16 @@
             "state": {
               "type": "tagfolder-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "e636b9a957d7a4f3",
-            "type": "leaf",
-            "state": {
-              "type": "tagfolder-view",
-              "state": {},
               "icon": "stacked-levels",
               "title": "Tag Folder"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 301.5
+    "width": 301.5,
+    "collapsed": true
   },
   "right": {
     "id": "32b6af9a8435c285",
@@ -228,8 +218,20 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "97a4941f7fe07f83",
+  "active": "e925734c1e93d80c",
   "lastOpenFiles": [
+    "03-Templates/New note.md",
+    "00-Zettlelkasten/Teste Caixa-Preta.md",
+    "00-Zettlelkasten/b) Diagrama de Sequência.md",
+    "00-Zettlelkasten/b) Explique os critérios de teste caixa branca e caixa preta..md",
+    "00-Zettlelkasten/Teste Caixa-Branca.md",
+    "00-Zettlelkasten/Sequência de Mensagens (Fluxo Típico).md",
+    "00-Zettlelkasten/Parte 1 - Caso de Uso.md",
+    "00-Zettlelkasten/Parte 2 - Sequência típica de eventos.md",
+    "00-Zettlelkasten/Parte 3 - Sequências Alternativas.md",
+    "00-Zettlelkasten/Participantes.md",
+    "00-Zettlelkasten/classes e interfaces.md",
+    "00-Zettlelkasten/a) Casos de uso Expandidos.md",
     "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md",
     "00-Cadernos (zettlelkasten)/follow.md",
     "00-Cadernos (zettlelkasten)/análise léxica.md",
@@ -242,22 +244,10 @@
     "00-Cadernos (zettlelkasten)/Strings.md",
     "00-Cadernos (zettlelkasten)/não especificamos eles.md",
     "00-Cadernos (zettlelkasten)/recursão à esquerda.md",
-    "03-Templates/New note.md",
     "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md",
     "00-Cadernos (zettlelkasten)/Reais.md",
-    "00-Cadernos (zettlelkasten)/ASD preditiva (LL(1)).md",
-    "00-Cadernos (zettlelkasten)/fatoração à esquerda.md",
-    "00-Cadernos (zettlelkasten)/Gramática LL(1).md",
-    "00-Cadernos (zettlelkasten)/ASD com retrocesso.md",
-    "00-Cadernos (zettlelkasten)/analisador sintático Descendente.md",
-    "pininfo.md",
-    "00-Cadernos (zettlelkasten)/Analisador Sintático.md",
-    "00-Cadernos (zettlelkasten)/fase de análise.md",
-    "03-Templates/01-Comment.md",
     "01-Anexos/Pasted image 20250418170712.png",
     "01-Anexos/Pasted image 20250417103656.png",
-    "00-Cadernos (zettlelkasten)/Untitled 2.md",
-    "00-Cadernos (zettlelkasten)/Untitled 3.md",
     "01-Anexos/Pasted image 20250415154250.png",
     "01-Anexos/Pasted image 20250415154155.png",
     "Notas (zettlelkasten)/MOC - Projeto ES",

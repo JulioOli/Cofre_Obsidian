@@ -1,6 +1,42 @@
 {
   "recentFiles": [
     {
+      "basename": "New note",
+      "path": "03-Templates/New note.md"
+    },
+    {
+      "basename": "b) Explique os critérios de teste caixa branca e caixa preta.",
+      "path": "00-Zettlelkasten/b) Explique os critérios de teste caixa branca e caixa preta..md"
+    },
+    {
+      "basename": "Teste Caixa-Branca",
+      "path": "00-Zettlelkasten/Teste Caixa-Branca.md"
+    },
+    {
+      "basename": "classes e interfaces",
+      "path": "00-Zettlelkasten/classes e interfaces.md"
+    },
+    {
+      "basename": "Participantes",
+      "path": "00-Zettlelkasten/Participantes.md"
+    },
+    {
+      "basename": "Sequência de Mensagens (Fluxo Típico)",
+      "path": "00-Zettlelkasten/Sequência de Mensagens (Fluxo Típico).md"
+    },
+    {
+      "basename": "b) Diagrama de Sequência",
+      "path": "00-Zettlelkasten/b) Diagrama de Sequência.md"
+    },
+    {
+      "basename": "Parte 3 - Sequências Alternativas",
+      "path": "00-Zettlelkasten/Parte 3 - Sequências Alternativas.md"
+    },
+    {
+      "basename": "a) Casos de uso Expandidos",
+      "path": "00-Zettlelkasten/a) Casos de uso Expandidos.md"
+    },
+    {
       "basename": "entrada estranhamente válida",
       "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
     },
@@ -45,16 +81,8 @@
       "path": "00-Cadernos (zettlelkasten)/recursão à esquerda.md"
     },
     {
-      "basename": "New note",
-      "path": "03-Templates/New note.md"
-    },
-    {
       "basename": "analisador sintático Ascendente",
       "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
-    },
-    {
-      "basename": "Participantes",
-      "path": "00-Zettlelkasten/Participantes.md"
     },
     {
       "basename": "Conceitos do domínio",
@@ -65,24 +93,8 @@
       "path": "00-Zettlelkasten/c) Modelo Conceitual.md"
     },
     {
-      "basename": "Teste Caixa-Branca",
-      "path": "00-Zettlelkasten/Teste Caixa-Branca.md"
-    },
-    {
       "basename": "Teste Caixa-Preta",
       "path": "00-Zettlelkasten/Teste Caixa-Preta.md"
-    },
-    {
-      "basename": "classes e interfaces",
-      "path": "00-Zettlelkasten/classes e interfaces.md"
-    },
-    {
-      "basename": "b) Explique os critérios de teste caixa branca e caixa preta.",
-      "path": "00-Zettlelkasten/b) Explique os critérios de teste caixa branca e caixa preta..md"
-    },
-    {
-      "basename": "a) Casos de uso Expandidos",
-      "path": "00-Zettlelkasten/a) Casos de uso Expandidos.md"
     },
     {
       "basename": "relacionamentos principais",
@@ -93,24 +105,12 @@
       "path": "00-Zettlelkasten/d) Evolução do Modelo Conceitual pro Modelo de Classes.md"
     },
     {
-      "basename": "b) Diagrama de Sequência",
-      "path": "00-Zettlelkasten/b) Diagrama de Sequência.md"
-    },
-    {
-      "basename": "Sequência de Mensagens (Fluxo Típico)",
-      "path": "00-Zettlelkasten/Sequência de Mensagens (Fluxo Típico).md"
-    },
-    {
       "basename": "Parte 2 - Sequência típica de eventos",
       "path": "00-Zettlelkasten/Parte 2 - Sequência típica de eventos.md"
     },
     {
       "basename": "Parte 1 - Caso de Uso",
       "path": "00-Zettlelkasten/Parte 1 - Caso de Uso.md"
-    },
-    {
-      "basename": "Parte 3 - Sequências Alternativas",
-      "path": "00-Zettlelkasten/Parte 3 - Sequências Alternativas.md"
     },
     {
       "basename": "Minhas Especificações do PC",
