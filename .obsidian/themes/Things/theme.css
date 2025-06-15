@@ -51,9 +51,9 @@ body {
   --h5-color: var(--strawberry);
   --h6-color: var(--lime);
 
-  --strong-color: var(--lime);
-  --em-color: var(--lime);
-  --quote-color: var(--green);
+  --strong-color: var(--cinzaescuro);
+  --em-color: var(--cinzaescuro);
+  --quote-color: var(--cinzaescuro);
 
   --tag-background-color-l: #bde1d3;
   --tag-font-color-l: #1d694b;
