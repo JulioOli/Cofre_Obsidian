@@ -3,6 +3,35 @@
     {
       "colors": [
         {
+          "color": "#7a7a7a",
+          "id": "cinza",
+          "keybind": "",
+          "italic": false,
+          "bold": false,
+          "cap_mode": {
+            "states": [
+              "normal",
+              "all_caps",
+              "small_caps"
+            ],
+            "state": "normal",
+            "index": 0
+          },
+          "line_mode": {
+            "states": [
+              "none",
+              "underline",
+              "overline",
+              "line-through"
+            ],
+            "state": "none",
+            "index": 0
+          },
+          "useCssColorVariable": false,
+          "colorVariable": "--color-base-00",
+          "className": "ftc-color-builtin-cinza"
+        },
+        {
           "color": "#ff6b6b",
           "id": "red",
           "keybind": "R",
@@ -32,7 +61,7 @@
           "className": "ftc-color-builtin-red"
         },
         {
-          "color": "#eaa939",
+          "color": "#db9f39",
           "id": "orange",
           "keybind": "O",
           "italic": false,
@@ -61,7 +90,7 @@
           "className": "ftc-color-builtin-orange"
         },
         {
-          "color": "#f8e72a",
+          "color": "#c3d100",
           "id": "yellow",
           "keybind": "Y",
           "italic": false,
@@ -90,7 +119,7 @@
           "className": "ftc-color-builtin-yellow"
         },
         {
-          "color": "#72fd75",
+          "color": "#36ce38",
           "id": "green",
           "keybind": "G",
           "italic": false,

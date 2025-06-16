@@ -1,64 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "New note",
-      "path": "03-Templates/New note.md"
+      "basename": "underline.md",
+      "path": "03-Templates/underline.md.md"
     },
     {
-      "basename": "b) Explique os critérios de teste caixa branca e caixa preta.",
-      "path": "00-Zettlelkasten/b) Explique os critérios de teste caixa branca e caixa preta..md"
+      "basename": "analisador sintático Ascendente",
+      "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
     },
     {
-      "basename": "Teste Caixa-Branca",
-      "path": "00-Zettlelkasten/Teste Caixa-Branca.md"
+      "basename": "Reais",
+      "path": "00-Cadernos (zettlelkasten)/Reais.md"
     },
     {
-      "basename": "classes e interfaces",
-      "path": "00-Zettlelkasten/classes e interfaces.md"
-    },
-    {
-      "basename": "Participantes",
-      "path": "00-Zettlelkasten/Participantes.md"
-    },
-    {
-      "basename": "Sequência de Mensagens (Fluxo Típico)",
-      "path": "00-Zettlelkasten/Sequência de Mensagens (Fluxo Típico).md"
-    },
-    {
-      "basename": "b) Diagrama de Sequência",
-      "path": "00-Zettlelkasten/b) Diagrama de Sequência.md"
-    },
-    {
-      "basename": "Parte 3 - Sequências Alternativas",
-      "path": "00-Zettlelkasten/Parte 3 - Sequências Alternativas.md"
-    },
-    {
-      "basename": "a) Casos de uso Expandidos",
-      "path": "00-Zettlelkasten/a) Casos de uso Expandidos.md"
-    },
-    {
-      "basename": "entrada estranhamente válida",
-      "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
-    },
-    {
-      "basename": "follow",
-      "path": "00-Cadernos (zettlelkasten)/follow.md"
-    },
-    {
-      "basename": "análise léxica",
-      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
-    },
-    {
-      "basename": "Determinando os Follows",
-      "path": "00-Cadernos (zettlelkasten)/Determinando os Follows.md"
-    },
-    {
-      "basename": "análise sintática",
-      "path": "00-Cadernos (zettlelkasten)/análise sintática.md"
-    },
-    {
-      "basename": "analisador léxico",
-      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
+      "basename": "analisador sintático Descendente",
+      "path": "00-Cadernos (zettlelkasten)/analisador sintático Descendente.md"
     },
     {
       "basename": "Relações em uma Gramática",
@@ -77,12 +33,60 @@
       "path": "00-Cadernos (zettlelkasten)/não especificamos eles.md"
     },
     {
+      "basename": "ASD preditiva (LL(1))",
+      "path": "00-Cadernos (zettlelkasten)/ASD preditiva (LL(1)).md"
+    },
+    {
+      "basename": "ASD com retrocesso",
+      "path": "00-Cadernos (zettlelkasten)/ASD com retrocesso.md"
+    },
+    {
+      "basename": "Gramática LL(1)",
+      "path": "00-Cadernos (zettlelkasten)/Gramática LL(1).md"
+    },
+    {
       "basename": "recursão à esquerda",
       "path": "00-Cadernos (zettlelkasten)/recursão à esquerda.md"
     },
     {
-      "basename": "analisador sintático Ascendente",
-      "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
+      "basename": "follow",
+      "path": "00-Cadernos (zettlelkasten)/follow.md"
+    },
+    {
+      "basename": "first",
+      "path": "00-Cadernos (zettlelkasten)/first.md"
+    },
+    {
+      "basename": "fatoração à esquerda",
+      "path": "00-Cadernos (zettlelkasten)/fatoração à esquerda.md"
+    },
+    {
+      "basename": "análise sintática",
+      "path": "00-Cadernos (zettlelkasten)/análise sintática.md"
+    },
+    {
+      "basename": "análise léxica",
+      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
+    },
+    {
+      "basename": "Determinando os Follows",
+      "path": "00-Cadernos (zettlelkasten)/Determinando os Follows.md"
+    },
+    {
+      "basename": "analisador léxico",
+      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
+    },
+    {
+      "basename": "entrada estranhamente válida",
+      "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
+    },
+    {
+      "basename": "New note",
+      "path": "03-Templates/New note.md"
+    },
+    {
+      "basename": "Participantes",
+      "path": "00-Zettlelkasten/Participantes.md"
     },
     {
       "basename": "Conceitos do domínio",
@@ -93,8 +97,24 @@
       "path": "00-Zettlelkasten/c) Modelo Conceitual.md"
     },
     {
+      "basename": "Teste Caixa-Branca",
+      "path": "00-Zettlelkasten/Teste Caixa-Branca.md"
+    },
+    {
       "basename": "Teste Caixa-Preta",
       "path": "00-Zettlelkasten/Teste Caixa-Preta.md"
+    },
+    {
+      "basename": "classes e interfaces",
+      "path": "00-Zettlelkasten/classes e interfaces.md"
+    },
+    {
+      "basename": "b) Explique os critérios de teste caixa branca e caixa preta.",
+      "path": "00-Zettlelkasten/b) Explique os critérios de teste caixa branca e caixa preta..md"
+    },
+    {
+      "basename": "a) Casos de uso Expandidos",
+      "path": "00-Zettlelkasten/a) Casos de uso Expandidos.md"
     },
     {
       "basename": "relacionamentos principais",
@@ -105,12 +125,24 @@
       "path": "00-Zettlelkasten/d) Evolução do Modelo Conceitual pro Modelo de Classes.md"
     },
     {
+      "basename": "b) Diagrama de Sequência",
+      "path": "00-Zettlelkasten/b) Diagrama de Sequência.md"
+    },
+    {
+      "basename": "Sequência de Mensagens (Fluxo Típico)",
+      "path": "00-Zettlelkasten/Sequência de Mensagens (Fluxo Típico).md"
+    },
+    {
       "basename": "Parte 2 - Sequência típica de eventos",
       "path": "00-Zettlelkasten/Parte 2 - Sequência típica de eventos.md"
     },
     {
       "basename": "Parte 1 - Caso de Uso",
       "path": "00-Zettlelkasten/Parte 1 - Caso de Uso.md"
+    },
+    {
+      "basename": "Parte 3 - Sequências Alternativas",
+      "path": "00-Zettlelkasten/Parte 3 - Sequências Alternativas.md"
     },
     {
       "basename": "Minhas Especificações do PC",
@@ -127,70 +159,6 @@
     {
       "basename": "follow",
       "path": "00-Cadernos (zettlelkasten)/Compiladores/follow.md"
-    },
-    {
-      "basename": "análise sintática",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/análise sintática.md"
-    },
-    {
-      "basename": "first",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/first.md"
-    },
-    {
-      "basename": "Subir e Descer os Containers",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md"
-    },
-    {
-      "basename": "software",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/software.md"
-    },
-    {
-      "basename": "Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC)",
-      "path": "00-Cadernos (zettlelkasten)/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md"
-    },
-    {
-      "basename": "memorizar coisas é tipo você fazendo um caminho por uma floresta, quanto mais vc fizer esse caminho, mais marcado no chão ele fica, então fica mais fácil de chegar no final",
-      "path": "00-Cadernos (zettlelkasten)/memorizar coisas é tipo você fazendo um caminho por uma floresta, quanto mais vc fizer esse caminho, mais marcado no chão ele fica, então fica mais fácil de chegar no final.md"
-    },
-    {
-      "basename": "Relações em uma Gramática",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Relações em uma Gramática.md"
-    },
-    {
-      "basename": "A linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, a coisa mais importante que você deve desenvolder é o seu discurso.",
-      "path": "00-Cadernos (zettlelkasten)/A linguagem é a ferramenta mais poderosa, se você quer ser uma pessoa poderosa, a coisa mais importante que você deve desenvolder é o seu discurso..md"
-    },
-    {
-      "basename": "zip nome_do_zip.zip item_1.txt item_2.txt (compacta um arquivo em um zip)",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/zip nome_do_zip.zip item_1.txt item_2.txt (compacta um arquivo em um zip).md"
-    },
-    {
-      "basename": "rmdir (remove-apaga uma pasta)",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/rmdir (remove-apaga uma pasta).md"
-    },
-    {
-      "basename": "htop -> mostra o \"gerenciador de tarefas\"",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/htop -> mostra o \"gerenciador de tarefas\".md"
-    },
-    {
-      "basename": "sudo dpkg -i nome_do_pacote.deb  -->  instala arquivos .deb",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/sudo dpkg -i nome_do_pacote.deb  -->  instala arquivos .deb.md"
-    },
-    {
-      "basename": "criar pastas",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/criar pastas.md"
-    },
-    {
-      "basename": "achar uma pasta ou arquivo que eu só lembro parte do nome",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/achar uma pasta ou arquivo que eu só lembro parte do nome.md"
-    },
-    {
-      "basename": "panaceia - o que se emprega para remediar dificuldades.",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/panaceia - o que se emprega para remediar dificuldades..md"
-    },
-    {
-      "basename": "Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim",
-      "path": "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Uma bruxa é simplesmente uma alta sacerdotisa do Wicca, nós adoramos o deus chifrudo e a deusa tripla, somos geralmente curandeiros, mas também possuímos a magia pra usar quando necessário, feitiços e coisas assim.md"
     }
   ],
   "omittedPaths": [],
