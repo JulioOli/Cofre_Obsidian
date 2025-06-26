@@ -116,8 +116,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5,
-    "collapsed": true
+    "width": 301.5
   },
   "right": {
     "id": "32b6af9a8435c285",
@@ -221,6 +220,7 @@
   },
   "active": "e925734c1e93d80c",
   "lastOpenFiles": [
+    "00-Zettlelkasten/teste.md",
     "00-Zettlelkasten/Teste.md",
     "00-Zettlelkasten/teste2.md",
     "00-Zettlelkasten/Teste.md",
@@ -246,7 +246,6 @@
     "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md",
     "00-Cadernos (zettlelkasten)/erros lexicos.md",
     "00-Cadernos (zettlelkasten)/Strings.md",
-    "00-Cadernos (zettlelkasten)/não especificamos eles.md",
     "01-Anexos/Pasted image 20250418170712.png",
     "01-Anexos/Pasted image 20250417103656.png",
     "01-Anexos/Pasted image 20250415154250.png",
