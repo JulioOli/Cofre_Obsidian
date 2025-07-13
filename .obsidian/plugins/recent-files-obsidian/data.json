@@ -1,20 +1,84 @@
 {
   "recentFiles": [
     {
-      "basename": "underline.md",
-      "path": "03-Templates/underline.md.md"
+      "basename": "alocação dinâmica de memória",
+      "path": "alocação dinâmica de memória.md"
     },
     {
-      "basename": "analisador sintático Ascendente",
-      "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
+      "basename": "malloc",
+      "path": "malloc.md"
     },
     {
-      "basename": "Reais",
-      "path": "00-Cadernos (zettlelkasten)/Reais.md"
+      "basename": "alocação estática de memória",
+      "path": "alocação estática de memória.md"
     },
     {
-      "basename": "analisador sintático Descendente",
-      "path": "00-Cadernos (zettlelkasten)/analisador sintático Descendente.md"
+      "basename": "Buffer",
+      "path": "Buffer.md"
+    },
+    {
+      "basename": "converter um jupyter notebook para PDF",
+      "path": "00-Cadernos (zettlelkasten)/converter um jupyter notebook para PDF.md"
+    },
+    {
+      "basename": "pq Jorge Ben virou \"Jorge Ben Jor\"",
+      "path": "pq Jorge Ben virou \"Jorge Ben Jor\".md"
+    },
+    {
+      "basename": "Magnum Opus",
+      "path": "00-Cadernos (zettlelkasten)/Magnum Opus.md"
+    },
+    {
+      "basename": "O esperto se faz de bobo pra ver até onde o burro se faz de inteligente.",
+      "path": "00-Cadernos (zettlelkasten)/O esperto se faz de bobo pra ver até onde o burro se faz de inteligente..md"
+    },
+    {
+      "basename": "máximo de páginas aceitas pelo deepseek",
+      "path": "00-Cadernos (zettlelkasten)/máximo de páginas aceitas pelo deepseek.md"
+    },
+    {
+      "basename": "Alterando o nome de um commit que eu já dei push",
+      "path": "00-Cadernos (zettlelkasten)/Alterando o nome de um commit que eu já dei push.md"
+    },
+    {
+      "basename": "Mnemônicos",
+      "path": "00-Cadernos (zettlelkasten)/Mnemônicos.md"
+    },
+    {
+      "basename": "O que é pensar?",
+      "path": "00-Cadernos (zettlelkasten)/O que é pensar?.md"
+    },
+    {
+      "basename": "Compilar documento LaTeX",
+      "path": "00-Cadernos (zettlelkasten)/Compilar documento LaTeX.md"
+    },
+    {
+      "basename": "Linguagem Compilada",
+      "path": "00-Cadernos (zettlelkasten)/Linguagem Compilada.md"
+    },
+    {
+      "basename": "entrada estranhamente válida",
+      "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
+    },
+    {
+      "basename": "follow",
+      "path": "00-Cadernos (zettlelkasten)/follow.md"
+    },
+    {
+      "basename": "análise léxica",
+      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
+    },
+    {
+      "basename": "Determinando os Follows",
+      "path": "00-Cadernos (zettlelkasten)/Determinando os Follows.md"
+    },
+    {
+      "basename": "análise sintática",
+      "path": "00-Cadernos (zettlelkasten)/análise sintática.md"
+    },
+    {
+      "basename": "analisador léxico",
+      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
     },
     {
       "basename": "Relações em uma Gramática",
@@ -33,56 +97,16 @@
       "path": "00-Cadernos (zettlelkasten)/não especificamos eles.md"
     },
     {
-      "basename": "ASD preditiva (LL(1))",
-      "path": "00-Cadernos (zettlelkasten)/ASD preditiva (LL(1)).md"
-    },
-    {
-      "basename": "ASD com retrocesso",
-      "path": "00-Cadernos (zettlelkasten)/ASD com retrocesso.md"
-    },
-    {
-      "basename": "Gramática LL(1)",
-      "path": "00-Cadernos (zettlelkasten)/Gramática LL(1).md"
-    },
-    {
       "basename": "recursão à esquerda",
       "path": "00-Cadernos (zettlelkasten)/recursão à esquerda.md"
     },
     {
-      "basename": "follow",
-      "path": "00-Cadernos (zettlelkasten)/follow.md"
-    },
-    {
-      "basename": "first",
-      "path": "00-Cadernos (zettlelkasten)/first.md"
-    },
-    {
-      "basename": "fatoração à esquerda",
-      "path": "00-Cadernos (zettlelkasten)/fatoração à esquerda.md"
-    },
-    {
-      "basename": "análise sintática",
-      "path": "00-Cadernos (zettlelkasten)/análise sintática.md"
-    },
-    {
-      "basename": "análise léxica",
-      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
-    },
-    {
-      "basename": "Determinando os Follows",
-      "path": "00-Cadernos (zettlelkasten)/Determinando os Follows.md"
-    },
-    {
-      "basename": "analisador léxico",
-      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
-    },
-    {
-      "basename": "entrada estranhamente válida",
-      "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
-    },
-    {
       "basename": "New note",
       "path": "03-Templates/New note.md"
+    },
+    {
+      "basename": "analisador sintático Ascendente",
+      "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
     },
     {
       "basename": "Participantes",
@@ -159,6 +183,22 @@
     {
       "basename": "follow",
       "path": "00-Cadernos (zettlelkasten)/Compiladores/follow.md"
+    },
+    {
+      "basename": "análise sintática",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/análise sintática.md"
+    },
+    {
+      "basename": "first",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/first.md"
+    },
+    {
+      "basename": "Subir e Descer os Containers",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md"
+    },
+    {
+      "basename": "software",
+      "path": "00-Cadernos (zettlelkasten)/Compiladores/software.md"
     }
   ],
   "omittedPaths": [],
