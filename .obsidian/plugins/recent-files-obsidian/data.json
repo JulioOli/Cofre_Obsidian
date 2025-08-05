@@ -1,6 +1,50 @@
 {
   "recentFiles": [
     {
+      "basename": "New note",
+      "path": "03-Templates/New note.md"
+    },
+    {
+      "basename": "Computação Gráfica",
+      "path": "Computação Gráfica.md"
+    },
+    {
+      "basename": "Áreas Relacionadas",
+      "path": "Áreas Relacionadas.md"
+    },
+    {
+      "basename": "deletando coisas no vim",
+      "path": "deletando coisas no vim.md"
+    },
+    {
+      "basename": "Aprendizado x Prática",
+      "path": "Aprendizado x Prática.md"
+    },
+    {
+      "basename": "Trocando Duas variáveis",
+      "path": "Trocando Duas variáveis.md"
+    },
+    {
+      "basename": "REPL",
+      "path": "REPL.md"
+    },
+    {
+      "basename": "Convertendo um PDF pra texto pelo teminal",
+      "path": "Convertendo um PDF pra texto pelo teminal.md"
+    },
+    {
+      "basename": "kindred spirit",
+      "path": "kindred spirit.md"
+    },
+    {
+      "basename": "gnose",
+      "path": "gnose.md"
+    },
+    {
+      "basename": "na teoria não há diferença entre a teoria e a prática, mas na prática há.",
+      "path": "na teoria não há diferença entre a teoria e a prática, mas na prática há..md"
+    },
+    {
       "basename": "alocação dinâmica de memória",
       "path": "alocação dinâmica de memória.md"
     },
@@ -17,44 +61,8 @@
       "path": "Buffer.md"
     },
     {
-      "basename": "converter um jupyter notebook para PDF",
-      "path": "00-Cadernos (zettlelkasten)/converter um jupyter notebook para PDF.md"
-    },
-    {
       "basename": "pq Jorge Ben virou \"Jorge Ben Jor\"",
       "path": "pq Jorge Ben virou \"Jorge Ben Jor\".md"
-    },
-    {
-      "basename": "Magnum Opus",
-      "path": "00-Cadernos (zettlelkasten)/Magnum Opus.md"
-    },
-    {
-      "basename": "O esperto se faz de bobo pra ver até onde o burro se faz de inteligente.",
-      "path": "00-Cadernos (zettlelkasten)/O esperto se faz de bobo pra ver até onde o burro se faz de inteligente..md"
-    },
-    {
-      "basename": "máximo de páginas aceitas pelo deepseek",
-      "path": "00-Cadernos (zettlelkasten)/máximo de páginas aceitas pelo deepseek.md"
-    },
-    {
-      "basename": "Alterando o nome de um commit que eu já dei push",
-      "path": "00-Cadernos (zettlelkasten)/Alterando o nome de um commit que eu já dei push.md"
-    },
-    {
-      "basename": "Mnemônicos",
-      "path": "00-Cadernos (zettlelkasten)/Mnemônicos.md"
-    },
-    {
-      "basename": "O que é pensar?",
-      "path": "00-Cadernos (zettlelkasten)/O que é pensar?.md"
-    },
-    {
-      "basename": "Compilar documento LaTeX",
-      "path": "00-Cadernos (zettlelkasten)/Compilar documento LaTeX.md"
-    },
-    {
-      "basename": "Linguagem Compilada",
-      "path": "00-Cadernos (zettlelkasten)/Linguagem Compilada.md"
     },
     {
       "basename": "entrada estranhamente válida",
@@ -101,10 +109,6 @@
       "path": "00-Cadernos (zettlelkasten)/recursão à esquerda.md"
     },
     {
-      "basename": "New note",
-      "path": "03-Templates/New note.md"
-    },
-    {
       "basename": "analisador sintático Ascendente",
       "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
     },
@@ -143,62 +147,6 @@
     {
       "basename": "relacionamentos principais",
       "path": "00-Zettlelkasten/relacionamentos principais.md"
-    },
-    {
-      "basename": "d) Evolução do Modelo Conceitual pro Modelo de Classes",
-      "path": "00-Zettlelkasten/d) Evolução do Modelo Conceitual pro Modelo de Classes.md"
-    },
-    {
-      "basename": "b) Diagrama de Sequência",
-      "path": "00-Zettlelkasten/b) Diagrama de Sequência.md"
-    },
-    {
-      "basename": "Sequência de Mensagens (Fluxo Típico)",
-      "path": "00-Zettlelkasten/Sequência de Mensagens (Fluxo Típico).md"
-    },
-    {
-      "basename": "Parte 2 - Sequência típica de eventos",
-      "path": "00-Zettlelkasten/Parte 2 - Sequência típica de eventos.md"
-    },
-    {
-      "basename": "Parte 1 - Caso de Uso",
-      "path": "00-Zettlelkasten/Parte 1 - Caso de Uso.md"
-    },
-    {
-      "basename": "Parte 3 - Sequências Alternativas",
-      "path": "00-Zettlelkasten/Parte 3 - Sequências Alternativas.md"
-    },
-    {
-      "basename": "Minhas Especificações do PC",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Minhas Especificações do PC.md"
-    },
-    {
-      "basename": "Salvar ou Criar arquivo no NvChad",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Salvar ou Criar arquivo no NvChad.md"
-    },
-    {
-      "basename": "Usando copilot no nvim",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Usando copilot no nvim.md"
-    },
-    {
-      "basename": "follow",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/follow.md"
-    },
-    {
-      "basename": "análise sintática",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/análise sintática.md"
-    },
-    {
-      "basename": "first",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/first.md"
-    },
-    {
-      "basename": "Subir e Descer os Containers",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/Subir e Descer os Containers.md"
-    },
-    {
-      "basename": "software",
-      "path": "00-Cadernos (zettlelkasten)/Compiladores/software.md"
     }
   ],
   "omittedPaths": [],

@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "2bcfc03e72007b94",
+        "id": "b12022e51dc6d026",
         "type": "tabs",
         "children": [
           {
-            "id": "e925734c1e93d80c",
+            "id": "10469e8d8399d382",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "03-Templates/New note.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "New note"
             }
           }
         ],
@@ -28,7 +32,7 @@
     "type": "split",
     "children": [
       {
-        "id": "af5241331848a272",
+        "id": "f56c9acd403fc3c6",
         "type": "tabs",
         "children": [
           {
@@ -37,7 +41,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byCreatedTimeReverse",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -50,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#estudo",
+                "query": "tag:só_titulo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -59,16 +63,6 @@
               },
               "icon": "lucide-search",
               "title": "Search"
-            }
-          },
-          {
-            "id": "4c6b79e31931cc50",
-            "type": "leaf",
-            "state": {
-              "type": "tagfolder-view",
-              "state": {},
-              "icon": "stacked-levels",
-              "title": "Tag Folder"
             }
           },
           {
@@ -82,13 +76,13 @@
             }
           },
           {
-            "id": "bfc559c2fa970cda",
+            "id": "4c6b79e31931cc50",
             "type": "leaf",
             "state": {
               "type": "tagfolder-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "stacked-levels",
+              "title": "Tag Folder"
             }
           },
           {
@@ -102,7 +96,17 @@
             }
           },
           {
-            "id": "19042f3270672374",
+            "id": "64398d7b9b0aefcb",
+            "type": "leaf",
+            "state": {
+              "type": "tagfolder-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "740e2f903c5ff679",
             "type": "leaf",
             "state": {
               "type": "tagfolder-view",
@@ -112,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -132,7 +136,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00-Cadernos (zettlelkasten)/análise léxica.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +145,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for análise léxica"
+              "title": "Backlinks"
             }
           },
           {
@@ -218,58 +221,58 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "e925734c1e93d80c",
+  "active": "10469e8d8399d382",
   "lastOpenFiles": [
-    "00-Zettlelkasten/teste.md",
-    "00-Zettlelkasten/Teste.md",
-    "00-Zettlelkasten/teste2.md",
-    "00-Zettlelkasten/Teste.md",
-    "03-Templates/New note.md",
-    "00-Zettlelkasten/Teste Caixa-Preta.md",
-    "00-Zettlelkasten/b) Diagrama de Sequência.md",
-    "00-Zettlelkasten/b) Explique os critérios de teste caixa branca e caixa preta..md",
-    "00-Zettlelkasten/Teste Caixa-Branca.md",
-    "00-Zettlelkasten/Sequência de Mensagens (Fluxo Típico).md",
-    "00-Zettlelkasten/Parte 1 - Caso de Uso.md",
-    "00-Zettlelkasten/Parte 2 - Sequência típica de eventos.md",
-    "00-Zettlelkasten/Parte 3 - Sequências Alternativas.md",
-    "00-Zettlelkasten/Participantes.md",
-    "00-Zettlelkasten/classes e interfaces.md",
-    "00-Zettlelkasten/a) Casos de uso Expandidos.md",
-    "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md",
-    "00-Cadernos (zettlelkasten)/follow.md",
-    "00-Cadernos (zettlelkasten)/análise léxica.md",
-    "00-Cadernos (zettlelkasten)/first.md",
-    "00-Cadernos (zettlelkasten)/Determinando os Follows.md",
-    "00-Cadernos (zettlelkasten)/análise sintática.md",
-    "00-Cadernos (zettlelkasten)/analisador léxico.md",
-    "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md",
-    "00-Cadernos (zettlelkasten)/erros lexicos.md",
-    "00-Cadernos (zettlelkasten)/Strings.md",
-    "01-Anexos/Pasted image 20250418170712.png",
-    "01-Anexos/Pasted image 20250417103656.png",
-    "01-Anexos/Pasted image 20250415154250.png",
-    "01-Anexos/Pasted image 20250415154155.png",
+    "Áreas Relacionadas.md",
+    "Computação Gráfica.md",
+    "01-Anexos/Pasted image 20250801171046.png",
+    "00-Cadernos (zettlelkasten)/Compilar documento LaTeX.md",
+    "01-Anexos/Pasted image 20250801164818.png",
+    "deletando coisas no vim.md",
+    "REPL.md",
+    "01-Anexos/jHAOMOZ_DPI.jpg",
+    "Aprendizado x Prática.md",
+    "00-Cadernos (zettlelkasten)/Mnemônicos.md",
+    "00-Cadernos (zettlelkasten)/O que é pensar?.md",
+    "Trocando Duas variáveis.md",
+    "01-Anexos/DJxEYOC8IRc.jpg",
+    "00-Cadernos (zettlelkasten)/alocação dinâmica de memória.md",
+    "01-Anexos/Pasted image 20250726180240.png",
+    "Convertendo um PDF pra texto pelo teminal.md",
+    "00-Cadernos (zettlelkasten)/linguagem interpretada.md",
+    "00-Cadernos (zettlelkasten)/Linguagem Compilada.md",
+    "00-Cadernos (zettlelkasten)/malloc.md",
+    "00-Cadernos (zettlelkasten)/Conivente (conniving).md",
+    "00-Cadernos (zettlelkasten)/pra que eu uso SSH?.md",
+    "00-Cadernos (zettlelkasten)/alocação estática de memória.md",
+    "00-Cadernos (zettlelkasten)/Heap.md",
+    "00-Cadernos (zettlelkasten)/Buffer.md",
+    "00-Cadernos (zettlelkasten)/pq Jorge Ben virou \"Jorge Ben Jor\".md",
+    "kindred spirit.md",
+    "01-Anexos/Pasted image 20250715193147.png",
+    "00-Cadernos (zettlelkasten)/Sobre Linguagem e Poder.md",
+    "00-Cadernos (zettlelkasten)/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md",
+    "00-Cadernos (zettlelkasten)/Alterando o nome de um commit que eu já dei push.md",
+    "00-Cadernos (zettlelkasten)/acessando o servidor do oikawa via SSH.md",
+    "00-Cadernos (zettlelkasten)/Magnum Opus.md",
+    "01-Anexos/Pasted image 20250626091952.png",
+    "01-Anexos/Pasted image 20250609144951.png",
+    "01-Anexos/Pasted image 20250609144836.png",
+    "00-Cadernos (zettlelkasten)/Coisas Aleatórias",
+    "01-Anexos/qP07oyFTRXc.jpg",
+    "01-Anexos/03-Templates",
+    "00-Cadernos (zettlelkasten)/Compiladores",
     "Notas (zettlelkasten)/MOC - Projeto ES",
     "Notas (zettlelkasten)",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",
-    "01-Anexos/Pasted image 20241229012432.png",
-    "01-Anexos/rombo_no_primeiro_ano_de_governo.png",
-    "01-Anexos/despesasDeixadasPeloBozo.png",
-    "01-Anexos/rombo nas contas públicas.png",
     "Sem título.canvas",
-    "01-Anexos/Gerou investimentos.png",
-    "01-Anexos/Investimentos.png",
     "00-Cadernos (zettlelkasten)/Nós",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/TCC Millhouse.canvas",
     "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais/Relação SO-Cyberpunk.canvas",
     "Cadernos (zettlelkasten)/MOC - ES_Aula",
     "Cadernos (zettlelkasten)/MOC - SQL",
     "Referências (da onde eu tirei a ideia)/Slides-aula-6.pdf",
-    "Referências (da onde eu tirei a ideia)/The_Mentalist_S01E22_x265_720p_BluRay_30NAMA.pt-br.srt",
-    "00-Cadernos (zettlelkasten)/Coisas Aleatórias",
-    "Cadernos (zettlelkasten)/MOC - Segurança da Informação",
-    "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais"
+    "Referências (da onde eu tirei a ideia)/The_Mentalist_S01E22_x265_720p_BluRay_30NAMA.pt-br.srt"
   ]
 }

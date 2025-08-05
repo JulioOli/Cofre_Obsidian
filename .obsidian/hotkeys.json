@@ -49,15 +49,6 @@
       "key": "S"
     }
   ],
-  "obsidian-thumbnails:insert-thumbnail-from-clipboard": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "L"
-    }
-  ],
   "workspace:new-tab": [
     {
       "modifiers": [
@@ -99,6 +90,15 @@
         "Shift"
       ],
       "key": "A"
+    }
+  ],
+  "workspace:close": [],
+  "obsidian-thumbnails:insert-thumbnail-from-clipboard": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "L"
     }
   ]
 }
