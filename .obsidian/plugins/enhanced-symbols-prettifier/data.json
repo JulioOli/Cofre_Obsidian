@@ -1,5 +1,11 @@
 {
   "replacements": {
+    "->": {
+      "replaced": "->",
+      "value": "→",
+      "group": "Arrows",
+      "count": 5
+    },
     "<-": {
       "replaced": "<-",
       "value": "←",
@@ -107,16 +113,6 @@
       "value": "0️⃣",
       "group": "Numbers"
     },
-    "w/": {
-      "replaced": "w/",
-      "value": "with",
-      "group": "Words"
-    },
-    "w/o": {
-      "replaced": "w/o",
-      "value": "without",
-      "group": "Words"
-    },
     "->>": {
       "replaced": "->>",
       "value": "⇉",
@@ -190,7 +186,8 @@
     "sqrt": {
       "replaced": "sqrt",
       "value": "√",
-      "group": "Mathematical Operators"
+      "group": "Mathematical Operators",
+      "count": 2
     },
     "pi": {
       "replaced": "pi",
@@ -241,14 +238,7 @@
     "<=": {
       "replaced": "<=",
       "value": "⇐",
-      "group": "Arrows",
-      "count": 1
-    },
-    "->": {
-      "replaced": "->",
-      "value": "→",
-      "group": "Arrows",
-      "count": 5
+      "group": "Arrows"
     },
     "-^": {
       "replaced": "-^",
@@ -263,6 +253,32 @@
       "disabled": false,
       "group": "Arrows",
       "count": 2
+    },
+    "ii": {
+      "replaced": "ii",
+      "value": "⊙",
+      "disabled": false,
+      "group": "Miscellaneous",
+      "count": 3
+    },
+    "c/": {
+      "replaced": "c/",
+      "value": "com",
+      "group": "Words",
+      "count": 2
+    },
+    "p/": {
+      "replaced": "p/",
+      "value": "para",
+      "group": "Words",
+      "count": 2
+    },
+    "": {
+      "replaced": "",
+      "value": "",
+      "disabled": false,
+      "group": "Words",
+      "count": 7
     }
   },
   "exclusions": [],

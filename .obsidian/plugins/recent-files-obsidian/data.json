@@ -1,48 +1,176 @@
 {
   "recentFiles": [
     {
+      "basename": "mock - imitar o comportamento de outro",
+      "path": "00-Zettlelkasten/mock - imitar o comportamento de outro.md"
+    },
+    {
+      "basename": "O que é pensar?",
+      "path": "00-Zettlelkasten/O que é pensar?.md"
+    },
+    {
+      "basename": "Mnemônicos",
+      "path": "00-Zettlelkasten/Mnemônicos.md"
+    },
+    {
+      "basename": "O dragão representa a antiga serpente, no caso Satã.",
+      "path": "00-Zettlelkasten/O dragão representa a antiga serpente, no caso Satã..md"
+    },
+    {
+      "basename": "converter um jupyter notebook para PDF",
+      "path": "00-Zettlelkasten/converter um jupyter notebook para PDF.md"
+    },
+    {
+      "basename": "Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC)",
+      "path": "00-Zettlelkasten/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md"
+    },
+    {
+      "basename": "memorizar coisas",
+      "path": "00-Zettlelkasten/memorizar coisas.md"
+    },
+    {
+      "basename": "Sobre Linguagem e Poder",
+      "path": "00-Zettlelkasten/Sobre Linguagem e Poder.md"
+    },
+    {
+      "basename": "Linguagem Compilada",
+      "path": "00-Zettlelkasten/Linguagem Compilada.md"
+    },
+    {
+      "basename": "linguagem interpretada",
+      "path": "00-Zettlelkasten/linguagem interpretada.md"
+    },
+    {
+      "basename": "máximo de páginas aceitas pelo deepseek",
+      "path": "00-Zettlelkasten/máximo de páginas aceitas pelo deepseek.md"
+    },
+    {
       "basename": "New note",
       "path": "03-Templates/New note.md"
     },
     {
-      "basename": "Computação Gráfica",
-      "path": "Computação Gráfica.md"
+      "basename": "Bruxa - Wicca",
+      "path": "00-Zettlelkasten/Bruxa - Wicca.md"
     },
     {
-      "basename": "Áreas Relacionadas",
-      "path": "Áreas Relacionadas.md"
+      "basename": "treinando um modelo com o método .fit()",
+      "path": "00-Zettlelkasten/treinando um modelo com o método .fit().md"
     },
     {
-      "basename": "deletando coisas no vim",
-      "path": "deletando coisas no vim.md"
+      "basename": "Compilar documento LaTeX",
+      "path": "00-Zettlelkasten/Compilar documento LaTeX.md"
     },
     {
-      "basename": "Aprendizado x Prática",
-      "path": "Aprendizado x Prática.md"
+      "basename": "Alterando o nome de um commit que eu já dei push",
+      "path": "00-Zettlelkasten/Alterando o nome de um commit que eu já dei push.md"
     },
     {
-      "basename": "Trocando Duas variáveis",
-      "path": "Trocando Duas variáveis.md"
+      "basename": "ver histórico de commits no terminal",
+      "path": "00-Zettlelkasten/ver histórico de commits no terminal.md"
     },
     {
-      "basename": "REPL",
-      "path": "REPL.md"
+      "basename": "adicionando hyperlinks no latex",
+      "path": "00-Zettlelkasten/adicionando hyperlinks no latex.md"
     },
     {
-      "basename": "Convertendo um PDF pra texto pelo teminal",
-      "path": "Convertendo um PDF pra texto pelo teminal.md"
+      "basename": "Quando o jogo acaba, o rei e o peão vão pra mesma caixa",
+      "path": "00-Zettlelkasten/Quando o jogo acaba, o rei e o peão vão pra mesma caixa.md"
     },
     {
-      "basename": "kindred spirit",
-      "path": "kindred spirit.md"
+      "basename": "todos os animais são iguais, mas alguns animais são mais iguais do que os outros.",
+      "path": "00-Zettlelkasten/todos os animais são iguais, mas alguns animais são mais iguais do que os outros..md"
+    },
+    {
+      "basename": "Conivente (conniving)",
+      "path": "00-Zettlelkasten/Conivente (conniving).md"
+    },
+    {
+      "basename": "O esperto se faz de bobo pra ver até onde o burro se faz de inteligente.",
+      "path": "00-Zettlelkasten/O esperto se faz de bobo pra ver até onde o burro se faz de inteligente..md"
+    },
+    {
+      "basename": "Magnum Opus",
+      "path": "00-Zettlelkasten/Magnum Opus.md"
+    },
+    {
+      "basename": "Buffer",
+      "path": "00-Zettlelkasten/Buffer.md"
     },
     {
       "basename": "gnose",
-      "path": "gnose.md"
+      "path": "00-Zettlelkasten/gnose.md"
+    },
+    {
+      "basename": "Bolha da Internet",
+      "path": "00-Zettlelkasten/Bolha da Internet.md"
+    },
+    {
+      "basename": "deletando coisas no vim",
+      "path": "00-Zettlelkasten/deletando coisas no vim.md"
+    },
+    {
+      "basename": "Trocando Duas variáveis",
+      "path": "00-Zettlelkasten/Trocando Duas variáveis.md"
+    },
+    {
+      "basename": "REPL",
+      "path": "00-Zettlelkasten/REPL.md"
+    },
+    {
+      "basename": "kindred spirit",
+      "path": "00-Zettlelkasten/kindred spirit.md"
     },
     {
       "basename": "na teoria não há diferença entre a teoria e a prática, mas na prática há.",
-      "path": "na teoria não há diferença entre a teoria e a prática, mas na prática há..md"
+      "path": "00-Zettlelkasten/na teoria não há diferença entre a teoria e a prática, mas na prática há..md"
+    },
+    {
+      "basename": "Aprendizado x Prática",
+      "path": "00-Zettlelkasten/Aprendizado x Prática.md"
+    },
+    {
+      "basename": "Convertendo um PDF pra texto pelo teminal",
+      "path": "00-Zettlelkasten/Convertendo um PDF pra texto pelo teminal.md"
+    },
+    {
+      "basename": "pra que eu uso SSH?",
+      "path": "00-Zettlelkasten/pra que eu uso SSH?.md"
+    },
+    {
+      "basename": "SSH (Secure Shell)",
+      "path": "00-Zettlelkasten/SSH (Secure Shell).md"
+    },
+    {
+      "basename": "SH - Self-hosting (serviços web)",
+      "path": "00-Zettlelkasten/SH - Self-hosting (serviços web).md"
+    },
+    {
+      "basename": "Brave Wallet Recovery phrase",
+      "path": "00-Zettlelkasten/Brave Wallet Recovery phrase.md"
+    },
+    {
+      "basename": "acessando o servidor do oikawa via SSH",
+      "path": "00-Zettlelkasten/acessando o servidor do oikawa via SSH.md"
+    },
+    {
+      "basename": "Heap",
+      "path": "00-Zettlelkasten/Heap.md"
+    },
+    {
+      "basename": "alocação estática de memória",
+      "path": "00-Zettlelkasten/alocação estática de memória.md"
+    },
+    {
+      "basename": "alocação dinâmica de memória",
+      "path": "00-Zettlelkasten/alocação dinâmica de memória.md"
+    },
+    {
+      "basename": "malloc",
+      "path": "00-Zettlelkasten/malloc.md"
+    },
+    {
+      "basename": "pq Jorge Ben virou \"Jorge Ben Jor\"",
+      "path": "00-Zettlelkasten/pq Jorge Ben virou \"Jorge Ben Jor\".md"
     },
     {
       "basename": "alocação dinâmica de memória",
@@ -67,86 +195,6 @@
     {
       "basename": "entrada estranhamente válida",
       "path": "00-Cadernos (zettlelkasten)/entrada estranhamente válida.md"
-    },
-    {
-      "basename": "follow",
-      "path": "00-Cadernos (zettlelkasten)/follow.md"
-    },
-    {
-      "basename": "análise léxica",
-      "path": "00-Cadernos (zettlelkasten)/análise léxica.md"
-    },
-    {
-      "basename": "Determinando os Follows",
-      "path": "00-Cadernos (zettlelkasten)/Determinando os Follows.md"
-    },
-    {
-      "basename": "análise sintática",
-      "path": "00-Cadernos (zettlelkasten)/análise sintática.md"
-    },
-    {
-      "basename": "analisador léxico",
-      "path": "00-Cadernos (zettlelkasten)/analisador léxico.md"
-    },
-    {
-      "basename": "Relações em uma Gramática",
-      "path": "00-Cadernos (zettlelkasten)/Relações em uma Gramática.md"
-    },
-    {
-      "basename": "erros lexicos",
-      "path": "00-Cadernos (zettlelkasten)/erros lexicos.md"
-    },
-    {
-      "basename": "Strings",
-      "path": "00-Cadernos (zettlelkasten)/Strings.md"
-    },
-    {
-      "basename": "não especificamos eles",
-      "path": "00-Cadernos (zettlelkasten)/não especificamos eles.md"
-    },
-    {
-      "basename": "recursão à esquerda",
-      "path": "00-Cadernos (zettlelkasten)/recursão à esquerda.md"
-    },
-    {
-      "basename": "analisador sintático Ascendente",
-      "path": "00-Cadernos (zettlelkasten)/analisador sintático Ascendente.md"
-    },
-    {
-      "basename": "Participantes",
-      "path": "00-Zettlelkasten/Participantes.md"
-    },
-    {
-      "basename": "Conceitos do domínio",
-      "path": "00-Zettlelkasten/Conceitos do domínio.md"
-    },
-    {
-      "basename": "c) Modelo Conceitual",
-      "path": "00-Zettlelkasten/c) Modelo Conceitual.md"
-    },
-    {
-      "basename": "Teste Caixa-Branca",
-      "path": "00-Zettlelkasten/Teste Caixa-Branca.md"
-    },
-    {
-      "basename": "Teste Caixa-Preta",
-      "path": "00-Zettlelkasten/Teste Caixa-Preta.md"
-    },
-    {
-      "basename": "classes e interfaces",
-      "path": "00-Zettlelkasten/classes e interfaces.md"
-    },
-    {
-      "basename": "b) Explique os critérios de teste caixa branca e caixa preta.",
-      "path": "00-Zettlelkasten/b) Explique os critérios de teste caixa branca e caixa preta..md"
-    },
-    {
-      "basename": "a) Casos de uso Expandidos",
-      "path": "00-Zettlelkasten/a) Casos de uso Expandidos.md"
-    },
-    {
-      "basename": "relacionamentos principais",
-      "path": "00-Zettlelkasten/relacionamentos principais.md"
     }
   ],
   "omittedPaths": [],

@@ -6,17 +6,67 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": true,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "file:(oikawa)",
+      "color": {
+        "a": 1,
+        "rgb": 14168514
+      }
+    },
+    {
+      "query": "line:(conversas)",
+      "color": {
+        "a": 1,
+        "rgb": 16762880
+      }
+    },
+    {
+      "query": "line:(estudo)",
+      "color": {
+        "a": 1,
+        "rgb": 16690530
+      }
+    },
+    {
+      "query": "line:(latex)",
+      "color": {
+        "a": 1,
+        "rgb": 3243353
+      }
+    },
+    {
+      "query": "line:(palavras)",
+      "color": {
+        "a": 1,
+        "rgb": 16723554
+      }
+    },
+    {
+      "query": "line:(Programação)",
+      "color": {
+        "a": 1,
+        "rgb": 4969076
+      }
+    },
+    {
+      "query": "line:(frases)",
+      "color": {
+        "a": 1,
+        "rgb": 5526271
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": true,
-  "textFadeMultiplier": -2,
+  "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 0.993229166666667,
   "lineSizeMultiplier": 0.533854166666667,
-  "collapse-forces": true,
-  "centerStrength": 0,
-  "repelStrength": 0,
-  "linkStrength": 0,
+  "collapse-forces": false,
+  "centerStrength": 0.276041666666667,
+  "repelStrength": 11.0416666666667,
+  "linkStrength": 0.463541666666667,
   "linkDistance": 30,
-  "scale": 0.3489675229862732,
-  "close": false
+  "scale": 0.23264501532418183,
+  "close": true
 }

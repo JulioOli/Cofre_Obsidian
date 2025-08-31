@@ -42,7 +42,7 @@ body {
   --Azuldahora: #2596be;
   --rosaPastel: #F8BBD0;
   --branco: #e4e9ed;
-  --cinzaescuro: #282424;
+  --cinzaescuro: #1c2127;
   --cinza: #7a7a7a;
 
   --h1-color: var(--cinzaescuro);
@@ -52,9 +52,9 @@ body {
   --h5-color: var(--strawberry);
   --h6-color: var(--lime);
 
-  --strong-color: var(--cinzaescuro);
+  --strong-color: var(--branco);
   --em-color: var(--cinza);
-  --quote-color: var(--cinzaescuro);
+  --quote-color: var(--cinza);
 
   --tag-background-color-l: #bde1d3;
   --tag-font-color-l: #1d694b;

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03-Templates/New note.md",
-                "mode": "source",
+                "file": "00-Zettlelkasten/mock - imitar o comportamento de outro.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "New note"
+              "title": "mock - imitar o comportamento de outro"
             }
           }
         ],
@@ -41,7 +41,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "byCreatedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -101,26 +101,16 @@
             "state": {
               "type": "tagfolder-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "740e2f903c5ff679",
-            "type": "leaf",
-            "state": {
-              "type": "tagfolder-view",
-              "state": {},
               "icon": "stacked-levels",
               "title": "Tag Folder"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 301.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "32b6af9a8435c285",
@@ -211,6 +201,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -221,45 +212,80 @@
       "workspaces:Manage workspace layouts": false
     }
   },
+  "floating": {
+    "id": "de214bcb1ea267d2",
+    "type": "floating",
+    "children": [
+      {
+        "id": "f1b60c4c4c44e7c9",
+        "type": "window",
+        "children": [
+          {
+            "id": "81f7739f1bc42217",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "377f0a0fde2ded94",
+                "type": "leaf",
+                "state": {
+                  "type": "graph",
+                  "state": {},
+                  "icon": "lucide-git-fork",
+                  "title": "Graph view"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 0,
+        "y": 425,
+        "width": 960,
+        "height": 1048,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "10469e8d8399d382",
   "lastOpenFiles": [
-    "Áreas Relacionadas.md",
-    "Computação Gráfica.md",
-    "01-Anexos/Pasted image 20250801171046.png",
-    "00-Cadernos (zettlelkasten)/Compilar documento LaTeX.md",
+    "00-Zettlelkasten/O que é pensar?.md",
+    "00-Zettlelkasten/Mnemônicos.md",
+    "00-Zettlelkasten/O dragão representa a antiga serpente, no caso Satã..md",
+    "00-Zettlelkasten/converter um jupyter notebook para PDF.md",
+    "00-Zettlelkasten/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md",
+    "00-Zettlelkasten/memorizar coisas.md",
+    "00-Zettlelkasten/Sobre Linguagem e Poder.md",
+    "00-Zettlelkasten/Linguagem Compilada.md",
+    "00-Zettlelkasten/linguagem interpretada.md",
+    "00-Zettlelkasten/máximo de páginas aceitas pelo deepseek.md",
+    "03-Templates/New note.md",
+    "00-Zettlelkasten/Bruxa - Wicca.md",
+    "00-Zettlelkasten/mock - imitar o comportamento de outro.md",
+    "00-Zettlelkasten/treinando um modelo com o método .fit().md",
+    "00-Zettlelkasten/Compilar documento LaTeX.md",
+    "00-Zettlelkasten/Alterando o nome de um commit que eu já dei push.md",
+    "00-Zettlelkasten/ver histórico de commits no terminal.md",
+    "00-Zettlelkasten/adicionando hyperlinks no latex.md",
+    "00-Zettlelkasten/Quando o jogo acaba, o rei e o peão vão pra mesma caixa.md",
+    "00-Zettlelkasten/todos os animais são iguais, mas alguns animais são mais iguais do que os outros..md",
+    "00-Zettlelkasten/Conivente (conniving).md",
+    "00-Zettlelkasten/O esperto se faz de bobo pra ver até onde o burro se faz de inteligente..md",
+    "00-Zettlelkasten/Magnum Opus.md",
+    "00-Zettlelkasten/Buffer.md",
+    "00-Zettlelkasten/gnose.md",
+    "00-Zettlelkasten/Bolha da Internet.md",
+    "01-Anexos/Pasted image 20250831181838.png",
+    "01-Anexos/d9PKYi0l1oo.jpg",
     "01-Anexos/Pasted image 20250801164818.png",
-    "deletando coisas no vim.md",
-    "REPL.md",
     "01-Anexos/jHAOMOZ_DPI.jpg",
-    "Aprendizado x Prática.md",
-    "00-Cadernos (zettlelkasten)/Mnemônicos.md",
-    "00-Cadernos (zettlelkasten)/O que é pensar?.md",
-    "Trocando Duas variáveis.md",
     "01-Anexos/DJxEYOC8IRc.jpg",
-    "00-Cadernos (zettlelkasten)/alocação dinâmica de memória.md",
     "01-Anexos/Pasted image 20250726180240.png",
-    "Convertendo um PDF pra texto pelo teminal.md",
-    "00-Cadernos (zettlelkasten)/linguagem interpretada.md",
-    "00-Cadernos (zettlelkasten)/Linguagem Compilada.md",
-    "00-Cadernos (zettlelkasten)/malloc.md",
-    "00-Cadernos (zettlelkasten)/Conivente (conniving).md",
-    "00-Cadernos (zettlelkasten)/pra que eu uso SSH?.md",
-    "00-Cadernos (zettlelkasten)/alocação estática de memória.md",
-    "00-Cadernos (zettlelkasten)/Heap.md",
-    "00-Cadernos (zettlelkasten)/Buffer.md",
-    "00-Cadernos (zettlelkasten)/pq Jorge Ben virou \"Jorge Ben Jor\".md",
-    "kindred spirit.md",
     "01-Anexos/Pasted image 20250715193147.png",
-    "00-Cadernos (zettlelkasten)/Sobre Linguagem e Poder.md",
-    "00-Cadernos (zettlelkasten)/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md",
-    "00-Cadernos (zettlelkasten)/Alterando o nome de um commit que eu já dei push.md",
-    "00-Cadernos (zettlelkasten)/acessando o servidor do oikawa via SSH.md",
-    "00-Cadernos (zettlelkasten)/Magnum Opus.md",
     "01-Anexos/Pasted image 20250626091952.png",
     "01-Anexos/Pasted image 20250609144951.png",
     "01-Anexos/Pasted image 20250609144836.png",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias",
-    "01-Anexos/qP07oyFTRXc.jpg",
     "01-Anexos/03-Templates",
     "00-Cadernos (zettlelkasten)/Compiladores",
     "Notas (zettlelkasten)/MOC - Projeto ES",
