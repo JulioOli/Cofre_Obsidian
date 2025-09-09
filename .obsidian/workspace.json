@@ -8,17 +8,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "10469e8d8399d382",
+            "id": "118f04232eccfea8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-Zettlelkasten/mock - imitar o comportamento de outro.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "mock - imitar o comportamento de outro"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ],
@@ -91,8 +87,8 @@
             "state": {
               "type": "recent-files",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "clock",
+              "title": "Recent Files"
             }
           },
           {
@@ -104,8 +100,19 @@
               "icon": "stacked-levels",
               "title": "Tag Folder"
             }
+          },
+          {
+            "id": "4072baa5e953ad4b",
+            "type": "leaf",
+            "state": {
+              "type": "tagfolder-view",
+              "state": {},
+              "icon": "stacked-levels",
+              "title": "Tag Folder"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -213,78 +220,84 @@
     }
   },
   "floating": {
-    "id": "de214bcb1ea267d2",
+    "id": "0f9d2193ec23561c",
     "type": "floating",
     "children": [
       {
-        "id": "f1b60c4c4c44e7c9",
+        "id": "fe2ec41e540a9e54",
         "type": "window",
         "children": [
           {
-            "id": "81f7739f1bc42217",
+            "id": "74acd03b2c4e8222",
             "type": "tabs",
             "children": [
               {
-                "id": "377f0a0fde2ded94",
+                "id": "ffd311e0b82ea816",
                 "type": "leaf",
                 "state": {
-                  "type": "graph",
-                  "state": {},
-                  "icon": "lucide-git-fork",
-                  "title": "Graph view"
+                  "type": "markdown",
+                  "state": {
+                    "file": "00-Zettlelkasten/Tópicos da Revisão.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Tópicos da Revisão"
                 }
               }
-            ]
+            ],
+            "stacked": true
           }
         ],
         "direction": "vertical",
-        "x": 0,
-        "y": 425,
-        "width": 960,
+        "x": 1227,
+        "y": 32,
+        "width": 693,
         "height": 1048,
         "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "10469e8d8399d382",
+  "active": "118f04232eccfea8",
   "lastOpenFiles": [
-    "00-Zettlelkasten/O que é pensar?.md",
-    "00-Zettlelkasten/Mnemônicos.md",
-    "00-Zettlelkasten/O dragão representa a antiga serpente, no caso Satã..md",
-    "00-Zettlelkasten/converter um jupyter notebook para PDF.md",
-    "00-Zettlelkasten/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md",
-    "00-Zettlelkasten/memorizar coisas.md",
-    "00-Zettlelkasten/Sobre Linguagem e Poder.md",
-    "00-Zettlelkasten/Linguagem Compilada.md",
-    "00-Zettlelkasten/linguagem interpretada.md",
-    "00-Zettlelkasten/máximo de páginas aceitas pelo deepseek.md",
+    "00-Zettlelkasten/Tópicos da Revisão.md",
+    "00-Zettlelkasten/BGP.md",
+    "00-Zettlelkasten/Estados de sessão BGP.md",
+    "00-Zettlelkasten/o que você encontra nesse Site.md",
+    "00-Zettlelkasten/Site de BGP e Sistemas Autônomos.md",
+    "00-Zettlelkasten/Camada de Rede (Network Layer - Layer 3).md",
+    "00-Zettlelkasten/Traçando a Rota de roteadores até o X.md",
+    "00-Zettlelkasten/Camada de Aplicação (Application Layer - Layer 7.md",
+    "00-Zettlelkasten/Por que o BGP é considerado Layer 7?.md",
     "03-Templates/New note.md",
-    "00-Zettlelkasten/Bruxa - Wicca.md",
-    "00-Zettlelkasten/mock - imitar o comportamento de outro.md",
-    "00-Zettlelkasten/treinando um modelo com o método .fit().md",
-    "00-Zettlelkasten/Compilar documento LaTeX.md",
-    "00-Zettlelkasten/Alterando o nome de um commit que eu já dei push.md",
-    "00-Zettlelkasten/ver histórico de commits no terminal.md",
-    "00-Zettlelkasten/adicionando hyperlinks no latex.md",
-    "00-Zettlelkasten/Quando o jogo acaba, o rei e o peão vão pra mesma caixa.md",
-    "00-Zettlelkasten/todos os animais são iguais, mas alguns animais são mais iguais do que os outros..md",
-    "00-Zettlelkasten/Conivente (conniving).md",
-    "00-Zettlelkasten/O esperto se faz de bobo pra ver até onde o burro se faz de inteligente..md",
-    "00-Zettlelkasten/Magnum Opus.md",
-    "00-Zettlelkasten/Buffer.md",
-    "00-Zettlelkasten/gnose.md",
-    "00-Zettlelkasten/Bolha da Internet.md",
-    "01-Anexos/Pasted image 20250831181838.png",
-    "01-Anexos/d9PKYi0l1oo.jpg",
-    "01-Anexos/Pasted image 20250801164818.png",
-    "01-Anexos/jHAOMOZ_DPI.jpg",
-    "01-Anexos/DJxEYOC8IRc.jpg",
-    "01-Anexos/Pasted image 20250726180240.png",
-    "01-Anexos/Pasted image 20250715193147.png",
-    "01-Anexos/Pasted image 20250626091952.png",
-    "01-Anexos/Pasted image 20250609144951.png",
-    "01-Anexos/Pasted image 20250609144836.png",
+    "00-Zettlelkasten/Opiniões de especialistas.md",
+    "00-Zettlelkasten/Peer review.md",
+    "00-Zettlelkasten/Objetivos.md",
+    "00-Zettlelkasten/Revisões técnicas formais.md",
+    "00-Zettlelkasten/defeito.md",
+    "00-Zettlelkasten/erro.md",
+    "00-Zettlelkasten/Problemas de Qualidade.md",
+    "00-Zettlelkasten/Para que Revisar?.md",
+    "00-Zettlelkasten/Por que Revisar?.md",
+    "00-Zettlelkasten/Revisão.md",
+    "00-Zettlelkasten/processos fundamentais.md",
+    "00-Zettlelkasten/processos de apoio.md",
+    "00-Zettlelkasten/Garantia de Qualidade.md",
+    "00-Zettlelkasten/Diretrizes para uma RTF.md",
+    "00-Zettlelkasten/Dimensões Técnicas de Inspeção de Software.md",
+    "00-Zettlelkasten/Inspeção de Software.md",
+    "00-Zettlelkasten/Untitled.base",
+    "01-Anexos/Pasted image 20250805182514.png",
+    "01-Anexos/Pasted image 20250810181248.png",
+    "01-Anexos/Pasted image 20250807131713.png",
+    "01-Anexos/Pasted image 20250807130914.png",
+    "01-Anexos/Pasted image 20250807130819.png",
+    "01-Anexos/Pasted image 20250806123043.png",
+    "01-Anexos/Pasted image 20250805182611.png",
+    "01-Anexos/Pasted image 20250805182450.png",
+    "01-Anexos/Pasted image 20250805182402.png",
+    "01-Anexos/Pasted image 20250805182322.png",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias",
     "01-Anexos/03-Templates",
     "00-Cadernos (zettlelkasten)/Compiladores",
@@ -298,7 +311,6 @@
     "00-Cadernos (zettlelkasten)/P1 de Sistemas Operacionais/Relação SO-Cyberpunk.canvas",
     "Cadernos (zettlelkasten)/MOC - ES_Aula",
     "Cadernos (zettlelkasten)/MOC - SQL",
-    "Referências (da onde eu tirei a ideia)/Slides-aula-6.pdf",
-    "Referências (da onde eu tirei a ideia)/The_Mentalist_S01E22_x265_720p_BluRay_30NAMA.pt-br.srt"
+    "Referências (da onde eu tirei a ideia)/Slides-aula-6.pdf"
   ]
 }
