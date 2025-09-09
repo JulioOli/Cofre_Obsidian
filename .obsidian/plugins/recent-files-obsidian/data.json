@@ -5,6 +5,10 @@
       "path": "00-Zettlelkasten/Tópicos da Revisão.md"
     },
     {
+      "basename": "New note",
+      "path": "03-Templates/New note.md"
+    },
+    {
       "basename": "BGP",
       "path": "00-Zettlelkasten/BGP.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "PBR – Visão do Testador",
       "path": "00-Zettlelkasten/PBR – Visão do Testador.md"
-    },
-    {
-      "basename": "por que medir?",
-      "path": "00-Zettlelkasten/por que medir?.md"
     }
   ],
   "omittedPaths": [],
