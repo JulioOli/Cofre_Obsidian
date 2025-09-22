@@ -1,0 +1,129 @@
+# Cursor Rules para Notas Zettelkasten - Estudos e Criação de Flashcards
+
+## Estrutura e Formato das Notas
+
+### Frontmatter Padrão
+Todas as notas .md devem seguir o formato de frontmatter do arquivo "New note.md" presente dentro da pasta "03-Templates":
+```yaml
+---
+tags:
+  - note
+  - [tags específicos conforme necessário]
+---
+DD/MM/YY - HH:MM (especifique a data e hora de criação ao criar um arquivo)
+
+
+___
+
+### Formatação de Conteúdo
+- Use `### ~={Titulo}Título da Seção=~` para títulos principais
+- Use `#### ~={Titulo}Subtítulo=~` para subtítulos
+- Use `~={cor}texto=~` para highlights coloridos (orange, yellow, blue, cyan, red, green, cinza)
+- Use `==texto==` para destaques simples
+- Use `<u>texto</u>` para sublinhados
+- Termine sempre com `___` seguido de links relacionados
+
+### Links e Referências
+- Use `[[nome do arquivo]]` para links internos
+- Use `[[nome do arquivo|texto personalizado]]` para links com texto customizado  
+- Mantenha sempre os links bidirecionais entre conceitos relacionados
+- Adicione seção de links relacionados no final de cada nota
+- Se um conceito "X" estiver sendo descrito ou explicado em uma nota por que ele "está dentro" ou "faz parte" de um conceito "Y", então "X" aponta para "Y" (existe uma referência à "Y" na nota "X")
+- Se um conceito "X" for um pré requisito necessário para o entendimento de um conceito "Y", então "Y" aponta para "X" (existe uma referência à "X" na nota "Y")
+- Caso conceitos novos sejam adicionados na pasta "00-Zettelkasten" estes devem ser descritos e explicados no formato notas breves tendo em vista que são usados como base para a criação de Flashcards e referenciados apropriadamente
+- Se um Conceito estiver se extendendo muito num arquivo só o usuário pode solicitar que ele seja dividido em sub-conceitos e nesse cenário, estes devem ser referenciados apropriadamente
+
+### Estrutura de Diretórios
+- Assume-se diretório `../01-Anexos/` para imagens
+- Use `![[../01-Anexos/nome-da-imagem.png]]` para inserir imagens
+- o diretório `00-Zettelkasten` é reservado para notas de conceitos fundamentais
+- o diretório `02-Referencias` é reservado para PDF's com conteúdo de aulas, Artigos, Bibliografias e arquivos de referência como um todo
+
+## Comportamento do Agente de IA
+
+### Análise de Conteúdo
+Quando solicitado a analisar notas:
+1. Identifique os temas centrais da coleção de notas
+2. Mapeie as relações entre conceitos através dos links `[[]]`
+3. Identifique hierarquias conceituais (fundamental → específico)
+4. Procure por inconsistências técnicas ou conflitos de informação
+5. Verifique completude de informações referenciadas
+6. Sempre analise e leve em consideração o conteúdo dos arquivos que estiverem na pasta "02-Referencias"
+
+### Correções e Edições
+Sempre mantenha:
+- Formatação original com símbolos ~={cor}=~ e ==texto==
+- Estrutura de frontmatter existente
+- Sistema de links bidirecionais
+- Numeração de linhas quando presente
+- Tags existentes (adicione novas quando apropriado)
+
+### Criação de Novas Notas
+Ao criar novas notas:
+1. Use o frontmatter padrão com tags apropriadas
+2. Inclua data e hora da criação
+3. Estruture com títulos formatados conforme padrão
+4. Adicione links para conceitos relacionados existentes
+5. Termine com seção de links relacionados
+6. Use formatação colorida para destacar conceitos importantes
+
+### Explicações e Respostas
+Quando explicar conceitos:
+- Use linguagem técnica precisa, mas acessível
+- Faça referências cruzadas entre conceitos das notas
+- Identifique claramente as fontes (qual arquivo .md)
+- Use exemplos práticos quando possível
+- Mantenha consistência com terminologia já estabelecida nas notas
+
+### Verificação de Consistência
+Sempre verifique:
+- Consistência de terminologia entre arquivos
+- Precisão de referências técnicas (portas, protocolos, RFCs)
+- Completude de informações citadas mas não desenvolvidas
+- Correção de links internos `[[]]`
+- Formatação padronizada
+
+### Tratamento de RFCs e Documentação Técnica
+- Use formato "RFC XXXX - Título" para nomes de arquivo
+- Inclua ano e contexto histórico quando relevante
+- Explique problema que a RFC resolve e como funciona
+- Use analogias quando apropriado para conceitos complexos
+- Mantenha tom educacional e estruturado
+
+### Comandos e Código
+- Use blocos de código para comandos CLI
+- Inclua comentários explicativos quando necessário
+- Mantenha sintaxe precisa para comandos de rede
+- Use seções específicas para comandos de visualização vs configuração
+
+### Gestão de Arquivos
+- Preserve nomes de arquivo existentes (exceto correções óbvias)
+- Use nomes descritivos para novos arquivos
+- Mantenha estrutura hierárquica lógica
+- Evite duplicação de conteúdo entre arquivos
+
+## Casos Especiais
+
+### Análise de Inconsistências
+Ao encontrar inconsistências:
+1. Liste claramente os conflitos encontrados
+2. Explique o impacto de cada inconsistência
+3. Proponha correções específicas
+4. Mantenha tom construtivo e educacional
+
+### Expansão de Conteúdo
+Ao expandir notas existentes:
+- Mantenha estrutura e formatação original
+- Adicione informações em seções apropriadas
+- Inclua novos links quando relevante
+- Preserve referências e contexto existentes
+
+### Trabalho com Diferentes Domínios Técnicos
+Este padrão pode ser aplicado a outras áreas além de redes:
+- Adapte tags conforme domínio (substitua 'prova' por contexto apropriado)
+- Mantenha estrutura de links e referências cruzadas
+- Use formatação colorida para conceitos-chave do domínio
+- Preserve abordagem educacional e estruturada
+
+## Objetivo Final
+Manter consistência, precisão técnica e facilitar aprendizado através de um sistema de notas interconectado, bem estruturado e tecnicamente preciso, seguindo princípios do método Zettelkasten adaptado para conteúdo técnico educacional.

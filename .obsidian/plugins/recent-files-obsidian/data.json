@@ -1,204 +1,204 @@
 {
   "recentFiles": [
     {
-      "basename": "Tópicos da Revisão",
-      "path": "00-Zettlelkasten/Tópicos da Revisão.md"
+      "basename": "Ultra-Aprendizado",
+      "path": "00-Zettelkasten/Ultra-Aprendizado.md"
+    },
+    {
+      "basename": "Retorno",
+      "path": "00-Zettelkasten/Retorno.md"
+    },
+    {
+      "basename": "Repetição Espaçada",
+      "path": "00-Zettelkasten/Repetição Espaçada.md"
+    },
+    {
+      "basename": "Mnemônicos",
+      "path": "00-Zettlelkasten/Mnemônicos.md"
+    },
+    {
+      "basename": "Straight Edge",
+      "path": "00-Zettlelkasten/Straight Edge.md"
+    },
+    {
+      "basename": "REPL",
+      "path": "00-Zettlelkasten/REPL.md"
+    },
+    {
+      "basename": "SSH (Secure Shell)",
+      "path": "00-Zettlelkasten/SSH (Secure Shell).md"
+    },
+    {
+      "basename": "converter um jupyter notebook para PDF",
+      "path": "00-Zettlelkasten/converter um jupyter notebook para PDF.md"
+    },
+    {
+      "basename": "Bruxa - Wicca",
+      "path": "00-Zettlelkasten/Bruxa - Wicca.md"
+    },
+    {
+      "basename": "Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC)",
+      "path": "00-Zettlelkasten/Double speak, how to lie without lying (é bom saber fazer isso quando for escrever meu TCC).md"
+    },
+    {
+      "basename": "máximo de páginas aceitas pelo deepseek",
+      "path": "00-Zettlelkasten/máximo de páginas aceitas pelo deepseek.md"
+    },
+    {
+      "basename": "SQLite",
+      "path": "00-Zettlelkasten/SQLite.md"
+    },
+    {
+      "basename": "Copiando o tema de cores do wallpaper no terminal",
+      "path": "00-Zettlelkasten/Copiando o tema de cores do wallpaper no terminal.md"
+    },
+    {
+      "basename": "Versionamento por orgulho",
+      "path": "00-Zettlelkasten/Versionamento por orgulho.md"
     },
     {
       "basename": "New note",
       "path": "03-Templates/New note.md"
     },
     {
-      "basename": "BGP",
-      "path": "00-Zettlelkasten/BGP.md"
+      "basename": "linguagem interpretada",
+      "path": "00-Zettlelkasten/linguagem interpretada.md"
     },
     {
-      "basename": "Estados de sessão BGP",
-      "path": "00-Zettlelkasten/Estados de sessão BGP.md"
+      "basename": "Linguagem Compilada",
+      "path": "00-Zettlelkasten/Linguagem Compilada.md"
     },
     {
-      "basename": "o que você encontra nesse Site",
-      "path": "00-Zettlelkasten/o que você encontra nesse Site.md"
+      "basename": "Sobre Linguagem e Poder",
+      "path": "00-Zettlelkasten/Sobre Linguagem e Poder.md"
     },
     {
-      "basename": "Site de BGP e Sistemas Autônomos",
-      "path": "00-Zettlelkasten/Site de BGP e Sistemas Autônomos.md"
+      "basename": "memorizar coisas",
+      "path": "00-Zettlelkasten/memorizar coisas.md"
     },
     {
-      "basename": "Camada de Rede (Network Layer - Layer 3)",
-      "path": "00-Zettlelkasten/Camada de Rede (Network Layer - Layer 3).md"
+      "basename": "O dragão representa a antiga serpente, no caso Satã.",
+      "path": "00-Zettlelkasten/O dragão representa a antiga serpente, no caso Satã..md"
     },
     {
-      "basename": "Traçando a Rota de roteadores até o X",
-      "path": "00-Zettlelkasten/Traçando a Rota de roteadores até o X.md"
+      "basename": "O que é pensar?",
+      "path": "00-Zettlelkasten/O que é pensar?.md"
     },
     {
-      "basename": "Camada de Aplicação (Application Layer - Layer 7",
-      "path": "00-Zettlelkasten/Camada de Aplicação (Application Layer - Layer 7.md"
+      "basename": "mock - imitar o comportamento de outro",
+      "path": "00-Zettlelkasten/mock - imitar o comportamento de outro.md"
     },
     {
-      "basename": "Por que o BGP é considerado Layer 7?",
-      "path": "00-Zettlelkasten/Por que o BGP é considerado Layer 7?.md"
+      "basename": "treinando um modelo com o método .fit()",
+      "path": "00-Zettlelkasten/treinando um modelo com o método .fit().md"
     },
     {
-      "basename": "Diretrizes para uma RTF",
-      "path": "00-Zettlelkasten/Diretrizes para uma RTF.md"
+      "basename": "Compilar documento LaTeX",
+      "path": "00-Zettlelkasten/Compilar documento LaTeX.md"
     },
     {
-      "basename": "Opiniões de especialistas",
-      "path": "00-Zettlelkasten/Opiniões de especialistas.md"
+      "basename": "Alterando o nome de um commit que eu já dei push",
+      "path": "00-Zettlelkasten/Alterando o nome de um commit que eu já dei push.md"
     },
     {
-      "basename": "Peer review",
-      "path": "00-Zettlelkasten/Peer review.md"
+      "basename": "ver histórico de commits no terminal",
+      "path": "00-Zettlelkasten/ver histórico de commits no terminal.md"
     },
     {
-      "basename": "Objetivos",
-      "path": "00-Zettlelkasten/Objetivos.md"
+      "basename": "adicionando hyperlinks no latex",
+      "path": "00-Zettlelkasten/adicionando hyperlinks no latex.md"
     },
     {
-      "basename": "Revisões técnicas formais",
-      "path": "00-Zettlelkasten/Revisões técnicas formais.md"
+      "basename": "Quando o jogo acaba, o rei e o peão vão pra mesma caixa",
+      "path": "00-Zettlelkasten/Quando o jogo acaba, o rei e o peão vão pra mesma caixa.md"
     },
     {
-      "basename": "defeito",
-      "path": "00-Zettlelkasten/defeito.md"
+      "basename": "todos os animais são iguais, mas alguns animais são mais iguais do que os outros.",
+      "path": "00-Zettlelkasten/todos os animais são iguais, mas alguns animais são mais iguais do que os outros..md"
     },
     {
-      "basename": "erro",
-      "path": "00-Zettlelkasten/erro.md"
+      "basename": "Conivente (conniving)",
+      "path": "00-Zettlelkasten/Conivente (conniving).md"
     },
     {
-      "basename": "Problemas de Qualidade",
-      "path": "00-Zettlelkasten/Problemas de Qualidade.md"
+      "basename": "O esperto se faz de bobo pra ver até onde o burro se faz de inteligente.",
+      "path": "00-Zettlelkasten/O esperto se faz de bobo pra ver até onde o burro se faz de inteligente..md"
     },
     {
-      "basename": "Para que Revisar?",
-      "path": "00-Zettlelkasten/Para que Revisar?.md"
+      "basename": "Magnum Opus",
+      "path": "00-Zettlelkasten/Magnum Opus.md"
     },
     {
-      "basename": "Por que Revisar?",
-      "path": "00-Zettlelkasten/Por que Revisar?.md"
+      "basename": "Buffer",
+      "path": "00-Zettlelkasten/Buffer.md"
     },
     {
-      "basename": "Revisão",
-      "path": "00-Zettlelkasten/Revisão.md"
+      "basename": "gnose",
+      "path": "00-Zettlelkasten/gnose.md"
     },
     {
-      "basename": "processos fundamentais",
-      "path": "00-Zettlelkasten/processos fundamentais.md"
+      "basename": "Bolha da Internet",
+      "path": "00-Zettlelkasten/Bolha da Internet.md"
     },
     {
-      "basename": "processos de apoio",
-      "path": "00-Zettlelkasten/processos de apoio.md"
+      "basename": "deletando coisas no vim",
+      "path": "00-Zettlelkasten/deletando coisas no vim.md"
     },
     {
-      "basename": "Garantia de Qualidade",
-      "path": "00-Zettlelkasten/Garantia de Qualidade.md"
+      "basename": "Trocando Duas variáveis",
+      "path": "00-Zettlelkasten/Trocando Duas variáveis.md"
     },
     {
-      "basename": "Dimensões Técnicas de Inspeção de Software",
-      "path": "00-Zettlelkasten/Dimensões Técnicas de Inspeção de Software.md"
+      "basename": "kindred spirit",
+      "path": "00-Zettlelkasten/kindred spirit.md"
     },
     {
-      "basename": "Inspeção de Software",
-      "path": "00-Zettlelkasten/Inspeção de Software.md"
+      "basename": "na teoria não há diferença entre a teoria e a prática, mas na prática há.",
+      "path": "00-Zettlelkasten/na teoria não há diferença entre a teoria e a prática, mas na prática há..md"
     },
     {
-      "basename": "Como conduzir uma inspeção?",
-      "path": "00-Zettlelkasten/Como conduzir uma inspeção?.md"
+      "basename": "Aprendizado x Prática",
+      "path": "00-Zettlelkasten/Aprendizado x Prática.md"
     },
     {
-      "basename": "Benefícios da Inspeção",
-      "path": "00-Zettlelkasten/Benefícios da Inspeção.md"
+      "basename": "Convertendo um PDF pra texto pelo teminal",
+      "path": "00-Zettlelkasten/Convertendo um PDF pra texto pelo teminal.md"
     },
     {
-      "basename": "Benefícios Qualitativos",
-      "path": "00-Zettlelkasten/Benefícios Qualitativos.md"
+      "basename": "pra que eu uso SSH?",
+      "path": "00-Zettlelkasten/pra que eu uso SSH?.md"
     },
     {
-      "basename": "Defeitos de Software",
-      "path": "00-Zettlelkasten/Defeitos de Software.md"
+      "basename": "SH - Self-hosting (serviços web)",
+      "path": "00-Zettlelkasten/SH - Self-hosting (serviços web).md"
     },
     {
-      "basename": "Taxonomia (classificação) de Defeitos",
-      "path": "00-Zettlelkasten/Taxonomia (classificação) de Defeitos.md"
+      "basename": "Brave Wallet Recovery phrase",
+      "path": "00-Zettlelkasten/Brave Wallet Recovery phrase.md"
     },
     {
-      "basename": "Omissão de Funcionalidade",
-      "path": "00-Zettlelkasten/Omissão de Funcionalidade.md"
+      "basename": "acessando o servidor do oikawa via SSH",
+      "path": "00-Zettlelkasten/acessando o servidor do oikawa via SSH.md"
     },
     {
-      "basename": "Omissão de Interface",
-      "path": "00-Zettlelkasten/Omissão de Interface.md"
+      "basename": "Heap",
+      "path": "00-Zettlelkasten/Heap.md"
     },
     {
-      "basename": "Omissão de Recursos do Ambiente",
-      "path": "00-Zettlelkasten/Omissão de Recursos do Ambiente.md"
+      "basename": "alocação estática de memória",
+      "path": "00-Zettlelkasten/alocação estática de memória.md"
     },
     {
-      "basename": "Fato Incorreto",
-      "path": "00-Zettlelkasten/Fato Incorreto.md"
+      "basename": "alocação dinâmica de memória",
+      "path": "00-Zettlelkasten/alocação dinâmica de memória.md"
     },
     {
-      "basename": "Inconsistência",
-      "path": "00-Zettlelkasten/Inconsistência.md"
+      "basename": "malloc",
+      "path": "00-Zettlelkasten/malloc.md"
     },
     {
-      "basename": "Ambigüidade",
-      "path": "00-Zettlelkasten/Ambigüidade.md"
-    },
-    {
-      "basename": "Informação Estranha",
-      "path": "00-Zettlelkasten/Informação Estranha.md"
-    },
-    {
-      "basename": "Modelo de Relatório de Defeitos",
-      "path": "00-Zettlelkasten/Modelo de Relatório de Defeitos.md"
-    },
-    {
-      "basename": "Técnicas de Leitura para Inspeção",
-      "path": "00-Zettlelkasten/Técnicas de Leitura para Inspeção.md"
-    },
-    {
-      "basename": "Problema",
-      "path": "00-Zettlelkasten/Problema.md"
-    },
-    {
-      "basename": "Razão",
-      "path": "00-Zettlelkasten/Razão.md"
-    },
-    {
-      "basename": "Solução",
-      "path": "00-Zettlelkasten/Solução.md"
-    },
-    {
-      "basename": "Beneficios",
-      "path": "00-Zettlelkasten/Beneficios.md"
-    },
-    {
-      "basename": "Ad-hoc",
-      "path": "00-Zettlelkasten/Ad-hoc.md"
-    },
-    {
-      "basename": "Checklist",
-      "path": "00-Zettlelkasten/Checklist.md"
-    },
-    {
-      "basename": "Leitura Baseada em Perspectiva (PBR)",
-      "path": "00-Zettlelkasten/Leitura Baseada em Perspectiva (PBR).md"
-    },
-    {
-      "basename": "PBR – Visão do Projetista",
-      "path": "00-Zettlelkasten/PBR – Visão do Projetista.md"
-    },
-    {
-      "basename": "PBR – Visão do Usuário",
-      "path": "00-Zettlelkasten/PBR – Visão do Usuário.md"
-    },
-    {
-      "basename": "PBR – Visão do Testador",
-      "path": "00-Zettlelkasten/PBR – Visão do Testador.md"
+      "basename": "pq Jorge Ben virou \"Jorge Ben Jor\"",
+      "path": "00-Zettlelkasten/pq Jorge Ben virou \"Jorge Ben Jor\".md"
     }
   ],
   "omittedPaths": [],
