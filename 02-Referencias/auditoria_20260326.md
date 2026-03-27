@@ -1,0 +1,12097 @@
+# ~={Titulo}Relatorio de Auditoria de Lancamentos=~
+
+**Data:** 26/03/2026  
+**Periodo analisado:** Base completa  
+**Total de registros na base:** 60,922  
+**Total de achados:** 10,317  
+
+---
+
+## Resumo Executivo
+
+| Severidade | Achados | Impacto estimado (valor total) |
+|---|---|---|
+| 🔴 ALTA | 9119 | R$ 120.745.347,20 |
+| 🟡 MEDIA | 1115 | R$ 5.452.009,40 |
+| 🟢 BAIXA | 83 | R$ 1.963.628,68 |
+
+---
+
+### 🔴 R3 — Duplicata
+
+**Severidade:** ALTA  
+**Total de achados:** 8826  
+**Evidencia:** Aparece 2x com mesmo doc+filial+valor+data — mesmo CC (1.6.1)  
+**Correcao sugerida:** Verificar qual lancamento e legitimo e estornar os demais; escalar para o gestor antes de qualquer acao se valor > R$100.000  
+
+- **2x** | filial: `RSE` | valor: `2400000` | venc: `2025-11-01` | docs: `NFE-36166 / NFE-36166`
+  - cc: `1.6.1` conta: `8.1.2` (MAQUINAS E EQUIPAMENTOS)
+  - cc: `1.6.1` conta: `8.1.2` (MAQUINAS E EQUIPAMENTOS)
+- **3x** | filial: `RSE` | valor: `350000` | venc: `2026-02-03` | docs: `00008052 / 00008052 / 00008052`
+  - cc: `2.6.3` conta: `5.4.11` (RECEITAS DIVERSAS)
+  - cc: `2.6.3` conta: `5.4.11` (RECEITAS DIVERSAS)
+  - cc: `2.6.3` conta: `5.4.11` (RECEITAS DIVERSAS)
+- **2x** | filial: `RSE` | valor: `350000` | venc: `2026-01-26` | docs: `NFE-108113 / NFE-108113`
+  - cc: `1.1.1.1` conta: `8.1.1` (VEÍCULOS)
+  - cc: `1.1.1.1` conta: `8.1.1` (VEÍCULOS)
+- **2x** | filial: `RSE` | valor: `275000` | venc: `2026-12-31` | docs: `NFE-9356 / NFE-9356`
+  - cc: `2.6.3` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.3` conta: `5.2.1` (VENDA DE VEÍCULOS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `224317,3` | venc: `2025-11-08` | docs: `BOLV-83410 / BOLV-83410 / BOLV-83410`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `216989,46` | venc: `2025-10-31` | docs: `IRPJCSLLRSE3T2025 / IRPJCSLLRSE3T2025`
+  - cc: `1.6.1` conta: `7.4.3` (IRPJ)
+  - cc: `1.6.1` conta: `7.4.4` (CSLL)
+- **2x** | filial: `G&S PRUDENTE` | valor: `208161,55` | venc: `2025-09-18` | docs: `NFE-576317 / NFE-576317`
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `208161,55` | venc: `2025-10-18` | docs: `NFE-576317 / NFE-576317`
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `208161,55` | venc: `2025-11-17` | docs: `NFE-576317 / NFE-576317`
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `RSE` | valor: `199224,38` | venc: `2026-01-30` | docs: `IRPJCSLLRSE4T2025 / IRPJCSLLRSE4T2025`
+  - cc: `1.6.1` conta: `7.4.3` (IRPJ)
+  - cc: `1.6.1` conta: `7.4.4` (CSLL)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `199130,08` | venc: `2026-03-16` | docs: `CCB032026 / CCB032026 / CCB032026 / CCB032026 / CCB032026 / CCB032026 / CCB032026 / CCB032026 / CCB032026`
+  - cc: `1.2.2.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.3.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.4.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.5.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.3.1.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.7.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.6.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.7.2.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.8.1` conta: `7.5.23` (JUROS E MULTAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `161416,8` | venc: `2025-08-21` | docs: `ADT21082025 / ADT21082025 / ADT21082025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `131993,33` | venc: `2026-03-23` | docs: `DEVOLMUTUO260226 / DEVOLMUTUO260226`
+  - cc: `1.1.1.1` conta: `5.4.2` (EMPRÉSTIMOS)
+  - cc: `1.1.1.1` conta: `5.4.12` (JUROS E MULTAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `121824` | venc: `2025-07-10` | docs: `ADT-O10072025 / ADT-O10072025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-03-12` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-04-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-05-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-06-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-07-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-08-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-09-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-10-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-11-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **26x** | filial: `RSE` | valor: `115543,1` | venc: `2026-12-18` | docs: `SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026 / SEGURO-FROTA2026`
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.18` conta: `7.5.13` (SEGUROS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `114990` | venc: `2025-11-06` | docs: `00005318 / 00005318 / 00005318`
+  - cc: `1.7.2.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.7.2.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.7.2.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **10x** | filial: `RSE` | valor: `100000` | venc: `2025-09-01` | docs: `VEICPLAJV6A51 / VEICPLAJV6A51 / VEICPLAJV6A51 / VEICPLAJV6A51 / VEICPLAJV6A51 / VEICPLAJV6A51 / VEICPLAJV6A51 / VEICPLAJV6A51 / VEICPLAJV6A51 / VEICPLAJV6A51`
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `87393,05` | venc: `2026-01-19` | docs: `ARRECADAÇAOG3S01122025 / ARRECADAÇAOG3S01122025`
+  - cc: `1.1.10` conta: `7.3.3` (INSS)
+  - cc: `1.1.10` conta: `7.4.6` (IRRF)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `87000` | venc: `2025-10-22` | docs: `BOLC-285065 / BOLC-285065 / BOLC-285065 / BOLC-285065 / BOLC-285065`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `79110` | venc: `2025-07-17` | docs: `BOLV-82751 / BOLV-82751`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `74247,35` | venc: `2025-05-07` | docs: `BOLV-80861 / BOLV-80861`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `74247,35` | venc: `2025-12-01` | docs: `BOLV-80861 / BOLV-80861 / BOLV-80861 / BOLV-80861`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `71302,5` | venc: `2025-08-01` | docs: `BOLV-82982 / BOLV-82982`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **9x** | filial: `G3S PRUDENTE` | valor: `70209,59` | venc: `2026-03-02` | docs: `TFCGG3S04020326 / TFCGG3S04020326 / TFCGG3S04020326 / TFCGG3S04020326 / TFCGG3S04020326 / TFCGG3S04020326 / TFCGG3S04020326 / TFCGG3S04020326 / TFCGG3S04020326`
+  - cc: `1.2.2.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.3.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.4.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.5.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.3.1.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.7.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.6.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.7.2.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.2.8.1` conta: `7.5.23` (JUROS E MULTAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `68066,26` | venc: `2025-12-19` | docs: `INSSIRRFG3S01112025 / INSSIRRFG3S01112025`
+  - cc: `1.1.10` conta: `7.3.3` (INSS)
+  - cc: `1.1.10` conta: `7.4.6` (IRRF)
+- **2x** | filial: `G3S LONDRINA` | valor: `64232,63` | venc: `2025-09-08` | docs: `BOLV-84107 / BOLV-84107`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `64232,63` | venc: `2025-09-12` | docs: `BOLV-84107 / BOLV-84107`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `62393,89` | venc: `2025-07-22` | docs: `BOLV-82958 / BOLV-82958`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `62393,89` | venc: `2025-09-12` | docs: `BOLV-82958 / BOLV-82958`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `61613` | venc: `2025-11-10` | docs: `BOLC-286548 / BOLC-286548 / BOLC-286548`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `61566,85` | venc: `2026-01-09` | docs: `BOLV-84913 / BOLV-84913 / BOLV-84913`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `61309,88` | venc: `2025-09-22` | docs: `BOLV-84363 / BOLV-84363`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `61309,88` | venc: `2025-11-14` | docs: `BOLV-84363 / BOLV-84363`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `60030` | venc: `2025-08-18` | docs: `BOLV-82784 / BOLV-82784`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `60000` | venc: `2025-06-17` | docs: `VEICPLFBV4H62 / VEICPLFBV4H62`
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.2` conta: `5.2.1` (VENDA DE VEÍCULOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `59482,19` | venc: `2026-01-09` | docs: `BOLV-84906 / BOLV-84906`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `59346,5` | venc: `2026-02-10` | docs: `BOLC-292900 / BOLC-292900`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `58477,54` | venc: `2026-01-04` | docs: `BOLV-85221 / BOLV-85221`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **8x** | filial: `BRACOFER` | valor: `57801,6` | venc: `2026-03-02` | docs: `JRCG032026 / JRCG032026 / JRCG032026 / JRCG032026 / JRCG032026 / JRCG032026 / JRCG032026 / JRCG032026`
+  - cc: `1.2.2.1` conta: `7.11.7` (EMPRESTIMOS)
+  - cc: `1.2.3.1` conta: `7.11.7` (EMPRESTIMOS)
+  - cc: `1.2.4.1` conta: `7.11.7` (EMPRESTIMOS)
+  - cc: `1.2.5.1` conta: `7.11.7` (EMPRESTIMOS)
+  - cc: `1.3.1.1` conta: `7.11.7` (EMPRESTIMOS)
+  - cc: `1.2.7.1` conta: `7.11.7` (EMPRESTIMOS)
+  - cc: `1.6.1` conta: `7.11.7` (EMPRESTIMOS)
+  - cc: `1.2.8.1` conta: `7.11.7` (EMPRESTIMOS)
+- **2x** | filial: `RSE` | valor: `57313,69` | venc: `2025-10-24` | docs: `PISCOFINS092025RSE / PISCOFINS092025RSE`
+  - cc: `1.6.1` conta: `7.4.1` (PIS)
+  - cc: `1.6.1` conta: `7.4.2` (COFINS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `57274,69` | venc: `2025-10-07` | docs: `BOLV-85002 / BOLV-85002`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `57274,69` | venc: `2025-11-14` | docs: `BOLV-85002 / BOLV-85002`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `56668,09` | venc: `2025-11-27` | docs: `BOLV-86225 / BOLV-86225 / BOLV-86225`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `55379,4` | venc: `2025-11-12` | docs: `BOLV-86079 / BOLV-86079`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `55125` | venc: `2025-05-09` | docs: `BOLC-272319 / BOLC-272319 / BOLC-272319`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `55078,91` | venc: `2025-09-15` | docs: `BOLV-84361 / BOLV-84361`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `55078,91` | venc: `2025-11-07` | docs: `BOLV-84361 / BOLV-84361`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `54616,5` | venc: `2025-08-07` | docs: `BOLV-82777 / BOLV-82777`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `54050,98` | venc: `2025-07-16` | docs: `BOLV-81952 / BOLV-81952`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `53815,5` | venc: `2025-10-29` | docs: `BOLV-85207 / BOLV-85207 / BOLV-85207`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `53476,84` | venc: `2025-10-01` | docs: `BOLV-84861 / BOLV-84861`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `53476,84` | venc: `2025-11-25` | docs: `BOLV-84861 / BOLV-84861`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `52800` | venc: `2025-06-12` | docs: `NFE-21776 / NFE-21776`
+  - cc: `1.2.4.6` conta: `8.1.5` (INSTALAÇÕES)
+  - cc: `1.2.4.6` conta: `8.1.5` (INSTALAÇÕES)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `52713,49` | venc: `2025-10-03` | docs: `BOLV-84718 / BOLV-84718`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `52713,49` | venc: `2025-11-25` | docs: `BOLV-84718 / BOLV-84718`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `51997,54` | venc: `2025-09-20` | docs: `BOLV-84463 / BOLV-84463`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `51997,54` | venc: `2025-11-07` | docs: `BOLV-84463 / BOLV-84463`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `51444,4` | venc: `2025-09-24` | docs: `BOLV-84655 / BOLV-84655`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `51444,4` | venc: `2026-01-09` | docs: `BOLV-84655 / BOLV-84655 / BOLV-84655 / BOLV-84655`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `51286,41` | venc: `2025-09-15` | docs: `BOLV-84402 / BOLV-84402`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `51286,41` | venc: `2025-11-07` | docs: `BOLV-84402 / BOLV-84402`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `51120` | venc: `2025-10-06` | docs: `BOLV-84607 / BOLV-84607`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `50722,41` | venc: `2025-09-10` | docs: `BOLV-84070 / BOLV-84070`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `50722,41` | venc: `2025-10-03` | docs: `BOLV-84070 / BOLV-84070`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `50666,67` | venc: `2026-03-23` | docs: `DEVOLMUTUO030326 / DEVOLMUTUO030326`
+  - cc: `1.1.1.1` conta: `5.4.2` (EMPRÉSTIMOS)
+  - cc: `1.1.1.1` conta: `5.4.12` (JUROS E MULTAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `50507,45` | venc: `2025-10-17` | docs: `BOLV-84497 / BOLV-84497`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `50507,45` | venc: `2025-11-25` | docs: `BOLV-84497 / BOLV-84497`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `50504,11` | venc: `2025-08-20` | docs: `BOLV-82938 / BOLV-82938`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `50504,11` | venc: `2025-09-12` | docs: `BOLV-82938 / BOLV-82938`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `50127,8` | venc: `2025-09-15` | docs: `BOLV-84380 / BOLV-84380`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `50127,8` | venc: `2025-11-07` | docs: `BOLV-84380 / BOLV-84380`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `50096,8` | venc: `2025-10-11` | docs: `BOLV-84845 / BOLV-84845`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `50096,8` | venc: `2025-11-25` | docs: `BOLV-84845 / BOLV-84845`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `50061,93` | venc: `2025-07-31` | docs: `BOLV-82933 / BOLV-82933`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `50061,93` | venc: `2025-09-12` | docs: `BOLV-82933 / BOLV-82933`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `50017,89` | venc: `2025-10-07` | docs: `BOLV-84983 / BOLV-84983`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `50017,89` | venc: `2025-11-25` | docs: `BOLV-84983 / BOLV-84983`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `49322,09` | venc: `2025-04-30` | docs: `BOLV-80930 / BOLV-80930`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `49322,09` | venc: `2025-12-01` | docs: `BOLV-80930 / BOLV-80930`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `49322,09` | venc: `2025-12-09` | docs: `BOLV-80930 / BOLV-80930`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `49210,43` | venc: `2025-04-30` | docs: `BOLV-80937 / BOLV-80937`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `49210,43` | venc: `2025-12-09` | docs: `BOLV-80937 / BOLV-80937`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `49067,36` | venc: `2025-10-08` | docs: `BOLV-84724 / BOLV-84724`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `49067,36` | venc: `2025-11-25` | docs: `BOLV-84724 / BOLV-84724`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `48302,34` | venc: `2025-04-30` | docs: `BOLV-80934 / BOLV-80934`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `48302,34` | venc: `2025-12-09` | docs: `BOLV-80934 / BOLV-80934`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `48261,86` | venc: `2026-02-06` | docs: `BOLV-84741 / BOLV-84741`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `48102,4` | venc: `2025-11-27` | docs: `BOLV-86337 / BOLV-86337`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `48102,4` | venc: `2026-01-09` | docs: `BOLV-86337 / BOLV-86337 / BOLV-86337 / BOLV-86337 / BOLV-86337 / BOLV-86337`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47860,19` | venc: `2025-10-06` | docs: `BOLV-84990 / BOLV-84990`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47860,19` | venc: `2025-11-25` | docs: `BOLV-84990 / BOLV-84990`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47796,93` | venc: `2025-10-07` | docs: `BOLV-84892 / BOLV-84892`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47796,93` | venc: `2025-11-25` | docs: `BOLV-84892 / BOLV-84892`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47645,27` | venc: `2025-10-06` | docs: `BOLV-84989 / BOLV-84989`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47645,27` | venc: `2025-11-25` | docs: `BOLV-84989 / BOLV-84989`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `47636,43` | venc: `2025-07-16` | docs: `BOLV-82061 / BOLV-82061`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47607,32` | venc: `2025-10-10` | docs: `BOLV-84876 / BOLV-84876`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47607,32` | venc: `2025-11-25` | docs: `BOLV-84876 / BOLV-84876`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `47370,45` | venc: `2025-07-31` | docs: `BOLV-83082 / BOLV-83082`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `47370,45` | venc: `2025-09-12` | docs: `BOLV-83082 / BOLV-83082`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `47226,8` | venc: `2025-11-12` | docs: `BOLV-85241 / BOLV-85241 / BOLV-85241`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `47115,6` | venc: `2025-11-13` | docs: `BOLV-84480 / BOLV-84480 / BOLV-84480`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47082,93` | venc: `2025-10-06` | docs: `BOLV-84847 / BOLV-84847`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `47082,93` | venc: `2025-11-25` | docs: `BOLV-84847 / BOLV-84847`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `46753,2` | venc: `2025-12-03` | docs: `BOLV-86005 / BOLV-86005`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `46629,85` | venc: `2025-05-30` | docs: `BOLV-81066 / BOLV-81066`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `46489,77` | venc: `2025-10-09` | docs: `BOLV-84776 / BOLV-84776`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `46406,91` | venc: `2025-10-01` | docs: `BOLV-84870 / BOLV-84870`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `46406,91` | venc: `2025-11-25` | docs: `BOLV-84870 / BOLV-84870`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `46321,83` | venc: `2025-05-07` | docs: `BOLV-80982 / BOLV-80982`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `46321,83` | venc: `2025-12-09` | docs: `BOLV-80982 / BOLV-80982`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `46321,83` | venc: `2026-01-09` | docs: `BOLV-80982 / BOLV-80982`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `46309,2` | venc: `2025-11-26` | docs: `BOLV-85687 / BOLV-85687`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `46017,82` | venc: `2025-11-18` | docs: `BOLV-85905 / BOLV-85905`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `45888,63` | venc: `2025-05-06` | docs: `BOLV-80994 / BOLV-80994`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `45888,63` | venc: `2026-01-09` | docs: `BOLV-80994 / BOLV-80994`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `45741` | venc: `2025-11-13` | docs: `BOLV-84447 / BOLV-84447 / BOLV-84447`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `45693` | venc: `2025-08-05` | docs: `BOLC-278544 / BOLC-278544 / BOLC-278544`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `45305,4` | venc: `2025-12-03` | docs: `BOLV-86384 / BOLV-86384`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `45305,4` | venc: `2026-01-09` | docs: `BOLV-86384 / BOLV-86384 / BOLV-86384 / BOLV-86384`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `44962,4` | venc: `2025-12-19` | docs: `BOLV-85381 / BOLV-85381`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `44741,32` | venc: `2025-07-31` | docs: `BOLV-83081 / BOLV-83081`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `44741,32` | venc: `2025-09-12` | docs: `BOLV-83081 / BOLV-83081`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `44052,96` | venc: `2025-06-02` | docs: `BOLV-81643 / BOLV-81643`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `44052,96` | venc: `2025-09-12` | docs: `BOLV-81643 / BOLV-81643`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `43969,8` | venc: `2025-09-22` | docs: `BOLV-84554 / BOLV-84554`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `43969,8` | venc: `2026-01-09` | docs: `BOLV-84554 / BOLV-84554`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `43477,7` | venc: `2025-09-24` | docs: `BOLV-84654 / BOLV-84654`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `43477,7` | venc: `2026-01-09` | docs: `BOLV-84654 / BOLV-84654 / BOLV-84654 / BOLV-84654 / BOLV-84654 / BOLV-84654`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `43327,61` | venc: `2026-01-08` | docs: `BOLV-86739 / BOLV-86739`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `43059` | venc: `2025-10-31` | docs: `BOLV-85415 / BOLV-85415`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `43059` | venc: `2025-11-13` | docs: `BOLV-85833 / BOLV-85833`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `42994,32` | venc: `2025-10-02` | docs: `BOLV-84019 / BOLV-84019`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `42728,4` | venc: `2025-01-03` | docs: `B-78379 / B-78379`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `42703,42` | venc: `2025-09-02` | docs: `BOLV-84072 / BOLV-84072`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `42703,42` | venc: `2025-09-12` | docs: `BOLV-84072 / BOLV-84072`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `42637,54` | venc: `2025-09-19` | docs: `BOLV-84379 / BOLV-84379`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `42637,54` | venc: `2025-11-07` | docs: `BOLV-84379 / BOLV-84379`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `42500,02` | venc: `2025-07-10` | docs: `X-NF 8425 / X-NF 8425`
+  - cc: `2.6.3` conta: `5.2.1` (VENDA DE VEÍCULOS)
+  - cc: `2.6.3` conta: `5.2.1` (VENDA DE VEÍCULOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `42444,8` | venc: `2026-01-09` | docs: `BOLV-86354 / BOLV-86354`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `42443,77` | venc: `2025-05-06` | docs: `BOLV-81022 / BOLV-81022`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `42443,77` | venc: `2026-01-09` | docs: `BOLV-81022 / BOLV-81022`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S LONDRINA` | valor: `42253,5` | venc: `2025-10-10` | docs: `BOLC-280414 / BOLC-280414 / BOLC-280414 / BOLC-280414`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `42227,5` | venc: `2025-09-22` | docs: `BOLV-84603 / BOLV-84603`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `42227,5` | venc: `2026-01-09` | docs: `BOLV-84603 / BOLV-84603 / BOLV-84603 / BOLV-84603`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `42196,58` | venc: `2025-05-27` | docs: `BOLV-81482 / BOLV-81482`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `42196,58` | venc: `2025-09-12` | docs: `BOLV-81482 / BOLV-81482`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `42114,75` | venc: `2025-06-02` | docs: `BOLV-81649 / BOLV-81649`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `42114,75` | venc: `2025-09-12` | docs: `BOLV-81649 / BOLV-81649`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `41698,16` | venc: `2025-07-31` | docs: `BOLV-83080 / BOLV-83080`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `41698,16` | venc: `2025-09-12` | docs: `BOLV-83080 / BOLV-83080`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `41672,93` | venc: `2026-02-06` | docs: `BOLV-84713 / BOLV-84713`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `41583,73` | venc: `2025-09-10` | docs: `BOLV-84113 / BOLV-84113`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `41583,73` | venc: `2025-10-03` | docs: `BOLV-84113 / BOLV-84113`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `41398,1` | venc: `2025-09-27` | docs: `BOLV-84471 / BOLV-84471`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `41398,1` | venc: `2025-11-25` | docs: `BOLV-84471 / BOLV-84471`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `41116` | venc: `2026-02-18` | docs: `BOLC-293419 / BOLC-293419`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `41055` | venc: `2025-08-05` | docs: `BOLV-82373 / BOLV-82373`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `40924,8` | venc: `2025-08-18` | docs: `BOLV-82773 / BOLV-82773`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `40668,07` | venc: `2025-09-29` | docs: `BOLV-84863 / BOLV-84863 / BOLV-84863`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `40354,2` | venc: `2025-07-09` | docs: `BOLV-82670 / BOLV-82670`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `40250` | venc: `2025-06-18` | docs: `BOLC-274730 / BOLC-274730`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `40152,59` | venc: `2025-06-24` | docs: `BOLV-82298 / BOLV-82298`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `40152,59` | venc: `2025-09-12` | docs: `BOLV-82298 / BOLV-82298`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `39786,25` | venc: `2025-11-10` | docs: `BOLV-86002 / BOLV-86002`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `39775` | venc: `2025-06-20` | docs: `BOLC-274930 / BOLC-274930`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `39592,8` | venc: `2025-12-10` | docs: `BOLV-86664 / BOLV-86664`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `39307,98` | venc: `2025-10-13` | docs: `BOLV-85183 / BOLV-85183`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `39197,11` | venc: `2025-10-02` | docs: `BOLV-84496 / BOLV-84496`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `39197,11` | venc: `2025-11-25` | docs: `BOLV-84496 / BOLV-84496`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `39192` | venc: `2025-12-01` | docs: `BOLV-86378 / BOLV-86378`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S MARINGA` | valor: `39192` | venc: `2026-01-09` | docs: `BOLV-86378 / BOLV-86378 / BOLV-86378 / BOLV-86378`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `39069,94` | venc: `2025-06-27` | docs: `BOLV-82290 / BOLV-82290`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `39069,94` | venc: `2025-09-12` | docs: `BOLV-82290 / BOLV-82290`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `38904,44` | venc: `2025-12-04` | docs: `BOLV-86558 / BOLV-86558`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `38902,5` | venc: `2025-10-02` | docs: `BOLV-84563 / BOLV-84563`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `38902,5` | venc: `2026-01-09` | docs: `BOLV-84563 / BOLV-84563 / BOLV-84563 / BOLV-84563`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `38746,8` | venc: `2025-12-12` | docs: `BOLV-86724 / BOLV-86724`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `38486` | venc: `2025-10-16` | docs: `BOLC-281186 / BOLC-281186 / BOLC-281186`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `38441,11` | venc: `2025-11-13` | docs: `BOLV-86095 / BOLV-86095`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `38436,26` | venc: `2025-04-30` | docs: `BOLV-80945 / BOLV-80945`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `38436,26` | venc: `2025-12-09` | docs: `BOLV-80945 / BOLV-80945`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `38414,52` | venc: `2025-10-16` | docs: `BOLV-85004 / BOLV-85004`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `38414,52` | venc: `2025-11-25` | docs: `BOLV-85004 / BOLV-85004`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `38359` | venc: `2025-09-01` | docs: `BOLC-280644 / BOLC-280644`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `38323,8` | venc: `2025-08-21` | docs: `BOLV-83894 / BOLV-83894`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `38254,73` | venc: `2025-05-07` | docs: `BOLV-80931 / BOLV-80931`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `38254,73` | venc: `2025-12-09` | docs: `BOLV-80931 / BOLV-80931`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `38197,6` | venc: `2025-09-19` | docs: `BOLV-84547 / BOLV-84547`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `38197,6` | venc: `2026-01-09` | docs: `BOLV-84547 / BOLV-84547`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `37918,71` | venc: `2025-05-30` | docs: `BOLV-81495 / BOLV-81495`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `37872,6` | venc: `2025-07-30` | docs: `BOLV-83246 / BOLV-83246`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `37618,8` | venc: `2025-08-11` | docs: `BOLV-83572 / BOLV-83572`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `37439,22` | venc: `2025-09-05` | docs: `SALG3S10082025 / SALG3S10082025`
+  - cc: `1.1.10` conta: `7.3.1` (SALÁRIOS)
+  - cc: `1.1.10` conta: `7.3.1` (SALÁRIOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `37407,3` | venc: `2025-07-14` | docs: `BOLV-82453 / BOLV-82453`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `37329` | venc: `2025-12-01` | docs: `BOLV-86364 / BOLV-86364`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `37329` | venc: `2026-01-09` | docs: `BOLV-86364 / BOLV-86364`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `37296,8` | venc: `2025-12-15` | docs: `BOLC-282055 / BOLC-282055 / BOLC-282055`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `37270,24` | venc: `2025-06-02` | docs: `BOLV-81662 / BOLV-81662`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `37270,24` | venc: `2025-09-12` | docs: `BOLV-81662 / BOLV-81662`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `37020` | venc: `2025-05-30` | docs: `BOLC-270473 / BOLC-270473`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `36950,67` | venc: `2025-06-23` | docs: `BOLV-82144 / BOLV-82144`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `36950,67` | venc: `2026-01-09` | docs: `BOLV-82144 / BOLV-82144`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `36944,65` | venc: `2025-07-30` | docs: `BOLV-83020 / BOLV-83020`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `36944,65` | venc: `2025-09-12` | docs: `BOLV-83020 / BOLV-83020`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `36943,05` | venc: `2025-10-07` | docs: `BOLV-84200 / BOLV-84200`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S MARINGA` | valor: `36943,05` | venc: `2025-10-29` | docs: `BOLV-84200 / BOLV-84200 / BOLV-84200 / BOLV-84200`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `36855,05` | venc: `2025-06-02` | docs: `BOLV-81179 / BOLV-81179`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `36855,05` | venc: `2025-09-12` | docs: `BOLV-81179 / BOLV-81179`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `36803,75` | venc: `2025-05-02` | docs: `BOLV-80925 / BOLV-80925`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `36803,75` | venc: `2025-12-01` | docs: `BOLV-80925 / BOLV-80925`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `36375` | venc: `2025-06-26` | docs: `BOLC-275616 / BOLC-275616`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `36372,43` | venc: `2026-01-09` | docs: `BOLV-82354 / BOLV-82354`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `36283,35` | venc: `2025-06-16` | docs: `BOLV-81661 / BOLV-81661`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `36011,4` | venc: `2025-08-12` | docs: `BOLV-83620 / BOLV-83620`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `36003,1` | venc: `2025-09-19` | docs: `BOLV-84546 / BOLV-84546`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `36003,1` | venc: `2026-01-09` | docs: `BOLV-84546 / BOLV-84546`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `36000` | venc: `2025-07-31` | docs: `ADT00002596 / ADT00002596`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `35961,1` | venc: `2025-05-08` | docs: `BOLV-80997 / BOLV-80997`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `35895,35` | venc: `2026-01-16` | docs: `BOLV-87133 / BOLV-87133`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `35840` | venc: `2025-07-16` | docs: `BOLC-277108 / BOLC-277108`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `35764,84` | venc: `2025-06-24` | docs: `BOLV-81488 / BOLV-81488`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `35764,84` | venc: `2025-09-12` | docs: `BOLV-81488 / BOLV-81488`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `35571,2` | venc: `2025-06-27` | docs: `NFE-15511 / NFE-15511`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `35362,8` | venc: `2026-08-27` | docs: `BOLV-84018 / BOLV-84018`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `35245,48` | venc: `2026-01-27` | docs: `BOLV-87402 / BOLV-87402 / BOLV-87402`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `35200` | venc: `2025-06-12` | docs: `NFSE-7799 / NFSE-7799`
+  - cc: `1.2.4.6` conta: `8.1.5` (INSTALAÇÕES)
+  - cc: `1.2.4.6` conta: `8.1.5` (INSTALAÇÕES)
+- **2x** | filial: `G3S MARINGA` | valor: `35126` | venc: `2025-07-22` | docs: `BOLC-275449 / BOLC-275449`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `34900,57` | venc: `2025-07-24` | docs: `BOLV-82905 / BOLV-82905`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `34860,75` | venc: `2025-07-09` | docs: `BOLV-82401 / BOLV-82401`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `34620,75` | venc: `2026-01-16` | docs: `BOLV-87140 / BOLV-87140`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `34155` | venc: `2025-09-23` | docs: `BOLC-282640 / BOLC-282640`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S LONDRINA` | valor: `33973,5` | venc: `2026-02-11` | docs: `BOLC-290773 / BOLC-290773 / BOLC-290773 / BOLC-290773`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `33964,22` | venc: `2025-12-03` | docs: `BOLV-85924 / BOLV-85924`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `33936` | venc: `2025-11-06` | docs: `BOLC-283351 / BOLC-283351`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `33915,94` | venc: `2025-08-01` | docs: `BOLV-82934 / BOLV-82934`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `33696,53` | venc: `2025-05-21` | docs: `BOLV-81496 / BOLV-81496`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `33696,53` | venc: `2025-09-12` | docs: `BOLV-81496 / BOLV-81496`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `33649,88` | venc: `2025-05-26` | docs: `BOLV-81617 / BOLV-81617`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `33424,85` | venc: `2025-05-28` | docs: `BOLV-81534 / BOLV-81534`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S MARINGA` | valor: `33281,82` | venc: `2025-07-09` | docs: `BOLV-81946 / BOLV-81946 / BOLV-81946 / BOLV-81946`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `33222` | venc: `2025-12-17` | docs: `BOLC-287539 / BOLC-287539`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `32850` | venc: `2025-10-23` | docs: `BOLC-285206 / BOLC-285206`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **41x** | filial: `RSE` | valor: `32762,04` | venc: `2025-10-20` | docs: `00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015`
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.47` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.45` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.7` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.8` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.11` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.21` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.11` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.32` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.10` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.15` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.16` conta: `7.5.13` (SEGUROS)
+- **41x** | filial: `RSE` | valor: `32762,04` | venc: `2025-11-18` | docs: `00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015`
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.47` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.45` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.7` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.8` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.11` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.21` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.11` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.32` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.10` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.15` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.16` conta: `7.5.13` (SEGUROS)
+- **41x** | filial: `RSE` | valor: `32762,04` | venc: `2025-12-18` | docs: `00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015 / 00004015`
+  - cc: `1.7.1.14.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.9.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.3.1.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.2.5.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.47` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.6.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.1` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.4` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.7` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.8` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.11` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.12` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.21` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.1.9` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.5` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.11` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.32` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.7.10` conta: `7.5.13` (SEGUROS)
+  - cc: `1.6.3.45` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.3.5.6` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.13` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.14` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.16` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.6.15` conta: `7.5.13` (SEGUROS)
+- **2x** | filial: `G3S MARINGA` | valor: `32625` | venc: `2025-09-23` | docs: `BOLC-282598 / BOLC-282598`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `32591` | venc: `2025-11-28` | docs: `BOLC-288107 / BOLC-288107 / BOLC-288107`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `32549,6` | venc: `2025-09-22` | docs: `BOLC-281768 / BOLC-281768`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `32500` | venc: `2025-10-24` | docs: `BOLC-285323 / BOLC-285323`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `32376,52` | venc: `2025-09-02` | docs: `BOLV-83328 / BOLV-83328`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `32376,52` | venc: `2025-09-12` | docs: `BOLV-83328 / BOLV-83328`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `32300` | venc: `2025-07-30` | docs: `BOLV-82358 / BOLV-82358`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `32300` | venc: `2025-09-12` | docs: `BOLV-82358 / BOLV-82358`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `32119,11` | venc: `2025-12-03` | docs: `BOLV-85360 / BOLV-85360`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `32108,8` | venc: `2025-05-13` | docs: `BOLV-81321 / BOLV-81321`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `32016` | venc: `2025-09-11` | docs: `BOLC-280762 / BOLC-280762`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `32000` | venc: `2025-12-18` | docs: `NFE-9346 / NFE-9346`
+  - cc: `2.6.3` conta: `5.2.2` (VENDA DE MAQUINAS E EQUIPAMENTOS)
+  - cc: `2.6.3` conta: `5.2.2` (VENDA DE MAQUINAS E EQUIPAMENTOS)
+- **2x** | filial: `G3S LONDRINA` | valor: `31924` | venc: `2025-09-22` | docs: `BOLC-281987 / BOLC-281987`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `31752` | venc: `2025-08-12` | docs: `BOLC-279020 / BOLC-279020`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `31680,02` | venc: `2025-05-07` | docs: `BOLV-80965 / BOLV-80965`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `31680,02` | venc: `2025-08-26` | docs: `BOLV-80965 / BOLV-80965`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `31675` | venc: `2025-09-24` | docs: `BOLC-282704 / BOLC-282704`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `31666,4` | venc: `2025-08-29` | docs: `BOLC-280779 / BOLC-280779`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `31475` | venc: `2025-10-29` | docs: `BOLC-285693 / BOLC-285693`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `31464` | venc: `2025-09-22` | docs: `BOLC-281578 / BOLC-281578`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `31163,06` | venc: `2025-08-25` | docs: `BOLV-83155 / BOLV-83155`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `31163,06` | venc: `2025-09-12` | docs: `BOLV-83155 / BOLV-83155`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `31114,4` | venc: `2025-09-19` | docs: `BOLC-281673 / BOLC-281673`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `31110` | venc: `2025-07-14` | docs: `BOLC-275385 / BOLC-275385`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `31084,2` | venc: `2025-12-05` | docs: `BOLC-288728 / BOLC-288728`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `31077,6` | venc: `2025-09-15` | docs: `BOLC-282078 / BOLC-282078`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `31071,48` | venc: `2025-07-24` | docs: `BOLV-82920 / BOLV-82920 / BOLV-82920`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `31050` | venc: `2025-10-31` | docs: `BOLC-285947 / BOLC-285947`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `30903,5` | venc: `2025-04-28` | docs: `B-270840 / B-270840`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `30800` | venc: `2025-06-02` | docs: `BOLC-273716 / BOLC-273716 / BOLC-273716`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `30394` | venc: `2025-07-10` | docs: `BOLC-276769 / BOLC-276769`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `30250` | venc: `2025-10-24` | docs: `BOLC-285203 / BOLC-285203`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `30212` | venc: `2025-05-09` | docs: `BOLC-271848 / BOLC-271848`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `30050,14` | venc: `2025-06-11` | docs: `ALU VENC 10/05 E 10/06 / ALU VENC 10/05 E 10/06`
+  - cc: `1.2.7.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+  - cc: `1.2.7.2` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G3S LONDRINA` | valor: `29697,6` | venc: `2025-09-22` | docs: `BOLC-281906 / BOLC-281906`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `29668,5` | venc: `2025-09-11` | docs: `BOLV-84444 / BOLV-84444`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `29551,96` | venc: `2025-07-02` | docs: `BOLV-75843 / BOLV-75843`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `29551,96` | venc: `2025-07-03` | docs: `BOLV-75843 / BOLV-75843 / BOLV-75843 / BOLV-75843`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `29515,99` | venc: `2025-05-30` | docs: `BOLV-81548 / BOLV-81548`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `29475,6` | venc: `2026-02-24` | docs: `BOLV-88030 / BOLV-88030`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `29420` | venc: `2025-05-08` | docs: `B-271097 / B-271097 / B-271097`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `29320` | venc: `2025-12-05` | docs: `BOLC-286482 / BOLC-286482 / BOLC-286482`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `29296,8` | venc: `2025-06-02` | docs: `BOLV-81447 / BOLV-81447`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `29183,25` | venc: `2026-03-13` | docs: `BOLV-88685 / BOLV-88685`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `28938` | venc: `2025-10-22` | docs: `BOLC-281986 / BOLC-281986`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S DOURADOS` | valor: `28842` | venc: `2025-06-04` | docs: `BOLC-274068 / BOLC-274068 / BOLC-274068 / BOLC-274068`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `28842` | venc: `2025-06-05` | docs: `BOLC-274068 / BOLC-274068`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `28800` | venc: `2025-07-24` | docs: `BOLC-277552 / BOLC-277552`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `28575` | venc: `2025-12-11` | docs: `BOLC-286793 / BOLC-286793`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `28232` | venc: `2025-12-05` | docs: `BOLC-286543 / BOLC-286543`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `28075` | venc: `2025-06-09` | docs: `BOLC-274266 / BOLC-274266`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `27981,87` | venc: `2026-02-26` | docs: `BOLV-87878 / BOLV-87878`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `27950` | venc: `2025-10-24` | docs: `BOLC-285325 / BOLC-285325`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `27907,5` | venc: `2026-01-20` | docs: `BOLC-290445 / BOLC-290445 / BOLC-290445`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `27601,48` | venc: `2025-07-05` | docs: `BOLV-82389 / BOLV-82389`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `27471,27` | venc: `2025-05-28` | docs: `BOLV-81603 / BOLV-81603`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `27471,27` | venc: `2025-09-12` | docs: `BOLV-81603 / BOLV-81603`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `27454` | venc: `2026-03-19` | docs: `NFE-65058 / NFE-65058`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `27442,5` | venc: `2025-07-14` | docs: `BOLC-276660 / BOLC-276660`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `27384` | venc: `2026-02-25` | docs: `BOLC-293011 / BOLC-293011 / BOLC-293011`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `27370` | venc: `2025-05-02` | docs: `B-270828 / B-270828`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `27222,6` | venc: `2025-10-02` | docs: `BOLV-84682 / BOLV-84682`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `27049` | venc: `2025-10-29` | docs: `BOLC-285740 / BOLC-285740`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `26949` | venc: `2026-03-17` | docs: `BOLC-292754 / BOLC-292754`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `26856` | venc: `2025-09-03` | docs: `BOLC-280447 / BOLC-280447`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `26808` | venc: `2025-10-16` | docs: `BOLC-283248 / BOLC-283248`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `26576,5` | venc: `2025-10-17` | docs: `BOLC-284731 / BOLC-284731`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `26552` | venc: `2025-12-03` | docs: `BOLC-283629 / BOLC-283629 / BOLC-283629`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `26312` | venc: `2025-09-01` | docs: `BOLC-280622 / BOLC-280622`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `26296` | venc: `2026-03-04` | docs: `BOLC-293438 / BOLC-293438`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `26216` | venc: `2025-10-06` | docs: `BOLC-283092 / BOLC-283092`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `26200` | venc: `2025-08-26` | docs: `BOLC-280329 / BOLC-280329`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `26144` | venc: `2025-12-05` | docs: `BOLC-286676 / BOLC-286676 / BOLC-286676`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `26050` | venc: `2025-09-10` | docs: `BOLC-281614 / BOLC-281614`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `25894` | venc: `2025-05-26` | docs: `BOLC-273454 / BOLC-273454`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `25880` | venc: `2025-09-26` | docs: `BOLC-282879 / BOLC-282879`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `25777,5` | venc: `2026-01-14` | docs: `BOLC-290360 / BOLC-290360`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `25545` | venc: `2025-07-16` | docs: `BOLC-274734 / BOLC-274734 / BOLC-274734`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `25525` | venc: `2025-06-02` | docs: `BOLC-273899 / BOLC-273899`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `25517,33` | venc: `2025-05-26` | docs: `BOLV-80566 / BOLV-80566`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `25440` | venc: `2025-10-08` | docs: `BOLC-283559 / BOLC-283559`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `25298` | venc: `2025-06-16` | docs: `BOLC-273798 / BOLC-273798`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `25264,36` | venc: `2025-08-25` | docs: `BOLV-83154 / BOLV-83154`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `25264,36` | venc: `2025-09-12` | docs: `BOLV-83154 / BOLV-83154`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `25180,82` | venc: `2025-06-06` | docs: `BOLV-77495 / BOLV-77495`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **8x** | filial: `G3S LONDRINA` | valor: `25180,82` | venc: `2025-09-12` | docs: `BOLV-77495 / BOLV-77495 / BOLV-77495 / BOLV-77495 / BOLV-77495 / BOLV-77495 / BOLV-77495 / BOLV-77495`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `25175` | venc: `2025-10-27` | docs: `BOLC-285042 / BOLC-285042`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S MARINGA` | valor: `25125` | venc: `2025-08-27` | docs: `BOLC-280071 / BOLC-280071 / BOLC-280071 / BOLC-280071`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `25057,5` | venc: `2025-05-19` | docs: `BOLC-272601 / BOLC-272601`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `25035,38` | venc: `2025-07-09` | docs: `BOLV-82442 / BOLV-82442`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `24980` | venc: `2025-06-24` | docs: `BOLC-273874 / BOLC-273874 / BOLC-273874`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `24950,4` | venc: `2025-10-02` | docs: `BOLC-282001 / BOLC-282001`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `24930` | venc: `2025-05-19` | docs: `BOLC-272679 / BOLC-272679`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `24909` | venc: `2026-03-12` | docs: `BOLC-294948 / BOLC-294948`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `24855` | venc: `2025-05-19` | docs: `BOLC-272723 / BOLC-272723`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `24822` | venc: `2026-02-20` | docs: `ADT00008388 / ADT00008388 / ADT00008388`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `24822` | venc: `2026-03-05` | docs: `BOLC-293823 / BOLC-293823 / BOLC-293823`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `24800` | venc: `2025-05-26` | docs: `NFE-9181 / NFE-9181`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `24775` | venc: `2025-08-28` | docs: `BOLC-280555 / BOLC-280555 / BOLC-280555`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24740` | venc: `2025-06-09` | docs: `ADT00002274 / ADT00002274`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `24740` | venc: `2025-06-17` | docs: `BOLC-274422 / BOLC-274422`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `24586,37` | venc: `2025-09-15` | docs: `CC897120082025 / CC897120082025`
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `24586,37` | venc: `2025-10-15` | docs: `CC897120082025 / CC897120082025`
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `24586,37` | venc: `2025-11-15` | docs: `CC897120082025 / CC897120082025`
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `24586,37` | venc: `2025-12-15` | docs: `CC897120082025 / CC897120082025`
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G3S MARINGA` | valor: `24540` | venc: `2026-02-10` | docs: `BOLC-292598 / BOLC-292598 / BOLC-292598`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24507,38` | venc: `2025-05-15` | docs: `BOLV-81330 / BOLV-81330`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `24436,1` | venc: `2025-09-20` | docs: `BOLV-84397 / BOLV-84397`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `24436,1` | venc: `2025-11-07` | docs: `BOLV-84397 / BOLV-84397`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `24421,76` | venc: `2025-06-09` | docs: `BOLV-81598 / BOLV-81598`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24414` | venc: `2026-02-03` | docs: `BOLC-289471 / BOLC-289471`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24375` | venc: `2025-09-15` | docs: `BOLC-281749 / BOLC-281749`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24325` | venc: `2025-09-19` | docs: `BOLV-84334 / BOLV-84334`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24320,03` | venc: `2025-05-15` | docs: `B-269893 / B-269893`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `24312` | venc: `2025-08-14` | docs: `BOLC-277397 / BOLC-277397`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24264` | venc: `2025-11-07` | docs: `BOLC-286660 / BOLC-286660`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24224` | venc: `2026-02-26` | docs: `BOLC-292799 / BOLC-292799`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `24196` | venc: `2025-09-19` | docs: `BOLC-281599 / BOLC-281599`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `24180` | venc: `2026-01-13` | docs: `BOLC-290395 / BOLC-290395`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24173` | venc: `2026-02-03` | docs: `BOLC-291891 / BOLC-291891`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `24165,5` | venc: `2025-09-03` | docs: `BOLC-280086 / BOLC-280086`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `23970,89` | venc: `2025-06-20` | docs: `BOLV-82142 / BOLV-82142`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `23900` | venc: `2025-07-21` | docs: `BOLC-277433 / BOLC-277433`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `23890` | venc: `2025-05-05` | docs: `B-270838 / B-270838`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `23647,5` | venc: `2025-05-19` | docs: `BOLC-272643 / BOLC-272643`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `23576` | venc: `2025-12-04` | docs: `BOLC-285943 / BOLC-285943`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `23562` | venc: `2025-10-10` | docs: `BOLC-280415 / BOLC-280415 / BOLC-280415`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `23555,78` | venc: `2026-03-17` | docs: `BOLV-88374 / BOLV-88374`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `23541` | venc: `2025-06-16` | docs: `BOLC-273800 / BOLC-273800`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `23513` | venc: `2026-01-15` | docs: `BOLC-290464 / BOLC-290464`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `23503,5` | venc: `2025-09-30` | docs: `BOLC-282641 / BOLC-282641`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `23500` | venc: `2026-01-06` | docs: `0000X6924 / 0000X6924 / 0000X6924`
+  - cc: `1.1.14` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.3.1.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.5.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S LONDRINA` | valor: `23464` | venc: `2025-08-14` | docs: `BOLC-277365 / BOLC-277365`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `23460` | venc: `2025-10-02` | docs: `BOLC-281922 / BOLC-281922`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `23378` | venc: `2026-03-16` | docs: `BOLC-295394 / BOLC-295394`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `23374,62` | venc: `2025-06-20` | docs: `BOLV-82138 / BOLV-82138`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `23338` | venc: `2026-02-25` | docs: `BOLC-293188 / BOLC-293188 / BOLC-293188`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `23337,53` | venc: `2025-08-01` | docs: `BOLV-82898 / BOLV-82898`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `23324` | venc: `2025-10-16` | docs: `BOLC-283546 / BOLC-283546`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `23284,8` | venc: `2026-01-19` | docs: `BOLC-290810 / BOLC-290810 / BOLC-290810`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `23268` | venc: `2025-08-29` | docs: `BOLC-280737 / BOLC-280737 / BOLC-280737`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `23238` | venc: `2026-03-05` | docs: `BOLC-294090 / BOLC-294090`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `23225` | venc: `2025-10-31` | docs: `BOLC-285952 / BOLC-285952`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `23152` | venc: `2026-02-12` | docs: `BOLC-293253 / BOLC-293253 / BOLC-293253`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `23072` | venc: `2026-01-20` | docs: `BOLC-290555 / BOLC-290555`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `23023` | venc: `2026-02-12` | docs: `BOLC-291755 / BOLC-291755`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `22995` | venc: `2026-02-13` | docs: `ADT00008242 / ADT00008242`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `22995` | venc: `2026-02-20` | docs: `ADT00008358 / ADT00008358`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `22995` | venc: `2026-02-24` | docs: `BOLC-293393 / BOLC-293393 / BOLC-293748 / BOLC-293748`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `22862` | venc: `2025-12-12` | docs: `BOLC-289001 / BOLC-289001`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S MARINGA` | valor: `22810` | venc: `2025-05-09` | docs: `B-271135 / B-271135 / B-271135 / B-271135`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `22775` | venc: `2025-09-18` | docs: `BOLC-282109 / BOLC-282109`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `22722` | venc: `2026-01-14` | docs: `BOLC-290552 / BOLC-290552 / BOLC-290552`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S MARINGA` | valor: `22596` | venc: `2025-12-04` | docs: `BOLC-285993 / BOLC-285993 / BOLC-285993 / BOLC-285993`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `22575` | venc: `2025-07-30` | docs: `BOLC-275463 / BOLC-275463`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `22543,5` | venc: `2025-09-25` | docs: `BOLC-282417 / BOLC-282417`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `22527` | venc: `2026-03-04` | docs: `BOLC-293822 / BOLC-293822`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `22493` | venc: `2025-08-18` | docs: `BOLC-279541 / BOLC-279541`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `22400` | venc: `2025-07-15` | docs: `BOLC-276937 / BOLC-276937`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `22396,5` | venc: `2025-07-05` | docs: `BOLC-275257 / BOLC-275257`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `22320` | venc: `2025-09-30` | docs: `BOLC-283131 / BOLC-283131 / BOLC-283131`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `22195` | venc: `2025-12-12` | docs: `BOLC-289107 / BOLC-289107`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `22092` | venc: `2025-06-23` | docs: `BOLC-275149 / BOLC-275149 / BOLC-275149`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `22080` | venc: `2026-03-05` | docs: `BOLC-293070 / BOLC-293070`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `22057` | venc: `2026-02-02` | docs: `BOLC-291893 / BOLC-291893`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `22000` | venc: `2026-03-05` | docs: `ALUG28896 / ALUG28896`
+  - cc: `1.2.7.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+  - cc: `1.2.7.2` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `22000` | venc: `2026-02-05` | docs: `ALUGUEL-G3S01 / ALUGUEL-G3S01`
+  - cc: `1.2.7.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+  - cc: `1.2.7.2` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **10x** | filial: `G3S PRUDENTE` | valor: `22000` | venc: `2025-11-15` | docs: `RECIBO 54 / RECIBO 54 / RECIBO 54 / RECIBO 54 / RECIBO 54 / RECIBO 54 / RECIBO 54 / RECIBO 54 / RECIBO 54 / RECIBO 54`
+  - cc: `1.7.1.14.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.7.1.14.3` conta: `6.6.1` (FRETE DE TERCEIROS)
+  - cc: `1.2.5.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.5.3` conta: `6.6.1` (FRETE DE TERCEIROS)
+  - cc: `1.7.1.3.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.7.1.3.2` conta: `6.6.1` (FRETE DE TERCEIROS)
+  - cc: `1.7.1.8.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.7.1.8.2` conta: `6.6.1` (FRETE DE TERCEIROS)
+  - cc: `1.6.5` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.6.5` conta: `6.6.1` (FRETE DE TERCEIROS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `21940` | venc: `2025-06-02` | docs: `ADT00000860 / ADT00000860 / ADT00000860`
+  - cc: `2.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `21938,4` | venc: `2026-03-19` | docs: `ADT00009101 / ADT00009101`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `21880` | venc: `2025-06-24` | docs: `BOLC-273775 / BOLC-273775`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **10x** | filial: `G3S LONDRINA` | valor: `21868,08` | venc: `2026-01-29` | docs: `BOLC-284394 / BOLC-284394 / BOLC-284394 / BOLC-284394 / BOLC-284394 / BOLC-284394 / BOLC-284394 / BOLC-284394 / BOLC-284394 / BOLC-284394`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `21745,5` | venc: `2025-12-17` | docs: `BOLC-288423 / BOLC-288423`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `21736` | venc: `2025-08-14` | docs: `BOLC-277429 / BOLC-277429 / BOLC-277429`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `21645` | venc: `2026-01-22` | docs: `BOLC-290441 / BOLC-290441`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `21620` | venc: `2026-01-30` | docs: `BOLC-291633 / BOLC-291633`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `21555` | venc: `2026-02-10` | docs: `BOLC-292595 / BOLC-292595`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `21517,5` | venc: `2025-11-25` | docs: `BOLC-286870 / BOLC-286870 / BOLC-286870`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `21378` | venc: `2025-06-18` | docs: `BOLC-275078 / BOLC-275078`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `21344` | venc: `2026-01-29` | docs: `BOLC-291757 / BOLC-291757`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `21300,2` | venc: `2025-10-03` | docs: `BOLC-281524 / BOLC-281524 / BOLC-281524`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `21258` | venc: `2026-02-06` | docs: `BOLC-292452 / BOLC-292452`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `21120` | venc: `2025-10-15` | docs: `BOLC-284505 / BOLC-284505 / BOLC-284505`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `21105` | venc: `2025-11-11` | docs: `BOLC-286658 / BOLC-286658`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `21105` | venc: `2025-11-12` | docs: `BOLC-286658 / BOLC-286658 / BOLC-286658`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `21096` | venc: `2026-01-16` | docs: `BOLC-290738 / BOLC-290738 / BOLC-290738 / BOLC-290738`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `21064` | venc: `2025-08-07` | docs: `BOLC-278707 / BOLC-278707`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `21031,97` | venc: `2025-10-07` | docs: `BOLV-84212 / BOLV-84212`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `21031,97` | venc: `2025-10-29` | docs: `BOLV-84212 / BOLV-84212`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `21014,5` | venc: `2026-02-05` | docs: `BOLC-291760 / BOLC-291760`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `21014` | venc: `2025-12-08` | docs: `BOLC-287825 / BOLC-287825 / BOLC-287825`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `20995` | venc: `2026-02-10` | docs: `BOLC-291751 / BOLC-291751`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `20832,9` | venc: `2025-09-15` | docs: `NFE-71924 / NFE-71924`
+  - cc: `1.2.8.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.8.3` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S MARINGA` | valor: `20832,9` | venc: `2025-10-15` | docs: `NFE-71924 / NFE-71924`
+  - cc: `1.2.8.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.8.3` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S MARINGA` | valor: `20832,9` | venc: `2025-11-15` | docs: `NFE-71924 / NFE-71924`
+  - cc: `1.2.8.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.8.3` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `20691,62` | venc: `2025-10-31` | docs: `ADT-311025 / ADT-311025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S ADM` | valor: `20647,24` | venc: `2026-03-05` | docs: `NFSE-7 / NFSE-7 / NFSE-7 / NFSE-7 / NFSE-7 / NFSE-7`
+  - cc: `1.2.2.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.3.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.4.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.5.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.7.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.8.2` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S MARINGA` | valor: `20594` | venc: `2025-07-10` | docs: `BOLC-275712 / BOLC-275712`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `20516` | venc: `2026-01-29` | docs: `BOLC-291490 / BOLC-291490`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `20449` | venc: `2026-02-06` | docs: `BOLC-291890 / BOLC-291890 / BOLC-291890`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `20440` | venc: `2025-08-08` | docs: `BOLC-278994 / BOLC-278994 / BOLC-278994`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `20112` | venc: `2025-10-08` | docs: `BOLC-283666 / BOLC-283666`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `20065,5` | venc: `2025-12-08` | docs: `BOLC-288810 / BOLC-288810`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `19987` | venc: `2026-01-30` | docs: `BOLC-291101 / BOLC-291101`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `19983,6` | venc: `2025-12-08` | docs: `BOLC-288812 / BOLC-288812`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `19940` | venc: `2025-10-01` | docs: `BOLC-282004 / BOLC-282004 / BOLC-282004`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `19850` | venc: `2025-07-01` | docs: `BOLC-275647 / BOLC-275647`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `19777,5` | venc: `2025-05-19` | docs: `BOLC-272750 / BOLC-272750 / BOLC-272750`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `19410` | venc: `2025-05-15` | docs: `BOLC-271714 / BOLC-271714`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `19228` | venc: `2025-10-03` | docs: `BOLC-283520 / BOLC-283520`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S DOURADOS` | valor: `19128` | venc: `2025-09-24` | docs: `BOLC-282710 / BOLC-282710 / BOLC-282710 / BOLC-282710`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `18940` | venc: `2025-09-15` | docs: `BOLC-281913 / BOLC-281913 / BOLC-281913`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `18859,5` | venc: `2026-01-22` | docs: `CTE 433 / CTE 433`
+  - cc: `1.6.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.6.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **3x** | filial: `G3S DOURADOS` | valor: `18714` | venc: `2025-12-03` | docs: `BOLC-288484 / BOLC-288484 / BOLC-288484`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `18711` | venc: `2025-09-17` | docs: `BOLC-282195 / BOLC-282195`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `18700` | venc: `2025-08-12` | docs: `BOLV-83224 / BOLV-83224`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `18648` | venc: `2025-10-27` | docs: `BOLC-284481 / BOLC-284481`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `18608,8` | venc: `2026-01-09` | docs: `BOLV-81569 / BOLV-81569`
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.6.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `18352,05` | venc: `2025-10-29` | docs: `BOLC-285692 / BOLC-285692`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `18352,05` | venc: `2025-10-30` | docs: `BOLC-285692 / BOLC-285692`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `18128` | venc: `2026-01-30` | docs: `BOLC-291773 / BOLC-291773 / BOLC-291773`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `18060` | venc: `2025-06-26` | docs: `BOLC-275721 / BOLC-275721`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `17906` | venc: `2025-11-28` | docs: `BOLC-287069 / BOLC-287069`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `17836` | venc: `2025-10-16` | docs: `BOLC-283613 / BOLC-283613`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `17754` | venc: `2025-08-27` | docs: `BOLC-280446 / BOLC-280446`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `17750` | venc: `2025-06-04` | docs: `BOLC-274074 / BOLC-274074`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `17682` | venc: `2025-10-27` | docs: `BOLC-284143 / BOLC-284143`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `17654` | venc: `2025-05-28` | docs: `BOLC-272839 / BOLC-272839 / BOLC-272839`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `17560` | venc: `2025-08-11` | docs: `BOLC-277521 / BOLC-277521 / BOLC-277521`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `17483,91` | venc: `2026-01-09` | docs: `BOLV-82227 / BOLV-82227`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `17457` | venc: `2025-10-03` | docs: `BOLC-283444 / BOLC-283444`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `17444` | venc: `2026-02-12` | docs: `ADT00008205 / ADT00008205`
+  - cc: `1.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `17442` | venc: `2025-09-19` | docs: `BOLC-282318 / BOLC-282318`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `17435` | venc: `2025-10-27` | docs: `BOLC-285329 / BOLC-285329`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `17397,27` | venc: `2025-08-14` | docs: `NFSE-49 / NFSE-49`
+  - cc: `1.6.3.29` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.29` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `17312` | venc: `2026-02-18` | docs: `BOLC-293275 / BOLC-293275`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `17288` | venc: `2025-07-11` | docs: `BOLC-276671 / BOLC-276671`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `17206` | venc: `2025-06-26` | docs: `BOLC-275520 / BOLC-275520`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `17167,5` | venc: `2025-09-19` | docs: `BOLV-84328 / BOLV-84328`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `17080` | venc: `2025-08-25` | docs: `BOLC-279710 / BOLC-279710`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `17031,31` | venc: `2025-10-05` | docs: `NFE-578057 / NFE-578057`
+  - cc: `1.6.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `16982` | venc: `2025-06-05` | docs: `BOLC-274070 / BOLC-274070`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `16937,5` | venc: `2025-09-25` | docs: `BOLC-282555 / BOLC-282555`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `16920` | venc: `2026-02-06` | docs: `BOLC-292255 / BOLC-292255`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `16896` | venc: `2025-09-04` | docs: `BOLC-281113 / BOLC-281113`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `16824,5` | venc: `2025-11-26` | docs: `BOLC-287980 / BOLC-287980 / BOLC-287980`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `16530` | venc: `2025-07-29` | docs: `B-271142 / B-271142`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `16368` | venc: `2026-02-25` | docs: `BOLC-292882 / BOLC-292882`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `16268` | venc: `2026-01-14` | docs: `BOLC-290474 / BOLC-290474`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `16048` | venc: `2025-10-27` | docs: `BOLC-285330 / BOLC-285330`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `15960` | venc: `2025-10-14` | docs: `BOLC-284169 / BOLC-284169`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `15931,5` | venc: `2025-11-12` | docs: `BOLC-286915 / BOLC-286915`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15853` | venc: `2025-06-06` | docs: `BOLC-274165 / BOLC-274165`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `15768` | venc: `2025-06-02` | docs: `BOLC-273051 / BOLC-273051`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15729` | venc: `2026-02-12` | docs: `BOLC-293028 / BOLC-293028`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `15700` | venc: `2025-09-10` | docs: `BOLC-281616 / BOLC-281616`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15651` | venc: `2025-10-20` | docs: `BOLC-284862 / BOLC-284862`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `15625` | venc: `2025-09-29` | docs: `BOLC-282813 / BOLC-282813`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15544` | venc: `2025-06-06` | docs: `BOLC-274163 / BOLC-274163`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15538` | venc: `2026-02-06` | docs: `OC28090 / OC28090`
+  - cc: `1.2.2.1` conta: `7.6.5` (IPTU PATIO)
+  - cc: `1.2.2.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G3S MARINGA` | valor: `15475` | venc: `2025-10-22` | docs: `BOLC-285088 / BOLC-285088`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15444` | venc: `2025-06-20` | docs: `BOLC-275129 / BOLC-275129`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15331` | venc: `2025-12-08` | docs: `BOLC-288645 / BOLC-288645`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `15312` | venc: `2025-09-04` | docs: `BOLC-281126 / BOLC-281126 / BOLC-281126`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `15291` | venc: `2025-06-02` | docs: `BOLC-272990 / BOLC-272990`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15257` | venc: `2025-08-22` | docs: `BOLC-279972 / BOLC-279972`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15235` | venc: `2025-05-26` | docs: `BOLC-273417 / BOLC-273417`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15193` | venc: `2025-07-21` | docs: `BOLC-277318 / BOLC-277318`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15191` | venc: `2025-11-25` | docs: `BOLC-287678 / BOLC-287678`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `15175,62` | venc: `2025-12-24` | docs: `PISCOFINS112025RSE / PISCOFINS112025RSE`
+  - cc: `1.6.1` conta: `7.4.1` (PIS)
+  - cc: `1.6.1` conta: `7.4.2` (COFINS)
+- **2x** | filial: `G3S DOURADOS` | valor: `15120` | venc: `2025-07-12` | docs: `BOLV-81282 / BOLV-81282`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `15110` | venc: `2025-06-26` | docs: `BOLC-275624 / BOLC-275624`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `15101,27` | venc: `2026-01-23` | docs: `PISCOFINS122025RSE / PISCOFINS122025RSE`
+  - cc: `1.6.1` conta: `7.4.1` (PIS)
+  - cc: `1.6.1` conta: `7.4.2` (COFINS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `15039` | venc: `2025-11-04` | docs: `BOLC-286090 / BOLC-286090`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `15025,07` | venc: `2025-12-10` | docs: `ALUG27013 / ALUG27013`
+  - cc: `1.2.7.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+  - cc: `1.2.7.2` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **3x** | filial: `G3S DOURADOS` | valor: `14850` | venc: `2025-05-28` | docs: `BOLC-273619 / BOLC-273619 / BOLC-273619`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S DOURADOS` | valor: `14850` | venc: `2025-12-17` | docs: `BOLC-289565 / BOLC-289565 / BOLC-289565 / BOLC-289565`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S DOURADOS` | valor: `14817` | venc: `2026-01-16` | docs: `BOLC-290558 / BOLC-290558 / BOLC-290558 / BOLC-290558`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **32x** | filial: `G3S DOURADOS` | valor: `14740` | venc: `2025-07-08` | docs: `BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017 / BOLC-276017`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `14692,8` | venc: `2026-03-05` | docs: `NFSE-35 / NFSE-35 / NFSE-35 / NFSE-35 / NFSE-35 / NFSE-35`
+  - cc: `1.2.2.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.3.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.4.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.5.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.7.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.8.1` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S DOURADOS` | valor: `14648` | venc: `2025-10-17` | docs: `BOLC-284619 / BOLC-284619`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `14580` | venc: `2025-04-25` | docs: `B-270938 / B-270938`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `14570` | venc: `2025-09-10` | docs: `BOLC-281479 / BOLC-281479`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `14568` | venc: `2025-08-07` | docs: `BOLC-278724 / BOLC-278724`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `14558,4` | venc: `2025-11-25` | docs: `PISCOFINS102025RSE / PISCOFINS102025RSE`
+  - cc: `1.6.1` conta: `7.4.1` (PIS)
+  - cc: `1.6.1` conta: `7.4.2` (COFINS)
+- **2x** | filial: `G3S DOURADOS` | valor: `14459` | venc: `2025-11-03` | docs: `BOLC-286089 / BOLC-286089`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `14399` | venc: `2025-06-23` | docs: `BOLC-275162 / BOLC-275162`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `14306` | venc: `2025-02-12` | docs: `B-264307 / B-264307`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `14301,45` | venc: `2026-03-25` | docs: `PISCOFINS022026RSE / PISCOFINS022026RSE`
+  - cc: `1.6.1` conta: `7.4.1` (PIS)
+  - cc: `1.6.1` conta: `7.4.2` (COFINS)
+- **2x** | filial: `G3S DOURADOS` | valor: `14204,5` | venc: `2026-02-18` | docs: `BOLC-292355 / BOLC-292355`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `14164,45` | venc: `2026-03-30` | docs: `FINANCVOLVO07/58 / FINANCVOLVO07/58`
+  - cc: `1.6.1` conta: `7.5.23` (JUROS E MULTAS)
+  - cc: `1.6.1` conta: `7.11.7` (EMPRESTIMOS)
+- **5x** | filial: `G3S PRUDENTE` | valor: `14125` | venc: `2025-12-15` | docs: `RECIBO 60 / RECIBO 60 / RECIBO 60 / RECIBO 60 / RECIBO 60`
+  - cc: `1.2.1.8.1` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.5.3` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.3.1.2` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.3.1.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.6.5` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+- **2x** | filial: `RSE` | valor: `14002,54` | venc: `2026-02-25` | docs: `PISCOFINS012026RSE / PISCOFINS012026RSE`
+  - cc: `1.6.1` conta: `7.4.1` (PIS)
+  - cc: `1.6.1` conta: `7.4.2` (COFINS)
+- **2x** | filial: `G3S MARINGA` | valor: `13898,5` | venc: `2025-10-09` | docs: `BOLC-284046 / BOLC-284046`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `13897,5` | venc: `2025-10-13` | docs: `BOLV-85182 / BOLV-85182`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `13897,37` | venc: `2025-07-04` | docs: `NFE-568986 / NFE-568986`
+  - cc: `1.7.1.8.3` conta: `7.1.13` (TAXA 1° REGISTRO VEICULO)
+  - cc: `1.2.5.7.7` conta: `7.1.13` (TAXA 1° REGISTRO VEICULO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `13828,5` | venc: `2025-09-17` | docs: `BOLC-281871 / BOLC-281871`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `13695` | venc: `2026-02-24` | docs: `BOLC-293793 / BOLC-293793`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `13689,6` | venc: `2025-09-22` | docs: `BOLC-281635 / BOLC-281635`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `13618` | venc: `2026-02-20` | docs: `BOLC-293599 / BOLC-293599`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `13500` | venc: `2026-03-05` | docs: `NFSE-10 / NFSE-10 / NFSE-10 / NFSE-10 / NFSE-10 / NFSE-10`
+  - cc: `1.2.2.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.3.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.4.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.5.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.7.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.8.2` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S MARINGA` | valor: `13475` | venc: `2025-09-12` | docs: `BOLC-281879 / BOLC-281879`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `13469` | venc: `2025-07-16` | docs: `BOLC-277012 / BOLC-277012`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `13342,5` | venc: `2025-06-27` | docs: `BOLC-274968 / BOLC-274968`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `13332` | venc: `2025-08-25` | docs: `BOLC-280210 / BOLC-280210`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `13209` | venc: `2025-12-15` | docs: `BOLC-289125 / BOLC-289125`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `13181` | venc: `2025-07-08` | docs: `BOLC-275807 / BOLC-275807`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `13180` | venc: `2025-05-30` | docs: `BOLC-273704 / BOLC-273704`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `13140` | venc: `2025-09-05` | docs: `BOLC-281002 / BOLC-281002`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `13020` | venc: `2025-06-06` | docs: `BOLC-273992 / BOLC-273992 / BOLC-273992`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `13000` | venc: `2026-01-29` | docs: `BOLV-87453 / BOLV-87453`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `12978` | venc: `2025-10-15` | docs: `CTE-434 / CTE-434`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `12900` | venc: `2026-01-26` | docs: `NFE-1829 / NFE-1829`
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `12900` | venc: `2026-02-05` | docs: `NFE-1829 / NFE-1829`
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `12900` | venc: `2026-02-25` | docs: `NFE-1829 / NFE-1829`
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `12900` | venc: `2026-03-15` | docs: `NFE-1829 / NFE-1829`
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `12880` | venc: `2025-07-04` | docs: `BOLC-276137 / BOLC-276137`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `12796,5` | venc: `2025-05-20` | docs: `B-271069 / B-271069`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `12654` | venc: `2025-10-27` | docs: `BOLC-285228 / BOLC-285228 / BOLC-285228`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12636` | venc: `2025-08-13` | docs: `BOLC-279224 / BOLC-279224`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12595` | venc: `2026-03-09` | docs: `BOLC-294837 / BOLC-294837`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12496` | venc: `2025-11-14` | docs: `BOLC-287024 / BOLC-287024`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `12478,62` | venc: `2025-11-07` | docs: `BOLV-77583 / BOLV-77583`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `12450` | venc: `2025-10-22` | docs: `BOLC-285089 / BOLC-285089`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12374` | venc: `2025-05-29` | docs: `BOLC-272859 / BOLC-272859`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12352` | venc: `2025-12-11` | docs: `BOLC-288917 / BOLC-288917`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12276` | venc: `2025-06-16` | docs: `BOLC-274823 / BOLC-274823`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12270` | venc: `2025-07-31` | docs: `BOLC-278218 / BOLC-278218`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `12198` | venc: `2025-08-14` | docs: `BOLC-279332 / BOLC-279332`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S ADM` | valor: `12188,65` | venc: `2026-01-26` | docs: `SEMPARARG3S10012026 / SEMPARARG3S10012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **9x** | filial: `G3S PRUDENTE` | valor: `12168,8` | venc: `2026-03-02` | docs: `JRCGG3S04020326 / JRCGG3S04020326 / JRCGG3S04020326 / JRCGG3S04020326 / JRCGG3S04020326 / JRCGG3S04020326 / JRCGG3S04020326 / JRCGG3S04020326 / JRCGG3S04020326`
+  - cc: `1.2.2.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.3.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.4.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.5.1` conta: `7.4.8` (IOF)
+  - cc: `1.3.1.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.7.1` conta: `7.4.8` (IOF)
+  - cc: `1.6.1` conta: `7.4.8` (IOF)
+  - cc: `1.7.2.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.8.1` conta: `7.4.8` (IOF)
+- **3x** | filial: `G3S CIDADE ALTA` | valor: `12150` | venc: `2025-09-25` | docs: `BOLC-282544 / BOLC-282544 / BOLC-282544`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `12089` | venc: `2025-09-25` | docs: `BOLC-282807 / BOLC-282807`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12081` | venc: `2025-09-01` | docs: `BOLC-280665 / BOLC-280665`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12056` | venc: `2026-02-04` | docs: `BOLC-291899 / BOLC-291899`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `12040,7` | venc: `2025-10-15` | docs: `NFSE-3250 / NFSE-3250`
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **2x** | filial: `G3S DOURADOS` | valor: `12032` | venc: `2025-09-18` | docs: `BOLC-282419 / BOLC-282419`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `12023` | venc: `2026-03-04` | docs: `BOLC-294538 / BOLC-294538`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `12000` | venc: `2025-07-21` | docs: `BOLV-82955 / BOLV-82955`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `11897,53` | venc: `2025-06-10` | docs: `ADTO10062025 / ADTO10062025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S LONDRINA` | valor: `11880` | venc: `2025-07-28` | docs: `ADT00002524 / ADT00002524 / BOLC-277859 / BOLC-277859`
+  - cc: `1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `11858` | venc: `2025-10-14` | docs: `BOLC-278274 / BOLC-278274`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `11844` | venc: `2025-06-04` | docs: `BOLC-273996 / BOLC-273996`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S LONDRINA` | valor: `11802` | venc: `2025-08-26` | docs: `ADT00003163 / ADT00003163 / BOLC-280286 / BOLC-280286`
+  - cc: `1.12.1.1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1.12.1.1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `11748` | venc: `2025-06-12` | docs: `BOLC-274605 / BOLC-274605`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `11734,8` | venc: `2025-11-22` | docs: `NFE-63229 / NFE-63229`
+  - cc: `1.2.5.2` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.6.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `11697` | venc: `2025-08-14` | docs: `BOLC-279368 / BOLC-279368`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `11620,6` | venc: `2025-07-01` | docs: `BOLC-275875 / BOLC-275875`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **8x** | filial: `G3S PRUDENTE` | valor: `11480` | venc: `2026-03-02` | docs: `IOF032026 / IOF032026 / IOF032026 / IOF032026 / IOF032026 / IOF032026 / IOF032026 / IOF032026`
+  - cc: `1.2.2.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.3.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.4.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.5.1` conta: `7.4.8` (IOF)
+  - cc: `1.3.1.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.7.1` conta: `7.4.8` (IOF)
+  - cc: `1.6.1` conta: `7.4.8` (IOF)
+  - cc: `1.2.8.1` conta: `7.4.8` (IOF)
+- **2x** | filial: `G3S DOURADOS` | valor: `11438` | venc: `2026-02-09` | docs: `BOLC-292611 / BOLC-292611`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `11437` | venc: `2025-05-16` | docs: `BOLC-272824 / BOLC-272824`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `11400` | venc: `2025-10-27` | docs: `BOLC-285455 / BOLC-285455`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `11319` | venc: `2025-08-13` | docs: `BOLC-278999 / BOLC-278999`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `11245,5` | venc: `2025-05-14` | docs: `BOLC-272568 / BOLC-272568`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `11136` | venc: `2025-08-07` | docs: `CTE-189 / CTE-189`
+  - cc: `1.2.7.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.7.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **3x** | filial: `G3S LONDRINA` | valor: `11037` | venc: `2025-05-27` | docs: `BOLC-272952 / BOLC-272952 / BOLC-272952`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `11020` | venc: `2025-10-07` | docs: `BOLC-283798 / BOLC-283798`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `11010` | venc: `2025-06-27` | docs: `BOLC-274674 / BOLC-274674`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `10945` | venc: `2025-09-09` | docs: `BOLC-281529 / BOLC-281529`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `10892,3` | venc: `2025-12-15` | docs: `RECIBO 58 / RECIBO 58 / RECIBO 58 / RECIBO 58`
+  - cc: `1.3.1.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.3.1.3` conta: `6.6.1` (FRETE DE TERCEIROS)
+  - cc: `1.6.5` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.6.5` conta: `6.6.1` (FRETE DE TERCEIROS)
+- **2x** | filial: `G3S DOURADOS` | valor: `10887,5` | venc: `2025-08-19` | docs: `BOLC-278851 / BOLC-278851`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `10838` | venc: `2025-09-03` | docs: `BOLC-280933 / BOLC-280933`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `10835` | venc: `2025-09-25` | docs: `BOLC-282789 / BOLC-282789`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `10810` | venc: `2025-07-22` | docs: `BOLC-277617 / BOLC-277617`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10792` | venc: `2025-08-05` | docs: `BOLC-278649 / BOLC-278649`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `10660` | venc: `2025-06-23` | docs: `BOLV-82297 / BOLV-82297`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `10647` | venc: `2025-11-25` | docs: `BOLC-287724 / BOLC-287724`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `10626` | venc: `2025-09-05` | docs: `BOLC-281148 / BOLC-281148`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10625` | venc: `2025-09-05` | docs: `BOLC-281225 / BOLC-281225`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10577,21` | venc: `2025-11-11` | docs: `00005553 / 00005553`
+  - cc: `2.2.5.1` conta: `5.4.11` (RECEITAS DIVERSAS)
+  - cc: `2.2.5.1` conta: `5.4.11` (RECEITAS DIVERSAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10567,5` | venc: `2025-11-28` | docs: `BOLC-288213 / BOLC-288213`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `10526` | venc: `2025-09-01` | docs: `BOLC-280804 / BOLC-280804`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `10514,57` | venc: `2026-02-15` | docs: `NFSE-101 / NFSE-101 / NFSE-101 / NFSE-101 / NFSE-101 / NFSE-101 / NFSE-101 / NFSE-101 / NFSE-101 / NFSE-101`
+  - cc: `1.2.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.3.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.4.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.3.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.5.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.4.1.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.7.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **10x** | filial: `G3S PRUDENTE` | valor: `10514,57` | venc: `2026-03-15` | docs: `NFSE-187 / NFSE-187 / NFSE-187 / NFSE-187 / NFSE-187 / NFSE-187 / NFSE-187 / NFSE-187 / NFSE-187 / NFSE-187`
+  - cc: `1.2.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.3.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.4.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.3.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.5.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.4.1.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.7.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **10x** | filial: `G3S PRUDENTE` | valor: `10514,57` | venc: `2025-12-15` | docs: `NFSE-3371 / NFSE-3371 / NFSE-3371 / NFSE-3371 / NFSE-3371 / NFSE-3371 / NFSE-3371 / NFSE-3371 / NFSE-3371 / NFSE-3371`
+  - cc: `1.2.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.3.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.4.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.3.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.5.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.4.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.7.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **2x** | filial: `G3S DOURADOS` | valor: `10468` | venc: `2025-10-06` | docs: `BOLC-283563 / BOLC-283563`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `10430,92` | venc: `2025-06-10` | docs: `ADT10062025 / ADT10062025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `10419,07` | venc: `2025-05-31` | docs: `CF742931052025 / CF742931052025 / CF742931052025 / CF742931052025`
+  - cc: `1.7.1.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10350` | venc: `2025-09-24` | docs: `BOLV-84761 / BOLV-84761`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `10335` | venc: `2025-09-29` | docs: `CTE-84 / CTE-84`
+  - cc: `1.2.4.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.4.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S DOURADOS` | valor: `10266` | venc: `2025-08-18` | docs: `BOLC-279582 / BOLC-279582`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10235,3` | venc: `2026-02-24` | docs: `BOLC-292887 / BOLC-292887`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10210,45` | venc: `2026-01-25` | docs: `CTE-737 / CTE-737`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **3x** | filial: `G&S PRUDENTE` | valor: `10199,64` | venc: `2025-11-15` | docs: `00006004 / 00006004 / 00006004`
+  - cc: `1.7.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.2.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **3x** | filial: `G3S MARINGA` | valor: `10179` | venc: `2025-10-09` | docs: `BOLC-283796 / BOLC-283796 / BOLC-283796`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `10123,5` | venc: `2025-08-06` | docs: `BOLC-277646 / BOLC-277646`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `10087` | venc: `2025-07-28` | docs: `BOLC-277851 / BOLC-277851`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `10044` | venc: `2025-09-26` | docs: `NFE-43112 / NFE-43112`
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `10044` | venc: `2025-10-10` | docs: `NFE-43112 / NFE-43112`
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10001` | venc: `2025-09-16` | docs: `BOLC-281828 / BOLC-281828`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10000,01` | venc: `2025-10-02` | docs: `BOLV-84969 / BOLV-84969`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10000` | venc: `2025-09-29` | docs: `BOLV-84869 / BOLV-84869`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `10000` | venc: `2025-07-04` | docs: `NFSE-94 / NFSE-94`
+  - cc: `1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.4.6` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S MARINGA` | valor: `9828` | venc: `2025-07-16` | docs: `BOLC-275150 / BOLC-275150`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **7x** | filial: `G3S PRUDENTE` | valor: `9801,2` | venc: `2025-08-04` | docs: `ADT-O04082025 / ADT-O04082025 / ADT-O04082025 / ADT-O04082025 / ADT-O04082025 / ADT-O04082025 / ADT-O04082025`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `9735,6` | venc: `2025-11-22` | docs: `NFE-63228 / NFE-63228`
+  - cc: `1.2.5.2` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.6.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `9734` | venc: `2025-06-20` | docs: `BOLC-275042 / BOLC-275042`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `9606,6` | venc: `2025-10-15` | docs: `CTE-427 / CTE-427`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `9601,55` | venc: `2025-10-06` | docs: `CTE-321 / CTE-321`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `9581` | venc: `2025-08-08` | docs: `BOLC-278928 / BOLC-278928 / BOLC-278928`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `9480` | venc: `2025-09-11` | docs: `BOLC-281722 / BOLC-281722`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `9460,5` | venc: `2025-11-03` | docs: `BOLC-286101 / BOLC-286101`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `9460` | venc: `2025-09-08` | docs: `BOLC-281386 / BOLC-281386`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `9360` | venc: `2025-08-01` | docs: `BOLC-278404 / BOLC-278404`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `9345` | venc: `2025-10-31` | docs: `BOLC-285959 / BOLC-285959`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `9345` | venc: `2025-11-17` | docs: `BOLC-287231 / BOLC-287231`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `9343,8` | venc: `2025-05-14` | docs: `BOLC-272538 / BOLC-272538`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `9321` | venc: `2025-11-03` | docs: `BOLC-285955 / BOLC-285955`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `9315` | venc: `2025-06-05` | docs: `BOLC-272019 / BOLC-272019`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `9281,5` | venc: `2025-11-07` | docs: `BOLC-286546 / BOLC-286546`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `9205` | venc: `2025-06-13` | docs: `BOLC-274764 / BOLC-274764 / BOLC-274764`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `9166` | venc: `2025-09-17` | docs: `BOLC-282110 / BOLC-282110`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `9162,5` | venc: `2025-06-18` | docs: `BOLC-274743 / BOLC-274743`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `9155` | venc: `2025-09-29` | docs: `BOLC-282944 / BOLC-282944`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `9152` | venc: `2026-02-23` | docs: `BOLC-293831 / BOLC-293831`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `9118,29` | venc: `2025-11-19` | docs: `RETFED102025G&S / RETFED102025G&S`
+  - cc: `1.2.5.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `RSE` | valor: `9074,7` | venc: `2025-10-15` | docs: `CTE-430 / CTE-430`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S MARINGA` | valor: `9042` | venc: `2025-09-03` | docs: `BOLC-281027 / BOLC-281027`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `9007,2` | venc: `2025-10-15` | docs: `CTE-431 / CTE-431`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `9000` | venc: `2025-10-27` | docs: `NFSE-76 / NFSE-76`
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S ADM` | valor: `8990,58` | venc: `2026-03-05` | docs: `NFSE-9 / NFSE-9 / NFSE-9 / NFSE-9 / NFSE-9 / NFSE-9`
+  - cc: `1.2.2.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.3.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.4.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.5.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.7.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.8.1` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8960` | venc: `2025-11-15` | docs: `NFE-63067 / NFE-63067`
+  - cc: `1.2.5.2` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.6.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8941,1` | venc: `2025-10-03` | docs: `CTE-85 / CTE-85`
+  - cc: `1.2.4.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.4.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8920` | venc: `2025-06-10` | docs: `BOLC-273985 / BOLC-273985`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8904` | venc: `2025-05-30` | docs: `BOLC-270670 / BOLC-270670`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8901,5` | venc: `2025-10-06` | docs: `BOLC-283619 / BOLC-283619`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8901,5` | venc: `2025-11-03` | docs: `BOLC-286092 / BOLC-286092`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8854` | venc: `2025-11-11` | docs: `BOLC-286795 / BOLC-286795`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8851,5` | venc: `2025-09-16` | docs: `BOLC-282111 / BOLC-282111`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `8847` | venc: `2025-11-26` | docs: `BOLC-287814 / BOLC-287814`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **33x** | filial: `G&S PRUDENTE` | valor: `8827,88` | venc: `2025-08-15` | docs: `NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199 / NFSE-251736199`
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.11` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.14.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.45` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.14` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `8800` | venc: `2025-08-12` | docs: `BOLC-279232 / BOLC-279232`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8797` | venc: `2025-11-14` | docs: `BOLC-287121 / BOLC-287121`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8778` | venc: `2025-08-27` | docs: `BOLC-280485 / BOLC-280485`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `8766,9` | venc: `2025-10-15` | docs: `CTE-426 / CTE-426`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S LONDRINA` | valor: `8756,8` | venc: `2025-11-25` | docs: `CTE-103 / CTE-103`
+  - cc: `1.2.3.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.5.1.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `RSE` | valor: `8640` | venc: `2025-10-15` | docs: `CTE-435 / CTE-435`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `8627,23` | venc: `2025-06-10` | docs: `ADT10062025 / ADT10062025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S ADM` | valor: `8623,12` | venc: `2025-08-05` | docs: `NFSE-1 / NFSE-1`
+  - cc: `1.2.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S ADM` | valor: `8623,12` | venc: `2025-09-05` | docs: `NFSE-2 / NFSE-2`
+  - cc: `1.2.1.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S ADM` | valor: `8623,12` | venc: `2025-10-03` | docs: `NFSE-3 / NFSE-3`
+  - cc: `1.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.1.1` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S ADM` | valor: `8623,12` | venc: `2025-11-05` | docs: `NFSE-4 / NFSE-4`
+  - cc: `1.2.1.1` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S ADM` | valor: `8623,12` | venc: `2025-12-05` | docs: `NFSE-5 / NFSE-5`
+  - cc: `1.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.1.1` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S ADM` | valor: `8623,12` | venc: `2025-12-10` | docs: `NFSE-6 / NFSE-6`
+  - cc: `1.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.1.1` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S ADM` | valor: `8623,12` | venc: `2026-01-05` | docs: `NFSE-7 / NFSE-7`
+  - cc: `1.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.1.1` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S ADM` | valor: `8623,12` | venc: `2026-02-05` | docs: `NFSE-8 / NFSE-8`
+  - cc: `1.1.3` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.1.1` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S DOURADOS` | valor: `8601` | venc: `2025-09-08` | docs: `BOLC-281260 / BOLC-281260`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `8600,5` | venc: `2026-02-15` | docs: `NFSE-112 / NFSE-112 / NFSE-112 / NFSE-112 / NFSE-112 / NFSE-112 / NFSE-112 / NFSE-112 / NFSE-112 / NFSE-112`
+  - cc: `1.2.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.3.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.4.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.3.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.5.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.4.1.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.7.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **10x** | filial: `G3S PRUDENTE` | valor: `8600,5` | venc: `2026-03-15` | docs: `NFSE-189 / NFSE-189 / NFSE-189 / NFSE-189 / NFSE-189 / NFSE-189 / NFSE-189 / NFSE-189 / NFSE-189 / NFSE-189`
+  - cc: `1.2.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.3.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.4.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.3.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.5.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.4.1.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.7.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **2x** | filial: `G3S DOURADOS` | valor: `8549` | venc: `2025-12-01` | docs: `BOLC-288255 / BOLC-288255`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `BRACOFER` | valor: `8500` | venc: `2025-12-05` | docs: `SALCOMPLG3S05112025 / SALCOMPLG3S05112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `8494,5` | venc: `2025-09-15` | docs: `BOLC-282010 / BOLC-282010`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `8456` | venc: `2026-01-19` | docs: `BOLC-290751 / BOLC-290751`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `8445,6` | venc: `2025-09-08` | docs: `CTE-23 / CTE-23`
+  - cc: `1.2.7.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.7.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S MARINGA` | valor: `8420` | venc: `2025-05-27` | docs: `BOLC-273549 / BOLC-273549`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `8395,07` | venc: `2025-11-24` | docs: `RKM241125 / RKM241125 / RKM241125`
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.5.26` (DESPESAS SOCIAIS E DOAÇÕES)
+  - cc: `1.7.2.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8360` | venc: `2026-01-22` | docs: `BOLC-291074 / BOLC-291074`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8329,15` | venc: `2026-01-05` | docs: `NFSE-1 / NFSE-1`
+  - cc: `1.2.5.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.5.2` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S MARINGA` | valor: `8316` | venc: `2025-08-18` | docs: `BOLC-279671 / BOLC-279671`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `8315` | venc: `2026-01-23` | docs: `BOLC-291085 / BOLC-291085`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `8294` | venc: `2025-10-02` | docs: `BOLC-283087 / BOLC-283087`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `8280` | venc: `2025-11-27` | docs: `BOLC-287268 / BOLC-287268`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `8272` | venc: `2026-01-12` | docs: `BOLC-290145 / BOLC-290145 / BOLC-290145`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `8227` | venc: `2025-10-03` | docs: `BOLC-282914 / BOLC-282914`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `8197,57` | venc: `2025-11-22` | docs: `BOLV-78266 / BOLV-78266`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `8186` | venc: `2026-01-30` | docs: `BOLC-291683 / BOLC-291683`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `8176,07` | venc: `2025-11-22` | docs: `BOLV-78252 / BOLV-78252`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `8176` | venc: `2025-05-05` | docs: `BOLC-271846 / BOLC-271846`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `8151` | venc: `2025-08-29` | docs: `BOLC-280678 / BOLC-280678`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `8115` | venc: `2025-11-05` | docs: `BOLC-286320 / BOLC-286320`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `8100` | venc: `2025-07-03` | docs: `BOLC-276103 / BOLC-276103 / BOLC-276103`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8075,2` | venc: `2025-11-22` | docs: `NFE-63230 / NFE-63230`
+  - cc: `1.2.5.2` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.6.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2025-06-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2025-07-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2025-08-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2025-09-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2025-10-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2025-11-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2025-12-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2026-01-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2026-02-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2026-03-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2026-04-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8074,41` | venc: `2026-05-01` | docs: `NFE-7612221 / NFE-7612221`
+  - cc: `1.2.5.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.5.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S DOURADOS` | valor: `8037` | venc: `2025-11-21` | docs: `BOLC-287537 / BOLC-287537`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `8010` | venc: `2025-09-18` | docs: `BOLC-282385 / BOLC-282385`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `8000` | venc: `2026-03-05` | docs: `NFSE-7 / NFSE-7 / NFSE-7`
+  - cc: `1.2.3.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.4.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.8.2` conta: `7.3.23` (HONORÁRIOS PJ)
+- **4x** | filial: `G&S PRUDENTE` | valor: `7952` | venc: `2026-02-05` | docs: `NFE-44355 / NFE-44355 / NFE-44355 / NFE-44355`
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `7920` | venc: `2025-05-29` | docs: `BOLV-81754 / BOLV-81754`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `7913,25` | venc: `2026-02-05` | docs: `CTE-138 / CTE-138`
+  - cc: `1.2.4.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.5.1.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **4x** | filial: `G3S ADM` | valor: `7911,92` | venc: `2025-11-26` | docs: `ADT16174415
+
+ / ADT16174415
+
+ / ADT16174415
+
+ / ADT16174415
+
+`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+  - cc: `1.3.1.2` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.3.1.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `7876` | venc: `2025-08-13` | docs: `BOLC-279355 / BOLC-279355`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `7858,4` | venc: `2025-12-25` | docs: `CTE-111 / CTE-111 / CTE-111`
+  - cc: `1.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `1.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `1.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `7844` | venc: `2025-08-18` | docs: `BOLC-279581 / BOLC-279581`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `7812,6` | venc: `2025-05-16` | docs: `ADT00000324 / ADT00000324`
+  - cc: `1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+- **2x** | filial: `G3S MARINGA` | valor: `7788` | venc: `2025-08-22` | docs: `BOLC-280080 / BOLC-280080`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `7785` | venc: `2025-12-08` | docs: `BOLC-288766 / BOLC-288766`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `7751,25` | venc: `2026-02-05` | docs: `CTE-137 / CTE-137`
+  - cc: `1.2.4.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.5.1.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S MARINGA` | valor: `7731,04` | venc: `2025-11-22` | docs: `BOLV-78264 / BOLV-78264`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `7671,4` | venc: `2025-11-22` | docs: `BOLV-78327 / BOLV-78327`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `7651` | venc: `2025-07-18` | docs: `BOLC-277223 / BOLC-277223`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `7635,06` | venc: `2025-12-17` | docs: `NFSE-2 / NFSE-2`
+  - cc: `1.2.5.2` conta: `7.3.23` (HONORÁRIOS PJ)
+  - cc: `1.2.5.2` conta: `7.3.23` (HONORÁRIOS PJ)
+- **2x** | filial: `G3S MARINGA` | valor: `7634` | venc: `2025-08-29` | docs: `BOLC-280679 / BOLC-280679`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `7619` | venc: `2025-11-21` | docs: `BOLC-287554 / BOLC-287554`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `7541,85` | venc: `2025-11-22` | docs: `BOLV-78255 / BOLV-78255`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `7540,79` | venc: `2026-03-15` | docs: `CC884015032026 / CC884015032026 / CC884015032026 / CC884015032026`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `7516,64` | venc: `2025-12-15` | docs: `CC8840122025 / CC8840122025 / CC8840122025`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `7500` | venc: `2025-05-14` | docs: `BOLV-81327 / BOLV-81327`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `7455` | venc: `2025-11-04` | docs: `BOLC-286254 / BOLC-286254`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `7420,6` | venc: `2025-11-22` | docs: `BOLV-78310 / BOLV-78310`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **29x** | filial: `G&S PRUDENTE` | valor: `7367,55` | venc: `2025-09-15` | docs: `NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614 / NFSE-252033614`
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.45` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.11` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.14` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `7326,83` | venc: `2026-01-15` | docs: `CCC884015012026 / CCC884015012026`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `7315` | venc: `2025-11-25` | docs: `BOLC-287868 / BOLC-287868`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `7278,19` | venc: `2025-09-15` | docs: `CC884002092025 / CC884002092025 / CC884002092025`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `7227,21` | venc: `2025-11-15` | docs: `CC8884015112025 / CC8884015112025`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `7227` | venc: `2025-12-16` | docs: `BOLC-289263 / BOLC-289263`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **23x** | filial: `G&S PRUDENTE` | valor: `7226,72` | venc: `2025-06-15` | docs: `OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042 / OC 23042`
+  - cc: `1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.45` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.14` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.16` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.15` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `7205` | venc: `2025-09-01` | docs: `BOLC-280906 / BOLC-280906`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **9x** | filial: `G&S PRUDENTE` | valor: `7200` | venc: `2025-08-27` | docs: `NFSE-13 / NFSE-13 / NFSE-13 / NFSE-13 / NFSE-13 / NFSE-13 / NFSE-13 / NFSE-13 / NFSE-13`
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.8.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `7188` | venc: `2025-10-15` | docs: `NFE-43205 / NFE-43205`
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `RSE` | valor: `7169,3` | venc: `2020-03-15` | docs: `4116 / 4116`
+  - cc: `2.2.5.2` conta: `2.15` (VENDA DE ATIVOS)
+  - cc: `2.2.5.2` conta: `2.15` (VENDA DE ATIVOS)
+- **2x** | filial: `RSE` | valor: `7169,3` | venc: `2020-04-15` | docs: `4116 / 4116`
+  - cc: `2.2.5.2` conta: `2.15` (VENDA DE ATIVOS)
+  - cc: `2.2.5.2` conta: `2.15` (VENDA DE ATIVOS)
+- **2x** | filial: `RSE` | valor: `7169,3` | venc: `2025-08-11` | docs: `4116 / 4116`
+  - cc: `2.2.5.2` conta: `2.15` (VENDA DE ATIVOS)
+  - cc: `2.2.5.2` conta: `2.15` (VENDA DE ATIVOS)
+- **2x** | filial: `RSE` | valor: `7169,3` | venc: `2025-09-01` | docs: `4116 / 4116`
+  - cc: `2.2.5.2` conta: `2.15` (VENDA DE ATIVOS)
+  - cc: `2.2.5.2` conta: `2.15` (VENDA DE ATIVOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `7146,46` | venc: `2025-11-15` | docs: `NFSE-2074 / NFSE-2074`
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **26x** | filial: `G&S PRUDENTE` | valor: `7145,74` | venc: `2025-12-15` | docs: `NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511 / NFSE-669971511`
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.11` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.14.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.14` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S DOURADOS` | valor: `7140` | venc: `2025-07-30` | docs: `BOLV-83238 / BOLV-83238`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `7132,4` | venc: `2025-11-22` | docs: `BOLV-78320 / BOLV-78320`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `7106` | venc: `2025-08-19` | docs: `BOLC-279786 / BOLC-279786`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `7095,6` | venc: `2025-11-18` | docs: `5211-2/57 / 5211-2/57`
+  - cc: `1.2.3.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.3.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G&S MARINGA` | valor: `7095,6` | venc: `2025-04-26` | docs: `CTE 5211 / CTE 5211`
+  - cc: `2.4.3.1` conta: `5.7.1` (FRETES)
+  - cc: `2.4.3.1` conta: `5.7.1` (FRETES)
+- **26x** | filial: `G&S PRUDENTE` | valor: `7083,07` | venc: `2025-11-15` | docs: `NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519 / NFSE-665671519`
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.14.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.11` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.14` conta: `7.1.12` (PEDÁGIO)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `7078,43` | venc: `2025-06-30` | docs: `CF742930062025 / CF742930062025 / CF742930062025 / CF742930062025 / CF742930062025`
+  - cc: `2.7.1.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `2.7.1.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `2.7.1.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `2.7.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `2.7.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S MARINGA` | valor: `7062` | venc: `2025-09-04` | docs: `BOLC-281133 / BOLC-281133`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `7020,5` | venc: `2025-11-28` | docs: `BOLC-288156 / BOLC-288156`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `7020` | venc: `2025-09-15` | docs: `BOLV-84501 / BOLV-84501`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `7008,77` | venc: `2026-02-15` | docs: `CC88400226 / CC88400226 / CC88400226`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.1` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S LONDRINA` | valor: `6997,93` | venc: `2025-11-07` | docs: `BOLV-78261 / BOLV-78261`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `6997,93` | venc: `2025-11-22` | docs: `BOLV-78261 / BOLV-78261`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `6916,23` | venc: `2025-11-22` | docs: `BOLV-78279 / BOLV-78279`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `6903,33` | venc: `2025-11-22` | docs: `BOLV-78267 / BOLV-78267`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `6880,4` | venc: `2025-12-15` | docs: `NFSE-3372 / NFSE-3372 / NFSE-3372 / NFSE-3372 / NFSE-3372 / NFSE-3372 / NFSE-3372 / NFSE-3372 / NFSE-3372 / NFSE-3372`
+  - cc: `1.2.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.3.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.4.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.3.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.5.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.4.1.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.7.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **10x** | filial: `G3S PRUDENTE` | valor: `6880,4` | venc: `2026-01-15` | docs: `NFSE-60 / NFSE-60 / NFSE-60 / NFSE-60 / NFSE-60 / NFSE-60 / NFSE-60 / NFSE-60 / NFSE-60 / NFSE-60`
+  - cc: `1.2.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.3.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.4.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.3.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.5.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.4.1.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.7.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **2x** | filial: `G3S LONDRINA` | valor: `6844,2` | venc: `2025-11-22` | docs: `BOLV-78316 / BOLV-78316`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `6835` | venc: `2025-08-05` | docs: `CTE-69 / CTE-69`
+  - cc: `1.2.3.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.3.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `6833` | venc: `2025-12-08` | docs: `BOLC-286708 / BOLC-286708`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `6823,78` | venc: `2025-11-22` | docs: `BOLV-78253 / BOLV-78253`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `6802` | venc: `2025-06-09` | docs: `BOLC-274270 / BOLC-274270 / BOLC-274270`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6797` | venc: `2025-05-05` | docs: `BOLC-271751 / BOLC-271751`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `6795,8` | venc: `2025-11-22` | docs: `BOLV-78340 / BOLV-78340`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **24x** | filial: `G3S PRUDENTE` | valor: `6745,9` | venc: `2025-10-15` | docs: `NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382 / NFSE-661405382`
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.11` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.10` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.14` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `6716,5` | venc: `2025-09-09` | docs: `BOLC-281120 / BOLC-281120`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6678` | venc: `2025-10-31` | docs: `BOLC-285997 / BOLC-285997`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `6641,1` | venc: `2025-10-10` | docs: `CTE-348 / CTE-348`
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **2x** | filial: `G3S DOURADOS` | valor: `6636` | venc: `2026-02-03` | docs: `BOLC-291875 / BOLC-291875`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6615` | venc: `2025-11-17` | docs: `BOLC-285715 / BOLC-285715`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `6608` | venc: `2025-07-11` | docs: `BOLC-276616 / BOLC-276616`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6572` | venc: `2025-11-27` | docs: `BOLC-287798 / BOLC-287798`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `6552,03` | venc: `2026-02-04` | docs: `BOLC-292165 / BOLC-292165`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `6535,12` | venc: `2025-08-15` | docs: `CC884002082025 / CC884002082025`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `6516,4` | venc: `2025-11-22` | docs: `BOLV-78288 / BOLV-78288`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `6516` | venc: `2025-06-12` | docs: `BOLC-274571 / BOLC-274571`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **28x** | filial: `G&S PRUDENTE` | valor: `6491,5` | venc: `2026-01-15` | docs: `OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR / OC 28032 SEM PARAR`
+  - cc: `1.2.1.9.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.38` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.14` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.14.2` conta: `7.1.12` (PEDÁGIO)
+- **7x** | filial: `G3S PRUDENTE` | valor: `6461,51` | venc: `2026-03-05` | docs: `NFSE-3827 / NFSE-3827 / NFSE-3827 / NFSE-3827 / NFSE-3827 / NFSE-3827 / NFSE-3827`
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.8.1` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `6437` | venc: `2025-07-14` | docs: `BOLC-276797 / BOLC-276797`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6427,5` | venc: `2025-12-11` | docs: `BOLC-289019 / BOLC-289019`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6402` | venc: `2025-05-14` | docs: `B-270502 / B-270502`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `6400` | venc: `2026-01-15` | docs: `NFSE-22 / NFSE-22 / NFSE-22 / NFSE-22`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `6372,99` | venc: `2025-12-15` | docs: `CC8971122025 / CC8971122025 / CC8971122025`
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S DOURADOS` | valor: `6372` | venc: `2026-03-02` | docs: `BOLC-292467 / BOLC-292467`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **28x** | filial: `G&S PRUDENTE` | valor: `6361,54` | venc: `2026-02-20` | docs: `OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR / OC 28649 SEM PARAR`
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.1.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.14` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.14.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.9.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.9.3` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S DOURADOS` | valor: `6360` | venc: `2025-11-06` | docs: `BOLC-286365 / BOLC-286365`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6314` | venc: `2025-09-10` | docs: `BOLC-281639 / BOLC-281639`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `6264` | venc: `2025-05-26` | docs: `BOLC-273448 / BOLC-273448`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S BARUERI` | valor: `6254,91` | venc: `2026-01-26` | docs: `SEMPARARG&S05012026 / SEMPARARG&S05012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S ADM` | valor: `6250` | venc: `2025-12-05` | docs: `SALCOMPLG3S10112025 / SALCOMPLG3S10112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `6232` | venc: `2025-10-20` | docs: `BOLC-284821 / BOLC-284821`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `6144,65` | venc: `2025-05-15` | docs: `CC884015052025 / CC884015052025 / CC884015052025`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `6139` | venc: `2025-10-24` | docs: `BOLC-282146 / BOLC-282146`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `6120` | venc: `2025-10-22` | docs: `BOLV-85463 / BOLV-85463`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6108,5` | venc: `2025-11-19` | docs: `BOLC-287407 / BOLC-287407`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6103` | venc: `2025-11-21` | docs: `BOLC-287541 / BOLC-287541`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **32x** | filial: `G&S PRUDENTE` | valor: `6083,65` | venc: `2025-07-15` | docs: `SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488 / SEM PARAR -23488`
+  - cc: `1.2.5.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.5` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.11` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.14.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.47` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.6.3.45` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `6076,83` | venc: `2025-10-15` | docs: `CC8840102025 / CC8840102025 / CC8840102025`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `6061` | venc: `2025-11-18` | docs: `BOLC-287304 / BOLC-287304`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `6052,5` | venc: `2025-11-18` | docs: `BOLC-287266 / BOLC-287266 / BOLC-287266`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `6052,5` | venc: `2025-12-17` | docs: `BOLC-289455 / BOLC-289455`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `6036,82` | venc: `2025-10-28` | docs: `CF7429102025 / CF7429102025 / CF7429102025 / CF7429102025`
+  - cc: `1.7.1.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **5x** | filial: `G3S MARINGA` | valor: `6030` | venc: `2025-10-31` | docs: `BOLC-285820 / BOLC-285820 / BOLC-285820 / BOLC-285820 / BOLC-285820`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `6028` | venc: `2025-08-21` | docs: `BOLC-279961 / BOLC-279961`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `6020` | venc: `2025-07-25` | docs: `BOLC-277932 / BOLC-277932`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S BARUERI` | valor: `6000` | venc: `2025-12-05` | docs: `SALCOMPLG&S05112025 / SALCOMPLG&S05112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `5973` | venc: `2025-08-14` | docs: `BOLC-279455 / BOLC-279455`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `5970` | venc: `2025-12-05` | docs: `NFSE-44 / NFSE-44`
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `5964` | venc: `2025-08-15` | docs: `NFE-42410 / NFE-42410 / NFE-42410 / NFE-42410`
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `5888` | venc: `2025-12-11` | docs: `BOLC-288996 / BOLC-288996`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **8x** | filial: `G&S MARINGA` | valor: `5876,12` | venc: `2025-09-30` | docs: `NFE-869285 / NFE-869285 / NFE-869285 / NFE-869285 / NFE-869285 / NFE-869285 / NFE-869285 / NFE-869285`
+  - cc: `1.2.4.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.45` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `5846,5` | venc: `2026-02-21` | docs: `BOLC-292760 / BOLC-292760`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `5778,5` | venc: `2025-07-16` | docs: `BOLC-277109 / BOLC-277109`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `5742,81` | venc: `2025-11-27` | docs: `CF7408112025 / CF7408112025 / CF7408112025 / CF7408112025 / CF7408112025 / CF7408112025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `5667,03` | venc: `2025-08-27` | docs: `CF742927082025 / CF742927082025 / CF742927082025 / CF742927082025 / CF742927082025`
+  - cc: `1.7.1.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S LONDRINA` | valor: `5634,89` | venc: `2025-11-22` | docs: `BOLV-78272 / BOLV-78272`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `5625` | venc: `2025-08-05` | docs: `BOLC-278629 / BOLC-278629`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `5617` | venc: `2025-10-16` | docs: `BOLC-284592 / BOLC-284592`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S BARUERI` | valor: `5596,06` | venc: `2025-11-26` | docs: `ADT16174405 / ADT16174405`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `5585,31` | venc: `2025-09-15` | docs: `NFE-7168 / NFE-7168`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `5568` | venc: `2026-03-23` | docs: `ADT00009217 / ADT00009217`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.3.1.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `5518,79` | venc: `2025-10-24` | docs: `CF8633102025 / CF8633102025 / CF8633102025 / CF8633102025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `5499` | venc: `2025-10-13` | docs: `BOLC-284322 / BOLC-284322`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `5400` | venc: `2025-10-03` | docs: `NFE-869381 / NFE-869381`
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `RSE` | valor: `5400` | venc: `2025-07-17` | docs: `OC 23588 / OC 23588 / OC 23588`
+  - cc: `1.6.5` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.6.5` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.6.5` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `5368` | venc: `2025-10-09` | docs: `BOLC-283838 / BOLC-283838`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `5365` | venc: `2025-09-03` | docs: `NFE-864006 / NFE-864006`
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **11x** | filial: `G3S PRUDENTE` | valor: `5331,2` | venc: `2020-09-11` | docs: `B-41745 / B-41745 / B-41745 / B-41745 / B-41745 / B-41745 / B-41745 / B-41745 / B-41745 / B-41745 / B-41745`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `5313` | venc: `2025-12-12` | docs: `BOLC-289101 / BOLC-289101`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `5300` | venc: `2026-02-18` | docs: `NFE-893940 / NFE-893940`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `5244` | venc: `2025-11-17` | docs: `BOLC-287232 / BOLC-287232`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `5228,67` | venc: `2025-11-28` | docs: `CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025 / CF7429112025`
+  - cc: `1.7.1.2.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.3.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.4` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.3.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **6x** | filial: `G&S PRUDENTE` | valor: `5200` | venc: `2025-08-05` | docs: `NFSE-12 / NFSE-12 / NFSE-12 / NFSE-12 / NFSE-12 / NFSE-12`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.35` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **7x** | filial: `G&S PRUDENTE` | valor: `5200` | venc: `2025-12-05` | docs: `NFSE-21 / NFSE-21 / NFSE-21 / NFSE-21 / NFSE-21 / NFSE-21 / NFSE-21`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.24` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **21x** | filial: `G&S PRUDENTE` | valor: `5189,85` | venc: `2026-03-15` | docs: `SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR / SEM PARAR`
+  - cc: `1.1.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.6.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.5.6` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.15` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.14.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.9` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.7.14` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.9.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.9.3` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S LONDRINA` | valor: `5168` | venc: `2025-12-15` | docs: `BOLC-285619 / BOLC-285619`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `5166` | venc: `2025-08-07` | docs: `BOLC-278748 / BOLC-278748 / BOLC-278748`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `5136` | venc: `2025-11-07` | docs: `BOLC-286618 / BOLC-286618`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `5120` | venc: `2025-09-10` | docs: `ADT00003554 / ADT00003554`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `5120` | venc: `2025-09-11` | docs: `BOLC-281819 / BOLC-281819`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `5100` | venc: `2025-10-25` | docs: `NFSE-417 / NFSE-417 / NFSE-417`
+  - cc: `1.2.3.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `5057,5` | venc: `2025-06-06` | docs: `BOLC-270187 / BOLC-270187`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **20x** | filial: `G3S CAMPO GRANDE` | valor: `5038,2` | venc: `2025-06-26` | docs: `CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025 / CF859126062025`
+  - cc: `1.1.12` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.12` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.12` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.12` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.12` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.1.1.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.1.4` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.1.1.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.1.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.1.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.1.1` conta: `8.1.6` (ELETRÔNICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `5026` | venc: `2026-02-10` | docs: `BOLC-292899 / BOLC-292899`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `5000` | venc: `1800-01-01` | docs: `SALDO ADT FOR / SALDO ADT FOR / SALDO ADT FOR`
+  - cc: `1.2.5.2` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1.2.5.2` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1.2.5.2` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+- **2x** | filial: `G3S DOURADOS` | valor: `4979` | venc: `2025-12-11` | docs: `BOLC-288824 / BOLC-288824`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **11x** | filial: `G&S PRUDENTE` | valor: `4919,1` | venc: `2025-11-25` | docs: `NFSE-444 / NFSE-444 / NFSE-444 / NFSE-444 / NFSE-444 / NFSE-444 / NFSE-444 / NFSE-444 / NFSE-444 / NFSE-444 / NFSE-444`
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `4890,6` | venc: `2024-08-16` | docs: `B-73050 / B-73050`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `4887` | venc: `2025-05-29` | docs: `BOLC-272814 / BOLC-272814`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G&S MARINGA` | valor: `4872,71` | venc: `2026-03-05` | docs: `NFE-1081 / NFE-1081 / NFE-1081 / NFE-1081 / NFE-1081 / NFE-1081`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.10` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `4831,47` | venc: `2025-04-29` | docs: `CF859129042025 / CF859129042025 / CF859129042025 / CF859129042025 / CF859129042025 / CF859129042025`
+  - cc: `1.1.1.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `4831,37` | venc: `2025-07-28` | docs: `CF742928072025 / CF742928072025 / CF742928072025 / CF742928072025 / CF742928072025`
+  - cc: `1.7.1.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G&S PRUDENTE` | valor: `4800` | venc: `2026-01-13` | docs: `NFE-7554 / NFE-7554 / NFE-7554 / NFE-7554`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4694,26` | venc: `2026-01-26` | docs: `SEMPARARG3S04012026 / SEMPARARG3S04012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `4687,5` | venc: `2025-12-15` | docs: `BOLC-289233 / BOLC-289233`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4605` | venc: `2025-05-13` | docs: `BOLC-272519 / BOLC-272519`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `4603,03` | venc: `2025-04-30` | docs: `CF863330042025 / CF863330042025 / CF863330042025 / CF863330042025 / CF863330042025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `4575` | venc: `2026-02-15` | docs: `NFSE-1027 / NFSE-1027 / NFSE-1027`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `4575` | venc: `2026-03-15` | docs: `NFSE-1027 / NFSE-1027 / NFSE-1027`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `4575` | venc: `2026-04-15` | docs: `NFSE-1027 / NFSE-1027 / NFSE-1027`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `4550` | venc: `2025-10-06` | docs: `BOLC-277000 / BOLC-277000`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `4550` | venc: `2025-11-05` | docs: `NFSE-419 / NFSE-419`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4536,5` | venc: `2025-07-01` | docs: `BOLC-275942 / BOLC-275942`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S MARINGA` | valor: `4509` | venc: `2025-09-09` | docs: `BOLC-280867 / BOLC-280867 / BOLC-280867 / BOLC-280867`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `4501` | venc: `2025-07-04` | docs: `BOLC-276128 / BOLC-276128`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `4496,09` | venc: `2025-09-30` | docs: `CF8591092025 / CF8591092025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `4494` | venc: `2025-10-22` | docs: `BOLC-285095 / BOLC-285095`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `4491,5` | venc: `2025-06-06` | docs: `BOLC-270113 / BOLC-270113`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `4485,55` | venc: `2025-05-31` | docs: `CF863331052025 / CF863331052025 / CF863331052025 / CF863331052025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4480` | venc: `2025-10-27` | docs: `BOLC-285440 / BOLC-285440`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `4460` | venc: `2025-09-04` | docs: `BOLC-281131 / BOLC-281131`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G&S DOURADOS` | valor: `4412,77` | venc: `2026-03-05` | docs: `NFE-1080 / NFE-1080 / NFE-1080 / NFE-1080 / NFE-1080 / NFE-1080`
+  - cc: `1.2.2.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `4412` | venc: `2025-09-22` | docs: `CF7429092025 / CF7429092025 / CF7429092025 / CF7429092025 / CF7429092025 / CF7429092025`
+  - cc: `1.7.1.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+- **12x** | filial: `G&S PRUDENTE` | valor: `4409,55` | venc: `2025-07-25` | docs: `NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413 / NFSE-413`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `4400` | venc: `2026-02-05` | docs: `NFSE-23 / NFSE-23 / NFSE-23 / NFSE-23 / NFSE-23`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `4387,5` | venc: `2025-12-15` | docs: `BOLC-289110 / BOLC-289110`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `4354` | venc: `2025-12-03` | docs: `BOLC-287373 / BOLC-287373`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **11x** | filial: `G&S PRUDENTE` | valor: `4340,96` | venc: `2025-08-15` | docs: `NFSE-421 / NFSE-421 / NFSE-421 / NFSE-421 / NFSE-421 / NFSE-421 / NFSE-421 / NFSE-421 / NFSE-421 / NFSE-421 / NFSE-421`
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.29` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4322,86` | venc: `2025-11-05` | docs: `XKM051125 / XKM051125`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S LONDRINA` | valor: `4301,4` | venc: `2025-05-27` | docs: `BOLC-273504 / BOLC-273504`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `4292,29` | venc: `2026-01-18` | docs: `NFE-3720 / NFE-3720`
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4290` | venc: `2025-06-30` | docs: `BOLC-275809 / BOLC-275809`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `4288` | venc: `2025-05-20` | docs: `BOLC-273034 / BOLC-273034`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `4270,5` | venc: `2026-01-15` | docs: `BOLC-289749 / BOLC-289749`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `4264` | venc: `2025-12-15` | docs: `BOLC-287260 / BOLC-287260`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `4250` | venc: `2025-12-05` | docs: `NFSE-125 / NFSE-125 / NFSE-125 / NFSE-125 / NFSE-125`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S LONDRINA` | valor: `4249,7` | venc: `2026-03-26` | docs: `NFE-777063 / NFE-777063 / NFE-777063`
+  - cc: `1.2.3.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `4246,5` | venc: `2025-11-24` | docs: `BOLC-287696 / BOLC-287696`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `4200` | venc: `2025-11-30` | docs: `00006012 / 00006012 / 00006012`
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `4200` | venc: `2025-12-05` | docs: `NFSE-422 / NFSE-422`
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.30` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **16x** | filial: `G3S PRUDENTE` | valor: `4170` | venc: `2026-01-25` | docs: `AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986 / AL27986`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.3.1.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.8.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.2` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **3x** | filial: `G3S PRUDENTE` | valor: `4152,5` | venc: `2025-09-05` | docs: `BOLC-281206 / BOLC-281206 / BOLC-281206`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `4140,5` | venc: `2025-06-26` | docs: `BOLC-274203 / BOLC-274203`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `4137,82` | venc: `2026-02-27` | docs: `CF7429022026 / CF7429022026 / CF7429022026 / CF7429022026 / CF7429022026 / CF7429022026 / CF7429022026 / CF7429022026 / CF7429022026 / CF7429022026`
+  - cc: `1.7.1.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.3` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.7.1.2.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **3x** | filial: `G3S CIDADE ALTA` | valor: `4132,5` | venc: `2025-12-16` | docs: `BOLC-289324 / BOLC-289324 / BOLC-289324`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4086,1` | venc: `2025-11-26` | docs: `ADT16174413
+
+ / ADT16174413
+
+`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `4080` | venc: `2025-10-16` | docs: `NFE-43328 / NFE-43328`
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `4080` | venc: `2025-10-30` | docs: `NFE-43328 / NFE-43328`
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `4080` | venc: `2026-02-25` | docs: `NFE-44634 / NFE-44634`
+  - cc: `1.2.4.8.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `4052,52` | venc: `2026-02-05` | docs: `RKM05202026 / RKM05202026`
+  - cc: `1.5.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.6.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G3S PRUDENTE` | valor: `4050` | venc: `2025-08-19` | docs: `BOLC-279737 / BOLC-279737 / BOLC-279737`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `4035` | venc: `2026-03-12` | docs: `BOLC-294963 / BOLC-294963`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4000,01` | venc: `2025-11-19` | docs: `BOLV-86241 / BOLV-86241`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `NVS - EKIPA` | valor: `4000` | venc: `2024-02-29` | docs: `MS-002182 / MS-002182`
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `4000` | venc: `2025-11-15` | docs: `NFSE-19 / NFSE-19 / NFSE-19 / NFSE-19 / NFSE-19`
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `3990` | venc: `2025-06-13` | docs: `BOLC-274745 / BOLC-274745`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `3973,3` | venc: `2025-10-25` | docs: `NFE-12713 / NFE-12713`
+  - cc: `1.2.4.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.8.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3905` | venc: `2026-02-16` | docs: `NFSE-54 / NFSE-54`
+  - cc: `1.7.1.14.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.14.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `3900` | venc: `2025-06-25` | docs: `BOLC-275561 / BOLC-275561`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **8x** | filial: `G3S PRUDENTE` | valor: `3892` | venc: `2020-08-19` | docs: `B-41024 / B-41024 / B-41024 / B-41024 / B-41024 / B-41024 / B-41024 / B-41024`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `3885` | venc: `2025-06-24` | docs: `BOLC-275413 / BOLC-275413`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3878,47` | venc: `2026-01-20` | docs: `RETFED122025G3S / RETFED122025G3S`
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3870` | venc: `2026-01-15` | docs: `ADT27721 / ADT27721`
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **20x** | filial: `G3S CAMPO GRANDE` | valor: `3861,33` | venc: `2025-04-30` | docs: `CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025 / CF757730042025`
+  - cc: `1.2.4.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.3.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.1.1.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S LONDRINA` | valor: `3847,5` | venc: `2025-06-17` | docs: `BOLC-274947 / BOLC-274947`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3830` | venc: `2026-01-15` | docs: `NFSE-48 / NFSE-48`
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `3822` | venc: `2025-09-01` | docs: `BOLC-279781 / BOLC-279781`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3821,34` | venc: `2025-07-07` | docs: `NFSE-4077 / NFSE-4077`
+  - cc: `1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.7.2.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+- **16x** | filial: `G&S PRUDENTE` | valor: `3814,8` | venc: `2025-10-25` | docs: `00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947 / 00004947`
+  - cc: `1.1.2` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.3.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.3.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.5.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.7.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.9.2` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.9.3` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.9.5` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.4.1.2` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.7.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.6.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.1.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **9x** | filial: `G&S PRUDENTE` | valor: `3800` | venc: `2026-02-25` | docs: `NFSE-24 / NFSE-24 / NFSE-24 / NFSE-24 / NFSE-24 / NFSE-24 / NFSE-24 / NFSE-24 / NFSE-24`
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3778` | venc: `2025-09-05` | docs: `BOLC-281254 / BOLC-281254`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3776` | venc: `2025-10-28` | docs: `BOLC-285510 / BOLC-285510`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3758` | venc: `2025-09-15` | docs: `NFE-12595 / NFE-12595`
+  - cc: `1.3.1.1` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.4.1.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3751` | venc: `2025-10-09` | docs: `BOLC-283688 / BOLC-283688`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3750` | venc: `2025-12-05` | docs: `SALCOMPLG3S04112025 / SALCOMPLG3S04112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `RSE` | valor: `3733,33` | venc: `2025-09-30` | docs: `00004078 / 00004078`
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `3706,3` | venc: `2025-05-29` | docs: `CF859129052025 / CF859129052025 / CF859129052025 / CF859129052025 / CF859129052025 / CF859129052025`
+  - cc: `1.1.1.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.4` conta: `7.2.4` (BRINDES)
+  - cc: `1.1.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.3` conta: `7.2.4` (BRINDES)
+  - cc: `1.1.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3705,97` | venc: `2026-01-26` | docs: `SEMPARARG&S01012026 / SEMPARARG&S01012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3696` | venc: `2025-08-18` | docs: `BOLC-279647 / BOLC-279647`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3683,5` | venc: `2025-10-29` | docs: `BOLC-285699 / BOLC-285699`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `3664,83` | venc: `2026-01-15` | docs: `NFSE-449 / NFSE-449 / NFSE-449 / NFSE-449 / NFSE-449 / NFSE-449`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.9.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `3630` | venc: `2025-07-09` | docs: `BOLC-276494 / BOLC-276494`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `3612,87` | venc: `2025-08-28` | docs: `CF756928082025 / CF756928082025 / CF756928082025 / CF756928082025 / CF756928082025 / CF756928082025 / CF756928082025 / CF756928082025`
+  - cc: `1.3.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.3.1.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.3.1.3` conta: `8.1.6` (ELETRÔNICOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3570` | venc: `2025-07-25` | docs: `NFSE-3 / NFSE-3`
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **8x** | filial: `G&S PRUDENTE` | valor: `3557,04` | venc: `2026-03-15` | docs: `NFSE-462 / NFSE-462 / NFSE-462 / NFSE-462 / NFSE-462 / NFSE-462 / NFSE-462 / NFSE-462`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.10` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.9.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `3549,9` | venc: `2025-09-10` | docs: `BOLV-84426 / BOLV-84426`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `3510` | venc: `2025-10-06` | docs: `BOLC-283397 / BOLC-283397`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `3500` | venc: `2025-09-25` | docs: `NFSE-10 / NFSE-10 / NFSE-10 / NFSE-10`
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3480` | venc: `2025-06-25` | docs: `CTE-241 / CTE-241`
+  - cc: `1.2.5.4` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+  - cc: `1.2.5.4` conta: `7.1.6` (TRANSPORTE DE SUCATA)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `3452,32` | venc: `2025-12-19` | docs: `RETFED112025G3S / RETFED112025G3S / RETFED112025G3S / RETFED112025G3S / RETFED112025G3S / RETFED112025G3S`
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.3` conta: `7.4.7` (CSRF)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `3444,34` | venc: `2025-12-31` | docs: `CF7429122025 / CF7429122025 / CF7429122025 / CF7429122025 / CF7429122025 / CF7429122025 / CF7429122025 / CF7429122025 / CF7429122025 / CF7429122025`
+  - cc: `1.7.1.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **20x** | filial: `G3S CAMPO GRANDE` | valor: `3417,55` | venc: `2025-10-20` | docs: `RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S / RETFED092025G3S`
+  - cc: `1.2.2.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.1` conta: `7.4.7` (CSRF)
+  - cc: `1.3.1.1` conta: `7.4.6` (IRRF)
+  - cc: `1.3.1.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.8.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.8.1` conta: `7.4.7` (CSRF)
+  - cc: `1.12.1.1` conta: `7.4.6` (IRRF)
+  - cc: `1.12.1.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3410` | venc: `2026-03-19` | docs: `BOLV-88855 / BOLV-88855`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `3400` | venc: `2025-07-05` | docs: `NFSE-392 / NFSE-392 / NFSE-392 / NFSE-392`
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `3396,64` | venc: `2025-08-05` | docs: `NFE-7101 / NFE-7101 / NFE-7101`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3387,5` | venc: `2025-05-02` | docs: `B-271690 / B-271690`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3381,2` | venc: `2025-12-25` | docs: `NFE-33801 / NFE-33801`
+  - cc: `1.2.5.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-03-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-04-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-05-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-06-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-07-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-08-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-09-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-10-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-11-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3378,12` | venc: `2026-12-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `3349,7` | venc: `2025-11-19` | docs: `RETFED102025G3S / RETFED102025G3S / RETFED102025G3S / RETFED102025G3S / RETFED102025G3S / RETFED102025G3S`
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.3` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G3S LONDRINA` | valor: `3345` | venc: `2026-03-04` | docs: `BOLC-294471 / BOLC-294471`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3321,95` | venc: `2026-01-26` | docs: `SEMPARARG3S01012026 / SEMPARARG3S01012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S DOURADOS` | valor: `3308,8` | venc: `2025-07-02` | docs: `BOLV-82517 / BOLV-82517`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3306` | venc: `2025-12-17` | docs: `BOLC-289468 / BOLC-289468`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `3300` | venc: `2025-07-16` | docs: `BOLV-82812 / BOLV-82812`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **7x** | filial: `G&S MARINGA` | valor: `3289` | venc: `2025-09-05` | docs: `NFE-508239 / NFE-508239 / NFE-508239 / NFE-508239 / NFE-508239 / NFE-508239 / NFE-508239`
+  - cc: `1.2.4.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3250` | venc: `2025-12-05` | docs: `SALCOMPLG&S01112025 / SALCOMPLG&S01112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S LONDRINA` | valor: `3244,14` | venc: `2025-07-02` | docs: `BOLV-75248 / BOLV-75248`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3233,06` | venc: `2025-09-19` | docs: `RETFED082025G3S01 / RETFED082025G3S01`
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `RSE` | valor: `3200` | venc: `2025-10-19` | docs: `00005326 / 00005326`
+  - cc: `2.5.1.2` conta: `5.1.2` (LOCAÇÃO DE CONTEINER E CAÇAMBAS)
+  - cc: `2.5.1.2` conta: `5.1.2` (LOCAÇÃO DE CONTEINER E CAÇAMBAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3192` | venc: `2026-03-23` | docs: `BOLC-296344 / BOLC-296344`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3180` | venc: `2025-12-22` | docs: `NFE-1961 / NFE-1961`
+  - cc: `1.7.1.4.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.14.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G&S DOURADOS` | valor: `3155` | venc: `2026-04-05` | docs: `NFE-242624 / NFE-242624 / NFE-242624 / NFE-242624 / NFE-242624 / NFE-242624`
+  - cc: `1.2.2.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3153,5` | venc: `2025-10-02` | docs: `BOLC-283173 / BOLC-283173`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3138,3` | venc: `2025-07-02` | docs: `BOLV-75090 / BOLV-75090`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3128,79` | venc: `2025-08-20` | docs: `RETFED072025G3S / RETFED072025G3S`
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3127,06` | venc: `2025-09-12` | docs: `BOLV-77300 / BOLV-77300`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `3125,08` | venc: `2025-05-30` | docs: `CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025 / CF757730052025`
+  - cc: `1.2.2.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `3117,76` | venc: `2025-06-12` | docs: `JUR E MUL ALU CENTRO OESTE / JUR E MUL ALU CENTRO OESTE`
+  - cc: `1.2.7.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+  - cc: `1.2.7.3` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **3x** | filial: `G&S DOURADOS` | valor: `3108` | venc: `2025-09-30` | docs: `RKM19092025 / RKM19092025 / RKM19092025`
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.2.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3102` | venc: `2025-09-25` | docs: `RKM25092025 / RKM25092025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.1.12` (PEDÁGIO)
+- **5x** | filial: `GXS MARINGA` | valor: `3091,2` | venc: `2025-10-06` | docs: `B-41166 / B-41166 / B-41166 / B-41166 / B-41166`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3064` | venc: `2025-07-22` | docs: `BOLC-277554 / BOLC-277554`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `3038` | venc: `2025-09-15` | docs: `NFSE-20 / NFSE-20`
+  - cc: `1.2.4.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.4.6` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `3029,5` | venc: `2026-03-19` | docs: `BOLC-296071 / BOLC-296071`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `3029,5` | venc: `2026-03-20` | docs: `BOLC-296071 / BOLC-296071`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `3022,81` | venc: `2025-06-30` | docs: `CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025 / CF757730062025`
+  - cc: `1.2.2.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `3020` | venc: `2025-05-16` | docs: `B-271494 / B-271494`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `3017,86` | venc: `2025-12-17` | docs: `NFSE-23875 / NFSE-23875 / NFSE-23875 / NFSE-23875 / NFSE-23875 / NFSE-23875 / NFSE-23875 / NFSE-23875 / NFSE-23875 / NFSE-23875`
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.8.1` conta: `7.5.18` (SISTEMAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `3017,86` | venc: `2026-01-15` | docs: `NFSE-24486 / NFSE-24486 / NFSE-24486 / NFSE-24486 / NFSE-24486 / NFSE-24486`
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `3017,86` | venc: `2026-02-09` | docs: `NFSE-25686 / NFSE-25686 / NFSE-25686 / NFSE-25686 / NFSE-25686 / NFSE-25686`
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.8.2` conta: `7.5.18` (SISTEMAS)
+- **9x** | filial: `G3S PRUDENTE` | valor: `3017,86` | venc: `2026-03-10` | docs: `NFSE-26592 / NFSE-26592 / NFSE-26592 / NFSE-26592 / NFSE-26592 / NFSE-26592 / NFSE-26592 / NFSE-26592 / NFSE-26592`
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.8.1` conta: `7.5.18` (SISTEMAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `3016,11` | venc: `2025-05-20` | docs: `RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S / RETFED042025G3S`
+  - cc: `1.2.2.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.3.1.1` conta: `7.4.6` (IRRF)
+  - cc: `1.3.1.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3000` | venc: `2025-05-15` | docs: `18271-1/55 / 18271-1/55`
+  - cc: `1.2.5.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `3000` | venc: `1800-01-01` | docs: `SALDO ADT FOR / SALDO ADT FOR`
+  - cc: `1.2.5.2` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1.2.5.2` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2992,5` | venc: `2025-07-25` | docs: `BOLC-277831 / BOLC-277831`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2986,48` | venc: `2025-11-25` | docs: `RKM25112025 / RKM25112025`
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2985` | venc: `2025-11-17` | docs: `NFSE-3875 / NFSE-3875`
+  - cc: `1.7.1.14.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.14.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `2967,4` | venc: `2025-06-15` | docs: `CC884002062025 / CC884002062025`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **7x** | filial: `G&S PRUDENTE` | valor: `2950` | venc: `2025-10-05` | docs: `NFSE-16 / NFSE-16 / NFSE-16 / NFSE-16 / NFSE-16 / NFSE-16 / NFSE-16`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `2933,81` | venc: `2025-10-31` | docs: `CF2203102025 / CF2203102025 / CF2203102025 / CF2203102025 / CF2203102025 / CF2203102025 / CF2203102025 / CF2203102025 / CF2203102025`
+  - cc: `1.2.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **4x** | filial: `G3S MARINGA` | valor: `2921` | venc: `2025-09-25` | docs: `RKM25092025 / RKM25092025 / RKM25092025 / RKM25092025`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.1.12` (PEDÁGIO)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `2916,68` | venc: `2025-05-31` | docs: `CF756931052025 / CF756931052025 / CF756931052025 / CF756931052025 / CF756931052025 / CF756931052025 / CF756931052025 / CF756931052025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.3.1.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.3.1.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **18x** | filial: `G3S CAMPO GRANDE` | valor: `2903,7` | venc: `2025-09-30` | docs: `CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025 / CF2203092025`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.8.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `2902,04` | venc: `2025-11-28` | docs: `CF0479112025 / CF0479112025 / CF0479112025 / CF0479112025 / CF0479112025 / CF0479112025 / CF0479112025 / CF0479112025 / CF0479112025 / CF0479112025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.2` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.7.2` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2900` | venc: `2026-02-15` | docs: `AL28464 / AL28464`
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2874,65` | venc: `2026-01-29` | docs: `NFSE-2105 / NFSE-2105 / NFSE-2105 / NFSE-2105 / NFSE-2105`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **16x** | filial: `G3S PRUDENTE` | valor: `2870` | venc: `2025-12-05` | docs: `AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025 / AL27025`
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.2` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.6.3.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.11` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.6.3.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.12` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2850,5` | venc: `2025-10-16` | docs: `BOLC-284620 / BOLC-284620`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `2844` | venc: `2025-07-09` | docs: `BOLC-276560 / BOLC-276560`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `2820,72` | venc: `2025-10-31` | docs: `CF7569112025 / CF7569112025 / CF7569112025 / CF7569112025 / CF7569112025 / CF7569112025`
+  - cc: `1.3.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `GXS MARINGA` | valor: `2816,8` | venc: `2021-02-05` | docs: `B-46361 / B-46361 / B-46361 / B-46361 / B-46361`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `2809,63` | venc: `2026-02-15` | docs: `00008398 / 00008398 / 00008398`
+  - cc: `1.7.2.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2800` | venc: `2026-01-25` | docs: `NFSE-45 / NFSE-45`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **16x** | filial: `G3S CAMPO GRANDE` | valor: `2798,98` | venc: `2025-08-28` | docs: `CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025 / CF859128082025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.1.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.1.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.5` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.5` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.1.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.6` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.6` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.6` conta: `8.1.6` (ELETRÔNICOS)
+- **2x** | filial: `G3S MARINGA` | valor: `2797,5` | venc: `2025-12-03` | docs: `BOLC-288398 / BOLC-288398`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2794,27` | venc: `2025-08-25` | docs: `NFE-152023 / NFE-152023`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.35` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **36x** | filial: `G3S CAMPO GRANDE` | valor: `2792,11` | venc: `2025-09-21` | docs: `CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025 / CF7411092025`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.2.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.2.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.4.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.4.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.6` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.6` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.6` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.6` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.6` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.4.6` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.8.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.8.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.8.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.8.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.8.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.8.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.8.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **3x** | filial: `G3S MARINGA` | valor: `2790` | venc: `2026-02-27` | docs: `ALUGUEL - G3S 06 TERRENO / ALUGUEL - G3S 06 TERRENO / ALUGUEL - G3S 06 TERRENO`
+  - cc: `1.2.4.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+  - cc: `1.2.4.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+  - cc: `1.2.4.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `2752` | venc: `2025-11-10` | docs: `BOLC-285376 / BOLC-285376`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2736,3` | venc: `2025-07-02` | docs: `BOLV-75153 / BOLV-75153`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2731,66` | venc: `2025-07-15` | docs: `NFSE-14467 / NFSE-14467 / NFSE-14467 / NFSE-14467 / NFSE-14467`
+  - cc: `1.2.2.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2731,66` | venc: `2025-11-17` | docs: `NFSE-186 / NFSE-186 / NFSE-186 / NFSE-186 / NFSE-186`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2731,66` | venc: `2025-09-15` | docs: `NFSE-19945 / NFSE-19945 / NFSE-19945 / NFSE-19945 / NFSE-19945`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2731,66` | venc: `2025-10-15` | docs: `NFSE-22885 / NFSE-22885 / NFSE-22885 / NFSE-22885 / NFSE-22885`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2731,66` | venc: `2025-12-15` | docs: `NFSE-3275 / NFSE-3275 / NFSE-3275 / NFSE-3275 / NFSE-3275`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2731,66` | venc: `2026-01-19` | docs: `NFSE-8408 / NFSE-8408 / NFSE-8408 / NFSE-8408 / NFSE-8408`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2731,66` | venc: `2026-02-16` | docs: `NFSE-9359 / NFSE-9359 / NFSE-9359 / NFSE-9359 / NFSE-9359`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2725` | venc: `2026-04-05` | docs: `NFE-2022 / NFE-2022`
+  - cc: `1.2.2.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `2723,23` | venc: `2026-02-26` | docs: `NFE-1990 / NFE-1990 / NFE-1990`
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2703,6` | venc: `2025-07-02` | docs: `BOLV-75124 / BOLV-75124`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `2701,73` | venc: `2026-01-28` | docs: `CF0023012026 / CF0023012026 / CF0023012026 / CF0023012026 / CF0023012026 / CF0023012026`
+  - cc: `1.7.1.4.5` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.4.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.4.5` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.11` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.11` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.11` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2700` | venc: `2025-05-20` | docs: `BOLV-81490 / BOLV-81490`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2700` | venc: `2026-02-28` | docs: `NFE-893941 / NFE-893941`
+  - cc: `1.6.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `2696` | venc: `2025-07-28` | docs: `BOLC-277957 / BOLC-277957 / BOLC-277957`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `2678,26` | venc: `2025-07-31` | docs: `CF746031072025 / CF746031072025 / CF746031072025 / CF746031072025 / CF746031072025 / CF746031072025`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.2.3` conta: `7.11.6` (DESPESAS GERAIS PARTICULAR)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2669,41` | venc: `2025-07-25` | docs: `PISCOFINS062025G&S / PISCOFINS062025G&S`
+  - cc: `1.5.1.1` conta: `7.4.1` (PIS)
+  - cc: `1.5.1.1` conta: `7.4.2` (COFINS)
+- **2x** | filial: `G3S LONDRINA` | valor: `2667,3` | venc: `2025-11-05` | docs: `KM051125 / KM051125`
+  - cc: `1.2.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2658` | venc: `2025-08-05` | docs: `RKM05082025 / RKM05082025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S DOURADOS` | valor: `2652,3` | venc: `2025-09-08` | docs: `BOLV-84350 / BOLV-84350`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `2639,7` | venc: `2025-08-28` | docs: `BOLV-84063 / BOLV-84063 / BOLV-84063`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `2639,7` | venc: `2025-09-28` | docs: `BOLV-84063 / BOLV-84063`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2633,78` | venc: `2026-01-25` | docs: `NFSE-1469 / NFSE-1469 / NFSE-1469 / NFSE-1469 / NFSE-1469`
+  - cc: `1.2.2.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.3.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.4.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.5.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.7.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2633,78` | venc: `2026-02-25` | docs: `NFSE-1486 / NFSE-1486 / NFSE-1486 / NFSE-1486 / NFSE-1486`
+  - cc: `1.2.2.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.3.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.4.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.5.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.7.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2600` | venc: `2025-09-04` | docs: `NFE-864256 / NFE-864256`
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `2584,25` | venc: `2026-01-26` | docs: `SEMPARARG3S06012026 / SEMPARARG3S06012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `2582,67` | venc: `2025-10-30` | docs: `CF8591/7408102025 / CF8591/7408102025 / CF8591/7408102025 / CF8591/7408102025 / CF8591/7408102025 / CF8591/7408102025 / CF8591/7408102025 / CF8591/7408102025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.2.1.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.1` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.1.1.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2581,1` | venc: `2025-07-25` | docs: `NFSE-1379 / NFSE-1379 / NFSE-1379 / NFSE-1379 / NFSE-1379`
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2581,1` | venc: `2025-08-15` | docs: `NFSE-1393 / NFSE-1393 / NFSE-1393 / NFSE-1393 / NFSE-1393`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2581,1` | venc: `2025-10-25` | docs: `NFSE-1424 / NFSE-1424 / NFSE-1424 / NFSE-1424 / NFSE-1424`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2581,1` | venc: `2025-11-25` | docs: `NFSE-1439 / NFSE-1439 / NFSE-1439 / NFSE-1439 / NFSE-1439`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2581,1` | venc: `2025-11-26` | docs: `NFSE-1439 / NFSE-1439 / NFSE-1439 / NFSE-1439 / NFSE-1439`
+  - cc: `1.2.2.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.4` conta: `7.5.18` (SISTEMAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2581,1` | venc: `2025-12-25` | docs: `NFSE-1453 / NFSE-1453 / NFSE-1453 / NFSE-1453 / NFSE-1453`
+  - cc: `1.2.2.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.3.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.4.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.5.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.7.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+- **2x** | filial: `G&S MARINGA` | valor: `2570,21` | venc: `2026-01-26` | docs: `SEMPARARG&S04012026 / SEMPARARG&S04012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `2520,08` | venc: `2025-07-15` | docs: `CC884015072025 / CC884015072025 / CC884015072025`
+  - cc: `1.1.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.1.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `G3S PRUDENTE` | valor: `2513,7` | venc: `2025-09-12` | docs: `BOLV-77619 / BOLV-77619 / BOLV-77619`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `2513,05` | venc: `2025-07-31` | docs: `CF859131072025 / CF859131072025 / CF859131072025 / CF859131072025 / CF859131072025 / CF859131072025 / CF859131072025 / CF859131072025 / CF859131072025 / CF859131072025`
+  - cc: `1.1.12` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.12` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.5` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.6` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.6` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `RSE` | valor: `2500,44` | venc: `2025-11-12` | docs: `NFE-3 / NFE-3 / NFE-3 / NFE-3`
+  - cc: `2.5.1.2` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `1.6.5` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.6.5` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **2x** | filial: `G&S MARINGA` | valor: `2500` | venc: `2025-12-05` | docs: `SALCOMPLG&S04112025 / SALCOMPLG&S04112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2467,65` | venc: `2025-12-15` | docs: `RKM122025 / RKM122025 / RKM122025 / RKM122025 / RKM122025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `2460` | venc: `2026-01-23` | docs: `BOLC-291281 / BOLC-291281`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **20x** | filial: `G3S CAMPO GRANDE` | valor: `2458,61` | venc: `2025-08-30` | docs: `CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025 / CF741130082025`
+  - cc: `1.2.4.1` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.1` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.4.3` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.8.1` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.8.1` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.8.3` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.8.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+- **10x** | filial: `G&S PRUDENTE` | valor: `2439,1` | venc: `2025-08-15` | docs: `RKM15082025 / RKM15082025 / RKM15082025 / RKM15082025 / RKM15082025 / RKM15082025 / RKM15082025 / RKM15082025 / RKM15082025 / RKM15082025`
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.12` (PEDÁGIO)
+- **5x** | filial: `G3S DOURADOS` | valor: `2420` | venc: `2026-02-12` | docs: `BOLV-87992 / BOLV-87992 / BOLV-87992 / BOLV-87992 / BOLV-87992`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **18x** | filial: `G3S CAMPO GRANDE` | valor: `2419,11` | venc: `2026-02-28` | docs: `CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026 / CF9645022026`
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.1` conta: `7.5.26` (DESPESAS SOCIAIS E DOAÇÕES)
+  - cc: `1.2.4.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.2` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.2` conta: `7.5.26` (DESPESAS SOCIAIS E DOAÇÕES)
+  - cc: `1.2.4.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.3` conta: `7.5.26` (DESPESAS SOCIAIS E DOAÇÕES)
+  - cc: `1.2.4.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `2406,28` | venc: `2025-07-30` | docs: `CF863330072025 / CF863330072025 / CF863330072025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2400` | venc: `2025-06-07` | docs: `226871-81855 / 226871-81855`
+  - cc: `1.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.2` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+- **2x** | filial: `G3S LONDRINA` | valor: `2384` | venc: `2025-07-08` | docs: `BOLC-276468 / BOLC-276468`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **9x** | filial: `G&S PRUDENTE` | valor: `2380` | venc: `2025-09-25` | docs: `NFSE-1878 / NFSE-1878 / NFSE-1878 / NFSE-1878 / NFSE-1878 / NFSE-1878 / NFSE-1878 / NFSE-1878 / NFSE-1878`
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.47` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.45` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2379,89` | venc: `2025-05-07` | docs: `FATLOC341336 / FATLOC341336`
+  - cc: `1.2.7.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.7.3` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G3S DOURADOS` | valor: `2376` | venc: `2025-09-24` | docs: `BOLV-84430 / BOLV-84430`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **8x** | filial: `G&S PRUDENTE` | valor: `2373,8` | venc: `2025-12-15` | docs: `NFSE-2050 / NFSE-2050 / NFSE-2050 / NFSE-2050 / NFSE-2050 / NFSE-2050 / NFSE-2050 / NFSE-2050`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2341,05` | venc: `2025-11-26` | docs: `ADT16174414 / ADT16174414`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **4x** | filial: `G3S PRUDENTE` | valor: `2337,2` | venc: `2025-07-15` | docs: `RKM15072025 / RKM15072025 / RKM15072025 / RKM15072025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **4x** | filial: `G&S PRUDENTE` | valor: `2326,7` | venc: `2026-03-15` | docs: `NFE-493972 / NFE-493972 / NFE-493972 / NFE-493972`
+  - cc: `1.7.1.11.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.14.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `2324,82` | venc: `2026-02-20` | docs: `IRRF012026G3S / IRRF012026G3S / IRRF012026G3S / IRRF012026G3S`
+  - cc: `1.2.3.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.1` conta: `7.4.6` (IRRF)
+  - cc: `1.3.1.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.2` conta: `7.4.6` (IRRF)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2324,1` | venc: `2025-07-05` | docs: `NFE-95195 / NFE-95195`
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2324,1` | venc: `2025-08-05` | docs: `NFE-95195 / NFE-95195`
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2324,1` | venc: `2025-09-05` | docs: `NFE-95195 / NFE-95195`
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `2305,07` | venc: `2025-10-15` | docs: `CC5941102025 / CC5941102025 / CC5941102025`
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.7.7` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.8.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S MARINGA` | valor: `2299,5` | venc: `2025-09-17` | docs: `BOLC-282233 / BOLC-282233`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `2299` | venc: `2025-07-05` | docs: `RKM25062025 / RKM25062025`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `2291,01` | venc: `2025-11-28` | docs: `CF7569112025 / CF7569112025 / CF7569112025 / CF7569112025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2289` | venc: `2025-09-02` | docs: `BOLC-280949 / BOLC-280949`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2283` | venc: `2025-11-26` | docs: `BOLC-287930 / BOLC-287930`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `2265,08` | venc: `2025-12-15` | docs: `NFE-664 / NFE-664`
+  - cc: `1.2.2.1` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **4x** | filial: `G3S PRUDENTE` | valor: `2259,89` | venc: `2026-03-15` | docs: `NFSE-256180427 / NFSE-256180427 / NFSE-256180427 / NFSE-256180427`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `2259,3` | venc: `2025-09-15` | docs: `CC897120082025 / CC897120082025`
+  - cc: `1.1.1.1` conta: `7.5.17` (TAXAS)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S LONDRINA` | valor: `2256` | venc: `2025-12-01` | docs: `BOLC-288347 / BOLC-288347`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `2255` | venc: `2025-05-28` | docs: `BOLV-81711 / BOLV-81711 / BOLV-81711`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2251,5` | venc: `2025-07-02` | docs: `BOLC-276057 / BOLC-276057`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2250` | venc: `2026-02-15` | docs: `AL28547 / AL28547`
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2250` | venc: `2025-10-25` | docs: `NFSE-112 / NFSE-112`
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `2233` | venc: `2025-09-05` | docs: `NFSE-13115 / NFSE-13115`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `RSE` | valor: `2230` | venc: `2025-11-05` | docs: `NFE-51431 / NFE-51431 / NFE-51431 / NFE-51431`
+  - cc: `1.5.1.2` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `1.6.5` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.6.5` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **3x** | filial: `G3S MARINGA` | valor: `2215,37` | venc: `2025-11-27` | docs: `BOLV-79984 / BOLV-79984 / BOLV-79984`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `2210,46` | venc: `2025-12-15` | docs: `00006940 / 00006940 / 00006940 / 00006940 / 00006940`
+  - cc: `1.7.2.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.2.2` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+- **4x** | filial: `G3S PRUDENTE` | valor: `2207` | venc: `2025-08-15` | docs: `RKM15082025 / RKM15082025 / RKM15082025 / RKM15082025`
+  - cc: `1.2.1.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.5` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.6` conta: `7.1.12` (PEDÁGIO)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `2200,13` | venc: `2025-06-30` | docs: `CF863330062025 / CF863330062025 / CF863330062025 / CF863330062025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **5x** | filial: `G3S PRUDENTE` | valor: `2200` | venc: `2026-02-25` | docs: `AL28787 / AL28787 / AL28787 / AL28787 / AL28787`
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2167` | venc: `2025-05-15` | docs: `X-RKM09052025 / X-RKM09052025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2165,36` | venc: `2025-09-15` | docs: `RKM15092025 / RKM15092025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `2162` | venc: `2026-02-05` | docs: `RKM05022026 / RKM05022026`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `2157,43` | venc: `2025-07-30` | docs: `CF860930072025 / CF860930072025 / CF860930072025 / CF860930072025 / CF860930072025 / CF860930072025 / CF860930072025 / CF860930072025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.2.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G3S MARINGA` | valor: `2151` | venc: `2025-05-30` | docs: `BOLC-273186 / BOLC-273186`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2137` | venc: `2026-02-05` | docs: `RKM05022026 / RKM05022026`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.5.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G&S MARINGA` | valor: `2120` | venc: `2026-02-05` | docs: `NFSE-8 / NFSE-8 / NFSE-8 / NFSE-8`
+  - cc: `1.2.4.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `2110,01` | venc: `2026-01-26` | docs: `SEMPARARG3S03012026 / SEMPARARG3S03012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **4x** | filial: `G3S PRUDENTE` | valor: `2108,88` | venc: `2025-12-15` | docs: `NFSE-255612632 / NFSE-255612632 / NFSE-255612632 / NFSE-255612632`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `2089,95` | venc: `2025-08-26` | docs: `CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025 / CF860926082025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.4` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.4` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2081,68` | venc: `2025-08-25` | docs: `RKM25082025 / RKM25082025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `2079,87` | venc: `2025-04-24` | docs: `CF742924042025 / CF742924042025`
+  - cc: `1.7.1.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+- **4x** | filial: `G3S PRUDENTE` | valor: `2073,28` | venc: `2026-01-15` | docs: `NFSE-255787566 / NFSE-255787566 / NFSE-255787566 / NFSE-255787566`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `2073,28` | venc: `2026-02-15` | docs: `NFSE-255992247 / NFSE-255992247 / NFSE-255992247 / NFSE-255992247`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S DOURADOS` | valor: `2070` | venc: `2025-05-25` | docs: `32296-1/55 / 32296-1/55 / 32296-1/55 / 32296-1/55`
+  - cc: `1.2.2.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.2.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.2.1` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G3S DOURADOS` | valor: `2070` | venc: `2025-07-25` | docs: `NFE-34574 / NFE-34574`
+  - cc: `1.2.2.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **22x** | filial: `G&S PRUDENTE` | valor: `2063,37` | venc: `2026-02-25` | docs: `NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831 / NFSE-831`
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **23x** | filial: `G&S PRUDENTE` | valor: `2063,37` | venc: `2026-03-25` | docs: `NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875 / NFSE-875`
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.3.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **2x** | filial: `G&S DOURADOS` | valor: `2056,17` | venc: `2026-01-26` | docs: `SEMPARARG&S03012026 / SEMPARARG&S03012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2049,02` | venc: `2026-01-15` | docs: `NFE-3039 / NFE-3039`
+  - cc: `1.2.5.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.3.1.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **4x** | filial: `G3S PRUDENTE` | valor: `2044,48` | venc: `2025-11-15` | docs: `NFSE-255444736 / NFSE-255444736 / NFSE-255444736 / NFSE-255444736`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `2040` | venc: `2025-05-09` | docs: `BOLC-272365 / BOLC-272365`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2034` | venc: `2026-03-15` | docs: `NFE-1560512 / NFE-1560512`
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `2025,79` | venc: `2025-11-26` | docs: `ADT16174407
+
+ / ADT16174407
+
+`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2025` | venc: `2025-11-10` | docs: `BOLV-85978 / BOLV-85978`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `2023,8` | venc: `2025-11-26` | docs: `ADT16174406 / ADT16174406`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S MARINGA` | valor: `2023,8` | venc: `2025-11-26` | docs: `ADT16174408 / ADT16174408`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **3x** | filial: `G&S PRUDENTE` | valor: `2015` | venc: `2025-10-16` | docs: `NFE-38574 / NFE-38574 / NFE-38574`
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `2010,12` | venc: `2025-08-12` | docs: `NFE-1228396 / NFE-1228396 / NFE-1228396`
+  - cc: `1.2.2.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `2008,31` | venc: `2025-12-16` | docs: `CF8591122025 / CF8591122025 / CF8591122025 / CF8591122025 / CF8591122025 / CF8591122025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.2.4` (BRINDES)
+  - cc: `1.1.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `2007` | venc: `2025-05-29` | docs: `BOLC-272582 / BOLC-272582`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2000` | venc: `2025-08-05` | docs: `23960 / 23960`
+  - cc: `2.7.1.2` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+  - cc: `1.7.1.2.3` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2000` | venc: `2025-09-05` | docs: `24630 / 24630`
+  - cc: `1.7.1.2.3` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+  - cc: `2.7.1.2` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+- **2x** | filial: `G3S DOURADOS` | valor: `2000` | venc: `2025-08-25` | docs: `BOLC-280140 / BOLC-280140`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `2000` | venc: `2025-09-18` | docs: `BOLC-282275 / BOLC-282275`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `NVS - EKIPA` | valor: `2000` | venc: `2025-10-02` | docs: `MS-002284 / MS-002284 / MS-002284 / MS-002284`
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `2000` | venc: `2025-07-15` | docs: `NFSE-26 / NFSE-26 / NFSE-26`
+  - cc: `1.7.1.8.3` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.1.8.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.1.2.2` conta: `7.5.9` (CONSULTORIA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2000` | venc: `2026-03-05` | docs: `NFSE-4 / NFSE-4`
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `2000` | venc: `2025-12-05` | docs: `SALCOMPLG&S03112025 / SALCOMPLG&S03112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `2000` | venc: `2025-12-05` | docs: `SALCOMPLG3S06112025 / SALCOMPLG3S06112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `2000` | venc: `1800-01-01` | docs: `SALDO ADT CLI / SALDO ADT CLI`
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `1985,95` | venc: `2025-07-18` | docs: `RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S / RETFED062025G3S`
+  - cc: `1.2.2.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.3.1.1` conta: `7.4.6` (IRRF)
+  - cc: `1.3.1.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G3S MARINGA` | valor: `1985,5` | venc: `2025-05-19` | docs: `B-271429 / B-271429`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `1982,75` | venc: `2025-05-29` | docs: `CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025 / CF001529052025`
+  - cc: `1.2.7.1` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.7.3` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.4` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1980` | venc: `2025-11-24` | docs: `00005821 / 00005821`
+  - cc: `1.2.5.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.5.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1980` | venc: `2025-09-27` | docs: `BOLV-84035 / BOLV-84035 / BOLV-84035 / BOLV-84035 / BOLV-84035 / BOLV-84035`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1980` | venc: `2025-12-11` | docs: `BOLV-86690 / BOLV-86690`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `1980` | venc: `2026-02-05` | docs: `BOLV-87720 / BOLV-87720 / BOLV-87720 / BOLV-87720 / BOLV-87720 / BOLV-87720`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1980` | venc: `2025-10-06` | docs: `NFSE-411 / NFSE-411 / NFSE-411`
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.19` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `1979,55` | venc: `2026-01-31` | docs: `CF9520012026 / CF9520012026 / CF9520012026 / CF9520012026 / CF9520012026 / CF9520012026 / CF9520012026 / CF9520012026 / CF9520012026 / CF9520012026`
+  - cc: `1.7.1.2.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.7.1.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.3` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.2.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **7x** | filial: `G3S CAMPO GRANDE` | valor: `1971,81` | venc: `2026-02-15` | docs: `CC8840200126 / CC8840200126 / CC8840200126 / CC8840200126 / CC8840200126 / CC8840200126 / CC8840200126`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.6.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1971` | venc: `2025-07-23` | docs: `NFE-4953 / NFE-4953`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1971` | venc: `2025-08-06` | docs: `NFE-4953 / NFE-4953`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **10x** | filial: `G&S PRUDENTE` | valor: `1951` | venc: `2026-02-05` | docs: `NFSE-43 / NFSE-43 / NFSE-43 / NFSE-43 / NFSE-43 / NFSE-43 / NFSE-43 / NFSE-43 / NFSE-43 / NFSE-43`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.24` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `1946,9` | venc: `2025-12-15` | docs: `NFSE-1407 / NFSE-1407 / NFSE-1407 / NFSE-1407 / NFSE-1407 / NFSE-1407 / NFSE-1407 / NFSE-1407 / NFSE-1407 / NFSE-1407`
+  - cc: `1.2.2.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.3.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.4.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.5.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.3.1.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.5.1.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.4.1.2` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.7.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.7.2.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.8.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `1945,5` | venc: `2025-10-07` | docs: `BOLC-283445 / BOLC-283445`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `1937,5` | venc: `2025-09-15` | docs: `CTE376451/376670/377059 / CTE376451/376670/377059 / CTE376451/376670/377059 / CTE376451/376670/377059 / CTE376451/376670/377059`
+  - cc: `1.2.4.8.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.16` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.12` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.8.16` conta: `7.1.18` (FRETES E CARRETOS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `1928` | venc: `2026-02-15` | docs: `NFE-8466 / NFE-8466 / NFE-8466 / NFE-8466 / NFE-8466 / NFE-8466`
+  - cc: `1.2.2.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.3.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.7.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.8.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.12.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1925` | venc: `2025-05-06` | docs: `BOLV-81149 / BOLV-81149 / BOLV-81149`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1921,93` | venc: `2025-09-30` | docs: `CF7569092025 / CF7569092025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **21x** | filial: `G&S PRUDENTE` | valor: `1916,53` | venc: `2025-12-24` | docs: `NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308 / NFSE-16308`
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **22x** | filial: `G&S PRUDENTE` | valor: `1916,53` | venc: `2026-01-27` | docs: `NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55 / NFSE-55`
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **15x** | filial: `G3S CAMPO GRANDE` | valor: `1913,26` | venc: `2025-09-29` | docs: `CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025 / CF0239092025`
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.3` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.4.3` conta: `7.6.2` (FERRAMENTAS)
+  - cc: `1.2.8.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.8.1` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.8.1` conta: `7.6.2` (FERRAMENTAS)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.8.3` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.8.3` conta: `7.6.2` (FERRAMENTAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `1904,33` | venc: `2025-06-30` | docs: `CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025 / CF756930062025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.3.1.2` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.3.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.3.1.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.3.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.5.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.5.1.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.5.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **6x** | filial: `G3S PRUDENTE` | valor: `1901,74` | venc: `2025-07-25` | docs: `ISSQN062025G3S04 / ISSQN062025G3S04 / ISSQN062025G3S04 / ISSQN062025G3S04 / ISSQN062025G3S04 / ISSQN062025G3S04`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.1.10` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.3` conta: `7.4.5` (ISS)
+  - cc: `1.1.1.3` conta: `7.4.5` (ISS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `1900` | venc: `2026-02-20` | docs: `NFSE-169 / NFSE-169 / NFSE-169 / NFSE-169 / NFSE-169 / NFSE-169 / NFSE-169 / NFSE-169 / NFSE-169 / NFSE-169`
+  - cc: `1.2.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.3.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.4.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.3.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.5.1.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.4.1.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.7.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.7.2.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.8.1` conta: `7.5.9` (CONSULTORIA)
+- **3x** | filial: `G3S MARINGA` | valor: `1870,5` | venc: `2025-10-16` | docs: `BOLC-283138 / BOLC-283138 / BOLC-283138`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1869` | venc: `2025-11-25` | docs: `NFE-1557146 / NFE-1557146`
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1865,5` | venc: `2025-06-06` | docs: `BOLC-274302 / BOLC-274302`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `1861,83` | venc: `2025-07-25` | docs: `NFE-101035 / NFE-101035 / NFE-101035 / NFE-101035`
+  - cc: `1.1.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.1.16` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1858,5` | venc: `2025-11-15` | docs: `CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S MARINGA` | valor: `1854` | venc: `2025-10-15` | docs: `RKM151025 / RKM151025`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1851,55` | venc: `2025-11-15` | docs: `CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G&S PRUDENTE` | valor: `1850` | venc: `2025-09-05` | docs: `NFSE-14 / NFSE-14 / NFSE-14 / NFSE-14`
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `1850` | venc: `2025-06-13` | docs: `NFSE-35 / NFSE-35`
+  - cc: `1` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.4.1` conta: `7.7.2` (MATERIAL PARA REFORMA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1848` | venc: `2025-11-15` | docs: `NFE-1556642 / NFE-1556642`
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `1840` | venc: `2025-05-25` | docs: `NFE-32942 / NFE-32942 / NFE-32942`
+  - cc: `1.2.2.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.2.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.2.4` conta: `7.3.8` (CESTA BÁSICA)
+- **2x** | filial: `G3S DOURADOS` | valor: `1840` | venc: `2025-06-25` | docs: `NFE-34144 / NFE-34144`
+  - cc: `1.2.2.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **7x** | filial: `G3S PRUDENTE` | valor: `1834,2` | venc: `2026-03-16` | docs: `NFE-1953 / NFE-1953 / NFE-1953 / NFE-1953 / NFE-1953 / NFE-1953 / NFE-1953`
+  - cc: `1.2.2.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.7.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `2.2.8.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G3S DOURADOS` | valor: `1820,2` | venc: `2025-06-26` | docs: `BOLV-82402 / BOLV-82402`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `1820` | venc: `2026-02-25` | docs: `NFSE-1768 / NFSE-1768 / NFSE-1768 / NFSE-1768 / NFSE-1768`
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `1819,92` | venc: `2025-12-17` | docs: `RKM122025 / RKM122025`
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.1.12` (PEDÁGIO)
+- **8x** | filial: `G&S PRUDENTE` | valor: `1800` | venc: `2025-07-31` | docs: `AL23818 / AL23818 / AL23818 / AL23818 / AL23818 / AL23818 / AL23818 / AL23818`
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.29` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.36` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.47` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.45` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1800` | venc: `2025-10-25` | docs: `NFSE-18 / NFSE-18 / NFSE-18`
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **27x** | filial: `G&S PRUDENTE` | valor: `1794,16` | venc: `2025-06-15` | docs: `NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389 / NFSE-6389`
+  - cc: `1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.21` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.32` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.33` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1790` | venc: `2025-10-05` | docs: `RKM05102025 / RKM05102025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S DOURADOS` | valor: `1775,87` | venc: `2025-11-26` | docs: `ADT16174412 / ADT16174412`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1775` | venc: `2026-02-20` | docs: `0000X8329 / 0000X8329`
+  - cc: `1.2.5.3` conta: `7.3.1` (SALÁRIOS)
+  - cc: `1.2.5.4` conta: `7.3.1` (SALÁRIOS)
+- **2x** | filial: `G3S MARINGA` | valor: `1771,45` | venc: `2026-02-06` | docs: `NF8267/NFS15119 / NF8267/NFS15119`
+  - cc: `1.2.4.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G&S DOURADOS` | valor: `1769,32` | venc: `2025-08-28` | docs: `279531/279698 / 279531/279698`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1768,33` | venc: `2025-10-30` | docs: `CF7577102025 / CF7577102025 / CF7577102025 / CF7577102025 / CF7577102025 / CF7577102025`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1766` | venc: `2025-08-05` | docs: `BOLC-278662 / BOLC-278662`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1765` | venc: `2025-07-15` | docs: `NFSE-3731 / NFSE-3731`
+  - cc: `1.7.1.14.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.14.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **23x** | filial: `G&S PRUDENTE` | valor: `1754,44` | venc: `2025-08-25` | docs: `NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691 / NFSE-14691`
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.45` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.47` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **22x** | filial: `G&S PRUDENTE` | valor: `1754,44` | venc: `2025-09-25` | docs: `NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768 / NFSE-14768`
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **22x** | filial: `G&S PRUDENTE` | valor: `1754,44` | venc: `2025-10-24` | docs: `NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492 / NFSE-15492`
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1750` | venc: `2026-03-25` | docs: `AL29562 / AL29562 / AL29562`
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `1750` | venc: `2025-12-05` | docs: `SALCOMPLG3S03112025 / SALCOMPLG3S03112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1750` | venc: `2025-08-05` | docs: `X23958 / X23958`
+  - cc: `1.7.1.4.1` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+  - cc: `1.7.1.14.3` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1750` | venc: `2025-09-05` | docs: `X24629 / X24629`
+  - cc: `1.7.1.4.1` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+  - cc: `1.7.1.14.3` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1750` | venc: `2025-12-05` | docs: `X26859 / X26859`
+  - cc: `1.7.1.14.3` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+  - cc: `1.7.1.4.1` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1748,76` | venc: `2025-08-05` | docs: `RKM05082025 / RKM05082025`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `1744` | venc: `2025-10-03` | docs: `BOLC-283408 / BOLC-283408`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `1739,98` | venc: `2026-01-26` | docs: `CF8591012026 / CF8591012026 / CF8591012026`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+- **18x** | filial: `G3S PRUDENTE` | valor: `1734,83` | venc: `2026-01-23` | docs: `ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04 / ISSQN122025G3S04`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.1.5` conta: `7.4.5` (ISS)
+  - cc: `1.1.10` conta: `7.4.5` (ISS)
+  - cc: `1.1.14` conta: `7.4.5` (ISS)
+  - cc: `1.2.1.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.2.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.2` conta: `7.4.5` (ISS)
+  - cc: `1.3.1.1` conta: `7.4.5` (ISS)
+  - cc: `1.3.1.2` conta: `7.4.5` (ISS)
+  - cc: `1.3.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.5.1.1` conta: `7.4.5` (ISS)
+  - cc: `1.4.1.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.7.1` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.8.1` conta: `7.4.5` (ISS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1732` | venc: `2026-03-13` | docs: `BOLC-295561 / BOLC-295561`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S MARINGA` | valor: `1722,07` | venc: `2025-09-12` | docs: `BOLV-77426 / BOLV-77426 / BOLV-77426`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `1721,17` | venc: `2026-03-20` | docs: `ARRECADACAORSE022026 / ARRECADACAORSE022026`
+  - cc: `1.6.1` conta: `7.3.3` (INSS)
+  - cc: `1.6.5` conta: `7.3.3` (INSS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1721` | venc: `2026-02-18` | docs: `RKM7577022026 / RKM7577022026`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1717,76` | venc: `2020-10-06` | docs: `B-40670 / B-40670 / B-40670 / B-40670`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **8x** | filial: `G&S PRUDENTE` | valor: `1714,75` | venc: `2026-03-15` | docs: `NFSE-2201 / NFSE-2201 / NFSE-2201 / NFSE-2201 / NFSE-2201 / NFSE-2201 / NFSE-2201 / NFSE-2201`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.9.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `RSE` | valor: `1700` | venc: `2025-11-18` | docs: `NFE-92 / NFE-92`
+  - cc: `2.5.1.2` conta: `5.1.2` (LOCAÇÃO DE CONTEINER E CAÇAMBAS)
+  - cc: `2.5.1.2` conta: `5.1.2` (LOCAÇÃO DE CONTEINER E CAÇAMBAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1680` | venc: `2026-01-27` | docs: `DEV.BOLV -87351 / DEV.BOLV -87351`
+  - cc: `1.2.5.2` conta: `4.3.1` (DEVOLUÇÃO DE VENDA SUCATA)
+  - cc: `1.2.5.2` conta: `4.3.1` (DEVOLUÇÃO DE VENDA SUCATA)
+- **22x** | filial: `G&S PRUDENTE` | valor: `1678,16` | venc: `2025-11-25` | docs: `NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933 / NFSE-15933`
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1670` | venc: `2025-11-15` | docs: `NFSE-255444576 / NFSE-255444576 / NFSE-255444576 / NFSE-255444576`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1670` | venc: `2025-12-15` | docs: `NFSE-255616932 / NFSE-255616932 / NFSE-255616932 / NFSE-255616932`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.2.1` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1670` | venc: `2026-01-15` | docs: `NFSE-255790012 / NFSE-255790012 / NFSE-255790012 / NFSE-255790012`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1670` | venc: `2026-02-15` | docs: `NFSE-255991888 / NFSE-255991888 / NFSE-255991888 / NFSE-255991888`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1670` | venc: `2026-03-15` | docs: `NFSE-256183606 / NFSE-256183606 / NFSE-256183606 / NFSE-256183606`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1651,2` | venc: `2026-04-15` | docs: `NFE-35974 / NFE-35974`
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `1650` | venc: `2026-01-12` | docs: `BOLV-86958 / BOLV-86958`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1647,8` | venc: `2026-01-12` | docs: `BOLV-86939 / BOLV-86939`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `RSE` | valor: `1646,61` | venc: `2025-12-19` | docs: `INSSIRRFRSE112025 / INSSIRRFRSE112025`
+  - cc: `1.1.10` conta: `7.3.3` (INSS)
+  - cc: `1.1.10` conta: `7.4.6` (IRRF)
+- **2x** | filial: `G3S LONDRINA` | valor: `1640,25` | venc: `2026-01-26` | docs: `SEMPARARG3S08012026 / SEMPARARG3S08012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `1630` | venc: `2025-09-15` | docs: `BOLC-281990 / BOLC-281990`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1630` | venc: `2025-12-25` | docs: `NFE-34003 / NFE-34003`
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1630` | venc: `2025-08-25` | docs: `NFSE-132 / NFSE-132`
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1626,83` | venc: `2025-10-15` | docs: `CC5941240925 / CC5941240925 / CC5941240925`
+  - cc: `1.2.5.7.7` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.8.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1626,54` | venc: `2025-07-25` | docs: `NFE-7084 / NFE-7084`
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1620` | venc: `2025-11-15` | docs: `AL26437 / AL26437 / AL26437 / AL26437`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1616,32` | venc: `2026-02-15` | docs: `NFE-11515 / NFE-11515`
+  - cc: `1.2.2.3` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.8.3` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1606,56` | venc: `2025-05-30` | docs: `CF740330052025 / CF740330052025`
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **21x** | filial: `G&S PRUDENTE` | valor: `1602,56` | venc: `2025-09-25` | docs: `ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01 / ISSQN082025G&S01`
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.3` conta: `7.4.5` (ISS)
+  - cc: `1.2.2.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.7.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.2.5.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.7.6.3` conta: `7.4.5` (ISS)
+  - cc: `1.2.7.6.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.7.4` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.6` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.16` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.29` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.8` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.9` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.7.12` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.12` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.3` conta: `7.4.5` (ISS)
+- **22x** | filial: `G&S PRUDENTE` | valor: `1601,88` | venc: `2025-06-25` | docs: `NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577 / NFSE-13577`
+  - cc: `1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.47` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.45` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **22x** | filial: `G&S PRUDENTE` | valor: `1601,88` | venc: `2025-07-25` | docs: `NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065 / NFSE-14065`
+  - cc: `1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.2.5.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.7.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.47` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.45` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.15` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1600,56` | venc: `2026-03-05` | docs: `RKM7577032026 / RKM7577032026 / RKM7577032026 / RKM7577032026`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G&S LONDRINA` | valor: `1600,45` | venc: `2026-01-26` | docs: `SEMPARARG&S07012026 / SEMPARARG&S07012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1600` | venc: `2026-03-15` | docs: `NFE-1281 / NFE-1281`
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1600` | venc: `2026-02-05` | docs: `NFSE-49 / NFSE-49`
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1597` | venc: `2026-03-02` | docs: `BOLC-294468 / BOLC-294468`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S LONDRINA` | valor: `1597` | venc: `2026-03-05` | docs: `BOLC-294468 / BOLC-294468 / BOLC-294468 / BOLC-294468`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1595,64` | venc: `2025-07-31` | docs: `CF756931072025 / CF756931072025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S DOURADOS` | valor: `1592` | venc: `2025-11-26` | docs: `BOLC-287839 / BOLC-287839`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **8x** | filial: `G3S PRUDENTE` | valor: `1580` | venc: `2026-01-15` | docs: `AL27632 / AL27632 / AL27632 / AL27632 / AL27632 / AL27632 / AL27632 / AL27632`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.41` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.9.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.9.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1577` | venc: `2025-10-03` | docs: `BOLC-283505 / BOLC-283505`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **25x** | filial: `G&S PRUDENTE` | valor: `1572,75` | venc: `2025-07-15` | docs: `NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890 / NFSE-6890`
+  - cc: `1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.21` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.3.5.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.33` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1568` | venc: `2025-09-15` | docs: `RKM15092025 / RKM15092025 / RKM15092025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **20x** | filial: `G3S CAMPO GRANDE` | valor: `1564,03` | venc: `2025-11-27` | docs: `CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025 / CF9538112025`
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.1.8.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.1.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.1.8.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.2.1.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.8.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `1561,21` | venc: `2025-08-29` | docs: `CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025 / CF001529082025`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.4` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.1` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.7.3` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.7.4` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+- **5x** | filial: `G3S PRUDENTE` | valor: `1560,4` | venc: `2025-05-25` | docs: `ISSQN042025G3S04 / ISSQN042025G3S04 / ISSQN042025G3S04 / ISSQN042025G3S04 / ISSQN042025G3S04`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.1.10` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.2` conta: `7.4.5` (ISS)
+  - cc: `1.1.1.3` conta: `7.4.5` (ISS)
+- **2x** | filial: `G3S DOURADOS` | valor: `1558` | venc: `2026-03-09` | docs: `BOLC-293422 / BOLC-293422`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1547,77` | venc: `2025-12-19` | docs: `0000X6702 / 0000X6702`
+  - cc: `1.9.5` conta: `7.3.2` (FGTS)
+  - cc: `1.9.5` conta: `7.3.3` (INSS)
+- **3x** | filial: `RSE` | valor: `1546,83` | venc: `2026-03-25` | docs: `ISSTOMADOR022026RSE / ISSTOMADOR022026RSE / ISSTOMADOR022026RSE`
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.3` conta: `7.4.5` (ISS)
+  - cc: `1.6.5` conta: `7.4.5` (ISS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1534,74` | venc: `2026-01-19` | docs: `ARRECADAÇÃOILDA122025 / ARRECADAÇÃOILDA122025`
+  - cc: `1.9.5` conta: `7.3.2` (FGTS)
+  - cc: `1.9.5` conta: `7.3.3` (INSS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1531,9` | venc: `2026-02-15` | docs: `NFE-1988 / NFE-1988 / NFE-1988`
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `RSE` | valor: `1530,81` | venc: `2026-01-19` | docs: `ARRECADAÇÃORSR01122025 / ARRECADAÇÃORSR01122025`
+  - cc: `1.1.10` conta: `7.3.3` (INSS)
+  - cc: `1.1.10` conta: `7.4.6` (IRRF)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1528,8` | venc: `2025-05-27` | docs: `BOLV-81359 / BOLV-81359`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1519,84` | venc: `2025-11-26` | docs: `ADT16174417 / ADT16174417`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S LONDRINA` | valor: `1517,85` | venc: `2025-11-26` | docs: `ADT16174411 / ADT16174411`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1516,38` | venc: `2025-06-25` | docs: `ISSQN052025G3S04 / ISSQN052025G3S04 / ISSQN052025G3S04 / ISSQN052025G3S04`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.1.10` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.2` conta: `7.4.5` (ISS)
+  - cc: `1.1.1.3` conta: `7.4.5` (ISS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1509,16` | venc: `2025-04-30` | docs: `CF861730042025 / CF861730042025 / CF861730042025 / CF861730042025 / CF861730042025 / CF861730042025`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1508` | venc: `2025-11-05` | docs: `KM051125 / KM051125`
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **6x** | filial: `G3S PRUDENTE` | valor: `1506,27` | venc: `2026-02-25` | docs: `ISSTOMADOR012026G3S04 / ISSTOMADOR012026G3S04 / ISSTOMADOR012026G3S04 / ISSTOMADOR012026G3S04 / ISSTOMADOR012026G3S04 / ISSTOMADOR012026G3S04`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.1.10` conta: `7.4.5` (ISS)
+  - cc: `1.2.1.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.3` conta: `7.4.5` (ISS)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `1500,38` | venc: `2025-11-30` | docs: `CF0015112025 / CF0015112025 / CF0015112025 / CF0015112025 / CF0015112025 / CF0015112025 / CF0015112025 / CF0015112025 / CF0015112025 / CF0015112025`
+  - cc: `1.2.7.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.1` conta: `7.6.1` (GÁS  GLP COPA)
+  - cc: `1.2.7.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.3` conta: `7.6.1` (GÁS  GLP COPA)
+  - cc: `1.2.7.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1500` | venc: `2025-07-10` | docs: `AL23402 / AL23402`
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1500` | venc: `2025-10-15` | docs: `AL25637 / AL25637 / AL25637`
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `RSE` | valor: `1500` | venc: `2026-02-15` | docs: `NFSE-72 / NFSE-72 / NFSE-72`
+  - cc: `1.2.2.5.1` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.2.5.2` conta: `7.5.9` (CONSULTORIA)
+  - cc: `1.2.2.5.3` conta: `7.5.9` (CONSULTORIA)
+- **2x** | filial: `G&S LONDRINA` | valor: `1500` | venc: `2025-12-05` | docs: `SALCOMPLG&S07112025 / SALCOMPLG&S07112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1500` | venc: `2025-12-05` | docs: `SALCOMPLG3S01112025 / SALCOMPLG3S01112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S LONDRINA` | valor: `1500` | venc: `2025-12-05` | docs: `SALCOMPLG3S08112025 / SALCOMPLG3S08112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **9x** | filial: `G&S PRUDENTE` | valor: `1495` | venc: `2026-01-15` | docs: `NFSE-2096 / NFSE-2096 / NFSE-2096 / NFSE-2096 / NFSE-2096 / NFSE-2096 / NFSE-2096 / NFSE-2096 / NFSE-2096`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.24` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1488,97` | venc: `2025-04-29` | docs: `CF001529042025 / CF001529042025`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S LONDRINA` | valor: `1487,8` | venc: `2025-09-09` | docs: `BOLC-281513 / BOLC-281513`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1487,04` | venc: `2026-03-05` | docs: `NFE-7675 / NFE-7675`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1485` | venc: `2025-09-28` | docs: `BOLV-84068 / BOLV-84068`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1485` | venc: `2025-10-28` | docs: `BOLV-84068 / BOLV-84068`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1483,7` | venc: `2026-03-15` | docs: `NFE-4498 / NFE-4498`
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1477,27` | venc: `2025-05-28` | docs: `CF861728052025 / CF861728052025 / CF861728052025 / CF861728052025`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1470` | venc: `2025-10-05` | docs: `NFSE-38 / NFSE-38`
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **21x** | filial: `G&S PRUDENTE` | valor: `1467,9` | venc: `2025-10-15` | docs: `NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451 / NFSE-1451`
+  - cc: `1.7.1.2.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.37` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **22x** | filial: `G&S PRUDENTE` | valor: `1467,9` | venc: `2025-08-15` | docs: `NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256 / NFSE-256`
+  - cc: `1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.21` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **18x** | filial: `G&S PRUDENTE` | valor: `1467,9` | venc: `2025-09-15` | docs: `NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855 / NFSE-855`
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.13` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.21` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `1465,18` | venc: `2025-11-28` | docs: `CF6240112025 / CF6240112025 / CF6240112025 / CF6240112025 / CF6240112025 / CF6240112025 / CF6240112025 / CF6240112025 / CF6240112025`
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.5.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.5.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `1462,63` | venc: `2025-07-30` | docs: `CF757730072025 / CF757730072025 / CF757730072025 / CF757730072025 / CF757730072025 / CF757730072025 / CF757730072025 / CF757730072025 / CF757730072025 / CF757730072025`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `1462,5` | venc: `2026-01-07` | docs: `BOLC-289852 / BOLC-289852`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `1458` | venc: `2025-09-12` | docs: `BOLV-77069 / BOLV-77069`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1450,35` | venc: `2026-01-29` | docs: `CF8633012026 / CF8633012026 / CF8633012026 / CF8633012026`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.5.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **8x** | filial: `G&S MARINGA` | valor: `1450` | venc: `2026-03-25` | docs: `NFSE-382 / NFSE-382 / NFSE-382 / NFSE-382 / NFSE-382 / NFSE-382 / NFSE-382 / NFSE-382`
+  - cc: `1.2.5.6.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S MARINGA` | valor: `1445` | venc: `2025-07-15` | docs: `NFE-86447 / NFE-86447 / NFE-86447 / NFE-86447`
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S MARINGA` | valor: `1445` | venc: `2025-11-13` | docs: `NFE-91956 / NFE-91956 / NFE-91956 / NFE-91956`
+  - cc: `1.6.3.45` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S LONDRINA` | valor: `1440` | venc: `2025-09-25` | docs: `NFE-1452 / NFE-1452 / NFE-1452`
+  - cc: `1.2.3.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.8.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+- **3x** | filial: `G3S LONDRINA` | valor: `1437,8` | venc: `2025-08-15` | docs: `RKM15082025 / RKM15082025 / RKM15082025`
+  - cc: `1.2.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `1435` | venc: `2026-02-13` | docs: `BOLC-291446 / BOLC-291446`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **21x** | filial: `G3S CAMPO GRANDE` | valor: `1434,81` | venc: `2025-09-30` | docs: `CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025 / CF0015092025`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.7.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.1` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.7.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.7.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.3` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.7.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.4` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.7.4` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.4` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.7.4` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.3` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.7.4` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1427` | venc: `2025-10-30` | docs: `BOLC-285817 / BOLC-285817`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1425,95` | venc: `2025-09-28` | docs: `NFE-577420 / NFE-577420`
+  - cc: `1.6.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1425,17` | venc: `2026-02-24` | docs: `CF0023022026 / CF0023022026 / CF0023022026 / CF0023022026`
+  - cc: `1.7.1.4.5` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.4.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.4.5` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.1.4.5` conta: `7.1.12` (PEDÁGIO)
+- **20x** | filial: `G3S CAMPO GRANDE` | valor: `1411,92` | venc: `2025-11-23` | docs: `CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025 / CF9645112025`
+  - cc: `1.2.4.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.4.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.4.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.4.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.3.2` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.5.6.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.9` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.6.9` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.6.9` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.23` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.6.3.23` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.6.3.23` conta: `7.5.15` (RAÇÃO)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `1410,27` | venc: `2025-07-29` | docs: `CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025 / CF741129072025`
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.4` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.4` conta: `7.5.15` (RAÇÃO)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1406,16` | venc: `2026-01-30` | docs: `CF8617012026 / CF8617012026 / CF8617012026 / CF8617012026`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.1` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.3.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **7x** | filial: `G&S MARINGA` | valor: `1400` | venc: `2026-02-25` | docs: `NFSE-375 / NFSE-375 / NFSE-375 / NFSE-375 / NFSE-375 / NFSE-375 / NFSE-375`
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1400` | venc: `2025-09-15` | docs: `X24963 / X24963`
+  - cc: `1.7.1.14.3` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+  - cc: `1.7.1.4.1` conta: `7.3.7` (ALUGUEL DE FUNCIONÁRIO)
+- **4x** | filial: `RSE` | valor: `1387,13` | venc: `2025-11-15` | docs: `NFSE-665598049 / NFSE-665598049 / NFSE-665598049 / NFSE-665598049`
+  - cc: `1.9.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.1.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.1` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1378,5` | venc: `2025-08-15` | docs: `CC293815082025 / CC293815082025`
+  - cc: `1.7.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1376,27` | venc: `2025-05-07` | docs: `FATLOC9837 / FATLOC9837`
+  - cc: `1` conta: `7.5.13` (SEGUROS)
+  - cc: `1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `1362,61` | venc: `2025-05-30` | docs: `CF860930052025 / CF860930052025 / CF860930052025 / CF860930052025 / CF860930052025 / CF860930052025 / CF860930052025 / CF860930052025 / CF860930052025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.2.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.4` conta: `8.1.6` (ELETRÔNICOS)
+- **4x** | filial: `G3S DOURADOS` | valor: `1362,08` | venc: `2025-05-15` | docs: `NFE-134646 / NFE-134646 / NFE-134646 / NFE-134646`
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.4` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.4` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1360` | venc: `2026-04-05` | docs: `NFE-35939 / NFE-35939`
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1358,89` | venc: `2025-09-25` | docs: `CF86330925 / CF86330925`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **10x** | filial: `G3S PRUDENTE` | valor: `1350,72` | venc: `2026-03-25` | docs: `ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04 / ISSTOMADOR022026G3S04`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.1.9` conta: `7.4.5` (ISS)
+  - cc: `1.1.10` conta: `7.4.5` (ISS)
+  - cc: `1.2.2.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.7.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.8.1` conta: `7.4.5` (ISS)
+- **3x** | filial: `G&S DOURADOS` | valor: `1350` | venc: `2025-08-06` | docs: `NFE-196222 / NFE-196222 / NFE-196222`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `1350` | venc: `2025-09-29` | docs: `NFE-198612 / NFE-198612 / NFE-198612`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `1350` | venc: `2025-11-25` | docs: `NFE-201026 / NFE-201026 / NFE-201026`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `1350` | venc: `2026-03-16` | docs: `NFE-205458 / NFE-205458 / NFE-205458`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1350` | venc: `2025-10-15` | docs: `X25622 / X25622`
+  - cc: `1.2.5.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.3.1.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1350` | venc: `2025-11-15` | docs: `X26435 / X26435`
+  - cc: `1.2.5.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.3.1.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `1349,18` | venc: `2025-12-15` | docs: `NFSE-12446 / NFSE-12446 / NFSE-12446 / NFSE-12446 / NFSE-12446 / NFSE-12446 / NFSE-12446 / NFSE-12446 / NFSE-12446 / NFSE-12446`
+  - cc: `1.4.1.2` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.1.3` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.1.5` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.1.10` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.1.14` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.2.1.1` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.2.5.1` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.3.1.1` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.3.1.2` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.2.7.1` conta: `7.3.17` (CONVENIOS)
+- **2x** | filial: `G3S DOURADOS` | valor: `1345,5` | venc: `2026-02-19` | docs: `BOLC-293240 / BOLC-293240`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1343,88` | venc: `2026-01-19` | docs: `ARRECADAÇÃOGIU122025 / ARRECADAÇÃOGIU122025`
+  - cc: `1.9.2` conta: `7.3.2` (FGTS)
+  - cc: `1.9.2` conta: `7.3.3` (INSS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `1339,43` | venc: `2025-07-29` | docs: `CF001529072025 / CF001529072025 / CF001529072025 / CF001529072025 / CF001529072025 / CF001529072025 / CF001529072025 / CF001529072025 / CF001529072025`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.4` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `1338,83` | venc: `2026-02-27` | docs: `CF8633022026 / CF8633022026 / CF8633022026`
+  - cc: `1.5.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.5.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **15x** | filial: `G3S CAMPO GRANDE` | valor: `1331,43` | venc: `2025-07-31` | docs: `CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025 / CF220331072025`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1331,04` | venc: `2025-05-27` | docs: `FATLOC22470 / FATLOC22470`
+  - cc: `1.7.1.2` conta: `7.5.13` (SEGUROS)
+  - cc: `1.7.1.2` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1328,7` | venc: `2025-10-15` | docs: `CC5941240925 / CC5941240925 / CC5941240925`
+  - cc: `1.2.5.7.7` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.8.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1326,3` | venc: `2025-07-02` | docs: `BOLV-75143 / BOLV-75143`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1325,17` | venc: `2025-12-19` | docs: `0000X6700 / 0000X6700`
+  - cc: `1.9.2` conta: `7.3.2` (FGTS)
+  - cc: `1.9.2` conta: `7.3.3` (INSS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1320` | venc: `2025-09-25` | docs: `NFE-1555034 / NFE-1555034`
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `1309,57` | venc: `2026-01-25` | docs: `NFE-35061 / NFE-35061`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+- **4x** | filial: `G3S MARINGA` | valor: `1300` | venc: `2025-09-18` | docs: `NFSE-14558 / NFSE-14558 / NFSE-14558 / NFSE-14558`
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.12.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.12.1.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **4x** | filial: `G3S MARINGA` | valor: `1300` | venc: `2025-10-05` | docs: `NFSE-14558 / NFSE-14558 / NFSE-14558 / NFSE-14558`
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.12.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.12.1.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **16x** | filial: `G3S CAMPO GRANDE` | valor: `1294,76` | venc: `2025-07-31` | docs: `CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025 / CF838131072025`
+  - cc: `1.2.4.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.4` conta: `8.1.6` (ELETRÔNICOS)
+- **14x** | filial: `G3S CAMPO GRANDE` | valor: `1293,77` | venc: `2025-05-30` | docs: `CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025 / CF624030052025`
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `1289,68` | venc: `2025-08-31` | docs: `CF220331082025 / CF220331082025 / CF220331082025 / CF220331082025 / CF220331082025 / CF220331082025 / CF220331082025 / CF220331082025 / CF220331082025`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1289,29` | venc: `2025-10-31` | docs: `CF0080102025 / CF0080102025`
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1281,27` | venc: `2026-02-20` | docs: `ARRECADAÇÃOGIULIANA012026 / ARRECADAÇÃOGIULIANA012026`
+  - cc: `1.9.2` conta: `7.3.2` (FGTS)
+  - cc: `1.9.2` conta: `7.3.3` (INSS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1280,46` | venc: `2026-02-20` | docs: `ARRECADAÇÃOILDA012026 / ARRECADAÇÃOILDA012026`
+  - cc: `1.9.5` conta: `7.3.2` (FGTS)
+  - cc: `1.9.5` conta: `7.3.3` (INSS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1275` | venc: `2025-12-02` | docs: `BOLC-288396 / BOLC-288396`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1275` | venc: `2025-11-07` | docs: `NFE-223040 / NFE-223040`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `1272,5` | venc: `2026-02-09` | docs: `BOLC-292070 / BOLC-292070`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **21x** | filial: `G3S CAMPO GRANDE` | valor: `1270,66` | venc: `2025-11-29` | docs: `CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025 / CF2203112025`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.8.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.1.12` (PEDÁGIO)
+- **7x** | filial: `G&S MARINGA` | valor: `1270` | venc: `2025-11-25` | docs: `NFSE-355 / NFSE-355 / NFSE-355 / NFSE-355 / NFSE-355 / NFSE-355 / NFSE-355`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `1266,29` | venc: `2025-08-22` | docs: `CF047922082025 / CF047922082025 / CF047922082025 / CF047922082025 / CF047922082025 / CF047922082025 / CF047922082025 / CF047922082025`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `G3S LONDRINA` | valor: `1261,98` | venc: `2025-09-12` | docs: `BOLV-77065 / BOLV-77065 / BOLV-77065`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1258,6` | venc: `2025-07-05` | docs: `X-RKM13062025 / X-RKM13062025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1258,44` | venc: `2026-03-20` | docs: `ARRECADACAOINSSILDA022026 / ARRECADACAOINSSILDA022026`
+  - cc: `1.9.5` conta: `7.3.2` (FGTS)
+  - cc: `1.9.5` conta: `7.3.3` (INSS)
+- **21x** | filial: `G&S PRUDENTE` | valor: `1253,64` | venc: `2026-01-23` | docs: `ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01 / ISSQN122025G&S01`
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.2.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.7.4` conta: `7.4.5` (ISS)
+  - cc: `1.8.9.10` conta: `7.4.5` (ISS)
+  - cc: `1.3.1.6.1` conta: `7.4.5` (ISS)
+  - cc: `1.3.1.6.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.8.3` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.6` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.1.8.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.7` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.4` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.1` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.8` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.12` conta: `7.4.5` (ISS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1253,5` | venc: `2026-01-28` | docs: `B-266489 / B-266489`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1250,7` | venc: `2025-09-29` | docs: `CF7403092025 / CF7403092025 / CF7403092025 / CF7403092025 / CF7403092025 / CF7403092025`
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.3.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1250,47` | venc: `2026-01-30` | docs: `CF7577012026 / CF7577012026 / CF7577012026 / CF7577012026`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1250` | venc: `2025-12-23` | docs: `NFE-225045 / NFE-225045`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1250` | venc: `2026-02-11` | docs: `NFE-226662 / NFE-226662 / NFE-226662`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1250` | venc: `2026-04-06` | docs: `NFE-228301 / NFE-228301 / NFE-228301`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1250` | venc: `2026-02-05` | docs: `NFSE-2114 / NFSE-2114 / NFSE-2114`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1250` | venc: `2025-08-05` | docs: `NFSE-55 / NFSE-55 / NFSE-55`
+  - cc: `1.2.5.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.4.1.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.8.3.22` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1248,56` | venc: `2025-09-05` | docs: `RKM05092025 / RKM05092025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `1240,38` | venc: `2025-09-12` | docs: `BOLV-77049 / BOLV-77049`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1233` | venc: `2025-08-07` | docs: `BOLC-278834 / BOLC-278834`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1232,25` | venc: `2026-02-27` | docs: `BOLV-87381 / BOLV-87381`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **16x** | filial: `G3S CAMPO GRANDE` | valor: `1232` | venc: `2025-04-24` | docs: `CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025 / CF838124042025`
+  - cc: `1.2.3.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1225,47` | venc: `2025-09-30` | docs: `CF7387092025 / CF7387092025`
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1223,8` | venc: `2025-06-30` | docs: `CF999130062025 / CF999130062025 / CF999130062025 / CF999130062025`
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `1222` | venc: `2026-01-20` | docs: `BOLC-290892 / BOLC-290892`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1222` | venc: `2025-07-31` | docs: `CF008031072025 / CF008031072025`
+  - cc: `1.5.1.2` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.5.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **10x** | filial: `G3S PRUDENTE` | valor: `1222` | venc: `2026-01-15` | docs: `NFSE-12738 / NFSE-12738 / NFSE-12738 / NFSE-12738 / NFSE-12738 / NFSE-12738 / NFSE-12738 / NFSE-12738 / NFSE-12738 / NFSE-12738`
+  - cc: `1.1.3` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.1.5` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.4.1.2` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.2.1.4` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.2.7.1` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.1.10` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.2.1.1` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.2.5.1` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.3.1.1` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.3.1.2` conta: `7.3.17` (CONVENIOS)
+- **7x** | filial: `G3S PRUDENTE` | valor: `1222` | venc: `2026-03-15` | docs: `NFSE-13221 / NFSE-13221 / NFSE-13221 / NFSE-13221 / NFSE-13221 / NFSE-13221 / NFSE-13221`
+  - cc: `1.1.3` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.1.4` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.1.5` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.2.5.2` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.2.5.3` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.3.1.1` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.5.1.1` conta: `7.3.22` (BOLSA ESTAGIO)
+- **16x** | filial: `G3S CAMPO GRANDE` | valor: `1211,04` | venc: `2025-10-31` | docs: `CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025 / CF8381102025`
+  - cc: `1.2.4.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.8.2` conta: `8.1.6` (ELETRÔNICOS)
+- **6x** | filial: `G&S MARINGA` | valor: `1210` | venc: `2025-12-25` | docs: `NFSE-366 / NFSE-366 / NFSE-366 / NFSE-366 / NFSE-366 / NFSE-366`
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `1200` | venc: `2025-08-05` | docs: `AL23978 / AL23978 / AL23978 / AL23978`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **7x** | filial: `G&S PRUDENTE` | valor: `1200` | venc: `2025-09-25` | docs: `AL25048 / AL25048 / NFE-220340 / NFE-220340 / NFE-220340 / NFE-220340 / NFE-220340`
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **5x** | filial: `NVS - EKIPA` | valor: `1200` | venc: `2025-10-02` | docs: `MS-002384 / MS-002384 / MS-002384 / MS-002485 / MS-002485`
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **2x** | filial: `NVS - EKIPA` | valor: `1200` | venc: `2024-08-30` | docs: `MS-002748 / MS-002748`
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **4x** | filial: `G3S MARINGA` | valor: `1200` | venc: `2025-09-29` | docs: `NFE-90065 / NFE-90065 / NFE-90065 / NFE-90065`
+  - cc: `1.6.3.45` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S MARINGA` | valor: `1200` | venc: `2026-01-27` | docs: `NFE-94171 / NFE-94171 / NFE-94171 / NFE-94171`
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1200` | venc: `2025-10-15` | docs: `NFSE-17 / NFSE-17`
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1200` | venc: `2026-03-25` | docs: `NFSE-2141 / NFSE-2141`
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1200` | venc: `2025-06-16` | docs: `X22911 / X22911`
+  - cc: `1.2.5.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.3.1.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1200` | venc: `2026-01-15` | docs: `XRKM122025 / XRKM122025`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S LONDRINA` | valor: `1195` | venc: `2025-09-09` | docs: `BOLC-281328 / BOLC-281328`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1191,13` | venc: `2025-04-30` | docs: `CF741130042025 / CF741130042025 / CF741130042025 / CF741130042025`
+  - cc: `1.2.4.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **17x** | filial: `G&S PRUDENTE` | valor: `1188,3` | venc: `2025-11-15` | docs: `NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167 / NFSE-2167`
+  - cc: `1.7.1.2.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.21` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.8.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **17x** | filial: `G&S PRUDENTE` | valor: `1188,3` | venc: `2025-12-15` | docs: `NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666 / NFSE-2666`
+  - cc: `1.2.1.8.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.4.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.21` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **17x** | filial: `G&S PRUDENTE` | valor: `1188,3` | venc: `2026-01-15` | docs: `OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR / OC 27508 RPR`
+  - cc: `1.7.1.4.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.37` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.8.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **17x** | filial: `G&S PRUDENTE` | valor: `1188,3` | venc: `2026-02-15` | docs: `OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR / OC 28266 RPR`
+  - cc: `1.7.1.4.5` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.7` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.8` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.21` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.8.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **3x** | filial: `GXS MARINGA` | valor: `1187,2` | venc: `2021-02-09` | docs: `B-46461 / B-46461 / B-46461`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1183,27` | venc: `2025-11-05` | docs: `KM051125 / KM051125`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1182,42` | venc: `2025-11-15` | docs: `NFE-381007 / NFE-381007`
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `1176,29` | venc: `2025-06-15` | docs: `NFE-12333 / NFE-12333 / NFE-12333 / NFE-12333`
+  - cc: `1.2.5.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.14.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.14.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1172,6` | venc: `2026-02-13` | docs: `BOLV-86988 / BOLV-86988`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1171,68` | venc: `2026-03-20` | docs: `ARRECADACAOINSSGIULIANA022026 / ARRECADACAOINSSGIULIANA022026`
+  - cc: `1.9.2` conta: `7.3.2` (FGTS)
+  - cc: `1.9.2` conta: `7.3.3` (INSS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `1162,47` | venc: `2025-10-15` | docs: `NFE-379370 / NFE-379370 / NFE-379370 / NFE-379370 / NFE-379370 / NFE-379370`
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1162` | venc: `2025-08-11` | docs: `BOLC-279115 / BOLC-279115`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `1161` | venc: `2025-10-28` | docs: `BOLC-285464 / BOLC-285464`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **23x** | filial: `G3S CAMPO GRANDE` | valor: `1155,32` | venc: `2025-10-15` | docs: `NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905 / NFSE-3495905`
+  - cc: `1.7.1.2.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.1.3.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.1.8.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.1.15` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.3.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.5.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.5.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.4.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.5` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.2.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+- **23x** | filial: `G3S CAMPO GRANDE` | valor: `1155,32` | venc: `2025-11-15` | docs: `NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501 / NFSE-3654501`
+  - cc: `1.7.1.2.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.1.15` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.3.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.1.8.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.5.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.5.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.4.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.5` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.1.3.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.2.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+- **23x** | filial: `G3S CAMPO GRANDE` | valor: `1155,32` | venc: `2025-12-15` | docs: `NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329 / NFSE-3812329`
+  - cc: `1.7.1.2.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.1.8.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.1.15` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.3.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.5.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.5.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.4.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.5` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.1.3.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.2.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+- **23x** | filial: `G3S CAMPO GRANDE` | valor: `1155,32` | venc: `2026-01-15` | docs: `NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577 / NFSE-3983577`
+  - cc: `1.7.1.8.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.1.2.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.1.15` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.3.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.4.3` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.5.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.5.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.4.1.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.7.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.3.1.4` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.1.5` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.1.3.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.7.2.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+- **24x** | filial: `G3S CAMPO GRANDE` | valor: `1155,32` | venc: `2026-02-16` | docs: `NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482 / NFSE-4144482`
+  - cc: `1.7.1.2.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.15` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.4.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.2.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.8.3` conta: `7.5.18` (SISTEMAS)
+- **25x** | filial: `G3S CAMPO GRANDE` | valor: `1155,32` | venc: `2026-03-16` | docs: `NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852 / NFSE-4306852`
+  - cc: `1.1.15` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.2.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.8.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.2.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.14.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.8.3` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1155,26` | venc: `2025-04-28` | docs: `CF746028042025 / CF746028042025`
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.8` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S MARINGA` | valor: `1155` | venc: `2025-06-23` | docs: `BOLV-82313 / BOLV-82313`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1150` | venc: `2025-05-25` | docs: `32317-1/55 / 32317-1/55 / 32317-1/55 / 32317-1/55`
+  - cc: `1.2.7.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.7.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.7.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.7.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1150` | venc: `2025-08-18` | docs: `NFE-218501 / NFE-218501`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1150` | venc: `2025-08-25` | docs: `NFE-35398 / NFE-35398 / NFE-35398 / NFE-35398`
+  - cc: `1.2.7.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.7.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.7.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.7.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1150` | venc: `2026-02-05` | docs: `NFSE-2108 / NFSE-2108 / NFSE-2108`
+  - cc: `1.6.3.38` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **12x** | filial: `G3S PRUDENTE` | valor: `1150` | venc: `2022-11-16` | docs: `REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022 / REC-31032022`
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+  - cc: `1.12.1.1` conta: `4.1.2` (ACERTO FORNECEDOR X CREDOR)
+- **2x** | filial: `G&S DOURADOS` | valor: `1148,06` | venc: `2025-11-25` | docs: `NFE-35843 / NFE-35843`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **20x** | filial: `G3S CAMPO GRANDE` | valor: `1146,01` | venc: `2025-08-27` | docs: `CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025 / CF838127082025`
+  - cc: `1.2.4.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.8.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1145` | venc: `2025-09-05` | docs: `NFSE-6556 / NFSE-6556`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1144,38` | venc: `2025-12-19` | docs: `NFE-585155 / NFE-585155 / NFE-585155`
+  - cc: `1.2.2.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1144` | venc: `2025-08-25` | docs: `RKM25082025 / RKM25082025`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `RSE` | valor: `1140,21` | venc: `2026-02-15` | docs: `OC 28648 SEM PARAR / OC 28648 SEM PARAR / OC 28648 SEM PARAR / OC 28648 SEM PARAR`
+  - cc: `1.9.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.1.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.1` conta: `7.1.12` (PEDÁGIO)
+- **3x** | filial: `RSE` | valor: `1140` | venc: `2026-02-05` | docs: `00007952 / 00007952 / 00007952`
+  - cc: `1.2.2.5.9` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.6.3.4` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.5.6.13` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1139` | venc: `2026-03-03` | docs: `BOLC-294586 / BOLC-294586`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S LONDRINA` | valor: `1139` | venc: `2026-03-05` | docs: `BOLC-294586 / BOLC-294586 / BOLC-294586 / BOLC-294586`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **20x** | filial: `G3S CAMPO GRANDE` | valor: `1136,21` | venc: `2026-02-27` | docs: `CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026 / CF8381022026`
+  - cc: `1.2.3.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1134` | venc: `2025-12-15` | docs: `NFE-3681 / NFE-3681`
+  - cc: `1.2.4.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1131,09` | venc: `2025-09-12` | docs: `BOLV-73472 / BOLV-73472`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1130,18` | venc: `2025-11-27` | docs: `CF7577112025 / CF7577112025`
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **4x** | filial: `G&S MARINGA` | valor: `1130` | venc: `2025-12-25` | docs: `NFSE-1 / NFSE-1 / NFSE-1 / NFSE-1`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `1127,62` | venc: `2025-04-25` | docs: `CF053725042025 / CF053725042025 / CF053725042025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `1122,86` | venc: `2025-05-24` | docs: `CF008024052025 / CF008024052025 / CF008024052025 / CF008024052025`
+  - cc: `1.3.1.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **16x** | filial: `G&S PRUDENTE` | valor: `1118,4` | venc: `2026-03-15` | docs: `OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP / OC 29303 QUALP`
+  - cc: `1.3.1.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.3.1.6.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.14` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.21` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.16` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.14.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.6.1.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.8.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9.2` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.18` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.19` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.7.1.2.3` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1117,15` | venc: `2025-08-30` | docs: `CF746030082025 / CF746030082025 / CF746030082025 / CF746030082025 / CF746030082025 / CF746030082025`
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.4.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+- **2x** | filial: `G3S MARINGA` | valor: `1113,5` | venc: `2025-12-16` | docs: `BOLC-288295 / BOLC-288295`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S CAMPO GRANDE` | valor: `1106,31` | venc: `2026-01-26` | docs: `SEMPARARG&S06012026 / SEMPARARG&S06012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `1098,5` | venc: `2025-05-16` | docs: `BOLC-272834 / BOLC-272834 / BOLC-272834`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1088,17` | venc: `2025-06-25` | docs: `PISCOFINS052025G&S / PISCOFINS052025G&S`
+  - cc: `1.4.1.2` conta: `7.4.1` (PIS)
+  - cc: `1.4.1.2` conta: `7.4.2` (COFINS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `1088` | venc: `2025-11-13` | docs: `BOLC-285431 / BOLC-285431 / BOLC-285431`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1087,07` | venc: `2025-08-29` | docs: `CF954629082025 / CF954629082025 / CF954629082025 / CF954629082025 / CF954629082025 / CF954629082025`
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.26` (DESPESAS SOCIAIS E DOAÇÕES)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.1` conta: `7.5.26` (DESPESAS SOCIAIS E DOAÇÕES)
+- **3x** | filial: `GXS MARINGA` | valor: `1086,4` | venc: `2021-03-02` | docs: `B-47102 / B-47102 / B-47102`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `GXS MARINGA` | valor: `1083,6` | venc: `2021-05-03` | docs: `B-48654 / B-48654 / B-48654`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `1082,9` | venc: `2026-03-25` | docs: `NFE-298199 / NFE-298199`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+- **2x** | filial: `G3S DOURADOS` | valor: `1081,5` | venc: `2026-01-15` | docs: `BOLV-87092 / BOLV-87092`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1079,89` | venc: `2025-12-30` | docs: `CF0288122025 / CF0288122025`
+  - cc: `1.7.1.4.5` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.4.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G3S MARINGA` | valor: `1079` | venc: `2025-07-15` | docs: `RKM15072025 / RKM15072025 / RKM15072025`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S LONDRINA` | valor: `1078` | venc: `2026-03-02` | docs: `BOLC-294469 / BOLC-294469`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1078` | venc: `2026-03-05` | docs: `BOLC-294469 / BOLC-294469`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `1077,45` | venc: `2026-02-05` | docs: `BOLV-87734 / BOLV-87734 / BOLV-87734 / BOLV-87734 / BOLV-87734 / BOLV-87734`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1077,3` | venc: `2025-09-12` | docs: `BOLV-77161 / BOLV-77161`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1077` | venc: `2025-12-17` | docs: `BOLC-289217 / BOLC-289217`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `1069,8` | venc: `2025-09-12` | docs: `BOLV-76959 / BOLV-76959`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `1066,5` | venc: `2025-09-12` | docs: `BOLV-77087 / BOLV-77087`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1062,9` | venc: `2025-12-29` | docs: `CF8633122025 / CF8633122025`
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1060` | venc: `2025-09-25` | docs: `NFSE-1721 / NFSE-1721 / NFSE-1721`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S BARUERI` | valor: `1059` | venc: `2026-01-09` | docs: `RKM122025 / RKM122025`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1055,64` | venc: `2025-05-26` | docs: `CF739526052025 / CF739526052025 / CF739526052025 / CF739526052025 / CF739526052025 / CF739526052025`
+  - cc: `1.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.10` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.10` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **6x** | filial: `G3S PRUDENTE` | valor: `1055` | venc: `2026-03-19` | docs: `NFE-3109 / NFE-3109 / NFE-3109 / NFE-3109 / NFE-3109 / NFE-3109`
+  - cc: `1.2.2.3` conta: `7.3.14` (TREINAMENTOS E DESENVOLVIMENTO)
+  - cc: `1.2.3.3` conta: `7.3.14` (TREINAMENTOS E DESENVOLVIMENTO)
+  - cc: `1.2.4.3` conta: `7.3.14` (TREINAMENTOS E DESENVOLVIMENTO)
+  - cc: `1.2.5.3` conta: `7.3.14` (TREINAMENTOS E DESENVOLVIMENTO)
+  - cc: `1.2.7.3` conta: `7.3.14` (TREINAMENTOS E DESENVOLVIMENTO)
+  - cc: `1.2.8.3` conta: `7.3.14` (TREINAMENTOS E DESENVOLVIMENTO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1055` | venc: `2025-09-05` | docs: `RKM05092025 / RKM05092025`
+  - cc: `1.7.1.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1051,8` | venc: `2026-02-25` | docs: `CF8591022026 / CF8591022026`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1050` | venc: `2026-01-23` | docs: `0000X7602 / 0000X7602`
+  - cc: `1.2.4.3` conta: `7.3.1` (SALÁRIOS)
+  - cc: `1.2.5.3` conta: `7.3.1` (SALÁRIOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1049,5` | venc: `2025-12-05` | docs: `NFE-9629 / NFE-9629`
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `1047,24` | venc: `2026-01-30` | docs: `CF7569012026 / CF7569012026 / CF7569012026`
+  - cc: `1.3.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1046,27` | venc: `2026-02-23` | docs: `CF9520022026 / CF9520022026 / CF9520022026 / CF9520022026 / CF9520022026 / CF9520022026`
+  - cc: `1.7.1.2.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.7.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `1045` | venc: `2025-09-25` | docs: `RKM25092025 / RKM25092025`
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **8x** | filial: `G&S PRUDENTE` | valor: `1042` | venc: `2026-02-05` | docs: `NFE-131652 / NFE-131652 / NFE-131652 / NFE-131652 / NFE-131652 / NFE-131652 / NFE-131652 / NFE-131652`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1040` | venc: `2025-08-25` | docs: `NFSE-51 / NFSE-51 / NFSE-51`
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.37` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `1034` | venc: `2026-02-15` | docs: `NFSE-12984 / NFSE-12984 / NFSE-12984 / NFSE-12984 / NFSE-12984 / NFSE-12984`
+  - cc: `1.1.3` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.1.5` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.1.14` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.2.5.2` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.3.1.2` conta: `7.3.22` (BOLSA ESTAGIO)
+  - cc: `1.2.7.1` conta: `7.3.22` (BOLSA ESTAGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `1033,3` | venc: `2025-10-25` | docs: `NFE-12834 / NFE-12834`
+  - cc: `1.2.4.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.8.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `1030,88` | venc: `2025-09-30` | docs: `CF7577092025 / CF7577092025 / CF7577092025 / CF7577092025 / CF7577092025 / CF7577092025`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1029` | venc: `2025-09-02` | docs: `BOLC-280938 / BOLC-280938`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `1026,54` | venc: `2025-07-15` | docs: `CC293815072025 / CC293815072025 / CC293815072025`
+  - cc: `1.2.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S DOURADOS` | valor: `1024,21` | venc: `2025-07-15` | docs: `NFE-137400 / NFE-137400`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **6x** | filial: `G3S DOURADOS` | valor: `1024,16` | venc: `2025-11-05` | docs: `NFE-142137 / NFE-142137 / NFE-142137 / NFE-142137 / NFE-142137 / NFE-142137`
+  - cc: `1.2.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.4` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.4` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **6x** | filial: `G3S DOURADOS` | valor: `1024,16` | venc: `2025-12-05` | docs: `NFE-142137 / NFE-142137 / NFE-142137 / NFE-142137 / NFE-142137 / NFE-142137`
+  - cc: `1.2.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.4` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.4` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1020` | venc: `2025-07-15` | docs: `AL23498 / AL23498`
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.7.6` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **8x** | filial: `G&S PRUDENTE` | valor: `1020` | venc: `2025-08-05` | docs: `NFSE-1771 / NFSE-1771 / NFSE-1771 / NFSE-1771 / NFSE-1771 / NFSE-1771 / NFSE-1771 / NFSE-1771`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `1015,35` | venc: `2025-04-30` | docs: `CF739530042025 / CF739530042025 / CF739530042025 / CF739530042025 / CF739530042025 / CF739530042025 / CF739530042025 / CF739530042025 / CF739530042025`
+  - cc: `1.1.15` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.15` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.15` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.1.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.1.3` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `1015,16` | venc: `2025-04-30` | docs: `CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025 / CF740330042025`
+  - cc: `1.2.2.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G&S CAMPO GRANDE` | valor: `1011,9` | venc: `2025-11-26` | docs: `ADT16174404 / ADT16174404`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S LONDRINA` | valor: `1011,9` | venc: `2025-11-26` | docs: `ADT16174416 / ADT16174416`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1010,8` | venc: `2025-09-25` | docs: `ISSQN082025G3S04 / ISSQN082025G3S04 / ISSQN082025G3S04 / ISSQN082025G3S04`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.1.13` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.2` conta: `7.4.5` (ISS)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `1009,48` | venc: `2025-08-28` | docs: `CF861728082025 / CF861728082025 / CF861728082025 / CF861728082025 / CF861728082025 / CF861728082025 / CF861728082025 / CF861728082025`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.1` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.3.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.3.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1009,1` | venc: `2025-11-15` | docs: `00005545 / 00005545 / 00005545`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1009,1` | venc: `2026-02-15` | docs: `00008187 / 00008187 / 00008187`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1009,1` | venc: `2026-03-15` | docs: `00008907 / 00008907 / 00008907`
+  - cc: `1.2.1.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.2.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.5.1` conta: `7.5.20` (INTERNET)
+- **2x** | filial: `G&S MARINGA` | valor: `1009,06` | venc: `2025-05-30` | docs: `CTE 5252 / CTE 5252`
+  - cc: `2.4.3.1` conta: `5.7.1` (FRETES)
+  - cc: `2.4.3.1` conta: `5.7.1` (FRETES)
+- **4x** | filial: `G3S PRUDENTE` | valor: `1008,88` | venc: `2025-10-15` | docs: `00004612 / 00004612 / 00004612 / 00004612`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.3.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1007,92` | venc: `2026-01-15` | docs: `00007266 / 00007266 / 00007266`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `1007,92` | venc: `2025-06-17` | docs: `CF837317062025 / CF837317062025 / CF837317062025 / CF837317062025 / CF837317062025`
+  - cc: `1.7.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.7.1.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.7.1.1` conta: `8.1.6` (ELETRÔNICOS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1006` | venc: `2025-12-15` | docs: `00006380 / 00006380 / 00006380`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1005` | venc: `2026-01-04` | docs: `NFSE-598 / NFSE-598`
+  - cc: `1.2.5.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.3.1.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+- **2x** | filial: `G&S DOURADOS` | valor: `1003,5` | venc: `2025-11-07` | docs: `OC26024 / OC26024`
+  - cc: `1.2.2.1` conta: `7.5.22` (DESPESAS BANCARIAS)
+  - cc: `1.2.2.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G3S DOURADOS` | valor: `1000` | venc: `2025-10-16` | docs: `BOLV-85282 / BOLV-85282`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `1000` | venc: `2025-07-25` | docs: `NFSE-3268 / NFSE-3268`
+  - cc: `1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1000` | venc: `2026-01-15` | docs: `NFSE-371 / NFSE-371 / NFSE-371`
+  - cc: `1.2.5.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.3.1.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **3x** | filial: `G3S PRUDENTE` | valor: `1000` | venc: `2026-03-15` | docs: `NFSE-389 / NFSE-389 / NFSE-389`
+  - cc: `1.2.5.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.3.1.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G&S CAMPO GRANDE` | valor: `1000` | venc: `2025-12-05` | docs: `SALCOMPLG&S06112025 / SALCOMPLG&S06112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **3x** | filial: `GXS MARINGA` | valor: `999,6` | venc: `2021-03-12` | docs: `B-47358 / B-47358 / B-47358`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `999` | venc: `2026-03-03` | docs: `BOLC-294588 / BOLC-294588`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S LONDRINA` | valor: `999` | venc: `2026-03-05` | docs: `BOLC-294588 / BOLC-294588 / BOLC-294588 / BOLC-294588`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `992,9` | venc: `2025-04-04` | docs: `CF178904042025 / CF178904042025`
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S DOURADOS` | valor: `991,45` | venc: `2025-06-12` | docs: `BOLC-274445 / BOLC-274445`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **7x** | filial: `G&S MARINGA` | valor: `990` | venc: `2025-09-15` | docs: `NFSE-338 / NFSE-338 / NFSE-338 / NFSE-338 / NFSE-338 / NFSE-338 / NFSE-338`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `985,8` | venc: `2025-08-28` | docs: `BOLV-84067 / BOLV-84067`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `984,1` | venc: `2025-06-25` | docs: `NFE-12340 / NFE-12340 / NFE-12340 / NFE-12340`
+  - cc: `1.2.5.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.14.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.14.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G&S PRUDENTE` | valor: `982,15` | venc: `2026-02-15` | docs: `NFE-490553 / NFE-490553`
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `980` | venc: `2025-10-06` | docs: `NFSE-414 / NFSE-414`
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `978,51` | venc: `2025-09-12` | docs: `BOLV-77033 / BOLV-77033`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `975` | venc: `2026-03-25` | docs: `NFE-2019 / NFE-2019 / NFE-2019`
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `RSE` | valor: `970,88` | venc: `2026-01-15` | docs: `OC 28033 SEM PARAR / OC 28033 SEM PARAR / OC 28033 SEM PARAR / OC 28033 SEM PARAR`
+  - cc: `1.9.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.1.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.1` conta: `7.1.12` (PEDÁGIO)
+- **4x** | filial: `G&S PRUDENTE` | valor: `970` | venc: `2025-07-25` | docs: `NFE-20902 / NFE-20902 / NFE-20902 / NFE-20902`
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `970` | venc: `2025-10-05` | docs: `NFSE-1906 / NFSE-1906 / NFSE-1906 / NFSE-1906 / NFSE-1906`
+  - cc: `1.3.1.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `967,5` | venc: `2025-10-02` | docs: `BOLC-283531 / BOLC-283531`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `967,5` | venc: `2025-10-08` | docs: `BOLC-283531 / BOLC-283531`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `961,76` | venc: `2025-06-26` | docs: `CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025 / CF739526062025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.1.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.2.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.7.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **16x** | filial: `G3S CAMPO GRANDE` | valor: `959,59` | venc: `2025-12-30` | docs: `CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025 / CF9538122025`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.7.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `956` | venc: `2025-10-03` | docs: `BOLC-283612 / BOLC-283612`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `956` | venc: `2025-10-09` | docs: `BOLC-283612 / BOLC-283612 / BOLC-283612 / BOLC-283612`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **48x** | filial: `G&S PRUDENTE` | valor: `955,48` | venc: `2025-12-19` | docs: `RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S / RETFED112025G&S`
+  - cc: `1.2.3.5.6` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.5.6` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.15` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.15` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.13` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.13` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.14` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.14` conta: `7.4.7` (CSRF)
+  - cc: `1.4.4.1` conta: `7.4.6` (IRRF)
+  - cc: `1.4.4.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.5.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.5.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.8.4` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.8.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.4` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.6.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.4` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.9` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.9` conta: `7.4.7` (CSRF)
+  - cc: `1.6.3.13` conta: `7.4.6` (IRRF)
+  - cc: `1.6.3.13` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.10` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.10` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.4` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.5.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.11` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.11` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.12` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.12` conta: `7.4.7` (CSRF)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `950,65` | venc: `2025-12-18` | docs: `CF2203122025 / CF2203122025 / CF2203122025 / CF2203122025 / CF2203122025 / CF2203122025`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `950` | venc: `2026-02-25` | docs: `AL28685 / AL28685`
+  - cc: `1.2.5.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `949,58` | venc: `2026-02-24` | docs: `CF8617022026 / CF8617022026 / CF8617022026 / CF8617022026 / CF8617022026 / CF8617022026`
+  - cc: `1.2.3.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.3.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.3` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+- **2x** | filial: `G&S BARUERI` | valor: `945` | venc: `2025-08-05` | docs: `RKM05082025 / RKM05082025`
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S DOURADOS` | valor: `944,78` | venc: `2025-12-11` | docs: `NFE-289407 / NFE-289407`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `944` | venc: `2025-10-03` | docs: `BOLC-283126 / BOLC-283126`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `942,11` | venc: `2026-01-30` | docs: `CF934012026 / CF934012026 / CF934012026 / CF934012026 / CF934012026 / CF934012026 / CF934012026 / CF934012026 / CF934012026`
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.6.3.41` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.6.3.41` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.6.3.41` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `940` | venc: `2025-07-05` | docs: `NFSE-1725 / NFSE-1725 / NFSE-1725 / NFSE-1725 / NFSE-1725 / NFSE-1725`
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `937,5` | venc: `2026-04-11` | docs: `BOLV-88637 / BOLV-88637`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `936,39` | venc: `2025-10-31` | docs: `CF8583102025 / CF8583102025 / CF8583102025 / CF8583102025 / CF8583102025 / CF8583102025`
+  - cc: `1.2.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `932,7` | venc: `2025-09-12` | docs: `BOLV-77016 / BOLV-77016`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `932,69` | venc: `2025-06-15` | docs: `CC293803062025 / CC293803062025 / CC293803062025`
+  - cc: `1.7.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G3S DOURADOS` | valor: `927,6` | venc: `2025-08-21` | docs: `BOLV-83869 / BOLV-83869 / BOLV-83869`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `924` | venc: `2025-12-16` | docs: `BOLC-289119 / BOLC-289119 / BOLC-289119`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `RSE` | valor: `923,15` | venc: `2025-10-15` | docs: `NFSE-661306162 / NFSE-661306162 / NFSE-661306162 / NFSE-661306162`
+  - cc: `1.9.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.1.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.1` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `922,53` | venc: `2025-09-12` | docs: `BOLV-77131 / BOLV-77131`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `921,44` | venc: `2025-05-30` | docs: `CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025 / CF741130052025`
+  - cc: `1.2.4.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.4` conta: `7.5.15` (RAÇÃO)
+- **2x** | filial: `G&S DOURADOS` | valor: `920` | venc: `2025-10-25` | docs: `NFE-37715 / NFE-37715`
+  - cc: `1.2.2.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.2.4` conta: `7.3.8` (CESTA BÁSICA)
+- **2x** | filial: `G&S DOURADOS` | valor: `920` | venc: `2025-11-25` | docs: `NFE-38221 / NFE-38221`
+  - cc: `1.2.2.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.2.4` conta: `7.3.8` (CESTA BÁSICA)
+- **24x** | filial: `G3S CAMPO GRANDE` | valor: `920` | venc: `2026-02-10` | docs: `NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188 / NFSE-34188`
+  - cc: `1.7.1.2.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.4.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.8.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.15` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.2.2` conta: `7.5.18` (SISTEMAS)
+- **25x** | filial: `G3S CAMPO GRANDE` | valor: `920` | venc: `2026-03-10` | docs: `NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196 / NFSE-35196`
+  - cc: `1.7.1.3.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.4.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.8.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.1.15` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.2.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.3.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.4.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.7.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.4` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.5` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.2.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.7.1.2.3` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.8.1` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `916,48` | venc: `2025-10-03` | docs: `NFE-203633 / NFE-203633`
+  - cc: `1.2.5.2` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.5.2` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+- **2x** | filial: `G3S MARINGA` | valor: `915` | venc: `2025-09-12` | docs: `BOLV-77068 / BOLV-77068`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `910,22` | venc: `2025-10-17` | docs: `CF9520102025 / CF9520102025`
+  - cc: `1.2.4.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `909,13` | venc: `2025-07-30` | docs: `CF839930072025 / CF839930072025 / CF839930072025`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+- **5x** | filial: `G3S PRUDENTE` | valor: `907,9` | venc: `2025-08-15` | docs: `NFE-66177 / NFE-66177 / NFE-66177 / NFE-66177 / NFE-66177`
+  - cc: `1.2.2.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.3.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.4.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.7.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `2.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **3x** | filial: `G&S PRUDENTE` | valor: `907,04` | venc: `2025-10-15` | docs: `CC5941240925 / CC5941240925 / CC5941240925`
+  - cc: `1.2.5.7.7` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.8.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `GXS MARINGA` | valor: `904,4` | venc: `2021-03-09` | docs: `B-47267 / B-47267 / B-47267`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `901,88` | venc: `2025-07-31` | docs: `CF740331072025 / CF740331072025`
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `8.1.6` (ELETRÔNICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `900` | venc: `2026-02-06` | docs: `AL28269 / AL28269`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `900` | venc: `2026-03-05` | docs: `AL28956 / AL28956`
+  - cc: `1.2.5.6.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.18` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S MARINGA` | valor: `900` | venc: `2025-12-15` | docs: `NFSE-4561 / NFSE-4561 / NFSE-4561 / NFSE-4561`
+  - cc: `1.2.4.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S MARINGA` | valor: `887,1` | venc: `2025-11-25` | docs: `NFE-13134 / NFE-13134 / NFE-13134 / NFE-13134`
+  - cc: `1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.4.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.4.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S LONDRINA` | valor: `885,01` | venc: `2025-09-12` | docs: `BOLV-76595 / BOLV-76595`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `885` | venc: `2025-11-19` | docs: `BOLV-86199 / BOLV-86199`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `883,51` | venc: `2026-01-30` | docs: `CF8381012026 / CF8381012026 / CF8381012026 / CF8381012026 / CF8381012026 / CF8381012026 / CF8381012026 / CF8381012026 / CF8381012026`
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S DOURADOS` | valor: `883,2` | venc: `2025-12-15` | docs: `BOLV-86744 / BOLV-86744`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `882,7` | venc: `2025-08-29` | docs: `CF863329082025 / CF863329082025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **12x** | filial: `G&S CAMPO GRANDE` | valor: `882,64` | venc: `2025-10-29` | docs: `CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025 / CF9538102025`
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.3.1.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `882,6` | venc: `2025-09-15` | docs: `CC884015082025 / CC884015082025`
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S MARINGA` | valor: `880` | venc: `2026-01-05` | docs: `NFE-78 / NFE-78`
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `879,02` | venc: `2025-12-18` | docs: `CF7569122025 / CF7569122025 / CF7569122025`
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **16x** | filial: `G3S CAMPO GRANDE` | valor: `876,62` | venc: `2025-11-29` | docs: `CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025 / CF8381112025`
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+- **2x** | filial: `G&S BARUERI` | valor: `876` | venc: `2025-11-27` | docs: `NFSE-7566 / NFSE-7566`
+  - cc: `1.7.1.3.4` conta: `7.3.4` (EXAMES MÉDICOS)
+  - cc: `1.7.1.2` conta: `7.3.4` (EXAMES MÉDICOS)
+- **4x** | filial: `RSE` | valor: `874,14` | venc: `2025-12-15` | docs: `NFSE-669891206 / NFSE-669891206 / NFSE-669891206 / NFSE-669891206`
+  - cc: `1.9.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.1.1.1` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.5.1` conta: `7.1.12` (PEDÁGIO)
+- **3x** | filial: `G3S MARINGA` | valor: `872,5` | venc: `2025-08-11` | docs: `BOLC-279130 / BOLC-279130 / BOLC-279130`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `871,37` | venc: `2025-06-30` | docs: `CF001530062025 / CF001530062025 / CF001530062025 / CF001530062025 / CF001530062025 / CF001530062025`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `871,31` | venc: `2025-07-02` | docs: `BOLV-75371 / BOLV-75371`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `868,6` | venc: `2026-01-13` | docs: `CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026 / CF7429012026`
+  - cc: `1.2.1.8.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.1.8.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.10` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.10` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.10` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.2.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S MARINGA` | valor: `866,5` | venc: `2025-09-04` | docs: `BOLC-281083 / BOLC-281083`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `862,15` | venc: `2025-09-29` | docs: `CF7395092025 / CF7395092025 / CF7395092025 / CF7395092025 / CF7395092025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.1.1` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.1.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `861,29` | venc: `2025-12-19` | docs: `CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025 / CF1789122025`
+  - cc: `1.2.2.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.2.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.4` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.2.6.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.6.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.6.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.6.4` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `860,9` | venc: `2025-10-24` | docs: `CF0537102025 / CF0537102025 / CF0537102025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `860` | venc: `2026-02-15` | docs: `NFE-1264 / NFE-1264`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `855,24` | venc: `2026-03-15` | docs: `00008851 / 00008851 / 00008851 / 00008851`
+  - cc: `1.7.2.2` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.2.2` conta: `7.5.17` (TAXAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `852,43` | venc: `2025-10-15` | docs: `CC5941240925 / CC5941240925 / CC5941240925`
+  - cc: `1.2.5.7.7` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.8.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **48x** | filial: `G3S CAMPO GRANDE` | valor: `851,61` | venc: `2025-09-18` | docs: `CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025 / CF0023092025`
+  - cc: `1.2.3.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.3.1` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.2.4.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.4.1` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.2.5.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.5.1` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.5.2` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.5.3` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.3.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.3.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.3.1.1` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.3.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.3.1.2` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.3.1.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.3.1.3` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.5.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.5.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.5.1.1` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.2.5.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.4` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.5.4` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.3.1.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.3.1.4` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+  - cc: `1.2.8.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.8.1` conta: `7.1.21` (LOCAÇÃO DE VEÍCULOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `850,61` | venc: `2025-09-30` | docs: `CF0288092025 / CF0288092025`
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **6x** | filial: `G&S MARINGA` | valor: `850` | venc: `2025-07-15` | docs: `NFSE-326 / NFSE-326 / NFSE-326 / NFSE-326 / NFSE-326 / NFSE-326`
+  - cc: `1.2.3.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `846,42` | venc: `2025-08-15` | docs: `CC873501082025 / CC873501082025 / CC873501082025`
+  - cc: `1.7.1.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **30x** | filial: `G3S CAMPO GRANDE` | valor: `841,61` | venc: `2025-09-30` | docs: `CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925 / CF83810925`
+  - cc: `1.2.3.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.3.2` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.2` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.4.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.4` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.4` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.8.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.8.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.8.2` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.8.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **3x** | filial: `G&S MARINGA` | valor: `835` | venc: `2025-12-15` | docs: `NFSE-2281 / NFSE-2281 / NFSE-2281`
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `834,58` | venc: `2026-02-27` | docs: `CF7569022026 / CF7569022026 / CF7569022026 / CF7569022026 / CF7569022026 / CF7569022026 / CF7569022026 / CF7569022026 / CF7569022026`
+  - cc: `1.3.1.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.3.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.3.1.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `830,8` | venc: `2025-11-28` | docs: `CF9686112025 / CF9686112025 / CF9686112025 / CF9686112025`
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S LONDRINA` | valor: `830` | venc: `2025-12-04` | docs: `BOLC-288370 / BOLC-288370`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `828,25` | venc: `2025-10-25` | docs: `NFSE-13771880 / NFSE-13771880 / NFSE-13771880 / NFSE-13771880 / NFSE-13771880 / NFSE-13771880 / NFSE-13771880 / NFSE-13771880 / NFSE-13771880 / NFSE-13771880`
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.3.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.3.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.5.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.4.1.2` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.7.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.7.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.8.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **3x** | filial: `G3S DOURADOS` | valor: `827,75` | venc: `2025-06-26` | docs: `BOLV-82420 / BOLV-82420 / BOLV-82420`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **16x** | filial: `G3S CAMPO GRANDE` | valor: `827,64` | venc: `2025-06-27` | docs: `CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025 / CF838127062025`
+  - cc: `1.2.4.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.4.3.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.4.3.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.4.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.3.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G3S ADM` | valor: `827,33` | venc: `2026-01-05` | docs: `SEMPARARG3S101225 / SEMPARARG3S101225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `820,43` | venc: `2025-06-20` | docs: `RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S / RETFED052025G3S`
+  - cc: `1.2.2.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.3.1.1` conta: `7.4.6` (IRRF)
+  - cc: `1.3.1.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `819` | venc: `2025-10-01` | docs: `BOLC-283341 / BOLC-283341`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `818,15` | venc: `2025-08-26` | docs: `CF757726082025 / CF757726082025 / CF757726082025 / CF757726082025`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `GXS MARINGA` | valor: `814,8` | venc: `2021-04-23` | docs: `B-48443 / B-48443 / B-48443`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `814,51` | venc: `2026-02-20` | docs: `CSRF012026G3S / CSRF012026G3S / CSRF012026G3S / CSRF012026G3S / CSRF012026G3S / CSRF012026G3S`
+  - cc: `1.2.2.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.3.1.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `810,2` | venc: `2025-07-30` | docs: `CF954630072025 / CF954630072025`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `810` | venc: `2025-09-25` | docs: `NFSE-59 / NFSE-59 / NFSE-59`
+  - cc: `1.6.3.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `GXS MARINGA` | valor: `809,2` | venc: `2021-02-10` | docs: `B-46508 / B-46508`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `GXS MARINGA` | valor: `809,2` | venc: `2021-04-12` | docs: `B-48088 / B-48088`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `805,03` | venc: `2025-10-07` | docs: `X-RKM30092025 / X-RKM30092025`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `800` | venc: `2025-11-05` | docs: `AL26021 / AL26021`
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `800` | venc: `2025-11-19` | docs: `BOLV-86231 / BOLV-86231 / BOLV-86231`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `800` | venc: `2025-07-25` | docs: `NFSE-32 / NFSE-32`
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `800` | venc: `2025-11-05` | docs: `NFSE-68 / NFSE-68`
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **20x** | filial: `G&S PRUDENTE` | valor: `798,2` | venc: `2025-07-25` | docs: `ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01 / ISSQN062025G&S01`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.3.1.6.3` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.4` conta: `7.4.5` (ISS)
+  - cc: `1.2.1.8.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.5.6` conta: `7.4.5` (ISS)
+  - cc: `1.2.7.6.3` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.7.9` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.4` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.47` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.5` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.8` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.12` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.16` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.1` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.8` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.9` conta: `7.4.5` (ISS)
+  - cc: `1.6.3.31` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.13` conta: `7.4.5` (ISS)
+- **5x** | filial: `G3S PRUDENTE` | valor: `798` | venc: `2025-06-06` | docs: `NFE-36173 / NFE-36173 / NFE-36173 / NFE-36173 / NFE-36173`
+  - cc: `1.2.2.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.3.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.7.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G&S BARUERI` | valor: `796` | venc: `2026-01-25` | docs: `RKM012026 / RKM012026`
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `792,33` | venc: `2025-12-18` | docs: `CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025 / CF9546122025`
+  - cc: `1.2.4.3` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.1` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.2` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.3` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **4x** | filial: `G3S PRUDENTE` | valor: `790` | venc: `2025-11-25` | docs: `AL26628 / AL26628 / AL26628 / AL26628`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S MARINGA` | valor: `786,5` | venc: `2025-08-28` | docs: `BOLC-280573 / BOLC-280573`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `786,05` | venc: `2026-02-25` | docs: `CF7577022026 / CF7577022026 / CF7577022026 / CF7577022026`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `786` | venc: `2026-01-29` | docs: `CF8373012026 / CF8373012026 / CF8373012026`
+  - cc: `1.6.3.26` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.6.3.26` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.6.3.26` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `786` | venc: `2025-10-31` | docs: `CF9686102025 / CF9686102025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `RSE` | valor: `780` | venc: `2025-12-02` | docs: `NFE-18471 / NFE-18471`
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.3.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `780` | venc: `2026-03-05` | docs: `NFE-205781 / NFE-205781`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `780` | venc: `2025-07-05` | docs: `NFSE-41 / NFSE-41 / NFSE-41 / NFSE-41 / NFSE-41`
+  - cc: `1.2.5.6.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `773,5` | venc: `2026-01-15` | docs: `BOLC-290351 / BOLC-290351`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `770` | venc: `2025-10-10` | docs: `BOLC-284105 / BOLC-284105`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `764,36` | venc: `2026-01-19` | docs: `ARRECADAÇAO13ºSALILDA122025 / ARRECADAÇAO13ºSALILDA122025`
+  - cc: `1.9.5` conta: `7.3.2` (FGTS)
+  - cc: `1.9.5` conta: `7.3.3` (INSS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `763,2` | venc: `2026-02-03` | docs: `BOLV-87665 / BOLV-87665`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `761,05` | venc: `2025-09-04` | docs: `NFE-280476 / NFE-280476`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.4` (COMBUSTÍVEL - DIESEL (POSTO))
+- **2x** | filial: `G&S PRUDENTE` | valor: `760` | venc: `2026-01-25` | docs: `NFE-198374 / NFE-198374`
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `756` | venc: `2025-12-17` | docs: `BOLC-289376 / BOLC-289376`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `753,8` | venc: `2026-02-27` | docs: `CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026 / CF8609022026`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.2.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.4` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.4` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `GXS MARINGA` | valor: `753,2` | venc: `2021-02-08` | docs: `B-46418 / B-46418`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `752` | venc: `2026-02-05` | docs: `NFSE-40743 / NFSE-40743`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `GXS MARINGA` | valor: `750,4` | venc: `2021-04-13` | docs: `B-48144 / B-48144`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S DOURADOS` | valor: `750` | venc: `2025-10-17` | docs: `NFSE-489 / NFSE-489 / NFSE-489`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `748` | venc: `2026-02-15` | docs: `NFSE-255989485 / NFSE-255989485 / NFSE-255989485 / NFSE-255989485`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `748` | venc: `2026-03-15` | docs: `NFSE-256182047 / NFSE-256182047 / NFSE-256182047 / NFSE-256182047`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **3x** | filial: `GXS MARINGA` | valor: `747,6` | venc: `2021-06-08` | docs: `B-49609 / B-49609 / B-49609`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `745,2` | venc: `2026-03-05` | docs: `NFE-147738 / NFE-147738`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **2x** | filial: `G3S DOURADOS` | valor: `745,2` | venc: `2026-04-05` | docs: `NFE-147738 / NFE-147738`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **3x** | filial: `G&S DOURADOS` | valor: `745` | venc: `2025-09-15` | docs: `NFSE-1001749 / NFSE-1001749 / NFSE-1001749`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `744,5` | venc: `2025-06-30` | docs: `CF741130062025 / CF741130062025 / CF741130062025 / CF741130062025 / CF741130062025 / CF741130062025 / CF741130062025 / CF741130062025 / CF741130062025`
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.15` (RAÇÃO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `742,5` | venc: `2025-09-09` | docs: `BOLC-281528 / BOLC-281528`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **13x** | filial: `G&S PRUDENTE` | valor: `740,15` | venc: `2026-02-25` | docs: `ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01 / ISSTOMADOR012026G&S01`
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.3.1.6.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.2.6.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.6` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.7` conta: `7.4.5` (ISS)
+  - cc: `1.2.7.6.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.4.7.1` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.1` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.13` conta: `7.4.5` (ISS)
+  - cc: `1.2.1.8.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.1.9.3` conta: `7.4.5` (ISS)
+- **5x** | filial: `G&S DOURADOS` | valor: `738` | venc: `2025-11-15` | docs: `NFSE-166 / NFSE-166 / NFSE-166 / NFSE-166 / NFSE-166`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `736` | venc: `2025-06-13` | docs: `CF738713062025 / CF738713062025`
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `736` | venc: `2026-04-06` | docs: `NFE-10049 / NFE-10049`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `735` | venc: `2025-11-25` | docs: `NF9901/NFS17233 / NF9901/NFS17233`
+  - cc: `1.2.5.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.5.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+- **5x** | filial: `G&S PRUDENTE` | valor: `734,93` | venc: `2025-09-25` | docs: `CTE378168/178346/178744/179158/179119 / CTE378168/178346/178744/179158/179119 / CTE378168/178346/178744/179158/179119 / CTE378168/178346/178744/179158/179119 / CTE378168/178346/178744/179158/179119`
+  - cc: `1.2.4.8.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.8.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.9` conta: `7.1.18` (FRETES E CARRETOS)
+- **3x** | filial: `GXS MARINGA` | valor: `733,6` | venc: `2021-02-23` | docs: `B-46927 / B-46927 / B-46927`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CIDADE ALTA` | valor: `731,5` | venc: `2026-01-05` | docs: `BOLC-289620 / BOLC-289620 / BOLC-289620`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `729,97` | venc: `2025-09-12` | docs: `BOLV-73462 / BOLV-73462`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `727,2` | venc: `2025-07-02` | docs: `BOLV-75505 / BOLV-75505`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `726,09` | venc: `2025-10-28` | docs: `CF8609102025 / CF8609102025 / CF8609102025 / CF8609102025 / CF8609102025 / CF8609102025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **4x** | filial: `G3S LONDRINA` | valor: `723` | venc: `2025-12-08` | docs: `BOLC-288747 / BOLC-288747 / BOLC-288747 / BOLC-288747`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `715,58` | venc: `2025-12-01` | docs: `NFE-143672 / NFE-143672`
+  - cc: `1.2.2.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S DOURADOS` | valor: `715,58` | venc: `2025-12-15` | docs: `NFE-143672 / NFE-143672`
+  - cc: `1.2.2.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `715,43` | venc: `2025-09-30` | docs: `CF8609092025 / CF8609092025 / CF8609092025 / CF8609092025 / CF8609092025 / CF8609092025`
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.1` conta: `7.6.2` (FERRAMENTAS)
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.6.2` (FERRAMENTAS)
+  - cc: `1.2.2.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **4x** | filial: `G&S DOURADOS` | valor: `715` | venc: `2025-10-15` | docs: `NFSE-1001766 / NFSE-1001766 / NFSE-1001766 / NFSE-1001766`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `714,72` | venc: `2025-09-15` | docs: `CC293815092025 / CC293815092025 / CC293815092025`
+  - cc: `1.7.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G3S PRUDENTE` | valor: `712,2` | venc: `2025-05-06` | docs: `BOLV-81144 / BOLV-81144`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `711,17` | venc: `2025-10-10` | docs: `00004448 / 00004448`
+  - cc: `1.1.2` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.1.2` conta: `7.5.20` (INTERNET)
+- **2x** | filial: `G3S PRUDENTE` | valor: `708,74` | venc: `2025-05-20` | docs: `FATLOC10264 / FATLOC10264`
+  - cc: `1.2.4.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.4.3` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `707,25` | venc: `2025-12-10` | docs: `00006371 / 00006371`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **2x** | filial: `G3S DOURADOS` | valor: `707` | venc: `2025-07-23` | docs: `BOLC-277558 / BOLC-277558`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `706,4` | venc: `2026-02-10` | docs: `00008041 / 00008041`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **6x** | filial: `G3S PRUDENTE` | valor: `706,4` | venc: `2026-03-10` | docs: `00008832 / 00008832 / 00008832 / 00008832 / 00008832 / 00008832`
+  - cc: `1.1.2` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.1.2` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.3.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.3.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.20` (INTERNET)
+- **2x** | filial: `G3S PRUDENTE` | valor: `705,5` | venc: `2025-11-10` | docs: `00005500 / 00005500`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `704,59` | venc: `2026-01-10` | docs: `00007165 / 00007165`
+  - cc: `1.2.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `703,64` | venc: `2025-04-26` | docs: `CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025 / CF738726042025`
+  - cc: `1.2.3.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `702,11` | venc: `2026-02-27` | docs: `CF0015022026 / CF0015022026 / CF0015022026 / CF0015022026 / CF0015022026 / CF0015022026 / CF0015022026 / CF0015022026`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.7.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.7.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **3x** | filial: `G&S PRUDENTE` | valor: `700` | venc: `2025-07-25` | docs: `NFSE-6592 / NFSE-6592 / NFSE-6592`
+  - cc: `1.2.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `700` | venc: `2025-08-15` | docs: `NFSE-6629 / NFSE-6629 / NFSE-6629`
+  - cc: `1.2.5.6.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S DOURADOS` | valor: `699` | venc: `2026-02-25` | docs: `NFE-176351 / NFE-176351 / NFE-176351 / NFE-176351`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **7x** | filial: `G3S PRUDENTE` | valor: `696` | venc: `2026-03-19` | docs: `NFE-3108 / NFE-3108 / NFE-3108 / NFE-3108 / NFE-3108 / NFE-3108 / NFE-3108`
+  - cc: `1.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.1.4` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.1.9` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.5.1.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.4.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **4x** | filial: `G&S MARINGA` | valor: `694,8` | venc: `2025-08-05` | docs: `NFE-13063 / NFE-13063 / NFE-13063 / NFE-13063`
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.3.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.6.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `694,13` | venc: `2025-06-03` | docs: `FATLOC10671 / FATLOC10671`
+  - cc: `1.2.5.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.3` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `692,69` | venc: `2025-11-15` | docs: `CC594115112025 / CC594115112025`
+  - cc: `1.2.1.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S PRUDENTE` | valor: `692,69` | venc: `2025-12-15` | docs: `CC594115112025 / CC594115112025`
+  - cc: `1.2.1.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S PRUDENTE` | valor: `692,69` | venc: `2026-01-15` | docs: `CC594115112025 / CC594115112025`
+  - cc: `1.2.1.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S PRUDENTE` | valor: `692,69` | venc: `2026-02-15` | docs: `CC594115112025 / CC594115112025`
+  - cc: `1.2.1.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G&S BARUERI` | valor: `690` | venc: `2026-02-18` | docs: `RKM9538022026 / RKM9538022026 / RKM9538022026`
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `689,92` | venc: `2026-01-29` | docs: `CF7387012026 / CF7387012026 / CF7387012026 / CF7387012026 / CF7387012026`
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **50x** | filial: `G&S PRUDENTE` | valor: `686` | venc: `2025-10-20` | docs: `RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S / RETFED092025G&S`
+  - cc: `1.2.4.4` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.5.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.2.5.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.4` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.2` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.7.6.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.1` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.3` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.4` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.7.7` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.7.7` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.9` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.9` conta: `7.4.7` (CSRF)
+  - cc: `1.7.2.2` conta: `7.4.6` (IRRF)
+  - cc: `1.7.2.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.6` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.5.6` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.15` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.15` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.13` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.13` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.14` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.14` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.10` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.10` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.4` conta: `7.4.6` (IRRF)
+  - cc: `1.2.3.5.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.11` conta: `7.4.6` (IRRF)
+  - cc: `1.2.4.7.11` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.12` conta: `7.4.6` (IRRF)
+  - cc: `1.2.5.6.12` conta: `7.4.7` (CSRF)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `684` | venc: `2025-11-15` | docs: `CC897115112025 / CC897115112025 / CC897115112025 / CC897115112025 / CC897115112025 / CC897115112025`
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **5x** | filial: `G&S PRUDENTE` | valor: `682,92` | venc: `2026-02-05` | docs: `200.101.932 / 200.101.932 / 200.101.932 / 200.101.932 / 200.101.932`
+  - cc: `1.2.2.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.3.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.4.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.5.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.7.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `682,92` | venc: `2025-09-15` | docs: `200090390 / 200090390 / 200090390 / 200090390 / 200090390`
+  - cc: `1.2.2.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.3.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.4.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.5.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.7.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `682,92` | venc: `2025-10-15` | docs: `200092742 / 200092742 / 200092742 / 200092742 / 200092742`
+  - cc: `1.2.2.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.3.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.4.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.5.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.7.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `682,92` | venc: `2025-11-17` | docs: `200094742 / 200094742 / 200094742 / 200094742 / 200094742`
+  - cc: `1.2.2.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.3.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.4.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.5.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.7.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `682,92` | venc: `2025-12-15` | docs: `200097125 / 200097125 / 200097125 / 200097125 / 200097125`
+  - cc: `1.2.2.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.3.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.4.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.5.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.7.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `682,92` | venc: `2026-01-15` | docs: `200099752 / 200099752 / 200099752 / 200099752 / 200099752`
+  - cc: `1.2.2.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.3.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.4.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.5.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+  - cc: `1.2.7.4` conta: `7.1.3` (LOCAÇÃO DE EQUIPAMENTOS E FERRAMENTAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `672,28` | venc: `2025-04-30` | docs: `CF839930042025 / CF839930042025 / CF839930042025`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+- **3x** | filial: `G3S PRUDENTE` | valor: `670,6` | venc: `2024-08-07` | docs: `B-74687 / B-74687 / B-74687`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `670` | venc: `2025-11-05` | docs: `NFE-91086 / NFE-91086 / NFE-91086 / NFE-91086 / NFE-91086 / NFE-91086`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `670` | venc: `2025-11-15` | docs: `NFE-91086 / NFE-91086 / NFE-91086 / NFE-91086 / NFE-91086 / NFE-91086`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `663,85` | venc: `2025-10-16` | docs: `BOLV-85296 / BOLV-85296`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `GXS MARINGA` | valor: `663,6` | venc: `2021-06-17` | docs: `B-49820 / B-49820`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `NVS - EKIPA` | valor: `663,59` | venc: `2026-01-14` | docs: `BVCONSIGNADONVS122025 / BVCONSIGNADONVS122025`
+  - cc: `1.2.5.3` conta: `7.3.16` (EMPRESTIMO CONSIGNADO)
+  - cc: `1.3.1.3` conta: `7.3.16` (EMPRESTIMO CONSIGNADO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `660,86` | venc: `2026-01-19` | docs: `ARRECADAÇÃO13SALGIU122025 / ARRECADAÇÃO13SALGIU122025`
+  - cc: `1.9.2` conta: `7.3.2` (FGTS)
+  - cc: `1.9.2` conta: `7.3.3` (INSS)
+- **4x** | filial: `G&S MARINGA` | valor: `660` | venc: `2025-10-25` | docs: `NFE-2327 / NFE-2327 / NFE-2327 / NFE-2327`
+  - cc: `1.2.4.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **12x** | filial: `G&S PRUDENTE` | valor: `659,01` | venc: `2026-03-25` | docs: `ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01 / ISSTOMADOR022026G&S01`
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.3.1.6.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.2.5.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.8` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.1` conta: `7.4.5` (ISS)
+  - cc: `1.7.2.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.12` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.6.13` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.10` conta: `7.4.5` (ISS)
+  - cc: `1.2.1.9.2` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.7.11` conta: `7.4.5` (ISS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `657,18` | venc: `2024-07-08` | docs: `B-73728 / B-73728`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `657,18` | venc: `2025-09-12` | docs: `B-73728 / B-73728`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `656,5` | venc: `2025-07-23` | docs: `BOLC-277691 / BOLC-277691`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `655` | venc: `2026-03-25` | docs: `NFE-6582 / NFE-6582`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `655` | venc: `2026-02-05` | docs: `NFSE-1008375 / NFSE-1008375`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S MARINGA` | valor: `653` | venc: `2026-02-10` | docs: `BOLC-292367 / BOLC-292367`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `652,08` | venc: `2026-03-09` | docs: `PEDAGIO / PEDAGIO`
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S MARINGA` | valor: `650` | venc: `2025-06-05` | docs: `BOLC-273855 / BOLC-273855`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `646` | venc: `2025-10-15` | docs: `NFE-153730 / NFE-153730`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S MARINGA` | valor: `645,58` | venc: `2025-08-25` | docs: `NFE-12249 / NFE-12249`
+  - cc: `1.2.5.6.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `645` | venc: `2026-03-18` | docs: `0000X9021 / 0000X9021`
+  - cc: `1.2.5.3` conta: `7.3.1` (SALÁRIOS)
+  - cc: `1.2.5.4` conta: `7.3.1` (SALÁRIOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `645` | venc: `2026-02-09` | docs: `CTE-5269793 / CTE-5269793`
+  - cc: `1.7.1.2.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.41` conta: `7.1.18` (FRETES E CARRETOS)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `644,44` | venc: `2025-10-31` | docs: `CF9645102025 / CF9645102025 / CF9645102025 / CF9645102025 / CF9645102025 / CF9645102025 / CF9645102025 / CF9645102025 / CF9645102025 / CF9645102025`
+  - cc: `1.2.4.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.3` conta: `8.1.6` (ELETRÔNICOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `644` | venc: `2025-11-17` | docs: `BOLC-287204 / BOLC-287204`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `643,53` | venc: `2025-05-09` | docs: `CF178909052025 / CF178909052025 / CF178909052025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `642,63` | venc: `2025-08-29` | docs: `CF858329082025 / CF858329082025`
+  - cc: `1.2.3.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `642,2` | venc: `2025-08-02` | docs: `BOLC-277441 / BOLC-277441`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `640` | venc: `2025-09-25` | docs: `AL25046 / AL25046 / AL25046 / AL25046 / AL25046 / AL25046`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.6.3.30` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.30` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `639,88` | venc: `2025-12-30` | docs: `CF9686122025 / CF9686122025 / CF9686122025 / CF9686122025`
+  - cc: `1.3.1.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `636,73` | venc: `2026-02-26` | docs: `CF9686022026 / CF9686022026`
+  - cc: `1.3.1.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **10x** | filial: `G3S PRUDENTE` | valor: `636,45` | venc: `2025-10-25` | docs: `00004933 / 00004933 / 00004933 / 00004933 / 00004933 / 00004933 / 00004933 / 00004933 / 00004933 / 00004933`
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.3.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.3.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.5.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.4.1.2` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.7.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.7.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.8.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `636,45` | venc: `2026-03-25` | docs: `00009224 / 00009224`
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.20` (INTERNET)
+- **2x** | filial: `G&S PRUDENTE` | valor: `635` | venc: `2025-10-25` | docs: `NFE-21573 / NFE-21573`
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `634` | venc: `2025-08-22` | docs: `BOLC-280108 / BOLC-280108`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `632,3` | venc: `2026-01-25` | docs: `RKM012026 / RKM012026`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **6x** | filial: `G&S PRUDENTE` | valor: `628,7` | venc: `2026-03-25` | docs: `NFE-82335 / NFE-82335 / NFE-82335 / NFE-82335 / NFE-82335 / NFE-82335`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.23` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `627,6` | venc: `2026-01-15` | docs: `00007903 / 00007903`
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `626` | venc: `2025-09-15` | docs: `NFE-78400 / NFE-78400`
+  - cc: `1.2.4.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.6` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `624,1` | venc: `2025-10-24` | docs: `CF8373102025 / CF8373102025 / CF8373102025`
+  - cc: `1.7.1.3.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **6x** | filial: `G&S PRUDENTE` | valor: `622` | venc: `2025-11-05` | docs: `NFE-104829 / NFE-104829 / NFE-104829 / NFE-104829 / NFE-104829 / NFE-104829`
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `621,74` | venc: `2025-11-27` | docs: `CF7403112025 / CF7403112025`
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `8.1.6` (ELETRÔNICOS)
+- **2x** | filial: `G&S DOURADOS` | valor: `620` | venc: `2025-11-15` | docs: `NFSE-1001786 / NFSE-1001786`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `618,23` | venc: `2025-06-28` | docs: `CF008028062025 / CF008028062025`
+  - cc: `1.5.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.3` conta: `7.7.2` (MATERIAL PARA REFORMA)
+- **2x** | filial: `G3S DOURADOS` | valor: `618` | venc: `2026-02-04` | docs: `BOLC-291366 / BOLC-291366`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `617,09` | venc: `2026-01-28` | docs: `CF8583012026 / CF8583012026`
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.12` (PEDÁGIO)
+- **6x** | filial: `G&S PRUDENTE` | valor: `616` | venc: `2025-09-25` | docs: `NFE-103831 / NFE-103831 / NFE-103831 / NFE-103831 / NFE-103831 / NFE-103831`
+  - cc: `1.2.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `613,06` | venc: `2025-11-29` | docs: `CF8609112025 / CF8609112025 / CF8609112025`
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `612` | venc: `2026-01-16` | docs: `BOLC-289867 / BOLC-289867`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `611,21` | venc: `2026-02-26` | docs: `CF0479022026 / CF0479022026 / CF0479022026 / CF0479022026`
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.5.2` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G3S MARINGA` | valor: `611` | venc: `2025-08-12` | docs: `BOLC-279290 / BOLC-279290`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `611` | venc: `2025-12-09` | docs: `BOLC-285994 / BOLC-285994`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S ADM` | valor: `610,94` | venc: `2026-03-25` | docs: `ISSTOMADOS022026G3S10 / ISSTOMADOS022026G3S10 / ISSTOMADOS022026G3S10`
+  - cc: `1.1.3` conta: `7.4.5` (ISS)
+  - cc: `1.2.1.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+- **2x** | filial: `G3S MARINGA` | valor: `606` | venc: `2026-02-05` | docs: `BOLC-292272 / BOLC-292272`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `605,99` | venc: `2025-07-02` | docs: `CF738702072025 / CF738702072025`
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `G&S PRUDENTE` | valor: `600` | venc: `2025-09-25` | docs: `AL25129 / AL25129 / AL25129`
+  - cc: `1.2.5.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.47` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `600` | venc: `2025-10-20` | docs: `BOLC-284885 / BOLC-284885`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `600` | venc: `2026-03-27` | docs: `BOLV-87912 / BOLV-87912`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `600` | venc: `2025-06-05` | docs: `NFSE-117 / NFSE-117`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S MARINGA` | valor: `600` | venc: `2025-09-09` | docs: `NFSE-4324 / NFSE-4324`
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `600` | venc: `2025-06-25` | docs: `X23064 / X23064 / X23064 / X23064`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `598,53` | venc: `2025-11-25` | docs: `NFE-104044 / NFE-104044 / NFE-104044 / NFE-104044`
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.30` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `595` | venc: `2025-10-06` | docs: `NFSE-365 / NFSE-365 / NFSE-365`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `594,2` | venc: `2025-10-05` | docs: `CTE411908/412554 / CTE411908/412554`
+  - cc: `1.2.4.8.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `GXS MARINGA` | valor: `593,6` | venc: `2021-02-15` | docs: `B-46646 / B-46646`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `593,1` | venc: `2026-02-13` | docs: `BOLV-88002 / BOLV-88002`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `590,37` | venc: `2025-08-30` | docs: `CF028830082025 / CF028830082025`
+  - cc: `1.7.1.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.2.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **3x** | filial: `G&S PRUDENTE` | valor: `590` | venc: `2025-11-25` | docs: `NFSE-79 / NFSE-79 / NFSE-79`
+  - cc: `1.6.3.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `588` | venc: `2026-01-05` | docs: `BOLC-289691 / BOLC-289691`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `587,13` | venc: `2025-11-29` | docs: `CF1789112025 / CF1789112025`
+  - cc: `1.2.2.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G&S PRUDENTE` | valor: `587` | venc: `2025-10-05` | docs: `RKM05102025 / RKM05102025`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `585,72` | venc: `2025-05-30` | docs: `CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025 / CF838130052025`
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G3S MARINGA` | valor: `585` | venc: `2025-10-16` | docs: `BOLV-85311 / BOLV-85311`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `584,4` | venc: `2025-08-22` | docs: `BOLV-83927 / BOLV-83927`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `582,63` | venc: `2026-01-27` | docs: `CF0015012026 / CF0015012026 / CF0015012026 / CF0015012026 / CF0015012026 / CF0015012026 / CF0015012026 / CF0015012026`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.7.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.4` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.7.4` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.4` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **3x** | filial: `G&S PRUDENTE` | valor: `580,85` | venc: `2025-10-15` | docs: `0000496328102025 / 0000496328102025 / 0000496328102025`
+  - cc: `1.7.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.2.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `580,52` | venc: `2025-11-27` | docs: `CF9546112025 / CF9546112025`
+  - cc: `1.2.5.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.5.1` conta: `1.35.43` (ESTORNO DE PAGAMENTO RECEBIDO)
+- **4x** | filial: `G&S PRUDENTE` | valor: `580` | venc: `2025-08-05` | docs: `NFE-20933 / NFE-20933 / NFE-20933 / NFE-20933`
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `580` | venc: `2025-08-15` | docs: `NFE-21081 / NFE-21081 / NFE-21081 / NFE-21081`
+  - cc: `1.3.1.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `580` | venc: `2025-08-25` | docs: `NFE-21172 / NFE-21172 / NFE-21172`
+  - cc: `1.2.4.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **7x** | filial: `G&S PRUDENTE` | valor: `579,54` | venc: `2026-02-25` | docs: `CTE-398810/399390/399758/399917/400493/400313 / CTE-398810/399390/399758/399917/400493/400313 / CTE-398810/399390/399758/399917/400493/400313 / CTE-398810/399390/399758/399917/400493/400313 / CTE-398810/399390/399758/399917/400493/400313 / CTE-398810/399390/399758/399917/400493/400313 / CTE-398810/399390/399758/399917/400493/400313`
+  - cc: `1.2.4.7.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.2.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.14.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.8` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.41` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.1.8.1` conta: `7.1.18` (FRETES E CARRETOS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `579,27` | venc: `2025-09-29` | docs: `CF8617092025 / CF8617092025 / CF8617092025 / CF8617092025 / CF8617092025 / CF8617092025`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.3.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.3.1` conta: `7.7.2` (MATERIAL PARA REFORMA)
+  - cc: `1.2.3.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.3.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G&S MARINGA` | valor: `579,15` | venc: `2025-06-02` | docs: `CTE 5253 / CTE 5253`
+  - cc: `2.4.3.1` conta: `5.7.1` (FRETES)
+  - cc: `2.4.3.1` conta: `5.7.1` (FRETES)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `579,04` | venc: `2025-11-28` | docs: `CF0288112025 / CF0288112025 / CF0288112025`
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `579` | venc: `2025-10-15` | docs: `RKM15102025 / RKM15102025`
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G&S PRUDENTE` | valor: `578,93` | venc: `2025-11-03` | docs: `NFE-380442 / NFE-380442 / NFE-380442`
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `578,16` | venc: `2025-12-15` | docs: `CC8840122025 / CC8840122025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S PRUDENTE` | valor: `577,84` | venc: `2026-01-15` | docs: `NFE-6069 / NFE-6069`
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `574,79` | venc: `2026-02-25` | docs: `CF926022026 / CF926022026 / CF926022026 / CF926022026 / CF926022026 / CF926022026 / CF926022026 / CF926022026 / CF926022026`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.3.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+- **2x** | filial: `GXS MARINGA` | valor: `574` | venc: `2021-02-16` | docs: `B-46701 / B-46701`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `572,37` | venc: `2026-01-26` | docs: `SEMPARARG3S11012026 / SEMPARARG3S11012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `572` | venc: `2025-07-24` | docs: `BOLC-277699 / BOLC-277699`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G&S DOURADOS` | valor: `570` | venc: `2025-07-15` | docs: `NFSE-1001710 / NFSE-1001710 / NFSE-1001710`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `569,8` | venc: `2025-06-06` | docs: `BOLC-274268 / BOLC-274268`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `568,25` | venc: `2025-05-30` | docs: `BOLV-81799 / BOLV-81799`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `566,2` | venc: `2025-07-04` | docs: `NFE-3081 / NFE-3081`
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **18x** | filial: `G3S CAMPO GRANDE` | valor: `563,89` | venc: `2026-01-28` | docs: `CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026 / CF9546012026`
+  - cc: `1.2.2.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.3.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.3.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.3.1.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.7.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `GXS MARINGA` | valor: `560` | venc: `2021-03-04` | docs: `B-47175 / B-47175`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S MARINGA` | valor: `560` | venc: `2025-12-25` | docs: `NFSE-2 / NFSE-2`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `556,32` | venc: `2026-01-30` | docs: `CF2203012026 / CF2203012026 / CF2203012026 / CF2203012026 / CF2203012026 / CF2203012026`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **3x** | filial: `G&S PRUDENTE` | valor: `555,57` | venc: `2025-09-15` | docs: `NFE-377585 / NFE-377585 / NFE-377585`
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S DOURADOS` | valor: `555` | venc: `2026-01-25` | docs: `NFSE-1001817 / NFSE-1001817 / NFSE-1001817`
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `553,8` | venc: `2026-01-15` | docs: `NFSE-255798344 / NFSE-255798344 / NFSE-255798344 / NFSE-255798344`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `552,6` | venc: `2025-09-23` | docs: `BOLV-84719 / BOLV-84719`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `552,29` | venc: `2026-01-26` | docs: `CF8609012026 / CF8609012026 / CF8609012026 / CF8609012026`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.2.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.4` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `552` | venc: `2025-11-25` | docs: `NFE-8311 / NFE-8311`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `552` | venc: `2026-01-27` | docs: `NFE-8997 / NFE-8997`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `552` | venc: `2026-03-05` | docs: `NFE-9501 / NFE-9501`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `551,2` | venc: `2025-06-03` | docs: `FATLOC17019 / FATLOC17019`
+  - cc: `1.2.5.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.3` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **3x** | filial: `G&S MARINGA` | valor: `550` | venc: `2025-09-15` | docs: `NFSE-2235 / NFSE-2235 / NFSE-2235`
+  - cc: `1.2.5.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `549,54` | venc: `2025-09-15` | docs: `NFE-6515 / NFE-6515`
+  - cc: `1.2.5.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `549,08` | venc: `2025-06-17` | docs: `BOLV-78700 / BOLV-78700 / BOLV-78700`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `548,93` | venc: `2026-02-25` | docs: `CF2203022026 / CF2203022026 / CF2203022026 / CF2203022026`
+  - cc: `1.2.4.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `547,84` | venc: `2026-02-27` | docs: `CF0288022026 / CF0288022026`
+  - cc: `1.7.1.4.5` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.4.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S DOURADOS` | valor: `545,7` | venc: `2025-05-19` | docs: `BOLV-81435 / BOLV-81435`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `545` | venc: `2026-03-20` | docs: `NFSE-38867 / NFSE-38867`
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `544,61` | venc: `2025-05-20` | docs: `FATLOC233804 / FATLOC233804`
+  - cc: `1.2.5.3` conta: `7.5.13` (SEGUROS)
+  - cc: `1.2.5.3` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **2x** | filial: `G&S MARINGA` | valor: `540,4` | venc: `2025-10-15` | docs: `NFE-13546 / NFE-13546`
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `537,91` | venc: `2025-07-15` | docs: `CC297915072025 / CC297915072025 / CC297915072025 / CC297915072025`
+  - cc: `1.7.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S MARINGA` | valor: `537,6` | venc: `2021-08-26` | docs: `B-51772 / B-51772`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `536,64` | venc: `2026-01-22` | docs: `CF8399012026 / CF8399012026 / CF8399012026`
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `GXS MARINGA` | valor: `534,8` | venc: `2021-02-17` | docs: `B-46718 / B-46718`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `533,5` | venc: `2025-09-08` | docs: `BOLV-84360 / BOLV-84360`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `532` | venc: `2025-10-06` | docs: `BOLC-283549 / BOLC-283549`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `530` | venc: `2026-02-22` | docs: `NF4709 / NF4709 / NF4709`
+  - cc: `1.2.2.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.4.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.7.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **5x** | filial: `G&S DOURADOS` | valor: `530` | venc: `2026-02-15` | docs: `NFSE-1001839 / NFSE-1001839 / NFSE-1001839 / NFSE-1001839 / NFSE-1001839`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `530` | venc: `2025-12-05` | docs: `NFSE-53 / NFSE-53`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.4.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `527,5` | venc: `2025-10-03` | docs: `BOLC-283616 / BOLC-283616`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `527,22` | venc: `2026-01-31` | docs: `CF926012026 / CF926012026 / CF926012026 / CF926012026 / CF926012026 / CF926012026 / CF926012026 / CF926012026`
+  - cc: `1.2.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **24x** | filial: `G3S CAMPO GRANDE` | valor: `526,62` | venc: `2026-02-27` | docs: `CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026 / CF934022026`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.5.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.7.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.7.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.7.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.1.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.1.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.1.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.8.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.8.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.1.8.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.2.1.9.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.1.9.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.1.9.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.9.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.1.9.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.1.9.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **3x** | filial: `G&S PRUDENTE` | valor: `526,39` | venc: `2025-12-25` | docs: `NFE-93497 / NFE-93497 / NFE-93497`
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `520` | venc: `2025-08-25` | docs: `NFE-193329 / NFE-193329`
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.35` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S BARUERI` | valor: `518,15` | venc: `2026-01-15` | docs: `RKM122025 / RKM122025`
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `517` | venc: `2025-09-22` | docs: `BOLV-84694 / BOLV-84694`
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `516` | venc: `2025-10-16` | docs: `NFE-7596 / NFE-7596`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `514` | venc: `2025-07-16` | docs: `X-RKM15072025 / X-RKM15072025`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S BARUERI` | valor: `514` | venc: `2026-02-25` | docs: `XRKM022026 / XRKM022026`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G&S DOURADOS` | valor: `511` | venc: `2025-12-15` | docs: `NFSE-194 / NFSE-194 / NFSE-194 / NFSE-194`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `510,3` | venc: `2025-10-24` | docs: `CF7387102025 / CF7387102025`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G&S PRUDENTE` | valor: `508,3` | venc: `2025-08-05` | docs: `NFE-24431 / NFE-24431`
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `508,3` | venc: `2025-08-15` | docs: `NFE-24431 / NFE-24431`
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `RSE` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174421
+
+ / ADT16174421
+
+`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174423 / ADT16174423`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S MARINGA` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16176029 / ADT16176029`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S LONDRINA` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16176030 / ADT16176030`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `505,11` | venc: `2026-02-15` | docs: `NFE-98744190 / NFE-98744190`
+  - cc: `1.2.5.3` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.2.7.3` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `502,71` | venc: `2025-05-12` | docs: `00000210 / 00000210`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `501,84` | venc: `2025-11-29` | docs: `CF8583112025 / CF8583112025 / CF8583112025`
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `500` | venc: `2025-08-01` | docs: `23496 / 23496`
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `500` | venc: `2026-02-25` | docs: `NFSE-2125 / NFSE-2125`
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `500` | venc: `2025-07-15` | docs: `NFSE-37 / NFSE-37 / NFSE-40 / NFSE-40`
+  - cc: `1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.5.1.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.5.1.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `500` | venc: `2025-12-05` | docs: `SALCOMPLG3S11112025 / SALCOMPLG3S11112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `RSE` | valor: `500` | venc: `2025-12-05` | docs: `SALCOMPLRSE112025 / SALCOMPLRSE112025`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `499,46` | venc: `2025-07-08` | docs: `FATLOC180112 / FATLOC180112`
+  - cc: `1.2.5.3` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+  - cc: `1.2.1.8.1` conta: `7.5.31` (ALUGUEL ADMINISTRATIVO)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `497,1` | venc: `2025-08-29` | docs: `CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025 / CF624029082025`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.5.1` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.5.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.5.3` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.5.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.5.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.4` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.5.4` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+  - cc: `1.2.5.4` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **4x** | filial: `G&S PRUDENTE` | valor: `495,13` | venc: `2025-07-15` | docs: `CC873515072025 / CC873515072025 / CC873515072025 / CC873515072025`
+  - cc: `1.2.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `495` | venc: `2026-03-29` | docs: `BOLV-87493 / BOLV-87493`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `493,43` | venc: `2025-08-29` | docs: `CF740329082025 / CF740329082025`
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `493,33` | venc: `2025-09-25` | docs: `CF0479092025 / CF0479092025 / CF0479092025 / CF0479092025 / CF0479092025 / CF0479092025 / CF0479092025 / CF0479092025`
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **16x** | filial: `G3S CAMPO GRANDE` | valor: `492,92` | venc: `2025-10-24` | docs: `CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025 / CF7551102025`
+  - cc: `1.5.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.5.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.5.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.5.1.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.5.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.5.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.4.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.4.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.4.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.1.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.4.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.4.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.4.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G3S MARINGA` | valor: `492` | venc: `2026-03-05` | docs: `BOLC-294781 / BOLC-294781`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `492` | venc: `2026-02-27` | docs: `NFE-132168 / NFE-132168`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `492` | venc: `2026-01-25` | docs: `NFE-63175 / NFE-63175 / NFE-63175`
+  - cc: `1.2.3.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `490,37` | venc: `2025-06-30` | docs: `CF220330062025 / CF220330062025 / CF220330062025 / CF220330062025 / CF220330062025 / CF220330062025`
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.12` (PEDÁGIO)
+- **3x** | filial: `G3S DOURADOS` | valor: `490,09` | venc: `2025-06-05` | docs: `BOLV-72948 / BOLV-72948 / BOLV-72948`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `488,88` | venc: `2026-04-05` | docs: `NFE-3986 / NFE-3986`
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.10` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `487` | venc: `2026-02-18` | docs: `RKM7387022026 / RKM7387022026`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `485,19` | venc: `2025-12-30` | docs: `CF7460122025 / CF7460122025 / CF7460122025 / CF7460122025`
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `RSE` | valor: `480,32` | venc: `2025-10-20` | docs: `RETFED092025RSE / RETFED092025RSE`
+  - cc: `1.6.1` conta: `7.4.6` (IRRF)
+  - cc: `1.6.1` conta: `7.4.7` (CSRF)
+- **3x** | filial: `G3S DOURADOS` | valor: `480,23` | venc: `2025-06-05` | docs: `BOLV-72944 / BOLV-72944 / BOLV-72944`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `480` | venc: `2025-08-06` | docs: `NFE-6451 / NFE-6451`
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `480` | venc: `2025-11-28` | docs: `NFSE-2080 / NFSE-2080 / NFSE-2080 / NFSE-2080`
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.6` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `477` | venc: `2025-09-15` | docs: `NFE-53449 / NFE-53449`
+  - cc: `1.2.4.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **7x** | filial: `G&S PRUDENTE` | valor: `476,32` | venc: `2025-07-05` | docs: `CTEANDORINHA / CTEANDORINHA / CTEANDORINHA / CTEANDORINHA / CTEANDORINHA / CTEANDORINHA / CTEANDORINHA`
+  - cc: `1.7.1.8.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.3.1.6.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.30` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.3.5.6` conta: `7.1.18` (FRETES E CARRETOS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `473,4` | venc: `2025-12-05` | docs: `NFE-92275 / NFE-92275 / NFE-92275 / NFE-92275 / NFE-92275 / NFE-92275`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **8x** | filial: `G&S PRUDENTE` | valor: `471,44` | venc: `2025-09-15` | docs: `RKM15092025 / RKM15092025 / RKM15092025 / RKM15092025 / RKM15092025 / RKM15092025 / RKM15092025 / RKM15092025`
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.3` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.7.1.14.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.14.2` conta: `7.1.12` (PEDÁGIO)
+- **10x** | filial: `G3S CAMPO GRANDE` | valor: `469,56` | venc: `2025-07-30` | docs: `CF624030072025 / CF624030072025 / CF624030072025 / CF624030072025 / CF624030072025 / CF624030072025 / CF624030072025 / CF624030072025 / CF624030072025 / CF624030072025`
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.4` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.3.1.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.4` conta: `8.1.6` (ELETRÔNICOS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `467,6` | venc: `2025-11-15` | docs: `NFSE-255435910 / NFSE-255435910 / NFSE-255435910 / NFSE-255435910`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `467,6` | venc: `2026-01-15` | docs: `NFSE-255618971 / NFSE-255618971 / NFSE-255618971 / NFSE-255618971`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `466,2` | venc: `2025-07-28` | docs: `CF968628072025 / CF968628072025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **3x** | filial: `G&S PRUDENTE` | valor: `466,08` | venc: `2026-03-25` | docs: `NFE-96404 / NFE-96404 / NFE-96404`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `461,78` | venc: `2025-06-05` | docs: `BOLV-73452 / BOLV-73452`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S DOURADOS` | valor: `461,78` | venc: `2025-09-12` | docs: `BOLV-73452 / BOLV-73452 / BOLV-73452 / BOLV-73452`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `460` | venc: `2026-02-18` | docs: `NFSE-1914 / NFSE-1914`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `459,79` | venc: `2026-01-27` | docs: `CF0479012026 / CF0479012026 / CF0479012026 / CF0479012026 / CF0479012026 / CF0479012026 / CF0479012026 / CF0479012026`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.5.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.5.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.2` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.5.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **10x** | filial: `G&S PRUDENTE` | valor: `458,69` | venc: `2025-06-15` | docs: `CC873501062025 / CC873501062025 / CC873501062025 / CC873501062025 / CC873501062025 / CC873501062025 / CC873501062025 / CC873501062025 / CC873501062025 / CC873501062025`
+  - cc: `1.7.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.1.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.1.8.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.1.8.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.8.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `457,4` | venc: `2025-12-26` | docs: `NFE-8658 / NFE-8658`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `455,3` | venc: `2025-11-28` | docs: `CF7544112025 / CF7544112025`
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `455` | venc: `2025-12-16` | docs: `BOLC-289384 / BOLC-289384`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `454,6` | venc: `2025-04-23` | docs: `CF999123042025 / CF999123042025 / CF999123042025 / CF999123042025`
+  - cc: `1.2.7.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `GXS MARINGA` | valor: `452,67` | venc: `2025-11-25` | docs: `26574 / 26574`
+  - cc: `1.2.5.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+- **7x** | filial: `GXS MARINGA` | valor: `452,67` | venc: `2026-02-25` | docs: `OC28733 / OC28733 / OC28733 / OC28733 / OC28733 / OC28733 / OC28733`
+  - cc: `1.2.2.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.3.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.4.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.5.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.3.1.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.7.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.2.8.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+- **2x** | filial: `GXS MARINGA` | valor: `452,61` | venc: `2025-08-25` | docs: `00003123 / 00003123`
+  - cc: `1.1.13` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `452,08` | venc: `2025-07-31` | docs: `CF999131072025 / CF999131072025`
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `451,12` | venc: `2025-11-28` | docs: `CF7460112025 / CF7460112025 / CF7460112025 / CF7460112025 / CF7460112025 / CF7460112025 / CF7460112025 / CF7460112025 / CF7460112025`
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.4.8.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.4.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.8.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+- **2x** | filial: `G3S LONDRINA` | valor: `450` | venc: `2025-07-22` | docs: `BOLC-277543 / BOLC-277543`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `450` | venc: `2025-09-25` | docs: `NFE-194576 / NFE-194576`
+  - cc: `1.6.3.35` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S MARINGA` | valor: `450` | venc: `2026-03-02` | docs: `NFE-2684 / NFE-2684`
+  - cc: `1.2.4.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `450` | venc: `2025-07-15` | docs: `NFSE-6492 / NFSE-6492 / NFSE-6492 / NFSE-6492`
+  - cc: `1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.1.9` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.33` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.4.7.10` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `450` | venc: `1800-01-01` | docs: `SALDO ADT CLI / SALDO ADT CLI`
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `448,07` | venc: `2025-07-23` | docs: `CF861723072025 / CF861723072025`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S DOURADOS` | valor: `447,96` | venc: `2025-06-05` | docs: `BOLV-79601 / BOLV-79601`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `447,4` | venc: `2025-10-24` | docs: `CF7544102025 / CF7544102025 / CF7544102025 / CF7544102025 / CF7544102025 / CF7544102025`
+  - cc: `1.2.6.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.4` conta: `7.1.12` (PEDÁGIO)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `446,99` | venc: `2025-04-30` | docs: `CF624030042025 / CF624030042025 / CF624030042025 / CF624030042025 / CF624030042025 / CF624030042025 / CF624030042025 / CF624030042025`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.3.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.4` conta: `8.1.6` (ELETRÔNICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `446,6` | venc: `2025-05-06` | docs: `BOLV-81148 / BOLV-81148`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `446,5` | venc: `2025-09-10` | docs: `NFE-62936 / NFE-62936`
+  - cc: `1.7.1.8.2` conta: `7.1.17` (GÁS - USO OFICINA)
+  - cc: `1.6.3.36` conta: `7.1.17` (GÁS - USO OFICINA)
+- **2x** | filial: `G3S ADM` | valor: `441,93` | venc: `2026-01-23` | docs: `ISSQN122025G3S10 / ISSQN122025G3S10`
+  - cc: `1.2.1.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `438,56` | venc: `2026-01-19` | docs: `RETFED122025G&S / RETFED122025G&S`
+  - cc: `1.4.4.2` conta: `7.4.7` (CSRF)
+  - cc: `1.7.2.1` conta: `7.4.7` (CSRF)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `436,66` | venc: `2025-08-14` | docs: `CF738714082025 / CF738714082025 / CF738714082025 / CF738714082025`
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.8.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `435,24` | venc: `2025-11-29` | docs: `CF8399112025 / CF8399112025 / CF8399112025 / CF8399112025`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S DOURADOS` | valor: `434,5` | venc: `2025-09-16` | docs: `BOLV-84555 / BOLV-84555`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `433,5` | venc: `2025-10-30` | docs: `CF0015102025 / CF0015102025 / CF0015102025 / CF0015102025 / CF0015102025 / CF0015102025`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.4` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.7.4` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G&S MARINGA` | valor: `432,75` | venc: `2025-10-25` | docs: `NFE-13645 / NFE-13645`
+  - cc: `1.2.3.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `432` | venc: `2025-07-08` | docs: `BOLV-82377 / BOLV-82377`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `431,36` | venc: `2025-06-30` | docs: `CF860930062025 / CF860930062025 / CF860930062025 / CF860930062025 / CF860930062025 / CF860930062025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **2x** | filial: `G3S MARINGA` | valor: `429` | venc: `2025-06-26` | docs: `BOLC-275644 / BOLC-275644`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `426` | venc: `2025-07-15` | docs: `NFE-76841 / NFE-76841`
+  - cc: `1.2.5.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `423,34` | venc: `2025-10-29` | docs: `CF8399102025 / CF8399102025`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `422,87` | venc: `2026-04-15` | docs: `NFE-123166 / NFE-123166`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `422,3` | venc: `2026-03-10` | docs: `BOLV-88578 / BOLV-88578`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `420,73` | venc: `2025-12-17` | docs: `CF7551122025 / CF7551122025`
+  - cc: `1.4.1.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.4.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `420,05` | venc: `2025-09-30` | docs: `CF8583092025 / CF8583092025`
+  - cc: `1.2.3.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `420` | venc: `2025-07-10` | docs: `BOLC-276694 / BOLC-276694`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `419,22` | venc: `2025-06-30` | docs: `CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025 / CF624030062025`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.5.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.5.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.3.1.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.3.1.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **12x** | filial: `G3S CAMPO GRANDE` | valor: `418,09` | venc: `2026-01-25` | docs: `CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026 / CF9645012026`
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.1` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.1` conta: `7.5.17` (TAXAS)
+  - cc: `1.2.4.1` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.4.3` conta: `7.5.17` (TAXAS)
+  - cc: `1.2.4.3` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+- **2x** | filial: `G3S ADM` | valor: `417,81` | venc: `2026-02-25` | docs: `ISSTOMADOR012026G3S10 / ISSTOMADOR012026G3S10`
+  - cc: `1.2.1.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.5.1` conta: `7.4.5` (ISS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `415,8` | venc: `2025-08-25` | docs: `NFE-46683 / NFE-46683`
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `414,85` | venc: `2026-03-03` | docs: `PEDAGIO / PEDAGIO / PEDAGIO`
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `414,44` | venc: `2025-08-29` | docs: `CF739529082025 / CF739529082025 / CF739529082025 / CF739529082025 / CF739529082025 / CF739529082025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.1.5` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.5` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.5` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G&S BARUERI` | valor: `413,2` | venc: `2025-08-15` | docs: `RKM15082025 / RKM15082025`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.12` (PEDÁGIO)
+- **6x** | filial: `G&S PRUDENTE` | valor: `410,91` | venc: `2026-01-15` | docs: `NFE-80788 / NFE-80788 / NFE-80788 / NFE-80788 / NFE-80788 / NFE-80788`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.6` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S DOURADOS` | valor: `410,85` | venc: `2026-03-10` | docs: `BOLV-88595 / BOLV-88595`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `407,93` | venc: `2025-08-05` | docs: `370105/370800/370806 / 370105/370800/370806 / 370105/370800/370806 / 370105/370800/370806 / 370105/370800/370806 / 370105/370800/370806`
+  - cc: `1.7.1.8.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.2.6.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.4.8.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.7.6.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.8` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `407,35` | venc: `2025-06-27` | docs: `CF839927062025 / CF839927062025`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+- **3x** | filial: `G&S PRUDENTE` | valor: `403,54` | venc: `2025-06-15` | docs: `CC297902062025 / CC297902062025 / CC297902062025`
+  - cc: `1.7.1.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S DOURADOS` | valor: `403,2` | venc: `2025-06-05` | docs: `BOLV-79697 / BOLV-79697`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `402,5` | venc: `2025-11-13` | docs: `BOLC-286978 / BOLC-286978`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `402,4` | venc: `2025-09-12` | docs: `BOLV-84495 / BOLV-84495`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `400` | venc: `2026-02-13` | docs: `0000X8202 / 0000X8202`
+  - cc: `1.2.5.3` conta: `7.3.1` (SALÁRIOS)
+  - cc: `1.2.5.4` conta: `7.3.1` (SALÁRIOS)
+- **4x** | filial: `NVS - EKIPA` | valor: `400` | venc: `2025-10-02` | docs: `MS-002248 / MS-002248 / MS-002248 / MS-002248`
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **4x** | filial: `NVS - EKIPA` | valor: `400` | venc: `2025-09-26` | docs: `MS-002274 / MS-002274 / MS-002376 / MS-002376`
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+  - cc: `2.5.1.2` conta: `5.6.2` (LOCACAO DE CONTEINER E CACAMBAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `400` | venc: `2026-03-05` | docs: `NFE-27511 / NFE-27511 / NFE-27511`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `400` | venc: `2025-09-15` | docs: `NFE-3045 / NFE-3045`
+  - cc: `1.6.3.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `400` | venc: `2026-03-15` | docs: `NFSE-4 / NFSE-4`
+  - cc: `1.2.5.3` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.3.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G&S PRUDENTE` | valor: `400` | venc: `2025-11-10` | docs: `OC26151 E OC26169 / OC26151 E OC26169`
+  - cc: `1.7.1.8.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.6` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `399,92` | venc: `2025-10-15` | docs: `NFE-78654 / NFE-78654`
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `399,31` | venc: `2025-09-19` | docs: `RETFED082025G&S01 / RETFED082025G&S01`
+  - cc: `1.7.2.1` conta: `7.4.6` (IRRF)
+  - cc: `1.7.2.1` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G&S PRUDENTE` | valor: `399,06` | venc: `2025-07-25` | docs: `NFE-374759 / NFE-374759`
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.47` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `398,35` | venc: `2025-05-07` | docs: `BOLV-81175 / BOLV-81175`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `396,5` | venc: `2025-06-26` | docs: `BOLC-275627 / BOLC-275627`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `396` | venc: `2025-10-22` | docs: `BOLC-285158 / BOLC-285158`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `395,8` | venc: `2025-12-17` | docs: `CF8381122025 / CF8381122025 / CF8381122025 / CF8381122025 / CF8381122025 / CF8381122025 / CF8381122025 / CF8381122025 / CF8381122025`
+  - cc: `1.2.4.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.4` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.5.6.14` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.6.14` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.6.14` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S DOURADOS` | valor: `395,52` | venc: `2025-06-05` | docs: `BOLV-77809 / BOLV-77809`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `392,3` | venc: `2025-05-30` | docs: `CF968630052025 / CF968630052025`
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `390,68` | venc: `2025-08-27` | docs: `CF839927082025 / CF839927082025`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `387,95` | venc: `2026-02-25` | docs: `NFE-95206 / NFE-95206`
+  - cc: `1.6.3.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S CIDADE ALTA` | valor: `387,2` | venc: `2026-01-26` | docs: `BOLV-87370 / BOLV-87370 / BOLV-87370`
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `386,45` | venc: `2025-08-05` | docs: `NFE-26040 / NFE-26040`
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `386,36` | venc: `2025-12-15` | docs: `CTE 389634 -390244-  390243- 390440 / CTE 389634 -390244-  390243- 390440 / CTE 389634 -390244-  390243- 390440`
+  - cc: `1.2.4.8.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.1` conta: `7.1.18` (FRETES E CARRETOS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `385` | venc: `2025-12-30` | docs: `NFE-10123 / NFE-10123 / NFE-10123`
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `384,95` | venc: `2026-01-14` | docs: `SINDICATOG3S03122025 / SINDICATOG3S03122025`
+  - cc: `1.2.2.1` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.2.2.3` conta: `7.3.13` (SINDICATOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `384,3` | venc: `2025-06-30` | docs: `CF053730062025 / CF053730062025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G3S PRUDENTE` | valor: `383,4` | venc: `2026-03-04` | docs: `BOLV-88420 / BOLV-88420`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `381,87` | venc: `2026-02-27` | docs: `NFE-83474 / NFE-83474 / NFE-83474 / NFE-83474 / NFE-83474`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.10` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `381,58` | venc: `2025-06-05` | docs: `BOLV-79750 / BOLV-79750`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `379,59` | venc: `2026-02-09` | docs: `NFE-146493 / NFE-146493`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **3x** | filial: `G3S DOURADOS` | valor: `378,06` | venc: `2025-06-05` | docs: `BOLV-73530 / BOLV-73530 / BOLV-73530`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `377,45` | venc: `2026-03-15` | docs: `NFE-6299 / NFE-6299`
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `377` | venc: `2025-07-08` | docs: `BOLC-275924 / BOLC-275924`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `377` | venc: `2025-07-18` | docs: `BOLC-276471 / BOLC-276471`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `377` | venc: `2026-01-29` | docs: `CF9686012026 / CF9686012026`
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **4x** | filial: `G&S DOURADOS` | valor: `377` | venc: `2025-07-15` | docs: `NFSE-65 / NFSE-65 / NFSE-65 / NFSE-65`
+  - cc: `1.2.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S MARINGA` | valor: `376,22` | venc: `2025-08-25` | docs: `NFSE-12790 / NFSE-12790`
+  - cc: `1.2.5.6.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `375` | venc: `2025-11-21` | docs: `BOLV-86249 / BOLV-86249`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `375` | venc: `2025-10-15` | docs: `CTE380995/381432/381644 / CTE380995/381432/381644 / CTE380995/381432/381644`
+  - cc: `1.3.1.6.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S DOURADOS` | valor: `373,92` | venc: `2025-06-05` | docs: `BOLV-79760 / BOLV-79760`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `372,88` | venc: `2025-10-23` | docs: `CF9546102025 / CF9546102025`
+  - cc: `1.2.5.1` conta: `7.2.4` (BRINDES)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **5x** | filial: `G&S PRUDENTE` | valor: `371,23` | venc: `2026-01-15` | docs: `NFE-94334 / NFE-94334 / NFE-94334 / NFE-94334 / NFE-94334`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `371` | venc: `2026-02-05` | docs: `BOLC-292337 / BOLC-292337`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `369,5` | venc: `2025-06-05` | docs: `BOLV-79768 / BOLV-79768`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `368` | venc: `2025-08-15` | docs: `NFE-93857 / NFE-93857`
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `367,8` | venc: `2025-08-15` | docs: `RKM15082025 / RKM15082025`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `366` | venc: `2026-03-15` | docs: `NFE-4129 / NFE-4129`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `359,95` | venc: `2025-06-25` | docs: `NFSE-22143 / NFSE-22143`
+  - cc: `1` conta: `7.3.4` (EXAMES MÉDICOS)
+  - cc: `1.2.5.4` conta: `7.3.4` (EXAMES MÉDICOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `359,88` | venc: `2025-08-15` | docs: `NFE-24616 / NFE-24616`
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.2.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `358,5` | venc: `2026-03-25` | docs: `NFE-47871 / NFE-47871`
+  - cc: `1.2.4.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.8.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `357,5` | venc: `2025-08-28` | docs: `BOLC-280562 / BOLC-280562`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `357,41` | venc: `2025-09-05` | docs: `NFE-78154 / NFE-78154 / NFE-78154 / NFE-78154`
+  - cc: `1.2.5.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.5.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.3` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `356,9` | venc: `2026-01-03` | docs: `NFE-383789 / NFE-383789`
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `354,51` | venc: `2026-02-10` | docs: `CF8373022026 / CF8373022026`
+  - cc: `1.7.1.3.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.3.4` conta: `7.7.2` (MATERIAL PARA REFORMA)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `354,01` | venc: `2025-12-15` | docs: `CF0015122025 / CF0015122025 / CF0015122025`
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **4x** | filial: `G&S PRUDENTE` | valor: `350` | venc: `2026-02-05` | docs: `NFE-36188 / NFE-36188 / NFE-36188 / NFE-36188`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.9.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.9.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `349,9` | venc: `2025-06-27` | docs: `CF968627062025 / CF968627062025 / CF968627062025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `346,68` | venc: `2025-05-01` | docs: `NFSE-2676918 / NFSE-2676918`
+  - cc: `1.2.5.2` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.2.5.2` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+- **2x** | filial: `G3S MARINGA` | valor: `345` | venc: `2025-12-15` | docs: `BOLC-288749 / BOLC-288749`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `345` | venc: `2026-01-16` | docs: `BOLC-289766 / BOLC-289766`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `340` | venc: `2026-04-15` | docs: `NFE-4216 / NFE-4216`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `340` | venc: `2025-10-15` | docs: `NFSE-146 / NFSE-146`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `RSE` | valor: `340` | venc: `2025-10-03` | docs: `NFSE-18372 / NFSE-18372`
+  - cc: `1.2.5.6.2` conta: `7.1.15` (VISTORIAS)
+  - cc: `1.2.5.6.12` conta: `7.1.15` (VISTORIAS)
+- **2x** | filial: `G3S MARINGA` | valor: `338` | venc: `2025-07-23` | docs: `BOLC-277661 / BOLC-277661`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `337,57` | venc: `2025-10-30` | docs: `CF8575102025 / CF8575102025 / CF8575102025 / CF8575102025 / CF8575102025 / CF8575102025`
+  - cc: `1.4.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.4.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.1.1` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.4.1.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.4.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.1.2` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `337,15` | venc: `2025-08-08` | docs: `BOLV-83504 / BOLV-83504`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `336` | venc: `2025-08-25` | docs: `NFSE-39548 / NFSE-39548`
+  - cc: `1.2.7.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `333,45` | venc: `2025-08-11` | docs: `BOLV-83577 / BOLV-83577`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `333,18` | venc: `2026-03-25` | docs: `OC 29436 - OC 29271 - OC 29273 / OC 29436 - OC 29271 - OC 29273 / OC 29436 - OC 29271 - OC 29273 / OC 29436 - OC 29271 - OC 29273 / OC 29436 - OC 29271 - OC 29273 / OC 29436 - OC 29271 - OC 29273`
+  - cc: `1.2.2.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.4.7.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.13` conta: `7.1.18` (FRETES E CARRETOS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `332,99` | venc: `2025-06-17` | docs: `BOLV-77991 / BOLV-77991 / BOLV-77991`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `332` | venc: `2026-01-07` | docs: `BOLC-289695 / BOLC-289695`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `331,87` | venc: `2026-02-27` | docs: `CF0537022026 / CF0537022026 / CF0537022026 / CF0537022026`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.5.3` conta: `7.3.11` (UNIFORMES)
+- **2x** | filial: `G3S MARINGA` | valor: `331,5` | venc: `2025-10-16` | docs: `BOLC-284518 / BOLC-284518`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `330,36` | venc: `2025-06-05` | docs: `BOLV-79806 / BOLV-79806`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S DOURADOS` | valor: `329` | venc: `2025-09-05` | docs: `NFSE-116 / NFSE-116 / NFSE-116`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `326,96` | venc: `2025-06-23` | docs: `CF028823062025 / CF028823062025`
+  - cc: `2.7.1.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `2.7.1.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S DOURADOS` | valor: `325` | venc: `2026-03-15` | docs: `NFSE-360 / NFSE-360`
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S DOURADOS` | valor: `324,3` | venc: `2025-10-31` | docs: `NFE-4716 / NFE-4716 / NFE-4716 / NFE-4716`
+  - cc: `1.2.7.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `323,14` | venc: `2025-11-15` | docs: `CF8373112025 / CF8373112025 / CF8373112025 / CF8373112025`
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.3.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G3S MARINGA` | valor: `322` | venc: `2025-12-15` | docs: `BOLC-289038 / BOLC-289038`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `321,4` | venc: `2025-11-15` | docs: `NFE-79530 / NFE-79530 / NFE-79530 / NFE-79530`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `320,81` | venc: `2025-07-21` | docs: `CF028821072025 / CF028821072025`
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `319,8` | venc: `2025-08-30` | docs: `BOLV-83283 / BOLV-83283`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `318,24` | venc: `2026-02-13` | docs: `NFE-385865 / NFE-385865`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `318,24` | venc: `2026-02-23` | docs: `NFE-385865 / NFE-385865`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `315,85` | venc: `2026-02-24` | docs: `CF8399022026 / CF8399022026`
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `315,71` | venc: `2025-06-20` | docs: `RETFED052025G&S / RETFED052025G&S`
+  - cc: `1.4.1.2` conta: `7.4.6` (IRRF)
+  - cc: `1.4.1.2` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G&S DOURADOS` | valor: `315,5` | venc: `2026-02-12` | docs: `SINDICATOG&S03012026 / SINDICATOG&S03012026`
+  - cc: `1.2.2.3` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.2.2.4` conta: `7.3.13` (SINDICATOS)
+- **2x** | filial: `G3S LONDRINA` | valor: `315` | venc: `2025-08-08` | docs: `BOLC-278895 / BOLC-278895`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `315` | venc: `2025-08-05` | docs: `NFE-4290 / NFE-4290`
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `314,3` | venc: `2026-02-15` | docs: `NFE-95377 / NFE-95377 / NFE-95377`
+  - cc: `1.2.5.6.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `310,5` | venc: `2026-03-19` | docs: `BOLV-88854 / BOLV-88854`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `310,24` | venc: `2025-12-05` | docs: `NFE-144638 / NFE-144638`
+  - cc: `1.2.2.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.2.4` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `309,75` | venc: `2025-12-15` | docs: `CC8840122025 / CC8840122025`
+  - cc: `1.11` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.11` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `309,75` | venc: `2026-03-15` | docs: `CC884015032026 / CC884015032026`
+  - cc: `1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `309,75` | venc: `2025-11-15` | docs: `CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025 / CC884015112025`
+  - cc: `1.2.2.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **3x** | filial: `G&S PRUDENTE` | valor: `308,21` | venc: `2026-01-09` | docs: `NFE-2348 / NFE-2348 / NFE-2348`
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S PRUDENTE` | valor: `307,83` | venc: `2025-10-30` | docs: `CF6240102025 / CF6240102025 / CF6240102025 / CF6240102025 / CF6240102025 / CF6240102025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.5.1.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.5.1.4` conta: `8.1.6` (ELETRÔNICOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `306,44` | venc: `2026-03-10` | docs: `00009165 / 00009165`
+  - cc: `1.3.1.6.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `306,35` | venc: `2025-06-13` | docs: `BOLV-82076 / BOLV-82076`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `306` | venc: `2025-11-03` | docs: `BOLC-286129 / BOLC-286129`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `306` | venc: `2026-02-03` | docs: `BOLC-292236 / BOLC-292236`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `303,21` | venc: `2025-04-25` | docs: `CF858325042025 / CF858325042025 / CF858325042025 / CF858325042025 / CF858325042025 / CF858325042025`
+  - cc: `1.2.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **4x** | filial: `G3S PRUDENTE` | valor: `300` | venc: `2025-10-15` | docs: `AL25523 / AL25523 / AL25523 / AL25523`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `300` | venc: `2026-03-06` | docs: `BOLC-295022 / BOLC-295022`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `299,9` | venc: `2025-11-15` | docs: `NFE-33258 / NFE-33258 / NFE-33258`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `296,25` | venc: `2025-11-15` | docs: `OC25990-25993-26102 / OC25990-25993-26102 / OC25990-25993-26102`
+  - cc: `1.7.1.8.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.8` conta: `7.1.18` (FRETES E CARRETOS)
+- **3x** | filial: `G3S LONDRINA` | valor: `296,24` | venc: `2025-09-16` | docs: `ISSQN082025G3S08 / ISSQN082025G3S08 / ISSQN082025G3S08`
+  - cc: `1.2.3.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.3` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.4` conta: `7.4.5` (ISS)
+- **8x** | filial: `G&S PRUDENTE` | valor: `295,92` | venc: `2025-08-15` | docs: `497814/496503/1094746/493141/490942 / 497814/496503/1094746/493141/490942 / 497814/496503/1094746/493141/490942 / 497814/496503/1094746/493141/490942 / 497814/496503/1094746/493141/490942 / 497814/496503/1094746/493141/490942 / 497814/496503/1094746/493141/490942 / 497814/496503/1094746/493141/490942`
+  - cc: `1.2.2.5.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.2.5.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.2.5.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.6` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.7.6.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.14.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `295,58` | venc: `2025-08-26` | docs: `NFSE-14339 / NFSE-14339`
+  - cc: `1.6.3.4` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.47` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `294` | venc: `2025-11-13` | docs: `BOLC-286972 / BOLC-286972`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **8x** | filial: `G&S PRUDENTE` | valor: `292` | venc: `2026-03-05` | docs: `NFE-36837 / NFE-36837 / NFE-36837 / NFE-36837 / NFE-36837 / NFE-36837 / NFE-36837 / NFE-36837`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.6.3.9` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.9` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.8.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `291,6` | venc: `2026-02-05` | docs: `NFE-438420 / NFE-438420`
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `289,9` | venc: `2025-07-25` | docs: `CF858325072025 / CF858325072025`
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.12` (PEDÁGIO)
+- **4x** | filial: `G&S PRUDENTE` | valor: `289,77` | venc: `2026-01-25` | docs: `CTES395778-396194-396554 / CTES395778-396194-396554 / CTES395778-396194-396554 / CTES395778-396194-396554`
+  - cc: `1.2.1.8.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.3.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.4.7.12` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.41` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G&S MARINGA` | valor: `287,34` | venc: `2025-06-02` | docs: `CTE 5251 / CTE 5251`
+  - cc: `2.4.3.1` conta: `5.7.1` (FRETES)
+  - cc: `2.4.3.1` conta: `5.7.1` (FRETES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `287,04` | venc: `2026-03-06` | docs: `PEDAGIO / PEDAGIO`
+  - cc: `1.2.5.6.12` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.13` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `286,69` | venc: `2025-05-16` | docs: `ADT16052025 / ADT16052025`
+  - cc: `1` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `286,44` | venc: `2025-04-29` | docs: `CF756929042025 / CF756929042025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **8x** | filial: `G3S CAMPO GRANDE` | valor: `286,2` | venc: `2025-05-26` | docs: `CF839926052025 / CF839926052025 / CF839926052025 / CF839926052025 / CF839926052025 / CF839926052025 / CF839926052025 / CF839926052025`
+  - cc: `1.2.2.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.2.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.2.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.1.17` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.1.17` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.1.17` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.17` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `285,5` | venc: `2025-10-01` | docs: `OC25889 / OC25889`
+  - cc: `1.2.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.2.1.1` conta: `7.5.18` (SISTEMAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `283,89` | venc: `2026-02-15` | docs: `SINDICATOG&S01012026 / SINDICATOG&S01012026 / SINDICATOG&S01012026`
+  - cc: `1.2.5.3` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.4.1.2` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.2.5.4` conta: `7.3.13` (SINDICATOS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `283` | venc: `2025-08-15` | docs: `NFE-78047 / NFE-78047 / NFE-78047 / NFE-78047`
+  - cc: `1.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `280,93` | venc: `2026-01-15` | docs: `CTE1157089-529746 / CTE1157089-529746 / CTE1157089-529746 / CTE1157089-529746 / CTE1157089-529746 / CTE1157089-529746`
+  - cc: `1.2.5.7.6` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.7.6.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.7.6.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.4.7.12` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.3.5.6` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `280` | venc: `2026-01-27` | docs: `CF9538012026 / CF9538012026`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G&S PRUDENTE` | valor: `279,02` | venc: `2025-07-15` | docs: `NFE-86408 / NFE-86408`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `278,09` | venc: `2025-12-17` | docs: `CF9645122025 / CF9645122025 / CF9645122025 / CF9645122025 / CF9645122025 / CF9645122025`
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.5.15` (RAÇÃO)
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.1` conta: `7.5.15` (RAÇÃO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `276,51` | venc: `2025-08-25` | docs: `NFSE-14717 / NFSE-14717`
+  - cc: `1.6.3.6` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.2.5.6.12` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **2x** | filial: `G3S DOURADOS` | valor: `276` | venc: `2026-01-22` | docs: `BOLC-291070 / BOLC-291070`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `275,55` | venc: `2025-08-20` | docs: `BOLV-83848 / BOLV-83848`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `274,4` | venc: `2026-02-05` | docs: `CTE-420941 / CTE-420941 / CTE-420941 / CTE-420941`
+  - cc: `1.7.1.8.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.2.6.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.4.8.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+- **3x** | filial: `G&S DOURADOS` | valor: `274` | venc: `2026-02-15` | docs: `NFSE-247 / NFSE-247 / NFSE-247`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `272,25` | venc: `2025-08-06` | docs: `NFSE-3930 / NFSE-3930`
+  - cc: `1.1.10` conta: `7.3.17` (CONVENIOS)
+  - cc: `1.1.10` conta: `7.3.17` (CONVENIOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `270` | venc: `2026-03-05` | docs: `NFSE-2131 / NFSE-2131`
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `269,1` | venc: `2025-09-10` | docs: `NFE-34 / NFE-34 / NFE-34`
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `268,5` | venc: `2025-10-02` | docs: `BOLC-283413 / BOLC-283413`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `268,38` | venc: `2025-07-28` | docs: `CF739528072025 / CF739528072025 / CF739528072025 / CF739528072025 / CF739528072025`
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.1.1` conta: `7.5.4` (MATERIAL DE LIMPEZA E HIGIENE)
+  - cc: `1.2.1.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.1.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G3S LONDRINA` | valor: `266,53` | venc: `2025-05-15` | docs: `ISSQN042025G3S08 / ISSQN042025G3S08`
+  - cc: `1.2.3.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.2` conta: `7.4.5` (ISS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `266,09` | venc: `2026-01-10` | docs: `SINDICATOG&S01122025 / SINDICATOG&S01122025 / SINDICATOG&S01122025`
+  - cc: `1.2.5.3` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.4.1.1` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.2.5.4` conta: `7.3.13` (SINDICATOS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `264` | venc: `2025-08-25` | docs: `5045385/291642 / 5045385/291642 / 5045385/291642`
+  - cc: `1.6.3.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.16` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.12` conta: `7.1.18` (FRETES E CARRETOS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `261,9` | venc: `2025-10-27` | docs: `NFE-49127 / NFE-49127 / NFE-49127 / NFE-49127 / NFE-49127 / NFE-49127 / NFE-49127 / NFE-49127 / NFE-49127 / NFE-49127`
+  - cc: `1.2.2.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.3.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.4.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.5.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.3.1.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.5.1.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.4.1.2` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.7.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.7.2.1` conta: `7.5.20` (INTERNET)
+  - cc: `1.2.8.1` conta: `7.5.20` (INTERNET)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `261,2` | venc: `2026-01-30` | docs: `CF7551012026 / CF7551012026 / CF7551012026 / CF7551012026 / CF7551012026 / CF7551012026 / CF7551012026 / CF7551012026 / CF7551012026`
+  - cc: `1.7.1.4.5` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.1.4.5` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.7.1.4.5` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.5.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.5.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+  - cc: `1.4.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.1.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.4.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `RSE` | valor: `260,32` | venc: `2026-03-20` | docs: `MULTA PLACA FBV4H62 / MULTA PLACA FBV4H62`
+  - cc: `1.2.1.9.1` conta: `7.1.9` (MULTAS DE TRANSITO)
+  - cc: `1.2.1.9.1` conta: `7.1.9` (MULTAS DE TRANSITO)
+- **2x** | filial: `G3S DOURADOS` | valor: `260` | venc: `2025-09-12` | docs: `BOLC-281910 / BOLC-281910`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `260` | venc: `2026-01-16` | docs: `BOLC-289774 / BOLC-289774`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `259,43` | venc: `2026-01-29` | docs: `NFE94762-94744 / NFE94762-94744`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `258,5` | venc: `2025-05-20` | docs: `BOLV-81513 / BOLV-81513`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `258` | venc: `2025-06-15` | docs: `NFSE-73 / NFSE-73`
+  - cc: `1` conta: `7.3.14` (TREINAMENTOS E DESENVOLVIMENTO)
+  - cc: `1.2.2.3` conta: `7.3.14` (TREINAMENTOS E DESENVOLVIMENTO)
+- **2x** | filial: `G3S DOURADOS` | valor: `257,4` | venc: `2025-12-02` | docs: `BOLV-86490 / BOLV-86490`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `257,38` | venc: `2025-05-23` | docs: `CF738723052025 / CF738723052025 / CF738723052025 / CF738723052025 / CF738723052025 / CF738723052025`
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.3.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `255,92` | venc: `2025-11-26` | docs: `ADT16176028 / ADT16176028`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **5x** | filial: `G&S PRUDENTE` | valor: `255,76` | venc: `2026-03-05` | docs: `CTE2027/2089/3108/5038 / CTE2027/2089/3108/5038 / CTE2027/2089/3108/5038 / CTE2027/2089/3108/5038 / CTE2027/2089/3108/5038`
+  - cc: `1.2.2.5.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.2.5.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.7.6.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.12` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.14.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S MARINGA` | valor: `252,45` | venc: `2025-11-07` | docs: `BOLV-85907 / BOLV-85907`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `252,06` | venc: `2025-10-15` | docs: `ISSQN092025G3S08 / ISSQN092025G3S08`
+  - cc: `1.2.3.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.3` conta: `7.4.5` (ISS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `251,6` | venc: `2026-01-28` | docs: `CF7544012026 / CF7544012026`
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **5x** | filial: `G&S PRUDENTE` | valor: `250,46` | venc: `2026-03-15` | docs: `NFE-81786 / NFE-81786 / NFE-81786 / NFE-81786 / NFE-81786`
+  - cc: `1.2.4.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.10` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `250` | venc: `2026-02-25` | docs: `AL28830 / AL28830`
+  - cc: `1.2.2.1` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.3.1.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+- **4x** | filial: `G&S PRUDENTE` | valor: `248,75` | venc: `2025-07-15` | docs: `NFE-24243 / NFE-24243 / NFE-24243 / NFE-24243`
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.7` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `247,95` | venc: `2025-06-16` | docs: `B-255947 / B-255947`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `244,22` | venc: `2025-10-31` | docs: `ADT00004544 / ADT00004544`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `244,22` | venc: `2025-10-08` | docs: `NFSE-2473 / NFSE-2473`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `244,19` | venc: `2025-08-22` | docs: `CF002322082025 / CF002322082025 / CF002322082025 / CF002322082025`
+  - cc: `1.1.11` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.1.11` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `244,13` | venc: `2026-01-28` | docs: `CF0239012026 / CF0239012026 / CF0239012026 / CF0239012026 / CF0239012026 / CF0239012026 / CF0239012026 / CF0239012026 / CF0239012026`
+  - cc: `1.2.8.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.1` conta: `7.6.1` (GÁS  GLP COPA)
+  - cc: `1.2.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.2` conta: `7.6.1` (GÁS  GLP COPA)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.8.3` conta: `7.6.1` (GÁS  GLP COPA)
+- **9x** | filial: `G3S CAMPO GRANDE` | valor: `243,4` | venc: `2025-09-27` | docs: `CF9538092025 / CF9538092025 / CF9538092025 / CF9538092025 / CF9538092025 / CF9538092025 / CF9538092025 / CF9538092025 / CF9538092025`
+  - cc: `1.10.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.10.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.10.1` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.3` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.3` conta: `7.11.1` (OPERAÇÕES ENTRE EMPRESAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `243,4` | venc: `2025-09-03` | docs: `NFE-24551 / NFE-24551 / NFE-24551 / NFE-24551 / NFE-24551`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.8.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `243` | venc: `2025-09-15` | docs: `CC873515092025 / CC873515092025`
+  - cc: `1.7.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.1.1` conta: `8.1.4` (COMPUTADORES E PERIFERICOS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `242,39` | venc: `2025-12-10` | docs: `SINDICATOG&S01112025 / SINDICATOG&S01112025 / SINDICATOG&S01112025`
+  - cc: `1.2.5.3` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.4.1.2` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.2.5.4` conta: `7.3.13` (SINDICATOS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `238,54` | venc: `2026-02-25` | docs: `NFE-95785 / NFE-95785 / NFE-95785 / NFE-95785`
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `235,88` | venc: `2025-08-05` | docs: `CTE-370806 / CTE-370806 / CTE-370806 / CTE-370806`
+  - cc: `1.2.2.6.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.4.8.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.8.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S DOURADOS` | valor: `234,8` | venc: `2026-02-27` | docs: `BOLV-88347 / BOLV-88347`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `231,98` | venc: `2025-08-25` | docs: `NFE-87991 / NFE-87991 / NFE-87991`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `231,65` | venc: `2025-11-15` | docs: `CC2979112025 / CC2979112025 / CC2979112025 / CC2979112025`
+  - cc: `1.6.3.23` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.23` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G3S PRUDENTE` | valor: `230,4` | venc: `2026-03-02` | docs: `BOLV-88356 / BOLV-88356`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `228,11` | venc: `2025-12-17` | docs: `CF0479122025 / CF0479122025 / CF0479122025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.5.28` (SERVIÇO DE LIMPEZA DO ESCRITÓRIO)
+  - cc: `1.2.5.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `227,9` | venc: `2026-02-16` | docs: `CF9538022026 / CF9538022026 / CF9538022026 / CF9538022026`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.8.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S MARINGA` | valor: `227,5` | venc: `2025-06-05` | docs: `BOLC-273851 / BOLC-273851`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `226,73` | venc: `2025-09-17` | docs: `CF9520092025 / CF9520092025 / CF9520092025 / CF9520092025`
+  - cc: `1.2.4.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.4.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.6.14` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.6.14` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `225,88` | venc: `2025-05-16` | docs: `CF858316052025 / CF858316052025`
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.4.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G&S DOURADOS` | valor: `225,75` | venc: `2025-10-15` | docs: `NFE-148398 / NFE-148398`
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `224,75` | venc: `2025-08-15` | docs: `NFE-77646 / NFE-77646`
+  - cc: `1.2.5.6.14` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S DOURADOS` | valor: `224,64` | venc: `2025-06-05` | docs: `BOLV-77651 / BOLV-77651 / BOLV-77651`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `222,5` | venc: `2025-12-02` | docs: `CF8583122025 / CF8583122025 / CF8583122025 / CF8583122025`
+  - cc: `1.2.3.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.3.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.3` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `221,87` | venc: `2025-12-25` | docs: `CTE392535 / 392556 / CTE392535 / 392556`
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.8.16` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `221,82` | venc: `2025-12-10` | docs: `SINDICATOG3S04112025 / SINDICATOG3S04112025`
+  - cc: `1.2.5.1` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.2.5.3` conta: `7.3.13` (SINDICATOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `221,82` | venc: `2026-01-12` | docs: `SINDICATOG3S04122025 / SINDICATOG3S04122025`
+  - cc: `1.1.2` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.2.5.3` conta: `7.3.13` (SINDICATOS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `221,18` | venc: `2026-04-05` | docs: `NFE-97106 / NFE-97106 / NFE-97106 / NFE-97106`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.13` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `220` | venc: `2025-12-17` | docs: `BOLC-289464 / BOLC-289464`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `220` | venc: `2026-03-15` | docs: `NFE-82221 / NFE-82221 / NFE-82221 / NFE-82221 / NFE-82221 / NFE-82221`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.5.6.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.16` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S MARINGA` | valor: `219,45` | venc: `2025-11-18` | docs: `BOLV-86210 / BOLV-86210`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `219,15` | venc: `2025-10-21` | docs: `BOLV-85375 / BOLV-85375`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `219` | venc: `2025-07-07` | docs: `BOLV-82599 / BOLV-82599`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `218` | venc: `2026-02-19` | docs: `ADT00007814 / ADT00007814`
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `218` | venc: `2026-02-05` | docs: `NFS 2.443 E NFE 27.292 / NFS 2.443 E NFE 27.292`
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `217,15` | venc: `2026-02-10` | docs: `SINDICATOG3S04012026 / SINDICATOG3S04012026`
+  - cc: `1.2.5.1` conta: `7.3.13` (SINDICATOS)
+  - cc: `1.2.5.3` conta: `7.3.13` (SINDICATOS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `217` | venc: `2025-09-26` | docs: `CF0537092025 / CF0537092025 / CF0537092025 / CF0537092025`
+  - cc: `1.7.1.8.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.8.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.8.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **2x** | filial: `G3S DOURADOS` | valor: `215,3` | venc: `2025-06-05` | docs: `BOLV-79812 / BOLV-79812`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `215,16` | venc: `2026-02-15` | docs: `CTE-422649 / CTE-422649`
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.4.8.7` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `215,05` | venc: `2025-07-05` | docs: `CTE-365951 / CTE-365951`
+  - cc: `1.7.1.8.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `211,3` | venc: `2025-06-25` | docs: `NFSE-354259 / NFSE-354259`
+  - cc: `1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `210` | venc: `2025-12-16` | docs: `NFSE-16341 / NFSE-16341`
+  - cc: `1.2.5.6.1` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+  - cc: `1.6.3.11` conta: `7.1.20` (RASTREADOR/ MONITORAMENTO)
+- **3x** | filial: `G3S DOURADOS` | valor: `209,92` | venc: `2025-06-05` | docs: `BOLV-77607 / BOLV-77607 / BOLV-77607`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `208,52` | venc: `2025-07-15` | docs: `ISSQN062025G3S08 / ISSQN062025G3S08`
+  - cc: `1.2.3.1` conta: `7.4.5` (ISS)
+  - cc: `1.2.3.3` conta: `7.4.5` (ISS)
+- **2x** | filial: `G3S DOURADOS` | valor: `208` | venc: `2025-09-29` | docs: `BOLC-283166 / BOLC-283166`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `207,3` | venc: `2025-07-25` | docs: `NFE-24358 / NFE-24358`
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `206,25` | venc: `2026-03-19` | docs: `BOLV-88867 / BOLV-88867`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `205,62` | venc: `2026-03-15` | docs: `NFE-247 / NFE-247`
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `202,95` | venc: `2025-08-05` | docs: `BOLV-83423 / BOLV-83423`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `202,5` | venc: `2026-01-27` | docs: `BOLC-291517 / BOLC-291517`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `202,5` | venc: `2026-02-13` | docs: `BOLC-291517 / BOLC-291517`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `202,2` | venc: `2025-09-01` | docs: `BOLV-84166 / BOLV-84166`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `201` | venc: `2025-08-07` | docs: `BOLC-278824 / BOLC-278824`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `200,4` | venc: `2026-01-30` | docs: `CF62400122026 / CF62400122026`
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G3S PRUDENTE` | valor: `200,4` | venc: `2026-02-15` | docs: `NFSE-255992282 / NFSE-255992282 / NFSE-255992282 / NFSE-255992282`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `200,4` | venc: `2026-03-15` | docs: `NFSE-256180276 / NFSE-256180276 / NFSE-256180276 / NFSE-256180276`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `200,1` | venc: `2025-11-21` | docs: `BOLV-86256 / BOLV-86256`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `200` | venc: `2025-10-15` | docs: `AL25631 / AL25631`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **6x** | filial: `G&S PRUDENTE` | valor: `200` | venc: `2025-10-15` | docs: `CC5941240925 / CC5941240925 / CC5941240925 / CC5941240925 / CC5941240925 / CC5941240925`
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.7.7` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.8.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.7.7` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.4.8.6` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.8.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S PRUDENTE` | valor: `199,96` | venc: `2025-07-25` | docs: `NFE-77019 / NFE-77019`
+  - cc: `1.2.5.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G&S LONDRINA` | valor: `197,95` | venc: `2026-03-25` | docs: `CTE424382/424897 / CTE424382/424897 / CTE424382/424897`
+  - cc: `1.2.3.6.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.3.6.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.3.6.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `197` | venc: `2025-07-16` | docs: `BOLC-276994 / BOLC-276994`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `196,87` | venc: `2025-06-26` | docs: `CF861726062025 / CF861726062025 / CF861726062025`
+  - cc: `1.2.3.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.3.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.3.1` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **2x** | filial: `G&S BARUERI` | valor: `196,7` | venc: `2026-01-05` | docs: `SEMPARARG&S051225 / SEMPARARG&S051225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S DOURADOS` | valor: `195` | venc: `2025-10-29` | docs: `BOLC-285781 / BOLC-285781`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `195` | venc: `2025-08-15` | docs: `NFSE-1001732 / NFSE-1001732`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `193,25` | venc: `2025-08-25` | docs: `CF837325082025 / CF837325082025 / CF837325082025 / CF837325082025`
+  - cc: `1.7.1.3.4` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.3.4` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.3.4` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.7.1.3.4` conta: `7.7.2` (MATERIAL PARA REFORMA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `193,18` | venc: `2025-10-25` | docs: `CTE384546/384448 / CTE384546/384448`
+  - cc: `1.2.4.8.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.8` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S LONDRINA` | valor: `192` | venc: `2025-08-07` | docs: `BOLC-278811 / BOLC-278811`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `190,96` | venc: `2025-08-27` | docs: `CF999127082025 / CF999127082025`
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **5x** | filial: `G3S CAMPO GRANDE` | valor: `189,65` | venc: `2025-09-15` | docs: `CC297915092025 / CC297915092025 / CC297915092025 / CC297915092025 / CC297915092025`
+  - cc: `1.7.1.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.1` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.7.1.1` conta: `7.6.2` (FERRAMENTAS)
+  - cc: `1.7.1.1` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S MARINGA` | valor: `189,5` | venc: `2025-10-08` | docs: `BOLC-283917 / BOLC-283917`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `189,3` | venc: `2026-02-24` | docs: `CF7544022026 / CF7544022026`
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `188,55` | venc: `2025-05-22` | docs: `BOLV-81566 / BOLV-81566`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `188,5` | venc: `2026-01-05` | docs: `SEMPARARG3S041225 / SEMPARARG3S041225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `186,14` | venc: `2026-01-05` | docs: `SEMPARARG&S011225 / SEMPARARG&S011225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **3x** | filial: `G&S DOURADOS` | valor: `185,61` | venc: `2025-10-25` | docs: `NFE-331111 / NFE-331111 / NFE-331111`
+  - cc: `1.2.2.5.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `185,52` | venc: `2026-04-05` | docs: `NFE-103407 / NFE-103407`
+  - cc: `1.2.2.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `185` | venc: `2025-09-24` | docs: `NFSE-14400 / NFSE-14400`
+  - cc: `1.2.5.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1.5.1.3` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `183,63` | venc: `2025-12-30` | docs: `CF3959122025 / CF3959122025 / CF3959122025`
+  - cc: `1.3.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.3.1.2` conta: `7.11.4` (ACERTOS PARTICULARES)
+  - cc: `1.3.1.2` conta: `7.2.6` (EVENTOS ENDOMARKETING)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `182,71` | venc: `2026-02-25` | docs: `CF7551022026 / CF7551022026 / CF7551022026 / CF7551022026`
+  - cc: `1.5.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.5.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.4.1.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `182,13` | venc: `2025-10-23` | docs: `CF8617102025 / CF8617102025 / CF8617102025 / CF8617102025 / CF8617102025 / CF8617102025`
+  - cc: `1.2.3.1` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.3.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.3.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.3.3` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+- **3x** | filial: `G3S PRUDENTE` | valor: `180,9` | venc: `2025-05-15` | docs: `5364857-5/55 / 5364857-5/55 / 5364857-5/55`
+  - cc: `1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1` conta: `7.5.6` (MANUTENÇÕES E REPAROS - ESTRUTURA ADMINISTRATIVA)
+  - cc: `1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **3x** | filial: `G3S DOURADOS` | valor: `180,08` | venc: `2025-06-05` | docs: `BOLV-79381 / BOLV-79381 / BOLV-79381`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `179,08` | venc: `2025-08-08` | docs: `NFE-88759 / NFE-88759`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `178,6` | venc: `2025-11-15` | docs: `NFSE-255435054 / NFSE-255435054 / NFSE-255435054 / NFSE-255435054`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `178,6` | venc: `2025-12-15` | docs: `NFSE-255613503 / NFSE-255613503 / NFSE-255613503 / NFSE-255613503`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `178,6` | venc: `2026-01-15` | docs: `NFSE-255787469 / NFSE-255787469 / NFSE-255787469 / NFSE-255787469`
+  - cc: `1.2.4.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `178` | venc: `2026-01-28` | docs: `CF0537012026 / CF0537012026 / CF0537012026 / CF0537012026 / CF0537012026 / CF0537012026`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.7.1.8.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.7.1.8.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.7.1.8.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `177,5` | venc: `2026-02-05` | docs: `BOLV-87767 / BOLV-87767`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `176` | venc: `2025-10-10` | docs: `BOLC-283790 / BOLC-283790`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `174,9` | venc: `2026-03-11` | docs: `BOLV-88634 / BOLV-88634`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `174` | venc: `2026-01-15` | docs: `NFSE-222 / NFSE-222`
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `173,28` | venc: `2025-09-05` | docs: `NFE-152658 / NFE-152658`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.3.1.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `172,44` | venc: `2025-06-05` | docs: `BOLV-80221 / BOLV-80221`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `172,13` | venc: `2025-06-17` | docs: `BOLV-78259 / BOLV-78259 / BOLV-78259`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `170` | venc: `2025-12-16` | docs: `BOLC-289062 / BOLC-289062`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `170` | venc: `2025-11-06` | docs: `CF0537112025 / CF0537112025`
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+- **3x** | filial: `G&S PRUDENTE` | valor: `167,61` | venc: `2025-10-15` | docs: `CTE506643/507503/1121305 / CTE506643/507503/1121305 / CTE506643/507503/1121305`
+  - cc: `1.2.2.5.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.12` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.14.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `165,5` | venc: `2025-09-26` | docs: `BOLC-282968 / BOLC-282968`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `165,31` | venc: `2025-10-25` | docs: `NFSE-1371881 / NFSE-1371881 / NFSE-1371881 / NFSE-1371881 / NFSE-1371881 / NFSE-1371881 / NFSE-1371881 / NFSE-1371881 / NFSE-1371881 / NFSE-1371881`
+  - cc: `1.2.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.3.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.4.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.5.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.3.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.5.1.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.4.1.2` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.7.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.7.2.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+  - cc: `1.2.8.1` conta: `7.5.3` (TELECOMUNICAÇÕES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `165` | venc: `2026-02-02` | docs: `BOLC-292019 / BOLC-292019`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `164,4` | venc: `2026-02-12` | docs: `BOLV-87963 / BOLV-87963`
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `163,5` | venc: `2025-10-09` | docs: `BOLC-283992 / BOLC-283992`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S DOURADOS` | valor: `160` | venc: `2026-02-15` | docs: `NFE-3907 / NFE-3907 / NFE-3907 / NFE-3907`
+  - cc: `1.2.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.4` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **4x** | filial: `G3S LONDRINA` | valor: `160` | venc: `2026-03-26` | docs: `NFE-59940 / NFE-59940 / NFE-59940 / NFE-59940`
+  - cc: `1.2.3.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.5.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `160` | venc: `2026-03-05` | docs: `NFSE-938 / NFSE-938`
+  - cc: `1.2.7.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `159` | venc: `2025-08-25` | docs: `CTE-5045385 / CTE-5045385`
+  - cc: `1.6.3.4` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.16` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `158,1` | venc: `2025-08-28` | docs: `BOLV-84050 / BOLV-84050`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `156,69` | venc: `2025-10-31` | docs: `CF0479102025 / CF0479102025 / CF0479102025`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.5.2` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **4x** | filial: `G3S DOURADOS` | valor: `155,36` | venc: `2026-02-02` | docs: `NFE-146260 / NFE-146260 / NFE-146260 / NFE-146260`
+  - cc: `1.2.2.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.2.6.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.2.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `155,1` | venc: `2025-06-16` | docs: `BOLV-82133 / BOLV-82133`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `153,3` | venc: `2025-05-07` | docs: `BOLV-81189 / BOLV-81189`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **8x** | filial: `G&S PRUDENTE` | valor: `152,35` | venc: `2025-09-02` | docs: `CTE498449/1108142 / CTE498449/1108142 / CTE498449/1108142 / CTE498449/1108142 / CTE498449/1108142 / CTE498449/1108142 / CTE498449/1108142 / CTE498449/1108142`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.14.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.14.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.35` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.35` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.15` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S DOURADOS` | valor: `152,05` | venc: `2026-01-14` | docs: `NFE-219744 / NFE-219744`
+  - cc: `1.2.2.1` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+  - cc: `1.5.1.2` conta: `7.5.27` (MATERIAL DE COPA/COZINHA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `150` | venc: `2025-06-15` | docs: `NFSE-6475 / NFSE-6475`
+  - cc: `1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `148,81` | venc: `2025-08-22` | docs: `NFE-376344 / NFE-376344`
+  - cc: `1.3.1.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.5` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S MARINGA` | valor: `148,5` | venc: `2026-03-05` | docs: `BOLV-88485 / BOLV-88485`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S DOURADOS` | valor: `145` | venc: `2025-08-15` | docs: `NFSE-97 / NFSE-97`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `144,6` | venc: `2025-09-26` | docs: `CF7544092025 / CF7544092025 / CF7544092025`
+  - cc: `1.2.7.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.2` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.7.2` conta: `7.5.22` (DESPESAS BANCARIAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `143` | venc: `2026-03-16` | docs: `BOLC-295621 / BOLC-295621`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `140` | venc: `2025-06-15` | docs: `NFSE-21845 / NFSE-21845`
+  - cc: `1` conta: `7.3.4` (EXAMES MÉDICOS)
+  - cc: `1.2.5.4` conta: `7.3.4` (EXAMES MÉDICOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `139` | venc: `2026-02-15` | docs: `NFE-22480 / NFE-22480`
+  - cc: `1.2.7.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `138` | venc: `2026-01-23` | docs: `BOLV-87311 / BOLV-87311`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `136,54` | venc: `2025-09-18` | docs: `CF9546092025 / CF9546092025`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `136,5` | venc: `2025-06-10` | docs: `BOLC-274470 / BOLC-274470`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `135,66` | venc: `2026-03-05` | docs: `PEDAGIO / PEDAGIO`
+  - cc: `1.3.1.6.4` conta: `7.1.12` (PEDÁGIO)
+  - cc: `1.2.5.6.2` conta: `7.1.12` (PEDÁGIO)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `133,5` | venc: `2026-01-29` | docs: `BOLC-291789 / BOLC-291789`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `133,28` | venc: `2025-10-08` | docs: `25418CORREIO / 25418CORREIO`
+  - cc: `1.2.5.1` conta: `7.5.11` (CORREIOS)
+  - cc: `1.5.1.4` conta: `7.5.11` (CORREIOS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `129,47` | venc: `2026-02-16` | docs: `CTE1171719-539340 / CTE1171719-539340 / CTE1171719-539340 / CTE1171719-539340 / CTE1171719-539340`
+  - cc: `1.7.1.3.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.10` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.2.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.7.7` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.1.8.1` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `126,8` | venc: `2025-09-15` | docs: `NFE-145 / NFE-145`
+  - cc: `1.2.5.6.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `125,65` | venc: `2026-01-05` | docs: `SEMPARARG3S031225 / SEMPARARG3S031225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `124,96` | venc: `2025-11-17` | docs: `OC26068 E OC25774 / OC26068 E OC25774`
+  - cc: `1.7.1.2.3` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.14.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `123,03` | venc: `2025-12-09` | docs: `CF6240122025 / CF6240122025 / CF6240122025 / CF6240122025`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `8.1.6` (ELETRÔNICOS)
+  - cc: `1.2.5.3` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.3` conta: `8.1.6` (ELETRÔNICOS)
+- **24x** | filial: `G&S PRUDENTE` | valor: `121,69` | venc: `2026-02-20` | docs: `RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S / RETFED012026G&S`
+  - cc: `1.5.1.1` conta: `7.4.7` (CSRF)
+  - cc: `1.4.4.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.9` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.10` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.11` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.12` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.12` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.6` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.13` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.14` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.15` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.7` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G3S PRUDENTE` | valor: `120,6` | venc: `2025-11-27` | docs: `BOLV-86368 / BOLV-86368`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `120` | venc: `2025-05-30` | docs: `BOLC-273866 / BOLC-273866`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `120` | venc: `2025-12-08` | docs: `BOLC-288781 / BOLC-288781`
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `120` | venc: `2025-10-24` | docs: `X25953 / X25953`
+  - cc: `1.2.2.6.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.2.5.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `119,95` | venc: `2025-07-15` | docs: `185174-186619 / 185174-186619 / 185174-186619`
+  - cc: `1.3.1.6.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.5` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.7.1.2.3` conta: `7.1.18` (FRETES E CARRETOS)
+- **10x** | filial: `G3S PRUDENTE` | valor: `119,4` | venc: `2026-03-16` | docs: `00008861 / 00008861 / 00008861 / 00008861 / 00008861 / 00008861 / 00008861 / 00008861 / 00008861 / 00008861`
+  - cc: `1.2.4.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.4.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+  - cc: `1.2.5.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.5.1` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+  - cc: `1.2.5.2` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.5.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+  - cc: `1.5.1.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.5.1.1` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+  - cc: `1.2.7.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.7.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S DOURADOS` | valor: `119,21` | venc: `2026-03-05` | docs: `NFE-129321 / NFE-129321`
+  - cc: `1.2.2.1` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.2.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `119,05` | venc: `2026-01-15` | docs: `BOLV-87087 / BOLV-87087`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `118,8` | venc: `2026-03-10` | docs: `BOLV-88568 / BOLV-88568`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `118,2` | venc: `2025-09-26` | docs: `BOLV-84822 / BOLV-84822`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `117,28` | venc: `2025-09-24` | docs: `CF6240092025 / CF6240092025 / CF6240092025 / CF6240092025`
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.1.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **4x** | filial: `G&S PRUDENTE` | valor: `114` | venc: `2025-11-25` | docs: `NFE-79743 / NFE-79743 / NFE-79743 / NFE-79743`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G&S PRUDENTE` | valor: `114` | venc: `2026-02-15` | docs: `NFE-81236 / NFE-81236`
+  - cc: `1.7.1.3.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `108` | venc: `2025-10-24` | docs: `BOLV-85506 / BOLV-85506`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `106,8` | venc: `2026-02-15` | docs: `NFSE-255992167 / NFSE-255992167 / NFSE-255992167 / NFSE-255992167`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `106,8` | venc: `2026-03-15` | docs: `NFSE-256178162 / NFSE-256178162 / NFSE-256178162 / NFSE-256178162`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `105,92` | venc: `2025-10-05` | docs: `NFE-153949 / NFE-153949`
+  - cc: `1.2.5.7.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `101,75` | venc: `2025-05-07` | docs: `BOLV-81207 / BOLV-81207`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **22x** | filial: `G&S PRUDENTE` | valor: `100,63` | venc: `2026-03-20` | docs: `RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S / RETFED022026G&S`
+  - cc: `1.2.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.9` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.10` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.11` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.12` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.12` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.6` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.13` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.14` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.15` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.7` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.14` conta: `7.4.7` (CSRF)
+  - cc: `1.7.1.3.3` conta: `7.4.7` (CSRF)
+- **5x** | filial: `G&S PRUDENTE` | valor: `99,9` | venc: `2025-07-22` | docs: `23624 / 23624 / 23624 / 23624 / 23624`
+  - cc: `1.2.2.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `99,9` | venc: `2025-12-09` | docs: `27026 / 27026 / 27026 / 27026 / 27026`
+  - cc: `1.2.2.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.3.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.4.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.5.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.7.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `99,9` | venc: `2026-01-19` | docs: `27887 / 27887 / 27887 / 27887 / 27887`
+  - cc: `1.2.2.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.3.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.4.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.5.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.7.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+- **5x** | filial: `G&S PRUDENTE` | valor: `99,9` | venc: `2026-02-20` | docs: `28671 / 28671 / 28671 / 28671 / 28671`
+  - cc: `1.2.2.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.3.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.4.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.5.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1.2.7.4` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+- **2x** | filial: `G3S DOURADOS` | valor: `99,25` | venc: `2025-09-30` | docs: `BOLV-84916 / BOLV-84916`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **6x** | filial: `G3S CAMPO GRANDE` | valor: `98` | venc: `2025-07-30` | docs: `CF053730072025 / CF053730072025 / CF053730072025 / CF053730072025 / CF053730072025 / CF053730072025`
+  - cc: `1.2.5.2` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.2` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.2` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+  - cc: `1.2.5.3` conta: `7.1.1` (PEÇAS DE MANUTENÇÃO)
+  - cc: `1.2.5.3` conta: `7.1.5` (COMBUSTÍVEL - GASOLINA E ETANOL)
+  - cc: `1.2.5.3` conta: `7.1.16` (SERVIÇOS DE TERCEIROS)
+- **2x** | filial: `G3S LONDRINA` | valor: `96` | venc: `2026-03-09` | docs: `BOLC-294835 / BOLC-294835`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `95,2` | venc: `2025-11-15` | docs: `NFSE-255445151 / NFSE-255445151 / NFSE-255445151 / NFSE-255445151`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `95,2` | venc: `2025-12-15` | docs: `NFSE-255616950 / NFSE-255616950 / NFSE-255616950 / NFSE-255616950`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **4x** | filial: `G3S PRUDENTE` | valor: `95,2` | venc: `2026-01-15` | docs: `NFSE-255791244 / NFSE-255791244 / NFSE-255791244 / NFSE-255791244`
+  - cc: `1.2.5.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.4.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `94,5` | venc: `2025-12-17` | docs: `BOLV-86808 / BOLV-86808`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `94` | venc: `2025-08-25` | docs: `NFE-102810 / NFE-102810`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.29` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `93,65` | venc: `2026-01-05` | docs: `SEMPARARG3S081225 / SEMPARARG3S081225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `90` | venc: `1800-01-01` | docs: `SALDO ADT CLI / SALDO ADT CLI`
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `88,28` | venc: `2025-07-05` | docs: `CTE-365923 / CTE-365923`
+  - cc: `1.3.1.6.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.3.5.6` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G3S LONDRINA` | valor: `88` | venc: `2025-10-23` | docs: `BOLC-285298 / BOLC-285298`
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `85,85` | venc: `2026-01-05` | docs: `SEMPARARG3S061225 / SEMPARARG3S061225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `85,05` | venc: `2025-06-24` | docs: `BOLV-82336 / BOLV-82336`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `85,05` | venc: `2025-07-05` | docs: `CTE-365925 / CTE-365925`
+  - cc: `1.2.5.7.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.6.3.1` conta: `7.1.18` (FRETES E CARRETOS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `84,6` | venc: `2025-08-25` | docs: `NFE-78024 / NFE-78024`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `80` | venc: `2026-01-12` | docs: `BOLC-290242 / BOLC-290242`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `79,2` | venc: `2025-10-23` | docs: `BOLV-85459 / BOLV-85459`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **21x** | filial: `G&S PRUDENTE` | valor: `78,12` | venc: `2025-07-18` | docs: `RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S / RETFED062025G&S`
+  - cc: `1.2.2.5.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.2.5.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.6` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.7.6.2` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.1` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.3` conta: `7.4.7` (CSRF)
+  - cc: `1.2.4.7.4` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.10` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.4` conta: `7.4.7` (CSRF)
+  - cc: `1.6.3.47` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.13` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.14` conta: `7.4.7` (CSRF)
+  - cc: `1.6.3.45` conta: `7.4.7` (CSRF)
+  - cc: `1.2.3.5.6` conta: `7.4.7` (CSRF)
+  - cc: `1.2.5.6.15` conta: `7.4.7` (CSRF)
+- **2x** | filial: `G&S PRUDENTE` | valor: `78` | venc: `2026-02-05` | docs: `NFE-10511 / NFE-10511`
+  - cc: `1.7.1.3.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `77` | venc: `2025-06-02` | docs: `BOLC-273865 / BOLC-273865`
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.7.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `73` | venc: `2025-09-05` | docs: `NFE-78076 / NFE-78076`
+  - cc: `1.2.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.15` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `72,38` | venc: `2026-02-05` | docs: `00007946 / 00007946`
+  - cc: `1.2.7.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.7.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S DOURADOS` | valor: `71,81` | venc: `2026-01-05` | docs: `SEMPARARG&S031225 / SEMPARARG&S031225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S MARINGA` | valor: `70,26` | venc: `2026-01-05` | docs: `SEMPARARG&S041225 / SEMPARARG&S041225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `70,25` | venc: `2026-01-05` | docs: `SEMPARARG3S011225 / SEMPARARG3S011225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **5x** | filial: `G3S PRUDENTE` | valor: `70` | venc: `2025-07-08` | docs: `NFE-434 / NFE-434 / NFE-434 / NFE-434 / NFE-434`
+  - cc: `1.2.2.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.3.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.4.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.5.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.7.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+- **2x** | filial: `G3S LONDRINA` | valor: `65,7` | venc: `2025-12-02` | docs: `BOLV-86486 / BOLV-86486`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `65,25` | venc: `2025-10-10` | docs: `BOLV-85172 / BOLV-85172`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `63,18` | venc: `2025-08-05` | docs: `CTE-493141 / CTE-493141 / CTE-493141`
+  - cc: `1.2.2.5.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.2.5.2` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.2.5.6.2` conta: `7.1.18` (FRETES E CARRETOS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `63,02` | venc: `2025-10-21` | docs: `CF0239102025 / CF0239102025 / CF0239102025 / CF0239102025`
+  - cc: `1.2.8.1` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.8.1` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+  - cc: `1.2.8.3` conta: `7.5.5` (MATERIAL DE ESCRITÓRIO)
+  - cc: `1.2.8.3` conta: `6.2.2` (MATERIAIS - CORTE DE SUCATA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `63` | venc: `2025-12-08` | docs: `BOLC-282516 / BOLC-282516`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `62,88` | venc: `2026-02-15` | docs: `NFE-95389 / NFE-95389 / NFE-95389`
+  - cc: `1.2.5.6.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.8` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.4.7.12` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `61` | venc: `2026-02-18` | docs: `NFE-9323 / NFE-9323`
+  - cc: `1.2.7.6.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.7.6.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `60` | venc: `2025-10-14` | docs: `BOLC-284421 / BOLC-284421`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `59` | venc: `2025-09-30` | docs: `CF7551062025 / CF7551062025 / CF7551062025 / CF7551062025`
+  - cc: `1.5.1.3` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.5.1.3` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+  - cc: `1.4.1.2` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.4.1.2` conta: `7.5.21` (MATERIAL DE INFORMÁTICA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `57,87` | venc: `2025-08-15` | docs: `CTE-490942 / CTE-490942`
+  - cc: `1.2.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.6.6` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G3S CAMPO GRANDE` | valor: `56,48` | venc: `2025-05-23` | docs: `CF047923052025 / CF047923052025 / CF047923052025 / CF047923052025`
+  - cc: `1.2.5.1` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.1` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+  - cc: `1.2.7.4` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.7.4` conta: `7.3.5` (ALIMENTAÇÃO DO TRABALHADOR)
+- **2x** | filial: `G3S PRUDENTE` | valor: `56` | venc: `2025-07-15` | docs: `BOLV-82803 / BOLV-82803`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `49,2` | venc: `2025-11-06` | docs: `BOLV-85867 / BOLV-85867`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `46,2` | venc: `2025-09-11` | docs: `BOLV-84440 / BOLV-84440`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S LONDRINA` | valor: `42,15` | venc: `2026-01-05` | docs: `SEMPARARG&S071225 / SEMPARARG&S071225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `40` | venc: `2025-11-10` | docs: `PA-42158 / PA-42158`
+  - cc: `2.2.8.2` conta: `5.4.3` (PESAGENS AVULSAS)
+  - cc: `2.2.8.2` conta: `5.4.3` (PESAGENS AVULSAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `40` | venc: `2026-02-19` | docs: `PA-43431 / PA-43431`
+  - cc: `2.2.5.2` conta: `5.4.3` (PESAGENS AVULSAS)
+  - cc: `2.2.5.2` conta: `5.4.3` (PESAGENS AVULSAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `40` | venc: `2026-02-26` | docs: `PA-43549 / PA-43549`
+  - cc: `2.2.5.2` conta: `5.4.3` (PESAGENS AVULSAS)
+  - cc: `2.2.5.2` conta: `5.4.3` (PESAGENS AVULSAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `40` | venc: `2022-12-09` | docs: `REC 9112022 / REC 9112022`
+  - cc: `1` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+  - cc: `1` conta: `7.7.1` (SERVIÇOS CONTRATADOS)
+- **3x** | filial: `G&S PRUDENTE` | valor: `39,59` | venc: `2026-03-15` | docs: `NFE-81921 / NFE-81921 / NFE-81921`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.7.1.11.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `38,99` | venc: `2025-09-15` | docs: `NFE-153186 / NFE-153186 / NFE-153186 / NFE-153186`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.8.16` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.8.16` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `38,5` | venc: `2025-10-14` | docs: `BOLV-85208 / BOLV-85208`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `36,6` | venc: `2026-01-22` | docs: `BOLV-87271 / BOLV-87271`
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G&S CAMPO GRANDE` | valor: `35,9` | venc: `2026-01-05` | docs: `SEMPARARG&S061225 / SEMPARARG&S061225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `33,95` | venc: `2026-02-23` | docs: `00008226 / 00008226`
+  - cc: `1.2.5.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.5.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `RSE` | valor: `33,95` | venc: `2026-01-05` | docs: `SEMPARARRSE1225 / SEMPARARRSE1225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `33` | venc: `2025-07-02` | docs: `BOLV-82512 / BOLV-82512`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `30` | venc: `2025-08-10` | docs: `PA-40513 / PA-40513`
+  - cc: `2.2.7.2` conta: `5.4.3` (PESAGENS AVULSAS)
+  - cc: `2.2.7.2` conta: `5.4.3` (PESAGENS AVULSAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `28,1` | venc: `2026-01-08` | docs: `00007143 / 00007143`
+  - cc: `1.2.7.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.7.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S ADM` | valor: `28,1` | venc: `2026-03-16` | docs: `00008863 / 00008863`
+  - cc: `1.2.5.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.5.1` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `28,1` | venc: `2026-03-16` | docs: `00008871 / 00008871`
+  - cc: `1.5.1.1` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.5.1.1` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `28,05` | venc: `2025-11-24` | docs: `BOLV-86299 / BOLV-86299`
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.4.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `27,6` | venc: `2026-01-26` | docs: `BOLV-87349 / BOLV-87349`
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.8.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `26,99` | venc: `2025-09-15` | docs: `00004216 / 00004216`
+  - cc: `1.3.1.1` conta: `7.1.18` (FRETES E CARRETOS)
+  - cc: `1.4.1.2` conta: `7.1.18` (FRETES E CARRETOS)
+- **4x** | filial: `G&S PRUDENTE` | valor: `21,5` | venc: `2025-08-30` | docs: `NFE-78013 / NFE-78013 / NFE-78013 / NFE-78013`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.5.3` conta: `7.6.3` (MANUTENÇÃO PATIO)
+  - cc: `1.2.1.11` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.2.1.11` conta: `7.6.3` (MANUTENÇÃO PATIO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `20` | venc: `1800-01-01` | docs: `SALDO ADT CLI / SALDO ADT CLI`
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+- **2x** | filial: `G3S PRUDENTE` | valor: `19,9` | venc: `2026-03-16` | docs: `00008853 / 00008853`
+  - cc: `1.2.5.2` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.5.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `19,9` | venc: `2026-03-25` | docs: `00009226 / 00009226`
+  - cc: `1.1.5` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.5` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `RSE` | valor: `19,9` | venc: `2026-01-26` | docs: `SEMPARARRSE012026 / SEMPARARRSE012026`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S BARUERI` | valor: `19,04` | venc: `2026-03-25` | docs: `00009229 / 00009229`
+  - cc: `1.5.1.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.5.1.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S ADM` | valor: `19,04` | venc: `2026-03-25` | docs: `00009230 / 00009230`
+  - cc: `1.1.5` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.5` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `17,95` | venc: `2026-01-05` | docs: `SEMPARARG3S111225 / SEMPARARG3S111225`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S MARINGA` | valor: `14,05` | venc: `2026-01-08` | docs: `00007142 / 00007142`
+  - cc: `1.2.4.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.4.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `14,05` | venc: `2026-01-09` | docs: `00007170 / 00007170`
+  - cc: `1.2.4.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.4.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **4x** | filial: `G3S MARINGA` | valor: `14,05` | venc: `2026-01-30` | docs: `00007742 / 00007742 / 00007746 / 00007746`
+  - cc: `1.2.4.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.4.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+  - cc: `1.2.4.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.4.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S DOURADOS` | valor: `14,05` | venc: `2026-01-30` | docs: `00007748 / 00007748`
+  - cc: `1.2.2.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.2.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `14,05` | venc: `2026-01-30` | docs: `00007750 / 00007750`
+  - cc: `1.2.5.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.5.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S LONDRINA` | valor: `14,05` | venc: `2026-01-30` | docs: `00007751 / 00007751`
+  - cc: `1.2.3.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.3.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S ADM` | valor: `14,05` | venc: `2026-02-05` | docs: `00007939 / 00007939`
+  - cc: `1.2.5.2` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.5.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S ADM` | valor: `14,05` | venc: `2026-02-23` | docs: `00008223 / 00008223`
+  - cc: `1.1.9` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.9` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `14,05` | venc: `2026-02-23` | docs: `00008224 / 00008224`
+  - cc: `1.2.7.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.7.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S ADM` | valor: `14,05` | venc: `2026-03-16` | docs: `00008865 / 00008865`
+  - cc: `1.2.5.2` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.5.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `14,05` | venc: `2026-03-16` | docs: `00008866 / 00008866`
+  - cc: `1.2.4.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.4.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S CAMPO GRANDE` | valor: `14,05` | venc: `2026-03-16` | docs: `00008872 / 00008872`
+  - cc: `1.2.7.3` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.2.7.3` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `GXS MARINGA` | valor: `12,44` | venc: `2026-03-25` | docs: `29570 / 29570`
+  - cc: `1.2.5.2` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.3.1.2` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+- **2x** | filial: `GXS MARINGA` | valor: `12,01` | venc: `2025-09-25` | docs: `00003927 / 00003927`
+  - cc: `1.2.5.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `GXS MARINGA` | valor: `12,01` | venc: `2025-10-25` | docs: `00004813 / 00004813`
+  - cc: `1.2.5.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `GXS MARINGA` | valor: `12,01` | venc: `2025-12-25` | docs: `27305 / 27305`
+  - cc: `1.2.5.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `GXS MARINGA` | valor: `12,01` | venc: `2026-01-25` | docs: `27966 / 27966`
+  - cc: `1.2.5.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `12` | venc: `2025-09-25` | docs: `NFE-153577 / NFE-153577`
+  - cc: `1.2.5.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `GXS MARINGA` | valor: `11,89` | venc: `2025-07-25` | docs: `00002463 / 00002463`
+  - cc: `1.2.5.1` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+  - cc: `1.3.1.2` conta: `7.2.5` (PUBLICIDADE E PROPAGANDA)
+- **2x** | filial: `G&S PRUDENTE` | valor: `10` | venc: `2025-08-25` | docs: `NFE-78255 / NFE-78255`
+  - cc: `1.2.4.7.1` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.45` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `5,4` | venc: `2025-10-27` | docs: `BOLV-85572 / BOLV-85572`
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.2.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `4,5` | venc: `2025-11-19` | docs: `CF0023112025 / CF0023112025 / CF0023112025`
+  - cc: `1.2.4.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.2.5.3` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+  - cc: `1.7.1.1` conta: `7.3.9` (SEGURANÇA DO TRABALHO)
+- **2x** | filial: `RSE` | valor: `0,3` | venc: `2026-03-17` | docs: `RENDRSE170326 / RENDRSE170326`
+  - cc: `2.6.1` conta: `5.3.3` (RENDIMENTO FINANCEIRO)
+  - cc: `1.6.1` conta: `5.3.3` (RENDIMENTO FINANCEIRO)
+- **2x** | filial: `G3S PRUDENTE` | valor: `0,01` | venc: `1800-01-01` | docs: `SALDO ADT CLI / SALDO ADT CLI`
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+  - cc: `2.2.5.2` conta: `4.2.1` (ADIANTAMENTO CLIENTE SUCATA)
+
+---
+
+### 🔴 R1a — ADT em 4.1.1
+
+**Severidade:** ALTA  
+**Total de achados:** 188  
+**Evidencia:** Prefixo ADT indica adiantamento; conta correta e 4.2.1  
+**Correcao sugerida:** Trocar conta 4.1.1 -> 4.2.1 via Troca de Plano de Contas em Lote no SAGI  
+
+| documento | filial | codcdc | codcen | valor_bruto | vencimento |
+| --- | --- | --- | --- | --- | --- |
+| ADT-15122025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 756140,5 | 2025-12-15 |
+| ADT-23032026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 629463,55 | 2026-03-23 |
+| ADT-20032026-1 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 629463,55 | 2026-03-23 |
+| ADT-23032026-2 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 629463,55 | 2026-03-23 |
+| ADT-07012026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 584280 | 2026-01-07 |
+| ADT-21012026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 584280 | 2026-01-21 |
+| ADT-20012026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 570315,9 | 2026-01-20 |
+| ADT-04022026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 563133,6 | 2026-02-04 |
+| ADT-16012026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 558835,2 | 2026-01-16 |
+| ADT-25022026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 554148 | 2026-02-25 |
+| ADT-03022026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 551820,71 | 2026-02-03 |
+| ADT-03022026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 551820,71 | 2026-02-04 |
+| ADT19022026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 548886,24 | 2026-02-20 |
+| ADT-23102025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 484250,4 | 2025-10-23 |
+| ADT-12012025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 286297,2 | 2026-01-12 |
+| ADT-00008219 | G3S MARINGA | 4.1.1 | 2.2.4.2 | 245065,9 | 2026-02-12 |
+| ADT11082025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 161416,8 | 2025-08-11 |
+| ADT21082025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 161416,8 | 2025-08-21 |
+| ADT-11082025 | G3S PRUDENTE | 4.1.1 | 2.2.7.2 | 161416,8 | 2025-08-11 |
+| ADT-11082025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 161416,8 | 2025-09-11 |
+| ADT21082025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 161416,8 | 2025-08-21 |
+| ADTO11082025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 161416,8 | 2025-08-11 |
+| ADT21082025 | G3S PRUDENTE | 4.1.1 | 2.2.7.2 | 161416,8 | 2025-08-21 |
+| ADT21082025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 161416,8 | 2025-08-21 |
+| ADT-05122025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 158371,2 | 2025-12-05 |
+| ADT-05122025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 152280 | 2025-12-05 |
+| ADT12022026 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 150000 | 2026-02-13 |
+| ADT-O21062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 121824 | 2025-06-21 |
+| ADT-O01072025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 121824 | 2025-07-01 |
+| ADT-O10072025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 121824 | 2025-07-10 |
+| ADT-O10072025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 121824 | 2025-07-10 |
+| ADT-O08072025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 91368 | 2025-07-08 |
+| ADT-22092025 | G3S DOURADOS | 4.1.1 | 2.2.2.2 | 62558,52 | 2025-09-22 |
+| ADT-07102024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 54879,2 | 2025-10-07 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 51296,8 | 2025-11-14 |
+| ADT-03122025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 46753,2 | 2025-12-03 |
+| ADT-O25072025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 42283,2 | 2025-08-25 |
+| ADT-03122025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 42194,8 | 2025-12-03 |
+| ADT-O25072025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 40682,4 | 2025-07-25 |
+| ADTO25072025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 40171,8 | 2025-07-25 |
+| ADTO25072025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 39826,8 | 2025-07-25 |
+| ADT-O25072025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 38902,2 | 2025-07-25 |
+| ADT-15092025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 37588,64 | 2025-09-15 |
+| ADT-O23072025 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 34900,57 | 2025-07-23 |
+| ADTAT24072024 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 33424,77 | 2025-07-24 |
+| ADT17102025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 32391 | 2025-10-17 |
+| ADTO25072025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 32002,2 | 2025-07-25 |
+| ADT-30092025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 31264,5 | 2025-09-30 |
+| ADT-24072025 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 31071,48 | 2025-07-24 |
+| ADT20052025 | G3S DOURADOS | 4.1.1 | 2.2.2.2 | 30941,77 | 2025-05-20 |
+| ADT-09092025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 29668,5 | 2025-09-15 |
+| ADT-09032026 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 21670,4 | 2026-03-09 |
+| ADT-311025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 20691,62 | 2025-10-31 |
+| ADT-311025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 20691,62 | 2025-10-31 |
+| ADT00008205 | G3S LONDRINA | 4.1.1 | 1.2.3.2 | 17444 | 2026-02-12 |
+| ADT00008205 | G3S LONDRINA | 4.1.1 | 1.2.3.2 | 17444 | 2026-02-12 |
+| ADT08052025 | RSE | 4.1.1 | 2.6.2 | 17439,5 | 2025-05-21 |
+| ADT20052025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 15862 | 2025-05-20 |
+| ADT08052025 | RSE | 4.1.1 | 2.6.2 | 15401,59 | 2025-05-08 |
+| ADT-101025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 13653 | 2025-10-10 |
+| ADTO10062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 11897,53 | 2025-06-10 |
+| ADTO10062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 11897,53 | 2025-06-10 |
+| ADT23102025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 11842,86 | 2025-10-23 |
+| ADT-05092025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 11360 | 2025-09-05 |
+| ADT-09032026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 11325,43 | 2026-03-09 |
+| ADT10062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 10430,92 | 2025-06-10 |
+| ADT10062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 10430,92 | 2025-06-10 |
+| ADT09062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 10232,27 | 2025-06-09 |
+| ADT10062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 10118,05 | 2025-06-10 |
+| ADT-O04082025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 9801,2 | 2025-08-04 |
+| ADT-O04082025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 9801,2 | 2025-08-04 |
+| ADT-O04082025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 9801,2 | 2025-08-04 |
+| ADT-O04082025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 9801,2 | 2025-08-04 |
+| ADT-O04082025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 9801,2 | 2025-08-04 |
+| ADT-O04082025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 9801,2 | 2025-08-04 |
+| ADT-O04082025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 9801,2 | 2025-08-04 |
+| ADTO09062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 9432,37 | 2025-06-09 |
+| ADT06062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 9231,43 | 2025-06-06 |
+| ADT09062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 9213,64 | 2025-06-09 |
+| ADT11112025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 8820,08 | 2025-11-11 |
+| ADT10062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 8627,23 | 2025-06-10 |
+| ADT10062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 8627,23 | 2025-06-10 |
+| ADT06062025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 8258,89 | 2025-06-06 |
+| ADT-01092025 | G3S CAMPO GRANDE | 4.1.1 | 2.2.5.2 | 7742,27 | 2025-09-01 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 7272,6 | 2025-11-14 |
+| ADT02092025 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 7258,42 | 2025-09-02 |
+| ADT18062025 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 6621,13 | 2025-07-01 |
+| ADT-00002638 | G3S MARINGA | 4.1.1 | 2.2.4.2 | 6589,95 | 2025-07-30 |
+| ADT-O16072025 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 6420 | 2025-07-16 |
+| ADT-20022026 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 5636,99 | 2026-03-02 |
+| ADT-O06082025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 5266 | 2025-08-06 |
+| ADT-17112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 4819 | 2025-11-17 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3896 | 2025-11-14 |
+| ADT17112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3715 | 2025-11-17 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3549 | 2025-11-14 |
+| ADT-21112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3478 | 2025-11-21 |
+| ADT-17112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3445 | 2025-11-17 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3340 | 2025-11-14 |
+| ADT-18112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3316 | 2025-11-18 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3248 | 2025-11-14 |
+
+> *(... e mais 88 achados nao exibidos)*
+
+---
+
+### 🔴 R4 — ADT Multi-lancamento
+
+**Severidade:** ALTA  
+**Total de achados:** 105  
+**Evidencia:** ADT aparece 3x com mesmo valor+filial+data — documentos: ADT-23032026 / ADT-20032026-1 / ADT-23032026-2  
+**Correcao sugerida:** Confirmar qual ADT e o correto; estornar os extras com novo lancamento correto; escalar para o gestor antes de qualquer acao  
+
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `629463,55` | venc: `2026-03-23` | docs: `ADT-23032026 / ADT-20032026-1 / ADT-23032026-2`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `161416,8` | venc: `2025-08-11` | docs: `ADT11082025 / ADTO11082025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **3x** | filial: `G3S CAMPO GRANDE` | valor: `161416,8` | venc: `2025-08-21` | docs: `ADT21082025 / ADT21082025 / ADT21082025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `121824` | venc: `2025-07-10` | docs: `ADT-O10072025 / ADT-O10072025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `36000` | venc: `2025-07-31` | docs: `ADT00002596 / ADT00002596`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `24822` | venc: `2026-02-20` | docs: `ADT00008388 / ADT00008388 / ADT00008388`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `24740` | venc: `2025-06-09` | docs: `ADT00002274 / ADT00002274`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `22995` | venc: `2026-02-13` | docs: `ADT00008242 / ADT00008242`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `22995` | venc: `2026-02-20` | docs: `ADT00008358 / ADT00008358`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **3x** | filial: `G3S PRUDENTE` | valor: `21940` | venc: `2025-06-02` | docs: `ADT00000860 / ADT00000860 / ADT00000860`
+  - cc: `2.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `21938,4` | venc: `2026-03-19` | docs: `ADT00009101 / ADT00009101`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `20691,62` | venc: `2025-10-31` | docs: `ADT-311025 / ADT-311025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `17444` | venc: `2026-02-12` | docs: `ADT00008205 / ADT00008205`
+  - cc: `1.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `1.2.3.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `11897,53` | venc: `2025-06-10` | docs: `ADTO10062025 / ADTO10062025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S LONDRINA` | valor: `11880` | venc: `2025-07-28` | docs: `ADT00002524 / ADT00002524`
+  - cc: `1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+- **2x** | filial: `G3S LONDRINA` | valor: `11802` | venc: `2025-08-26` | docs: `ADT00003163 / ADT00003163`
+  - cc: `1.12.1.1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1.12.1.1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `10430,92` | venc: `2025-06-10` | docs: `ADT10062025 / ADT10062025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `10000` | venc: `2025-06-24` | docs: `ADT00001696 / ADT00001688`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S MARINGA` | valor: `10000` | venc: `2026-01-27` | docs: `ADT00007673 / ADT00007687`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S DOURADOS` | valor: `10000` | venc: `2026-02-27` | docs: `ADT00008555 / ADT00008554`
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.2.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **7x** | filial: `G3S PRUDENTE` | valor: `9801,2` | venc: `2025-08-04` | docs: `ADT-O04082025 / ADT-O04082025 / ADT-O04082025 / ADT-O04082025 / ADT-O04082025 / ADT-O04082025 / ADT-O04082025`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `8627,23` | venc: `2025-06-10` | docs: `ADT10062025 / ADT10062025`
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **4x** | filial: `G3S ADM` | valor: `7911,92` | venc: `2025-11-26` | docs: `ADT16174415
+
+ / ADT16174415
+
+ / ADT16174415
+
+ / ADT16174415
+
+`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+  - cc: `1.3.1.2` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.3.1.2` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S LONDRINA` | valor: `7812,6` | venc: `2025-05-16` | docs: `ADT00000324 / ADT00000324`
+  - cc: `1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+  - cc: `1` conta: `6.3.1` (ADIANTAMENTOS CONCEDIDOS)
+- **2x** | filial: `G&S BARUERI` | valor: `5596,06` | venc: `2025-11-26` | docs: `ADT16174405 / ADT16174405`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `5568` | venc: `2026-03-23` | docs: `ADT00009217 / ADT00009217`
+  - cc: `1.2.4.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.3.1.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `5120` | venc: `2025-09-10` | docs: `ADT00003554 / ADT00003554`
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+  - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
+- **2x** | filial: `G3S PRUDENTE` | valor: `4086,1` | venc: `2025-11-26` | docs: `ADT16174413
+
+ / ADT16174413
+
+`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S PRUDENTE` | valor: `3870` | venc: `2026-01-15` | docs: `ADT27721 / ADT27721`
+  - cc: `1.7.1.2.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+  - cc: `1.6.3.41` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
+- **2x** | filial: `G&S PRUDENTE` | valor: `2341,05` | venc: `2025-11-26` | docs: `ADT16174414 / ADT16174414`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S MARINGA` | valor: `2025,79` | venc: `2025-11-26` | docs: `ADT16174407
+
+ / ADT16174407
+
+`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S DOURADOS` | valor: `2023,8` | venc: `2025-11-26` | docs: `ADT16174406 / ADT16174406`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S MARINGA` | valor: `2023,8` | venc: `2025-11-26` | docs: `ADT16174408 / ADT16174408`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S DOURADOS` | valor: `1775,87` | venc: `2025-11-26` | docs: `ADT16174412 / ADT16174412`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `1567,5` | venc: `2025-12-08` | docs: `ADT-08122025 / ADT08122025`
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.5.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `1519,84` | venc: `2025-11-26` | docs: `ADT16174417 / ADT16174417`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S LONDRINA` | valor: `1517,85` | venc: `2025-11-26` | docs: `ADT16174411 / ADT16174411`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S CAMPO GRANDE` | valor: `1011,9` | venc: `2025-11-26` | docs: `ADT16174404 / ADT16174404`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S LONDRINA` | valor: `1011,9` | venc: `2025-11-26` | docs: `ADT16174416 / ADT16174416`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CIDADE ALTA` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174423 / ADT16174423`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `RSE` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174421
+
+ / ADT16174421
+
+`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S MARINGA` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16176029 / ADT16176029`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G&S LONDRINA` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16176030 / ADT16176030`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `286,69` | venc: `2025-05-16` | docs: `ADT16052025 / ADT16052025`
+  - cc: `1` conta: `4.1.1` (VENDAS DE SUCATAS)
+  - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
+- **2x** | filial: `G3S CAMPO GRANDE` | valor: `255,92` | venc: `2025-11-26` | docs: `ADT16176028 / ADT16176028`
+  - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
+  - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
+- **2x** | filial: `G3S PRUDENTE` | valor: `244,22` | venc: `2025-10-31` | docs: `ADT00004544 / ADT00004544`
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+  - cc: `1.2.5.2` conta: `7.1.8` (DESPESAS DE VIAGEM)
+- **2x** | filial: `G&S PRUDENTE` | valor: `218` | venc: `2026-02-19` | docs: `ADT00007814 / ADT00007814`
+  - cc: `1.3.1.2` conta: `7.5.18` (SISTEMAS)
+  - cc: `1.5.1.1` conta: `7.5.18` (SISTEMAS)
+
+---
+
+### 🟡 R2b — Receita em CC Despesa
+
+**Severidade:** MEDIA  
+**Total de achados:** 228  
+**Evidencia:** Conta de receita (4-5.x) lancada em CC de Despesa (1.x)  
+**Correcao sugerida:** Trocar CC para o equivalente de Receita (2.x mesmo nivel)  
+
+| documento | filial | codcdc | codcen | valor_bruto | vencimento |
+| --- | --- | --- | --- | --- | --- |
+| DEV. GLE 450 - NFE 9.354 | RSE | 5.2.1 | 1.1.1.1 | 760000 | 2026-02-13 |
+| DEV.BOLV -84891 | G3S CAMPO GRANDE | 4.3.1 | 1.2.7.2 | 163680 | 2025-10-03 |
+| DEVOLMUTUO260226 | RSE | 5.4.2 | 1.1.1.1 | 131993,33 | 2026-03-23 |
+| DEVOLMUTUO260226 | RSE | 5.4.12 | 1.1.1.1 | 131993,33 | 2026-03-23 |
+| FATLOC789 | RSE | 5.6.1 | 1.7.1.7.1 | 76000 | 2026-04-30 |
+| FATLOC784 | RSE | 5.6.1 | 1.7.1.7.1 | 76000 | 2026-03-31 |
+| REC08052025 | G3S MARINGA | 4.1.1 | 1.2.4.2 | 73877,25 | 2025-05-19 |
+| NFS000000019 | G3S DOURADOS | 5.4.13 | 1.2.2.2 | 67119 | 2025-06-09 |
+| NFS000000019 | G3S DOURADOS | 5.4.13 | 1.2.2.2 | 67119 | 2025-07-09 |
+| NFS000000019 | G3S DOURADOS | 5.4.13 | 1.2.2.2 | 67119 | 2025-08-11 |
+| NFS000000019 | G3S DOURADOS | 5.4.13 | 1.2.2.2 | 67119 | 2025-09-11 |
+| DEV.BOLV -77659 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 53664 | 2026-02-05 |
+| DEV.BOLV -82784 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 52770 | 2025-07-17 |
+| DEV.BOLV -79919 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 52638,6 | 2025-09-11 |
+| DEVOLMUTUO030326 | RSE | 5.4.2 | 1.1.1.1 | 50666,67 | 2026-03-23 |
+| DEVOLMUTUO030326 | RSE | 5.4.12 | 1.1.1.1 | 50666,67 | 2026-03-23 |
+| NFE-9246 | RSE | 4.1.1 | 1.2.5.2 | 44800 | 2025-08-07 |
+| NFE-65262 | G3S PRUDENTE | 5.6.2 | 1.5.1.2 | 44688,33 | 2026-04-17 |
+| DEV.BOLV -88556 | G3S PRUDENTE | 4.3.1 | 1.2.5.2 | 44018,1 | 2026-03-18 |
+| NFE-9235 | RSE | 4.1.1 | 1.2.1.6 | 41600 | 2025-07-26 |
+| DEV.BOLV -82156 | G3S PRUDENTE | 4.3.1 | 1.2.5.2 | 41287,5 | 2025-06-30 |
+| DEV.BOLV -86739 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 38760,28 | 2026-01-14 |
+| DEV.BOLV -82161 | G3S PRUDENTE | 4.3.1 | 1.2.5.2 | 38325 | 2025-06-30 |
+| DEV.BOLV -85241 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 37444 | 2025-11-17 |
+| DEV.BOLV -86795 | G3S CIDADE ALTA | 4.3.1 | 1.2.8.2 | 36643,23 | 2026-02-10 |
+| DEV.BOLV -82892 | G3S DOURADOS | 4.3.1 | 1.2.2.2 | 34003,46 | 2025-08-08 |
+| DEV.BOLV -84856 | G3S CAMPO GRANDE | 4.3.1 | 1.2.7.2 | 33000 | 2025-10-03 |
+| NFE-64680 | G3S PRUDENTE | 5.6.2 | 1.5.1.2 | 33000 | 2026-02-11 |
+| DEV.BOLV -81066 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 30675,3 | 2025-05-26 |
+| DEV.BOLV -88370 | G3S CAMPO GRANDE | 4.3.1 | 1.2.7.2 | 27776,82 | 2026-03-03 |
+| 00006128 | G3S DOURADOS | 4.3.1 | 1.2.2.2 | 27571,53 | 2025-09-23 |
+| DEV.BOLV -88362 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 26897,5 | 2026-03-09 |
+| 00004107 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 26116,53 | 2025-10-01 |
+| NFE-9046 | RSE | 4.1.1 | 1.2.5.2 | 24700 | 2025-06-01 |
+| DEV.BOLV -82934 | G3S DOURADOS | 4.3.1 | 1.2.2.2 | 24228,44 | 2025-08-08 |
+| DEV.BOLV -81534 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 24131,33 | 2025-06-02 |
+| DEV.BOLV -81447 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 24066,9 | 2025-05-23 |
+| DEV.BOLV -80997 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 24034,05 | 2025-05-14 |
+| DEV.BOLV -88374 | G3S CAMPO GRANDE | 4.3.1 | 1.2.7.2 | 23415,44 | 2026-03-03 |
+| DEV.BOLV -82389 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 22509,28 | 2025-07-11 |
+| DEV.BOLV -81548 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 22376,33 | 2025-05-27 |
+| DEV.BOLV -82442 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 21924,28 | 2025-07-08 |
+| DEV.BOLV -82401 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 21419,05 | 2025-07-10 |
+| DEV.BOLV -81495 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 21325,98 | 2025-05-26 |
+| DEV.BOLV -85687 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 21312 | 2026-02-11 |
+| DEV.BOLV -87878 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 21286,42 | 2026-02-25 |
+| FCO020226 | G3S CAMPO GRANDE | 5.4.2 | 1.10.1 | 19444,45 | 2026-02-02 |
+| DEV.BOLV -82898 | G3S DOURADOS | 4.3.1 | 1.2.2.2 | 18112,53 | 2025-08-11 |
+| DEV.BOLV -85381 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 17478,8 | 2025-10-28 |
+| ADT00008205 | G3S LONDRINA | 4.1.1 | 1.2.3.2 | 17444 | 2026-02-12 |
+| ADT00008205 | G3S LONDRINA | 4.1.1 | 1.2.3.2 | 17444 | 2026-02-12 |
+| DEV.BOLV -82773 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 17438,4 | 2025-07-17 |
+| DEV.BOLV -85924 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 14126,72 | 2025-12-03 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2025-10-03 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2025-11-02 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2025-12-02 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2026-01-01 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2026-01-31 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2026-03-02 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2026-04-01 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2026-05-01 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2026-05-31 |
+| ADTVENDA CTF0366 | RSE | 5.2.2 | 1.5.1.2 | 14000 | 2026-06-30 |
+| DEV.BOLV -81661 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 13960,28 | 2025-08-07 |
+| DEV.BOLV -85905 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 13538,66 | 2025-11-18 |
+| DEV.BOLV -85905 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 13538,66 | 2025-11-30 |
+| DEV.BOLV -81598 | G3S LONDRINA | 4.3.1 | 1.2.3.2 | 13193,58 | 2025-08-07 |
+| DEVOL010725 | G3S CAMPO GRANDE | 5.4.7 | 1.10.1 | 12443,2 | 2025-07-01 |
+| CTE  2486 | G&S DOURADOS | 5.7.1 | 1.4.2.1 | 10064,6 | 2025-06-30 |
+| CTE 2484 | G&S DOURADOS | 5.7.1 | 1.4.2.1 | 10059,4 | 2025-06-30 |
+| CTE 2487 | G&S DOURADOS | 5.7.1 | 1.4.2.1 | 9885,2 | 2025-06-30 |
+| CTE-86 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 9834,15 | 2025-09-25 |
+| NFE-48278 | G3S LONDRINA | 4.1.1 | 1.2.3.2 | 9542,4 | 2025-06-17 |
+| BNDES180226 | RSE | 5.4.2 | 1.6.1 | 9482,75 | 2026-02-18 |
+| CTE-115 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 9347,8 | 2025-12-25 |
+| CTE-126 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 9126 | 2026-01-15 |
+| CTE-125 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 8901 | 2026-01-15 |
+| NFE-48293 | G3S LONDRINA | 4.1.1 | 1.2.3.2 | 8808,8 | 2025-06-18 |
+| CTE-131 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 8705,25 | 2026-01-16 |
+| NFE-48288 | G3S LONDRINA | 4.1.1 | 1.2.3.2 | 8450,4 | 2025-06-17 |
+| CTE-121 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 8127 | 2026-01-09 |
+| CTE-112 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 8078,4 | 2025-12-25 |
+| CTE-128 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7987,5 | 2026-01-16 |
+| CTE-35 | G3S LONDRINA | 4.1.1 | 1.2.3.2 | 7958,6 | 2025-07-15 |
+| CTE-111 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7858,4 | 2025-12-25 |
+| CTE-111 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7858,4 | 2025-12-25 |
+| CTE-111 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7858,4 | 2025-12-25 |
+| CTE-124 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7857 | 2026-01-09 |
+| CTE-110 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7706,6 | 2025-12-25 |
+| CTE-127 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7643,25 | 2026-01-15 |
+| CTE-130 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7364,25 | 2026-01-16 |
+| CTE-144 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 7213,8 | 2026-02-05 |
+| 00006125 | G3S MARINGA | 4.3.1 | 1.2.4.2 | 6545,97 | 2025-11-27 |
+| CTE-109 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 6424 | 2025-12-25 |
+| CTE-118 | G3S MARINGA | 5.6.2 | 1.5.1.2 | 6010,4 | 2026-01-09 |
+| CTE-127 | G3S CAMPO GRANDE | 5.4.7 | 1.2.7.4 | 6000 | 2025-06-05 |
+| DEVOL090625 | G&S PRUDENTE | 5.4.8 | 1.10.1 | 5673,89 | 2025-06-09 |
+| 8832 | RSE | 4.1.1 | 1.6.2 | 4530 | 2025-05-06 |
+| MS-7 | NVS - EKIPA | 5.6.2 | 1.5.1.2 | 3600 | 2025-07-23 |
+| NFE-30927 | G3S DOURADOS | 5.6.2 | 1.5.1.2 | 3055 | 2026-01-16 |
+
+> *(... e mais 128 achados nao exibidos)*
+
+---
+
+### 🟡 R7 — Manutencao em CC Generico
+
+**Severidade:** MEDIA  
+**Total de achados:** 367  
+**Evidencia:** Conta 7.1.2 em CC de departamento (nivel 4) em vez de CC do ativo (nivel 5)  
+**Correcao sugerida:** Trocar CC para o ativo especifico (placa/codigo da maquina) via Troca em Lote  
+
+| documento | filial | codcdc | codcen | valor_bruto | vencimento |
+| --- | --- | --- | --- | --- | --- |
+| NFE-56 | RSE | 7.1.2 | 1.5.1.4 | 90621 | 2025-11-18 |
+| NFE-56 | RSE | 7.1.2 | 1.5.1.4 | 90621 | 2025-12-05 |
+| NFE-56 | RSE | 7.1.2 | 1.5.1.4 | 90621 | 2026-01-05 |
+| NFE-56 | RSE | 7.1.2 | 1.5.1.4 | 90621 | 2026-02-05 |
+| ADT00006235 | RSE | 7.1.2 | 1.5.1.4 | 45310,5 | 2025-06-27 |
+| NFE-368179 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 26875 | 2025-07-04 |
+| NFE-578057 | G&S PRUDENTE | 7.1.2 | 1.6.3.2 | 17031,31 | 2025-10-05 |
+| NFE-578057 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 17031,31 | 2025-10-05 |
+| NFSE-3846 | G&S PRUDENTE | 7.1.2 | 1.7.2.3 | 14084,11 | 2025-10-15 |
+| NFE-266736 | G&S PRUDENTE | 7.1.2 | 1.6.3.4 | 13085,09 | 2025-11-15 |
+| NFE-266736 | G&S PRUDENTE | 7.1.2 | 1.6.3.4 | 13085,09 | 2025-12-15 |
+| NFSE-1843 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 10000 | 2025-08-25 |
+| NFE-205334 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 9140 | 2025-11-15 |
+| NFE-205334 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 9140 | 2025-12-15 |
+| NFE-205334 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 9140 | 2026-01-15 |
+| NFSE-208 | G&S PRUDENTE | 7.1.2 | 1.6.3.4 | 8574,13 | 2025-10-05 |
+| NFSE-188 | G&S PRUDENTE | 7.1.2 | 1.6.3.5 | 7800 | 2025-07-05 |
+| NFSE-13 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 7200 | 2025-08-27 |
+| CF742930062025 | G3S CAMPO GRANDE | 7.1.2 | 2.7.1.2 | 7078,43 | 2025-06-30 |
+| NFSE-374 | G&S MARINGA | 7.1.2 | 1.6.3.4 | 6300 | 2025-11-25 |
+| CF7429102025 | G3S CAMPO GRANDE | 7.1.2 | 1.7.1.2 | 6036,82 | 2025-10-28 |
+| NFE-7168 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 5585,31 | 2025-09-15 |
+| CF8633102025 | G3S CAMPO GRANDE | 7.1.2 | 1.2.5.3 | 5518,79 | 2025-10-24 |
+| NFE-864006 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 5365 | 2025-09-03 |
+| NFSE-55534 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 5252,43 | 2025-10-23 |
+| NFSE-12 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 5200 | 2025-08-05 |
+| NFSE-128 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 5100 | 2025-07-25 |
+| NFSE-444 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 4919,1 | 2025-11-25 |
+| NFSE-444 | G&S PRUDENTE | 7.1.2 | 1.6.3.4 | 4919,1 | 2025-11-25 |
+| CF742928072025 | G3S CAMPO GRANDE | 7.1.2 | 1.7.1.2 | 4831,37 | 2025-07-28 |
+| NFE-7554 | G&S PRUDENTE | 7.1.2 | 1.6.3.4 | 4800 | 2026-01-13 |
+| CF863330042025 | G3S CAMPO GRANDE | 7.1.2 | 1.2.5.3 | 4603,03 | 2025-04-30 |
+| CF863331052025 | G3S CAMPO GRANDE | 7.1.2 | 1.2.5.3 | 4485,55 | 2025-05-31 |
+| NFSE-413 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 4409,55 | 2025-07-25 |
+| NFSE-413 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 4409,55 | 2025-07-25 |
+| NFSE-413 | G&S PRUDENTE | 7.1.2 | 1.6.3.5 | 4409,55 | 2025-07-25 |
+| NFE-224507 | G&S MARINGA | 7.1.2 | 1.6.3.4 | 4339,42 | 2026-02-15 |
+| NFSE-422 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 4200 | 2025-12-05 |
+| AL27986 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 4170 | 2026-01-25 |
+| AL27986 | G3S PRUDENTE | 7.1.2 | 1.3.1.3 | 4170 | 2026-01-25 |
+| NFSE-19 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 4000 | 2025-11-15 |
+| CF757730042025 | G3S CAMPO GRANDE | 7.1.2 | 1.2.4.2 | 3861,33 | 2025-04-30 |
+| CF757730042025 | G3S CAMPO GRANDE | 7.1.2 | 1.2.5.2 | 3861,33 | 2025-04-30 |
+| CF757730042025 | G3S CAMPO GRANDE | 7.1.2 | 1.3.1.2 | 3861,33 | 2025-04-30 |
+| CF757730042025 | G3S CAMPO GRANDE | 7.1.2 | 1.2.7.2 | 3861,33 | 2025-04-30 |
+| CF757730042025 | G3S CAMPO GRANDE | 7.1.2 | 1.1.1.3 | 3861,33 | 2025-04-30 |
+| NFSE-24 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 3800 | 2026-02-25 |
+| NFE-578045 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 3652,95 | 2025-10-05 |
+| NFSE-392 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 3400 | 2025-07-05 |
+| NF86882/237375 | RSE | 7.1.2 | 1.2.5.3 | 3332,69 | 2026-03-14 |
+| NF86882/237375 | RSE | 7.1.2 | 1.2.5.3 | 3332,69 | 2026-04-13 |
+| NF86882/237375 | RSE | 7.1.2 | 1.2.5.3 | 3332,69 | 2026-05-13 |
+| NFE-508239 | G&S MARINGA | 7.1.2 | 1.6.3.5 | 3289 | 2025-09-05 |
+| NFSE-795 | G&S MARINGA | 7.1.2 | 1.2.4.3 | 3180 | 2025-08-15 |
+| NFE-19597 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 3074 | 2025-07-27 |
+| NFE-19597 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 3074 | 2025-08-26 |
+| NFE-19597 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 3074 | 2025-09-25 |
+| 18271-1/55 | G3S PRUDENTE | 7.1.2 | 1.2.5.4 | 3000 | 2025-05-15 |
+| NF263141-86300 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2950 | 2026-02-08 |
+| NF263141-86300 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2950 | 2026-03-10 |
+| NF263141-86300 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2950 | 2026-04-09 |
+| NF263141-86300 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2950 | 2026-05-09 |
+| NFE-60755 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 2872 | 2025-07-15 |
+| AL27025 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2870 | 2025-12-05 |
+| AL27025 | G3S PRUDENTE | 7.1.2 | 1.6.3.4 | 2870 | 2025-12-05 |
+| NFE-152023 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2794,27 | 2025-08-25 |
+| NFSE-11844 | G&S PRUDENTE | 7.1.2 | 1.2.3.4 | 2731,66 | 2025-06-16 |
+| NFSE-14467 | G&S PRUDENTE | 7.1.2 | 1.2.2.4 | 2731,66 | 2025-07-15 |
+| NFSE-14467 | G&S PRUDENTE | 7.1.2 | 1.2.3.4 | 2731,66 | 2025-07-15 |
+| NFSE-14467 | G&S PRUDENTE | 7.1.2 | 1.2.4.4 | 2731,66 | 2025-07-15 |
+| NFSE-14467 | G&S PRUDENTE | 7.1.2 | 1.2.5.4 | 2731,66 | 2025-07-15 |
+| NFSE-14467 | G&S PRUDENTE | 7.1.2 | 1.2.7.4 | 2731,66 | 2025-07-15 |
+| NFE-893941 | G&S PRUDENTE | 7.1.2 | 1.6.3.2 | 2700 | 2026-02-28 |
+| NFE-864256 | G&S PRUDENTE | 7.1.2 | 1.6.3.4 | 2600 | 2025-09-04 |
+| 226871-81855 | G3S PRUDENTE | 7.1.2 | 1.2.5.2 | 2400 | 2025-06-07 |
+| NFE-233882 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2381 | 2025-12-05 |
+| NFE-233882 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2381 | 2026-01-04 |
+| NFE-233882 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2381 | 2026-02-03 |
+| NFE-233882 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2381 | 2026-03-05 |
+| NFE-233882 | G3S PRUDENTE | 7.1.2 | 1.2.5.3 | 2381 | 2026-04-04 |
+| NFSE-2050 | G&S PRUDENTE | 7.1.2 | 1.6.3.4 | 2373,8 | 2025-12-15 |
+| NFE-269368 | G&S PRUDENTE | 7.1.2 | 1.6.3.4 | 2221,64 | 2025-12-25 |
+| NFE-1446 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2209,2 | 2025-08-01 |
+| NFE-3607 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2170 | 2025-08-25 |
+| NFSE-17960 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2155 | 2025-07-27 |
+| NFSE-17960 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2155 | 2025-08-26 |
+| NFSE-17960 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2155 | 2025-09-25 |
+| NFSE-8 | G&S MARINGA | 7.1.2 | 1.6.3.4 | 2120 | 2026-02-05 |
+| NFSE-705 | G&S MARINGA | 7.1.2 | 1.2.7.4 | 2100 | 2025-08-25 |
+| NFSE-794 | G&S MARINGA | 7.1.2 | 1.2.4.3 | 2020 | 2025-08-15 |
+| NFSE-303 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2000 | 2025-08-05 |
+| NFSE-305 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2000 | 2025-08-05 |
+| NFSE-306 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2000 | 2025-08-05 |
+| NFSE-307 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2000 | 2025-08-05 |
+| NFSE-304 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 2000 | 2025-08-05 |
+| CF001529052025 | G3S CAMPO GRANDE | 7.1.2 | 1.2.7.3 | 1982,75 | 2025-05-29 |
+| CF001529052025 | G3S CAMPO GRANDE | 7.1.2 | 1.2.7.4 | 1982,75 | 2025-05-29 |
+| NFSE-2030 | G&S PRUDENTE | 7.1.2 | 1.2.5.3 | 1948,2 | 2025-08-15 |
+| NFSE-14 | G&S PRUDENTE | 7.1.2 | 1.6.3.3 | 1850 | 2025-09-05 |
+| NFE-87290 | G&S PRUDENTE | 7.1.2 | 1.6.3.2 | 1802 | 2025-07-15 |
+
+> *(... e mais 267 achados nao exibidos)*
+
+---
+
+### 🟡 R2a — Despesa em CC Receita
+
+**Severidade:** MEDIA  
+**Total de achados:** 119  
+**Evidencia:** Conta de despesa (6-9.x) lancada em CC de Receita (2.x)  
+**Correcao sugerida:** Trocar CC para o equivalente de Despesa (1.x mesmo nivel)  
+
+| documento | filial | codcdc | codcen | valor_bruto | vencimento |
+| --- | --- | --- | --- | --- | --- |
+| 00000092 | G3S PRUDENTE | 6.1.1 | 2.2.5.2 | 22396 | 2025-05-06 |
+| DEV-ADT_17 | G3S MARINGA | 6.3.2 | 2.2.4.2 | 19800 | 2025-11-27 |
+| NFSE-1077 | G3S CAMPO GRANDE | 7.5.17 | 2.2.7.1 | 18864,81 | 2025-05-15 |
+| DEV-ADT_8 | G3S CIDADE ALTA | 6.3.2 | 2.2.4.2 | 13590 | 2025-10-14 |
+| DEV-ADT_9 | G3S CIDADE ALTA | 6.3.2 | 2.2.4.2 | 13590 | 2025-10-14 |
+| CTE-5 | G3S MARINGA | 7.1.6 | 2.2.4.2 | 7654,4 | 2025-05-25 |
+| CTE-7 | G3S MARINGA | 7.1.6 | 2.2.4.2 | 7249,6 | 2025-05-25 |
+| CF742930062025 | G3S CAMPO GRANDE | 7.1.1 | 2.7.1.2 | 7078,43 | 2025-06-30 |
+| CF742930062025 | G3S CAMPO GRANDE | 7.1.2 | 2.7.1.2 | 7078,43 | 2025-06-30 |
+| CF742930062025 | G3S CAMPO GRANDE | 7.1.4 | 2.7.1.2 | 7078,43 | 2025-06-30 |
+| CF742930062025 | G3S CAMPO GRANDE | 7.1.5 | 2.7.1.2 | 7078,43 | 2025-06-30 |
+| CF742930062025 | G3S CAMPO GRANDE | 7.1.8 | 2.7.1.2 | 7078,43 | 2025-06-30 |
+| CTE-4 | G3S MARINGA | 7.1.6 | 2.2.4.2 | 6752,8 | 2025-05-25 |
+| CTE-6 | G3S MARINGA | 7.1.6 | 2.2.4.2 | 6610,2 | 2025-05-25 |
+| A11711 | G&S BARUERI | 7.3.19 | 2.7.1.4 | 6536,51 | 2026-01-09 |
+| A11488 | G&S BARUERI | 7.3.1 | 2.7.1.3 | 4639,44 | 2025-09-29 |
+| NFSE-389 | G3S CAMPO GRANDE | 7.1.16 | 2.2.7.1 | 3620 | 2025-07-05 |
+| NFSE-389 | G3S CAMPO GRANDE | 7.1.16 | 2.2.7.1 | 3620 | 2025-07-25 |
+| A11288 | G&S BARUERI | 7.3.1 | 2.7.1.2 | 3505,88 | 2025-06-06 |
+| 22654SABESP | G&S PRUDENTE | 7.5.1 | 2.4.1.2 | 3194,23 | 2025-07-05 |
+| A11658 | G&S BARUERI | 7.3.19 | 2.7.1.8 | 3174,36 | 2025-12-12 |
+| A11712 | G&S BARUERI | 7.3.5 | 2.7.1.2 | 2952 | 2026-01-09 |
+| NFE-3 | RSE | 7.1.3 | 2.5.1.2 | 2500,44 | 2025-11-12 |
+| NFE-79 | RSE | 7.1.3 | 2.6.2 | 2500,44 | 2025-12-07 |
+| NFSE-58880 | G3S CAMPO GRANDE | 7.5.18 | 2.2.7.1 | 2156,65 | 2025-06-25 |
+| X22374 | G3S PRUDENTE | 7.3.7 | 2.7.1.2 | 2000 | 2025-05-06 |
+| X22666 | G3S PRUDENTE | 7.3.7 | 2.7.1.2 | 2000 | 2025-06-06 |
+| A11372 | G&S BARUERI | 7.5.31 | 2.7.1.2 | 2000 | 2025-07-14 |
+| 23960 | G&S PRUDENTE | 7.3.7 | 2.7.1.2 | 2000 | 2025-08-05 |
+| 24630 | G&S PRUDENTE | 7.3.7 | 2.7.1.2 | 2000 | 2025-09-05 |
+| NFE-1953 | G3S PRUDENTE | 7.2.6 | 2.2.8.1 | 1834,2 | 2026-03-16 |
+| NFSE-17 | G3S CAMPO GRANDE | 7.1.16 | 2.2.7.1 | 1500 | 2025-06-13 |
+| NFSE-58461 | G3S MARINGA | 7.5.18 | 2.2.4.1 | 1447,41 | 2025-05-26 |
+| NFSE-57714 | G3S LONDRINA | 7.5.18 | 2.2.3.1 | 1447,41 | 2025-05-26 |
+| NFSE-60204 | G3S CAMPO GRANDE | 7.5.18 | 2.2.7.1 | 1447,41 | 2025-07-25 |
+| A11838 | G3S CAMPO GRANDE | 7.3.12 | 2.1.1.1 | 1442,69 | 2026-03-06 |
+| A11837 | G&S PRUDENTE | 7.3.12 | 2.1.1.1 | 1442,69 | 2026-03-06 |
+| A11840 | RSE | 7.3.12 | 2.1.1.1 | 1442,69 | 2026-03-06 |
+| A11839 | GXS MARINGA | 7.3.12 | 2.1.1.1 | 1442,69 | 2026-03-06 |
+| A11768 | G&S PRUDENTE | 7.3.12 | 2.1.1.1 | 1442,69 | 2026-02-06 |
+| A11770 | RSE | 7.3.12 | 2.1.1.1 | 1442,69 | 2026-02-06 |
+| A11769 | GXS MARINGA | 7.3.12 | 2.1.1.1 | 1442,69 | 2026-02-06 |
+| 28942 | G3S PRUDENTE | 7.3.7 | 2.7.1.2 | 1300 | 2026-03-05 |
+| 27544 | G3S PRUDENTE | 7.3.7 | 2.7.1.2 | 1300 | 2026-01-06 |
+| 26994 | G3S PRUDENTE | 7.3.7 | 2.7.1.2 | 1300 | 2025-12-05 |
+| 28274 | G3S PRUDENTE | 7.3.7 | 2.7.1.2 | 1300 | 2026-02-05 |
+| 00008470 | G&S PRUDENTE | 7.3.14 | 2.6.2 | 1279,9 | 2026-02-26 |
+| NFE-1867 | G3S CAMPO GRANDE | 7.2.4 | 2.2.7.2 | 1275 | 2025-06-05 |
+| NFE-34585 | G3S CAMPO GRANDE | 7.3.8 | 2.2.7.1 | 1150 | 2025-07-25 |
+| NFSE-923 | G3S LONDRINA | 7.5.28 | 2.2.3.1 | 1074,08 | 2025-06-05 |
+| DEV-ADT_21 | G3S MARINGA | 6.3.2 | 2.2.4.2 | 956 | 2025-11-28 |
+| NFE-66177 | G3S PRUDENTE | 7.6.3 | 2.2.5.3 | 907,9 | 2025-08-15 |
+| NFE-35937 | G3S LONDRINA | 7.5.21 | 2.2.3.1 | 877 | 2025-06-15 |
+| NFSE-39114 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.1 | 726 | 2025-06-25 |
+| NFSE-60205 | G3S CAMPO GRANDE | 7.5.18 | 2.2.7.1 | 709,24 | 2025-07-25 |
+| NFE-88551 | G3S LONDRINA | 7.5.27 | 2.2.3.1 | 666 | 2025-06-15 |
+| NFE-5570 | G3S CAMPO GRANDE | 7.5.27 | 2.2.7.1 | 649 | 2025-06-25 |
+| NFE-68420 | G3S CAMPO GRANDE | 7.5.27 | 2.2.7.1 | 568,58 | 2026-02-04 |
+| DEV.BOLC -276909 | G3S CAMPO GRANDE | 6.4.1 | 2.2.7.2 | 563,5 | 2025-07-16 |
+| DEV.BOLC -283338 | G3S PRUDENTE | 6.4.1 | 2.2.5.2 | 522,5 | 2025-10-02 |
+| NFSE-39465 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.2 | 507 | 2025-08-15 |
+| NFSE-16194 | G3S CAMPO GRANDE | 7.3.4 | 2.2.7.1 | 490,5 | 2025-06-20 |
+| 22657 | G3S CAMPO GRANDE | 7.5.28 | 2.2.7.1 | 480 | 2025-06-05 |
+| AL 22545 | G3S CAMPO GRANDE | 7.5.28 | 2.2.7.1 | 480 | 2025-05-25 |
+| AL 23721 | G3S CAMPO GRANDE | 7.5.28 | 2.2.7.1 | 480 | 2025-07-25 |
+| 00001327 | G3S CAMPO GRANDE | 7.5.28 | 2.2.7.1 | 480 | 2025-06-15 |
+| AL 23236 | G3S CAMPO GRANDE | 7.5.28 | 2.2.7.1 | 480 | 2025-07-05 |
+| NFE-209693 | G3S LONDRINA | 7.5.21 | 2.2.3.1 | 456 | 2025-05-28 |
+| NFE-11405 | G3S MARINGA | 7.7.2 | 2.2.4.1 | 449,6 | 2025-05-25 |
+| NFSE-39171 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.2 | 390 | 2025-07-25 |
+| NFSE-24082 | G3S CAMPO GRANDE | 7.5.16 | 2.2.7.1 | 367 | 2025-06-15 |
+| NFSE-24309 | G3S CAMPO GRANDE | 7.5.16 | 2.2.7.1 | 367 | 2025-07-15 |
+| NFE-193 | RSE | 7.6.5 | 2.5.1.2 | 350 | 2026-01-10 |
+| NFE-4 | RSE | 7.6.5 | 2.5.1.2 | 350 | 2025-11-20 |
+| NFE-80 | RSE | 7.6.5 | 2.5.1.2 | 350 | 2025-12-07 |
+| NFSE-39486 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.2 | 342 | 2025-08-15 |
+| NFE-18102 | G3S LONDRINA | 7.3.5 | 2.2.3.1 | 340 | 2025-06-05 |
+| CF028823062025 | G3S CAMPO GRANDE | 7.1.5 | 2.7.1.4 | 326,96 | 2025-06-23 |
+| CF028823062025 | G3S CAMPO GRANDE | 7.1.8 | 2.7.1.4 | 326,96 | 2025-06-23 |
+| NFE-40656 | G3S LONDRINA | 7.5.4 | 2.2.3.1 | 325 | 2025-06-05 |
+| AL-22296 | G3S CAMPO GRANDE | 7.5.28 | 2.2.7.1 | 320 | 2025-05-05 |
+| 23518 | G3S CAMPO GRANDE | 7.5.28 | 2.2.7.1 | 320 | 2025-07-15 |
+| 00005505 | G3S CAMPO GRANDE | 7.1.1 | 2.6.1 | 315 | 2025-10-23 |
+| A11848 | G&S BARUERI | 7.3.4 | 2.7.1.8 | 280 | 2026-03-12 |
+| NFE-204464 | G3S CAMPO GRANDE | 7.5.5 | 2.2.7.1 | 238,08 | 2025-07-05 |
+| NFE-36055 | G3S CAMPO GRANDE | 7.5.27 | 2.2.7.1 | 235 | 2025-07-25 |
+| NFE-1578 | G3S CAMPO GRANDE | 7.5.4 | 2.2.7.1 | 230 | 2025-05-25 |
+| NFSE-2228 | G3S CAMPO GRANDE | 7.5.5 | 2.2.7.1 | 220 | 2025-07-15 |
+| NFSE-135990 | G3S MARINGA | 7.1.8 | 2.2.4.2 | 219 | 2025-07-30 |
+| 22661 | G&S PRUDENTE | 7.5.2 | 2.4.1.2 | 198,65 | 2025-06-09 |
+| ISSQN072025G3S08 | G3S LONDRINA | 7.4.5 | 2.2.3.1 | 191,95 | 2025-08-15 |
+| A11866 | G&S BARUERI | 7.1.8 | 2.7.1.3 | 188 | 2026-03-19 |
+| NFE-98 | G3S CAMPO GRANDE | 7.5.27 | 2.2.7.1 | 176,47 | 2025-07-05 |
+| NFSE-22161 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.2 | 174 | 2025-07-02 |
+| NFSE-22160 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.2 | 174 | 2025-07-02 |
+| DEV.BOLC -272442 | G3S PRUDENTE | 6.4.1 | 2.2.5.2 | 172,5 | 2025-05-13 |
+| NFSE-39308 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.2 | 171 | 2025-07-25 |
+| 00000022 | G3S LONDRINA | 6.1.1 | 2.2.3.2 | 160 | 2025-05-02 |
+| NFSE-18996 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.2 | 160 | 2025-07-17 |
+| NFSE-18995 | G3S CAMPO GRANDE | 7.1.8 | 2.2.7.2 | 160 | 2025-07-17 |
+
+> *(... e mais 19 achados nao exibidos)*
+
+---
+
+### 🟡 R6 — Pesagem em 4.1.1
+
+**Severidade:** MEDIA  
+**Total de achados:** 401  
+**Evidencia:** Nao-BOLV em 4.1.1 com valor < R$5.000 (possivel pesagem avulsa)  
+**Correcao sugerida:** Confirmar se e pesagem; se sim, trocar conta 4.1.1 -> 5.4.3 (PESAGENS AVULSAS) em Lote  
+
+| documento | filial | codcdc | codcen | valor_bruto | vencimento |
+| --- | --- | --- | --- | --- | --- |
+| B-64034 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 4999,5 | 2023-05-17 |
+| B-64463 | G3S DOURADOS | 4.1.1 | 2.2.2.2 | 4945,51 | 2023-06-02 |
+| B-73050 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 4890,6 | 2024-08-16 |
+| B-73050 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 4890,6 | 2024-08-16 |
+| ADT-17112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 4819 | 2025-11-17 |
+| B-73225 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 4793,39 | 2024-08-16 |
+| B-73111 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 4778,58 | 2024-08-16 |
+| B-78985 | G3S MARINGA | 4.1.1 | 2.2.4.2 | 4720,8 | 2025-01-28 |
+| NFE-32388 | G3S MARINGA | 4.1.1 | 2.2.4.2 | 4606 | 2025-06-27 |
+| 8832 | RSE | 4.1.1 | 1.6.2 | 4530 | 2025-05-06 |
+| B-79224 | G3S MARINGA | 4.1.1 | 2.2.4.2 | 4328,8 | 2025-02-06 |
+| B-78104 | G3S CAMPO GRANDE | 4.1.1 | 2.2.7.2 | 4050 | 2024-12-10 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3896 | 2025-11-14 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-18 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-19 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-19 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-19 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-19 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-19 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-19 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-19 |
+| B-41024 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3892 | 2020-08-19 |
+| B-65430 | G3S MARINGA | 4.1.1 | 2.2.4.2 | 3818,86 | 2023-07-21 |
+| ADT17112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3715 | 2025-11-17 |
+| B-70194 | G3S DOURADOS | 4.1.1 | 2.2.2.2 | 3607,27 | 2024-02-02 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3549 | 2025-11-14 |
+| B-79412 | G3S MARINGA | 4.1.1 | 2.2.4.2 | 3488,8 | 2025-02-14 |
+| ADT-21112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3478 | 2025-11-21 |
+| ADT-17112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3445 | 2025-11-17 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3340 | 2025-11-14 |
+| ADT-18112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3316 | 2025-11-18 |
+| IPVA2026 FBV4H62 | RSE | 4.1.1 | 2.6.3 | 3260,92 | 2026-01-14 |
+| 60429-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3252 | 2025-05-29 |
+| 60464-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3252 | 2025-05-30 |
+| 60311-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3250 | 2025-04-29 |
+| 60394-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3250 | 2025-05-03 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3248 | 2025-11-14 |
+| 60387-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3210 | 2025-05-03 |
+| 60304-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3210 | 2025-04-29 |
+| 60457-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3210 | 2025-05-30 |
+| 60422-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3210 | 2025-05-29 |
+| 60399-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3201 | 2025-05-03 |
+| 60316-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3201 | 2025-04-29 |
+| 60434-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3200 | 2025-05-29 |
+| 60354-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3200 | 2025-04-30 |
+| 60469-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3200 | 2025-05-30 |
+| 60345-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3190 | 2025-04-30 |
+| 60310-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3185 | 2025-04-29 |
+| 60344-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3185 | 2025-04-30 |
+| 60463-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3185 | 2025-05-30 |
+| 60352-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3185 | 2025-04-30 |
+| 60428-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3185 | 2025-05-29 |
+| 60393-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3185 | 2025-05-03 |
+| ADT- 27112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3161 | 2025-11-27 |
+| B-64108 | G3S DOURADOS | 4.1.1 | 2.2.2.2 | 3141,68 | 2023-05-19 |
+| ADT-17112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3135 | 2025-11-17 |
+| 60456-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3118 | 2025-05-30 |
+| 60317-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-04-29 |
+| 60355-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-04-30 |
+| 60395-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-05-03 |
+| 60400-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-05-03 |
+| 60386-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-05-03 |
+| 60421-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-05-29 |
+| 60470-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-05-30 |
+| 60455-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-05-30 |
+| 60343-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-04-30 |
+| 60312-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3112 | 2025-04-29 |
+| 60465-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3110 | 2025-05-30 |
+| 60430-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3110 | 2025-05-29 |
+| 60361-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3104 | 2025-05-30 |
+| 60417-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3104 | 2025-05-29 |
+| 60321-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3104 | 2025-04-29 |
+| ADT-14112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3094 | 2025-11-14 |
+| B-41166 | GXS MARINGA | 4.1.1 | 2.2.5.2 | 3091,2 | 2025-10-06 |
+| B-41166 | GXS MARINGA | 4.1.1 | 2.2.5.2 | 3091,2 | 2025-10-06 |
+| B-41166 | GXS MARINGA | 4.1.1 | 2.2.5.2 | 3091,2 | 2025-10-06 |
+| B-41166 | GXS MARINGA | 4.1.1 | 2.2.5.2 | 3091,2 | 2025-10-06 |
+| B-41166 | GXS MARINGA | 4.1.1 | 2.2.5.2 | 3091,2 | 2025-10-06 |
+| B-77884 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 3029,6 | 2024-11-27 |
+| 60431-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3010 | 2025-05-29 |
+| 60466-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3010 | 2025-05-30 |
+| ADT-26112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3006 | 2025-11-26 |
+| 60313-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3006 | 2025-04-29 |
+| 60396-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3006 | 2025-05-03 |
+| 60356-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3006 | 2025-05-30 |
+| 60404-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3000 | 2025-05-03 |
+| 60320-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3000 | 2025-04-29 |
+| 60360-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 3000 | 2025-05-30 |
+| B-77475 | G3S LONDRINA | 4.1.1 | 2.2.3.2 | 2984,8 | 2024-11-12 |
+| B-79561 | G3S MARINGA | 4.1.1 | 2.2.4.2 | 2976,4 | 2025-02-21 |
+| 60363-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2964 | 2025-05-30 |
+| 60419-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2964 | 2025-05-29 |
+| 60323-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2964 | 2025-04-29 |
+| 60424-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2963 | 2025-05-29 |
+| 60459-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2963 | 2025-05-30 |
+| 60306-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2963 | 2025-04-29 |
+| 60389-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2963 | 2025-05-03 |
+| 60347-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2963 | 2025-04-30 |
+| 60307-1/55-M | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2942 | 2025-04-29 |
+| ADT28112025 | G3S PRUDENTE | 4.1.1 | 2.2.5.2 | 2941 | 2025-11-28 |
+
+> *(... e mais 301 achados nao exibidos)*
+
+---
+
+### 🟢 R8 — Locacao em Seletiva
+
+**Severidade:** BAIXA  
+**Total de achados:** 82  
+**Evidencia:** Conta 5.6.1/7.1.3 em CC da Seletiva (sem contrato de locacao esperado)  
+**Correcao sugerida:** Verificar se ha contrato formal; se nao, reclassificar para CC correto da Ekipa (1.6.x/1.7.x)  
+
+| documento | filial | codcdc | codcen | valor_bruto | vencimento |
+| --- | --- | --- | --- | --- | --- |
+| FAT000008 | RSE | 5.6.1 | 2.2.5.2 | 211509,99 | 2024-12-01 |
+| FATLOC0018 | RSE | 5.6.1 | 2.2.5.2 | 210429,99 | 2024-12-31 |
+| FATLOC0017 | RSE | 5.6.1 | 2.2.5.2 | 210426,84 | 2024-12-31 |
+| FAT000010 | RSE | 5.6.1 | 2.2.5.2 | 208014,99 | 2024-12-31 |
+| FATLOC0016 | RSE | 5.6.1 | 2.2.5.2 | 195579,99 | 2024-12-31 |
+| FAT000011 | RSE | 5.6.1 | 2.2.5.2 | 195104,99 | 2024-12-31 |
+| FAT000013 | RSE | 5.6.1 | 2.2.5.2 | 190954,99 | 2024-12-31 |
+| FAT 5667/257 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.6.4 | 156233,33 | 2025-07-15 |
+| FAT 5715/264 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.6.3 | 83333,33 | 2025-07-15 |
+| FAT 5727/266 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.6.1 | 41666,67 | 2025-07-15 |
+| FAT 5739/267 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.6.2 | 38833,33 | 2025-07-15 |
+| FAT 5679/259 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.5.1 | 35400 | 2025-07-15 |
+| FAT 5691/261 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.5.2 | 35400 | 2025-07-15 |
+| FAT 5703/262 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.5.3 | 35400 | 2025-07-15 |
+| RECIBO 60 | G3S PRUDENTE | 7.1.3 | 1.2.1.8.1 | 14125 | 2025-12-15 |
+| RECIBO 60 | G3S PRUDENTE | 7.1.3 | 1.2.5.3 | 14125 | 2025-12-15 |
+| FAT 5811/276 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.6.5 | 10333,33 | 2025-07-15 |
+| NFSE-1991 | G3S PRUDENTE | 7.1.3 | 1.2.5.3 | 5678,19 | 2025-07-10 |
+| CF863330042025 | G3S CAMPO GRANDE | 7.1.3 | 1.2.5.3 | 4603,03 | 2025-04-30 |
+| FAT 5775/271 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.5.5 | 4333,33 | 2025-07-15 |
+| FAT 5787/273 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.5.6 | 4333,33 | 2025-07-15 |
+| FAT 5799/274 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.5.7 | 4333,33 | 2025-07-15 |
+| FAT 5823/279 06/25 | G3S DOURADOS | 7.1.3 | 1.2.2.5.8 | 4333,33 | 2025-07-15 |
+| NFSE-149 | G3S MARINGA | 7.1.3 | 1.2.4.2 | 3300 | 2025-10-15 |
+| NFSE-2040 | G3S PRUDENTE | 7.1.3 | 1.2.5.2 | 2908,75 | 2026-02-05 |
+| CF741130082025 | G3S CAMPO GRANDE | 7.1.3 | 1.2.4.1 | 2458,61 | 2025-08-30 |
+| CF741130082025 | G3S CAMPO GRANDE | 7.1.3 | 1.2.4.3 | 2458,61 | 2025-08-30 |
+| CF741130082025 | G3S CAMPO GRANDE | 7.1.3 | 1.2.8.1 | 2458,61 | 2025-08-30 |
+| CF741130082025 | G3S CAMPO GRANDE | 7.1.3 | 1.2.8.3 | 2458,61 | 2025-08-30 |
+| FAT310 | G3S MARINGA | 7.1.3 | 1.2.8.3 | 1650,74 | 2025-09-16 |
+| NFSE-215 | G3S MARINGA | 7.1.3 | 1.2.4.3 | 1600 | 2026-02-23 |
+| NFSE-130 | G3S MARINGA | 7.1.3 | 1.2.4.6 | 1440 | 2025-07-18 |
+| NFSE-870 | G3S PRUDENTE | 7.1.3 | 1.2.5.5 | 1000 | 2026-01-15 |
+| NFSE-72 | G3S PRUDENTE | 7.1.3 | 1.2.5.7.6 | 850 | 2026-03-15 |
+| NFSE-5 | G&S MARINGA | 7.1.3 | 1.2.4.8.6 | 800 | 2026-01-15 |
+| 200099752 | G&S PRUDENTE | 7.1.3 | 1.2.2.4 | 682,92 | 2026-01-15 |
+| 200099752 | G&S PRUDENTE | 7.1.3 | 1.2.3.4 | 682,92 | 2026-01-15 |
+| 200099752 | G&S PRUDENTE | 7.1.3 | 1.2.4.4 | 682,92 | 2026-01-15 |
+| 200099752 | G&S PRUDENTE | 7.1.3 | 1.2.5.4 | 682,92 | 2026-01-15 |
+| 200099752 | G&S PRUDENTE | 7.1.3 | 1.2.7.4 | 682,92 | 2026-01-15 |
+| FAT LOC 200.088.337 | G&S PRUDENTE | 7.1.3 | 1.2.2.4 | 682,92 | 2025-08-15 |
+| 200090390 | G&S PRUDENTE | 7.1.3 | 1.2.2.4 | 682,92 | 2025-09-15 |
+| 200090390 | G&S PRUDENTE | 7.1.3 | 1.2.3.4 | 682,92 | 2025-09-15 |
+| 200090390 | G&S PRUDENTE | 7.1.3 | 1.2.4.4 | 682,92 | 2025-09-15 |
+| 200090390 | G&S PRUDENTE | 7.1.3 | 1.2.5.4 | 682,92 | 2025-09-15 |
+| 200090390 | G&S PRUDENTE | 7.1.3 | 1.2.7.4 | 682,92 | 2025-09-15 |
+| 200092742 | G&S PRUDENTE | 7.1.3 | 1.2.2.4 | 682,92 | 2025-10-15 |
+| 200092742 | G&S PRUDENTE | 7.1.3 | 1.2.3.4 | 682,92 | 2025-10-15 |
+| 200092742 | G&S PRUDENTE | 7.1.3 | 1.2.4.4 | 682,92 | 2025-10-15 |
+| 200092742 | G&S PRUDENTE | 7.1.3 | 1.2.5.4 | 682,92 | 2025-10-15 |
+| 200092742 | G&S PRUDENTE | 7.1.3 | 1.2.7.4 | 682,92 | 2025-10-15 |
+| 200094742 | G&S PRUDENTE | 7.1.3 | 1.2.2.4 | 682,92 | 2025-11-17 |
+| 200094742 | G&S PRUDENTE | 7.1.3 | 1.2.3.4 | 682,92 | 2025-11-17 |
+| 200094742 | G&S PRUDENTE | 7.1.3 | 1.2.4.4 | 682,92 | 2025-11-17 |
+| 200094742 | G&S PRUDENTE | 7.1.3 | 1.2.5.4 | 682,92 | 2025-11-17 |
+| 200094742 | G&S PRUDENTE | 7.1.3 | 1.2.7.4 | 682,92 | 2025-11-17 |
+| 200097125 | G&S PRUDENTE | 7.1.3 | 1.2.2.4 | 682,92 | 2025-12-15 |
+| 200097125 | G&S PRUDENTE | 7.1.3 | 1.2.3.4 | 682,92 | 2025-12-15 |
+| 200097125 | G&S PRUDENTE | 7.1.3 | 1.2.4.4 | 682,92 | 2025-12-15 |
+| 200097125 | G&S PRUDENTE | 7.1.3 | 1.2.5.4 | 682,92 | 2025-12-15 |
+| 200097125 | G&S PRUDENTE | 7.1.3 | 1.2.7.4 | 682,92 | 2025-12-15 |
+| OC 29090 | G&S PRUDENTE | 7.1.3 | 1.2.2.4 | 682,92 | 2026-03-16 |
+| 200.101.932 | G&S PRUDENTE | 7.1.3 | 1.2.2.4 | 682,92 | 2026-02-05 |
+| 200.101.932 | G&S PRUDENTE | 7.1.3 | 1.2.3.4 | 682,92 | 2026-02-05 |
+| 200.101.932 | G&S PRUDENTE | 7.1.3 | 1.2.4.4 | 682,92 | 2026-02-05 |
+| 200.101.932 | G&S PRUDENTE | 7.1.3 | 1.2.5.4 | 682,92 | 2026-02-05 |
+| 200.101.932 | G&S PRUDENTE | 7.1.3 | 1.2.7.4 | 682,92 | 2026-02-05 |
+| NFSE-17 | G3S MARINGA | 7.1.3 | 1.2.4.3 | 430 | 2025-10-01 |
+| RECIBO-01682 | G3S PRUDENTE | 7.1.3 | 1.2.5.3 | 390 | 2025-12-25 |
+| NFSE-9467 | G3S MARINGA | 7.1.3 | 1.2.8.3 | 270 | 2025-09-29 |
+| NFSE-9938 | G3S MARINGA | 7.1.3 | 1.2.4.3 | 270 | 2026-02-03 |
+| NF 63291 | G3S MARINGA | 7.1.3 | 1.2.8.1 | 250 | 2026-04-01 |
+| 00007438 | G3S MARINGA | 7.1.3 | 1.2.8.1 | 250 | 2026-02-01 |
+| 00008225 | G3S MARINGA | 7.1.3 | 1.2.8.1 | 250 | 2026-03-01 |
+| NFSE-92592 | G&S MARINGA | 7.1.3 | 1.2.8.3 | 212 | 2025-10-14 |
+| NFSE-52282 | G3S MARINGA | 7.1.3 | 1.2.8.3 | 165 | 2025-09-16 |
+| NFSE-9447 | G3S MARINGA | 7.1.3 | 1.2.8.3 | 130 | 2025-09-15 |
+| NFSE-9468 | G3S MARINGA | 7.1.3 | 1.2.8.3 | 130 | 2025-09-29 |
+| 00000464 | G3S DOURADOS | 7.1.3 | 1.2.2.3 | 130 | 2025-05-23 |
+| 27822 | G&S MARINGA | 7.1.3 | 1.2.4.1 | 128 | 2026-02-05 |
+| 00000465 | G3S DOURADOS | 7.1.3 | 1.2.2.1 | 80 | 2025-05-26 |
+| 00002518 | G3S PRUDENTE | 7.1.3 | 1.2.5.8 | 50 | 2025-07-25 |
+
+---
+
+### 🟢 R5 — Conta Legado
+
+**Severidade:** BAIXA  
+**Total de achados:** 1  
+**Evidencia:** Conta do grupo 1 (legado/migracao) usada em lancamento recente  
+**Correcao sugerida:** Substituir pela conta correta no Plano de Contas vigente; ex: 1.35.43 -> 5.4.8  
+
+| documento | filial | codcdc | codcen | valor_bruto | vencimento |
+| --- | --- | --- | --- | --- | --- |
+| DEVOL060126 | G3S CAMPO GRANDE | 1.35.43 | 1.2.7.1 | 770 | 2026-01-06 |
+
+---
+
+## Instrucoes Gerais de Correcao no SAGI
+
+- **Troca de Plano de Contas em Lote:** Menu financeiro > Troca de Conta > selecionar periodo e conta incorreta, escolher conta correta.
+- **Troca de CC em Lote:** Menu financeiro > Troca de CC > mesmo procedimento.
+- **Nunca excluir diretamente** — sempre estornar com novo lancamento correto.
+- **ADTs duplicados/triplicados:** escalar para o gestor antes de qualquer estorno.
+
+*Relatorio gerado automaticamente por `auditoria.py` em 26/03/2026.*

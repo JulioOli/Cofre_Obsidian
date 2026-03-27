@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiArrowRightLeft",
       "LiZoomToSelection",
       "LiLayoutTemplate",
       "LiPen",
-      "LiPaperclip",
-      "LiNotebook"
+      "LiPaperclip"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -36,5 +36,6 @@
   },
   "01-Anexos": "LiPaperclip",
   "03-Templates": "LiLayoutTemplate",
-  "00-Zettlelkasten": "LiNotebook"
+  "00-Zettlelkasten": "LiNotebook",
+  "02-Referencias": "LiArrowRightLeft"
 }

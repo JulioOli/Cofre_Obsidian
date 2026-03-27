@@ -1,6 +1,58 @@
 {
   "recentFiles": [
     {
+      "basename": "00 - Índice Controladoria",
+      "path": "00-Zettlelkasten/00 - Índice Controladoria.md"
+    },
+    {
+      "basename": "Auditoria 26-03",
+      "path": "00-Zettlelkasten/Auditoria 26-03.md"
+    },
+    {
+      "basename": "Centro de Custo",
+      "path": "02-Referencias/Centro de Custo.pdf"
+    },
+    {
+      "basename": "Plano de Contas",
+      "path": "02-Referencias/Plano de Contas.pdf"
+    },
+    {
+      "basename": "Departamentos",
+      "path": "00-Zettlelkasten/Departamentos.md"
+    },
+    {
+      "basename": "Divisões",
+      "path": "00-Zettlelkasten/Divisões.md"
+    },
+    {
+      "basename": "RELATORIO_BASE",
+      "path": "02-Referencias/RELATORIO_BASE.md"
+    },
+    {
+      "basename": "Analise Base Financeira",
+      "path": "00-Zettlelkasten/Analise Base Financeira.md"
+    },
+    {
+      "basename": "Filiais",
+      "path": "00-Zettlelkasten/Filiais.md"
+    },
+    {
+      "basename": "Tipos de Movimentação",
+      "path": "00-Zettlelkasten/Tipos de Movimentação.md"
+    },
+    {
+      "basename": "Estrutura Empresarial G3S",
+      "path": "00-Zettlelkasten/Estrutura Empresarial G3S.md"
+    },
+    {
+      "basename": "Guia SAGI",
+      "path": "00-Zettlelkasten/Guia SAGI.md"
+    },
+    {
+      "basename": "Relatorio Controladoria Financeira",
+      "path": "02-Referencias/Relatorio Controladoria Financeira.md"
+    },
+    {
       "basename": "Ultra-Aprendizado",
       "path": "00-Zettelkasten/Ultra-Aprendizado.md"
     },
@@ -147,58 +199,6 @@
     {
       "basename": "Trocando Duas variáveis",
       "path": "00-Zettlelkasten/Trocando Duas variáveis.md"
-    },
-    {
-      "basename": "kindred spirit",
-      "path": "00-Zettlelkasten/kindred spirit.md"
-    },
-    {
-      "basename": "na teoria não há diferença entre a teoria e a prática, mas na prática há.",
-      "path": "00-Zettlelkasten/na teoria não há diferença entre a teoria e a prática, mas na prática há..md"
-    },
-    {
-      "basename": "Aprendizado x Prática",
-      "path": "00-Zettlelkasten/Aprendizado x Prática.md"
-    },
-    {
-      "basename": "Convertendo um PDF pra texto pelo teminal",
-      "path": "00-Zettlelkasten/Convertendo um PDF pra texto pelo teminal.md"
-    },
-    {
-      "basename": "pra que eu uso SSH?",
-      "path": "00-Zettlelkasten/pra que eu uso SSH?.md"
-    },
-    {
-      "basename": "SH - Self-hosting (serviços web)",
-      "path": "00-Zettlelkasten/SH - Self-hosting (serviços web).md"
-    },
-    {
-      "basename": "Brave Wallet Recovery phrase",
-      "path": "00-Zettlelkasten/Brave Wallet Recovery phrase.md"
-    },
-    {
-      "basename": "acessando o servidor do oikawa via SSH",
-      "path": "00-Zettlelkasten/acessando o servidor do oikawa via SSH.md"
-    },
-    {
-      "basename": "Heap",
-      "path": "00-Zettlelkasten/Heap.md"
-    },
-    {
-      "basename": "alocação estática de memória",
-      "path": "00-Zettlelkasten/alocação estática de memória.md"
-    },
-    {
-      "basename": "alocação dinâmica de memória",
-      "path": "00-Zettlelkasten/alocação dinâmica de memória.md"
-    },
-    {
-      "basename": "malloc",
-      "path": "00-Zettlelkasten/malloc.md"
-    },
-    {
-      "basename": "pq Jorge Ben virou \"Jorge Ben Jor\"",
-      "path": "00-Zettlelkasten/pq Jorge Ben virou \"Jorge Ben Jor\".md"
     }
   ],
   "omittedPaths": [],

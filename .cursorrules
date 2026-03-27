@@ -15,6 +15,8 @@ DD/MM/YY - HH:MM (especifique a data e hora de criação ao criar um arquivo)
 
 ___
 
+```
+
 ### Formatação de Conteúdo
 - Use `### ~={Titulo}Título da Seção=~` para títulos principais
 - Use `#### ~={Titulo}Subtítulo=~` para subtítulos
@@ -26,7 +28,6 @@ ___
 ### Links e Referências
 - Use `[[nome do arquivo]]` para links internos
 - Use `[[nome do arquivo|texto personalizado]]` para links com texto customizado  
-- Mantenha sempre os links bidirecionais entre conceitos relacionados
 - Adicione seção de links relacionados no final de cada nota
 - Se um conceito "X" estiver sendo descrito ou explicado em uma nota por que ele "está dentro" ou "faz parte" de um conceito "Y", então "X" aponta para "Y" (existe uma referência à "Y" na nota "X")
 - Se um conceito "X" for um pré requisito necessário para o entendimento de um conceito "Y", então "Y" aponta para "X" (existe uma referência à "X" na nota "Y")
@@ -37,7 +38,7 @@ ___
 - Assume-se diretório `../01-Anexos/` para imagens
 - Use `![[../01-Anexos/nome-da-imagem.png]]` para inserir imagens
 - o diretório `00-Zettelkasten` é reservado para notas de conceitos fundamentais
-- o diretório `02-Referencias` é reservado para PDF's com conteúdo de aulas, Artigos, Bibliografias e arquivos de referência como um todo
+- o diretório `02-Referencias` é reservado para PDF's, Artigos, Bibliografias e arquivos de referência como um todo
 
 ## Comportamento do Agente de IA
 
@@ -49,12 +50,13 @@ Quando solicitado a analisar notas:
 4. Procure por inconsistências técnicas ou conflitos de informação
 5. Verifique completude de informações referenciadas
 6. Sempre analise e leve em consideração o conteúdo dos arquivos que estiverem na pasta "02-Referencias"
+7. O arquivo "02-Referencias/base.csv" deve ser consultado como o ODBC da Empresa para buscar dados.
 
 ### Correções e Edições
 Sempre mantenha:
 - Formatação original com símbolos ~={cor}=~ e ==texto==
 - Estrutura de frontmatter existente
-- Sistema de links bidirecionais
+- Sistema de links de notas relacionadas
 - Numeração de linhas quando presente
 - Tags existentes (adicione novas quando apropriado)
 
@@ -119,11 +121,288 @@ Ao expandir notas existentes:
 - Preserve referências e contexto existentes
 
 ### Trabalho com Diferentes Domínios Técnicos
-Este padrão pode ser aplicado a outras áreas além de redes:
-- Adapte tags conforme domínio (substitua 'prova' por contexto apropriado)
+- Adapte tags conforme domínio
 - Mantenha estrutura de links e referências cruzadas
 - Use formatação colorida para conceitos-chave do domínio
 - Preserve abordagem educacional e estruturada
 
 ## Objetivo Final
-Manter consistência, precisão técnica e facilitar aprendizado através de um sistema de notas interconectado, bem estruturado e tecnicamente preciso, seguindo princípios do método Zettelkasten adaptado para conteúdo técnico educacional.
+Manter consistência, precisão técnica e facilitar a análise e a visualização dos dados através de um sistema de notas interconectado, bem estruturado e tecnicamente preciso, seguindo princípios do método Zettelkasten adaptado para o contexto da empresa.
+
+---
+
+## Rotina de Atualização — Centro de Custo e Plano de Contas
+
+### Gatilho
+Esta rotina deve ser executada quando o usuário enviar uma mensagem indicando atualização dos arquivos fonte, como:
+- "os arquivos de centro de custo e plano de contas foram atualizados"
+- "o centro de custo foi atualizado, corrija as notas"
+- "atualizei os PDFs, confira as diferenças"
+- Ou qualquer variação que indique atualização dos arquivos em `02-Referencias/`
+
+### Arquivos Fonte
+| Arquivo | Caminho | Notas afetadas |
+|---|---|---|
+| `Centro de Custo.pdf` | `02-Referencias/Centro de Custo.pdf` | `Divisões`, `Filiais`, `Departamentos` |
+| `Plano de Contas.pdf` | `02-Referencias/Plano de Contas.pdf` | `Tipos de Movimentação` |
+
+### Passo a Passo da Rotina
+
+1. **Ler os arquivos atualizados**
+   - Leia `02-Referencias/Centro de Custo.pdf` integralmente
+   - Leia `02-Referencias/Plano de Contas.pdf` integralmente
+
+2. **Ler as notas existentes**
+   - Leia `00-Zettlelkasten/Divisões.md`
+   - Leia `00-Zettlelkasten/Filiais.md`
+   - Leia `00-Zettlelkasten/Departamentos.md`
+   - Leia `00-Zettlelkasten/Tipos de Movimentação.md`
+
+3. **Comparar e identificar diferenças**
+   Verifique especificamente:
+   - Novos centros de custo criados (novos códigos ou descrições)
+   - Centros de custo removidos ou renomeados
+   - Novos veículos ou máquinas adicionados à frota (nível 5 do CC)
+   - Ativos removidos, transferidos ou marcados como vendidos
+   - Novas filiais criadas ou filiais encerradas
+   - Novas contas no Plano de Contas ou contas removidas/renomeadas
+   - Mudança de natureza de alguma conta (D ↔ R)
+   - Novos contratos na Ekipa Serv. G&S ou mudanças nos existentes
+
+4. **Reportar as diferenças ao usuário**
+   Antes de editar qualquer nota, liste de forma clara:
+   - O que foi adicionado
+   - O que foi removido
+   - O que foi alterado
+   - Em qual(is) nota(s) cada mudança impacta
+
+5. **Aplicar as correções nas notas**
+   - Atualize somente os trechos afetados (tabelas, listas, seções)
+   - Mantenha o frontmatter, a data de criação original e a estrutura geral
+   - Atualize o campo `atualizado:` no frontmatter com a data atual
+   - Preserve todos os `[[wikilinks]]` e avisos (⚠️) existentes que continuarem válidos
+   - Remova avisos que deixarem de ser pertinentes após a atualização
+   - Atualizar o arquivo RELATORIO_BASE.md
+
+6. **Confirmar ao usuário**
+   Ao final, informe:
+   - Quais notas foram modificadas
+   - Um resumo das mudanças aplicadas em cada uma
+
+### Regras de Consistência Durante a Atualização
+- Um CC novo na divisão Seletiva deve aparecer em `Filiais` (frota) e em `Departamentos` (se for um novo departamento)
+- Um novo grupo de conta no Plano de Contas deve ser adicionado com sua natureza (D/R) em `Tipos de Movimentação`
+- Se uma filial ganhar veículos/máquinas analíticos, remover o aviso ⚠️ de "sem ativos cadastrados" em `Filiais` e atualizar o totalizador em `Departamentos`
+- Manter o padrão de formatação: tabelas Markdown, emojis por tipo de divisão, seções H2/H3 existentes
+
+---
+
+## Rotina de Auditoria de Lançamentos Incorretos
+
+### Objetivo
+Identificar na `base.csv` registros que estão classificados sob um Centro de Custo (CC) ou Plano de Contas (PC) **incorreto** — seja por erro do usuário no SAGI, seja por inconsistência com a lógica operacional da empresa ou com o histórico de lançamentos semelhantes.
+
+### Gatilho
+Execute esta rotina quando o usuário pedir análise da base com variações como:
+- "veja se tem lançamento errado na base"
+- "auditoria de lançamentos"
+- "os números não estão batendo"
+- "me mostre inconsistências de conta / CC"
+- Ou após qualquer comparação entre SAGI, BCBI e base.csv que revele discrepância
+
+### Arquivos necessários
+| Arquivo | Papel |
+|---|---|
+| `02-Referencias/base.csv` | Base de lançamentos financeiros (delimitador `;`, encoding UTF-8) |
+| `00-Zettlelkasten/Tipos de Movimentação.md` | Referência de contas válidas e sua natureza (D/R) |
+| `00-Zettlelkasten/Divisões.md` | Referência de divisões (1.x despesa / 2.x receita) |
+| `00-Zettlelkasten/Filiais.md` | Referência de filiais e ativos por filial |
+| `00-Zettlelkasten/Departamentos.md` | Referência de departamentos analíticos válidos |
+
+### Colunas relevantes da base.csv
+| Coluna | Descrição |
+|---|---|
+| `lancamento` | Data de emissão do documento (dd/mm/aaaa) |
+| `documento` | Código do documento (prefixo indica tipo: BOLV, ADT, DEV.BOLV, NFE, etc.) |
+| `filial` | Filial do lançamento |
+| `codcen` | Código do Centro de Custo (ex: `2.2.5.2`) |
+| `descen` | Descrição do CC (ex: `RECEITA / SELETIVA / PRESIDENTE PRUDENTE / COMERCIAL`) |
+| `codcdc` | Código da conta do Plano de Contas (ex: `4.1.1`) |
+| `descdc` | Descrição da conta |
+| `valor_bruto` | Valor do documento (string com vírgula decimal — parsear com `Replace(',','.')`) |
+| `valor_plano` | Valor conforme plano (pode diferir por rateio) |
+| `ite_pagrec_vencimento` | Data de vencimento (formato `yyyy-MM-dd`) |
+| `iterea_pagamento` | Data de pagamento efetivo (formato `yyyy-MM-dd`) |
+
+### Regras de detecção
+
+#### REGRA 1 — Tipo de documento incompatível com a conta
+Cada prefixo de documento tem uma conta esperada. Lançamentos fora do padrão são suspeitos de erro.
+
+| Prefixo do documento | Conta esperada | Conta incorreta (alerta) |
+|---|---|---|
+| `BOLV` (boleto de venda) | `4.1.1` VENDAS DE SUCATAS | Qualquer outra conta de receita ou despesa |
+| `ADT` (adiantamento) | `4.2.1` ADIANTAMENTO CLIENTE SUCATA | ❌ `4.1.1` VENDAS DE SUCATAS |
+| `DEV.BOLV` (devolução) | `4.3.1` DEVOLUÇÃO DE VENDA SUCATA | ❌ `4.1.1` VENDAS DE SUCATAS |
+| `NFE` (NF eletrônica avulsa) | Verificar caso a caso | Alerta se em conta de adiantamento |
+| `COMP` / `BOLC` (compras) | `6.1.1` COMPRAS DE SUCATAS | Alerta se em conta de receita (4.x / 5.x) |
+| `FRET` (frete) | `6.6.1` FRETES | Alerta se em conta que não seja 6.x ou 7.1.6 |
+
+**Script de detecção (Python):**
+```python
+# Detectar ADTs lançados como 4.1.1
+r1a = df[df['documento'].str.startswith('ADT') & (df['codcdc'] == '4.1.1')]
+
+# Detectar DEV.BOLV lançados fora de 4.3.x
+r1b = df[df['documento'].str.startswith('DEV.BOLV') & ~df['codcdc'].str.startswith('4.3')]
+
+# Detectar BOLVs em contas que não sejam 4.1.1
+r1c = df[df['documento'].str.startswith('BOLV') & (df['codcdc'] != '4.1.1')]
+```
+
+---
+
+#### REGRA 2 — Conta incompatível com o Centro de Custo (natureza D/R)
+A primeira posição do código CC indica a natureza:
+- `1.x` = CC de **Despesa** → espera contas da família 6.x, 7.x, 8.x, 9.x (natureza D)
+- `2.x` = CC de **Receita** → espera contas da família 4.x, 5.x (natureza R)
+
+Cruzamentos invertidos são erro de lançamento quase certo:
+
+```python
+# Conta de despesa (6.x, 7.x, 8.x, 9.x) em CC de receita (2.x)
+r2a = df[
+    df['codcen'].str.startswith('2.') &
+    df['codcdc'].str.match(r'^[6789]\.')
+]
+
+# Conta de receita (4.x, 5.x) em CC de despesa (1.x)
+r2b = df[
+    df['codcen'].str.startswith('1.') &
+    df['codcdc'].str.match(r'^[45]\.')
+]
+```
+
+---
+
+#### REGRA 3 — Registros duplicados (mesmo documento + filial + valor + data)
+Um lançamento é suspeito de duplicata se o mesmo documento aparece mais de uma vez com os mesmos campos-chave:
+
+```python
+chaves = ['documento', 'filial', 'valor_bruto', 'ite_pagrec_vencimento']
+r3 = df[df.duplicated(subset=chaves, keep=False)].sort_values(chaves)
+r3[['documento', 'filial', 'codcdc', 'codcen', 'valor_bruto', 'ite_pagrec_vencimento']]
+```
+
+> Exemplo real encontrado: `NFE-65058` (G3S Prudente, R$27.454,00) apareceu 2 vezes com datas idênticas.
+
+---
+
+#### REGRA 4 — Multi-lançamento suspeito de adiantamento (mesmo valor, mesma data, mesma filial)
+Quando 3+ ADTs têm exatamente o mesmo valor e a mesma data em uma filial, é provável que sejam o mesmo adiantamento lançado múltiplas vezes:
+
+```python
+adts = df[df['documento'].str.startswith('ADT')]
+grupos_chave = ['filial', 'valor_bruto', 'ite_pagrec_vencimento']
+for nome, grupo in adts.groupby(grupos_chave):
+    if len(grupo) > 1:
+        print(f"SUSPEITO DE DUPLICATA: {len(grupo)}x | filial={nome[0]} | valor={nome[1]} | venc={nome[2]}")
+        for _, row in grupo.iterrows():
+            print(f"  doc={row['documento']} | cc={row['codcen']} | conta={row['codcdc']}")
+```
+
+> Exemplo real encontrado: `ADT-23032026`, `ADT-20032026-1` e `ADT-23032026-2` todos com R$629.463,55 em Campo Grande no mesmo dia — possível triple-lançamento.
+
+---
+
+#### REGRA 5 — Conta inativa ou inexistente no Plano de Contas vigente
+Contas que existiam no sistema mas foram removidas ou renomeadas no PDF atual de Plano de Contas. Comparar `codcdc` dos lançamentos com a lista vigente em `Tipos de Movimentação.md`:
+
+```python
+from datetime import date, timedelta
+referencia = (date.today() - timedelta(days=90)).strftime('%Y-%m-%d')
+recentes = df[df['ite_pagrec_vencimento'] >= referencia]
+r5 = recentes[['codcdc', 'descdc']].drop_duplicates().sort_values('codcdc')
+# Comparar manualmente com a lista em Tipos de Movimentação.md
+```
+
+---
+
+#### REGRA 6 — Conta de pesagem (5.4.3) lançada como venda (4.1.1)
+Pesagens avulsas têm documento e valor característicos (geralmente pequenos, sem BOLV). Se aparecerem em 4.1.1, inflam o relatório de vendas:
+
+```python
+# Detectar pesagens potenciais em 4.1.1: valor pequeno, sem prefixo BOLV
+r6 = df[(df['codcdc'] == '4.1.1') & ~df['documento'].str.startswith('BOLV')].copy()
+r6['valor_num'] = r6['valor_bruto'].str.replace(',', '.').astype(float)
+r6.sort_values('valor_num')
+```
+
+---
+
+#### REGRA 7 — Conta de manutenção de veículo em CC de ativo não-veículo
+A conta `7.1.2 MANUTENÇÃO DE VEÍCULOS/MÁQUINAS` deve estar em CCs do nível 5 (ativos: placas de veículos ou códigos de máquinas como `1.2.5.6.XXX`). Se estiver em CC de departamento genérico (nível 4 como `1.2.5.2 COMERCIAL`), é provável erro:
+
+```python
+r7 = df[
+    (df['codcdc'] == '7.1.2') &
+    df['codcen'].str.match(r'.*\.[2345]$')
+]
+r7.groupby('codcen').size().reset_index(name='count').sort_values('count', ascending=False)
+```
+
+---
+
+#### REGRA 8 — Conta de locação de máquinas (5.6.1 ou 7.1.3) em filial sem contrato
+A conta `5.6.1 LOCAÇÃO DE MÁQUINAS E EQUIPAMENTOS` deve ocorrer somente nas filiais/CCs da G8S (`1.7.x`) ou em clientes siderúrgicos externos. Se aparecer em divisão Seletiva (`1.2.x` ou `2.2.x`), investigar:
+
+```python
+r8 = df[
+    df['codcdc'].isin(['5.6.1', '7.1.3']) &
+    (df['codcen'].str.startswith('1.2.') | df['codcen'].str.startswith('2.2.'))
+]
+```
+
+---
+
+### Passo a Passo da Auditoria
+
+1. **Carregar a base para análise** (com o ambiente virtual do cofre):
+   ```python
+   import shutil, os, pandas as pd
+
+   src = r'c:\Users\julio.santana\Documents\Projects\Cofre_Trabalho\02-Referencias\base.csv'
+   dst = os.path.join(os.environ['TEMP'], 'base_auditoria.csv')
+   shutil.copy2(src, dst)
+   df = pd.read_csv(dst, delimiter=';', encoding='utf-8', dtype=str)
+   ```
+
+2. **Definir o período de análise** (padrão: mês atual):
+   ```python
+   mes = '03/2026'  # ajuste conforme necessário
+   mes_num, ano = mes.split('/')
+   filtro = df[df['lancamento'].str.match(rf'^\d{{2}}/{mes_num}/{ano}')]
+   # ou por vencimento:
+   filtro = df[df['ite_pagrec_vencimento'].str.startswith(f'{ano}-{mes_num}')]
+   # use 'filtro' no lugar de 'df' nas regras abaixo para análise do período
+   ```
+
+3. **Executar as regras 1 a 8** sobre `filtro` (ou sobre `df` para auditoria histórica)
+
+4. **Consolidar os resultados** em uma tabela com colunas: `Regra | Documento | Filial | CC atual | Conta atual | Conta esperada | Valor | Evidência`
+
+5. **Apresentar ao usuário** classificado por severidade:
+   - 🔴 **Alta** — Duplicata confirmada ou ADT em 4.1.1 (impacto direto nos relatórios)
+   - 🟡 **Média** — Conta/CC incompatíveis (impacto na DRE e no CC analítico)
+   - 🟢 **Baixa** — Suspeita de erro por padrão incomum (requer confirmação do gestor)
+
+6. **Para cada achado, sugerir a correção no SAGI**:
+   - Identificar se pode ser corrigido via `Troca de Plano de Conta / CC em Lote`
+   - Informar o CC/conta correto baseado em `Tipos de Movimentação.md`, `Filiais.md` e `Departamentos.md`
+   - Indicar se o erro altera o saldo de alguma filial ou conta significativamente
+
+### Regras de Prioridade de Investigação
+- Lançamentos com `valor_bruto > 100.000` têm prioridade máxima em qualquer regra
+- Erros em contas `4.1.1`, `6.1.1` e `7.1.2` têm impacto direto na DRE e nos relatórios gerenciais
+- ADTs triplicados/duplicados devem sempre ser escalados para o gestor antes de qualquer estorno
+- Nunca sugerir exclusão direta — apenas reclassificação via Troca em Lote ou estorno com novo lançamento correto
