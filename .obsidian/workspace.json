@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "b12022e51dc6d026",
+        "id": "fb76942ea2e171d4",
         "type": "tabs",
         "children": [
           {
-            "id": "2bbe7f246fbf05b1",
+            "id": "e647a6a2ab380b15",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "280e7ee3bf8fb1a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "00-Zettlelkasten/00 - Índice Controladoria.md",
-                "mode": "source",
-                "source": false
+                "file": "02-Referencias/FATURA GEG.pdf"
               },
-              "icon": "lucide-file",
-              "title": "00 - Índice Controladoria"
+              "icon": "lucide-file-text",
+              "title": "FATURA GEG"
             }
           }
         ],
-        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -106,8 +93,7 @@
               "title": "Tag Folder"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -214,32 +200,38 @@
       "bases:Create new base": false
     }
   },
-  "active": "280e7ee3bf8fb1a7",
+  "active": "e647a6a2ab380b15",
   "lastOpenFiles": [
-    "04-Notebooks/auditoria_bcbi_exec.ipynb",
-    "README.md",
-    "04-Notebooks/auditoria_bcbi.ipynb",
-    "04-Notebooks/leitura_relatorio_entrada.ipynb",
-    "00-Zettlelkasten/Auditoria 26-03.md",
+    "02-Referencias/FATURA RSE.pdf",
+    "02-Referencias/FATURA GEG.pdf",
+    "00-Zettlelkasten/Untitled.md",
+    "00-Zettlelkasten/Analise Base Financeira.md",
+    "02-Referencias/Não confirmado 664041.crdownload",
+    "02-Referencias/Não confirmado 941773.crdownload",
+    "02-Referencias/574F0820",
+    "02-Referencias/Separando placas - CC.xlsx",
+    "02-Referencias/E7742420",
+    "02-Referencias/~$Separando placas - CC.xlsx",
+    "02-Referencias/E9932420",
+    "02-Referencias/D5832420",
+    "00-Zettlelkasten/Departamentos.md",
+    "00-Zettlelkasten/Tipos de Movimentação.md",
+    "00-Zettlelkasten/Divisões.md",
     "00-Zettlelkasten/00 - Índice Controladoria.md",
+    "00-Zettlelkasten/Estrutura Empresarial G3S.md",
+    "00-Zettlelkasten/Auditoria 26-03.md",
+    "02-Referencias/auditoria_032026_20260330.md",
+    "00-Zettlelkasten/Guia SAGI.md",
+    "00-Zettlelkasten/Filiais.md",
+    "02-Referencias/auditoria_032026_20260327.md",
+    "README.md",
     "02-Referencias/auditoria_alta_marco.md",
     "02-Referencias/auditoria_032026_20260326.md",
     "02-Referencias/auditoria_20260326.md",
-    "auditoria.py",
-    "00-Zettlelkasten/Departamentos.md",
-    "00-Zettlelkasten/Divisões.md",
-    "02-Referencias/Centro de Custo.pdf",
-    "02-Referencias/Plano de Contas.pdf",
     "02-Referencias/Relatorio Controladoria Financeira.md",
     "02-Referencias/RELATORIO_BASE.md",
-    "00-Zettlelkasten/Analise Base Financeira.md",
     "auditoria_09AM_250326.md",
-    "00-Zettlelkasten/Filiais.md",
-    "00-Zettlelkasten/Tipos de Movimentação.md",
-    "02-Referencias/4F891A00",
     "auditoria.md",
-    "00-Zettlelkasten/Estrutura Empresarial G3S.md",
-    "00-Zettlelkasten/Guia SAGI.md",
     "01-Anexos/sagi-anotacoes-01.png",
     "01-Anexos/sagi-anotacoes-04.png",
     "01-Anexos/sagi-anotacoes-03.png",
@@ -247,18 +239,11 @@
     "01-Anexos/sagi-menu-financeiro.png",
     "01-Anexos/sagi-troca-plano-contas.png",
     "01-Anexos/sagi-anotacoes-02.png",
-    "02-Referencias/53072900",
-    "02-Referencias/_temp_divisoes.ps1",
-    "02-Referencias/_temp_filiais.ps1",
-    "02-Referencias/base.csv",
     "00-Zettlelkasten/CC - Divisões.md",
     "00-Zettlelkasten/CC - Tipos de Movimentação.md",
     "00-Zettlelkasten/CC - Filiais.md",
     "00-Zettlelkasten/CC - Departamentos.md",
     "02-Referencias/Projects/RELATORIO_BASE.md",
-    "03-Controladoria/CC - Departamentos.md",
-    "03-Controladoria/CC - Filiais.md",
-    "03-Controladoria/CC - Divisões.md",
     "01-Anexos/Pasted image 20250801171046.png",
     "01-Anexos/Pasted image 20250909162354.png",
     "01-Anexos/Pasted image 20250831181838.png",

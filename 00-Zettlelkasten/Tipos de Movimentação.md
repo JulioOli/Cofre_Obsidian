@@ -5,13 +5,13 @@ tags:
   - plano-de-contas
   - tipos-movimentacao
   - G3S
-atualizado: 27/03/2026
+atualizado: 30/03/2026
 ---
 24/03/2026 - 09:22
 
 # ~={Titulo}Tipos de Movimentação — Plano de Contas G3S=~
 
-> **Fonte:** `Plano de Contas.pdf` — 27/03/2026 — 238 contas cadastradas
+> **Fonte:** `Plano de Contas.pdf` — 30/03/2026 — 238 contas cadastradas
 > **Natureza:** `D` = Débito (saída) · `R` = Crédito (entrada)
 
 ---

@@ -5,13 +5,13 @@ tags:
   - centro-de-custo
   - filiais
   - G3S
-atualizado: 27/03/2026
+atualizado: 30/03/2026
 ---
 24/03/2026 - 09:22
 
 # ~={Titulo}Filiais — Centro de Custo G3S=~
 
-> **Fonte:** `Centro de Custo.pdf` — 27/03/2026
+> **Fonte:** `Centro de Custo.pdf` — 30/03/2026
 > Filiais são o **3º nível** da hierarquia do CC: `TIPO.DIVISÃO.FILIAL`
 > Cada filial possui departamentos analíticos no nível seguinte.
 
@@ -265,6 +265,21 @@ Estrutura plana — frota consolidada sem separação por filial.
 | 1.6.3 / 2.6.3 | Veículos, Máquinas e Equipamentos (~50 ativos analíticos) |
 | 1.6.5 | Contêiner |
 | 1.6.6 | Contratos — Gerdau Jaraguá do Sul/SC |
+
+---
+
+## Ekipa Serv. G&S
+
+| Filial | CC Despesa | CC Receita | Estado |
+|---|---|---|---|
+| G&S Barueri | 1.7.3 | 2.7.3 | SP |
+| G&S Campo Grande | 1.7.4 | 2.7.4 | MS |
+| G&S Dourados | 1.7.5 | 2.7.5 | MS |
+| G&S Londrina | 1.7.6 | 2.7.6 | PR |
+| G&S Maringá | 1.7.7 | 2.7.7 | PR |
+| G&S Prudente | 1.7.8 | 2.7.8 | SP |
+
+> Estrutura contratual principal permanece em `1.7.1` / `2.7.1`, com contratos Arcelor, Gerdau e Tupy.
 
 ---
 

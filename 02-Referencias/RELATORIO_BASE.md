@@ -1,7 +1,7 @@
 # ~={Titulo}Relatório Descritivo — Base de Movimentação Financeira=~
 
 **Arquivo:** `base.csv`  
-**Gerado em:** 26/03/2026 *(base.csv atualizada em 27/03/2026 — recalcular estatísticas)*  
+**Gerado em:** 30/03/2026 *(base.csv atualizada em 30/03/2026 — recalcular estatísticas)*  
 **Ferramenta de análise:** Python + pandas (`.venv`)
 
 ---
@@ -233,4 +233,4 @@ base.csv (61.018 registros lógicos)
 
 ---
 
-*Relatório gerado em 26/03/2026. `base.csv` foi atualizada em 27/03/2026 — execute `analise_base.ipynb` para recalcular as estatísticas. Novos arquivos disponíveis: `SYG_MOV COMPRAS.csv` e `SYG_MOV VENDAS.csv`.*
+*Relatório revisado em 30/03/2026. `base.csv` foi atualizada em 30/03/2026 — execute `analise_base.ipynb` para recalcular as estatísticas. Novos arquivos disponíveis: `SYG_MOV COMPRAS.csv` e `SYG_MOV VENDAS.csv`.*

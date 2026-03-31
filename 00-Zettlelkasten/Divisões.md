@@ -5,13 +5,13 @@ tags:
   - centro-de-custo
   - divisoes
   - G3S
-atualizado: 27/03/2026
+atualizado: 30/03/2026
 ---
 24/03/2026 - 09:22
 
 # ~={Titulo}Divisões (Unidades de Negócio) — Centro de Custo G3S=~
 
-> **Fonte:** `Centro de Custo.pdf` — 27/03/2026
+> **Fonte:** `Centro de Custo.pdf` — 30/03/2026
 > O 1º dígito do código define o **tipo**: `1` = Despesa · `2` = Receita
 > O 2º nível define a **divisão/unidade de negócio**
 
@@ -136,6 +136,14 @@ Serviços de operação de pátio e locação em clientes siderúrgicos externos
 | Transmove — Prancha Salione | — | 1.7.1.10 | 2.7.1.10 |
 | Seletiva — Prensa Móvel | — | 1.7.1.11 | 2.7.1.11 |
 | G&G | — | — | 2.7.1.12 |
+
+**Filiais operacionais (nova estrutura na G&S):**
+- G&S Barueri (`1.7.3` / `2.7.3`)
+- G&S Campo Grande (`1.7.4` / `2.7.4`)
+- G&S Dourados (`1.7.5` / `2.7.5`)
+- G&S Londrina (`1.7.6` / `2.7.6`)
+- G&S Maringá (`1.7.7` / `2.7.7`)
+- G&S Prudente (`1.7.8` / `2.7.8`)
 
 ---
 

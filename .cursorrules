@@ -286,15 +286,39 @@ r2b = df[
 ---
 
 #### REGRA 3 — Registros duplicados (mesmo documento + filial + valor + data)
-Um lançamento é suspeito de duplicata se o mesmo documento aparece mais de uma vez com os mesmos campos-chave:
+Um lançamento é suspeito de duplicata se o mesmo documento aparece mais de uma vez com os mesmos campos-chave.
+Antes de classificar como erro, validar se é **rateio**:
+- Converter `valor_plano` e `valor_centro` para numérico (vírgula -> ponto)
+- Agrupar por `documento + filial + valor_bruto + data`
+- Se a soma de `valor_plano` **ou** a soma de `valor_centro` do grupo for aproximadamente igual ao `valor_bruto` (tolerância de centavos), tratar como **rateio esperado** e não como duplicata
+- Só manter como duplicata os grupos que **não fecharem** essa validação
 
 ```python
 chaves = ['documento', 'filial', 'valor_bruto', 'ite_pagrec_vencimento']
-r3 = df[df.duplicated(subset=chaves, keep=False)].sort_values(chaves)
-r3[['documento', 'filial', 'codcdc', 'codcen', 'valor_bruto', 'ite_pagrec_vencimento']]
+
+tmp = df.copy()
+tmp['valor_bruto_num'] = tmp['valor_bruto'].str.replace(',', '.', regex=False).astype(float)
+tmp['valor_plano_num'] = tmp['valor_plano'].str.replace(',', '.', regex=False).astype(float)
+tmp['valor_centro_num'] = tmp['valor_centro'].str.replace(',', '.', regex=False).astype(float)
+
+dup = tmp[tmp.duplicated(subset=chaves, keep=False)].copy()
+tolerancia = 0.01
+
+def eh_rateio(grupo):
+    vb = grupo['valor_bruto_num'].iloc[0]
+    soma_plano = grupo['valor_plano_num'].sum()
+    soma_centro = grupo['valor_centro_num'].sum()
+    return abs(soma_plano - vb) <= tolerancia or abs(soma_centro - vb) <= tolerancia
+
+r3 = (
+    dup.groupby(chaves, group_keys=False)
+       .filter(lambda g: not eh_rateio(g))
+       .sort_values(chaves)
+)
+r3[['documento', 'filial', 'codcdc', 'codcen', 'valor_bruto', 'valor_plano', 'valor_centro', 'ite_pagrec_vencimento']]
 ```
 
-> Exemplo real encontrado: `NFE-65058` (G3S Prudente, R$27.454,00) apareceu 2 vezes com datas idênticas.
+> Observação: documentos com múltiplas linhas por rateio podem repetir `valor_bruto` sem erro operacional.
 
 ---
 

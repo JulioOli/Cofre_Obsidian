@@ -84,13 +84,13 @@ Para extrair as dimensões (pandas):
 
 ### Por Categoria (descdc)
 
-| Quero ver... | Filtro em `descdc` |
-|---|---|
-| Compras de sucata | `== 'COMPRAS DE SUCATAS'` |
-| Vendas de sucata | `== 'VENDAS DE SUCATAS'` |
-| Todos os custos operacionais de frota | Começa com `7.1` no `codcdc` |
-| Pessoal | Começa com `7.3` no `codcdc` |
-| Transporte | `== 'TRANSPORTE DE SUCATA'` ou `6.6.*` |
+| Quero ver...                          | Filtro em `descdc`                     |
+| ------------------------------------- | -------------------------------------- |
+| Compras de sucata                     | `== 'COMPRAS DE SUCATAS'`              |
+| Vendas de sucata                      | `== 'VENDAS DE SUCATAS'`               |
+| Todos os custos operacionais de frota | Começa com `7.1` no `codcdc`           |
+| Pessoal                               | Começa com `7.3` no `codcdc`           |
+| Transporte                            | `== 'TRANSPORTE DE SUCATA'` ou `6.6.*` |
 
 ### Por Status de Pagamento
 
@@ -140,19 +140,13 @@ df['pago'] = df['iterea_pagamento'] != 'NAO PAGO'
 df['data_pagamento'] = pd.to_datetime(df['iterea_pagamento'], errors='coerce')
 ```
 
-### 4. Duplicidade de filiais (`G3S` vs `G&S`)
-A mesma unidade aparece com dois nomes ao longo do tempo. Criar campo normalizado:
-```python
-df['filial_grupo'] = df['filial'].str.replace('G&S', 'G3S')
-```
-
-### 5. Operação intercompany distorce totais
+### 4. Operação intercompany distorce totais
 O registro `AJUSTESALDO300925` (R$27,9M) em `RSE` com `OPERAÇÕES ENTRE EMPRESAS` infla o volume bruto total. Isolar antes de análises de rentabilidade:
 ```python
 df_operacional = df[df['descdc'] != 'OPERAÇÕES ENTRE EMPRESAS']
 ```
 
-### 6. Encoding com caracteres corrompidos
+### 5. Encoding com caracteres corrompidos
 O arquivo usa ISO-8859-1 ou UTF-8 com BOM. Ao abrir no Excel ou Python, especificar encoding:
 ```python
 df = pd.read_csv('base.csv', sep=';', encoding='utf-8-sig', on_bad_lines='skip')
@@ -160,7 +154,7 @@ df = pd.read_csv('base.csv', sep=';', encoding='utf-8-sig', on_bad_lines='skip')
 df = pd.read_csv('base.csv', sep=';', encoding='latin-1')
 ```
 
-### 7. Registros migrados com `SALDO ADT CLI/FOR`
+### 6. Registros migrados com `SALDO ADT CLI/FOR`
 Documentos `SALDO ADT CLI`, `SALDO ADT FOR`, `MIGRADO` etc. são saldos de abertura, não transações reais. Filtrar para análises de movimentação real.
 
 ---
