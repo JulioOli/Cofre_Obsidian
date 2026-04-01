@@ -11,7 +11,7 @@ tags:
 # ~={Titulo}Análise da Base Financeira — base.csv=~
 
 > Guia de referência para consultar e analisar a base de movimentações financeiras do grupo G3S.
-> Arquivo fonte: `02-Referencias/base.csv` — **61.018 registros lógicos** — atualizado em 25/03/2026.
+> Arquivo fonte: `02-Referencias/base.csv` — **62.920 registros lógicos** — atualizado em 01/04/2026.
 > Relatório descritivo completo: [[RELATORIO_BASE]]
 
 ---

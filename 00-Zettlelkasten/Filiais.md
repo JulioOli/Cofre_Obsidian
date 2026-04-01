@@ -5,13 +5,13 @@ tags:
   - centro-de-custo
   - filiais
   - G3S
-atualizado: 30/03/2026
+atualizado: 01/04/2026
 ---
 24/03/2026 - 09:22
 
 # ~={Titulo}Filiais — Centro de Custo G3S=~
 
-> **Fonte:** `Centro de Custo.pdf` — 30/03/2026
+> **Fonte:** `Centro de Custo.pdf` — 01/04/2026
 > Filiais são o **3º nível** da hierarquia do CC: `TIPO.DIVISÃO.FILIAL`
 > Cada filial possui departamentos analíticos no nível seguinte.
 

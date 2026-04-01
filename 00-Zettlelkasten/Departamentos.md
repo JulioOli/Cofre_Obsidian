@@ -5,13 +5,13 @@ tags:
   - centro-de-custo
   - departamentos
   - G3S
-atualizado: 30/03/2026
+atualizado: 01/04/2026
 ---
 24/03/2026 - 09:22
 
 # ~={Titulo}Departamentos — Centro de Custo G3S=~
 
-> **Fonte:** `Centro de Custo.pdf` — 30/03/2026
+> **Fonte:** `Centro de Custo.pdf` — 01/04/2026
 > Os departamentos são o **4º nível** da hierarquia: `TIPO.DIVISÃO.FILIAL.DEPARTAMENTO`
 
 ---
@@ -50,7 +50,7 @@ Presente em **todas** as divisões operacionais. Concentra despesas administrati
 | Transmove GSL | 1.4.1.2 · 1.4.2.2 · 1.4.3.2 · 1.4.4.2 |
 | Ekipa Contêiner | 1.5.1.1 |
 | Ekipa Loc. RSE | 1.6.1 |
-| Ekipa Serv. G&S | 1.7.2.1 · 1.7.4.1 · 1.7.5.1 · 1.7.6.1 · 1.7.7.1 · 1.7.8.1 |
+| Ekipa Serv. G&S | 1.7.2.1 |
 | Render | 1.8.1 |
 | NVS Entulho | 1.12.1.1 |
 
@@ -74,7 +74,7 @@ Responsável pelas operações de compra e venda. Na Seletiva, pode ser desdobra
 | Bracofer | 1.3.1.2 |
 | Ekipa Contêiner | 1.5.1.2 |
 | Ekipa Loc. RSE | 1.6.2 |
-| Ekipa Serv. G&S | 1.7.2.2 · 1.7.4.2 · 1.7.5.2 · 1.7.6.2 · 1.7.7.2 · 1.7.8.2 |
+| Ekipa Serv. G&S | 1.7.2.2 |
 | NVS Entulho | 1.12.1.2 |
 
 ---

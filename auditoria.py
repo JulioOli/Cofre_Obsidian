@@ -33,7 +33,8 @@ import pandas as pd
 
 BASE_DIR = Path(__file__).parent
 CSV_PATH = BASE_DIR / "02-Referencias" / "base.csv"
-OUTPUT_DIR = BASE_DIR / "02-Referencias"
+OUTPUT_DIR = BASE_DIR / "00-Zettlelkasten"
+TIPOS_MOV_PATH = BASE_DIR / "00-Zettlelkasten" / "Tipos de Movimentação.md"
 CSV_ENCODING = "latin-1"
 VALOR_ALTO = 100_000.0
 
@@ -96,6 +97,8 @@ def _achado(
     vencimento: str,
     evidencia: str,
     correcao: str,
+    conta_esperada: str = "",
+    cc_esperado: str = "",
     valor_num: float = 0.0,
 ) -> dict[str, Any]:
     """Fabrica um dicionario de achado com schema padrao."""
@@ -111,6 +114,8 @@ def _achado(
         "vencimento": vencimento,
         "evidencia": evidencia,
         "correcao": correcao,
+        "conta_esperada": conta_esperada,
+        "cc_esperado": cc_esperado,
         "valor_num": valor_num,
     }
 
@@ -121,6 +126,8 @@ def _rows_to_achados(
     severidade: str,
     evidencia: str,
     correcao: str,
+    conta_esperada: str = "",
+    cc_esperado: str = "",
 ) -> list[dict]:
     """Converte linhas do DataFrame em lista de achados usando o schema padrao."""
     result = []
@@ -138,10 +145,33 @@ def _rows_to_achados(
                 vencimento=str(r.get("ite_pagrec_vencimento", "")),
                 evidencia=evidencia,
                 correcao=correcao,
+                conta_esperada=conta_esperada,
+                cc_esperado=cc_esperado,
                 valor_num=float(r.get("valor_num", 0) or 0),
             )
         )
     return result
+
+
+def _to_num(serie: pd.Series) -> pd.Series:
+    """Converte string monetaria brasileira para float."""
+    return pd.to_numeric(
+        serie.astype(str).str.replace(".", "", regex=False).str.replace(",", ".", regex=False),
+        errors="coerce",
+    )
+
+
+def _carregar_contas_vigentes() -> set[str]:
+    """
+    Extrai codigos de conta vigentes do arquivo Tipos de Movimentação.md.
+    Formato esperado de tabela markdown: | 6.1.1 | Descrição | ... |
+    """
+    if not TIPOS_MOV_PATH.exists():
+        return set()
+
+    texto = TIPOS_MOV_PATH.read_text(encoding="utf-8", errors="ignore")
+    cods = set(pd.Series(texto.splitlines()).str.extract(r"^\|\s*([0-9]+(?:\.[0-9]+)*)\s*\|")[0].dropna().tolist())
+    return cods
 
 
 # ---------------------------------------------------------------------------
@@ -155,6 +185,9 @@ def regra_1(df: pd.DataFrame) -> list[dict]:
     - ADT em 4.1.1 (deve ser 4.2.1)
     - DEV.BOLV fora de 4.3.x (deve ser 4.3.1)
     - BOLV fora de 4.1.1 (deve ser 4.1.1)
+    - COMP/BOLC fora de 6.1.1
+    - FRET fora de 6.x ou 7.1.6
+    - NFE em conta de adiantamento (4.2.x)
     """
     achados: list[dict] = []
 
@@ -166,6 +199,7 @@ def regra_1(df: pd.DataFrame) -> list[dict]:
         severidade="ALTA",
         evidencia="Prefixo ADT indica adiantamento; conta correta e 4.2.1",
         correcao="Trocar conta 4.1.1 -> 4.2.1 via Troca de Plano de Contas em Lote no SAGI",
+        conta_esperada="4.2.1",
     )
 
     # 1b: DEV.BOLV fora de 4.3.x
@@ -176,6 +210,7 @@ def regra_1(df: pd.DataFrame) -> list[dict]:
         severidade="ALTA",
         evidencia="Prefixo DEV.BOLV indica devolucao de venda; conta correta e 4.3.1",
         correcao="Trocar conta para 4.3.1 via Troca em Lote no SAGI",
+        conta_esperada="4.3.1",
     )
 
     # 1c: BOLV fora de 4.1.1
@@ -186,6 +221,45 @@ def regra_1(df: pd.DataFrame) -> list[dict]:
         severidade="ALTA",
         evidencia="Prefixo BOLV indica boleto de venda; conta correta e 4.1.1",
         correcao="Trocar conta para 4.1.1 via Troca em Lote no SAGI",
+        conta_esperada="4.1.1",
+    )
+
+    # 1d: COMP/BOLC fora de 6.1.1
+    mask = (
+        df["documento"].str.startswith("COMP", na=False)
+        | df["documento"].str.startswith("BOLC", na=False)
+    ) & (df["codcdc"] != "6.1.1")
+    achados += _rows_to_achados(
+        df[mask],
+        regra="R1d — COMP/BOLC fora de 6.1.1",
+        severidade="MEDIA",
+        evidencia="Prefixo COMP/BOLC indica compra; conta esperada 6.1.1",
+        correcao="Trocar conta para 6.1.1 via Troca em Lote no SAGI",
+        conta_esperada="6.1.1",
+    )
+
+    # 1e: FRET fora de 6.x ou 7.1.6
+    mask = df["documento"].str.startswith("FRET", na=False) & ~(
+        df["codcdc"].str.startswith("6.", na=False) | (df["codcdc"] == "7.1.6")
+    )
+    achados += _rows_to_achados(
+        df[mask],
+        regra="R1e — FRET fora de 6.x/7.1.6",
+        severidade="MEDIA",
+        evidencia="Prefixo FRET indica frete; esperado em contas 6.x ou 7.1.6",
+        correcao="Reclassificar para conta de frete adequada (6.x ou 7.1.6) via Troca em Lote",
+        conta_esperada="6.x ou 7.1.6",
+    )
+
+    # 1f: NFE em conta de adiantamento (4.2.x)
+    mask = df["documento"].str.startswith("NFE", na=False) & df["codcdc"].str.startswith("4.2", na=False)
+    achados += _rows_to_achados(
+        df[mask],
+        regra="R1f — NFE em conta de adiantamento",
+        severidade="BAIXA",
+        evidencia="NFE em conta 4.2.x (adiantamento) requer validacao do caso",
+        correcao="Validar documento/operacao; se nao for adiantamento, reclassificar conta",
+        conta_esperada="validar caso a caso",
     )
 
     return achados
@@ -244,11 +318,27 @@ def regra_3(df: pd.DataFrame) -> list[dict]:
     Destaca especialmente quando os CCs duplicados sao diferentes (mais grave).
     """
     chaves = ["documento", "filial", "valor_bruto", "ite_pagrec_vencimento"]
-    mask_dup = df.duplicated(subset=chaves, keep=False)
-    duplicatas = df[mask_dup].sort_values(chaves)
+    tmp = df.copy()
+    tmp["valor_bruto_num"] = _to_num(tmp["valor_bruto"])
+    tmp["valor_plano_num"] = _to_num(tmp["valor_plano"])
+    tmp["valor_centro_num"] = _to_num(tmp["valor_centro"])
+    mask_dup = tmp.duplicated(subset=chaves, keep=False)
+    duplicatas = tmp[mask_dup].sort_values(chaves)
 
     achados: list[dict] = []
     for _nome, grupo in duplicatas.groupby(chaves, sort=False):
+        vb = grupo["valor_bruto_num"].iloc[0]
+        soma_plano = grupo["valor_plano_num"].sum(min_count=1)
+        soma_centro = grupo["valor_centro_num"].sum(min_count=1)
+        eh_rateio = False
+        if pd.notna(vb):
+            if pd.notna(soma_plano) and abs(float(soma_plano) - float(vb)) <= 0.01:
+                eh_rateio = True
+            if pd.notna(soma_centro) and abs(float(soma_centro) - float(vb)) <= 0.01:
+                eh_rateio = True
+        if eh_rateio:
+            continue
+
         ccs_distintos = grupo["codcen"].nunique()
         sev = "ALTA" if ccs_distintos == 1 else "ALTA"  # ambos sao alta
         evidencia = (
@@ -306,24 +396,22 @@ def regra_4(df: pd.DataFrame) -> list[dict]:
 
 def regra_5(df: pd.DataFrame) -> list[dict]:
     """
-    Conta de legado/migracao usada em lancamentos recentes (ultimos 90 dias).
-
-    Contas do grupo 1 (ex: 1.35.43) sao de migracao e nao devem ser
-    usadas em novos lancamentos.
+    Conta inativa/inexistente no plano vigente em lancamentos recentes (90 dias).
     """
     referencia = (date.today() - timedelta(days=90)).strftime("%Y-%m-%d")
     recentes = df[df["ite_pagrec_vencimento"] >= referencia]
-    contas_legado = recentes[
-        recentes["codcdc"].str.match(r"^1\.", na=False)
-        & ~recentes["codcdc"].str.match(r"^1\.(2|3|4|5|6|7|8|9)\.", na=False)
-    ]
+    contas_vigentes = _carregar_contas_vigentes()
+    if not contas_vigentes:
+        return []
+    contas_invalidas = recentes[~recentes["codcdc"].isin(contas_vigentes)]
 
     return _rows_to_achados(
-        contas_legado,
-        regra="R5 — Conta Legado",
+        contas_invalidas,
+        regra="R5 — Conta inativa/inexistente",
         severidade="BAIXA",
-        evidencia="Conta do grupo 1 (legado/migracao) usada em lancamento recente",
-        correcao="Substituir pela conta correta no Plano de Contas vigente; ex: 1.35.43 -> 5.4.8",
+        evidencia="Conta nao encontrada na lista vigente do Plano de Contas (Tipos de Movimentacao.md)",
+        correcao="Reclassificar para conta ativa equivalente no Plano de Contas vigente",
+        conta_esperada="conta ativa no plano vigente",
     )
 
 
@@ -521,7 +609,16 @@ def gerar_relatorio(
     linhas += ["", "---", ""]
 
     # Detalhamento por regra
-    colunas_tabela = ["documento", "filial", "codcdc", "codcen", "valor_bruto", "vencimento"]
+    colunas_tabela = [
+        "documento",
+        "filial",
+        "codcen",
+        "codcdc",
+        "cc_esperado",
+        "conta_esperada",
+        "valor_bruto",
+        "vencimento",
+    ]
 
     for regra_id in resultado["regra"].unique():
         grupo = resultado[resultado["regra"] == regra_id]

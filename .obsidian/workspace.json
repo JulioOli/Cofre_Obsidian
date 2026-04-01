@@ -11,15 +11,28 @@
             "id": "e647a6a2ab380b15",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "346c7cd8a0516919",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
               "state": {
-                "file": "02-Referencias/FATURA GEG.pdf"
+                "file": "00-Zettlelkasten/auditoria_20260401.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "FATURA GEG"
+              "icon": "lucide-file",
+              "title": "auditoria_20260401"
             }
           }
         ],
+        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -93,7 +106,8 @@
               "title": "Tag Folder"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -200,29 +214,33 @@
       "bases:Create new base": false
     }
   },
-  "active": "e647a6a2ab380b15",
+  "active": "346c7cd8a0516919",
   "lastOpenFiles": [
-    "02-Referencias/FATURA RSE.pdf",
-    "02-Referencias/FATURA GEG.pdf",
-    "00-Zettlelkasten/Untitled.md",
+    "00-Zettlelkasten/RELATORIO_BASE.md",
+    "02-Referencias/087A6500",
+    "00-Zettlelkasten/Tipos de Movimentação.md",
+    "00-Zettlelkasten/auditoria_20260401.md",
     "00-Zettlelkasten/Analise Base Financeira.md",
+    "02-Referencias/486F2500",
+    "02-Referencias/auditoria_teste.md",
+    "__pycache__/auditoria.cpython-313.pyc",
+    "__pycache__",
+    "02-Referencias/auditoria_20260401.md",
+    "00-Zettlelkasten/Guia SAGI.md",
+    "00-Zettlelkasten/Filiais.md",
+    "00-Zettlelkasten/Departamentos.md",
+    "00-Zettlelkasten/Divisões.md",
+    "00-Zettlelkasten/Estrutura Empresarial G3S.md",
+    "02-Referencias/FATURA GEG.pdf",
+    "02-Referencias/resumo_fatura_normalizado.xlsx",
+    "02-Referencias/FATURA RSE.pdf",
+    "00-Zettlelkasten/Untitled.md",
     "02-Referencias/Não confirmado 664041.crdownload",
     "02-Referencias/Não confirmado 941773.crdownload",
     "02-Referencias/574F0820",
-    "02-Referencias/Separando placas - CC.xlsx",
-    "02-Referencias/E7742420",
-    "02-Referencias/~$Separando placas - CC.xlsx",
-    "02-Referencias/E9932420",
-    "02-Referencias/D5832420",
-    "00-Zettlelkasten/Departamentos.md",
-    "00-Zettlelkasten/Tipos de Movimentação.md",
-    "00-Zettlelkasten/Divisões.md",
     "00-Zettlelkasten/00 - Índice Controladoria.md",
-    "00-Zettlelkasten/Estrutura Empresarial G3S.md",
     "00-Zettlelkasten/Auditoria 26-03.md",
     "02-Referencias/auditoria_032026_20260330.md",
-    "00-Zettlelkasten/Guia SAGI.md",
-    "00-Zettlelkasten/Filiais.md",
     "02-Referencias/auditoria_032026_20260327.md",
     "README.md",
     "02-Referencias/auditoria_alta_marco.md",
@@ -241,9 +259,6 @@
     "01-Anexos/sagi-anotacoes-02.png",
     "00-Zettlelkasten/CC - Divisões.md",
     "00-Zettlelkasten/CC - Tipos de Movimentação.md",
-    "00-Zettlelkasten/CC - Filiais.md",
-    "00-Zettlelkasten/CC - Departamentos.md",
-    "02-Referencias/Projects/RELATORIO_BASE.md",
     "01-Anexos/Pasted image 20250801171046.png",
     "01-Anexos/Pasted image 20250909162354.png",
     "01-Anexos/Pasted image 20250831181838.png",
