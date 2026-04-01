@@ -2901,10 +2901,14 @@
 - **2x** | filial: `G3S MARINGA` | valor: `7913,25` | venc: `2026-02-05` | docs: `CTE-138 / CTE-138`
   - cc: `1.2.4.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
   - cc: `1.5.1.2` conta: `7.1.6` (TRANSPORTE DE SUCATA)
-- **4x** | filial: `G3S ADM` | valor: `7911,92` | venc: `2025-11-26` | docs: `ADT16174415
- / ADT16174415
- / ADT16174415
- / ADT16174415
+- **4x** | filial: `G3S ADM` | valor: `7911,92` | venc: `2025-11-26` | docs: `ADT16174415
+
+ / ADT16174415
+
+ / ADT16174415
+
+ / ADT16174415
+
 `
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
@@ -3928,8 +3932,10 @@
   - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
   - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
   - cc: `1.2.8.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
-- **2x** | filial: `G3S PRUDENTE` | valor: `4086,1` | venc: `2025-11-26` | docs: `ADT16174413
- / ADT16174413
+- **2x** | filial: `G3S PRUDENTE` | valor: `4086,1` | venc: `2025-11-26` | docs: `ADT16174413
+
+ / ADT16174413
+
 `
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
@@ -5108,8 +5114,10 @@
 - **2x** | filial: `G&S PRUDENTE` | valor: `2034` | venc: `2026-03-15` | docs: `NFE-1560512 / NFE-1560512`
   - cc: `1.7.1.8.2` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
   - cc: `1.7.1.8.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
-- **2x** | filial: `G3S MARINGA` | valor: `2025,79` | venc: `2025-11-26` | docs: `ADT16174407
- / ADT16174407
+- **2x** | filial: `G3S MARINGA` | valor: `2025,79` | venc: `2025-11-26` | docs: `ADT16174407
+
+ / ADT16174407
+
 `
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
@@ -9068,8 +9076,10 @@
 - **2x** | filial: `G&S PRUDENTE` | valor: `508,3` | venc: `2025-08-15` | docs: `NFE-24431 / NFE-24431`
   - cc: `1.3.1.6.4` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
   - cc: `1.6.3.3` conta: `7.1.2` (MANUTENÇÃO DE VEÍCULOS/MAQUINAS)
-- **2x** | filial: `RSE` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174421
- / ADT16174421
+- **2x** | filial: `RSE` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174421
+
+ / ADT16174421
+
 `
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
@@ -11225,10 +11235,14 @@
 - **2x** | filial: `G3S CAMPO GRANDE` | valor: `8627,23` | venc: `2025-06-10` | docs: `ADT10062025 / ADT10062025`
   - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
   - cc: `2.2.7.2` conta: `4.1.1` (VENDAS DE SUCATAS)
-- **4x** | filial: `G3S ADM` | valor: `7911,92` | venc: `2025-11-26` | docs: `ADT16174415
- / ADT16174415
- / ADT16174415
- / ADT16174415
+- **4x** | filial: `G3S ADM` | valor: `7911,92` | venc: `2025-11-26` | docs: `ADT16174415
+
+ / ADT16174415
+
+ / ADT16174415
+
+ / ADT16174415
+
 `
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
@@ -11246,8 +11260,10 @@
 - **2x** | filial: `G3S PRUDENTE` | valor: `5120` | venc: `2025-09-10` | docs: `ADT00003554 / ADT00003554`
   - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
   - cc: `1.2.5.2` conta: `6.1.1` (COMPRAS DE SUCATAS)
-- **2x** | filial: `G3S PRUDENTE` | valor: `4086,1` | venc: `2025-11-26` | docs: `ADT16174413
- / ADT16174413
+- **2x** | filial: `G3S PRUDENTE` | valor: `4086,1` | venc: `2025-11-26` | docs: `ADT16174413
+
+ / ADT16174413
+
 `
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
@@ -11257,8 +11273,10 @@
 - **2x** | filial: `G&S PRUDENTE` | valor: `2341,05` | venc: `2025-11-26` | docs: `ADT16174414 / ADT16174414`
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
-- **2x** | filial: `G3S MARINGA` | valor: `2025,79` | venc: `2025-11-26` | docs: `ADT16174407
- / ADT16174407
+- **2x** | filial: `G3S MARINGA` | valor: `2025,79` | venc: `2025-11-26` | docs: `ADT16174407
+
+ / ADT16174407
+
 `
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
@@ -11289,8 +11307,10 @@
 - **2x** | filial: `G3S CIDADE ALTA` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174423 / ADT16174423`
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)
-- **2x** | filial: `RSE` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174421
- / ADT16174421
+- **2x** | filial: `RSE` | valor: `505,95` | venc: `2025-11-26` | docs: `ADT16174421
+
+ / ADT16174421
+
 `
   - cc: `1.1.10` conta: `7.3.8` (CESTA BÁSICA)
   - cc: `1.1.10` conta: `7.3.10` (TRANSPORTE DE COLABORADORES)

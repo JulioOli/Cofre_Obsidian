@@ -281,6 +281,62 @@ Estrutura plana — frota consolidada sem separação por filial.
 
 > Estrutura contratual principal permanece em `1.7.1` / `2.7.1`, com contratos Arcelor, Gerdau e Tupy.
 
+### Detalhe de Ativos — Veículos G&S (`1.7.10`)
+
+| CC | Placa | Obs. |
+|---|---|---|
+| 1.7.10.1 | FBV4H62 | |
+| 1.7.10.2 | GDY0H74 | |
+| 1.7.10.3 | GDB3A42 | |
+| 1.7.10.4 | SUC7A43 | |
+| 1.7.10.5 | BKW9I57 | |
+| 1.7.10.6 | BTZ8D36 | |
+| 1.7.10.7 | FJU8F67 | Julieta |
+| 1.7.10.8 | FUF1E28 | Julieta |
+| 1.7.10.9 | FZF3J28 | Julieta |
+| 1.7.10.10 | QAU6E20 | Julieta |
+| 1.7.10.11 | TKI2E74 | |
+| 1.7.10.12 | FTP7D76 | |
+| 1.7.10.13 | STF9C60 | |
+| 1.7.10.14 | GDA9J63 | |
+| 1.7.10.15 | BZL7H95 | |
+| 1.7.10.16 | EWU5J98 | |
+| 1.7.10.17 | OON3B85 | |
+| 1.7.10.18 | EWU6087 | |
+| 1.7.10.19 | EWU6A85 | |
+| 1.7.10.20 | EWU6154 | Julieta |
+| 1.7.10.21 | EWU6204 | Julieta |
+| 1.7.10.22 | EWU6343 | Julieta |
+| 1.7.10.23 | FJQ5A08 | |
+| 1.7.10.24 | RNC9H69 | |
+| 1.7.10.25 | FRT7548 | |
+| 1.7.10.26 | BZL7H95 | |
+| 1.7.10.27 | FBU7329 | |
+| 1.7.10.28 | EWU6003 | |
+| 1.7.10.29 | BZG6A91 | |
+| 1.7.10.30 | GGE5059 | |
+| 1.7.10.31 | EW6A86 | |
+| 1.7.10.32 | FUP3G76 | |
+| 1.7.10.33 | FVQ3B78 | |
+| 1.7.10.34 | EWU6B52 | |
+| 1.7.10.35 | SUE1E15 | |
+| 1.7.10.36 | SUY4F83 | |
+| 1.7.10.37 | GHI3A74 | |
+| 1.7.10.38 | EWU6A85 | |
+| 1.7.10.39 | NRQ7727 | |
+| 1.7.10.40 | EJZ7998 | |
+| 1.7.10.41 | EJZ7J97 | |
+| 1.7.10.42 | EJZ7999 | |
+| 1.7.10.43 | GDG8E75 | |
+| 1.7.10.44 | NRV7727 | |
+| 1.7.10.45 | QAO4A53 | |
+| 1.7.10.46 | EWU6341 | Julieta |
+| 1.7.10.47 | EWU6294 | Julieta |
+| 1.7.10.48 | CZB9H07 | |
+| 1.7.10.49 | HAR1F82 | |
+| 1.7.10.50 | EJZ7495 | |
+| 1.7.10.51 | EJZ7496 | |
+
 ---
 
 ## NVS Serviços de Entulho

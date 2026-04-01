@@ -163,7 +163,7 @@ Cada veículo com seu próprio CC. Permite rastrear o custo total de propriedade
 | Seletiva — Campo Grande | 5 |
 | Bracofer — Presidente Prudente | 4 |
 | Ekipa Loc. RSE | ~50 ativos (veículos + máquinas) |
-| Ekipa Serv. G&S | Ativos por contrato |
+| Ekipa Serv. G&S | 51 veículos analíticos (`1.7.10.*`) + ativos por contrato |
 
 > 💡 Para localizar um ativo por placa, use o prefixo do CC da filial. Ex: `1.2.5.6.*` = todos os veículos de Presidente Prudente.
 

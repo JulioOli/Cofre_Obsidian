@@ -12,7 +12,6 @@ tags:
 
 > Guia de referência para consultar e analisar a base de movimentações financeiras do grupo G3S.
 > Arquivo fonte: `02-Referencias/base.csv` — **62.920 registros lógicos** — atualizado em 01/04/2026.
-> Relatório descritivo completo: [[RELATORIO_BASE]]
 
 ---
 

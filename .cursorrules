@@ -182,7 +182,6 @@ Esta rotina deve ser executada quando o usuário enviar uma mensagem indicando a
    - Atualize o campo `atualizado:` no frontmatter com a data atual
    - Preserve todos os `[[wikilinks]]` e avisos (⚠️) existentes que continuarem válidos
    - Remova avisos que deixarem de ser pertinentes após a atualização
-   - Atualizar o arquivo RELATORIO_BASE.md
 
 6. **Confirmar ao usuário**
    Ao final, informe:
