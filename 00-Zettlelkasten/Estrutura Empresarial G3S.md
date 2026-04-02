@@ -11,7 +11,7 @@ tags:
 # ~={Titulo}Estrutura Empresarial — Grupo G3S=~
 
 > Nota de contextualização sobre a relação entre as empresas e CNPJs que atuam em conjunto no grupo.
-> Baseada em explicações do gestor + estrutura do [[00 - Índice Controladoria]].
+> Baseada em explicações do gestor + estrutura do [[Índice Controladoria]].
 
 ---
 
@@ -158,4 +158,4 @@ A tela de **Troca de Plano de Conta / CC em Lote** no SAGI exibe ambos os tipos,
 
 ___
 
-[[Divisões]] · [[Filiais]] · [[Guia SAGI]] · [[00 - Índice Controladoria]]
+[[Divisões]] · [[Filiais]] · [[Guia SAGI]] · [[Índice Controladoria]]

@@ -43,7 +43,7 @@ A tela de login do SAGI mostra no rodapé: **usuário logado, setor, CNPJ e fili
 
 **Exemplo:**
 ```
-1.2.5.2 → DESPESA / SELETIVA / PRESIDENTE PRUDENTE / COMERCIAL
+	1.2.5.2 → DESPESA / SELETIVA / PRESIDENTE PRUDENTE / COMERCIAL
 ```
 → Este CC analítico recebe as compras de sucata da filial de P. Prudente.
 
@@ -60,12 +60,12 @@ A tela de login do SAGI mostra no rodapé: **usuário logado, setor, CNPJ e fili
 - **Sintético** vs **Analítico** — mesma lógica do CC
 
 **Exemplos:**
-| Código | Descrição | Natureza |
-|---|---|---|
-| 6.1.1 | Compras de Sucatas | D (saída) |
-| 4.1.1 | Vendas de Sucatas | R (entrada) |
-| 7.3.1 | Salários | D (saída) |
-| 7.1.4 | Combustível — Diesel (Posto) | D (saída) |
+| Código | Descrição                              | Natureza      |
+|---------|--------------------------------|---------------|
+| 6.1.1     | Compras de Sucatas              | D (saída)     |
+| 4.1.1     | Vendas de Sucatas                 | R (entrada) |
+| 7.3.1     | Salários                                  | D (saída)     |
+| 7.1.4     | Combustível - Diesel (Posto) | D (saída)     |
 
 ---
 
@@ -73,10 +73,10 @@ A tela de login do SAGI mostra no rodapé: **usuário logado, setor, CNPJ e fili
 
 > ==Juntos, CC + PC descrevem completamente um lançamento.==
 
-| Campo | Código | Responde |
-|---|---|---|
+| Campo                    | Código    | Responde                                              |
+| ------------------------ | --------- | ----------------------------------------------------- |
 | Centro de Custo (codcen) | `1.2.5.2` | Onde? Quem? → Seletiva Pres. Prudente, dpto Comercial |
-| Plano de Contas (codcdc) | `6.1.1` | O quê? → Compras de Sucatas |
+| Plano de Contas (codcdc) | `6.1.1`   | O quê? → Compras de Sucatas                           |
 
 **Resultado:** *"A filial de Presidente Prudente, no departamento Comercial, comprou sucata."*
 
@@ -85,26 +85,26 @@ A tela de login do SAGI mostra no rodapé: **usuário logado, setor, CNPJ e fili
 ## ~={Titulo}Navegação no SAGI — Menus Principais=~
 
 ```
-	Menu Principal
-	├── Financeiro 3.0
-	│   ├── Movimentação
-	│   │   ├── Realizações Financeiras
-	│   │   ├── Realizar Pagamento
-	│   │   ├── Excluir Realizações Financeiras
-	│   │   └── Troca de Plano de Conta / Centro de Custo Financeiro em Lote  ← procedimento importante
-	│   ├── Cadastro
-	│   │   ├── Cadastrar Conta
-	│   │   └── Alterar Conta
-	│   └── Relatórios
-	├── Compra / Entrada
-	├── Venda / Saída
-	├── Estoque
-	├── Passagem Avulsa
-	├── Fiscal
-	├── Controle de Funcionário
-	├── Transportes
-	├── Produção
-	└── Serviço 3.0
+		Menu Principal
+		├── Financeiro 3.0
+		│   ├── Movimentação
+		│   │   ├── Realizações Financeiras
+		│   │   ├── Realizar Pagamento
+		│   │   ├── Excluir Realizações Financeiras
+		│   │   └── Troca de Plano de Conta / Centro de Custo Financeiro em Lote  ←             │   │                                                  procedimento importante
+		│   ├── Cadastro
+		│   │   ├── Cadastrar Conta
+		│   │   └── Alterar Conta
+		│   └── Relatórios
+		├── Compra / Entrada
+		├── Venda / Saída
+		├── Estoque
+		├── Passagem Avulsa
+		├── Fiscal
+		├── Controle de Funcionário
+		├── Transportes
+		├── Produção
+		└── Serviço 3.0
 ```
 
 ---
@@ -236,4 +236,4 @@ Imagens do SAGI salvas em `01-Anexos/`:
 
 ___
 
-[[Estrutura Empresarial G3S]] · [[Divisões]] · [[Tipos de Movimentação]] · [[Analise Base Financeira]] · [[00 - Índice Controladoria]]
+[[Estrutura Empresarial G3S]] · [[Divisões]] · [[Tipos de Movimentação]] · [[Analise Base Financeira]] · [[Índice Controladoria]]

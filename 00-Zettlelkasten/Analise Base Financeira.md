@@ -190,4 +190,4 @@ Com base nas categorias e CCs predominantes:
 
 ___
 
-[[Guia SAGI]] · [[Divisões]] · [[Tipos de Movimentação]] · [[Filiais]] · [[00 - Índice Controladoria]]
+[[Guia SAGI]] · [[Divisões]] · [[Tipos de Movimentação]] · [[Filiais]] · [[Índice Controladoria]]

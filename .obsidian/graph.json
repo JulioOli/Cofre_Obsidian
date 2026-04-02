@@ -8,10 +8,24 @@
   "collapse-color-groups": true,
   "colorGroups": [
     {
-      "query": "tag:#note  ",
+      "query": "tag:#centro-de-custo  ",
       "color": {
         "a": 1,
-        "rgb": 10724035
+        "rgb": 5407200
+      }
+    },
+    {
+      "query": "tag:#plano-de-contas  ",
+      "color": {
+        "a": 1,
+        "rgb": 15889286
+      }
+    },
+    {
+      "query": "file:Guia SAGI",
+      "color": {
+        "a": 1,
+        "rgb": 16645801
       }
     }
   ],
@@ -25,6 +39,6 @@
   "repelStrength": 16.875,
   "linkStrength": 0.557291666666667,
   "linkDistance": 30,
-  "scale": 0.6859152245435008,
+  "scale": 0.6859152245435003,
   "close": true
 }

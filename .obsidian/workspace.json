@@ -96,8 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "32b6af9a8435c285",
@@ -199,13 +198,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "e647a6a2ab380b15",
+  "active": "711cf49d62d6fc67",
   "lastOpenFiles": [
-    "00-Zettlelkasten/RELATORIO_BASE.md",
-    "00-Zettlelkasten/Tipos de Movimentação.md",
-    "02-Referencias/RELATORIO_BASE.md",
-    "00-Zettlelkasten/Departamentos.md",
+    "00-Zettlelkasten/Divisões.md",
+    "00-Zettlelkasten/Filiais.md",
+    "00-Zettlelkasten/Guia SAGI.md",
     "00-Zettlelkasten/Analise Base Financeira.md",
+    "00-Zettlelkasten/Estrutura Empresarial G3S.md",
+    "00-Zettlelkasten/Departamentos.md",
+    "00-Zettlelkasten/Índice Controladoria.md",
+    "00-Zettlelkasten/Tipos de Movimentação.md",
+    "02-Referencias/Relatorio Controladoria Financeira.md",
+    "00-Zettlelkasten/RELATORIO_BASE.md",
+    "02-Referencias/RELATORIO_BASE.md",
     "00-Zettlelkasten/auditoria_20260401.md",
     "02-Referencias/087A6500",
     "02-Referencias/486F2500",
@@ -213,10 +218,6 @@
     "__pycache__/auditoria.cpython-313.pyc",
     "__pycache__",
     "02-Referencias/auditoria_20260401.md",
-    "00-Zettlelkasten/Guia SAGI.md",
-    "00-Zettlelkasten/Filiais.md",
-    "00-Zettlelkasten/Divisões.md",
-    "00-Zettlelkasten/Estrutura Empresarial G3S.md",
     "02-Referencias/FATURA GEG.pdf",
     "02-Referencias/resumo_fatura_normalizado.xlsx",
     "02-Referencias/FATURA RSE.pdf",
@@ -224,7 +225,6 @@
     "02-Referencias/Não confirmado 664041.crdownload",
     "02-Referencias/Não confirmado 941773.crdownload",
     "02-Referencias/574F0820",
-    "00-Zettlelkasten/00 - Índice Controladoria.md",
     "00-Zettlelkasten/Auditoria 26-03.md",
     "02-Referencias/auditoria_032026_20260330.md",
     "02-Referencias/auditoria_032026_20260327.md",
@@ -232,7 +232,6 @@
     "02-Referencias/auditoria_alta_marco.md",
     "02-Referencias/auditoria_032026_20260326.md",
     "02-Referencias/auditoria_20260326.md",
-    "02-Referencias/Relatorio Controladoria Financeira.md",
     "auditoria_09AM_250326.md",
     "auditoria.md",
     "01-Anexos/sagi-anotacoes-01.png",
