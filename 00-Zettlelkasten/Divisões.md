@@ -19,20 +19,20 @@ atualizado: 01/04/2026
 
 ## Mapa das Divisões
 
-| Cód. Desp. | Cód. Rec. | Divisão | Setor | Obs. |
-|---|---|---|---|---|
-| 1.1 | — | **G3S Escritório (Pilares)** | Holding / Corporativo | Sede, diretoria e setores de apoio central |
-| 1.2 | 2.2 | **Seletiva** | Reciclagem de Sucata | Core business — maior volume de lançamentos |
-| 1.3 | 2.3 | **Bracofer** | Distribuição de Ferro Novo | Sub-representada no Plano de Contas |
-| 1.4 | 2.4 | **Transmove GSL** | Transporte / Logística | Operações em PP, Dourados, Maringá e Barueri |
-| 1.5 | 2.5 | **Ekipa Contêiner** | Locação de Contêineres | Apenas em Presidente Prudente |
-| 1.6 | 2.6 | **Ekipa Locações RSE** | Locação de Veículos/Máquinas | CNPJ RSE — grande frota de ativos |
-| 1.7 | 2.7 | **Ekipa Locações e Serv. G&S** | Serviços em clientes siderúrgicos | Arcelor, Gerdau, Tupy — contratos externos |
-| 1.8 | 2.8 | **Render Locações** | Patrimônio Imobiliário | Imóveis, salas, lotes, chácaras |
-| 1.9 | 2.9 | **Familiar** | Pessoas Físicas dos Sócios | Atenção: não misturar com DRE operacional |
-| 1.10 | 2.10 | **Resultado Não Operacional** | Intercompany / Imobilizado | Op. entre empresas e venda de ativos |
-| — | 2.11 | **Render** | Receitas de Locação (Render) | Receitas específicas — sem CC de despesa espelhado |
-| 1.12 | 2.12 | **NVS Serviços de Entulho** | Coleta de Entulho e Resíduos de Construção | [[Departamentos]] |
+| Cód. Desp. | Cód. Rec. | Divisão                        | Setor                                      | Obs.                                               |
+| ---------- | --------- | ------------------------------ | ------------------------------------------ | -------------------------------------------------- |
+| 1.1        | —         | **G3S Escritório (Pilares)**   | Holding / Corporativo                      | Sede, diretoria e setores de apoio central         |
+| 1.2        | 2.2       | **Seletiva**                   | Reciclagem de Sucata                       | Core business — maior volume de lançamentos        |
+| 1.3        | 2.3       | **Bracofer**                   | Distribuição de Ferro Novo                 | Sub-representada no Plano de Contas                |
+| 1.4        | 2.4       | **Transmove GSL**              | Transporte / Logística                     | Operações em PP, Dourados, Maringá e Barueri       |
+| 1.5        | 2.5       | **Ekipa Contêiner RSE**        | Locação de Contêineres                     | Apenas em Presidente Prudente                      |
+| 1.6        | 2.6       | **Ekipa Locações RSE**         | Locação de Veículos/Máquinas               | CNPJ RSE — grande frota de ativos                  |
+| 1.7        | 2.7       | **Ekipa Locações e Serv. G&S** | Serviços em clientes siderúrgicos          | Arcelor, Gerdau, Tupy — contratos externos         |
+| 1.8        | 2.8       | **Render Locações**            | Patrimônio Imobiliário                     | Imóveis, salas, lotes, chácaras                    |
+| 1.9        | 2.9       | **Familiar**                   | Pessoas Físicas dos Sócios                 | Atenção: não misturar com DRE operacional          |
+| 1.10       | 2.10      | **Resultado Não Operacional**  | Intercompany / Imobilizado                 | Op. entre empresas e venda de ativos               |
+| —          | 2.11      | **Render**                     | Receitas de Locação (Render)               | Receitas específicas — sem CC de despesa espelhado |
+| 1.12       | 2.12      | **NVS Serviços de Entulho**    | Coleta de Entulho e Resíduos de Construção | [[Departamentos]]                                  |
 
 ---
 
