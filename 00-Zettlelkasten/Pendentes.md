@@ -1,0 +1,13 @@
+- [ ] GDY0H74 - 1.2.1.9.2 (**~={red}Pendente=~**)
+- [x] FRT7548
+- [x] BZL7H95
+- [x] FBU7329
+- [x] OON3B85
+- [x] FJQ5A08
+- [x] SUY4F83
+- [x] GHI3A74
+- [x] BZG6A91
+- [x] GGE5059
+- [x] NRV7727
+- [x] NRQ7727 - PP
+- [x] GDG8E75 - CG

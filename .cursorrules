@@ -50,7 +50,9 @@ Quando solicitado a analisar notas:
 4. Procure por inconsistências técnicas ou conflitos de informação
 5. Verifique completude de informações referenciadas
 6. Sempre analise e leve em consideração o conteúdo dos arquivos que estiverem na pasta "02-Referencias"
-7. O arquivo "02-Referencias/base.csv" deve ser consultado como o ODBC da Empresa para buscar dados.
+7. Para dúvidas conceituais sobre Plano de Contas e Centro de Custo, priorize primeiro as notas de "00-Zettlelkasten" (especialmente: "Tipos de Movimentação", "Divisões", "Filiais", "Departamentos", "Estrutura Empresarial G3S" e "Analise Base Financeira").
+8. Se ainda houver dúvida após as notas, consultar os arquivos "02-Referencias/Plano de Contas.pdf" e "02-Referencias/Centro de Custo.pdf".
+9. Consultar "02-Referencias/base.csv" apenas quando a solicitação exigir validação transacional (valores, documentos, recorrência, duplicidade, período, fornecedor, evidência de lançamento) ou quando as fontes conceituais não forem suficientes.
 
 ### Correções e Edições
 Sempre mantenha:
@@ -209,14 +211,29 @@ Execute esta rotina quando o usuário pedir análise da base com variações com
 - "me mostre inconsistências de conta / CC"
 - Ou após qualquer comparação entre SAGI, BCBI e base.csv que revele discrepância
 
+### Ordem de consulta (prioridade)
+1. `00-Zettlelkasten/Tipos de Movimentação.md`
+2. `00-Zettlelkasten/Divisões.md`
+3. `00-Zettlelkasten/Filiais.md`
+4. `00-Zettlelkasten/Departamentos.md`
+5. `00-Zettlelkasten/Estrutura Empresarial G3S.md`
+6. `00-Zettlelkasten/Analise Base Financeira.md`
+7. `02-Referencias/Plano de Contas.pdf`
+8. `02-Referencias/Centro de Custo.pdf`
+9. `02-Referencias/base.csv` (somente se necessário para evidência de lançamento)
+
 ### Arquivos necessários
 | Arquivo | Papel |
 |---|---|
-| `02-Referencias/base.csv` | Base de lançamentos financeiros (delimitador `;`, encoding UTF-8) |
 | `00-Zettlelkasten/Tipos de Movimentação.md` | Referência de contas válidas e sua natureza (D/R) |
 | `00-Zettlelkasten/Divisões.md` | Referência de divisões (1.x despesa / 2.x receita) |
 | `00-Zettlelkasten/Filiais.md` | Referência de filiais e ativos por filial |
 | `00-Zettlelkasten/Departamentos.md` | Referência de departamentos analíticos válidos |
+| `00-Zettlelkasten/Estrutura Empresarial G3S.md` | Contexto organizacional por unidade/empresa |
+| `00-Zettlelkasten/Analise Base Financeira.md` | Regras e interpretações recorrentes da controladoria |
+| `02-Referencias/Plano de Contas.pdf` | Fonte oficial de códigos e descrições de contas |
+| `02-Referencias/Centro de Custo.pdf` | Fonte oficial de códigos e descrições de CC |
+| `02-Referencias/base.csv` | Base transacional para confirmar evidências específicas |
 
 ### Colunas relevantes da base.csv
 | Coluna | Descrição |
