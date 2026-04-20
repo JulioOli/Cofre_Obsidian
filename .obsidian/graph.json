@@ -27,6 +27,13 @@
         "a": 1,
         "rgb": 16645801
       }
+    },
+    {
+      "query": "file:Analise Base",
+      "color": {
+        "a": 1,
+        "rgb": 10420126
+      }
     }
   ],
   "collapse-display": true,

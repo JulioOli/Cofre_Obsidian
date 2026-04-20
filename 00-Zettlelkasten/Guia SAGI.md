@@ -47,6 +47,15 @@ A tela de login do SAGI mostra no rodapé: **usuário logado, setor, CNPJ e fili
 ```
 → Este CC analítico recebe as compras de sucata da filial de P. Prudente.
 
+### Relatórios de Entrada vs. Saída (sucata)
+
+No **contexto da sucata** e do fechamento que cruza relatório SAGI com centro de custo:
+
+- **Relatório de Entrada** → referente a **CCs `1.x.x.x`** (lado despesa) e, no plano, **Compras de Sucatas** (`6.1.1`).
+- **Relatório de Saída** → referente a **CCs `2.x.x.x`** (lado receita) e, no plano, **Vendas de Sucatas** (`4.1.1`).
+
+> Na **Seletiva**, o caso mais comum é **`1.2.x.2`** (compra) e **`2.2.x.2`** (venda) por filial — ver [[Filiais]] e [[Departamentos]].
+
 ---
 
 ### Plano de Contas (PC)

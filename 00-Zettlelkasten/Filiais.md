@@ -5,13 +5,13 @@ tags:
   - centro-de-custo
   - filiais
   - G3S
-atualizado: 01/04/2026
+atualizado: 08/04/2026
 ---
 24/03/2026 - 09:22
 
 # ~={Titulo}Filiais — Centro de Custo G3S=~
 
-> **Fonte:** `Centro de Custo.pdf` — 01/04/2026
+> **Fonte:** `Centro de Custo.pdf` — 08/04/2026
 > Filiais são o **3º nível** da hierarquia do CC: `TIPO.DIVISÃO.FILIAL`
 > Cada filial possui departamentos analíticos no nível seguinte.
 
@@ -265,6 +265,11 @@ Estrutura plana — frota consolidada sem separação por filial.
 | 1.6.3 / 2.6.3 | Veículos, Máquinas e Equipamentos (~50 ativos analíticos) |
 | 1.6.5 | Contêiner |
 | 1.6.6 | Contratos — Gerdau Jaraguá do Sul/SC |
+
+**Referência de ativo identificada na atualização de 08/04/2026:**
+| CC | Ativo |
+|---|---|
+| 1.6.3.31 | HRO5E08 |
 
 ---
 

@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"5c26d60db45b568b","type":"text","text":"credor: LUIZ DO CARMO PEREIRA\n\nlançamentos desse mês tão como **Logistica**, e em janeiro tá como **Pessoas**","x":-872,"y":-8,"width":299,"height":144},
+		{"id":"cfeb832da37efdff","type":"text","text":"credor: COM DE DERIVADOS DE PETROLEO JURANDIA LTDA\n\nobservação confusa","x":-843,"y":-160,"width":270,"height":127},
+		{"id":"4a2e6ede55cb10b0","type":"text","text":"credor: VIKINGS DIGITAL LTDA\n\nsorteiro lançado no plano de conta de eletrônicos?","x":-840,"y":-480,"width":327,"height":121},
+		{"id":"1232e90b81914f5e","type":"text","text":"Premiações de aniversário (17/03 - 30/03)","x":-763,"y":-240,"width":250,"height":60},
+		{"id":"0b602f0fbabc09bd","type":"text","text":"credor: KARZEN ELETRO LTDA\n\nsorteiro lançado no plano de conta de eletrônicos?","x":-573,"y":-375,"width":286,"height":112},
+		{"id":"496c6ff4d41173a5","type":"text","text":"credor: VB SERVICOS COMERCIO E ADMINISTRACAO. LTDA.\n\nlançado no CC - 1.2.5.4 LOGISTICA","x":-562,"y":51,"width":302,"height":129},
+		{"id":"390da2e37eda5470","type":"text","text":"O.C 29835 - Plano de Conta tá como Serviços Contratados (??)","x":-554,"y":-97,"width":267,"height":77},
+		{"id":"e1128cc90249ef64","type":"text","text":"credor - HOTEL GUAPORE LTDA\n\nconta como despesas de viagem?","x":-460,"y":-240,"width":277,"height":109},
+		{"id":"5dc31b4f7e13b24e","type":"text","text":"Descrição -  COMPRA DE OXIGENIO PARA MAÇARICO PATIO DOURADOS\n\nLançado no Plano de Conta - 7.6.1 GÁS  GLP COPA","x":-220,"y":-58,"width":371,"height":156},
+		{"id":"d7448498b5104265","type":"text","text":"título: GUIAFGTSRSE01022026\n\n(Pagto Braçofer?)","x":-1300,"y":-500,"width":340,"height":80},
+		{"id":"c06f1d7b0f7aa24a","type":"text","text":"credor: G&S TRANSPORTE LOGISTICA E LOCACAO DE MAQUINAS E EQUIPAMENTO\n\nSó tem Lançamentos com Plano de Conta \"Transporte de Sucata\" no dia 31 de março","x":-1300,"y":-400,"width":381,"height":144},
+		{"id":"a564524f1848116a","type":"text","text":"Observação: DESP REF A ADESIVO FEITOS PARA CAPACETES EKIPA\n\ndois lançamentos feitos no Plano de Conta \"7.1.5 COMBUSTÍVEL - GASOLINA E ETANOL\"\n\n![[01-Anexos/Pasted image 20260414114833.png]]","x":-1300,"y":-240,"width":408,"height":207},
+		{"id":"f0d9bf5a2d22ace1","type":"text","text":"Observação: Pedágio Sicred (mais de uma placa no mesmo lançamento)\n\n![[01-Anexos/Pasted image 20260414113709.png]]","x":-1300,"y":-20,"width":364,"height":168},
+		{"id":"b9b9a893c2c7d101","type":"text","text":"Credor: MATEUS DA SILVA PEREIRA\n\nLaudo Veicular lançado no plano de conta 7.3.9 segurança do trabalho","x":-1300,"y":160,"width":305,"height":146},
+		{"id":"c9e8d88c7e89849a","type":"text","text":"Credor: GABRIEL BALDASSARINI SAVOLDI\n\nqual plano de contas eu coloco?","x":-878,"y":233,"width":403,"height":103},
+		{"id":"1fcef09749e5ed93","x":-407,"y":271,"width":250,"height":60,"type":"text","text":"credor = EPP"}
+	],
+	"edges":[]
+}

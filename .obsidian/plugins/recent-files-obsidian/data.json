@@ -1,6 +1,58 @@
 {
   "recentFiles": [
     {
+      "basename": "Repurposing abandoned oil and gas wells for geothermal energy extraction",
+      "path": "02-Referencias/julio/Repurposing abandoned oil and gas wells for geothermal energy extraction.pdf"
+    },
+    {
+      "basename": "A comprehensive analysis of repurposing abandoned oil wells for different",
+      "path": "02-Referencias/julio/A comprehensive analysis of repurposing abandoned oil wells for different.pdf"
+    },
+    {
+      "basename": "Repurposing of abandoned oil and gas wells as geothermal power plants",
+      "path": "02-Referencias/julio/Repurposing of abandoned oil and gas wells as geothermal power plants.pdf"
+    },
+    {
+      "basename": "pontos a ver",
+      "path": "00-Zettlelkasten/pontos a ver.md"
+    },
+    {
+      "basename": "Plano de Contas",
+      "path": "02-Referencias/Plano de Contas.pdf"
+    },
+    {
+      "basename": "Lançamentos estranhos - Março",
+      "path": "Lançamentos estranhos - Março.canvas"
+    },
+    {
+      "basename": "Relatorio Controladoria Financeira",
+      "path": "02-Referencias/outros/Relatorio Controladoria Financeira.md"
+    },
+    {
+      "basename": "Divisões",
+      "path": "00-Zettlelkasten/Divisões.md"
+    },
+    {
+      "basename": "Centro de Custo",
+      "path": "02-Referencias/Centro de Custo.pdf"
+    },
+    {
+      "basename": "Pasted image 20260414113709",
+      "path": "01-Anexos/Pasted image 20260414113709.png"
+    },
+    {
+      "basename": "Tipos de Movimentação",
+      "path": "00-Zettlelkasten/Tipos de Movimentação.md"
+    },
+    {
+      "basename": "Chamado Consulti - 090426",
+      "path": "00-Zettlelkasten/Chamado Consulti - 090426.md"
+    },
+    {
+      "basename": "Filiais",
+      "path": "00-Zettlelkasten/Filiais.md"
+    },
+    {
       "basename": "auditoria_20260401",
       "path": "00-Zettlelkasten/auditoria_20260401.md"
     },
@@ -13,28 +65,12 @@
       "path": "00-Zettlelkasten/Pendentes.md"
     },
     {
-      "basename": "Centro de Custo",
-      "path": "02-Referencias/Centro de Custo.pdf"
-    },
-    {
       "basename": "Untitled",
       "path": "00-Zettlelkasten/Untitled.md"
     },
     {
-      "basename": "checklist_auditoria_bcbi_base",
-      "path": "00-Zettlelkasten/checklist_auditoria_bcbi_base.md"
-    },
-    {
-      "basename": "Divisões",
-      "path": "00-Zettlelkasten/Divisões.md"
-    },
-    {
       "basename": "Guia SAGI",
       "path": "00-Zettlelkasten/Guia SAGI.md"
-    },
-    {
-      "basename": "Tipos de Movimentação",
-      "path": "00-Zettlelkasten/Tipos de Movimentação.md"
     },
     {
       "basename": "Índice Controladoria",
@@ -45,16 +81,8 @@
       "path": "00-Zettlelkasten/Analise Base Financeira.md"
     },
     {
-      "basename": "Filiais",
-      "path": "00-Zettlelkasten/Filiais.md"
-    },
-    {
       "basename": "Estrutura Empresarial G3S",
       "path": "00-Zettlelkasten/Estrutura Empresarial G3S.md"
-    },
-    {
-      "basename": "Plano de Contas",
-      "path": "02-Referencias/Plano de Contas.pdf"
     },
     {
       "basename": "Ultra-Aprendizado",
@@ -147,46 +175,6 @@
     {
       "basename": "treinando um modelo com o método .fit()",
       "path": "00-Zettlelkasten/treinando um modelo com o método .fit().md"
-    },
-    {
-      "basename": "Compilar documento LaTeX",
-      "path": "00-Zettlelkasten/Compilar documento LaTeX.md"
-    },
-    {
-      "basename": "Alterando o nome de um commit que eu já dei push",
-      "path": "00-Zettlelkasten/Alterando o nome de um commit que eu já dei push.md"
-    },
-    {
-      "basename": "ver histórico de commits no terminal",
-      "path": "00-Zettlelkasten/ver histórico de commits no terminal.md"
-    },
-    {
-      "basename": "adicionando hyperlinks no latex",
-      "path": "00-Zettlelkasten/adicionando hyperlinks no latex.md"
-    },
-    {
-      "basename": "Quando o jogo acaba, o rei e o peão vão pra mesma caixa",
-      "path": "00-Zettlelkasten/Quando o jogo acaba, o rei e o peão vão pra mesma caixa.md"
-    },
-    {
-      "basename": "todos os animais são iguais, mas alguns animais são mais iguais do que os outros.",
-      "path": "00-Zettlelkasten/todos os animais são iguais, mas alguns animais são mais iguais do que os outros..md"
-    },
-    {
-      "basename": "Conivente (conniving)",
-      "path": "00-Zettlelkasten/Conivente (conniving).md"
-    },
-    {
-      "basename": "O esperto se faz de bobo pra ver até onde o burro se faz de inteligente.",
-      "path": "00-Zettlelkasten/O esperto se faz de bobo pra ver até onde o burro se faz de inteligente..md"
-    },
-    {
-      "basename": "Magnum Opus",
-      "path": "00-Zettlelkasten/Magnum Opus.md"
-    },
-    {
-      "basename": "Buffer",
-      "path": "00-Zettlelkasten/Buffer.md"
     }
   ],
   "omittedPaths": [],

@@ -5,13 +5,13 @@ tags:
   - centro-de-custo
   - divisoes
   - G3S
-atualizado: 01/04/2026
+atualizado: 08/04/2026
 ---
 24/03/2026 - 09:22
 
 # ~={Titulo}Divisões (Unidades de Negócio) — Centro de Custo G3S=~
 
-> **Fonte:** `Centro de Custo.pdf` — 01/04/2026
+> **Fonte:** `Centro de Custo.pdf` — 08/04/2026
 > O 1º dígito do código define o **tipo**: `1` = Despesa · `2` = Receita
 > O 2º nível define a **divisão/unidade de negócio**
 

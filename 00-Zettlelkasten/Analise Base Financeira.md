@@ -81,6 +81,8 @@ Para extrair as dimensões (pandas):
 | Familiares (sócios) | Começa com `1.9` ou `2.9` |
 | Intercompany | `1.10.1` ou `2.10.1` |
 
+> **Relatórios SAGI (sucata):** o **Relatório de Entrada** corresponde, em termos de CC, à **família `1.x.x.x`** (compra / despesa), em especial `1.2.x.2` + `6.1.1`; o **Relatório de Saída** à **família `2.x.x.x`** (venda / receita), em especial `2.2.x.2` + `4.1.1`. Ver [[Guia SAGI]].
+
 ### Por Categoria (descdc)
 
 | Quero ver...                          | Filtro em `descdc`                     |
