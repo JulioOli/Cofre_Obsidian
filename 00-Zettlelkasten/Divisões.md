@@ -12,8 +12,8 @@ atualizado: 08/04/2026
 # ~={Titulo}Divisões (Unidades de Negócio) — Centro de Custo G3S=~
 
 > **Fonte:** `Centro de Custo.pdf` — 08/04/2026
-> O 1º dígito do código define o **tipo**: `1` = Despesa · `2` = Receita
-> O 2º nível define a **divisão/unidade de negócio**
+> O 1º bloco do código define o **tipo**: `1` = Despesa · `2` = Receita
+> A **divisão/unidade de negócio** começa no 2º bloco do código e corresponde ao **1º nível lógico**
 
 ---
 
@@ -200,4 +200,4 @@ Coleta e destinação de entulhos. Apenas em Presidente Prudente.
 
 ___
 
-[[Filiais]] · [[Departamentos]] · [[Tipos de Movimentação]] · [[Estrutura Empresarial G3S]]
+[[Filiais]] · [[Departamentos]] · [[Tipos de Movimentação]] · [[Estrutura Empresarial G3S]] · [[centro de custo]]

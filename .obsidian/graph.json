@@ -34,10 +34,17 @@
         "a": 1,
         "rgb": 10420126
       }
+    },
+    {
+      "query": "file:Script",
+      "color": {
+        "a": 1,
+        "rgb": 15571955
+      }
     }
   ],
   "collapse-display": true,
-  "showArrow": true,
+  "showArrow": false,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 0.993229166666667,
   "lineSizeMultiplier": 0.533854166666667,

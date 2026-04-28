@@ -37,7 +37,11 @@ A tela de login do SAGI mostra no rodapé: **usuário logado, setor, CNPJ e fili
 **Responde à pergunta:** "Em qual parte da empresa esse dinheiro entrou ou saiu?"
 
 - É **hierárquico**: `TIPO.DIVISÃO.FILIAL.DEPARTAMENTO.ATIVO`
-- O 1º dígito sempre define o tipo: `1` = Despesa · `2` = Receita
+- O 1º bloco sempre define o tipo: `1` = Despesa · `2` = Receita
+- Para análise gerencial, use 3 níveis lógicos a partir do 2º bloco:
+  - 1º nível lógico = Divisão
+  - 2º nível lógico = Filial
+  - 3º nível lógico = Departamento
 - **Sintético:** nó da árvore, agrupa, ==não recebe lançamento direto==
 - **Analítico:** folha da árvore, ==recebe o lançamento==
 

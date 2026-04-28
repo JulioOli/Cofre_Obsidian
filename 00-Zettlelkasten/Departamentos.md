@@ -12,7 +12,7 @@ atualizado: 08/04/2026
 # ~={Titulo}Departamentos — Centro de Custo G3S=~
 
 > **Fonte:** `Centro de Custo.pdf` — 08/04/2026
-> Os departamentos são o **4º nível** da hierarquia: `TIPO.DIVISÃO.FILIAL.DEPARTAMENTO`
+> Os departamentos ficam no **4º bloco do código** (`TIPO.DIVISÃO.FILIAL.DEPARTAMENTO`) e representam o **3º nível lógico**
 
 ---
 
@@ -227,4 +227,4 @@ Cada veículo com seu próprio CC. Permite rastrear o custo total de propriedade
 
 ---
 
-[[Divisões]] · [[Filiais]] · [[Tipos de Movimentação]]
+[[Divisões]] · [[Filiais]] · [[Tipos de Movimentação]] · [[centro de custo]]

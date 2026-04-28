@@ -37,13 +37,13 @@ O campo `descen` segue o padrão:
 	TIPO / DIVISÃO / FILIAL / DEPARTAMENTO
 ```
 
-| Nível | Dimensão | Exemplos |
+| Referência | Dimensão | Exemplos |
 |---|---|---|
-| 1º dígito do código | **Tipo** | `1` = DESPESA · `2` = RECEITA |
-| 2º nível (`x.X`) | **Divisão** | Seletiva, Bracofer, Transmove, Ekipa... |
-| 3º nível (`x.x.X`) | **Filial/Cidade** | Dourados, Londrina, Maringá, Pres. Prudente... |
-| 4º nível (`x.x.x.X`) | **Departamento** | Administrativo, Comercial, Operacional, Logística |
-| 5º nível+ | **Ativo específico** | Placa de veículo, código de máquina |
+| 1º bloco do código | **Tipo/Natureza** | `1` = DESPESA · `2` = RECEITA |
+| 1º nível lógico (`x.X`) | **Divisão** | Seletiva, Bracofer, Transmove, Ekipa... |
+| 2º nível lógico (`x.x.X`) | **Filial/Cidade** | Dourados, Londrina, Maringá, Pres. Prudente... |
+| 3º nível lógico (`x.x.x.X`) | **Departamento** | Administrativo, Comercial, Operacional, Logística |
+| Blocos após o 3º nível lógico | **Ativo específico** | Placa de veículo, código de máquina |
 
 ---
 

@@ -1,0 +1,1681 @@
+;;;
+;;;;R.SOCIAL.: G3S COMERCIO E INDUSTRIA DE FERRO E ACO LTDA -  CNPJ.: 20947332/0004-38 END.: RUA HELENA FERRANTE BORGHI, 100 - DISTRITO INDUSTRIAL CIDADE.: PRESIDENTEPRUDENTE - SP TELEFONE: 1821010101 IE: 562407492115 / WWW.SELETIVA.IND.BR DATA. : 27/04/2026 HORA.: 08:25:19-IMPRESSO POR:JULIO.SANTANA;;;;;;;;;;
+;;;;Relação de Centro de Custo;;;;;;;;;;;
+;;;;;;;;;;;;;;
+
+Tipo;
+;;Código;;;;;;;Descrição;;;;;;;
+;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;
+
+1                   ;;;;;;DESPESA                                                                                            ;;;SINTÉTICO ;;
+
+1.1                 ;;;;;;G3S ESCRITORIO                                                                                     ;;;SINTÉTICO ;;
+
+1.1.1               ;;;;;;DIRETORIA                                                                                          ;;;SINTÉTICO ;;
+
+1.1.1.1             ;;;;;;ACIONISTAS                                                                                         ;;;ANALÍTICO ;;
+
+1.1.1.2             ;;;;;;DIRETORIA ADMINISTRATIVA E FINANCEIRA                                                              ;;;ANALÍTICO ;;
+
+1.1.1.3             ;;;;;;DIRETORIA COMERCIAL COMPRA SUCATA                                                                  ;;;ANALÍTICO ;;
+
+1.1.1.4             ;;;;;;DIRETORIA COMERCIAL VENDA SUCATA                                                                   ;;;ANALÍTICO ;;
+
+1.1.1.5             ;;;;;;DIRETORIA DE OPERACAO SUCATA                                                                       ;;;ANALÍTICO ;;
+
+1.1.1.6             ;;;;;;DIRETORIA DE MANUTENCAO                                                                            ;;;ANALÍTICO ;;
+
+1.1.2               ;;;;;;ADMINISTRATIVO                                                                                     ;;;ANALÍTICO ;;
+
+1.1.3               ;;;;;;FINANCEIRO                                                                                         ;;;ANALÍTICO ;;
+
+1.1.4               ;;;;;;CONTABILIDADE/FISCAL                                                                               ;;;ANALÍTICO ;;
+
+1.1.5               ;;;;;;QUALIDADE                                                                                          ;;;ANALÍTICO ;;
+
+1.1.6               ;;;;;;JURIDICO                                                                                           ;;;ANALÍTICO ;;
+
+1.1.7               ;;;;;;LOGISTICA                                                                                          ;;;ANALÍTICO ;;
+
+1.1.8               ;;;;;;AMBIENTAL                                                                                          ;;;ANALÍTICO ;;
+
+1.1.9               ;;;;;;RECURSOS HUMANOS                                                                                   ;;;ANALÍTICO ;;
+
+1.1.10              ;;;;;;PESSOAS                                                                                            ;;;ANALÍTICO ;;
+
+1.1.11              ;;;;;;SEGURANCA DO TRABALHO                                                                              ;;;ANALÍTICO ;;
+
+1.1.12              ;;;;;;MARKETING                                                                                          ;;;ANALÍTICO ;;
+
+1.1.13              ;;;;;;TIC                                                                                                 ;;;ANALÍTICO ;;
+
+1.1.14              ;;;;;;SUPRIMENTOS                                                                                        ;;;ANALÍTICO ;;
+
+1.1.15              ;;;;;;MANUTENCAO MAQUINAS E VEICULOS                                                                     ;;;ANALÍTICO ;;
+
+1.1.16              ;;;;;;PREDIAL/INSTALACOES                                                                                ;;;ANALÍTICO ;;
+
+1.1.17              ;;;;;;MANUTENCAO VEICULOS                                                                                ;;;ANALÍTICO ;;
+
+1.2                 ;;;;;;SELETIVA                                                                                           ;;;SINTÉTICO ;;
+
+1.2.1               ;;;;;;CORPORATIVO SUCATA                                                                                 ;;;SINTÉTICO ;;
+
+1.2.1.1             ;;;;;;APOIO                                                                                              ;;;ANALÍTICO ;;
+
+1.2.1.2             ;;;;;;COORDENACAO MS                                                                                     ;;;ANALÍTICO ;;
+
+1.2.1.3             ;;;;;;COORDENACAO PR                                                                                     ;;;ANALÍTICO ;;
+
+1.2.1.4             ;;;;;;COORDENACAO SP                                                                                     ;;;ANALÍTICO ;;
+
+1.2.1.5             ;;;;;;COMERCIAL COMPRA SUCATA                                                                            ;;;ANALÍTICO ;;
+
+1.2.1.6             ;;;;;;COMERCIAL VENDA SUCATA                                                                             ;;;ANALÍTICO ;;
+
+1.2.1.7             ;;;;;;DIRETORIA DE OPERACAO SUCATA                                                                       ;;;ANALÍTICO ;;
+
+1.2.1.8             ;;;;;;PRENSA MOVEL                                                                                       ;;;SINTÉTICO ;;
+
+1.2.1.8.1           ;;;;;;GDU0275 (PHH0022)                                                                                  ;;;ANALÍTICO ;;
+
+1.2.1.8.2           ;;;;;;QXH2G14 (PHH0061)                                                                                  ;;;ANALÍTICO ;;
+
+;;;;;;;;;;;;;;;;
+Página: 1 / 19;
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;;;;;;;;
+;;;;;;;;
+1.2.1.8.3           ;PHH0062                                                                                            ;;ANALÍTICO ;
+
+1.2.1.9             ;VEICULOS                                                                                           ;;SINTÉTICO ;
+
+1.2.1.9.1           ;FBV4H62                                                                                            ;;ANALÍTICO ;
+
+1.2.1.9.2           ;GDY0H74                                                                                            ;;ANALÍTICO ;
+
+1.2.1.9.3           ;GDB3A42                                                                                            ;;ANALÍTICO ;
+
+1.2.1.10            ;SUC7A43                                                                                            ;;ANALÍTICO ;
+
+1.2.1.11            ;CAIXAS                                                                                             ;;ANALÍTICO ;
+
+1.2.1.12            ;PROJETO LICENÇA CETESB                                                                             ;;ANALÍTICO ;
+
+1.2.2               ;DOURADOS                                                                                           ;;SINTÉTICO ;
+
+1.2.2.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.2.2.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.2.2.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.2.2.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.2.2.5             ;VEICULOS                                                                                           ;;SINTÉTICO ;
+
+1.2.2.5.1           ;BKW9I57                                                                                            ;;ANALÍTICO ;
+
+1.2.2.5.2           ;BTZ8D36                                                                                            ;;ANALÍTICO ;
+
+1.2.2.5.3           ;BZL7H95                                                                                            ;;ANALÍTICO ;
+
+1.2.2.5.4           ;NRQ7727                                                                                            ;;ANALÍTICO ;
+
+1.2.2.5.5           ;FJU8F67 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.2.5.6           ;FUF1E28 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.2.5.7           ;FZF3J28 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.2.5.8           ;QAU6E20 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.2.5.9           ;TKI2E74                                                                                            ;;ANALÍTICO ;
+
+1.2.2.6             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
+
+1.2.2.6.1           ;EHH0036                                                                                            ;;ANALÍTICO ;
+
+1.2.2.6.2           ;EHH0003                                                                                            ;;ANALÍTICO ;
+
+1.2.2.6.3           ;EHL0042                                                                                            ;;ANALÍTICO ;
+
+1.2.2.6.4           ;PHT0018                                                                                            ;;ANALÍTICO ;
+
+1.2.2.6.5           ;BAL0006 (BALANÇA)                                                                                  ;;ANALÍTICO ;
+
+1.2.3               ;LONDRINA                                                                                           ;;SINTÉTICO ;
+
+1.2.3.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.2.3.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.2.3.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.2.3.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.2.3.5             ;VEICULOS                                                                                           ;;SINTÉTICO ;
+
+1.2.3.5.1           ;EWU5J85                                                                                            ;;ANALÍTICO ;
+
+1.2.3.5.2           ;EJZ7998                                                                                            ;;ANALÍTICO ;
+
+1.2.3.5.3           ;FTP7D76                                                                                            ;;ANALÍTICO ;
+
+1.2.3.5.4           ;DHW9801 (AGREGADO)                                                                                 ;;ANALÍTICO ;
+
+1.2.3.5.5           ;STF9C60                                                                                            ;;ANALÍTICO ;
+
+1.2.3.5.6           ;GDA9J63                                                                                            ;;ANALÍTICO ;
+
+1.2.3.5.7           ;BZL7H95                                                                                            ;;ANALÍTICO ;
+
+1.2.3.6             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
+
+1.2.3.6.1           ;EHH0040                                                                                            ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 2 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.2.3.6.2           ;EHH0008                                                                                            ;;ANALÍTICO ;
+
+1.2.3.6.3           ;EHH0002                                                                                            ;;ANALÍTICO ;
+
+1.2.4               ;MARINGA DISTRITO                                                                                   ;;SINTÉTICO ;
+
+1.2.4.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.2.4.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.2.4.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.2.4.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.2.4.5             ;PATIO GXS                                                                                          ;;ANALÍTICO ;
+
+1.2.4.6             ;PRENSA FIXA JCG800                                                                                 ;;ANALÍTICO ;
+
+1.2.4.7             ;VEICULOS                                                                                           ;;SINTÉTICO ;
+
+1.2.4.7.1           ;EWU5J98                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.2           ;GHI3A74                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.3           ;OON3B85                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.4           ;EWU6087                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.5           ;EWU6A85                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.6           ;EWU6154 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.4.7.7           ;EWU6204 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.4.7.8           ;EWU6343 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.4.7.9           ;FJQ5A08                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.10          ;RNC9H69                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.11          ;GPZ5548 (AGREGADO)                                                                                 ;;ANALÍTICO ;
+
+1.2.4.7.12          ;FRT7548                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.13          ;BZL7H95                                                                                            ;;ANALÍTICO ;
+
+1.2.4.7.14          ;FBU7329                                                                                            ;;ANALÍTICO ;
+
+1.2.4.8             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
+
+1.2.4.8.1           ;EHH0039                                                                                            ;;ANALÍTICO ;
+
+1.2.4.8.2           ;EHH0002                                                                                            ;;ANALÍTICO ;
+
+1.2.4.8.3           ;EHH0004                                                                                            ;;ANALÍTICO ;
+
+1.2.4.8.4           ;EHL0043                                                                                            ;;ANALÍTICO ;
+
+1.2.4.8.5           ;BHM0047                                                                                            ;;ANALÍTICO ;
+
+1.2.4.8.6           ;PHH0061 (JCG800)                                                                                   ;;ANALÍTICO ;
+
+1.2.4.8.7           ;EHL0014                                                                                            ;;ANALÍTICO ;
+
+1.2.5               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+1.2.5.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.2.5.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.2.5.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.2.5.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.2.5.5             ;PRENSA FIXA JCG800                                                                                 ;;ANALÍTICO ;
+
+1.2.5.6             ;VEICULOS                                                                                           ;;SINTÉTICO ;
+
+1.2.5.6.1           ;EWU6003                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.2           ;BZG6A91                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.3           ;GDA9J63                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.4           ;GGE5059                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.5           ;TRANSFERIDO                                                                                        ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 3 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.2.5.6.6           ;EWU6A86                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.7           ;FUP3G76                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.8           ;FVQ3B78                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.9           ;EWU6B52                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.10          ;EJZ7G08 (AGREGADO)                                                                                 ;;ANALÍTICO ;
+
+1.2.5.6.11          ;SUE1E15                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.12          ;SUY4F83 (VOLVO)                                                                                    ;;ANALÍTICO ;
+
+1.2.5.6.13          ;GHI3A74                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.14          ;EWU6A85                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.15          ;NRQ7727                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.16          ;EJZ7998                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.17          ;OON3B85                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.18          ;EJZ7J97                                                                                            ;;ANALÍTICO ;
+
+1.2.5.6.19          ;EJZ7999                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
+
+1.2.5.7.1           ;EHH0037                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.2           ;EHH0006                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.3           ;EHH0046                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.4           ;PHJ0054                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.5           ;PHH0031                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.6           ;PHH0045                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.7           ;EHL0028                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.8           ;EHH0009                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.9           ;CHF0016                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.10          ;EHH0007                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.11          ;EWU6143                                                                                            ;;ANALÍTICO ;
+
+1.2.5.7.12          ;EPT0024 (EMPILHADEIRA)                                                                             ;;ANALÍTICO ;
+
+1.2.5.7.13          ;EHH0005                                                                                            ;;ANALÍTICO ;
+
+1.2.5.8             ;PROJETO SISTEMA DE INCENDIO                                                                        ;;ANALÍTICO ;
+
+1.2.6               ;ASSIS                                                                                              ;;SINTÉTICO ;
+
+1.2.6.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.2.6.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.2.6.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.2.6.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.2.7               ;CAMPO GRANDE                                                                                       ;;SINTÉTICO ;
+
+1.2.7.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.2.7.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.2.7.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.2.7.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.2.7.5             ;PROJETO CORUMBA                                                                                    ;;ANALÍTICO ;
+
+1.2.7.6             ;VEICULOS                                                                                           ;;SINTÉTICO ;
+
+1.2.7.6.1           ;GDG8E75                                                                                            ;;ANALÍTICO ;
+
+1.2.7.6.2           ;NRV7727                                                                                            ;;ANALÍTICO ;
+
+1.2.7.6.3           ;QAO4A53                                                                                            ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 4 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.2.7.6.4           ;EWU6341 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.7.6.5           ;EWU6294 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.2.7.6.6           ;EWU5986                                                                                            ;;ANALÍTICO ;
+
+1.2.7.7             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
+
+1.2.7.7.1           ;EHH0038                                                                                            ;;ANALÍTICO ;
+
+1.2.7.7.2           ;EHH0019                                                                                            ;;ANALÍTICO ;
+
+1.2.7.8             ;PROJETO UND. PROPRIA CG                                                                            ;;ANALÍTICO ;
+
+1.2.8               ;MARINGA CIDADE ALTA                                                                                ;;SINTÉTICO ;
+
+1.2.8.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.2.8.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.2.8.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.2.8.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.3                 ;BRACOFER                                                                                           ;;SINTÉTICO ;
+
+1.3.1               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+1.3.1.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.3.1.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.3.1.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.3.1.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.3.1.5             ;CORTE E DOBRA                                                                                      ;;ANALÍTICO ;
+
+1.3.1.6             ;VEICULOS                                                                                           ;;SINTÉTICO ;
+
+1.3.1.6.1           ;CZB9H07                                                                                            ;;ANALÍTICO ;
+
+1.3.1.6.2           ;HAR1F82                                                                                            ;;ANALÍTICO ;
+
+1.3.1.6.3           ;EJZ7495                                                                                            ;;ANALÍTICO ;
+
+1.3.1.6.4           ;EJZ7496                                                                                            ;;ANALÍTICO ;
+
+1.3.1.7             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
+
+1.3.1.7.1           ;EUS0048                                                                                            ;;ANALÍTICO ;
+
+1.3.1.7.2           ;ACS0049                                                                                            ;;ANALÍTICO ;
+
+1.3.1.7.3           ;CCS0052                                                                                            ;;ANALÍTICO ;
+
+1.3.1.7.4           ;DPS0050                                                                                            ;;ANALÍTICO ;
+
+1.3.1.7.5           ;DPS0051                                                                                            ;;ANALÍTICO ;
+
+1.3.1.8             ;PROJETOS                                                                                           ;;SINTÉTICO ;
+
+1.3.1.8.1           ;ESCRITORIO NOVO                                                                                    ;;ANALÍTICO ;
+
+1.3.1.8.2           ;ESPAÇO DO SERRALHEIRO E CALHEIRO                                                                   ;;ANALÍTICO ;
+
+1.4                 ;TRANSMOVE GSL                                                                                      ;;SINTÉTICO ;
+
+1.4.1               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+1.4.1.1             ;TRANSPORTE                                                                                         ;;ANALÍTICO ;
+
+1.4.1.2             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.4.2               ;DOURADOS                                                                                           ;;SINTÉTICO ;
+
+1.4.2.1             ;TRANSPORTE                                                                                         ;;ANALÍTICO ;
+
+1.4.2.2             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.4.3               ;MARINGA                                                                                            ;;SINTÉTICO ;
+
+1.4.3.1             ;TRANSPORTE                                                                                         ;;ANALÍTICO ;
+
+1.4.3.2             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.4.4               ;BARUERI                                                                                            ;;SINTÉTICO ;
+
+;;;;;;;
+Página: 5 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.4.4.1             ;TRANSPORTE                                                                                         ;;ANALÍTICO ;
+
+1.4.4.2             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.5                 ;EKIPA CONTEINER                                                                                    ;;SINTÉTICO ;
+
+1.5.1               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+1.5.1.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.5.1.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.5.1.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.5.1.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.6                 ;EKIPA LOCACOES RSE                                                                                 ;;SINTÉTICO ;
+
+1.6.1               ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.6.2               ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.6.3               ;VEICULO, MAQUINA E EQUIPAMENTO                                                                     ;;SINTÉTICO ;
+
+1.6.3.1             ;EHH0007                                                                                            ;;ANALÍTICO ;
+
+1.6.3.2             ;EHL0013                                                                                            ;;ANALÍTICO ;
+
+1.6.3.3             ;EHL0014                                                                                            ;;ANALÍTICO ;
+
+1.6.3.4             ;FBU7329                                                                                            ;;ANALÍTICO ;
+
+1.6.3.5             ;FRT7548                                                                                            ;;ANALÍTICO ;
+
+1.6.3.6             ;EWU6088                                                                                            ;;ANALÍTICO ;
+
+1.6.3.7             ;EJZ7999                                                                                            ;;ANALÍTICO ;
+
+1.6.3.8             ;EJZ7J97                                                                                            ;;ANALÍTICO ;
+
+1.6.3.9             ;EWU6143                                                                                            ;;ANALÍTICO ;
+
+1.6.3.10            ;EWU6342                                                                                            ;;ANALÍTICO ;
+
+1.6.3.11            ;GDB3A42                                                                                            ;;ANALÍTICO ;
+
+1.6.3.12            ;GDY0H74                                                                                            ;;ANALÍTICO ;
+
+1.6.3.13            ;EWU5698                                                                                            ;;ANALÍTICO ;
+
+1.6.3.14            ;EWU5984                                                                                            ;;ANALÍTICO ;
+
+1.6.3.15            ;OOM8D73                                                                                            ;;ANALÍTICO ;
+
+1.6.3.16            ;EJZ7303                                                                                            ;;ANALÍTICO ;
+
+1.6.3.17            ;EHL0011                                                                                            ;;ANALÍTICO ;
+
+1.6.3.18            ;EHL0012                                                                                            ;;ANALÍTICO ;
+
+1.6.3.19            ;CNI0624                                                                                            ;;ANALÍTICO ;
+
+1.6.3.20            ;HSU9D49                                                                                            ;;ANALÍTICO ;
+
+1.6.3.21            ;BZN1874                                                                                            ;;ANALÍTICO ;
+
+1.6.3.22            ;PHE0030                                                                                            ;;ANALÍTICO ;
+
+1.6.3.23            ;DTB6854                                                                                            ;;ANALÍTICO ;
+
+1.6.3.24            ;MRP6135                                                                                            ;;ANALÍTICO ;
+
+1.6.3.25            ;EHP0032                                                                                            ;;ANALÍTICO ;
+
+1.6.3.26            ;ESC0001                                                                                            ;;ANALÍTICO ;
+
+1.6.3.27            ;ESC0002                                                                                            ;;ANALÍTICO ;
+
+1.6.3.28            ;PRJ0001                                                                                            ;;ANALÍTICO ;
+
+1.6.3.29            ;CHN0029                                                                                            ;;ANALÍTICO ;
+
+1.6.3.30            ;EHH0005                                                                                            ;;ANALÍTICO ;
+
+1.6.3.31            ;HRO5E08                                                                                            ;;ANALÍTICO ;
+
+1.6.3.32            ;FTW0D43                                                                                            ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 6 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.6.3.33            ;FYC7D43                                                                                            ;;ANALÍTICO ;
+
+1.6.3.34            ;EQO6E99 (PRENSA MOVEL)                                                                             ;;ANALÍTICO ;
+
+1.6.3.35            ;PHT0025                                                                                            ;;ANALÍTICO ;
+
+1.6.3.36            ;EPT0024 (EMPILHADEIRA)                                                                             ;;ANALÍTICO ;
+
+1.6.3.37            ;BTS7191 (VENDIDO)                                                                                  ;;ANALÍTICO ;
+
+1.6.3.38            ;TKI2E74                                                                                            ;;ANALÍTICO ;
+
+1.6.3.39            ;HTD5F77 TOYOTA HILUX (VENDIDO)                                                                     ;;ANALÍTICO ;
+
+1.6.3.40            ;EHL0070 (LH30M)                                                                                    ;;ANALÍTICO ;
+
+1.6.3.41            ;PHH0062                                                                                            ;;ANALÍTICO ;
+
+1.6.3.42            ;EWU5671 (VENDA)                                                                                    ;;ANALÍTICO ;
+
+1.6.3.43            ;CZB9484 (VENDA)                                                                                    ;;ANALÍTICO ;
+
+1.6.3.44            ;DBP3174 (VENDA)                                                                                    ;;ANALÍTICO ;
+
+1.6.3.45            ;EWU5J85                                                                                            ;;ANALÍTICO ;
+
+1.6.3.46            ;GBW4F06                                                                                            ;;ANALÍTICO ;
+
+1.6.3.47            ;EWU5986 (VENDA)                                                                                    ;;ANALÍTICO ;
+
+1.6.3.48            ;BWJ9H37 (VENDA)                                                                                    ;;ANALÍTICO ;
+
+1.6.3.49            ;EHH0046                                                                                            ;;ANALÍTICO ;
+
+1.6.4               ;MANUTENCAO                                                                                         ;;ANALÍTICO ;
+
+1.6.5               ;CONTAINER                                                                                          ;;ANALÍTICO ;
+
+1.6.6               ;CONTRATOS                                                                                          ;;SINTÉTICO ;
+
+1.6.6.1             ;GERDAU - JARAGUA DO SUL/SC                                                                         ;;SINTÉTICO ;
+
+1.6.6.1.1           ;EQO6E99 (PRENSA MOVEL)                                                                             ;;ANALÍTICO ;
+
+1.7                 ;EKIPA LOCACOES E SERV  G&S                                                                         ;;SINTÉTICO ;
+
+1.7.1               ;CONTRATOS                                                                                          ;;SINTÉTICO ;
+
+1.7.1.1             ;APOIO                                                                                              ;;ANALÍTICO ;
+
+1.7.1.2             ;ARCELOR - RESENDE/RJ                                                                               ;;SINTÉTICO ;
+
+1.7.1.2.1           ;ARCELOR/ RESENDE/RJ – OPERADORES                                                                   ;;ANALÍTICO ;
+
+1.7.1.2.2           ;EWU5857                                                                                            ;;ANALÍTICO ;
+
+1.7.1.2.3           ;GBL8H44 (PHH0044)                                                                                  ;;ANALÍTICO ;
+
+1.7.1.3             ;ARCELOR - BARRA MANSA/RJ                                                                           ;;SINTÉTICO ;
+
+1.7.1.3.1           ;ARCELOR/BARRA MANSA/RJ-OPERADORES                                                                  ;;ANALÍTICO ;
+
+1.7.1.3.2           ;EHH0019                                                                                            ;;ANALÍTICO ;
+
+1.7.1.3.3           ;EHH0037                                                                                            ;;ANALÍTICO ;
+
+1.7.1.3.4           ;EHH0015                                                                                            ;;ANALÍTICO ;
+
+1.7.1.4             ;ARCELOR - PIRACICABA/SP                                                                            ;;SINTÉTICO ;
+
+1.7.1.4.1           ;ARCELOR/PIRACICABA/SP-OPERADORES                                                                   ;;ANALÍTICO ;
+
+1.7.1.4.2           ;SWQ2C15 (PHH0049)                                                                                  ;;ANALÍTICO ;
+
+1.7.1.4.3           ;EWU5857                                                                                            ;;ANALÍTICO ;
+
+1.7.1.4.4           ;EWU6A79                                                                                            ;;ANALÍTICO ;
+
+1.7.1.4.5           ;GBL8H44                                                                                            ;;ANALÍTICO ;
+
+1.7.1.5             ;ARCELOR - JUIZ DE FORA/MG                                                                          ;;ANALÍTICO ;
+
+1.7.1.6             ;ARCELOR - CURITIBA/PR                                                                              ;;ANALÍTICO ;
+
+1.7.1.7             ;GERDAU - SAO CAETANO DO SUL/SP                                                                     ;;SINTÉTICO ;
+
+1.7.1.7.1           ;EWU6041                                                                                            ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 7 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.7.1.8             ;TUPY - JOINVILLE/SC                                                                                ;;SINTÉTICO ;
+
+1.7.1.8.1           ;TUPY - JOINVILLE/SC - OPERADORES                                                                   ;;ANALÍTICO ;
+
+1.7.1.8.2           ;EHH0044                                                                                            ;;ANALÍTICO ;
+
+1.7.1.8.3           ;EHL0041                                                                                            ;;ANALÍTICO ;
+
+1.7.1.9             ;TUPY - BETIM/MG                                                                                    ;;ANALÍTICO ;
+
+1.7.1.10            ;TRANSMOVE - PRANCHA SALIONE                                                                        ;;ANALÍTICO ;
+
+1.7.1.11            ;SELETIVA - PRENSA MOVEL                                                                            ;;SINTÉTICO ;
+
+1.7.1.11.1          ;GDU0275                                                                                            ;;ANALÍTICO ;
+
+1.7.1.11.2          ;QXH2G14                                                                                            ;;ANALÍTICO ;
+
+1.7.1.12            ;ALMAD                                                                                              ;;ANALÍTICO ;
+
+1.7.1.13            ;MIGRAÇÃO DO ATUA                                                                                   ;;ANALÍTICO ;
+
+1.7.1.14            ;ARCELOR - IRACEMAPOLIS/SP                                                                          ;;SINTÉTICO ;
+
+1.7.1.14.1          ;ARCELOR/IRACEMAPOLIS/SP - OPERADORES                                                               ;;ANALÍTICO ;
+
+1.7.1.14.2          ;EWU6A79                                                                                            ;;ANALÍTICO ;
+
+1.7.1.14.3          ;SWQ2C15 (PHH0049)                                                                                  ;;ANALÍTICO ;
+
+1.7.2               ;CORPORATIVO                                                                                        ;;SINTÉTICO ;
+
+1.7.2.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.7.2.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.7.2.3             ;ECO EXPO                                                                                           ;;ANALÍTICO ;
+
+1.7.3               ;G&S BARUERI                                                                                        ;;SINTÉTICO ;
+
+1.7.3.1             ;ADMNISTRATIVO                                                                                      ;;ANALÍTICO ;
+
+1.7.3.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.7.3.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.7.3.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.7.4               ;G&S CAMPO GRANDE                                                                                   ;;SINTÉTICO ;
+
+1.7.4.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.7.4.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.7.4.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.7.4.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.7.5               ;G&S DOURADOS                                                                                       ;;SINTÉTICO ;
+
+1.7.5.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.7.5.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.7.5.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.7.5.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.7.6               ;G&S LONDRINA                                                                                       ;;SINTÉTICO ;
+
+1.7.6.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.7.6.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.7.6.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.7.6.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.7.7               ;G&S MARINGA                                                                                        ;;SINTÉTICO ;
+
+1.7.7.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.7.7.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.7.7.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.7.7.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 8 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.7.8               ;G&S PRUDENTE                                                                                       ;;SINTÉTICO ;
+
+1.7.8.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.7.8.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.7.8.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.7.8.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+1.7.9               ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
+
+1.7.9.1             ;EHH0036                                                                                            ;;ANALÍTICO ;
+
+1.7.9.2             ;EHH0003                                                                                            ;;ANALÍTICO ;
+
+1.7.9.3             ;EHL0042                                                                                            ;;ANALÍTICO ;
+
+1.7.9.4             ;PHT0018                                                                                            ;;ANALÍTICO ;
+
+1.7.9.5             ;EHH0040                                                                                            ;;ANALÍTICO ;
+
+1.7.9.6             ;EHH0008                                                                                            ;;ANALÍTICO ;
+
+1.7.9.7             ;EHH0002                                                                                            ;;ANALÍTICO ;
+
+1.7.9.8             ;EHH0039                                                                                            ;;ANALÍTICO ;
+
+1.7.9.9             ;EHH0004                                                                                            ;;ANALÍTICO ;
+
+1.7.9.10            ;EHL0043                                                                                            ;;ANALÍTICO ;
+
+1.7.9.11            ;BHM0047                                                                                            ;;ANALÍTICO ;
+
+1.7.9.12            ;PHH0061 (JCG800)                                                                                   ;;ANALÍTICO ;
+
+1.7.9.13            ;EHL0014                                                                                            ;;ANALÍTICO ;
+
+1.7.9.14            ;EHH0006                                                                                            ;;ANALÍTICO ;
+
+1.7.9.15            ;PHJ0054                                                                                            ;;ANALÍTICO ;
+
+1.7.9.16            ;PHH0031                                                                                            ;;ANALÍTICO ;
+
+1.7.9.17            ;PHH0045                                                                                            ;;ANALÍTICO ;
+
+1.7.9.18            ;EHL0028                                                                                            ;;ANALÍTICO ;
+
+1.7.9.19            ;EHH0009                                                                                            ;;ANALÍTICO ;
+
+1.7.9.20            ;CHF0016                                                                                            ;;ANALÍTICO ;
+
+1.7.9.21            ;EHH0007                                                                                            ;;ANALÍTICO ;
+
+1.7.9.22            ;EWU6143                                                                                            ;;ANALÍTICO ;
+
+1.7.9.23            ;EPT0024 (EMPILHADEIRA)                                                                             ;;ANALÍTICO ;
+
+1.7.9.24            ;EHH0005                                                                                            ;;ANALÍTICO ;
+
+1.7.9.25            ;EHH0038                                                                                            ;;ANALÍTICO ;
+
+1.7.9.26            ;EHH0019                                                                                            ;;ANALÍTICO ;
+
+1.7.9.27            ;EUS0048                                                                                            ;;ANALÍTICO ;
+
+1.7.9.28            ;ACS0049                                                                                            ;;ANALÍTICO ;
+
+1.7.9.29            ;CCS0052                                                                                            ;;ANALÍTICO ;
+
+1.7.9.30            ;DPS0050                                                                                            ;;ANALÍTICO ;
+
+1.7.9.31            ;DPS0051                                                                                            ;;ANALÍTICO ;
+
+1.7.9.32            ;EHH0006                                                                                            ;;ANALÍTICO ;
+
+1.7.9.33            ;EHH0019                                                                                            ;;ANALÍTICO ;
+
+1.7.9.34            ;EHH0008                                                                                            ;;ANALÍTICO ;
+
+1.7.9.35            ;EHH0007                                                                                            ;;ANALÍTICO ;
+
+1.7.9.36            ;XXXXXX                                                                                             ;;ANALÍTICO ;
+
+1.7.10              ;VEICULOS                                                                                           ;;SINTÉTICO ;
+
+1.7.10.1            ;FBV4H62                                                                                            ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 9 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.7.10.2            ;GDY0H74                                                                                            ;;ANALÍTICO ;
+
+1.7.10.3            ;GDB3A42                                                                                            ;;ANALÍTICO ;
+
+1.7.10.4            ;SUC7A43                                                                                            ;;ANALÍTICO ;
+
+1.7.10.5            ;BKW9I57                                                                                            ;;ANALÍTICO ;
+
+1.7.10.6            ;BTZ8D36                                                                                            ;;ANALÍTICO ;
+
+1.7.10.7            ;FJU8F67 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.8            ;FUF1E28 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.9            ;FZF3J28 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.10           ;QAU6E20 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.11           ;TKI2E74                                                                                            ;;ANALÍTICO ;
+
+1.7.10.12           ;FTP7D76                                                                                            ;;ANALÍTICO ;
+
+1.7.10.13           ;STF9C60                                                                                            ;;ANALÍTICO ;
+
+1.7.10.14           ;GDA9J63                                                                                            ;;ANALÍTICO ;
+
+1.7.10.15           ;BZL7H95                                                                                            ;;ANALÍTICO ;
+
+1.7.10.16           ;EWU5J98                                                                                            ;;ANALÍTICO ;
+
+1.7.10.17           ;OON3B85                                                                                            ;;ANALÍTICO ;
+
+1.7.10.18           ;EWU6087                                                                                            ;;ANALÍTICO ;
+
+1.7.10.19           ;EWU6A85                                                                                            ;;ANALÍTICO ;
+
+1.7.10.20           ;EWU6154 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.21           ;EWU6204 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.22           ;EWU6343 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.23           ;FJQ5A08                                                                                            ;;ANALÍTICO ;
+
+1.7.10.24           ;RNC9H69                                                                                            ;;ANALÍTICO ;
+
+1.7.10.25           ;FRT7548                                                                                            ;;ANALÍTICO ;
+
+1.7.10.26           ;BZL7H95                                                                                            ;;ANALÍTICO ;
+
+1.7.10.27           ;FBU7329                                                                                            ;;ANALÍTICO ;
+
+1.7.10.28           ;EWU6003                                                                                            ;;ANALÍTICO ;
+
+1.7.10.29           ;BZG6A91                                                                                            ;;ANALÍTICO ;
+
+1.7.10.30           ;GGE5059                                                                                            ;;ANALÍTICO ;
+
+1.7.10.31           ;EW6A86                                                                                             ;;ANALÍTICO ;
+
+1.7.10.32           ;FUP3G76                                                                                            ;;ANALÍTICO ;
+
+1.7.10.33           ;FVQ3B78                                                                                            ;;ANALÍTICO ;
+
+1.7.10.34           ;EWU6B52                                                                                            ;;ANALÍTICO ;
+
+1.7.10.35           ;SUE1E15                                                                                            ;;ANALÍTICO ;
+
+1.7.10.36           ;SUY4F83                                                                                            ;;ANALÍTICO ;
+
+1.7.10.37           ;GHI3A74                                                                                            ;;ANALÍTICO ;
+
+1.7.10.38           ;EWU6A85                                                                                            ;;ANALÍTICO ;
+
+1.7.10.39           ;NRQ7727                                                                                            ;;ANALÍTICO ;
+
+1.7.10.40           ;EJZ7998                                                                                            ;;ANALÍTICO ;
+
+1.7.10.41           ;EJZ7J97                                                                                            ;;ANALÍTICO ;
+
+1.7.10.42           ;EJZ7999                                                                                            ;;ANALÍTICO ;
+
+1.7.10.43           ;GDG8E75                                                                                            ;;ANALÍTICO ;
+
+1.7.10.44           ;NRV7727                                                                                            ;;ANALÍTICO ;
+
+1.7.10.45           ;QAO4A53                                                                                            ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 10 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.7.10.46           ;EWU6341 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.47           ;EWU6294 (JULIETA)                                                                                  ;;ANALÍTICO ;
+
+1.7.10.48           ;CZB9H07                                                                                            ;;ANALÍTICO ;
+
+1.7.10.49           ;HAR1F82                                                                                            ;;ANALÍTICO ;
+
+1.7.10.50           ;EJZ7495                                                                                            ;;ANALÍTICO ;
+
+1.7.10.51           ;EJZ7496                                                                                            ;;ANALÍTICO ;
+
+1.7.10.52           ;CZB9484 (VENDA)                                                                                    ;;ANALÍTICO ;
+
+1.7.10.53           ;EJZ7303                                                                                            ;;ANALÍTICO ;
+
+1.7.10.54           ;EWU5986 (VENDA)                                                                                    ;;ANALÍTICO ;
+
+1.7.10.55           ;EWU5J85                                                                                            ;;ANALÍTICO ;
+
+1.7.10.56           ;BZN1874                                                                                            ;;ANALÍTICO ;
+
+1.7.10.57           ;EWU5984                                                                                            ;;ANALÍTICO ;
+
+1.8                 ;RENDER LOCACOES                                                                                    ;;SINTÉTICO ;
+
+1.8.1               ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.8.2               ;LUKA IMOVEIS                                                                                       ;;ANALÍTICO ;
+
+1.8.3               ;RSS                                                                                                ;;SINTÉTICO ;
+
+1.8.3.1             ;ASSIS - 17                                                                                         ;;ANALÍTICO ;
+
+1.8.3.2             ;ASSIS - 5                                                                                          ;;ANALÍTICO ;
+
+1.8.3.3             ;ASSIS - 6 - BARRACAO ALUMA                                                                         ;;ANALÍTICO ;
+
+1.8.3.4             ;P PTE - AVENIDA BRASIL                                                                             ;;ANALÍTICO ;
+
+1.8.3.5             ;P PTE - BARRACAO VIOTO                                                                             ;;ANALÍTICO ;
+
+1.8.3.6             ;P PTE - JOSE PETRIN, 777                                                                           ;;ANALÍTICO ;
+
+1.8.3.7             ;P PTE - CHACARA RENATO 2,4 HA                                                                      ;;ANALÍTICO ;
+
+1.8.3.8             ;P PTE - CONCEPT                                                                                    ;;ANALÍTICO ;
+
+1.8.3.9             ;P PTE - SALA 304 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+1.8.3.10            ;P PTE - SALA 306 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+1.8.3.11            ;P PTE - SALA 310 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+1.8.3.12            ;P PTE - SALA 405 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+1.8.3.13            ;P PTE - SALA 411 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+1.8.3.14            ;P PTE - SALA 402 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+1.8.3.15            ;P PTE - SALA 404 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+1.8.3.16            ;P PTE - SALA 406 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+1.8.3.17            ;P PTE - JOSE PETRIN, 760                                                                           ;;ANALÍTICO ;
+
+1.8.3.18            ;P PTE - JOSE PETRIN, 768                                                                           ;;ANALÍTICO ;
+
+1.8.3.19            ;P PTE - ESSENZA UNIDADE 16                                                                         ;;ANALÍTICO ;
+
+1.8.3.20            ;P PTE - JOSE ZERIAL, 200                                                                           ;;ANALÍTICO ;
+
+1.8.3.21            ;P PTE - JOSE ZERIAL, 200 A                                                                         ;;ANALÍTICO ;
+
+1.8.3.22            ;P PTE - JOAQUIM CONSTANTINO, 4264                                                                  ;;ANALÍTICO ;
+
+1.8.3.23            ;P PTE - JOSE PETRIN, 678                                                                           ;;ANALÍTICO ;
+
+1.8.3.24            ;P PTE - SOL NASCENTE - BRASPRESS                                                                   ;;ANALÍTICO ;
+
+1.8.3.25            ;P PTE - JOAQUIM CONSTANTINO, 4348                                                                  ;;ANALÍTICO ;
+
+1.8.3.26            ;P PTE - JOAQUIM CONSTANTINO, 4348 D                                                                ;;ANALÍTICO ;
+
+1.8.3.27            ;P PTE - JOAQUIM CONSTANTINO, 4430                                                                  ;;ANALÍTICO ;
+
+1.8.3.28            ;P PTE - JOAQUIM CONSTANTINO, 4300                                                                  ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 11 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.8.3.29            ;P PTE - JOAQUIM CONSTANTINO, 4300 A                                                                ;;ANALÍTICO ;
+
+1.8.3.30            ;P PTE - SITIO SAO GABRIEL 4,5                                                                      ;;ANALÍTICO ;
+
+1.8.3.31            ;P PTE - ESTANCIA SAO FRANCISCO                                                                     ;;ANALÍTICO ;
+
+1.8.3.32            ;P PTE - LOTE 14 - DAHMA I                                                                          ;;ANALÍTICO ;
+
+1.8.3.33            ;P PTE - LOTE 15 - DAHMA I                                                                          ;;ANALÍTICO ;
+
+1.8.3.34            ;P PTE - LOTE 01 - QUADRA H - DAHMA III                                                             ;;ANALÍTICO ;
+
+1.8.3.35            ;P PTE - LOTE 02 - QUADRA H - DAHMA III                                                             ;;ANALÍTICO ;
+
+1.8.3.36            ;P PTE - HELID COQUETTI MORETTI, 95                                                                 ;;ANALÍTICO ;
+
+1.8.3.37            ;P VENCESLAU - TIRADENTES, 1555                                                                     ;;ANALÍTICO ;
+
+1.8.3.38            ;SANTO INACIO - ITAPEMA, 135                                                                        ;;ANALÍTICO ;
+
+1.8.3.39            ;TRES LAGOAS - RUA 7, S/N                                                                           ;;ANALÍTICO ;
+
+1.8.3.40            ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.8.4               ;SALTEIRO EMPREENDIMENTOS                                                                           ;;SINTÉTICO ;
+
+1.8.4.1             ;P PTE - CHACARA TAKIGAWA                                                                           ;;ANALÍTICO ;
+
+1.8.5               ;RENATO SALTEIRO                                                                                    ;;SINTÉTICO ;
+
+1.8.5.1             ;TRES LAGOAS - APTO 713                                                                             ;;ANALÍTICO ;
+
+1.8.5.2             ;P EPITACIO - RIO DO PEIXE 1-120                                                                    ;;ANALÍTICO ;
+
+1.8.5.3             ;ROSANA - LOTE 06                                                                                   ;;ANALÍTICO ;
+
+1.8.5.4             ;ROSANA - LOTE 07                                                                                   ;;ANALÍTICO ;
+
+1.8.5.5             ;ROSANA - LOTE 08                                                                                   ;;ANALÍTICO ;
+
+1.8.5.6             ;P PTE - APTO 502 - LIVERPOOL                                                                       ;;ANALÍTICO ;
+
+1.8.5.7             ;P PTE - APTO 103 - LIVERPOOL                                                                       ;;ANALÍTICO ;
+
+1.8.5.8             ;P PTE - APTO 1304 - LONDON                                                                         ;;ANALÍTICO ;
+
+1.8.5.9             ;P PTE - APTO 1104 - OXFORD                                                                         ;;ANALÍTICO ;
+
+1.8.5.10            ;P PTE - APTO 1304 - OXFORD                                                                         ;;ANALÍTICO ;
+
+1.8.5.11            ;P PTE - APTO 1404 - OXFORD                                                                         ;;ANALÍTICO ;
+
+1.8.5.12            ;P PTE - APTO 1504 - OXFORD                                                                         ;;ANALÍTICO ;
+
+1.8.5.13            ;P PTE - APTO 1603 - OXFORD                                                                         ;;ANALÍTICO ;
+
+1.8.5.14            ;P PTE - APTO 1704 - OXFORD                                                                         ;;ANALÍTICO ;
+
+1.8.5.15            ;P PTE - APTO 1803 - OXFORD                                                                         ;;ANALÍTICO ;
+
+1.8.5.16            ;P PTE - APTO 1804 - OXFORD                                                                         ;;ANALÍTICO ;
+
+1.8.5.17            ;P PTE - VAGA 114 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.18            ;P PTE - VAGA 115 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.19            ;P PTE - VAGA 116 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.20            ;P PTE - VAGA 121 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.21            ;P PTE - VAGA 124 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.22            ;P PTE - VAGA 125 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.23            ;P PTE - VAGA 126 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.24            ;P PTE - VAGA 130 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.25            ;P PTE - VAGA 21 - INGLATERRA                                                                       ;;ANALÍTICO ;
+
+1.8.5.26            ;P PTE - VAGA 267 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.27            ;P PTE - VAGA 296 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+1.8.5.28            ;P PTE - VAGA 96 - INGLATERRA                                                                       ;;ANALÍTICO ;
+
+1.8.5.29            ;P PTE - VAGA 56/56A-M 13 - INGLATERRA                                                              ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 12 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.8.6               ;GABRIEL SALTEIRO                                                                                   ;;SINTÉTICO ;
+
+1.8.6.1             ;P PTE - APTO 23 - HEITOR GRACA                                                                     ;;ANALÍTICO ;
+
+1.8.7               ;GIULIANA SALMAZZO                                                                                  ;;ANALÍTICO ;
+
+1.8.8               ;GXS                                                                                                ;;SINTÉTICO ;
+
+1.8.8.1             ;MARINGA - LOTE 09 - QUADRA 05                                                                      ;;ANALÍTICO ;
+
+1.8.9               ;RSR                                                                                                ;;SINTÉTICO ;
+
+1.8.9.1             ;P PTE - ANTONIO TREVISAN, 0, SALA 1                                                                ;;ANALÍTICO ;
+
+1.8.9.2             ;P PTE - ANTONIO TREVISAN, 0, QUADRA D                                                              ;;ANALÍTICO ;
+
+1.8.9.3             ;P PTE - SEBASTIAO SALUSTRIANO, QUADRA C                                                            ;;ANALÍTICO ;
+
+1.8.9.4             ;P PTE - HELENA F. BORGHI, 100 SALA 01                                                              ;;ANALÍTICO ;
+
+1.8.9.5             ;P PTE - HELENA F. BORGHI, 100 SALA 02                                                              ;;ANALÍTICO ;
+
+1.8.9.6             ;P PTE - HELENA F. BORGHI, 100 SALA 03                                                              ;;ANALÍTICO ;
+
+1.8.9.7             ;P PTE - HELENA F. BORGHI, 100 SALA 04                                                              ;;ANALÍTICO ;
+
+1.8.9.8             ;P PTE - HELENA F. BORGHI, 100 A                                                                    ;;ANALÍTICO ;
+
+1.8.9.9             ;P PTE - HELENA F. BORGHI, 100 B                                                                    ;;ANALÍTICO ;
+
+1.8.9.10            ;P PTE - HELENA F. BORGHI, 100 C                                                                    ;;ANALÍTICO ;
+
+1.8.9.11            ;P PTE - HELENA F. BORGHI, 100 D                                                                    ;;ANALÍTICO ;
+
+1.8.9.12            ;P PTE - HELENA F. BORGHI, 100 E                                                                    ;;ANALÍTICO ;
+
+1.8.9.13            ;P PTE - HELENA F. BORGHI, 100 F                                                                    ;;ANALÍTICO ;
+
+1.8.9.14            ;P PTE - HELENA F. BORGHI, 100 G                                                                    ;;ANALÍTICO ;
+
+1.8.9.15            ;P PTE - HELENA F. BORGHI, 100 H                                                                    ;;ANALÍTICO ;
+
+1.8.9.16            ;P PTE - HELENA F. BORGHI, 100 I                                                                    ;;ANALÍTICO ;
+
+1.8.9.17            ;P PTE - HELENA F. BORGHI. 100 J                                                                    ;;ANALÍTICO ;
+
+1.8.10              ;S1 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+1.8.10.1            ;SITIO SAO RAFAEL                                                                                   ;;ANALÍTICO ;
+
+1.8.11              ;S2 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+1.8.11.1            ;PROGRESSO REGENTE                                                                                  ;;ANALÍTICO ;
+
+1.8.12              ;S3 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+1.8.12.1            ;SITIO SAO SERAFIM E SITIO ALBERTO                                                                  ;;ANALÍTICO ;
+
+1.8.13              ;S4 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+1.8.13.1            ;SUCESSO ROSANA                                                                                     ;;ANALÍTICO ;
+
+1.8.13.2            ;BEIRA RIO - ÁREA I (M. 6227)                                                                       ;;ANALÍTICO ;
+
+1.8.13.3            ;BEIRA RIO FUNDOS - ÁREA III (M. 6229)                                                              ;;ANALÍTICO ;
+
+1.8.13.4            ;ALMOXARIFADO - LOTE 09B (M. 8049)                                                                  ;;ANALÍTICO ;
+
+1.8.13.5            ;PISCICULTURA CASTILHO (M. 21.802)                                                                  ;;ANALÍTICO ;
+
+1.8.14              ;S6 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+1.8.14.1            ;TERRENO ANGLO                                                                                      ;;ANALÍTICO ;
+
+1.8.15              ;S9 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+1.8.15.1            ;PROGRESSO ZONA NORTE                                                                               ;;ANALÍTICO ;
+
+1.8.16              ;CHN0029 (TEMPORARIO)                                                                               ;;ANALÍTICO ;
+
+1.9                 ;FAMILIAR                                                                                           ;;SINTÉTICO ;
+
+1.9.1               ;RENATO SALTEIRO                                                                                    ;;ANALÍTICO ;
+
+1.9.2               ;GIULIANA SALMAZZO                                                                                  ;;ANALÍTICO ;
+
+1.9.3               ;GABRIEL SALTEIRO - 1.9.3                                                                           ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 13 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+1.9.4               ;ESPOLIO ZACHARIAS                                                                                  ;;ANALÍTICO ;
+
+1.9.5               ;ILDA SALTEIRO                                                                                      ;;ANALÍTICO ;
+
+1.9.6               ;GLEICE SALTEIRO                                                                                    ;;ANALÍTICO ;
+
+1.10                ;RESULTADO NAO OPERACIONAL                                                                          ;;SINTÉTICO ;
+
+1.10.1              ;OPERACOES ENTRE EMPRESA                                                                            ;;ANALÍTICO ;
+
+1.10.2              ;IMOBILIZADO                                                                                        ;;ANALÍTICO ;
+
+1.11                ;RENDER EMPREENDIMENTOS                                                                             ;;ANALÍTICO ;
+
+1.12                ;NVS SERVICOS DE ENTULHO                                                                            ;;SINTÉTICO ;
+
+1.12.1              ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+1.12.1.1            ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+1.12.1.2            ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+1.12.1.3            ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+1.12.1.4            ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+2                   ;RECEITA                                                                                            ;;SINTÉTICO ;
+
+2.1                 ;PILARES                                                                                            ;;SINTÉTICO ;
+
+2.1.1               ;DIRETORIA                                                                                          ;;SINTÉTICO ;
+
+2.1.1.1             ;ACIONISTAS                                                                                         ;;ANALÍTICO ;
+
+2.1.1.2             ;FINANCEIRO                                                                                         ;;ANALÍTICO ;
+
+2.2                 ;SELETIVA                                                                                           ;;SINTÉTICO ;
+
+2.2.1               ;CORPORATIVO SUCATA                                                                                 ;;ANALÍTICO ;
+
+2.2.2               ;DOURADOS                                                                                           ;;SINTÉTICO ;
+
+2.2.2.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.2.2.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.2.3               ;LONDRINA                                                                                           ;;SINTÉTICO ;
+
+2.2.3.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.2.3.2             ;COMERCIAL                                                                                         ;;ANALÍTICO ;
+
+2.2.4               ;MARINGA DISTRITO                                                                                   ;;SINTÉTICO ;
+
+2.2.4.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.2.4.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.2.5               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+2.2.5.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.2.5.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.2.5.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
+
+2.2.5.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+2.2.5.5             ;PRENSA FIXA JCG800                                                                                 ;;ANALÍTICO ;
+
+2.2.6               ;ASSIS                                                                                              ;;SINTÉTICO ;
+
+2.2.6.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.2.6.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.2.7               ;CAMPO GRANDE                                                                                       ;;SINTÉTICO ;
+
+2.2.7.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.2.7.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.2.8               ;MARINGA CIDADE ALTA                                                                                ;;SINTÉTICO ;
+
+2.2.8.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.2.8.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 14 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+2.3                 ;BRACOFER                                                                                           ;;SINTÉTICO ;
+
+2.3.1               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+2.3.1.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.3.1.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.4                 ;TRANSMOVE                                                                                          ;;SINTÉTICO ;
+
+2.4.1               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+2.4.1.1             ;TRANSPORTE                                                                                         ;;ANALÍTICO ;
+
+2.4.1.2             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.4.2               ;DOURADOS                                                                                           ;;SINTÉTICO ;
+
+2.4.2.1             ;TRANSPORTE                                                                                         ;;ANALÍTICO ;
+
+2.4.2.2             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.4.3               ;MARINGA                                                                                            ;;SINTÉTICO ;
+
+2.4.3.1             ;TRANSPORTE                                                                                         ;;ANALÍTICO ;
+
+2.4.3.2             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.5                 ;EKIPA CONTEINER                                                                                    ;;SINTÉTICO ;
+
+2.5.1               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+2.5.1.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.5.1.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.5.1.3             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
+
+2.6                 ;EKIPA LOCACOES - RSE                                                                               ;;SINTÉTICO ;
+
+2.6.1               ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.6.2               ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.6.3               ;VEICULO, MAQUINA E EQUIPAMENTO                                                                     ;;ANALÍTICO ;
+
+2.7                 ;EKIPA SERVICOS - G&S                                                                               ;;SINTÉTICO ;
+
+2.7.1               ;CONTRATOS                                                                                          ;;SINTÉTICO ;
+
+2.7.1.1             ;APOIO                                                                                              ;;ANALÍTICO ;
+
+2.7.1.2             ;ARCELOR RESENDE RJ                                                                                 ;;ANALÍTICO ;
+
+2.7.1.3             ;ARCELOR BARRA MANSA RJ                                                                             ;;ANALÍTICO ;
+
+2.7.1.4             ;ARCELOR PIRACICABA SP                                                                              ;;ANALÍTICO ;
+
+2.7.1.5             ;ARCELOR JUIZ DE FORA MG                                                                            ;;ANALÍTICO ;
+
+2.7.1.6             ;ARCELOR CURITIBA PR                                                                                ;;ANALÍTICO ;
+
+2.7.1.7             ;GERDAU SAO CAETANO DO SUL SP                                                                       ;;ANALÍTICO ;
+
+2.7.1.8             ;TUPY JOINVILLE SC                                                                                  ;;ANALÍTICO ;
+
+2.7.1.9             ;TUPY BETIM MG                                                                                      ;;ANALÍTICO ;
+
+2.7.1.10            ;TRANSMOVE PRANCHA SALIONE                                                                          ;;ANALÍTICO ;
+
+2.7.1.11            ;SELETIVA PRENSA MOVEL                                                                              ;;ANALÍTICO ;
+
+2.7.1.12            ;G&G                                                                                                ;;ANALÍTICO ;
+
+2.7.1.13            ;ARCELOR - IRACEMAPOLIS/SP                                                                          ;;ANALÍTICO ;
+
+2.7.2               ;CORPORATIVO                                                                                        ;;ANALÍTICO ;
+
+2.7.3               ;G&S BARUERI                                                                                        ;;ANALÍTICO ;
+
+2.7.4               ;G&S CAMPO GRANDE                                                                                   ;;SINTÉTICO ;
+
+2.7.4.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.7.4.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.7.5               ;G&S DOURADOS                                                                                       ;;SINTÉTICO ;
+
+;;;;;;;
+Página: 15 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+2.7.5.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.7.5.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.7.6               ;G&S LONDRINA                                                                                       ;;SINTÉTICO ;
+
+2.7.6.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.7.6.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.7.7               ;G&S MARINGA                                                                                        ;;SINTÉTICO ;
+
+2.7.7.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.7.7.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.7.8               ;G&S PRUDENTE                                                                                       ;;SINTÉTICO ;
+
+2.7.8.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.7.8.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.8                 ;IMOBILIARIA                                                                                        ;;SINTÉTICO ;
+
+2.8.1               ;ADMINISTRATIVO                                                                                     ;;SINTÉTICO ;
+
+2.8.2               ;LUKA IMOVEIS                                                                                       ;;ANALÍTICO ;
+
+2.8.3               ;RSS                                                                                                ;;SINTÉTICO ;
+
+2.8.3.1             ;ASSIS - 17                                                                                         ;;ANALÍTICO ;
+
+2.8.3.2             ;ASSIS - 5                                                                                          ;;ANALÍTICO ;
+
+2.8.3.3             ;ASSIS - 6 - BARRACAO ALUMA                                                                         ;;ANALÍTICO ;
+
+2.8.3.4             ;P PTE - AVENIDA BRASIL                                                                             ;;ANALÍTICO ;
+
+2.8.3.5             ;P PTE - BARRACAO VIOTO                                                                             ;;ANALÍTICO ;
+
+2.8.3.6             ;P PTE - JOSE PETRIN, 777                                                                           ;;ANALÍTICO ;
+
+2.8.3.7             ;P PTE - CHACARA RENATO 2,4 HA                                                                      ;;ANALÍTICO ;
+
+2.8.3.8             ;P PTE - CONCEPT                                                                                    ;;ANALÍTICO ;
+
+2.8.3.9             ;P PTE - SALA 304 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+2.8.3.10            ;P PTE - SALA 306 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+2.8.3.11            ;P PTE - SALA 310 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+2.8.3.12            ;P PTE - SALA 405 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+2.8.3.13            ;P PTE - SALA 411 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+2.8.3.14            ;P PTE - SALA 402 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+2.8.3.15            ;P PTE - SALA 404 - COSMOPOLITAN                                                                    ;;ANALÍTICO ;
+
+2.8.3.16            ;P PTE - SALA 406 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
+
+2.8.3.17            ;P PTE - JOSE PETRIN, 760                                                                           ;;ANALÍTICO ;
+
+2.8.3.18            ;P PTE - JOSE PETRIN, 768                                                                           ;;ANALÍTICO ;
+
+2.8.3.19            ;P PTE - ESSENZA UNIDADE 16                                                                         ;;ANALÍTICO ;
+
+2.8.3.20            ;P PTE - JOSE ZERIAL, 200                                                                           ;;ANALÍTICO ;
+
+2.8.3.21            ;P PTE - JOSE ZERIAL, 200 A                                                                         ;;ANALÍTICO ;
+
+2.8.3.22            ;P PTE - JOAQUIM CONSTANTINO, 4264                                                                  ;;ANALÍTICO ;
+
+2.8.3.23            ;P PTE - JOSE PETRIN, 678                                                                           ;;ANALÍTICO ;
+
+2.8.3.24            ;P PTE - SOL NASCENTE - BRASPRESS                                                                   ;;ANALÍTICO ;
+
+2.8.3.25            ;P PTE - JOAQUIM CONSTANTINO, 4348                                                                  ;;ANALÍTICO ;
+
+2.8.3.26            ;P PTE - JOAQUIM CONSTANTINO, 4348 D                                                                ;;ANALÍTICO ;
+
+2.8.3.27            ;P PTE - JOAQUIM CONSTANTINO, 4430                                                                  ;;ANALÍTICO ;
+
+2.8.3.28            ;P PTE - JOAQUIM CONSTANTINO, 4300                                                                  ;;ANALÍTICO ;
+
+2.8.3.29            ;P PTE - JOAQUIM CONSTANTINO, 4300 A                                                                ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 16 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+2.8.3.30            ;P PTE - SITIO SAO GABRIEL 4,5                                                                      ;;ANALÍTICO ;
+
+2.8.3.31            ;P PTE - ESTANCIA SAO FRANCISCO                                                                     ;;ANALÍTICO ;
+
+2.8.3.32            ;P PTE - LOTE 14 DAHMA I                                                                            ;;ANALÍTICO ;
+
+2.8.3.33            ;P PTE - LOTE 15 DAHMA I                                                                            ;;ANALÍTICO ;
+
+2.8.3.34            ;P PTE - LOTE 01 - QUADRA H - DAHMA III                                                             ;;ANALÍTICO ;
+
+2.8.3.35            ;P PTE - LOTE 02 - QUADRA H - DAHMA III                                                             ;;ANALÍTICO ;
+
+2.8.3.36            ;P PTE - HELID COQUETTI MORETTI, 95                                                                 ;;ANALÍTICO ;
+
+2.8.3.37            ;P VENCESLAU - TIRADENTES, 1555                                                                     ;;ANALÍTICO ;
+
+2.8.3.38            ;SANTO INACIO - ITAPEMA, 135                                                                        ;;ANALÍTICO ;
+
+2.8.3.39            ;TRES LAGOAS - RUA 7, S/N                                                                           ;;ANALÍTICO ;
+
+2.8.3.40            ;VEICULO, MAQUINA E EQUIPAMENTO                                                                     ;;ANALÍTICO ;
+
+2.8.4               ;SALTEIRO EMPREENDIMENTOS                                                                           ;;SINTÉTICO ;
+
+2.8.4.1             ;P PTE - CHACARA TAKIGAWA                                                                           ;;ANALÍTICO ;
+
+2.8.5               ;RENATO SALTEIRO                                                                                    ;;SINTÉTICO ;
+
+2.8.5.1             ;TRES LAGOAS - APTO 713                                                                             ;;ANALÍTICO ;
+
+2.8.5.2             ;P EPITACIO - RIO DO PEIXE 1-120                                                                    ;;ANALÍTICO ;
+
+2.8.5.3             ;ROSANA - LOTE 06                                                                                   ;;ANALÍTICO ;
+
+2.8.5.4             ;ROSANA - LOTE 07                                                                                   ;;ANALÍTICO ;
+
+2.8.5.5             ;ROSANA - LOTE 08                                                                                   ;;ANALÍTICO ;
+
+2.8.5.6             ;P PTE - APTO 502 - LIVERPOOL                                                                       ;;ANALÍTICO ;
+
+2.8.5.7             ;P PTE - APTO 103 - LIVERPOOL                                                                       ;;ANALÍTICO ;
+
+2.8.5.8             ;P PTE - APTO 1304 - LONDON                                                                         ;;ANALÍTICO ;
+
+2.8.5.9             ;P PTE - APTO 1104 - OXFORD                                                                         ;;ANALÍTICO ;
+
+2.8.5.10            ;P PTE - APTO 1304 - OXFORD                                                                         ;;ANALÍTICO ;
+
+2.8.5.11            ;P PTE - APTO 1404 - OXFORD                                                                         ;;ANALÍTICO ;
+
+2.8.5.12            ;P PTE - APTO 1504 - OXFORD                                                                         ;;ANALÍTICO ;
+
+2.8.5.13            ;P PTE - APTO 1603 - OXFORD                                                                         ;;ANALÍTICO ;
+
+2.8.5.14            ;P PTE - APTO 1704 - OXFORD                                                                         ;;ANALÍTICO ;
+
+2.8.5.15            ;P PTE - APTO 1803 - OXFORD                                                                         ;;ANALÍTICO ;
+
+2.8.5.16            ;P PTE - APTO 1804 - OXFORD                                                                         ;;ANALÍTICO ;
+
+2.8.5.17            ;P PTE - VAGA 114 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.18            ;P PTE - VAGA 115 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.19            ;P PTE - VAGA 116 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.20            ;P PTE - VAGA 121 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.21            ;P PTE - VAGA 124 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.22            ;P PTE - VAGA 125 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.23            ;P PTE - VAGA 126 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.24            ;P PTE - VAGA 130 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.25            ;P PTE - VAGA 21 - INGLATERRA                                                                       ;;ANALÍTICO ;
+
+2.8.5.26            ;P PTE - VAGA 267 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.27            ;P PTE - VAGA 296 - INGLATERRA                                                                      ;;ANALÍTICO ;
+
+2.8.5.28            ;P PTE - VAGA 96 - INGLATERRA                                                                       ;;ANALÍTICO ;
+
+2.8.5.29            ;P PTE - VAGA 56/56A-M 13 - INGLATERRA                                                              ;;ANALÍTICO ;
+
+2.8.6               ;GABRIEL SALTEIRO                                                                                   ;;SINTÉTICO ;
+
+;;;;;;;
+Página: 17 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+2.8.6.1             ;P PTE - APTO 23 - HEITOR GRACA                                                                     ;;ANALÍTICO ;
+
+2.8.7               ;GIULIANA SALMAZZO                                                                                  ;;ANALÍTICO ;
+
+2.8.8               ;GXS                                                                                                ;;SINTÉTICO ;
+
+2.8.8.1             ;MARINGA - LOTE 09 - QUADRA 05                                                                      ;;ANALÍTICO ;
+
+2.8.9               ;RSR                                                                                                ;;SINTÉTICO ;
+
+2.8.9.1             ;P PTE - ANTONIO TREVISAN, 0, SALA 1                                                                ;;ANALÍTICO ;
+
+2.8.9.2             ;P PTE - ANTONIO TREVISAN, 0, QUADRA D                                                              ;;ANALÍTICO ;
+
+2.8.9.3             ;P PTE - SEBASTIAO SALUSTRIANO, QUADRA C                                                            ;;ANALÍTICO ;
+
+2.8.9.4             ;P PTE - HELENA F. BORGHI, 100 SALA 01                                                              ;;ANALÍTICO ;
+
+2.8.9.5             ;P PTE - HELENA F. BORGHI, 100 SALA 02                                                              ;;ANALÍTICO ;
+
+2.8.9.6             ;P PTE - HELENA F. BORGHI, 100 SALA 03                                                              ;;ANALÍTICO ;
+
+2.8.9.7             ;P PTE - HELENA F. BORGHI, 100 SALA 04                                                              ;;ANALÍTICO ;
+
+2.8.9.8             ;P PTE - HELENA F. BORGHI, 100 A                                                                    ;;ANALÍTICO ;
+
+2.8.9.9             ;P PTE - HELENA F. BORGHI, 100 B                                                                    ;;ANALÍTICO ;
+
+2.8.9.10            ;P PTE - HELENA F. BORGHI, 100 C                                                                    ;;ANALÍTICO ;
+
+2.8.9.11            ;P PTE - HELENA F. BORGHI, 100 D                                                                    ;;ANALÍTICO ;
+
+2.8.9.12            ;P PTE - HELENA F. BORGHI, 100 E                                                                    ;;ANALÍTICO ;
+
+2.8.9.13            ;P PTE - HELENA F. BORGHI, 100 F                                                                    ;;ANALÍTICO ;
+
+2.8.9.14            ;P PTE - HELENA F. BORGHI, 100 G                                                                    ;;ANALÍTICO ;
+
+2.8.9.15            ;P PTE - HELENA F. BORGHI, 100 H                                                                    ;;ANALÍTICO ;
+
+2.8.9.16            ;P PTE - HELENA F. BORGHI, 100 I                                                                    ;;ANALÍTICO ;
+
+2.8.9.17            ;P PTE - HELENA F. BORGHI, 100 J                                                                    ;;ANALÍTICO ;
+
+2.8.10              ;S1 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+2.8.10.1            ;SITIO SAO RAFAEL                                                                                   ;;ANALÍTICO ;
+
+2.8.11              ;S2 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+2.8.11.1            ;PROGRESSO REGENTE                                                                                  ;;ANALÍTICO ;
+
+2.8.12              ;S3 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+2.8.12.1            ;SITIO SAO SERAFIM E SITIO ALBERTO                                                                  ;;ANALÍTICO ;
+
+2.8.13              ;S4 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+2.8.13.1            ;SUCESSO ROSANA                                                                                     ;;ANALÍTICO ;
+
+2.8.13.2            ;BEIRA RIO - ÁREA I (M. 6227)                                                                       ;;ANALÍTICO ;
+
+2.8.13.3            ;BEIRA RIO FUNDOS - ÁREA III (M. 6229)                                                              ;;ANALÍTICO ;
+
+2.8.13.4            ;ALMOXARIFADO - LOTE 09B (M. 8049)                                                                  ;;ANALÍTICO ;
+
+2.8.13.5            ;PISCICULTURA CASTILHO (M. 21.802)                                                                  ;;ANALÍTICO ;
+
+2.8.14              ;S6 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+2.8.14.1            ;TERRENO ANGLO                                                                                      ;;ANALÍTICO ;
+
+2.8.15              ;S9 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+2.8.15.1            ;PROGRESSO ZONA NORTE                                                                               ;;ANALÍTICO ;
+
+2.9                 ;FAMILIAR                                                                                           ;;SINTÉTICO ;
+
+2.9.1               ;RENATO SALTEIRO                                                                                    ;;ANALÍTICO ;
+
+2.9.2               ;GIULIANA SALMAZZO                                                                                  ;;ANALÍTICO ;
+
+2.9.3               ;GABRIEL SALTEIRO                                                                                   ;;ANALÍTICO ;
+
+2.9.4               ;ESPOLIO ZACHARIAS                                                                                  ;;ANALÍTICO ;
+
+2.9.5               ;ILDA SALTEIRO                                                                                      ;;ANALÍTICO ;
+
+;;;;;;;
+Página: 18 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
+2.9.6               ;;GLEICE SALTEIRO                                                                                    ;;ANALÍTICO ;
+
+2.10                ;;RESULTADO NAO OPERACIONAL                                                                          ;;SINTÉTICO ;
+
+2.10.1              ;;OPERACOES ENTRE EMPRESA                                                                            ;;ANALÍTICO ;
+
+2.11                ;;RENDER                                                                                             ;;SINTÉTICO ;
+
+2.11.1              ;;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+2.11.1.1            ;;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.11.1.2            ;;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+2.12                ;;NVS SERVICOS DE ENTULHO                                                                            ;;SINTÉTICO ;
+
+2.12.1              ;;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
+
+2.12.1.1            ;;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
+
+2.12.1.2            ;;COMERCIAL                                                                                          ;;ANALÍTICO ;
+
+;;;;;;;;
+Nº Total de Centros Cadastrados: 796;;;;;;;
+
+;;;;;;;;
+Página: 19 / 19
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;;
+;;;

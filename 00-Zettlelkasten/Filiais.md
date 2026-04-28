@@ -12,7 +12,7 @@ atualizado: 08/04/2026
 # ~={Titulo}Filiais — Centro de Custo G3S=~
 
 > **Fonte:** `Centro de Custo.pdf` — 08/04/2026
-> Filiais são o **3º nível** da hierarquia do CC: `TIPO.DIVISÃO.FILIAL`
+> Filiais ficam no **3º bloco do código** do CC (`TIPO.DIVISÃO.FILIAL`) e representam o **2º nível lógico**
 > Cada filial possui departamentos analíticos no nível seguinte.
 
 ---
@@ -351,3 +351,4 @@ Estrutura plana — frota consolidada sem separação por filial.
 | Presidente Prudente | 1.12.1 | 2.12.1 | SP |
 
 ___
+[[centro de custo]]
