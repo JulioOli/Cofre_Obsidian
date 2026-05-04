@@ -1,5 +1,5 @@
 ;;;
-;;;;R.SOCIAL.: G3S COMERCIO E INDUSTRIA DE FERRO E ACO LTDA -  CNPJ.: 20947332/0004-38 END.: RUA HELENA FERRANTE BORGHI, 100 - DISTRITO INDUSTRIAL CIDADE.: PRESIDENTEPRUDENTE - SP TELEFONE: 1821010101 IE: 562407492115 / WWW.SELETIVA.IND.BR DATA. : 27/04/2026 HORA.: 08:25:19-IMPRESSO POR:JULIO.SANTANA;;;;;;;;;;
+;;;;R.SOCIAL.: G3S COMERCIO E INDUSTRIA DE FERRO E ACO LTDA -  CNPJ.: 20947332/0004-38 END.: RUA HELENA FERRANTE BORGHI, 100 - DISTRITO INDUSTRIAL CIDADE.: PRESIDENTEPRUDENTE - SP TELEFONE: 1821010101 IE: 562407492115 / WWW.SELETIVA.IND.BR DATA. : 30/04/2026 HORA.: 09:18:00-IMPRESSO POR:JULIO.SANTANA;;;;;;;;;;
 ;;;;Relação de Centro de Custo;;;;;;;;;;;
 ;;;;;;;;;;;;;;
 
@@ -16,16 +16,6 @@ Tipo;
 
 1.1.1.1             ;;;;;;ACIONISTAS                                                                                         ;;;ANALÍTICO ;;
 
-1.1.1.2             ;;;;;;DIRETORIA ADMINISTRATIVA E FINANCEIRA                                                              ;;;ANALÍTICO ;;
-
-1.1.1.3             ;;;;;;DIRETORIA COMERCIAL COMPRA SUCATA                                                                  ;;;ANALÍTICO ;;
-
-1.1.1.4             ;;;;;;DIRETORIA COMERCIAL VENDA SUCATA                                                                   ;;;ANALÍTICO ;;
-
-1.1.1.5             ;;;;;;DIRETORIA DE OPERACAO SUCATA                                                                       ;;;ANALÍTICO ;;
-
-1.1.1.6             ;;;;;;DIRETORIA DE MANUTENCAO                                                                            ;;;ANALÍTICO ;;
-
 1.1.2               ;;;;;;ADMINISTRATIVO                                                                                     ;;;ANALÍTICO ;;
 
 1.1.3               ;;;;;;FINANCEIRO                                                                                         ;;;ANALÍTICO ;;
@@ -35,8 +25,6 @@ Tipo;
 1.1.5               ;;;;;;QUALIDADE                                                                                          ;;;ANALÍTICO ;;
 
 1.1.6               ;;;;;;JURIDICO                                                                                           ;;;ANALÍTICO ;;
-
-1.1.7               ;;;;;;LOGISTICA                                                                                          ;;;ANALÍTICO ;;
 
 1.1.8               ;;;;;;AMBIENTAL                                                                                          ;;;ANALÍTICO ;;
 
@@ -54,10 +42,6 @@ Tipo;
 
 1.1.15              ;;;;;;MANUTENCAO MAQUINAS E VEICULOS                                                                     ;;;ANALÍTICO ;;
 
-1.1.16              ;;;;;;PREDIAL/INSTALACOES                                                                                ;;;ANALÍTICO ;;
-
-1.1.17              ;;;;;;MANUTENCAO VEICULOS                                                                                ;;;ANALÍTICO ;;
-
 1.2                 ;;;;;;SELETIVA                                                                                           ;;;SINTÉTICO ;;
 
 1.2.1               ;;;;;;CORPORATIVO SUCATA                                                                                 ;;;SINTÉTICO ;;
@@ -74,38 +58,34 @@ Tipo;
 
 1.2.1.6             ;;;;;;COMERCIAL VENDA SUCATA                                                                             ;;;ANALÍTICO ;;
 
-1.2.1.7             ;;;;;;DIRETORIA DE OPERACAO SUCATA                                                                       ;;;ANALÍTICO ;;
-
 1.2.1.8             ;;;;;;PRENSA MOVEL                                                                                       ;;;SINTÉTICO ;;
 
 1.2.1.8.1           ;;;;;;GDU0275 (PHH0022)                                                                                  ;;;ANALÍTICO ;;
 
 1.2.1.8.2           ;;;;;;QXH2G14 (PHH0061)                                                                                  ;;;ANALÍTICO ;;
 
+1.2.1.8.3           ;;;;;;PHH0062                                                                                            ;;;ANALÍTICO ;;
+
+1.2.1.9             ;;;;;;VEICULOS                                                                                           ;;;SINTÉTICO ;;
+
+1.2.1.9.1           ;;;;;;FBV4H62                                                                                            ;;;ANALÍTICO ;;
+
+1.2.1.9.3           ;;;;;;GDB3A42                                                                                            ;;;ANALÍTICO ;;
+
+1.2.1.10            ;;;;;;SUC7A43                                                                                            ;;;ANALÍTICO ;;
+
+1.2.1.11            ;;;;;;CAIXAS                                                                                             ;;;ANALÍTICO ;;
+
+1.2.1.12            ;;;;;;PROJETO LICENÇA CETESB                                                                             ;;;ANALÍTICO ;;
+
+1.2.2               ;;;;;;DOURADOS                                                                                           ;;;SINTÉTICO ;;
+
+1.2.2.1             ;;;;;;ADMINISTRATIVO                                                                                     ;;;ANALÍTICO ;;
+
 ;;;;;;;;;;;;;;;;
-Página: 1 / 19;
+Página: 1 / 16;
 www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;;;;;;;;
 ;;;;;;;;
-1.2.1.8.3           ;PHH0062                                                                                            ;;ANALÍTICO ;
-
-1.2.1.9             ;VEICULOS                                                                                           ;;SINTÉTICO ;
-
-1.2.1.9.1           ;FBV4H62                                                                                            ;;ANALÍTICO ;
-
-1.2.1.9.2           ;GDY0H74                                                                                            ;;ANALÍTICO ;
-
-1.2.1.9.3           ;GDB3A42                                                                                            ;;ANALÍTICO ;
-
-1.2.1.10            ;SUC7A43                                                                                            ;;ANALÍTICO ;
-
-1.2.1.11            ;CAIXAS                                                                                             ;;ANALÍTICO ;
-
-1.2.1.12            ;PROJETO LICENÇA CETESB                                                                             ;;ANALÍTICO ;
-
-1.2.2               ;DOURADOS                                                                                           ;;SINTÉTICO ;
-
-1.2.2.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
-
 1.2.2.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
 
 1.2.2.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
@@ -114,14 +94,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;;;;;;;;
 
 1.2.2.5             ;VEICULOS                                                                                           ;;SINTÉTICO ;
 
-1.2.2.5.1           ;BKW9I57                                                                                            ;;ANALÍTICO ;
-
-1.2.2.5.2           ;BTZ8D36                                                                                            ;;ANALÍTICO ;
-
-1.2.2.5.3           ;BZL7H95                                                                                            ;;ANALÍTICO ;
-
-1.2.2.5.4           ;NRQ7727                                                                                            ;;ANALÍTICO ;
-
 1.2.2.5.5           ;FJU8F67 (JULIETA)                                                                                  ;;ANALÍTICO ;
 
 1.2.2.5.6           ;FUF1E28 (JULIETA)                                                                                  ;;ANALÍTICO ;
@@ -129,8 +101,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;;;;;;;;
 1.2.2.5.7           ;FZF3J28 (JULIETA)                                                                                  ;;ANALÍTICO ;
 
 1.2.2.5.8           ;QAU6E20 (JULIETA)                                                                                  ;;ANALÍTICO ;
-
-1.2.2.5.9           ;TKI2E74                                                                                            ;;ANALÍTICO ;
 
 1.2.2.6             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
 
@@ -156,29 +126,15 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;;;;;;;;
 
 1.2.3.5             ;VEICULOS                                                                                           ;;SINTÉTICO ;
 
-1.2.3.5.1           ;EWU5J85                                                                                            ;;ANALÍTICO ;
-
-1.2.3.5.2           ;EJZ7998                                                                                            ;;ANALÍTICO ;
-
 1.2.3.5.3           ;FTP7D76                                                                                            ;;ANALÍTICO ;
 
 1.2.3.5.4           ;DHW9801 (AGREGADO)                                                                                 ;;ANALÍTICO ;
 
 1.2.3.5.5           ;STF9C60                                                                                            ;;ANALÍTICO ;
 
-1.2.3.5.6           ;GDA9J63                                                                                            ;;ANALÍTICO ;
-
-1.2.3.5.7           ;BZL7H95                                                                                            ;;ANALÍTICO ;
-
 1.2.3.6             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
 
 1.2.3.6.1           ;EHH0040                                                                                            ;;ANALÍTICO ;
-
-;;;;;;;
-Página: 2 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
-1.2.3.6.2           ;EHH0008                                                                                            ;;ANALÍTICO ;
 
 1.2.3.6.3           ;EHH0002                                                                                            ;;ANALÍTICO ;
 
@@ -198,12 +154,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.2.4.7             ;VEICULOS                                                                                           ;;SINTÉTICO ;
 
-1.2.4.7.1           ;EWU5J98                                                                                            ;;ANALÍTICO ;
-
-1.2.4.7.2           ;GHI3A74                                                                                            ;;ANALÍTICO ;
-
-1.2.4.7.3           ;OON3B85                                                                                            ;;ANALÍTICO ;
-
 1.2.4.7.4           ;EWU6087                                                                                            ;;ANALÍTICO ;
 
 1.2.4.7.5           ;EWU6A85                                                                                            ;;ANALÍTICO ;
@@ -214,28 +164,20 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.2.4.7.8           ;EWU6343 (JULIETA)                                                                                  ;;ANALÍTICO ;
 
-1.2.4.7.9           ;FJQ5A08                                                                                            ;;ANALÍTICO ;
-
 1.2.4.7.10          ;RNC9H69                                                                                            ;;ANALÍTICO ;
 
 1.2.4.7.11          ;GPZ5548 (AGREGADO)                                                                                 ;;ANALÍTICO ;
 
-1.2.4.7.12          ;FRT7548                                                                                            ;;ANALÍTICO ;
-
 1.2.4.7.13          ;BZL7H95                                                                                            ;;ANALÍTICO ;
-
-1.2.4.7.14          ;FBU7329                                                                                            ;;ANALÍTICO ;
 
 1.2.4.8             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
 
 1.2.4.8.1           ;EHH0039                                                                                            ;;ANALÍTICO ;
 
-1.2.4.8.2           ;EHH0002                                                                                            ;;ANALÍTICO ;
-
-1.2.4.8.3           ;EHH0004                                                                                            ;;ANALÍTICO ;
-
-1.2.4.8.4           ;EHL0043                                                                                            ;;ANALÍTICO ;
-
+;;;;;;;
+Página: 2 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 1.2.4.8.5           ;BHM0047                                                                                            ;;ANALÍTICO ;
 
 1.2.4.8.6           ;PHH0061 (JCG800)                                                                                   ;;ANALÍTICO ;
@@ -258,18 +200,8 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.2.5.6.1           ;EWU6003                                                                                            ;;ANALÍTICO ;
 
-1.2.5.6.2           ;BZG6A91                                                                                            ;;ANALÍTICO ;
-
-1.2.5.6.3           ;GDA9J63                                                                                            ;;ANALÍTICO ;
-
-1.2.5.6.4           ;GGE5059                                                                                            ;;ANALÍTICO ;
-
 1.2.5.6.5           ;TRANSFERIDO                                                                                        ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 3 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.2.5.6.6           ;EWU6A86                                                                                            ;;ANALÍTICO ;
 
 1.2.5.6.7           ;FUP3G76                                                                                            ;;ANALÍTICO ;
@@ -286,25 +218,13 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.2.5.6.13          ;GHI3A74                                                                                            ;;ANALÍTICO ;
 
-1.2.5.6.14          ;EWU6A85                                                                                            ;;ANALÍTICO ;
-
-1.2.5.6.15          ;NRQ7727                                                                                            ;;ANALÍTICO ;
-
 1.2.5.6.16          ;EJZ7998                                                                                            ;;ANALÍTICO ;
-
-1.2.5.6.17          ;OON3B85                                                                                            ;;ANALÍTICO ;
 
 1.2.5.6.18          ;EJZ7J97                                                                                            ;;ANALÍTICO ;
 
 1.2.5.6.19          ;EJZ7999                                                                                            ;;ANALÍTICO ;
 
 1.2.5.7             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
-
-1.2.5.7.1           ;EHH0037                                                                                            ;;ANALÍTICO ;
-
-1.2.5.7.2           ;EHH0006                                                                                            ;;ANALÍTICO ;
-
-1.2.5.7.3           ;EHH0046                                                                                            ;;ANALÍTICO ;
 
 1.2.5.7.4           ;PHJ0054                                                                                            ;;ANALÍTICO ;
 
@@ -317,8 +237,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 1.2.5.7.8           ;EHH0009                                                                                            ;;ANALÍTICO ;
 
 1.2.5.7.9           ;CHF0016                                                                                            ;;ANALÍTICO ;
-
-1.2.5.7.10          ;EHH0007                                                                                            ;;ANALÍTICO ;
 
 1.2.5.7.11          ;EWU6143                                                                                            ;;ANALÍTICO ;
 
@@ -348,31 +266,21 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.2.7.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 3 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 1.2.7.5             ;PROJETO CORUMBA                                                                                    ;;ANALÍTICO ;
 
 1.2.7.6             ;VEICULOS                                                                                           ;;SINTÉTICO ;
 
-1.2.7.6.1           ;GDG8E75                                                                                            ;;ANALÍTICO ;
-
-1.2.7.6.2           ;NRV7727                                                                                            ;;ANALÍTICO ;
-
-1.2.7.6.3           ;QAO4A53                                                                                            ;;ANALÍTICO ;
-
-;;;;;;;
-Página: 4 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.2.7.6.4           ;EWU6341 (JULIETA)                                                                                  ;;ANALÍTICO ;
 
 1.2.7.6.5           ;EWU6294 (JULIETA)                                                                                  ;;ANALÍTICO ;
 
-1.2.7.6.6           ;EWU5986                                                                                            ;;ANALÍTICO ;
-
 1.2.7.7             ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
 
 1.2.7.7.1           ;EHH0038                                                                                            ;;ANALÍTICO ;
-
-1.2.7.7.2           ;EHH0019                                                                                            ;;ANALÍTICO ;
 
 1.2.7.8             ;PROJETO UND. PROPRIA CG                                                                            ;;ANALÍTICO ;
 
@@ -451,7 +359,7 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 1.4.4               ;BARUERI                                                                                            ;;SINTÉTICO ;
 
 ;;;;;;;
-Página: 5 / 19
+Página: 4 / 16
 www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 ;;
 1.4.4.1             ;TRANSPORTE                                                                                         ;;ANALÍTICO ;
@@ -478,29 +386,11 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.6.3               ;VEICULO, MAQUINA E EQUIPAMENTO                                                                     ;;SINTÉTICO ;
 
-1.6.3.1             ;EHH0007                                                                                            ;;ANALÍTICO ;
-
 1.6.3.2             ;EHL0013                                                                                            ;;ANALÍTICO ;
-
-1.6.3.3             ;EHL0014                                                                                            ;;ANALÍTICO ;
-
-1.6.3.4             ;FBU7329                                                                                            ;;ANALÍTICO ;
-
-1.6.3.5             ;FRT7548                                                                                            ;;ANALÍTICO ;
 
 1.6.3.6             ;EWU6088                                                                                            ;;ANALÍTICO ;
 
-1.6.3.7             ;EJZ7999                                                                                            ;;ANALÍTICO ;
-
-1.6.3.8             ;EJZ7J97                                                                                            ;;ANALÍTICO ;
-
-1.6.3.9             ;EWU6143                                                                                            ;;ANALÍTICO ;
-
 1.6.3.10            ;EWU6342                                                                                            ;;ANALÍTICO ;
-
-1.6.3.11            ;GDB3A42                                                                                            ;;ANALÍTICO ;
-
-1.6.3.12            ;GDY0H74                                                                                            ;;ANALÍTICO ;
 
 1.6.3.13            ;EWU5698                                                                                            ;;ANALÍTICO ;
 
@@ -536,27 +426,15 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.6.3.29            ;CHN0029                                                                                            ;;ANALÍTICO ;
 
-1.6.3.30            ;EHH0005                                                                                            ;;ANALÍTICO ;
-
 1.6.3.31            ;HRO5E08                                                                                            ;;ANALÍTICO ;
 
 1.6.3.32            ;FTW0D43                                                                                            ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 6 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.6.3.33            ;FYC7D43                                                                                            ;;ANALÍTICO ;
-
-1.6.3.34            ;EQO6E99 (PRENSA MOVEL)                                                                             ;;ANALÍTICO ;
 
 1.6.3.35            ;PHT0025                                                                                            ;;ANALÍTICO ;
 
-1.6.3.36            ;EPT0024 (EMPILHADEIRA)                                                                             ;;ANALÍTICO ;
-
 1.6.3.37            ;BTS7191 (VENDIDO)                                                                                  ;;ANALÍTICO ;
-
-1.6.3.38            ;TKI2E74                                                                                            ;;ANALÍTICO ;
 
 1.6.3.39            ;HTD5F77 TOYOTA HILUX (VENDIDO)                                                                     ;;ANALÍTICO ;
 
@@ -572,6 +450,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.6.3.45            ;EWU5J85                                                                                            ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 5 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 1.6.3.46            ;GBW4F06                                                                                            ;;ANALÍTICO ;
 
 1.6.3.47            ;EWU5986 (VENDA)                                                                                    ;;ANALÍTICO ;
@@ -579,8 +461,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 1.6.3.48            ;BWJ9H37 (VENDA)                                                                                    ;;ANALÍTICO ;
 
 1.6.3.49            ;EHH0046                                                                                            ;;ANALÍTICO ;
-
-1.6.4               ;MANUTENCAO                                                                                         ;;ANALÍTICO ;
 
 1.6.5               ;CONTAINER                                                                                          ;;ANALÍTICO ;
 
@@ -608,8 +488,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.7.1.3.1           ;ARCELOR/BARRA MANSA/RJ-OPERADORES                                                                  ;;ANALÍTICO ;
 
-1.7.1.3.2           ;EHH0019                                                                                            ;;ANALÍTICO ;
-
 1.7.1.3.3           ;EHH0037                                                                                            ;;ANALÍTICO ;
 
 1.7.1.3.4           ;EHH0015                                                                                            ;;ANALÍTICO ;
@@ -618,26 +496,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.7.1.4.1           ;ARCELOR/PIRACICABA/SP-OPERADORES                                                                   ;;ANALÍTICO ;
 
-1.7.1.4.2           ;SWQ2C15 (PHH0049)                                                                                  ;;ANALÍTICO ;
-
-1.7.1.4.3           ;EWU5857                                                                                            ;;ANALÍTICO ;
-
-1.7.1.4.4           ;EWU6A79                                                                                            ;;ANALÍTICO ;
-
-1.7.1.4.5           ;GBL8H44                                                                                            ;;ANALÍTICO ;
-
-1.7.1.5             ;ARCELOR - JUIZ DE FORA/MG                                                                          ;;ANALÍTICO ;
-
-1.7.1.6             ;ARCELOR - CURITIBA/PR                                                                              ;;ANALÍTICO ;
-
 1.7.1.7             ;GERDAU - SAO CAETANO DO SUL/SP                                                                     ;;SINTÉTICO ;
 
 1.7.1.7.1           ;EWU6041                                                                                            ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 7 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.7.1.8             ;TUPY - JOINVILLE/SC                                                                                ;;SINTÉTICO ;
 
 1.7.1.8.1           ;TUPY - JOINVILLE/SC - OPERADORES                                                                   ;;ANALÍTICO ;
@@ -646,19 +508,9 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.7.1.8.3           ;EHL0041                                                                                            ;;ANALÍTICO ;
 
-1.7.1.9             ;TUPY - BETIM/MG                                                                                    ;;ANALÍTICO ;
-
 1.7.1.10            ;TRANSMOVE - PRANCHA SALIONE                                                                        ;;ANALÍTICO ;
 
 1.7.1.11            ;SELETIVA - PRENSA MOVEL                                                                            ;;SINTÉTICO ;
-
-1.7.1.11.1          ;GDU0275                                                                                            ;;ANALÍTICO ;
-
-1.7.1.11.2          ;QXH2G14                                                                                            ;;ANALÍTICO ;
-
-1.7.1.12            ;ALMAD                                                                                              ;;ANALÍTICO ;
-
-1.7.1.13            ;MIGRAÇÃO DO ATUA                                                                                   ;;ANALÍTICO ;
 
 1.7.1.14            ;ARCELOR - IRACEMAPOLIS/SP                                                                          ;;SINTÉTICO ;
 
@@ -678,131 +530,41 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.7.3               ;G&S BARUERI                                                                                        ;;SINTÉTICO ;
 
-1.7.3.1             ;ADMNISTRATIVO                                                                                      ;;ANALÍTICO ;
-
-1.7.3.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
-
 1.7.3.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
 
 1.7.3.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
 
 1.7.4               ;G&S CAMPO GRANDE                                                                                   ;;SINTÉTICO ;
 
-1.7.4.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
-
-1.7.4.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
-
-1.7.4.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
-
 1.7.4.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
 
 1.7.5               ;G&S DOURADOS                                                                                       ;;SINTÉTICO ;
 
-1.7.5.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
-
-1.7.5.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
-
-1.7.5.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
-
 1.7.5.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 6 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 1.7.6               ;G&S LONDRINA                                                                                       ;;SINTÉTICO ;
-
-1.7.6.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
-
-1.7.6.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
-
-1.7.6.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
 
 1.7.6.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
 
 1.7.7               ;G&S MARINGA                                                                                        ;;SINTÉTICO ;
 
-1.7.7.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
-
-1.7.7.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
-
-1.7.7.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
-
 1.7.7.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 8 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.7.8               ;G&S PRUDENTE                                                                                       ;;SINTÉTICO ;
-
-1.7.8.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
-
-1.7.8.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
-
-1.7.8.3             ;OPERACIONAL                                                                                        ;;ANALÍTICO ;
 
 1.7.8.4             ;LOGISTICA                                                                                          ;;ANALÍTICO ;
 
 1.7.9               ;MAQUINAS E EQUIPAMENTOS                                                                            ;;SINTÉTICO ;
 
-1.7.9.1             ;EHH0036                                                                                            ;;ANALÍTICO ;
-
-1.7.9.2             ;EHH0003                                                                                            ;;ANALÍTICO ;
-
-1.7.9.3             ;EHL0042                                                                                            ;;ANALÍTICO ;
-
-1.7.9.4             ;PHT0018                                                                                            ;;ANALÍTICO ;
-
-1.7.9.5             ;EHH0040                                                                                            ;;ANALÍTICO ;
-
 1.7.9.6             ;EHH0008                                                                                            ;;ANALÍTICO ;
-
-1.7.9.7             ;EHH0002                                                                                            ;;ANALÍTICO ;
-
-1.7.9.8             ;EHH0039                                                                                            ;;ANALÍTICO ;
 
 1.7.9.9             ;EHH0004                                                                                            ;;ANALÍTICO ;
 
 1.7.9.10            ;EHL0043                                                                                            ;;ANALÍTICO ;
-
-1.7.9.11            ;BHM0047                                                                                            ;;ANALÍTICO ;
-
-1.7.9.12            ;PHH0061 (JCG800)                                                                                   ;;ANALÍTICO ;
-
-1.7.9.13            ;EHL0014                                                                                            ;;ANALÍTICO ;
-
-1.7.9.14            ;EHH0006                                                                                            ;;ANALÍTICO ;
-
-1.7.9.15            ;PHJ0054                                                                                            ;;ANALÍTICO ;
-
-1.7.9.16            ;PHH0031                                                                                            ;;ANALÍTICO ;
-
-1.7.9.17            ;PHH0045                                                                                            ;;ANALÍTICO ;
-
-1.7.9.18            ;EHL0028                                                                                            ;;ANALÍTICO ;
-
-1.7.9.19            ;EHH0009                                                                                            ;;ANALÍTICO ;
-
-1.7.9.20            ;CHF0016                                                                                            ;;ANALÍTICO ;
-
-1.7.9.21            ;EHH0007                                                                                            ;;ANALÍTICO ;
-
-1.7.9.22            ;EWU6143                                                                                            ;;ANALÍTICO ;
-
-1.7.9.23            ;EPT0024 (EMPILHADEIRA)                                                                             ;;ANALÍTICO ;
-
-1.7.9.24            ;EHH0005                                                                                            ;;ANALÍTICO ;
-
-1.7.9.25            ;EHH0038                                                                                            ;;ANALÍTICO ;
-
-1.7.9.26            ;EHH0019                                                                                            ;;ANALÍTICO ;
-
-1.7.9.27            ;EUS0048                                                                                            ;;ANALÍTICO ;
-
-1.7.9.28            ;ACS0049                                                                                            ;;ANALÍTICO ;
-
-1.7.9.29            ;CCS0052                                                                                            ;;ANALÍTICO ;
-
-1.7.9.30            ;DPS0050                                                                                            ;;ANALÍTICO ;
-
-1.7.9.31            ;DPS0051                                                                                            ;;ANALÍTICO ;
 
 1.7.9.32            ;EHH0006                                                                                            ;;ANALÍTICO ;
 
@@ -818,10 +580,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.7.10.1            ;FBV4H62                                                                                            ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 9 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.7.10.2            ;GDY0H74                                                                                            ;;ANALÍTICO ;
 
 1.7.10.3            ;GDB3A42                                                                                            ;;ANALÍTICO ;
@@ -870,14 +628,16 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.7.10.25           ;FRT7548                                                                                            ;;ANALÍTICO ;
 
-1.7.10.26           ;BZL7H95                                                                                            ;;ANALÍTICO ;
-
 1.7.10.27           ;FBU7329                                                                                            ;;ANALÍTICO ;
 
 1.7.10.28           ;EWU6003                                                                                            ;;ANALÍTICO ;
 
 1.7.10.29           ;BZG6A91                                                                                            ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 7 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 1.7.10.30           ;GGE5059                                                                                            ;;ANALÍTICO ;
 
 1.7.10.31           ;EW6A86                                                                                             ;;ANALÍTICO ;
@@ -894,8 +654,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.7.10.37           ;GHI3A74                                                                                            ;;ANALÍTICO ;
 
-1.7.10.38           ;EWU6A85                                                                                            ;;ANALÍTICO ;
-
 1.7.10.39           ;NRQ7727                                                                                            ;;ANALÍTICO ;
 
 1.7.10.40           ;EJZ7998                                                                                            ;;ANALÍTICO ;
@@ -910,10 +668,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.7.10.45           ;QAO4A53                                                                                            ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 10 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.7.10.46           ;EWU6341 (JULIETA)                                                                                  ;;ANALÍTICO ;
 
 1.7.10.47           ;EWU6294 (JULIETA)                                                                                  ;;ANALÍTICO ;
@@ -972,6 +726,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.8.3.13            ;P PTE - SALA 411 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 8 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 1.8.3.14            ;P PTE - SALA 402 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
 
 1.8.3.15            ;P PTE - SALA 404 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
@@ -1002,10 +760,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.8.3.28            ;P PTE - JOAQUIM CONSTANTINO, 4300                                                                  ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 11 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.8.3.29            ;P PTE - JOAQUIM CONSTANTINO, 4300 A                                                                ;;ANALÍTICO ;
 
 1.8.3.30            ;P PTE - SITIO SAO GABRIEL 4,5                                                                      ;;ANALÍTICO ;
@@ -1064,6 +818,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.8.5.14            ;P PTE - APTO 1704 - OXFORD                                                                         ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 9 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 1.8.5.15            ;P PTE - APTO 1803 - OXFORD                                                                         ;;ANALÍTICO ;
 
 1.8.5.16            ;P PTE - APTO 1804 - OXFORD                                                                         ;;ANALÍTICO ;
@@ -1094,10 +852,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.8.5.29            ;P PTE - VAGA 56/56A-M 13 - INGLATERRA                                                              ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 12 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.8.6               ;GABRIEL SALTEIRO                                                                                   ;;SINTÉTICO ;
 
 1.8.6.1             ;P PTE - APTO 23 - HEITOR GRACA                                                                     ;;ANALÍTICO ;
@@ -1156,6 +910,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.8.12.1            ;SITIO SAO SERAFIM E SITIO ALBERTO                                                                  ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 10 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 1.8.13              ;S4 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
 
 1.8.13.1            ;SUCESSO ROSANA                                                                                     ;;ANALÍTICO ;
@@ -1186,10 +944,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 1.9.3               ;GABRIEL SALTEIRO - 1.9.3                                                                           ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 13 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 1.9.4               ;ESPOLIO ZACHARIAS                                                                                  ;;ANALÍTICO ;
 
 1.9.5               ;ILDA SALTEIRO                                                                                      ;;ANALÍTICO ;
@@ -1201,8 +955,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 1.10.1              ;OPERACOES ENTRE EMPRESA                                                                            ;;ANALÍTICO ;
 
 1.10.2              ;IMOBILIZADO                                                                                        ;;ANALÍTICO ;
-
-1.11                ;RENDER EMPREENDIMENTOS                                                                             ;;ANALÍTICO ;
 
 1.12                ;NVS SERVICOS DE ENTULHO                                                                            ;;SINTÉTICO ;
 
@@ -1250,6 +1002,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.2.5               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
 
+;;;;;;;
+Página: 11 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 2.2.5.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
 
 2.2.5.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
@@ -1278,10 +1034,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.2.8.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 14 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 2.3                 ;BRACOFER                                                                                           ;;SINTÉTICO ;
 
 2.3.1               ;PRESIDENTE PRUDENTE                                                                                ;;SINTÉTICO ;
@@ -1342,6 +1094,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.7.1.5             ;ARCELOR JUIZ DE FORA MG                                                                            ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 12 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 2.7.1.6             ;ARCELOR CURITIBA PR                                                                                ;;ANALÍTICO ;
 
 2.7.1.7             ;GERDAU SAO CAETANO DO SUL SP                                                                       ;;ANALÍTICO ;
@@ -1370,10 +1126,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.7.5               ;G&S DOURADOS                                                                                       ;;SINTÉTICO ;
 
-;;;;;;;
-Página: 15 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 2.7.5.1             ;ADMINISTRATIVO                                                                                     ;;ANALÍTICO ;
 
 2.7.5.2             ;COMERCIAL                                                                                          ;;ANALÍTICO ;
@@ -1434,6 +1186,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.8.3.15            ;P PTE - SALA 404 - COSMOPOLITAN                                                                    ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 13 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 2.8.3.16            ;P PTE - SALA 406 COSMOPOLITAN                                                                      ;;ANALÍTICO ;
 
 2.8.3.17            ;P PTE - JOSE PETRIN, 760                                                                           ;;ANALÍTICO ;
@@ -1462,10 +1218,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.8.3.29            ;P PTE - JOAQUIM CONSTANTINO, 4300 A                                                                ;;ANALÍTICO ;
 
-;;;;;;;
-Página: 16 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 2.8.3.30            ;P PTE - SITIO SAO GABRIEL 4,5                                                                      ;;ANALÍTICO ;
 
 2.8.3.31            ;P PTE - ESTANCIA SAO FRANCISCO                                                                     ;;ANALÍTICO ;
@@ -1526,6 +1278,10 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.8.5.16            ;P PTE - APTO 1804 - OXFORD                                                                         ;;ANALÍTICO ;
 
+;;;;;;;
+Página: 14 / 16
+www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
+;;
 2.8.5.17            ;P PTE - VAGA 114 - INGLATERRA                                                                      ;;ANALÍTICO ;
 
 2.8.5.18            ;P PTE - VAGA 115 - INGLATERRA                                                                      ;;ANALÍTICO ;
@@ -1554,10 +1310,6 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.8.6               ;GABRIEL SALTEIRO                                                                                   ;;SINTÉTICO ;
 
-;;;;;;;
-Página: 17 / 19
-www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
-;;
 2.8.6.1             ;P PTE - APTO 23 - HEITOR GRACA                                                                     ;;ANALÍTICO ;
 
 2.8.7               ;GIULIANA SALMAZZO                                                                                  ;;ANALÍTICO ;
@@ -1618,38 +1370,38 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 
 2.8.13.1            ;SUCESSO ROSANA                                                                                     ;;ANALÍTICO ;
 
-2.8.13.2            ;BEIRA RIO - ÁREA I (M. 6227)                                                                       ;;ANALÍTICO ;
-
-2.8.13.3            ;BEIRA RIO FUNDOS - ÁREA III (M. 6229)                                                              ;;ANALÍTICO ;
-
-2.8.13.4            ;ALMOXARIFADO - LOTE 09B (M. 8049)                                                                  ;;ANALÍTICO ;
-
-2.8.13.5            ;PISCICULTURA CASTILHO (M. 21.802)                                                                  ;;ANALÍTICO ;
-
-2.8.14              ;S6 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
-
-2.8.14.1            ;TERRENO ANGLO                                                                                      ;;ANALÍTICO ;
-
-2.8.15              ;S9 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
-
-2.8.15.1            ;PROGRESSO ZONA NORTE                                                                               ;;ANALÍTICO ;
-
-2.9                 ;FAMILIAR                                                                                           ;;SINTÉTICO ;
-
-2.9.1               ;RENATO SALTEIRO                                                                                    ;;ANALÍTICO ;
-
-2.9.2               ;GIULIANA SALMAZZO                                                                                  ;;ANALÍTICO ;
-
-2.9.3               ;GABRIEL SALTEIRO                                                                                   ;;ANALÍTICO ;
-
-2.9.4               ;ESPOLIO ZACHARIAS                                                                                  ;;ANALÍTICO ;
-
-2.9.5               ;ILDA SALTEIRO                                                                                      ;;ANALÍTICO ;
-
 ;;;;;;;
-Página: 18 / 19
+Página: 15 / 16
 www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 ;;
+2.8.13.2            ;;BEIRA RIO - ÁREA I (M. 6227)                                                                       ;;ANALÍTICO ;
+
+2.8.13.3            ;;BEIRA RIO FUNDOS - ÁREA III (M. 6229)                                                              ;;ANALÍTICO ;
+
+2.8.13.4            ;;ALMOXARIFADO - LOTE 09B (M. 8049)                                                                  ;;ANALÍTICO ;
+
+2.8.13.5            ;;PISCICULTURA CASTILHO (M. 21.802)                                                                  ;;ANALÍTICO ;
+
+2.8.14              ;;S6 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+2.8.14.1            ;;TERRENO ANGLO                                                                                      ;;ANALÍTICO ;
+
+2.8.15              ;;S9 EMPREENDIMENTOS                                                                                 ;;SINTÉTICO ;
+
+2.8.15.1            ;;PROGRESSO ZONA NORTE                                                                               ;;ANALÍTICO ;
+
+2.9                 ;;FAMILIAR                                                                                           ;;SINTÉTICO ;
+
+2.9.1               ;;RENATO SALTEIRO                                                                                    ;;ANALÍTICO ;
+
+2.9.2               ;;GIULIANA SALMAZZO                                                                                  ;;ANALÍTICO ;
+
+2.9.3               ;;GABRIEL SALTEIRO                                                                                   ;;ANALÍTICO ;
+
+2.9.4               ;;ESPOLIO ZACHARIAS                                                                                  ;;ANALÍTICO ;
+
+2.9.5               ;;ILDA SALTEIRO                                                                                      ;;ANALÍTICO ;
+
 2.9.6               ;;GLEICE SALTEIRO                                                                                    ;;ANALÍTICO ;
 
 2.10                ;;RESULTADO NAO OPERACIONAL                                                                          ;;SINTÉTICO ;
@@ -1673,9 +1425,9 @@ www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;
 2.12.1.2            ;;COMERCIAL                                                                                          ;;ANALÍTICO ;
 
 ;;;;;;;;
-Nº Total de Centros Cadastrados: 796;;;;;;;
+Nº Total de Centros Cadastrados: 678;;;;;;;
 
 ;;;;;;;;
-Página: 19 / 19
+Página: 16 / 16
 www.sygecom.com.br - relatorios\sagi_rel_centro_custo.fr3;;;;
 ;;;
