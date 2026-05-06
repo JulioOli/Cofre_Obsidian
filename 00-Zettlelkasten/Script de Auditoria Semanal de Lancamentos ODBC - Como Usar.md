@@ -87,17 +87,23 @@ Cada item dentro de `regras:` representa uma verificação.
 
 ### ~={blue}6) Conferir o resultado=~
 
-O script gera um Excel em:
+Por padrão, o script atualiza o canvas:
 
 ```text
-	02-Referencias/relatorio_auditoria_AAAA-MM-DD.xlsx
+~/.cursor/projects/.../canvases/auditoria-lacunas.canvas.tsx
 ```
 
-A saída tem:
+Para gerar também o Excel detalhado:
 
-- aba `00_painel` com visão executiva (total, lacunas e ranking por conta)
-- aba `01_lacunas` com foco em faltas de lançamento (`ausencia_mensal` e `frequencia`)
-- aba `resumo` com contagem por tipo de alerta e severidade
+```powershell
+python scripts/auditoria_lancamentos.py --ref-date "2026-05-05" --excel
+```
+
+No Excel, as abas principais são:
+
+- `00_painel` com visão executiva (total, lacunas e ranking por conta)
+- `01_lacunas` com foco em faltas de lançamento (`ausencia_mensal` e `frequencia`)
+- `resumo` com contagem por tipo de alerta e severidade
 - uma aba por tipo de anomalia, por exemplo `ausencia_mensal`, `desvio_valor`, `duplicata`, etc.
 
 ## ~={purple}Exemplo de execução com data de referência=~
@@ -130,6 +136,23 @@ python scripts/auditoria_lancamentos.py `
 | `--canvas-out` | Caminho onde o canvas (.canvas.tsx) será gerado |
 | `--excel` | Gera também o relatório Excel detalhado (saída padrão é canvas) |
 | `--sem-canvas` | Pula a geração do canvas |
+| `--template-excel` | Arquivo Excel usado como template de formatação visual (fontes, cores, larguras, etc.) |
+| `--sem-template-excel` | Desativa a aplicação de formatação via template |
+
+### ~={blue}Template de formatação do Excel=~
+
+Se você já ajustou visualmente um relatório (`negrito`, `cores`, `largura de colunas`, `tamanho de fonte`), ele pode ser reutilizado como template.
+
+Exemplo:
+
+```powershell
+python scripts/auditoria_lancamentos.py `
+  --ref-date "2026-05-05" `
+  --excel `
+  --template-excel "02-Referencias/relatorio_auditoria_2026-05-06.xlsx"
+```
+
+Com isso, o script gera o Excel novo com os dados atualizados e reaplica a formatação das abas em comum do arquivo template.
 
 ## Estrutura das regras
 

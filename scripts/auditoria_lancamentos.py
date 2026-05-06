@@ -17,12 +17,14 @@ import csv
 import json
 import re
 import sys
+from copy import copy
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Iterable
 
 import pandas as pd
+from openpyxl import load_workbook
 
 
 # ---------------------------------------------------------------------------
@@ -50,6 +52,9 @@ DEFAULT_CANVAS_PATH = (
     / "c-Users-julio-santana-Documents-Projects-Cofre-Trabalho"
     / "canvases"
     / "auditoria-lacunas.canvas.tsx"
+)
+DEFAULT_EXCEL_STYLE_TEMPLATE = (
+    PROJECT_ROOT / "02-Referencias" / "relatorio_auditoria_2026-05-06.xlsx"
 )
 
 NOMES_CONTAS = {
@@ -1472,6 +1477,73 @@ def gerar_excel(out_df: pd.DataFrame, output_path: Path) -> None:
             df_t.to_excel(writer, sheet_name=sheet, index=False)
 
 
+def aplicar_formatacao_template_excel(output_path: Path, template_path: Path) -> bool:
+    """
+    Aplica estilos/formatacao de um xlsx template no arquivo de saida.
+
+    Copia metadados de layout por aba em comum:
+    - largura de coluna e altura de linha
+    - freeze panes e autofilter
+    - estilo de celulas (fonte, fill, border, alinhamento, formato, protecao)
+    """
+    if not output_path.exists() or not template_path.exists():
+        return False
+
+    wb_out = load_workbook(output_path)
+    wb_tpl = load_workbook(template_path)
+    touched = False
+
+    for sheet_name in wb_out.sheetnames:
+        if sheet_name not in wb_tpl.sheetnames:
+            continue
+        ws_out = wb_out[sheet_name]
+        ws_tpl = wb_tpl[sheet_name]
+
+        ws_out.freeze_panes = ws_tpl.freeze_panes
+        ws_out.auto_filter.ref = ws_tpl.auto_filter.ref
+
+        # Dimensoes de colunas
+        for col_letter, dim_tpl in ws_tpl.column_dimensions.items():
+            dim_out = ws_out.column_dimensions[col_letter]
+            dim_out.width = dim_tpl.width
+            dim_out.hidden = dim_tpl.hidden
+            dim_out.outlineLevel = dim_tpl.outlineLevel
+            dim_out.bestFit = dim_tpl.bestFit
+            dim_out.customWidth = dim_tpl.customWidth
+
+        # Altura de linhas
+        for row_idx, dim_tpl in ws_tpl.row_dimensions.items():
+            dim_out = ws_out.row_dimensions[row_idx]
+            dim_out.height = dim_tpl.height
+            dim_out.hidden = dim_tpl.hidden
+            dim_out.outlineLevel = dim_tpl.outlineLevel
+
+        # Estilos de celula (somente faixa usada no output)
+        for row in ws_out.iter_rows(
+            min_row=1,
+            max_row=ws_out.max_row,
+            min_col=1,
+            max_col=ws_out.max_column,
+        ):
+            for cell_out in row:
+                cell_tpl = ws_tpl.cell(row=cell_out.row, column=cell_out.column)
+                if not cell_tpl.has_style:
+                    continue
+                cell_out.font = copy(cell_tpl.font)
+                cell_out.fill = copy(cell_tpl.fill)
+                cell_out.border = copy(cell_tpl.border)
+                cell_out.alignment = copy(cell_tpl.alignment)
+                cell_out.number_format = cell_tpl.number_format
+                cell_out.protection = copy(cell_tpl.protection)
+
+        touched = True
+
+    if touched:
+        wb_out.save(output_path)
+
+    return touched
+
+
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -1542,12 +1614,26 @@ def main() -> None:
         action="store_true",
         help="Pula a geracao do canvas (.canvas.tsx).",
     )
+    parser.add_argument(
+        "--template-excel",
+        default=str(DEFAULT_EXCEL_STYLE_TEMPLATE),
+        help=(
+            "Arquivo xlsx modelo para copiar formatacao visual para o relatorio "
+            f"(padrao: {DEFAULT_EXCEL_STYLE_TEMPLATE})"
+        ),
+    )
+    parser.add_argument(
+        "--sem-template-excel",
+        action="store_true",
+        help="Nao aplicar formatacao a partir do arquivo template.",
+    )
 
     args = parser.parse_args()
 
     csv_path = Path(args.csv)
     rules_path = Path(args.regras)
     fechamento_path = Path(args.fechamento)
+    template_excel_path = Path(args.template_excel)
     ref_date = _parse_date(args.ref_date)
 
     if not rules_path.exists():
@@ -1591,6 +1677,12 @@ def main() -> None:
                 / f"relatorio_auditoria_{ref_date.strftime('%Y-%m-%d')}.xlsx"
             )
         gerar_excel(result_df, out_path)
+        if not bool(args.sem_template_excel):
+            ok_tpl = aplicar_formatacao_template_excel(out_path, template_excel_path)
+            if ok_tpl:
+                print(f"Formatacao aplicada do template: {template_excel_path}")
+            else:
+                print(f"Template nao aplicado (arquivo/abas ausentes): {template_excel_path}")
         print(f"Relatorio Excel gerado em: {out_path}")
 
     print(f"Total de achados: {len(result_df):,}")
