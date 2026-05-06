@@ -49,10 +49,9 @@ Quando solicitado a analisar notas:
 3. Identifique hierarquias conceituais (fundamental → específico)
 4. Procure por inconsistências técnicas ou conflitos de informação
 5. Verifique completude de informações referenciadas
-6. Sempre analise e leve em consideração o conteúdo dos arquivos que estiverem na pasta "02-Referencias"
-7. Para dúvidas conceituais sobre Plano de Contas e Centro de Custo, priorize primeiro as notas de "00-Zettlelkasten" (especialmente: "Tipos de Movimentação", "Divisões", "Filiais", "Departamentos", "Estrutura Empresarial G3S" e "Analise Base Financeira").
-8. Se ainda houver dúvida após as notas, consultar os arquivos "02-Referencias/Plano de Contas.pdf" e "02-Referencias/Centro de Custo.pdf".
-9. Consultar "02-Referencias/base.csv" apenas quando a solicitação exigir validação transacional (valores, documentos, recorrência, duplicidade, período, fornecedor, evidência de lançamento) ou quando as fontes conceituais não forem suficientes.
+6. Para dúvidas conceituais sobre Plano de Contas e Centro de Custo, priorize primeiro as notas de "00-Zettlelkasten" (especialmente: "Tipos de Movimentação", "Divisões", "Filiais", "Departamentos", "Estrutura Empresarial G3S" e "Analise Base Financeira").
+7. Se ainda houver dúvida após as notas, consultar os arquivos "02-Referencias/Plano de Contas.pdf" e "02-Referencias/Centro de Custo.pdf".
+8. Consultar "02-Referencias/base.csv" apenas quando a solicitação exigir validação transacional (valores, documentos, recorrência, duplicidade, período, fornecedor, evidência de lançamento) ou quando as fontes conceituais não forem suficientes.
 
 ### Correções e Edições
 Sempre mantenha:
@@ -99,6 +98,13 @@ Sempre verifique:
 - Inclua comentários explicativos quando necessário
 - Mantenha sintaxe precisa para comandos de rede
 - Use seções específicas para comandos de visualização vs configuração
+
+### Python (obrigatório: venv do repositório)
+Neste ambiente o Python **não** está instalado de forma global no sistema (máquina corporativa sem permissão para instalar Python no SO). **Sempre** que precisar executar Python, pip, scripts `.py` ou criar/ativar ambiente, use o virtualenv que já existe na raiz do repositório **Cofre_Trabalho**:
+- **Windows (PowerShell / cmd):** `.\.venv\Scripts\python.exe` (e `.\.venv\Scripts\pip.exe` quando for o caso)
+- **Linux / macOS:** `./.venv/bin/python` (e `./.venv/bin/pip` quando for o caso)
+
+Não presuma que `python`, `py` ou `python3` no PATH funcionarão. Se o `.venv` não existir em um clone novo, aí sim oriente a criação a partir de um Python disponível no sistema — mas o padrão deste workspace é **sempre** o `.venv` do Cofre.
 
 ### Gestão de Arquivos
 - Preserve nomes de arquivo existentes (exceto correções óbvias)

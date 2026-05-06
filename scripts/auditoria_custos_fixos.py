@@ -32,16 +32,25 @@ LIMIAR_VARIACAO_PCT = 0.30          # 30% de variação vs. mediana de referênc
 LIMIAR_VALOR_MINIMO = 100.0          # Ignora variações de centavos / valores irrelevantes
 LIMIAR_ZSCORE_LANCAMENTO = 2.0       # |z| ≥ 2 sinaliza lançamento atípico
 
-# A planilha entregue só tem JAN/MAR/ABR. JAN é o único mês 100% auditado.
+# Cabeçalhos do pivot Excel → nomes internos (espaços à esquerda conforme o Excel exporta).
 COLS_VALOR_ORIG = {
     "JAN/2026": "jan",
+    " FEV/2026": "fev",
     "  MAR/2026": "mar",
     "   ABR/2026": "abr",
 }
-MESES = ["jan", "mar", "abr"]
-MES_REFERENCIA = ["jan"]
+MESES = ["jan", "fev", "mar", "abr"]
+# Janeiro e fevereiro tratados como baseline auditado; MAR/ABR são contrastados no relatório de parâmetros.
+MES_REFERENCIA = ["jan", "fev"]
 MESES_AUDITAR = ["mar", "abr"]
-MES_LABEL = {"jan": "JAN/2026", "mar": "MAR/2026", "abr": "ABR/2026"}
+MES_LABEL = {
+    "jan": "JAN/2026",
+    "fev": "FEV/2026",
+    "mar": "MAR/2026",
+    "abr": "ABR/2026",
+}
+MEDIANA_COL = "mediana_abs_meses"
+MEDIANA_EXCEL_NOME = "Mediana |4m|"
 
 
 # ─── Cores para formatação condicional do Excel ─────────────────────────────
@@ -171,7 +180,7 @@ def analisar_plano(folhas: pd.DataFrame, params: Parametros) -> pd.DataFrame:
     valores = grupo[MESES].to_numpy(dtype=float)
     ref = np.where(valores != 0, valores, np.nan)
     mediana_ref = np.nanmedian(np.abs(ref), axis=1)
-    grupo["mediana_abs_3m"] = mediana_ref
+    grupo[MEDIANA_COL] = mediana_ref
 
     flags_por_linha: list[list[str]] = []
     for idx, row in grupo.iterrows():
@@ -238,7 +247,7 @@ def analisar_credor_plano(folhas: pd.DataFrame, params: Parametros) -> pd.DataFr
         .reset_index()
     )
     grupo["meses_presentes"] = (grupo[MESES] != 0).sum(axis=1)
-    grupo["mediana_abs_3m"] = grupo[MESES].abs().replace(0, np.nan).median(axis=1)
+    grupo[MEDIANA_COL] = grupo[MESES].abs().replace(0, np.nan).median(axis=1)
 
     # Mudança de plano de contas para o mesmo credor
     planos_por_credor = (
@@ -249,14 +258,16 @@ def analisar_credor_plano(folhas: pd.DataFrame, params: Parametros) -> pd.DataFr
     flags: list[list[str]] = []
     for _, row in grupo.iterrows():
         f: list[str] = []
-        med = row["mediana_abs_3m"]
+        med = row[MEDIANA_COL]
         if not pd.isna(med) and med >= params.valor_minimo:
             if row["meses_presentes"] == 1:
                 mes = next(m for m in MESES if row[m] != 0)
                 f.append(f"CREDOR_AVULSO:{mes.upper()}")
-            elif row["meses_presentes"] == 2:
-                mes_zero = next(m for m in MESES if row[m] == 0)
-                f.append(f"FALTA_NO_MES:{mes_zero.upper()}")
+            elif row["meses_presentes"] < len(MESES):
+                # Credor presente em mais de um mês mas não em todos — lista cada mês zerado.
+                for mz in MESES:
+                    if row[mz] == 0:
+                        f.append(f"FALTA_NO_MES:{mz.upper()}")
 
             valores_nao_zero = [row[m] for m in MESES if row[m] != 0]
             if len(valores_nao_zero) >= 2:
@@ -412,14 +423,13 @@ def gerar_excel(
 ) -> None:
     resumo = construir_resumo(plano_df, credor_df, lanc_df)
 
+    mes_rename = {m: MES_LABEL[m] for m in MESES}
     plano_export = plano_df.rename(
         columns={
             "plano_codigo": "Código",
             "plano": "Plano de Contas",
-            "jan": "JAN/2026",
-            "mar": "MAR/2026",
-            "abr": "ABR/2026",
-            "mediana_abs_3m": "Mediana |3m|",
+            **mes_rename,
+            MEDIANA_COL: MEDIANA_EXCEL_NOME,
             "flags": "Flags",
             "qtd_flags": "Qtd Flags",
             "severidade": "Severidade",
@@ -431,11 +441,9 @@ def gerar_excel(
             "credor": "Credor",
             "plano_codigo": "Código Plano",
             "plano": "Plano de Contas",
-            "jan": "JAN/2026",
-            "mar": "MAR/2026",
-            "abr": "ABR/2026",
+            **mes_rename,
             "meses_presentes": "Meses Presentes",
-            "mediana_abs_3m": "Mediana |3m|",
+            MEDIANA_COL: MEDIANA_EXCEL_NOME,
             "qtd_planos_distintos": "Qtd Planos Distintos",
             "flags": "Flags",
             "qtd_flags": "Qtd Flags",
@@ -468,12 +476,13 @@ def gerar_excel(
             "documento": "Documento",
             "historico_curto": "Histórico (resumido)",
             "historico": "Histórico (completo)",
-            "jan": "JAN/2026",
-            "mar": "MAR/2026",
-            "abr": "ABR/2026",
+            **mes_rename,
         }
     )
 
+    totais_rows = [
+        (f"Total {MES_LABEL[m]}", f"R$ {folhas[m].sum():,.2f}") for m in MESES
+    ]
     parametros_df = pd.DataFrame(
         {
             "Parâmetro": [
@@ -481,12 +490,10 @@ def gerar_excel(
                 "Limiar de variação",
                 "Valor mínimo relevante",
                 "Z-Score mínimo",
-                "Mês de referência",
-                "Meses sob auditoria",
+                "Meses de referência (baseline)",
+                "Meses sob auditoria (contraste)",
                 "Lançamentos processados",
-                "Total JAN/2026",
-                "Total MAR/2026",
-                "Total ABR/2026",
+                *[p for p, _ in totais_rows],
             ],
             "Valor": [
                 str(params.src),
@@ -496,9 +503,7 @@ def gerar_excel(
                 ", ".join(MES_LABEL[m] for m in MES_REFERENCIA),
                 ", ".join(MES_LABEL[m] for m in MESES_AUDITAR),
                 len(folhas),
-                f"R$ {folhas['jan'].sum():,.2f}",
-                f"R$ {folhas['mar'].sum():,.2f}",
-                f"R$ {folhas['abr'].sum():,.2f}",
+                *[v for _, v in totais_rows],
             ],
         }
     )
@@ -539,21 +544,19 @@ def gerar_excel(
                 _colorir_severidade(ws, idx)
 
         # Formato contábil nas colunas monetárias
+        colunas_monetarias = list(MES_LABEL.values()) + [MEDIANA_EXCEL_NOME]
+
         ws_plano = wb["01 - Plano por Mes"]
         cabecalho = [c.value for c in ws_plano[1]]
         cols_money = [
-            cabecalho.index(c) + 1
-            for c in ("JAN/2026", "MAR/2026", "ABR/2026", "Mediana |3m|")
-            if c in cabecalho
+            cabecalho.index(c) + 1 for c in colunas_monetarias if c in cabecalho
         ]
         _aplicar_formato_contabil(ws_plano, cols_money)
 
         ws_credor = wb["02 - Credor x Plano"]
         cabecalho = [c.value for c in ws_credor[1]]
         cols_money = [
-            cabecalho.index(c) + 1
-            for c in ("JAN/2026", "MAR/2026", "ABR/2026", "Mediana |3m|")
-            if c in cabecalho
+            cabecalho.index(c) + 1 for c in colunas_monetarias if c in cabecalho
         ]
         _aplicar_formato_contabil(ws_credor, cols_money)
 
@@ -570,7 +573,7 @@ def gerar_excel(
         cabecalho = [c.value for c in ws_folhas[1]]
         cols_money = [
             cabecalho.index(c) + 1
-            for c in ("JAN/2026", "MAR/2026", "ABR/2026")
+            for c in MES_LABEL.values()
             if c in cabecalho
         ]
         _aplicar_formato_contabil(ws_folhas, cols_money)

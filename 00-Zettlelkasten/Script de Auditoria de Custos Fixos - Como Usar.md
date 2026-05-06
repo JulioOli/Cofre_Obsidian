@@ -10,6 +10,16 @@ tags:
 
 Lê o pivot do Excel `02-Referencias/Detalhamento Custos com 2.1.1 - <periodo>.xlsx`, achata a hierarquia (Plano → Credor → Documento → Histórico) e gera um relatório multi-aba destacando divergências entre os meses (planos com salto de valor, credores avulsos / com mudança de plano de contas, lançamentos com z-score atípico).
 
+## Escopo desta nota
+
+Esta nota é **somente** para `scripts/auditoria_custos_fixos.py` (análise de pivot de custos fixos).
+
+Para a auditoria semanal de lacunas do ODBC (com canvas na IDE), usar:
+
+- `scripts/auditoria_lancamentos.py`
+- `02-Referencias/Meus_Dados/regras_auditoria.yaml`
+- nota: `00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md`
+
 ## Passo a passo
 
 ### 1) Abrir o PowerShell na raiz do projeto
@@ -40,7 +50,7 @@ python scripts/auditoria_custos_fixos.py
 	- `01 - Plano por Mes` — totais e variação por plano
 	- `02 - Credor x Plano` — credores fora do padrão
 	- `03 - Lancamentos Suspeitos` — folhas com z-score ≥ 2
-	- `04 - Dados Achatados` — pivot achatado (315 linhas) para conferência
+	- `04 - Dados Achatados` — pivot achatado (uma linha por lançamento-folha) para conferência
 	- `05 - Parametros` — limiares usados na execução
 
 ## Parâmetros opcionais
@@ -60,9 +70,11 @@ python scripts/auditoria_custos_fixos.py `
 | `--valor-minimo` | `100.0` | Ignora variações abaixo desse valor absoluto (R$) |
 | `--zscore` | `2.0` | |z| mínimo para sinalizar lançamento atípico |
 
+**Referência no script:** `MES_REFERENCIA` = JAN + FEV (baseline auditado); `MESES_AUDITAR` = MAR + ABR (contraste no texto da aba Parâmetros). As colunas mensais no Excel são `JAN/2026`, ` FEV/2026`, `  MAR/2026`, `   ABR/2026` (espaços à esquerda como o Excel exporta).
+
 ## Quando atualizar
 
-Quando chegar uma nova versão do pivot (ex.: incluindo MAI/2026 ou FEV/2026), abrir o script e ajustar:
+Quando chegar uma nova versão do pivot (ex.: incluindo MAI/2026), abrir o script e ajustar:
 
 - `COLS_VALOR_ORIG` — mapeamento dos cabeçalhos do Excel para nomes internos
 - `MESES`, `MES_REFERENCIA`, `MESES_AUDITAR`, `MES_LABEL`
@@ -78,7 +90,7 @@ E rodar de novo. Os totais aparecem na aba `05 - Parametros` para conferência r
 
 **Aba `02 - Credor x Plano`:**
 - `CREDOR_AVULSO:<MES>` — credor aparece em só 1 mês
-- `FALTA_NO_MES:<MES>` — credor presente em 2 meses, faltando em 1
+- `FALTA_NO_MES:<MES>` — credor não zerado em todos os meses; pode repetir a flag (um rótulo por mês sem lançamento)
 - `VARIACAO_CREDOR_<SEV>:±X%` — diferença entre o maior e o menor valor do credor
 - `MUDANCA_DE_PLANO(N)` — mesmo credor lançado em N planos de contas distintos (forte indício de CC errado)
 

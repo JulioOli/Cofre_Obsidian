@@ -4,7 +4,7 @@
       "replaced": "->",
       "value": "→",
       "group": "Arrows",
-      "count": 5
+      "count": 6
     },
     "<-": {
       "replaced": "<-",
@@ -112,6 +112,16 @@
       "replaced": "(0)",
       "value": "0️⃣",
       "group": "Numbers"
+    },
+    "w/": {
+      "replaced": "w/",
+      "value": "with",
+      "group": "Words"
+    },
+    "w/o": {
+      "replaced": "w/o",
+      "value": "without",
+      "group": "Words"
     },
     "->>": {
       "replaced": "->>",
@@ -271,7 +281,7 @@
       "replaced": "p/",
       "value": "para",
       "group": "Words",
-      "count": 2
+      "count": 4
     },
     "": {
       "replaced": "",

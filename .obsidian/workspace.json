@@ -13,24 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-Zettlelkasten/Anotações - Artigos.md",
+                "file": "00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Anotações - Artigos"
-            }
-          },
-          {
-            "id": "04fb24be78b11d59",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "02-Referencias/julio/Repurposing of abandoned oil and gas wells as geothermal power plants.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Repurposing of abandoned oil and gas wells as geothermal power plants"
+              "title": "Script de Auditoria Semanal de Lancamentos ODBC - Como Usar"
             }
           }
         ],
@@ -206,21 +194,24 @@
   },
   "active": "389cc9e27ef75c7f",
   "lastOpenFiles": [
-    "02-Referencias/julio/Repurposing of abandoned oil and gas wells as geothermal power plants.pdf",
-    "02-Referencias/usage-events-2026-05-04.csv",
-    "02-Referencias/Não confirmado 104867.crdownload",
-    "02-Referencias/Não confirmado 421600.crdownload",
+    "02-Referencias/~$relatorio_auditoria_2026-05-06.xlsx",
+    "02-Referencias/relatorio_auditoria_2026-05-06.xlsx",
+    "02-Referencias/Meus_Dados/5117E640",
+    "02-Referencias/~$relatorio_auditoria_2026-05-05.xlsx",
+    "02-Referencias/relatorio_auditoria_2026-05-05.xlsx",
+    "02-Referencias/Plano de Contas.pdf",
+    "02-Referencias/Meus_Dados/93440340",
+    "02-Referencias/Meus_Dados/~$Lancamentos_CustosFixos_e_DespesasFixas_Fechamento2026.xlsx",
+    "02-Referencias/Meus_Dados/912CF240",
+    "02-Referencias/Meus_Dados/Lancamentos_CustosFixos_e_DespesasFixas_Fechamento2026.xlsx",
+    "02-Referencias/Meus_Dados/C5DAF240",
+    "00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md",
     "00-Zettlelkasten/Anotações - Artigos.md",
+    "00-Zettlelkasten/screening factors.md",
+    "00-Zettlelkasten/Organic Rankine Cycle (ORC).md",
     "00-Zettlelkasten/Script de Auditoria de Custos Fixos - Como Usar.md",
-    "02-Referencias/Não confirmado 836465.crdownload",
-    "02-Referencias/Não confirmado 869646.crdownload",
     "00-Zettlelkasten/Critério de Rateio - Pilares.md",
     "02-Referencias/rateio_pilares_Março.png",
-    "02-Referencias/rateio_pilares_Março.xlsx",
-    "02-Referencias/Meus_Dados/Pilares_Março.CSV",
-    "02-Referencias/Meus_Dados/797AAD10",
-    "02-Referencias/ECE1AD10",
-    "02-Referencias/87D1AD10",
     "02-Referencias/rateio_pilares_Marco.png",
     "00-Zettlelkasten/Índice Controladoria.md",
     "00-Zettlelkasten/Exemplo de Inconsistência no SAGI.md",
@@ -249,9 +240,6 @@
     "00-Zettlelkasten/obs.md",
     "00-Zettlelkasten/auditoria_padrao_credor_20260402.md",
     "00-Zettlelkasten/auditoria_padrao_credor_20260406.md",
-    "00-Zettlelkasten/auditoria_20260401.md",
-    "00-Zettlelkasten/prompt conversão do ODBC pro fechamento.md",
-    "00-Zettlelkasten/Untitled 1.md",
     "01-Anexos/sagi-anotacoes-01.png",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",

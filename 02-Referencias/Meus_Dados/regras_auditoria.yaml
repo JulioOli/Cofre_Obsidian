@@ -1,0 +1,440 @@
+# Regras de auditoria semanal (foco: custos/despesas fixas da reuniao).
+#
+# Contas foco:
+# - 7.5.1  AGUA E ESGOTO
+# - 7.5.2  ENERGIA ELETRICA
+# - 7.5.20 INTERNET
+# - 7.5.3  TELECOMUNICACOES
+# - 7.5.31 ALUGUEIS ADMINISTRATIVO
+# - 5.1    LOCACAO DE MAQUINAS E EQUIPAMENTOS
+# - 7.3.23 HONORARIOS PJ
+#
+# Observacoes:
+# - `codcdc` aceita padroes com `X` e `*`.
+# - `usar_referencia_fechamento: true` usa o arquivo de fechamento
+#   (Lancamentos_CustosFixos_e_DespesasFixas_Fechamento2026.xlsx)
+#   para aprender padrao de credor e faixa de valor.
+# - Registros migrados (vencimento 1800-01-01) sao ignorados por padrao no script.
+
+regras:
+  # ---------------------------------------------------------------------------
+  # 7.5.1 - AGUA E ESGOTO
+  # ---------------------------------------------------------------------------
+  - nome: "7.5.1 - Ausencia mensal (Agua e Esgoto)"
+    tipo: ausencia_mensal
+    codcdc: "7.5.1"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.1 - Credor fora do padrao"
+    tipo: fornecedor_inesperado
+    codcdc: "7.5.1"
+    usar_referencia_fechamento: true
+    severidade: MEDIA
+
+  - nome: "7.5.1 - Valor fora do padrao"
+    tipo: desvio_valor
+    codcdc: "7.5.1"
+    usar_referencia_fechamento: true
+    margem_pct_referencia: 0.20
+    severidade: MEDIA
+
+  # ---------------------------------------------------------------------------
+  # 7.5.2 - ENERGIA ELETRICA
+  # ---------------------------------------------------------------------------
+  - nome: "7.5.2 - Ausencia mensal (Energia Eletrica)"
+    tipo: ausencia_mensal
+    codcdc: "7.5.2"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.2 - Credor fora do padrao"
+    tipo: fornecedor_inesperado
+    codcdc: "7.5.2"
+    usar_referencia_fechamento: true
+    severidade: MEDIA
+
+  - nome: "7.5.2 - Valor fora do padrao"
+    tipo: desvio_valor
+    codcdc: "7.5.2"
+    usar_referencia_fechamento: true
+    margem_pct_referencia: 0.20
+    severidade: MEDIA
+
+  # ---------------------------------------------------------------------------
+  # 7.5.20 - INTERNET
+  # ---------------------------------------------------------------------------
+  - nome: "7.5.20 - Ausencia mensal (Internet)"
+    tipo: ausencia_mensal
+    codcdc: "7.5.20"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.20 - Credor fora do padrao"
+    tipo: fornecedor_inesperado
+    codcdc: "7.5.20"
+    usar_referencia_fechamento: true
+    severidade: MEDIA
+
+  - nome: "7.5.20 - Valor fora do padrao"
+    tipo: desvio_valor
+    codcdc: "7.5.20"
+    usar_referencia_fechamento: true
+    margem_pct_referencia: 0.20
+    severidade: MEDIA
+
+  # ---------------------------------------------------------------------------
+  # 7.5.3 - TELECOMUNICACOES
+  # ---------------------------------------------------------------------------
+  - nome: "7.5.3 - Ausencia mensal (Telecomunicacoes)"
+    tipo: ausencia_mensal
+    codcdc: "7.5.3"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.3 - Credor fora do padrao"
+    tipo: fornecedor_inesperado
+    codcdc: "7.5.3"
+    usar_referencia_fechamento: true
+    severidade: MEDIA
+
+  - nome: "7.5.3 - Valor fora do padrao"
+    tipo: desvio_valor
+    codcdc: "7.5.3"
+    usar_referencia_fechamento: true
+    margem_pct_referencia: 0.20
+    severidade: MEDIA
+
+  # ---------------------------------------------------------------------------
+  # 7.5.31 - ALUGUEIS ADMINISTRATIVO
+  # ---------------------------------------------------------------------------
+  - nome: "7.5.31 - Ausencia mensal (Alugueis Administrativo)"
+    tipo: ausencia_mensal
+    codcdc: "7.5.31"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.31 - Credor fora do padrao"
+    tipo: fornecedor_inesperado
+    codcdc: "7.5.31"
+    usar_referencia_fechamento: true
+    severidade: MEDIA
+
+  - nome: "7.5.31 - Valor fora do padrao"
+    tipo: desvio_valor
+    codcdc: "7.5.31"
+    usar_referencia_fechamento: true
+    margem_pct_referencia: 0.20
+    severidade: MEDIA
+
+  # ---------------------------------------------------------------------------
+  # 5.1 - LOCACAO DE MAQUINAS E EQUIPAMENTOS
+  # Pode vir em subcontas (5.1.x), por isso padrao com curinga.
+  # ---------------------------------------------------------------------------
+  - nome: "5.1 - Frequencia mensal (Locacao de Maquinas e Equipamentos)"
+    tipo: frequencia
+    codcdc: "5.1.*"
+    periodicidade: mensal
+    tolerancia_dias: 6
+    severidade: MEDIA
+
+  - nome: "5.1 - Credor fora do padrao"
+    tipo: fornecedor_inesperado
+    codcdc: "5.1.*"
+    usar_referencia_fechamento: true
+    severidade: MEDIA
+
+  - nome: "5.1 - Valor fora do padrao"
+    tipo: desvio_valor
+    codcdc: "5.1.*"
+    usar_referencia_fechamento: true
+    margem_pct_referencia: 0.25
+    severidade: MEDIA
+
+  # ---------------------------------------------------------------------------
+  # 7.3.23 - HONORARIOS PJ
+  # ---------------------------------------------------------------------------
+  - nome: "7.3.23 - Frequencia mensal (Honorarios PJ)"
+    tipo: frequencia
+    codcdc: "7.3.23"
+    periodicidade: mensal
+    tolerancia_dias: 7
+    severidade: MEDIA
+
+  - nome: "7.3.23 - Credor fora do padrao"
+    tipo: fornecedor_inesperado
+    codcdc: "7.3.23"
+    usar_referencia_fechamento: true
+    severidade: ALTA
+
+  - nome: "7.3.23 - Valor fora do padrao"
+    tipo: desvio_valor
+    codcdc: "7.3.23"
+    usar_referencia_fechamento: true
+    margem_pct_referencia: 0.20
+    severidade: ALTA
+
+  # ---------------------------------------------------------------------------
+  # Controles transversais para todas as contas foco (contas exatas)
+  # ---------------------------------------------------------------------------
+  - nome: "7.5.1 - Duplicata em janela curta"
+    tipo: duplicata
+    codcdc: "7.5.1"
+    janela_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.2 - Duplicata em janela curta"
+    tipo: duplicata
+    codcdc: "7.5.2"
+    janela_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.20 - Duplicata em janela curta"
+    tipo: duplicata
+    codcdc: "7.5.20"
+    janela_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.3 - Duplicata em janela curta"
+    tipo: duplicata
+    codcdc: "7.5.3"
+    janela_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.31 - Duplicata em janela curta"
+    tipo: duplicata
+    codcdc: "7.5.31"
+    janela_dias: 10
+    severidade: ALTA
+
+  - nome: "5.1 - Duplicata em janela curta"
+    tipo: duplicata
+    codcdc: "5.1.*"
+    janela_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.23 - Duplicata em janela curta"
+    tipo: duplicata
+    codcdc: "7.3.23"
+    janela_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.1 - Valor zerado"
+    tipo: valor_zero
+    codcdc: "7.5.1"
+    tolerancia_valor_zero: 0.0
+    severidade: MEDIA
+
+  - nome: "7.5.2 - Valor zerado"
+    tipo: valor_zero
+    codcdc: "7.5.2"
+    tolerancia_valor_zero: 0.0
+    severidade: MEDIA
+
+  - nome: "7.5.20 - Valor zerado"
+    tipo: valor_zero
+    codcdc: "7.5.20"
+    tolerancia_valor_zero: 0.0
+    severidade: MEDIA
+
+  - nome: "7.5.3 - Valor zerado"
+    tipo: valor_zero
+    codcdc: "7.5.3"
+    tolerancia_valor_zero: 0.0
+    severidade: MEDIA
+
+  - nome: "7.5.31 - Valor zerado"
+    tipo: valor_zero
+    codcdc: "7.5.31"
+    tolerancia_valor_zero: 0.0
+    severidade: MEDIA
+
+  - nome: "5.1 - Valor zerado"
+    tipo: valor_zero
+    codcdc: "5.1.*"
+    tolerancia_valor_zero: 0.0
+    severidade: MEDIA
+
+  - nome: "7.3.23 - Valor zerado"
+    tipo: valor_zero
+    codcdc: "7.3.23"
+    tolerancia_valor_zero: 0.0
+    severidade: MEDIA
+
+  # ---------------------------------------------------------------------------
+  # Contas adicionais selecionadas (monitoramento de lacunas mensal)
+  # Foco em simplicidade para o usuario final.
+  # ---------------------------------------------------------------------------
+  - nome: "7.1.20 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.1.20"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.1.23 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.1.23"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.1.4 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.1.4"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.2 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.2"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.3 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.3"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.4 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.4"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.5 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.5"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.6 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.6"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.7 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.7"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.12 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.12"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.13 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.13"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.14 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.14"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.15 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.15"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.3.25 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.3.25"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.10 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.5.10"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.13 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.5.13"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.16 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.5.16"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.18 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.5.18"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.28 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.5.28"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.7 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.5.7"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.8 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.5.8"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.5.9 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.5.9"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "7.6.5 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "7.6.5"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
+  - nome: "9.2.6 - Ausencia mensal"
+    tipo: ausencia_mensal
+    codcdc: "9.2.6"
+    dia_esperado: 10
+    tolerancia_dias: 10
+    severidade: ALTA
+
