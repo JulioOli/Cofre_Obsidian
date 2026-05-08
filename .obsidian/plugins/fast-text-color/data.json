@@ -90,7 +90,7 @@
           "className": "ftc-color-builtin-red"
         },
         {
-          "color": "#db9f39",
+          "color": "#dba980",
           "id": "orange",
           "keybind": "O",
           "italic": false,
@@ -148,7 +148,7 @@
           "className": "ftc-color-builtin-yellow"
         },
         {
-          "color": "#36ce38",
+          "color": "#88e78a",
           "id": "green",
           "keybind": "G",
           "italic": false,
@@ -710,7 +710,7 @@
   "themeIndex": 0,
   "version": "3",
   "interactiveDelimiters": true,
-  "useKeybindings": false,
+  "useKeybindings": true,
   "useNodeRebuilding": false,
-  "colorCodeSection": false
+  "colorCodeSection": true
 }

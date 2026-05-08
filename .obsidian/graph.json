@@ -1,6 +1,6 @@
 {
   "collapse-filter": true,
-  "search": "-file:New note",
+  "search": "-file:\"New note\" tag:#note",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -36,7 +36,7 @@
       }
     },
     {
-      "query": "file:Script",
+      "query": "tag:#tools  ",
       "color": {
         "a": 1,
         "rgb": 15571955

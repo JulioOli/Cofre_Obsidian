@@ -1,6 +1,7 @@
 ---
 tags:
   - note
+  - tools
 ---
 05/05/2026 - 13:50
 
@@ -48,7 +49,7 @@ Isso evita que saldos antigos ou migrações do sistema distorçam os padrões s
 ### ~={blue}1) Abrir o PowerShell na raiz do projeto=~
 
 ```powershell
-	cd C:\Users\julio.santana\Documents\Projects\Cofre_Trabalho
+cd C:\Users\julio.santana\Documents\Projects\Cofre_Trabalho
 ```
 
 ### ~={blue}2) Ativar o ambiente virtual=~
@@ -56,7 +57,7 @@ Isso evita que saldos antigos ou migrações do sistema distorçam os padrões s
 Se estiver usando o `.venv` do projeto:
 
 ```powershell
-	.\.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 ```
 
 ### ~={blue}3) Atualizar o=~ `base.csv`
@@ -64,7 +65,7 @@ Se estiver usando o `.venv` do projeto:
 Antes de rodar, substituir/atualizar:
 
 ```text
-	02-Referencias/Meus_Dados/base.csv
+02-Referencias/Meus_Dados/base.csv
 ```
 
 Esse arquivo deve vir da consulta mais recente do ODBC.
@@ -74,7 +75,7 @@ Esse arquivo deve vir da consulta mais recente do ODBC.
 Abrir:
 
 ```text
-	02-Referencias/Meus_Dados/regras_auditoria.yaml
+02-Referencias/Meus_Dados/regras_auditoria.yaml
 ```
 
 Cada item dentro de `regras:` representa uma verificação.
@@ -82,7 +83,7 @@ Cada item dentro de `regras:` representa uma verificação.
 ### ~={blue}5) Rodar o script=~
 
 ```powershell
-	python scripts/auditoria_lancamentos.py
+python scripts/auditoria_lancamentos.py
 ```
 
 ### ~={blue}6) Conferir o resultado=~
@@ -106,7 +107,7 @@ No Excel, as abas principais são:
 - `resumo` com contagem por tipo de alerta e severidade
 - uma aba por tipo de anomalia, por exemplo `ausencia_mensal`, `desvio_valor`, `duplicata`, etc.
 
-## ~={purple}Exemplo de execução com data de referência=~
+## ~={green}Exemplo de execução com data de referência=~
 
 Útil para simular uma execução semanal em uma data específica:
 
@@ -114,7 +115,7 @@ No Excel, as abas principais são:
 python scripts/auditoria_lancamentos.py --ref-date "2026-05-05"
 ```
 
-## ~={cinza}Flags opcionais=~
+## ~={orange}Flags opcionais=~
 
 ```powershell
 python scripts/auditoria_lancamentos.py `

@@ -1,12 +1,28 @@
 {
   "recentFiles": [
     {
-      "basename": "Script de Auditoria Semanal de Lancamentos ODBC - Como Usar",
-      "path": "00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md"
-    },
-    {
       "basename": "Plano de Contas",
       "path": "02-Referencias/Plano de Contas.pdf"
+    },
+    {
+      "basename": "fechamento março e abril",
+      "path": "00-Zettlelkasten/fechamento março e abril.md"
+    },
+    {
+      "basename": "Departamentos",
+      "path": "00-Zettlelkasten/Departamentos.md"
+    },
+    {
+      "basename": "Centro de Custo",
+      "path": "02-Referencias/Centro de Custo.pdf"
+    },
+    {
+      "basename": "Notebook Normalizacao Despesas ATUA - Como Usar",
+      "path": "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md"
+    },
+    {
+      "basename": "A comprehensive analysis of repurposing abandoned oil wells for different",
+      "path": "02-Referencias/julio/A comprehensive analysis of repurposing abandoned oil wells for different.pdf"
     },
     {
       "basename": "Anotações - Artigos",
@@ -15,6 +31,14 @@
     {
       "basename": "Repurposing of abandoned oil and gas wells as geothermal power plants",
       "path": "02-Referencias/julio/Repurposing of abandoned oil and gas wells as geothermal power plants.pdf"
+    },
+    {
+      "basename": "Filiais",
+      "path": "00-Zettlelkasten/Filiais.md"
+    },
+    {
+      "basename": "Script de Auditoria Semanal de Lancamentos ODBC - Como Usar",
+      "path": "00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md"
     },
     {
       "basename": "screening factors",
@@ -61,20 +85,12 @@
       "path": "02-Referencias/julio/Repurposing abandoned oil and gas wells for geothermal energy extraction.pdf"
     },
     {
-      "basename": "A comprehensive analysis of repurposing abandoned oil wells for different",
-      "path": "02-Referencias/julio/A comprehensive analysis of repurposing abandoned oil wells for different.pdf"
-    },
-    {
       "basename": "Relatorio Controladoria Financeira",
       "path": "02-Referencias/outros/Relatorio Controladoria Financeira.md"
     },
     {
       "basename": "Divisões",
       "path": "00-Zettlelkasten/Divisões.md"
-    },
-    {
-      "basename": "Centro de Custo",
-      "path": "02-Referencias/Centro de Custo.pdf"
     },
     {
       "basename": "Pasted image 20260414113709",
@@ -85,16 +101,8 @@
       "path": "00-Zettlelkasten/Tipos de Movimentação.md"
     },
     {
-      "basename": "Filiais",
-      "path": "00-Zettlelkasten/Filiais.md"
-    },
-    {
       "basename": "auditoria_20260401",
       "path": "00-Zettlelkasten/auditoria_20260401.md"
-    },
-    {
-      "basename": "Departamentos",
-      "path": "00-Zettlelkasten/Departamentos.md"
     },
     {
       "basename": "Guia SAGI",
@@ -187,18 +195,6 @@
     {
       "basename": "memorizar coisas",
       "path": "00-Zettlelkasten/memorizar coisas.md"
-    },
-    {
-      "basename": "O dragão representa a antiga serpente, no caso Satã.",
-      "path": "00-Zettlelkasten/O dragão representa a antiga serpente, no caso Satã..md"
-    },
-    {
-      "basename": "O que é pensar?",
-      "path": "00-Zettlelkasten/O que é pensar?.md"
-    },
-    {
-      "basename": "mock - imitar o comportamento de outro",
-      "path": "00-Zettlelkasten/mock - imitar o comportamento de outro.md"
     }
   ],
   "omittedPaths": [],

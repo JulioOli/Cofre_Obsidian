@@ -4,24 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "dbef09fda5d84750",
+        "id": "0a2be2a4dd651aea",
         "type": "tabs",
         "children": [
           {
-            "id": "389cc9e27ef75c7f",
+            "id": "1e9fa6d9bc2d1378",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md",
+                "file": "00-Zettlelkasten/fechamento março e abril.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Script de Auditoria Semanal de Lancamentos ODBC - Como Usar"
+              "title": "fechamento março e abril"
+            }
+          },
+          {
+            "id": "966772487d310dab",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ],
+        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -89,8 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "32b6af9a8435c285",
@@ -192,54 +202,54 @@
       "bases:Create new base": false
     }
   },
-  "active": "389cc9e27ef75c7f",
+  "active": "37ddf9b6efc53763",
   "lastOpenFiles": [
-    "02-Referencias/00F00740",
-    "02-Referencias/~$relatorio_auditoria_2026-05-06.xlsx",
-    "02-Referencias/relatorio_auditoria_2026-05-06.xlsx",
-    "02-Referencias/Meus_Dados/5117E640",
-    "02-Referencias/~$relatorio_auditoria_2026-05-05.xlsx",
-    "02-Referencias/relatorio_auditoria_2026-05-05.xlsx",
-    "02-Referencias/Plano de Contas.pdf",
-    "02-Referencias/Meus_Dados/93440340",
-    "02-Referencias/Meus_Dados/~$Lancamentos_CustosFixos_e_DespesasFixas_Fechamento2026.xlsx",
-    "02-Referencias/Meus_Dados/912CF240",
-    "02-Referencias/Meus_Dados/Lancamentos_CustosFixos_e_DespesasFixas_Fechamento2026.xlsx",
+    "01-Anexos/Julio - Qualidade.png",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/FILIAL5.csv",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 233025.crdownload",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/FILIAL4.csv",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 68410.crdownload",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/FILIAL3.csv",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 89916.crdownload",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/FILIAL1.csv",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 537488.crdownload",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/MATRIZ.csv",
+    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 916397.crdownload",
+    "00-Zettlelkasten/Script de Auditoria de Custos Fixos - Como Usar.md",
+    "00-Zettlelkasten/fechamento março e abril.md",
+    "00-Zettlelkasten/plano de conta.md",
+    "00-Zettlelkasten/Departamentos.md",
+    "00-Zettlelkasten/Filiais.md",
+    "00-Zettlelkasten/Tipos de Movimentação.md",
+    "00-Zettlelkasten/Divisões.md",
+    "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md",
     "00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md",
+    "00-Zettlelkasten/Script de Conversão de CC e PC - Como Usar.md",
     "00-Zettlelkasten/Anotações - Artigos.md",
+    "00-Zettlelkasten/auditoria-lacunas.md",
+    "Lançamentos estranhos - Março.canvas",
+    "README.md",
+    "00-Zettlelkasten/teste.md",
+    "00-Zettlelkasten/Untitled.md",
+    "00-Zettlelkasten/Critério de Rateio - Pilares.md",
+    "03-Templates/New note.md",
+    "00-Zettlelkasten/Melhoria BCBI.md",
     "00-Zettlelkasten/screening factors.md",
     "00-Zettlelkasten/Organic Rankine Cycle (ORC).md",
-    "00-Zettlelkasten/Script de Auditoria de Custos Fixos - Como Usar.md",
-    "00-Zettlelkasten/Critério de Rateio - Pilares.md",
     "02-Referencias/rateio_pilares_Março.png",
     "02-Referencias/rateio_pilares_Marco.png",
     "00-Zettlelkasten/Índice Controladoria.md",
     "00-Zettlelkasten/Exemplo de Inconsistência no SAGI.md",
-    "00-Zettlelkasten/Melhoria BCBI.md",
     "01-Anexos/Pasted image 20260427102141.png",
     "01-Anexos/Pasted image 20260427102115.png",
-    "00-Zettlelkasten/Tipos de Movimentação.md",
-    "00-Zettlelkasten/Divisões.md",
-    "00-Zettlelkasten/Departamentos.md",
-    "00-Zettlelkasten/Filiais.md",
-    "00-Zettlelkasten/Script de Conversão de CC e PC - Como Usar.md",
     "01-Anexos/Pasted image 20260427083423.png",
     "01-Anexos/Pasted image 20260427083417.png",
     "00-Zettlelkasten/Task Placas.md",
     "01-Anexos/Pasted image 20260424111731.png",
     "00-Zettlelkasten/Pendentes.md",
     "00-Zettlelkasten/pontos a ver.md",
-    "00-Zettlelkasten/Chamado Consulti - 090426.md",
-    "00-Zettlelkasten/askldj.md",
-    "Lançamentos estranhos - Março.canvas",
-    "02-Referencias/outros/Relatorio Controladoria Financeira.md",
     "01-Anexos/Pasted image 20260414114833.png",
     "01-Anexos/Pasted image 20260414113709.png",
-    "00-Zettlelkasten/Guia SAGI.md",
-    "00-Zettlelkasten/2026-04-14.md",
-    "00-Zettlelkasten/obs.md",
-    "00-Zettlelkasten/auditoria_padrao_credor_20260402.md",
-    "00-Zettlelkasten/auditoria_padrao_credor_20260406.md",
     "01-Anexos/sagi-anotacoes-01.png",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",

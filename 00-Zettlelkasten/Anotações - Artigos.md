@@ -25,9 +25,10 @@ Repur- posing of abandoned oil and gas wells as heat exchangers, relieves the dr
 
 ~={yellow}**Conclusões principais**=~: sem isolamento eficaz, a perda de calor no retorno reduz muito a potência (ex.: máx. ~1,6 MW vs ~0,6 MW no texto); com pouco isolamento, fluido de trabalho e parâmetros operacionais importam mais que os “[[screening factors]]” do reservatório; com bom isolamento, profundidade, vazão, gradiente geotérmico e temperatura de entrada sobem no ranking. O melhor modelo entre os testados foi SVR com PCA (R² ≈ 0,96, RMSE ≈ 1,88 °C na temperatura de saída).
 
->O custo de perfuração pe uma limitação no desenvolvimento de sistemas geotérmicos por somar apoximadamente 50% do custo total de um projeto.
+>O custo de perfuração é uma limitação no desenvolvimento de sistemas geotérmicos por somar apoximadamente 50% do custo total de um projeto.
 
-
+> [!info]
+>A utilização desses poços abandonados para a produção de energia geotérmica não só reduziria os custos de perfuração, como também resolveria problemas de incrustação, corrosão e reinjeção. [(p. 2)](../02-Referencias/julio/Repurposing%20of%20abandoned%20oil%20and%20gas%20wells%20as%20geothermal%20power%20plants.pdf#page=2)
 
 
 

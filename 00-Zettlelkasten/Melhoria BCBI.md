@@ -8,7 +8,7 @@ tags:
 
 Melhoria no BCBI: Criação de Tela de Projeções Anuais e Indicadores de Ritmo de Estoque
 
-**Descrição / Contexto:** A diretoria solicitou uma evolução no painel atual do BCBI para melhorar a visibilidade sobre as projeções financeiras e operacionais até o final do ano. O objetivo principal é facilitar a tomada de decisão com base no "ritmo" (forecast) atual em relação às metas anuais, além de aprimorar o monitoramento do estoque.
+**Descrição / Contexto:** A diretoria (Marcondes) solicitou uma evolução no painel atual do BCBI para melhorar a visibilidade sobre as projeções financeiras e operacionais até o final do ano. O objetivo principal é facilitar a tomada de decisão com base no "ritmo" (forecast) atual em relação às metas anuais, além de aprimorar o monitoramento do estoque.
 
 **Requisitos e Especificações:**
 
