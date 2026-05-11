@@ -3,7 +3,7 @@
 	~ Priorizar Seletiva (SAGI)  _~={cinza}pra preencher a planilha do Marcondes=~
 	 - Consegui fazer de Março, e o Willgner está terminando de fechar Abril (no meio tempo estou preparando os dados do ATUA) (colei lá no geral antes das 10:30)
 
-- [ ] Tirar os lançamentos de FGTS (só deixa se houve alguma recisão)
+- [x] Tirar os lançamentos de FGTS (só deixa se houve alguma recisão)
 
 - [ ] Folha de Pagamento (Pagamento Funcionarios)
 

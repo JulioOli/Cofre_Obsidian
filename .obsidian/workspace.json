@@ -32,7 +32,6 @@
             }
           }
         ],
-        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -202,19 +201,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "37ddf9b6efc53763",
+  "active": "1e9fa6d9bc2d1378",
   "lastOpenFiles": [
+    "02-Referencias/~$04_2026_Abr_Rel_FOPA.xlsx",
+    "scripts/_inspect_saida.py",
+    "02-Referencias/04_2026_Abr_Rel_FOPA.xlsx",
+    "scripts/fechamento_fopa_abril.py",
+    "scripts/_inspect_abril.py",
+    "scripts/_inspect_fopa.py",
+    "02-Referencias/dados_fechamento_abril.xlsx",
+    "02-Referencias/0FDF3600",
+    "02-Referencias/03_2026_Mar_Rel_FOPA.xlsx",
+    "02-Referencias/700D3600",
+    "02-Referencias/Não confirmado 934950.crdownload",
     "01-Anexos/Julio - Qualidade.png",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/FILIAL5.csv",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 233025.crdownload",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/FILIAL4.csv",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 68410.crdownload",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/FILIAL3.csv",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 89916.crdownload",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/FILIAL1.csv",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 537488.crdownload",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/MATRIZ.csv",
-    "02-Referencias/Seletiva/Relatorios_Saida/Abril/Não confirmado 916397.crdownload",
     "00-Zettlelkasten/Script de Auditoria de Custos Fixos - Como Usar.md",
     "00-Zettlelkasten/fechamento março e abril.md",
     "00-Zettlelkasten/plano de conta.md",
@@ -250,7 +250,6 @@
     "00-Zettlelkasten/pontos a ver.md",
     "01-Anexos/Pasted image 20260414114833.png",
     "01-Anexos/Pasted image 20260414113709.png",
-    "01-Anexos/sagi-anotacoes-01.png",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",
     "Sem título.canvas",
