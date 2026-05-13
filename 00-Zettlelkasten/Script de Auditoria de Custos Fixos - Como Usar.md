@@ -100,6 +100,5 @@ E rodar de novo. Os totais aparecem na aba `05 - Parametros` para conferência r
 - `POSSIVEL_ESTORNO` — valor positivo num grupo predominantemente negativo
 
 ___
-[[centro de custo]]
-[[plano de conta]]
+
 [[Analise Base Financeira]]

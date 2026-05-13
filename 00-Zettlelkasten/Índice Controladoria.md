@@ -20,11 +20,11 @@ tags:
 | Nota                          | Descrição                                                                    |
 | ----------------------------- | ---------------------------------------------------------------------------- |
 | [[Tipos de Movimentação]]     | Natureza dos lançamentos: Despesa, Receita, Custo, Investimento, etc.        |
-| [[Divisões]]                  | Unidades de negócio do Grupo (Seletiva, Bracofer, Transmove, Ekipa…)         |
-| [[Filiais]]                   | Filiais por divisão com seus códigos de centro de custo                      |
-| [[Departamentos]]             | Departamentos disponíveis por tipo de unidade                                |
+| [[Divisões (nível 1)]]                  | Unidades de negócio do Grupo (Seletiva, Bracofer, Transmove, Ekipa…)         |
+| [[Filiais (nível 2)]]                   | Filiais por divisão com seus códigos de centro de custo                      |
+| [[Departamentos (nível 3)]]             | Departamentos disponíveis por tipo de unidade                                |
 | [[Estrutura Empresarial G3S]] | Relação entre G3S, G&S, GSE/RSE, Transmóvel e demais CNPJs do grupo          |
-| [[Guia SAGI]]                 | Procedimentos práticos no sistema: CC vs PC, Troca em Lote, Rateios, CIF/FOB |
+| [[Guia Sistemas]]                 | Procedimentos práticos no sistema: CC vs PC, Troca em Lote, Rateios, CIF/FOB |
 | [[Analise Base Financeira]]   | Dicionário de dados, filtros e armadilhas do ODBC (base.csv)                 |
 
 ---

@@ -180,10 +180,8 @@ O arquivo gerado em `02-Referencias/ATUA/ATUA_despesas_fechamento_{MM}-{AAAA}.xl
 Esse arquivo deve ser anexado ao consolidado mensal de fechamento.
 
 ___
-[[plano de conta]]
-[[centro de custo]]
 [[Estrutura Empresarial G3S]]
-[[Filiais]]
-[[Departamentos]]
-[[Divisões]]
-[[fechamento março e abril]]
+[[Filiais (nível 2)]]
+[[Departamentos (nível 3)]]
+[[Divisões (nível 1)]]
+[[fechamento]]

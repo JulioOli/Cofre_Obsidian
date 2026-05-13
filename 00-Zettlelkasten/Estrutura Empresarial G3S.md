@@ -17,7 +17,7 @@ tags:
 
 ## Visão Geral
 
-O grupo opera com **múltiplos CNPJs** que funcionam de forma integrada: cada empresa tem uma função específica, e elas se prestam serviços mutuamente. O sistema que registra tudo isso é o ==SAGI== (sucata, locações, NF da G8S) e o ==ATUA== (Transmóvel/GSL).
+O grupo opera com **múltiplos CNPJs** que funcionam de forma integrada: cada empresa tem uma função específica, e elas se prestam serviços mutuamente. Os sistemas que registram tudo isso são o ==SAGI== (sucata da Seletiva, locações, NF da G&S, RSE, Ekipa e Render), o ==ATUA== (Transmóvel/GSL — CTe e fretes) e o ==Supply== (Bracofer — loja de ferro novo, NFs de venda).
 
 ---
 
@@ -45,15 +45,16 @@ flowchart TD
 
 ### 🏭 G3S — Seletiva / Bracofer
 **CNPJ principal:** 20.947.332/0004-38  
-**Sistema:** SAGI
+**Sistemas:** SAGI (Seletiva) · Supply (Bracofer)
 
-| Divisão | Nome Fantasia | Atividade |
-|---|---|---|
-| Seletiva | G3S | Compra, processa e vende sucatas metálicas |
-| Bracofer | Bracofer | Distribui ferro novo (barras, perfis, corte e dobra) |
+| Divisão | Nome Fantasia | Atividade | Sistema |
+|---|---|---|---|
+| Seletiva | G3S | Compra, processa e vende sucatas metálicas | SAGI |
+| Bracofer | Bracofer | Distribui ferro novo (barras, perfis, corte e dobra) | Supply |
 
 - É a **empresa-âncora** do grupo: a maior parte dos lançamentos está aqui.
 - O SAGI é conectado em CNPJ da G3S. A filial ativa no canto direito superior da tela do SAGI (ex: `G3S PRUDENTE`) indica qual estabelecimento está operando.
+- A **Bracofer** opera no **Supply**, sistema próprio da loja de ferro novo — é nele que ficam as **NFs de venda** dessa divisão (não no SAGI).
 - → **CCs:** `1.2` / `2.2` (Seletiva), `1.3` / `2.3` (Bracofer)
 
 ---
@@ -158,4 +159,4 @@ A tela de **Troca de Plano de Conta / CC em Lote** no SAGI exibe ambos os tipos,
 
 ___
 
-[[Divisões]] · [[Filiais]] · [[Guia SAGI]] · [[Índice Controladoria]]
+[[Divisões (nível 1)]] · [[Filiais (nível 2)]] · [[Guia Sistemas]] · [[Índice Controladoria]]

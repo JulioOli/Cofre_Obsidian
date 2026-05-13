@@ -8,7 +8,7 @@ tags:
 
 Um lançamento só rateado em ~={orange}dois planos de contas=~ diferentes atribuídos ao~={blue} centro de custo=~ da <u>placa EHH0019</u> (e vice versa)
 
-![[../01-Anexos/Pasted image 20260424111731.png]]
+![[../01-Anexos/Pasted image 20260424111731.png|697]]
 
 
 

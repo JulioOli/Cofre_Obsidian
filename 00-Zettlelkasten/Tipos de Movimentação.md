@@ -367,4 +367,4 @@ atualizado: 01/04/2026
 
 ___
 
-[[Divisões]] · [[Departamentos]] · [[Filiais]] · [[plano de conta]]
+[[Divisões (nível 1)]] · [[Departamentos (nível 3)]] · [[Filiais (nível 2)]] · [[plano de conta]]

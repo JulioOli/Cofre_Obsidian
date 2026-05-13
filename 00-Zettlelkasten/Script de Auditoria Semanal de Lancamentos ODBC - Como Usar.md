@@ -284,6 +284,5 @@ Abrir `04-Notebooks/Auditorias/auditoria_lancamentos.ipynb` quando precisar:
 - O melhor uso é manter o script estável e ajustar o comportamento principalmente pelo YAML.
 
 ___
-[[plano de conta]]
-[[centro de custo]]
+
 [[Analise Base Financeira]]
