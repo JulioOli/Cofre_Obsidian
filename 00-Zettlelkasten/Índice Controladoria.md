@@ -7,7 +7,7 @@ tags:
 ---
 24/03/2026 - 09:22
 
-# ~={Titulo}Índice — Controladoria G3S=~
+# ~={Titulo}Índice — Controladoria G3S (Seletiva)=~
 
 > Notas de referência geradas a partir dos arquivos oficiais do sistema Sygecom.
 > **Última atualização:** 25/03/2026
