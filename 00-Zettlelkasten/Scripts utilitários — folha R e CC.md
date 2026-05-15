@@ -5,6 +5,7 @@ tags:
   - python
   - fechamento
   - documentacao
+  - tools
 ---
 13/05/2026
 

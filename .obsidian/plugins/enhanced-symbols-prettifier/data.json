@@ -4,7 +4,7 @@
       "replaced": "->",
       "value": "→",
       "group": "Arrows",
-      "count": 6
+      "count": 7
     },
     "<-": {
       "replaced": "<-",
@@ -262,7 +262,7 @@
       "value": "↓",
       "disabled": false,
       "group": "Arrows",
-      "count": 2
+      "count": 3
     },
     "ii": {
       "replaced": "ii",
