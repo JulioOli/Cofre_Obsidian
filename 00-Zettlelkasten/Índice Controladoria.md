@@ -26,6 +26,7 @@ tags:
 | [[Estrutura Empresarial G3S]] | Relação entre G3S, G&S, GSE/RSE, Transmóvel e demais CNPJs do grupo          |
 | [[Guia Sistemas]]                 | Procedimentos práticos no sistema: CC vs PC, Troca em Lote, Rateios, CIF/FOB |
 | [[Analise Base Financeira]]   | Dicionário de dados, filtros e armadilhas do ODBC (base.csv)                 |
+| [[BCBI - Classificação Analítico Plano de Contas]] | Mapeamento contas SAGI → tipo custo/receita no Analítico do BCBI (Seletiva) |
 
 ---
 
