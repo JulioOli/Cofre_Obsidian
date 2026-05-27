@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "tag:#centro-de-custo  ",
@@ -45,14 +45,14 @@
   ],
   "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": -0.5,
+  "textFadeMultiplier": 0.5,
   "nodeSizeMultiplier": 1.14635416666667,
   "lineSizeMultiplier": 0.533854166666667,
   "collapse-forces": true,
   "centerStrength": 0,
   "repelStrength": 0,
-  "linkStrength": 0,
+  "linkStrength": 0.00935550935550936,
   "linkDistance": 30,
-  "scale": 0.3489675229862711,
+  "scale": 0.4892464991060391,
   "close": true
 }

@@ -176,7 +176,8 @@
     "||": {
       "replaced": "||",
       "value": "∥",
-      "group": "Mathematical Operators"
+      "group": "Mathematical Operators",
+      "count": 1
     },
     "&&": {
       "replaced": "&&",

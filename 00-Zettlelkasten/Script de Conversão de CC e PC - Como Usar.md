@@ -12,3 +12,4 @@ tags:
 ___
 [[centro de custo]]
 [[plano de conta]]
+[[BCBI - Classificação Analítico Plano de Contas]]

@@ -33,23 +33,26 @@ atualizado: 08/04/2026
 ### Detalhe de Ativos — Corporativo Sucata (`1.2.1`)
 
 **Prensas Móveis:**
-| CC | Placa / Código |
-|---|---|
+
+| CC        | Placa / Código       |
+| --------- | -------------------- |
 | 1.2.1.8.1 | GDU0275 (PHH0022) |
 | 1.2.1.8.2 | QXH2G14 (PHH0061) |
 | 1.2.1.8.3 | PHH0062 |
 
 **Veículos:**
-| CC | Placa |
-|---|---|
+
+| CC      | Placa   |
+| ------- | ------- |
 | 1.2.1.9.1 | FBV4H62 |
 | 1.2.1.9.2 | GDY0H74 |
 | 1.2.1.9.3 | GDB3A42 |
 | 1.2.1.10 | SUC7A43 |
 
 **Outros CCs do Corporativo:**
-| CC | Descrição |
-|---|---|
+
+| CC       | Descrição              |
+| -------- | ---------------------- |
 | 1.2.1.11 | Caixas |
 | 1.2.1.12 | Projeto Licença CETESB |
 
@@ -58,6 +61,7 @@ atualizado: 08/04/2026
 ### Detalhe de Ativos — Dourados (`1.2.2`)
 
 **Veículos:**
+
 | CC | Placa | Obs. |
 |---|---|---|
 | 1.2.2.5.1 | BKW9I57 | |
@@ -69,6 +73,7 @@ atualizado: 08/04/2026
 | 1.2.2.5.9 | TKI2E74 | |
 
 **Máquinas:**
+
 | CC | Código |
 |---|---|
 | 1.2.2.6.1 | EHH0036 |
@@ -82,6 +87,7 @@ atualizado: 08/04/2026
 ### Detalhe de Ativos — Londrina (`1.2.3`)
 
 **Veículos:**
+
 | CC | Placa | Obs. |
 |---|---|---|
 | 1.2.3.5.3 | FTP7D76 | |
@@ -91,6 +97,7 @@ atualizado: 08/04/2026
 | 1.2.3.5.7 | BZL7H95 | |
 
 **Máquinas:**
+
 | CC | Código |
 |---|---|
 | 1.2.3.6.1 | EHH0040 |
@@ -102,6 +109,7 @@ atualizado: 08/04/2026
 ### Detalhe de Ativos — Maringá Distrito (`1.2.4`)
 
 **Veículos:**
+
 | CC | Placa | Obs. |
 |---|---|---|
 | 1.2.4.7.1 | EWU5J98 | |
@@ -119,6 +127,7 @@ atualizado: 08/04/2026
 | 1.2.4.7.14 | FBU7329 | |
 
 **Máquinas:**
+
 | CC | Código | Obs. |
 |---|---|---|
 | 1.2.4.8.1 | EHH0039 | |
@@ -135,6 +144,7 @@ atualizado: 08/04/2026
 ### Detalhe de Ativos — Presidente Prudente (`1.2.5`)
 
 **Veículos:**
+
 | CC | Placa | Obs. |
 |---|---|---|
 | 1.2.5.6.1 | EWU6003 | |
@@ -156,6 +166,7 @@ atualizado: 08/04/2026
 | 1.2.5.6.19 | EJZ7999 | |
 
 **Máquinas:**
+
 | CC | Código | Obs. |
 |---|---|---|
 | 1.2.5.7.2 | EHH0006 | |
@@ -190,6 +201,7 @@ atualizado: 08/04/2026
 ### Detalhe de Ativos — Campo Grande (`1.2.7`)
 
 **Veículos:**
+
 | CC | Placa | Obs. |
 |---|---|---|
 | 1.2.7.6.1 | GDG8E75 | |
@@ -199,6 +211,7 @@ atualizado: 08/04/2026
 | 1.2.7.6.5 | EWU6294 | Julieta |
 
 **Máquinas:**
+
 | CC | Código |
 |---|---|
 | 1.2.7.7.1 | EHH0038 |
@@ -210,11 +223,12 @@ atualizado: 08/04/2026
 
 ## Bracofer
 
-| Filial | CC Despesa | CC Receita | Estado |
-|---|---|---|---|
-| Presidente Prudente | 1.3.1 | 2.3.1 | SP |
+| Filial              | CC Despesa | CC Receita | Estado |
+| ------------------- | ---------- | ---------- | ------ |
+| Presidente Prudente | 1.3.1      | 2.3.1      | SP     |
 
 **Veículos:**
+
 | CC | Placa |
 |---|---|
 | 1.3.1.6.1 | CZB9H07 |
@@ -223,6 +237,7 @@ atualizado: 08/04/2026
 | 1.3.1.6.4 | EJZ7496 |
 
 **Máquinas:**
+
 | CC | Código |
 |---|---|
 | 1.3.1.7.1 | EUS0048 |
@@ -267,6 +282,7 @@ Estrutura plana — frota consolidada sem separação por filial.
 | 1.6.6 | Contratos — Gerdau Jaraguá do Sul/SC |
 
 **Referência de ativo identificada na atualização de 08/04/2026:**
+
 | CC | Ativo |
 |---|---|
 | 1.6.3.31 | HRO5E08 |
