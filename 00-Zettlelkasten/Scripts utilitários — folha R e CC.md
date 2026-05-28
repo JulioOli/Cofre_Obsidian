@@ -13,14 +13,16 @@ tags:
 
 Guia rápido dos scripts em `04-Notebooks/Utitlities/` usados no fluxo de **fechamento / folha** e **centros de custo**. Todos assumem que o terminal está na **raiz do repositório** `Cofre_Trabalho` (ou use caminhos absolutos nos argumentos).
 
-**Pré-requisito:** ambiente Python do projeto (`.venv`) com `pandas` e `openpyxl` instalados.
+**Primeiro roda esses dois comandos nessa ordem no terminal pra ir pro cofre e ativar o venv:**
 
 ```powershell
-cd C:\Users\julio.santana\Documents\Projects\Cofre_Trabalho
-.\.venv\Scripts\python.exe 04-Notebooks\Utitlities\<script>.py [opções]
+cd C:\Users\julio.santana\Documents\Projects\Cofre_Trabalho 
 ```
 
-No Linux/macOS, troque por `source .venv/bin/activate` e `python 04-Notebooks/Utitlities/<script>.py`.
+```
+ .\.venv\Scripts\Activate.ps1
+```
+
 
 ---
 
@@ -83,7 +85,44 @@ Depois de gerar, vale comparar com o modelo corrigido (ordenando por `n4_CC`) ou
 
 ---
 
-## 2. `descobre_cc_inativos.py`
+## 2. `r_fopa_para_fechamento.py`
+
+**O que faz:** lê `02-Referencias/R_FOPA.xlsx` (colunas `n4_CC`, `Data nf`, `Valor plano`), monta a hierarquia **n1–n4** com nomes do `sagi_rel_centro_custo.csv`, preenche metadados de **folha** (conta **7.3.1 SALÁRIOS**, valores negativos, FOPA) e grava Excel no **layout de fechamento** (`FECHAMENTO_ODBC_2026_04.xlsx` ou modelo corrigido da folha).
+
+**Diferença do script 1:** a competência vem da coluna **Data nf** por linha (`titulo` = `FOPA_MM_AAAA`, `data_pagamento` padrão = dia **8** do mês seguinte). Linhas sem valor ou com `Valor plano` = 0 são ignoradas.
+
+**Ajustes automáticos (evitam correção manual):** descrições de CC usam o **SAGI** (ex.: `ARCELOR/BARRA MANSA/RJ-OPERADORES` em vez de `ARCELOR/BARRA MANS`); typo `1.7.8.1.1` → `1.7.1.8.1` (TUPY); filial `1.7.1.8.1` → **G&S PRUDENTE**.
+
+**Saída padrão:** `02-Referencias/R_FOPA_fechamento.xlsx` (aba `Fechamento`).
+
+### Uso mínimo
+
+```powershell
+.\.venv\Scripts\python.exe 04-Notebooks\Utitlities\r_fopa_para_fechamento.py
+```
+
+### Parâmetros úteis
+
+| Argumento | Padrão | Função |
+|-----------|--------|--------|
+| `--input` | `02-Referencias/R_FOPA.xlsx` | Planilha de origem |
+| `--output` | `02-Referencias/R_FOPA_fechamento.xlsx` | Arquivo gerado |
+| `--mes` | — | Filtra uma competência (`2026-04` ou `2026-04-30`) |
+| `--data-pagamento` | automático | Fixa pagamento para todas as linhas |
+| `--multiplicador-valor` | `-1` | Despesa negativa (padrão fechamento) |
+| `--incluir-zerados` | — | Mantém linhas com valor 0 |
+
+**Exemplo** — só abril:
+
+```powershell
+.\.venv\Scripts\python.exe 04-Notebooks\Utitlities\r_fopa_para_fechamento.py `
+  --mes 2026-04 `
+  --output 02-Referencias/R_FOPA_fechamento_04.xlsx
+```
+
+---
+
+## 3. `descobre_cc_inativos.py`
 
 **O que faz:** compara os códigos de centro de custo presentes em `02-Referencias/centro-de-custo_ativos-e-inativos.csv` com `02-Referencias/centro-de-custo_apenas-ativos.csv` e **imprime no terminal** a lista de códigos que estão no relatório “completo” mas **não** no de “só ativos” (tratados como inativos para aquele recorte).
 

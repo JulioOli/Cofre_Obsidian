@@ -6,7 +6,9 @@ Regras alinhadas ao arquivo corrigido de referência:
 - n1_CC usa sempre a descrição oficial do SAGI no nível 1 (ex.: 1.1 G3S ESCRITORIO).
 - n1_centro_custo usa o rótulo de Segmento em exceções (ex.: 1.1 -> PILARES em vez de G3S ESCRITORIO).
 - Valores em despesa (folha) saem negativos; demais colunas financeiras espelham valor_nf.
-- filial derivada do código n2 (1.2.5 -> G3S PRUDENTE, etc.) — mapa extraído do fechamento corrigido.
+- filial derivada do código n2 (1.2.5 -> G3S PRUDENTE, etc.), com exceções por n4 (ex.: 1.7.1.8.1 -> G&S PRUDENTE).
+- descrições de CC preferem o cadastro SAGI (rótulos truncados da planilha FOPA/R são ignorados quando existir código no SAGI).
+- códigos com typo na exportação FOPA são corrigidos (ex.: 1.7.8.1.1 -> 1.7.1.8.1).
 """
 from __future__ import annotations
 
@@ -32,6 +34,7 @@ SEGMENTO_POR_N1: dict[str, str] = {
     "1.4": "TRANSMOVE",
     "1.5": "EKIPA",
     "1.7": "EKIPA SERVICOS - G&S",
+    "1.8": "RENDER LOCACOES",
     "1.12": "NVS SERVICOS DE ENTULHO",
     "2.2": "SELETIVA",
     "2.7": "EKIPA SERVICOS - G&S",
@@ -48,9 +51,13 @@ CONTA_FOLHA_DESCR = "7.3.1 SALÁRIOS"
 
 # filial por n2_cod_centro_custo (base em base_R_fechamento_folha_pagamento_correto.xlsx).
 FILIAL_POR_N2_COD: dict[str, str] = {
+    "1.1.2": "G3S PRUDENTE",
     "1.1.3": "G3S ADM",
     "1.1.4": "G3S ADM",
+    "1.1.5": "G3S ADM",
     "1.1.10": "G3S ADM",
+    "1.1.14": "G3S ADM",
+    "1.1.15": "G&S PRUDENTE",
     "1.2.1": "G3S ADM",
     "1.2.2": "G3S DOURADOS",
     "1.2.3": "G3S LONDRINA",
@@ -68,6 +75,18 @@ FILIAL_POR_N2_COD: dict[str, str] = {
     "1.7.6": "G&S LONDRINA",
     "1.7.7": "G&S MARINGA",
     "1.7.8": "G&S PRUDENTE",
+    "1.7.2": "G&S PRUDENTE",
+    "1.8.1": "G3S PRUDENTE",
+}
+
+# Typos frequentes na exportação FOPA / planilha R (ex.: 1.7.8.1.1 → 1.7.1.8.1).
+CODIGO_CC_CORRECAO_FOPA: dict[str, str] = {
+    "1.7.8.1.1": "1.7.1.8.1",
+}
+
+# Filial por n4 quando difere do n2 (ex.: contrato TUPY em 1.7.1.8.1 → G&S PRUDENTE).
+FILIAL_POR_N4_COD: dict[str, str] = {
+    "1.7.1.8.1": "G&S PRUDENTE",
 }
 
 _COLS_VALOR_NUMERICO = ("valor_nf", "valor_pago", "valor_conta", "Valor Oficial")
@@ -138,15 +157,22 @@ def codigo_prefixo(partes: list[str], ate: int) -> str:
     return ".".join(partes[:ate])
 
 
+def normalizar_codigo_cc(cod: str) -> str:
+    return CODIGO_CC_CORRECAO_FOPA.get(cod, cod)
+
+
 def descricao_no_nivel(
     cod_nivel: str,
     cod_folha: str,
     descr_folha: str,
     mapa: dict[str, str],
 ) -> str:
+    sagi = mapa.get(cod_nivel, "")
+    if sagi:
+        return sagi
     if cod_nivel == cod_folha:
         return descr_folha
-    return mapa.get(cod_nivel, "")
+    return ""
 
 
 def segmento_para(n1_cod: str) -> str:
@@ -173,6 +199,8 @@ def montar_linha_fechamento(
     if parsed is None:
         raise ValueError(f"n4_CC inválido (esperado 'COD DESC'): {rotulo_n4!r}")
     cod_folha, descr_folha = parsed
+    cod_folha = normalizar_codigo_cc(cod_folha)
+    descr_folha = mapa_cc.get(cod_folha) or descr_folha
     partes = cod_folha.split(".")
     t1, t2, t3, t4 = tamanhos_prefixo_niveis(len(partes))
 
@@ -193,7 +221,7 @@ def montar_linha_fechamento(
 
     valor = float(valor_nf_bruto) * folha.multiplicador_valor
 
-    filial = filial_para_n2(c2)
+    filial = FILIAL_POR_N4_COD.get(c4) or filial_para_n2(c2)
     if not filial:
         raise KeyError(
             f"filial não mapeada para n2_cod_centro_custo={c2!r} (n4_CC={rotulo_n4!r}). "
