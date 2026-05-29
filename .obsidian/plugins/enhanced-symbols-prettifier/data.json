@@ -192,7 +192,8 @@
     "...": {
       "replaced": "...",
       "value": "…",
-      "group": "Miscellaneous"
+      "group": "Miscellaneous",
+      "count": 1
     },
     "sqrt": {
       "replaced": "sqrt",
