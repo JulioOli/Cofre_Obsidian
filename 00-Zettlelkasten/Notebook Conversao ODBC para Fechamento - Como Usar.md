@@ -33,10 +33,10 @@ Para outras origens, existem notebooks irmãos:
 
 | Papel | Caminho típico |
 |---|---|
-| Entrada ODBC | `02-Referencias/dados_odbc_abril-e-maio.xlsx` ou `.csv` |
-| Saída por mês | `02-Referencias/FECHAMENTO_ODBC_{AAAA}_{MM}.xlsx` |
-| Saída consolidada | `02-Referencias/FECHAMENTO_ODBC_COMPLETO_{AAAA}.xlsx` |
-| Sem filtro de mês | `02-Referencias/{nome_do_arquivo}_fechamento.xlsx` |
+| Entrada ODBC | `02-Referencias/Fechamento/dados_odbc_abril-e-maio.xlsx` ou `.csv` |
+| Saída por mês | `02-Referencias/Fechamento/FECHAMENTO_ODBC_{AAAA}_{MM}.xlsx` |
+| Saída consolidada | `02-Referencias/Fechamento/FECHAMENTO_ODBC_COMPLETO_{AAAA}.xlsx` |
+| Sem filtro de mês | `02-Referencias/Fechamento/{nome_do_arquivo}_fechamento.xlsx` |
 
 ## ~={Titulo}Mapeamento de valores=~
 

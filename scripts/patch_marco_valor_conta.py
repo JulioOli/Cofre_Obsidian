@@ -79,7 +79,7 @@ def main():
     p.add_argument(
         "xlsx",
         nargs="?",
-        default="02-Referencias/FECHAMENTO_ODBC_2026_04.xlsx",
+        default="02-Referencias/Fechamento/FECHAMENTO_ODBC_2026_04.xlsx",
         help="Caminho do Excel com abas MARCO_E_ABRIL e Fechamento",
     )
     args = p.parse_args()

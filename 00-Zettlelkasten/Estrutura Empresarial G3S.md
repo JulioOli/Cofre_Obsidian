@@ -6,7 +6,7 @@ tags:
   - G3S
   - empresas
 ---
-25/03/2026 - 09:00
+Op25/03/2026 - 09:00
 
 # ~={Titulo}Estrutura Empresarial — Grupo G3S=~
 

@@ -10,8 +10,12 @@ tags:
 #### ~={green}como gerar no Supply:=~
 
 VENDA > RELATORIO > ![[../01-Anexos/Pasted image 20260518143050.png]]
-
 dps só selecionar os filtros e imprimir o PDF.
+
+E esse é o caminho pro relatório de contas a pagar:
+
+![[../01-Anexos/Pasted image 20260602081305.png]]
+
 ___
 
 #### ~={yellow}como gerar no SAGI:=~
@@ -21,7 +25,8 @@ ___
 
 #### ~={orange}como gerar o ATUA:=~
 
-![[../01-Anexos/Pasted image 20260518144455.png]]
+![[../01-Anexos/Pasted image 20260603092247.png]]
+![[../01-Anexos/Pasted image 20260603092332.png]]
 
 ___
 ### ~ links

@@ -1,5 +1,5 @@
 """
-Converte 02-Referencias/R_FOPA.xlsx (n4_CC, Data nf, Valor plano) para o layout
+Converte 02-Referencias/Folha-R/R_FOPA.xlsx (n4_CC, Data nf, Valor plano) para o layout
 de fechamento (mesma estrutura de FECHAMENTO_ODBC / base_R_fechamento_folha).
 
 Diferenças em relação a base_r_para_fechamento_folha.py:
@@ -29,8 +29,8 @@ from base_r_para_fechamento_folha import (
     parse_valor_br,
 )
 
-DEFAULT_INPUT = REFS / "R_FOPA.xlsx"
-DEFAULT_OUTPUT = REFS / "R_FOPA_fechamento.xlsx"
+DEFAULT_INPUT = REFS / "Folha-R" / "R_FOPA.xlsx"
+DEFAULT_OUTPUT = REFS / "Folha-R" / "R_FOPA_fechamento.xlsx"
 
 
 def _parse_data(val) -> date:
@@ -106,7 +106,7 @@ def main() -> None:
         description="R_FOPA.xlsx -> Excel no layout de fechamento (conta 7.3.1 SALÁRIOS)."
     )
     ap.add_argument("--input", type=Path, default=DEFAULT_INPUT)
-    ap.add_argument("--cc-sagi", type=Path, default=REFS / "sagi_rel_centro_custo.csv")
+    ap.add_argument("--cc-sagi", type=Path, default=REFS / "SAGI" / "sagi_rel_centro_custo.csv")
     ap.add_argument(
         "--layout",
         type=Path,

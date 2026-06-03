@@ -14,7 +14,7 @@ tags:
 > Mapeamento das **contas do plano SAGI** por **tipo de custo/receita** conforme categorização do BCBI (seção **Analítico** em `custos.php`).
 > Extraído automaticamente do painel em 25/05/2026.
 
-**Relacionado:** [[Melhoria BCBI]] · [[Guia Sistemas]] · `02-Referencias/sagi_rel_plano_conta.csv` · `02-Referencias/Plano de Contas.pdf`
+**Relacionado:** [[Melhoria BCBI]] · [[Guia Sistemas]] · `02-Referencias/SAGI/sagi_rel_plano_conta.csv` · `02-Referencias/Plano de Contas.pdf`
 
 ---
 

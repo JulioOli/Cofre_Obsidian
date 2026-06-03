@@ -9,7 +9,7 @@ tags:
 
 ## O que faz
 
-Lê o pivot do Excel `02-Referencias/Detalhamento Custos com 2.1.1 - <periodo>.xlsx`, achata a hierarquia (Plano → Credor → Documento → Histórico) e gera um relatório multi-aba destacando divergências entre os meses (planos com salto de valor, credores avulsos / com mudança de plano de contas, lançamentos com z-score atípico).
+Lê o pivot do Excel `02-Referencias/Auditoria/Detalhamento Custos com 2.1.1 - <periodo>.xlsx`, achata a hierarquia (Plano → Credor → Documento → Histórico) e gera um relatório multi-aba destacando divergências entre os meses (planos com salto de valor, credores avulsos / com mudança de plano de contas, lançamentos com z-score atípico).
 
 ## Escopo desta nota
 
@@ -46,7 +46,7 @@ python scripts/auditoria_custos_fixos.py
 ### 4) Conferir o resultado
 
 - Console mostra a reconciliação (soma das folhas vs. `Grande Total` deve dar `R$ 0,00` em todos os meses) e o top 5 de planos / credores / lançamentos com flag.
-- Excel gerado em `02-Referencias/auditoria_custos_fixos_2026.xlsx` com as abas:
+- Excel gerado em `02-Referencias/Auditoria/auditoria_custos_fixos_2026.xlsx` com as abas:
 	- `00 - Resumo` — contagem de flags por severidade
 	- `01 - Plano por Mes` — totais e variação por plano
 	- `02 - Credor x Plano` — credores fora do padrão
@@ -65,8 +65,8 @@ python scripts/auditoria_custos_fixos.py `
 
 | Flag | Default | O que faz |
 |---|---|---|
-| `--src` | `02-Referencias/Detalhamento Custos com 2.1.1 - 01_2026 a 04_2026.xlsx` | Caminho do pivot de origem |
-| `--dst` | `02-Referencias/auditoria_custos_fixos_2026.xlsx` | Caminho do relatório de saída |
+| `--src` | `02-Referencias/Auditoria/Detalhamento Custos com 2.1.1 - 01_2026 a 04_2026.xlsx` | Caminho do pivot de origem |
+| `--dst` | `02-Referencias/Auditoria/auditoria_custos_fixos_2026.xlsx` | Caminho do relatório de saída |
 | `--limiar-pct` | `0.30` | Variação % mínima vs. mediana de referência para virar flag |
 | `--valor-minimo` | `100.0` | Ignora variações abaixo desse valor absoluto (R$) |
 | `--zscore` | `2.0` | |z| mínimo para sinalizar lançamento atípico |

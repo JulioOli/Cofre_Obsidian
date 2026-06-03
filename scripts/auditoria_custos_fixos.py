@@ -25,8 +25,8 @@ from openpyxl.utils import get_column_letter
 
 # ─── Configuração padrão ────────────────────────────────────────────────────
 
-DEFAULT_SRC = Path("02-Referencias/Detalhamento Custos com 2.1.1 - 01_2026 a 04_2026.xlsx")
-DEFAULT_DST = Path("02-Referencias/auditoria_custos_fixos_2026.xlsx")
+DEFAULT_SRC = Path("02-Referencias/Auditoria/Detalhamento Custos com 2.1.1 - 01_2026 a 04_2026.xlsx")
+DEFAULT_DST = Path("02-Referencias/Auditoria/auditoria_custos_fixos_2026.xlsx")
 
 # Limiares (ajustáveis via CLI)
 LIMIAR_VARIACAO_PCT = 0.30          # 30% de variação vs. mediana de referência

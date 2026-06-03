@@ -21,7 +21,7 @@ Existem notebooks irmãos pra outros recortes do mesmo sistema (`receitas`, `cus
 
 - Notebook: `04-Notebooks/Fechamento/normalizar_atua_despesas.ipynb`
 - Entrada: `02-Referencias/ATUA/Relatorio_Despesas_Sistema-ATUA_{MM}.xls`
-- Modelo de colunas: `02-Referencias/FECHAMENTO_ODBC_{AAAA}_{MM}.xlsx`
+- Modelo de colunas: `02-Referencias/Fechamento/FECHAMENTO_ODBC_{AAAA}_{MM}.xlsx`
 - Saída: `02-Referencias/ATUA/ATUA_despesas_fechamento_{MM}-{AAAA}.xlsx`
 
 ## ~={red}IMPORTANTE - Limpar o XLS antes de rodar=~

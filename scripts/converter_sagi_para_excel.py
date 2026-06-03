@@ -212,13 +212,13 @@ def main() -> None:
     parser.add_argument(
         "--plano",
         type=Path,
-        default=Path("02-Referencias/sagi_rel_plano_conta.csv"),
+        default=Path("02-Referencias/SAGI/sagi_rel_plano_conta.csv"),
         help="Caminho do CSV de plano de contas.",
     )
     parser.add_argument(
         "--centro",
         type=Path,
-        default=Path("02-Referencias/sagi_rel_centro_custo.csv"),
+        default=Path("02-Referencias/SAGI/sagi_rel_centro_custo.csv"),
         help="Caminho do CSV de centros de custo.",
     )
     parser.add_argument(

@@ -58,7 +58,7 @@ def main():
     p.add_argument(
         "xlsx",
         nargs="?",
-        default="02-Referencias/Correcao_Manutencao_marco-e-abril.xlsx",
+        default="02-Referencias/Auditoria/Correcao_Manutencao_marco-e-abril.xlsx",
     )
     p.add_argument("--sheet", default="Geral")
     p.add_argument("--year", type=int, default=2026)

@@ -1,7 +1,7 @@
 """Gera o relatório de fechamento de folha (formato FOPA) a partir do dump
 ODBC de abril/2026.
 
-O arquivo final tem o mesmo layout do `02-Referencias/03_2026_Mar_Rel_FOPA.xlsx`:
+O arquivo final tem o mesmo layout do `02-Referencias/FOPA/03_2026_Mar_Rel_FOPA.xlsx`:
 uma aba `GERAL` consolidando todos os credores/funcionários do mês mais uma
 aba por tomador (PILARES, BRACOFER, EKIPA, TRANSMOVE, SELETIVA APOIO,
 SELETIVA C GRANDE, SELETIVA DOURADOS, SELETIVA PRUDENTE, SELETIVA MARINGÁ,
@@ -24,8 +24,8 @@ processada pelo FOPA. Os demais campos seguem a mesma lógica do mês de março:
 Uso:
     python scripts/fechamento_fopa_abril.py \
         --abril 02-Referencias/dados_fechamento_abril.xlsx \
-        --marco 02-Referencias/03_2026_Mar_Rel_FOPA.xlsx \
-        --saida 02-Referencias/04_2026_Abr_Rel_FOPA.xlsx
+        --marco 02-Referencias/FOPA/03_2026_Mar_Rel_FOPA.xlsx \
+        --saida 02-Referencias/FOPA/04_2026_Abr_Rel_FOPA.xlsx
 """
 
 from __future__ import annotations

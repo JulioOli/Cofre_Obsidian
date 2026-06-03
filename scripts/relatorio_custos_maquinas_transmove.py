@@ -25,8 +25,8 @@ from openpyxl.utils import get_column_letter
 
 ROOT = Path(__file__).resolve().parents[1]
 REFS = ROOT / "02-Referencias"
-CUSTOS_ODBC = REFS / "Custos_das_maquinas_alugadas.xlsx"
-SAIDA = REFS / "Relatorio_Custos_Maquinas_Transmove.xlsx"
+CUSTOS_ODBC = REFS / "Custos-Maquinas" / "Custos_das_maquinas_alugadas.xlsx"
+SAIDA = REFS / "Custos-Maquinas" / "Relatorio_Custos_Maquinas_Transmove.xlsx"
 
 PERIODO_INI = date(2024, 1, 1)
 PERIODO_FIM = date(2026, 4, 30)
@@ -306,12 +306,13 @@ COLUNAS: list[ColunaRelatorio] = [
     ),
 ]
 
+FOPA_DIR = REFS / "FOPA"
 FOPA_ARQUIVOS = [
-    REFS / "FOPA GERAL 2025.csv",
-    REFS / "01_2026_Jan_Rel_FOPA.csv",
-    REFS / "02_2026_Fev_Rel_FOPA.csv",
-    REFS / "03_2026_Mar_Rel_FOPA.csv",
-    REFS / "04_2026_Abr_Rel_FOPA.csv",
+    FOPA_DIR / "FOPA GERAL 2025.csv",
+    FOPA_DIR / "01_2026_Jan_Rel_FOPA.csv",
+    FOPA_DIR / "02_2026_Fev_Rel_FOPA.csv",
+    FOPA_DIR / "03_2026_Mar_Rel_FOPA.csv",
+    FOPA_DIR / "04_2026_Abr_Rel_FOPA.csv",
 ]
 
 

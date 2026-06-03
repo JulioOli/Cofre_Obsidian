@@ -8,8 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 REFS = ROOT / "02-Referencias"
 
-PATH_TODOS = REFS / "centro-de-custo_ativos-e-inativos.csv"
-PATH_ATIVOS = REFS / "centro-de-custo_apenas-ativos.csv"
+PATH_TODOS = REFS / "SAGI" / "centro-de-custo_ativos-e-inativos.csv"
+PATH_ATIVOS = REFS / "SAGI" / "centro-de-custo_apenas-ativos.csv"
 
 # Linhas de dado SAGI: codigo hierarquico no inicio da linha antes do primeiro ';'
 _CC_LINE = re.compile(r"^\s*(\d+(?:\.\d+)*)\s*;")

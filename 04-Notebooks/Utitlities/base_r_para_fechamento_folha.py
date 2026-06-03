@@ -92,8 +92,8 @@ FILIAL_POR_N4_COD: dict[str, str] = {
 _COLS_VALOR_NUMERICO = ("valor_nf", "valor_pago", "valor_conta", "Valor Oficial")
 _FMT_MOEDA_EXCEL = "#,##0.00"
 
-LAYOUT_CORRETO = REFS / "base_R_fechamento_folha_pagamento_correto.xlsx"
-TEMPLATE_FECHAMENTO_ODBC = REFS / "FECHAMENTO_ODBC_2026_04.xlsx"
+LAYOUT_CORRETO = REFS / "FOPA" / "base_R_fechamento_folha_pagamento_correto.xlsx"
+TEMPLATE_FECHAMENTO_ODBC = REFS / "Fechamento" / "FECHAMENTO_ODBC_2026_04.xlsx"
 
 
 @dataclass
@@ -320,8 +320,8 @@ def _parse_data(s: str) -> date:
     raise ValueError(f"Data inválida: {s!r}")
 
 
-DEFAULT_INPUT = REFS / "base_R.csv"
-DEFAULT_OUTPUT = REFS / "base_R_fechamento_folha_pagamento.xlsx"
+DEFAULT_INPUT = REFS / "FOPA" / "base_R.csv"
+DEFAULT_OUTPUT = REFS / "FOPA" / "base_R_fechamento_folha_pagamento.xlsx"
 
 
 def main() -> None:
@@ -344,7 +344,7 @@ def main() -> None:
         dest="input_flag",
         help="Arquivo de entrada (.csv ou .xlsx). Sobrescreve o argumento posicional.",
     )
-    ap.add_argument("--cc-sagi", type=Path, default=REFS / "sagi_rel_centro_custo.csv")
+    ap.add_argument("--cc-sagi", type=Path, default=REFS / "SAGI" / "sagi_rel_centro_custo.csv")
     ap.add_argument(
         "--layout",
         type=Path,
