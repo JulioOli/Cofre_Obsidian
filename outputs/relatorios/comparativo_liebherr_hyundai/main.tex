@@ -1,0 +1,126 @@
+% !TEX program = pdflatex
+% Relatório executivo — Comparativo Liebherr × Hyundai
+\documentclass[11pt,a4paper]{article}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\input{capa.tex}
+
+\section*{Resumo executivo}
+\addcontentsline{toc}{section}{Resumo executivo}
+
+Comparativo de custos das frotas \textbf{Liebherr} (7 máquinas) e \textbf{Hyundai} (16 máquinas)
+no período \daterange. Gráficos Liebherr $\times$ Hyundai usam o \textbf{custo médio por máquina}
+(gasto total do parque $\div$ 7 ou $\div$ 16), não totais brutos --- assim a comparação não favorece
+a marca com mais equipamentos. Ranking por identificador único (\texttt{maq\_id}).
+
+\input{insights.tex}
+
+\section{Indicadores principais}
+\addcontentsline{toc}{section}{Indicadores principais}
+
+\input{kpi.tex}
+
+\section{Custo médio por máquina (por ano)}
+\addcontentsline{toc}{section}{Custo médio por máquina (por ano)}
+
+Não se soma 2025 e 2026 num único total: cada ano é analisado à parte. O valor é a
+\textbf{média simples}: gasto total do parque dividido pela quantidade oficial de máquinas (7 ou 16).
+
+Os gráficos deste relatório \textbf{excluem} a conta \texttt{7.4.5} (ISS) --- imposto municipal, não custo operacional da máquina. Tabelas de KPI e cadastro mantêm a base completa.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\linewidth]{\figdir/01_volume_por_ano.png}
+  \caption{Custo médio de cada máquina do parque em cada ano (volume total $\div$ 7 ou 16).}
+\end{figure}
+
+\section{Composição por tipo de despesa}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/02_mix_contas_pct.png}
+  \caption{Mix percentual por tipo de conta (top rubricas) --- percentual \textit{dentro} de cada marca.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/03_volume_por_conta.png}
+  \caption{Gasto por conta em custo médio por máquina do parque.}
+\end{figure}
+
+\section{Evolução mensal}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/04_serie_mensal_2025.png}
+  \caption{Custo médio mensal por máquina do parque --- 2025.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/04_serie_mensal_2026.png}
+  \caption{Custo médio mensal por máquina do parque --- 2026.}
+\end{figure}
+
+\section{Localização do parque}
+\addcontentsline{toc}{section}{Localização do parque}
+
+\input{localizacao.tex}
+
+\section{Máquinas do parque}
+\addcontentsline{toc}{section}{Máquinas do parque}
+
+Período completo e recortes por ano (2025 e 2026 separados).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/05_top_maquinas.png}
+  \caption{Todas as máquinas do parque --- período completo (|valor\_conta|).}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/05_top_maquinas_2025.png}
+  \caption{Todas as máquinas do parque --- gasto em 2025.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/05_top_maquinas_2026.png}
+  \caption{Todas as máquinas do parque --- gasto em 2026.}
+\end{figure}
+
+\subsection{Tabela completa — gasto por máquina e mês}
+
+Anos com muitos meses usam página paisagem; períodos curtos (ex.: 2026 parcial) ficam em retrato para evitar folhas em branco.
+
+\input{gasto_mensal_maquinas.tex}
+
+\subsection{Gasto mensal por máquina (top 5)}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/09_mes_maquinas_liebherr.png}
+  \caption{Liebherr --- gasto mensal das 5 máquinas com maior volume.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{\figdir/09_mes_maquinas_hyundai.png}
+  \caption{Hyundai --- gasto mensal das 5 máquinas com maior volume.}
+\end{figure}
+
+\section*{Conclusão}
+\addcontentsline{toc}{section}{Conclusão}
+
+\input{conclusao.tex}
+
+\vfill
+{\small\textit{Fonte:} \texttt{base\_maquinas\_2025\_2026}. Parque: 7 Liebherr, 16 Hyundai.
+Comparativos entre marcas em custo médio por máquina do parque.
+Emitido em \reportdate.}
+
+\end{document}

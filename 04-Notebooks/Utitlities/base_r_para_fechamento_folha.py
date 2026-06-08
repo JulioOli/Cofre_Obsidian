@@ -20,6 +20,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from fechamento_excel import gravar_fechamento_excel
+
 ROOT = Path(__file__).resolve().parent.parent.parent
 REFS = ROOT / "02-Referencias"
 
@@ -90,7 +92,6 @@ FILIAL_POR_N4_COD: dict[str, str] = {
 }
 
 _COLS_VALOR_NUMERICO = ("valor_nf", "valor_pago", "valor_conta", "Valor Oficial")
-_FMT_MOEDA_EXCEL = "#,##0.00"
 
 LAYOUT_CORRETO = REFS / "FOPA" / "base_R_fechamento_folha_pagamento_correto.xlsx"
 TEMPLATE_FECHAMENTO_ODBC = REFS / "Fechamento" / "FECHAMENTO_ODBC_2026_04.xlsx"
@@ -459,24 +460,7 @@ def main() -> None:
             out_df[col] = pd.to_numeric(out_df[col], errors="coerce")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with pd.ExcelWriter(output_path, engine="openpyxl") as w:
-        out_df.to_excel(w, sheet_name=args.sheet_out, index=False)
-        ws = w.sheets[args.sheet_out]
-        header_to_col = {
-            ws.cell(row=1, column=j).value: j
-            for j in range(1, ws.max_column + 1)
-            if ws.cell(row=1, column=j).value is not None
-        }
-        for nome in _COLS_VALOR_NUMERICO:
-            j = header_to_col.get(nome)
-            if j is None:
-                continue
-            for r in range(2, ws.max_row + 1):
-                cell = ws.cell(row=r, column=j)
-                if cell.value is None or cell.value == "":
-                    continue
-                cell.number_format = _FMT_MOEDA_EXCEL
-
+    gravar_fechamento_excel(out_df, output_path, sheet_name=args.sheet_out)
     print(f"Gravado: {output_path.resolve()} ({len(out_df)} linhas). Layout: {layout.name}")
 
 

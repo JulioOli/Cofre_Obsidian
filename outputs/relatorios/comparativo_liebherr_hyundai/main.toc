@@ -1,0 +1,15 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{Resumo executivo}{2}{section*.2}%
+\contentsline {section}{\numberline {1}Indicadores principais}{3}{section.1}%
+\contentsline {section}{Indicadores principais}{3}{section.1}%
+\contentsline {section}{\numberline {2}Custo médio por máquina (por ano)}{3}{section.2}%
+\contentsline {section}{Custo médio por máquina (por ano)}{3}{section.2}%
+\contentsline {section}{\numberline {3}Composição por tipo de despesa}{4}{section.3}%
+\contentsline {section}{\numberline {4}Evolução mensal}{5}{section.4}%
+\contentsline {section}{\numberline {5}Localização do parque}{5}{section.5}%
+\contentsline {section}{Localização do parque}{5}{section.5}%
+\contentsline {section}{\numberline {6}Máquinas do parque}{7}{section.6}%
+\contentsline {section}{Máquinas do parque}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Tabela completa — gasto por máquina e mês}{8}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Gasto mensal por máquina (top 5)}{10}{subsection.6.2}%
+\contentsline {section}{Conclusão}{11}{section*.3}%

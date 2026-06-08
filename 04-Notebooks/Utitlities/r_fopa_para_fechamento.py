@@ -16,13 +16,12 @@ from pathlib import Path
 
 import pandas as pd
 
+from fechamento_excel import gravar_fechamento_excel
 from base_r_para_fechamento_folha import (
     LAYOUT_CORRETO,
     ParametrosFolha,
     REFS,
     TEMPLATE_FECHAMENTO_ODBC,
-    _COLS_VALOR_NUMERICO,
-    _FMT_MOEDA_EXCEL,
     _colunas_layout,
     carregar_mapa_cc_sagi,
     montar_linha_fechamento,
@@ -215,29 +214,7 @@ def main() -> None:
             out_df[c] = pd.NA
     out_df = out_df[cols]
 
-    for col in _COLS_VALOR_NUMERICO:
-        if col in out_df.columns:
-            out_df[col] = pd.to_numeric(out_df[col], errors="coerce")
-
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    with pd.ExcelWriter(args.output, engine="openpyxl") as w:
-        out_df.to_excel(w, sheet_name=args.sheet_out, index=False)
-        ws = w.sheets[args.sheet_out]
-        header_to_col = {
-            ws.cell(row=1, column=j).value: j
-            for j in range(1, ws.max_column + 1)
-            if ws.cell(row=1, column=j).value is not None
-        }
-        for nome in _COLS_VALOR_NUMERICO:
-            j = header_to_col.get(nome)
-            if j is None:
-                continue
-            for r in range(2, ws.max_row + 1):
-                cell = ws.cell(row=r, column=j)
-                if cell.value is None or cell.value == "":
-                    continue
-                cell.number_format = _FMT_MOEDA_EXCEL
-
+    gravar_fechamento_excel(out_df, args.output, sheet_name=args.sheet_out)
     print(
         f"Gravado: {args.output.resolve()} ({len(out_df)} linhas, {ignoradas} ignoradas). "
         f"Layout: {layout.name}"

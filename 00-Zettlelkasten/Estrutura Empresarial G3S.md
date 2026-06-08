@@ -47,10 +47,10 @@ flowchart TD
 **CNPJ principal:** 20.947.332/0004-38  
 **Sistemas:** SAGI (Seletiva) · Supply (Bracofer)
 
-| Divisão | Nome Fantasia | Atividade | Sistema |
-|---|---|---|---|
-| Seletiva | G3S | Compra, processa e vende sucatas metálicas | SAGI |
-| Bracofer | Bracofer | Distribui ferro novo (barras, perfis, corte e dobra) | Supply |
+| Divisão  | Nome Fantasia | Atividade                                            | Sistema |
+| -------- | ------------- | ---------------------------------------------------- | ------- |
+| Seletiva | G3S           | Compra, processa e vende sucatas metálicas           | SAGI    |
+| Bracofer | Bracofer      | Distribui ferro novo (barras, perfis, corte e dobra) | Supply  |
 
 - É a **empresa-âncora** do grupo: a maior parte dos lançamentos está aqui.
 - O SAGI é conectado em CNPJ da G3S. A filial ativa no canto direito superior da tela do SAGI (ex: `G3S PRUDENTE`) indica qual estabelecimento está operando.

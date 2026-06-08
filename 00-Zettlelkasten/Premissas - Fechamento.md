@@ -12,7 +12,7 @@ tags:
 VENDA > RELATORIO > ![[../01-Anexos/Pasted image 20260518143050.png]]
 dps só selecionar os filtros e imprimir o PDF.
 
-E esse é o caminho pro relatório de contas a pagar:
+E esse é o caminho pro relatório de contas a pagar (<u>é com base nesse que eu faço o fechamento</u>):
 
 ![[../01-Anexos/Pasted image 20260602081305.png]]
 
