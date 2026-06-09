@@ -74,9 +74,14 @@ def parse_data_fechamento(v):
     return dt
 
 
-def preparar_dataframe_fechamento(df: pd.DataFrame) -> pd.DataFrame:
+def preparar_dataframe_fechamento(
+    df: pd.DataFrame,
+    *,
+    colunas_preservar_sinal: tuple[str, ...] = (),
+) -> pd.DataFrame:
     """Normaliza tipos e sinais antes de gravar Excel de fechamento."""
     out = df.copy()
+    preservar = {str(c).strip() for c in colunas_preservar_sinal}
 
     for nome in COLS_VALOR_TODAS:
         col = _col_por_nome(out.columns, nome)
@@ -84,6 +89,8 @@ def preparar_dataframe_fechamento(df: pd.DataFrame) -> pd.DataFrame:
             out[col] = out[col].map(parse_valor_fechamento)
 
     for nome in ("valor_pago", "valor_conta"):
+        if nome in preservar:
+            continue
         col = _col_por_nome(out.columns, nome)
         if col:
             nums = pd.to_numeric(out[col], errors="coerce")
@@ -128,13 +135,16 @@ def gravar_fechamento_excel(
     sheet_name: str = "base",
     *,
     bold_header: bool = True,
+    colunas_preservar_sinal: tuple[str, ...] = (),
 ) -> Path:
     """Grava DataFrame no layout de fechamento com formatação padronizada."""
     from openpyxl.styles import Font
 
     destino = Path(caminho)
     destino.parent.mkdir(parents=True, exist_ok=True)
-    preparado = preparar_dataframe_fechamento(df)
+    preparado = preparar_dataframe_fechamento(
+        df, colunas_preservar_sinal=colunas_preservar_sinal
+    )
 
     with pd.ExcelWriter(destino, engine="openpyxl") as writer:
         preparado.to_excel(writer, sheet_name=sheet_name, index=False)

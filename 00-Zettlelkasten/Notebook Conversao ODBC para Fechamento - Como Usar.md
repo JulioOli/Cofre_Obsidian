@@ -42,7 +42,7 @@ Para outras origens, existem notebooks irmãos:
 
 | Coluna no fechamento | Coluna ODBC |
 |---|---|
-| `valor_conta` | `valor_centro` |
+| `valor_conta` | `valor_plano` (sinal preservado — sem `-abs` na gravação) |
 | `valor_pago` | `valor_bruto` |
 | `Valor Oficial` | `valor_bruto` |
 | `valor_nf` | `valor_bruto` |
@@ -51,7 +51,7 @@ As somas são conferidas automaticamente ao final de cada exportação. Se tudo 
 
 ```
 ODBC valor_bruto = saida valor_pago = Valor Oficial
-ODBC valor_centro = saida valor_conta
+ODBC valor_plano = saida valor_conta
 ```
 
 ## ~={Titulo}Passo a passo=~
@@ -83,7 +83,7 @@ Sempre que abrir o notebook (ou depois de atualizações no código), faça **Re
 Na célula 1, a saída esperada inclui:
 
 ```text
-Notebook v2.0 — sem arquivo MODELO externo
+Notebook v2.3 — sem arquivo MODELO externo
 Parametros carregados com sucesso.
 Layout de saida: 34 colunas (fixo no notebook)
 ```
@@ -154,7 +154,7 @@ Após cada mês (e no consolidado), o notebook imprime os totais. Exemplo:
 
 ```text
 04/2026: ODBC valor_bruto=1,234,567.89 | saida valor_pago=1,234,567.89 | Valor Oficial=1,234,567.89
-04/2026: ODBC valor_centro=-987,654.32 | saida valor_conta=-987,654.32
+04/2026: ODBC valor_plano=-987,654.32 | saida valor_conta=-987,654.32
 ```
 
 Se os pares não baterem, verifique:
