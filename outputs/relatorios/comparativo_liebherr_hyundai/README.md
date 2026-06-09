@@ -1,4 +1,27 @@
-# Relatório LaTeX — Liebherr × Hyundai
+# Relatório Liebherr × Hyundai
+
+## Dashboard Excel (reunião ~10 min) — recomendado
+
+```powershell
+.\.venv\Scripts\python.exe outputs\relatorios\comparativo_liebherr_hyundai\export_dashboard_excel.py
+```
+
+Saída: `outputs/tabelas/dashboard_liebherr_hyundai.xlsx`
+
+| Aba | Uso |
+|-----|-----|
+| **Apresentação** | KPIs + 4 gráficos para abrir a reunião |
+| **Gasto por Local** | Expandir/recolher Local → Marca → Máquina; filtros no cabeçalho |
+| **Resumo Local×Marca** | Pivot pronto + gráfico de barras |
+| **Série mensal** | Gráfico de linhas nativo (Excel) |
+| **Fonte_Dados** | Base para Tabela Dinâmica + Slicers + Gráfico Dinâmico |
+| **Como usar** | Passo a passo (pivot como na planilha do diretor) |
+
+Também gerado pelo **Passo 10** do notebook `analise_comparativa_liebherr_hyundai.ipynb`.
+
+---
+
+## Relatório LaTeX (PDF completo)
 
 Relatório executivo para impressão/PDF, sem código Python.
 

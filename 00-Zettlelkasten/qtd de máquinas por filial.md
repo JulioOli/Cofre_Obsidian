@@ -7,7 +7,7 @@
 | Londrina            | 2                   | -                  |
 | Dourados            | 2                   | 1                  |
 | CG                  | 2                   | -                  |
-| Ambar               | 2                   | -                  |
+| AM Bar              | 2                   | -                  |
 | Tupy                | 1                   | 1                  |
 | Pátio de Manutenção | 0                   | 2                  |
 | Matheus             | 1                   | -                  |

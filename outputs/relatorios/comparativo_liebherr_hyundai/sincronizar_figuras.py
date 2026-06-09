@@ -259,22 +259,35 @@ def gerar_figuras(df: pd.DataFrame, df_maq: pd.DataFrame) -> None:
         df_maq.groupby(["MARCA", "maq_id", "mes_nf"])["gasto_abs"].sum().reset_index(name="volume")
     )
     for marca in marcas_ord:
-        top5 = por_maquina.loc[por_maquina["MARCA"] == marca, "maq_id"].head(5)
-        sub = por_maquina_mes[
-            (por_maquina_mes["MARCA"] == marca) & (por_maquina_mes["maq_id"].isin(top5))
-        ]
+        ids_parque = PARQUE.get(marca, [])
+        sub = por_maquina_mes[por_maquina_mes["MARCA"] == marca]
         if sub.empty:
             continue
-        piv = sub.pivot(index="mes_nf", columns="maq_id", values="volume").fillna(0).sort_index()
-        fig, ax = plt.subplots(figsize=(12, 5))
+        piv = (
+            sub.pivot(index="mes_nf", columns="maq_id", values="volume")
+            .reindex(columns=ids_parque)
+            .fillna(0)
+            .sort_index()
+        )
+        n_maq = len(ids_parque)
+        fig_h = 7 if n_maq > 10 else 5.5
+        fig, ax = plt.subplots(figsize=(14, fig_h))
         for col in piv.columns:
-            ax.plot(piv.index.astype(str), piv[col], marker="o", label=col, lw=1.8)
-        ax.set_title(f"Gasto mensal — top 5 máquinas {marca}")
+            ax.plot(piv.index.astype(str), piv[col], marker="o", markersize=3, label=col, lw=1.2)
+        ax.set_title(
+            f"Gasto mensal — parque completo {marca} ({n_maq} máq.)"
+        )
         ax.set_ylabel("R$")
         ax.tick_params(axis="x", rotation=45)
-        ax.legend(fontsize=8)
+        ax.legend(
+            fontsize=7,
+            ncol=min(4, max(2, (n_maq + 3) // 4)),
+            loc="upper center",
+            bbox_to_anchor=(0.5, -0.22),
+            frameon=False,
+        )
         plt.tight_layout()
-        fig.savefig(FIG_SRC / f"09_mes_maquinas_{marca.lower()}.png", dpi=130)
+        fig.savefig(FIG_SRC / f"09_mes_maquinas_{marca.lower()}.png", dpi=130, bbox_inches="tight")
         plt.close(fig)
 
 

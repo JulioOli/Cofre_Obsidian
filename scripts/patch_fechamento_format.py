@@ -228,19 +228,18 @@ def patch_odbc() -> None:
         if "FMT_NUMERICO_EXCEL" in src:
             src = src.replace("FMT_NUMERICO_EXCEL = '#,##0.00'", "FMT_NUMERICO_EXCEL = '#.##0,00'")
             _set_src(cell, src)
-        if "def salvar_fechamento(df_out" in src:
-            _set_src(
-                cell,
-                """import sys
-from pathlib import Path
-sys.path.insert(0, str((Path.cwd().parent / "Utitlities").resolve()))
-from fechamento_excel import gravar_fechamento_excel
-
-
-def salvar_fechamento(df_out: pd.DataFrame, caminho: Path) -> None:
-    gravar_fechamento_excel(df_out, caminho, sheet_name='Fechamento')
-""",
+        if "def salvar_fechamento(df_out" in src and "read_odbc_base" in src:
+            if "from fechamento_excel import" not in src:
+                src = _ensure_import(src)
+            src = re.sub(
+                r"def salvar_fechamento\(df_out: pd\.DataFrame, caminho: Path\) -> None:.*?(?=\n\nsaidas_por_mes)",
+                "def salvar_fechamento(df_out: pd.DataFrame, caminho: Path) -> None:\n"
+                "    gravar_fechamento_excel(df_out, caminho, sheet_name='Fechamento')\n",
+                src,
+                count=1,
+                flags=re.S,
             )
+            _set_src(cell, src)
     p.write_text(json.dumps(nb, ensure_ascii=False, indent=1), encoding="utf-8")
     print("patched", p.name)
 
