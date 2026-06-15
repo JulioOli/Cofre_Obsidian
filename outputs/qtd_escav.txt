@@ -1,0 +1,75 @@
+=== ESCAVADEIRAS EHH/EHL - detalhe ===
+EHH0019 | MS - CAMPO GRANDE | HYUNDAI | ROBEX 220LC-9SBT3
+EHH0038 | MS - CAMPO GRANDE | HYUNDAI | R220 LONG REACH
+EHH0036 | MS - DOURADOS | HYUNDAI | R220 LONG REACH
+EHH0003 | MS - DOURADOS | HYUNDAI | ROBEX 220LC-9SB
+EHL0042 | MS - DOURADOS | LIEBHERR | LH30M
+EHH0008 | PR - LONDRINA | HYUNDAI | ROBEX 210LC-7
+EHH0040 | PR - LONDRINA | HYUNDAI | R220 LONG REACH
+EHH0002 | PR - LONDRINA | HYUNDAI | ROBEX 140LC-9SB
+EHH0006 | PR - MARINGÁ | HYUNDAI | ROBEX 210LC-7
+EHH0039 | PR - MARINGÁ | HYUNDAI | R220 LONG REACH
+EHL0014 | PR - MARINGÁ | LIEBHERR | A924C
+EHL0043 | PR - MARINGÁ | LIEBHERR | LH30M
+EHH0004 | PR - MARINGÁ (CIDADE ALTA) | HYUNDAI | ROBEX 140LC-9SB
+EHH0037 | RJ - BARRA MANSA | HYUNDAI | R220 LONG REACH
+EHH0015 | RJ - BARRA MANSA | HYUNDAI | ROBEX 220LC -9SB
+EHH0009 | RSE | HYUNDAI | ROBEX 210LC-7
+EHL0013 | RSE | LIEBHERR | A924C
+EHL0041 | SC - JOINVILLE | LIEBHERR | LH30M
+EHH0044 | SC - JOINVILLE | nan | nan
+EHH0005 | SP - PRUDENTE - RESERVA | HYUNDAI | ROBEX 140LC-9SB
+EHH0007 | SP - PRUDENTE - SUCATA | HYUNDAI | ROBEX 140LC-9SB
+EHH0046 | SP - PRUDENTE - SUCATA | HYUNDAI | ROBEX 220LC-9S
+EHL0028 | SP - PRUDENTE - SUCATA | LIEBHERR | LH30M
+EHL0070 | SP - PRUDENTE - SUCATA | LIEBHERR | LH30M
+
+=== Pivot LOCALIZACAO x MARCA (escavadeiras) ===
+MARCA                       HYUNDAI  LIEBHERR
+LOCALIZAÇÃO                                  
+MS - CAMPO GRANDE                 2         0
+MS - DOURADOS                     2         1
+PR - LONDRINA                     3         0
+PR - MARINGÁ                      2         2
+PR - MARINGÁ (CIDADE ALTA)        1         0
+RJ - BARRA MANSA                  2         0
+RSE                               1         1
+SC - JOINVILLE                    0         1
+SP - PRUDENTE - RESERVA           1         0
+SP - PRUDENTE - SUCATA            2         2
+
+=== Agrupamento por cidade operacional ===
+MARCA                   HYUNDAI  LIEBHERR
+cidade                                   
+Barra Mansa                   2         0
+Campo Grande                  2         0
+Dourados                      2         1
+Joinville (Tupy?)             0         1
+Londrina                      3         0
+Maringá                       3         2
+Prudente                      3         2
+Pátio RSE / Manutenção        1         1
+
+=== Busca Tupy/Matheus/Multi ===
+TUPY: 0
+MATHEUS: 0
+MULTI: 0
+MULTI ACO: 0
+MULTI AÇO: 0
+JOINVILLE: 2
+      PLACA     LOCALIZAÇÃO     TIPO     MARCA MODELO
+43  EHL0041  SC - JOINVILLE  MÁQUINA  LIEBHERR  LH30M
+53  EHH0044  SC - JOINVILLE  MÁQUINA       NaN    NaN
+TUPI: 0
+
+=== Todas maquinas H/L por cidade mapeada ===
+MARCA                   HYUNDAI  LIEBHERR
+cidade                                   
+Barra Mansa                   2         0
+Campo Grande                  2         0
+Dourados                      2         1
+Joinville (Tupy?)             0         1
+Londrina                      3         0
+Maringá                       3         2
+Prudente                      3         2
+Pátio RSE / Manutenção        1         1

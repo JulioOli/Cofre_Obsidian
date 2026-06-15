@@ -1,0 +1,179 @@
+Total ativos: 90
+Colunas loc/tipo: LOCALIZAÇÃO=True, TIPO=True, MARCA=True
+Total MÁQUINA: 48
+Total VEÍCULO: 42
+
+=== Por LOCALIZAÇÃO (todas) ===
+                            total  maquinas  veiculos
+LOCALIZAÇÃO                                          
+ARCELOR - PIRACICABA            2         1         1
+G3S - Filial 5                  9         5         4
+MS - CAMPO GRANDE               8         3         5
+MS - DOURADOS                   9         5         4
+PR - LONDRINA                   6         4         2
+PR - MARINGÁ                   15         7         8
+PR - MARINGÁ (CIDADE ALTA)      1         1         0
+RJ - BARRA MANSA                2         2         0
+RJ - RESENDE                    2         1         1
+RSE                             4         4         0
+SC - JOINVILLE                  2         2         0
+SP - GERDAU                     2         2         0
+SP - PRUDENTE - RESERVA         9         1         8
+SP - PRUDENTE - SUCATA         14         8         6
+SP - PRUDENTE - SUCATA          1         0         1
+SP - SELETIVA (variável)        4         2         2
+
+=== Por LOCALIZAÇÃO (só MÁQUINA) ===
+LOCALIZAÇÃO
+SP - PRUDENTE - SUCATA        8
+PR - MARINGÁ                  7
+MS - DOURADOS                 5
+G3S - Filial 5                5
+PR - LONDRINA                 4
+RSE                           4
+MS - CAMPO GRANDE             3
+SP - SELETIVA (variável)      2
+SP - GERDAU                   2
+SC - JOINVILLE                2
+RJ - BARRA MANSA              2
+PR - MARINGÁ (CIDADE ALTA)    1
+ARCELOR - PIRACICABA          1
+RJ - RESENDE                  1
+SP - PRUDENTE - RESERVA       1
+
+=== Por LOCALIZAÇÃO + MARCA (só MÁQUINA) ===
+
+ARCELOR - PIRACICABA:
+  HIDROEUROPA: 1
+
+G3S - Filial 5:
+  SCHNELL: 5
+
+MS - CAMPO GRANDE:
+  HYUNDAI: 2
+  PADRÃO: 1
+
+MS - DOURADOS:
+  HYUNDAI: 2
+  PADRÃO: 1
+  LIEBHERR: 1
+  HIDROEUROPA: 1
+
+PR - LONDRINA:
+  HYUNDAI: 3
+  CAPITAL: 1
+
+PR - MARINGÁ:
+  HYUNDAI: 2
+  LIEBHERR: 2
+  CAPITAL: 1
+  HIDROEUROPA: 1
+  MOROSHIMA: 1
+
+PR - MARINGÁ (CIDADE ALTA):
+  HYUNDAI: 1
+
+RJ - BARRA MANSA:
+  HYUNDAI: 2
+
+RJ - RESENDE:
+  HIDROEUROPA: 1
+
+RSE:
+  HYUNDAI: 1
+  LIEBHERR: 1
+  PREMER: 1
+  HIDROEUROPA: 1
+
+SC - JOINVILLE:
+  LIEBHERR: 1
+
+SP - GERDAU:
+  HIDROEUROPA: 2
+
+SP - PRUDENTE - RESERVA:
+  HYUNDAI: 1
+
+SP - PRUDENTE - SUCATA:
+  HYUNDAI: 2
+  LIEBHERR: 2
+  HARRIS: 2
+  CAPITAL: 1
+  HIDROEUROPA: 1
+
+SP - SELETIVA (variável):
+  HIDROEUROPA: 2
+
+=== Hyundai/Liebherr em toda base (MÁQUINA) ===
+HYUNDAI: 16 total
+LOCALIZAÇÃO
+MS - CAMPO GRANDE             2
+MS - DOURADOS                 2
+PR - LONDRINA                 3
+PR - MARINGÁ                  2
+PR - MARINGÁ (CIDADE ALTA)    1
+RJ - BARRA MANSA              2
+RSE                           1
+SP - PRUDENTE - RESERVA       1
+SP - PRUDENTE - SUCATA        2
+LIEBHERR: 12 total
+LOCALIZAÇÃO
+MS - CAMPO GRANDE         1
+MS - DOURADOS             2
+PR - LONDRINA             1
+PR - MARINGÁ              3
+RJ - BARRA MANSA          1
+RSE                       1
+SC - JOINVILLE            1
+SP - PRUDENTE - SUCATA    2
+Liebherr: 12 total
+LOCALIZAÇÃO
+MS - CAMPO GRANDE         1
+MS - DOURADOS             2
+PR - LONDRINA             1
+PR - MARINGÁ              3
+RJ - BARRA MANSA          1
+RSE                       1
+SC - JOINVILLE            1
+SP - PRUDENTE - SUCATA    2
+Hyundai: 16 total
+LOCALIZAÇÃO
+MS - CAMPO GRANDE             2
+MS - DOURADOS                 2
+PR - LONDRINA                 3
+PR - MARINGÁ                  2
+PR - MARINGÁ (CIDADE ALTA)    1
+RJ - BARRA MANSA              2
+RSE                           1
+SP - PRUDENTE - RESERVA       1
+SP - PRUDENTE - SUCATA        2
+
+=== MARCAS (MÁQUINA) ===
+MARCA
+HYUNDAI        16
+HIDROEUROPA    10
+LIEBHERR        7
+SCHNELL         5
+CAPITAL         3
+PADRÃO          2
+HARRIS          2
+PREMER          1
+MOROSHIMA       1
+
+=== Placas EHH/EHL (escavadeiras) ===
+Total: 24
+LOCALIZAÇÃO                 MARCA   
+MS - CAMPO GRANDE           HYUNDAI     2
+MS - DOURADOS               HYUNDAI     2
+                            LIEBHERR    1
+PR - LONDRINA               HYUNDAI     3
+PR - MARINGÁ                HYUNDAI     2
+                            LIEBHERR    2
+PR - MARINGÁ (CIDADE ALTA)  HYUNDAI     1
+RJ - BARRA MANSA            HYUNDAI     2
+RSE                         HYUNDAI     1
+                            LIEBHERR    1
+SC - JOINVILLE              LIEBHERR    1
+SP - PRUDENTE - RESERVA     HYUNDAI     1
+SP - PRUDENTE - SUCATA      HYUNDAI     2
+                            LIEBHERR    2

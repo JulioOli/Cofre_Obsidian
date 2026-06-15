@@ -1,8 +1,44 @@
 {
   "recentFiles": [
     {
+      "basename": "Melhoria BCBI",
+      "path": "00-Zettlelkasten/Melhoria BCBI.md"
+    },
+    {
+      "basename": "Índice Controladoria",
+      "path": "00-Zettlelkasten/Índice Controladoria.md"
+    },
+    {
+      "basename": "Script de Conversão de CC e PC - Como Usar",
+      "path": "00-Zettlelkasten/Script de Conversão de CC e PC - Como Usar.md"
+    },
+    {
+      "basename": "BCBI - Auditoria Analítico jan-mai 2026",
+      "path": "00-Zettlelkasten/BCBI - Auditoria Analítico jan-mai 2026.md"
+    },
+    {
+      "basename": "BCBI - Classificação Analítico Plano de Contas",
+      "path": "00-Zettlelkasten/BCBI - Classificação Analítico Plano de Contas.md"
+    },
+    {
+      "basename": "Tipos de Movimentação",
+      "path": "00-Zettlelkasten/Tipos de Movimentação.md"
+    },
+    {
+      "basename": "ERP - O que e",
+      "path": "00-Zettlelkasten/ERP - O que e.md"
+    },
+    {
+      "basename": "VPS (Servidor Virtual Privado)",
+      "path": "00-Zettlelkasten/VPS (Servidor Virtual Privado).md"
+    },
+    {
       "basename": "Gerando Relatório de Contas a Pagar da Bracofer (Supply)",
       "path": "00-Zettlelkasten/Gerando Relatório de Contas a Pagar da Bracofer (Supply).md"
+    },
+    {
+      "basename": "Analise Base Financeira",
+      "path": "00-Zettlelkasten/Analise Base Financeira.md"
     },
     {
       "basename": "Premissas - Fechamento",
@@ -13,56 +49,52 @@
       "path": "00-Zettlelkasten/Guia Sistemas.md"
     },
     {
-      "basename": "BCBI - Classificação Analítico Plano de Contas",
-      "path": "00-Zettlelkasten/BCBI - Classificação Analítico Plano de Contas.md"
-    },
-    {
-      "basename": "VPS (Servidor Virtual Privado)",
-      "path": "00-Zettlelkasten/VPS (Servidor Virtual Privado).md"
-    },
-    {
-      "basename": "qtd de máquinas por filial",
-      "path": "00-Zettlelkasten/qtd de máquinas por filial.md"
-    },
-    {
-      "basename": "notas de contas a subir",
-      "path": "00-Zettlelkasten/notas de contas a subir.md"
-    },
-    {
-      "basename": "Índice Controladoria",
-      "path": "00-Zettlelkasten/Índice Controladoria.md"
-    },
-    {
-      "basename": "Tipos de Movimentação",
-      "path": "00-Zettlelkasten/Tipos de Movimentação.md"
-    },
-    {
-      "basename": "Divisões (nível 1)",
-      "path": "00-Zettlelkasten/Divisões (nível 1).md"
-    },
-    {
       "basename": "Departamentos (nível 3)",
       "path": "00-Zettlelkasten/Departamentos (nível 3).md"
-    },
-    {
-      "basename": "Analise Base Financeira",
-      "path": "00-Zettlelkasten/Analise Base Financeira.md"
     },
     {
       "basename": "Estrutura Empresarial G3S",
       "path": "00-Zettlelkasten/Estrutura Empresarial G3S.md"
     },
     {
-      "basename": "ERP - O que e",
-      "path": "00-Zettlelkasten/ERP - O que e.md"
+      "basename": "Filiais (nível 2)",
+      "path": "00-Zettlelkasten/Filiais (nível 2).md"
     },
     {
-      "basename": "Notebook Normalizacao Despesas ATUA - Como Usar",
-      "path": "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md"
+      "basename": "Divisões (nível 1)",
+      "path": "00-Zettlelkasten/Divisões (nível 1).md"
+    },
+    {
+      "basename": "qtd de máquinas por filial",
+      "path": "00-Zettlelkasten/qtd de máquinas por filial.md"
+    },
+    {
+      "basename": "Entre Empresas - Faturamento de Máquinas Intercompany",
+      "path": "00-Zettlelkasten/Entre Empresas - Faturamento de Máquinas Intercompany.md"
+    },
+    {
+      "basename": "Scripts utilitários — folha R e CC",
+      "path": "00-Zettlelkasten/Scripts utilitários — folha R e CC.md"
+    },
+    {
+      "basename": "Notebook Conversao ODBC para Fechamento - Como Usar",
+      "path": "00-Zettlelkasten/Notebook Conversao ODBC para Fechamento - Como Usar.md"
+    },
+    {
+      "basename": "Centro de Custo",
+      "path": "02-Referencias/Centro de Custo.pdf"
     },
     {
       "basename": "Plano de Contas",
       "path": "02-Referencias/Plano de Contas.pdf"
+    },
+    {
+      "basename": "notas de contas a subir",
+      "path": "00-Zettlelkasten/notas de contas a subir.md"
+    },
+    {
+      "basename": "Notebook Normalizacao Despesas ATUA - Como Usar",
+      "path": "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md"
     },
     {
       "basename": "Script de Auditoria Semanal de Lancamentos ODBC - Como Usar",
@@ -73,36 +105,12 @@
       "path": "00-Zettlelkasten/Script de Auditoria de Custos Fixos - Como Usar.md"
     },
     {
-      "basename": "Scripts utilitários — folha R e CC",
-      "path": "00-Zettlelkasten/Scripts utilitários — folha R e CC.md"
-    },
-    {
-      "basename": "Centro de Custo",
-      "path": "02-Referencias/Centro de Custo.pdf"
-    },
-    {
-      "basename": "BCBI - Auditoria Analítico jan-mai 2026",
-      "path": "00-Zettlelkasten/BCBI - Auditoria Analítico jan-mai 2026.md"
-    },
-    {
-      "basename": "Filiais (nível 2)",
-      "path": "00-Zettlelkasten/Filiais (nível 2).md"
-    },
-    {
-      "basename": "Script de Conversão de CC e PC - Como Usar",
-      "path": "00-Zettlelkasten/Script de Conversão de CC e PC - Como Usar.md"
-    },
-    {
       "basename": "Exemplo de Inconsistência no SAGI",
       "path": "00-Zettlelkasten/Exemplo de Inconsistência no SAGI.md"
     },
     {
       "basename": "coisas pra apagar",
       "path": "00-Zettlelkasten/coisas pra apagar.md"
-    },
-    {
-      "basename": "Melhoria BCBI",
-      "path": "00-Zettlelkasten/Melhoria BCBI.md"
     },
     {
       "basename": "Organic Rankine Cycle (ORC)",

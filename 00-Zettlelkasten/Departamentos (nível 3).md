@@ -5,7 +5,7 @@ tags:
   - centro-de-custo
   - departamentos
   - G3S
-atualizado: 08/04/2026
+atualizado: 09/06/2026
 ---
 24/03/2026 - 09:22
 
@@ -119,6 +119,8 @@ Gestão do transporte interno de sucata, frota própria e terceirizada.
 | NVS Entulho | 1.12.1.4 |
 
 > ⚠️ **Assis (`1.2.6.4`) e Maringá Cidade Alta (`1.2.8.4`):** Logística é o departamento mais analítico disponível, pois não há veículos ou máquinas cadastrados individualmente. Todos os custos operacionais ficam neste CC genérico, dificultando análise de eficiência.
+>
+> Em **Maringá Cidade Alta**, a ausência de ativos analíticos é esperada: trata-se de um ==pátio de recebimento de coleta== (ver [[Filiais (nível 2)#Maringá Cidade Alta]]).
 
 ---
 

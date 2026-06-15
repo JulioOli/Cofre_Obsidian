@@ -66,12 +66,16 @@ def parse_data_fechamento(v):
             return pd.NaT
         return ts.normalize()
     s = str(v).strip()
-    if not s or s.lower() in {"nan", "nat", "none"}:
+    if not s or s.lower() in {"nan", "nat", "none", "-"}:
         return pd.NaT
-    dt = pd.to_datetime(s, format="%d/%m/%Y", errors="coerce")
+    for fmt in ("%d/%m/%Y", "%d/%m/%y", "%Y-%m-%d"):
+        dt = pd.to_datetime(s, format=fmt, errors="coerce")
+        if not pd.isna(dt):
+            return dt.normalize()
+    dt = pd.to_datetime(s, dayfirst=True, errors="coerce")
     if pd.isna(dt):
-        dt = pd.to_datetime(s, errors="coerce")
-    return dt
+        return pd.NaT
+    return dt.normalize()
 
 
 def preparar_dataframe_fechamento(

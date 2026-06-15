@@ -3,7 +3,11 @@
 ## Dashboard Excel (reunião ~10 min) — recomendado
 
 ```powershell
+# Planilha completa (nova ou sobrescreve tudo)
 .\.venv\Scripts\python.exe outputs\relatorios\comparativo_liebherr_hyundai\export_dashboard_excel.py
+
+# Só adiciona/atualiza aba Mix por conta (preserva suas edições nas demais abas)
+.\.venv\Scripts\python.exe outputs\relatorios\comparativo_liebherr_hyundai\export_dashboard_excel.py --mix-only
 ```
 
 Saída: `outputs/tabelas/dashboard_liebherr_hyundai.xlsx`
@@ -11,6 +15,7 @@ Saída: `outputs/tabelas/dashboard_liebherr_hyundai.xlsx`
 | Aba | Uso |
 |-----|-----|
 | **Apresentação** | KPIs + 4 gráficos para abrir a reunião |
+| **Mix por conta** | Gráficos nativos: % do volume da marca e R$/máquina (rótulos nas barras; legenda clicável) |
 | **Gasto por Local** | Expandir/recolher Local → Marca → Máquina; filtros no cabeçalho |
 | **Resumo Local×Marca** | Pivot pronto + gráfico de barras |
 | **Série mensal** | Gráfico de linhas nativo (Excel) |

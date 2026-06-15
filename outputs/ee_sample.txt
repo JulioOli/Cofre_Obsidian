@@ -1,0 +1,16 @@
+      ID STATUS DO VEÍCULO                 LOCALIZAÇÃO             PRIMEIRA "PERNA"              SEGUNDA "PERNA"   TERCEIRA "PERNA" PROPRIETÁRIO N.º CONTRATO LOCAÇÃO OU SERVIÇO    PLACA
+0    1.0           REGULAR      SP - PRUDENTE - SUCATA  RSE para G3S correspondente                          NaN                NaN          RSE          417            LOCAÇÃO  BAL0004
+1    2.0           REGULAR           MS - CAMPO GRANDE  RSE para G3S correspondente                          NaN                NaN          RSE          418            LOCAÇÃO  BAL0007
+2    3.0           REGULAR               MS - DOURADOS  RSE para G3S correspondente                          NaN                NaN          RSE          419            LOCAÇÃO  BAL0006
+3    4.0           REGULAR               PR - LONDRINA  RSE para G3S correspondente                          NaN                NaN          RSE          420            LOCAÇÃO  BAL0003
+4    5.0           REGULAR                PR - MARINGÁ  RSE para G3S correspondente                          NaN                NaN          RSE          421            LOCAÇÃO  BAL0001
+5   35.0           REGULAR           MS - CAMPO GRANDE  RSE para G&S correspondente  G&S para G3S correspondente           VER HORA          RSE          388            SERVIÇO  EHH0019
+6   34.0           REGULAR                PR - MARINGÁ  RSE para G&S correspondente  G&S para G3S correspondente           VER HORA          RSE          397            LOCAÇÃO  EHH0006
+7   36.0           REGULAR               PR - LONDRINA  RSE para G&S correspondente  G&S para G3S correspondente           VER HORA          RSE          392            SERVIÇO  EHH0008
+8   37.0           REGULAR                         RSE  RSE para G&S correspondente  G&S para G3S correspondente           AGUARDAR          RSE            ?            SERVIÇO  EHH0009
+9   38.0           REGULAR      SP - PRUDENTE - SUCATA  RSE para G&S correspondente  G&S para G3S correspondente           VER HORA          RSE          401            SERVIÇO  EHH0007
+10  39.0           REGULAR  PR - MARINGÁ (CIDADE ALTA)  RSE para G&S correspondente  G&S para G3S correspondente           VER HORA          RSE          446            SERVIÇO  EHH0004
+11  40.0           REGULAR     SP - PRUDENTE - RESERVA  RSE para G&S correspondente  G&S para G3S correspondente  MARCONDES VALIDAR          RSE          402            SERVIÇO  EHH0005
+12  41.0           REGULAR                         RSE  RSE para G&S correspondente  G&S para G3S correspondente           AGUARDAR          RSE            ?            SERVIÇO  EHL0013
+13  42.0           REGULAR                PR - MARINGÁ  RSE para G&S correspondente  G&S para G3S correspondente           VER HORA          RSE          398            SERVIÇO  EHL0014
+14  43.0           REGULAR                PR - MARINGÁ  RSE para G&S correspondente  G&S para G3S correspondente           VER HORA          RSE          408            SERVIÇO  EHL0043

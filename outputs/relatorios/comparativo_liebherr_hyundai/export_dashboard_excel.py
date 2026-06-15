@@ -5,10 +5,15 @@ Saída: outputs/tabelas/dashboard_liebherr_hyundai.xlsx
 
 Abas:
   - Apresentação: KPIs + gráficos-chave
+  - Mix por conta: gráficos nativos (% volume e R$/máquina, rótulos nas barras)
   - Gasto por Local: hierarquia Local → Marca → Máquina (expandir/recolher)
   - Fonte_Dados: tabela plana para Tabela Dinâmica no Excel
   - Gráficos: figuras do notebook
   - Como usar: instruções de filtro / pivot / slicer
+
+CLI:
+  --mix-only   atualiza só a aba Mix por conta (preserva edições manuais)
+  --preservar  alias de preservar_abas_existentes na exportação completa
 """
 from __future__ import annotations
 
@@ -17,8 +22,9 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
-from openpyxl import Workbook
+from openpyxl import Workbook, load_workbook
 from openpyxl.chart import BarChart, LineChart, Reference
+from openpyxl.chart.label import DataLabelList
 from openpyxl.drawing.image import Image as XLImage
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
@@ -55,6 +61,14 @@ ORDEM_LOCAIS = [
     "Ambar", "Tupy", "Pátio de Manutenção", "Matheus", "Multi Aço",
 ]
 CONTAS_EXCLUIR = frozenset({"7.4.5"})
+SHEET_MIX_CONTAS = "Mix por conta"
+ROTULOS_CONTA = {
+    "7.1.1": "7.1.1 Peças de manutenção",
+    "7.1.18": "7.1.18 Fretes e carretos",
+    "7.1.2": "7.1.2 Manutenção veíc./máq.",
+    "7.1.22": "7.1.22 Diesel (interno)",
+    "7.1.4": "7.1.4 Diesel (posto)",
+}
 
 FIGURAS_APRESENTACAO = [
     "01_volume_por_ano.png",
@@ -218,6 +232,176 @@ def montar_pivot_local_ano(df: pd.DataFrame) -> pd.DataFrame:
                 row[f"Gasto total {ano}"] = float(s["gasto_total"].iloc[0]) if len(s) else 0.0
             linhas.append(row)
     return pd.DataFrame(linhas)
+
+
+def rotulo_conta_grafico(cod: str, conta: str) -> str:
+    cod = str(cod).strip()
+    if cod in ROTULOS_CONTA:
+        return ROTULOS_CONTA[cod]
+    return f"{cod} {str(conta)[:35]}"
+
+
+def montar_dados_mix_contas(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Top 6 rubricas: % do volume da marca e R$ médio/máquina (parque)."""
+    por_conta = (
+        df.groupby(["MARCA", "cod_conta", "conta"], observed=True)["gasto_abs"]
+        .sum()
+        .reset_index(name="volume")
+    )
+    por_conta["volume_por_maq"] = por_conta["volume"] / por_conta["MARCA"].map(QTD_PARQUE)
+
+    top_contas = (
+        por_conta.groupby("conta", observed=True)["volume"].sum().nlargest(6).index.tolist()
+    )
+    comp = por_conta[por_conta["conta"].isin(top_contas)].copy()
+    comp["conta_curta"] = comp.apply(
+        lambda r: rotulo_conta_grafico(r["cod_conta"], r["conta"]), axis=1
+    )
+
+    ordem = (
+        comp.groupby("conta_curta", observed=True)["volume"]
+        .sum()
+        .sort_values(ascending=False)
+        .index.tolist()
+    )
+
+    pivot_vol = comp.pivot(index="conta_curta", columns="MARCA", values="volume_por_maq").fillna(0)
+    pivot_vol = pivot_vol.reindex(ordem).reindex(columns=MARCAS, fill_value=0)
+
+    pivot_comp = comp.pivot(index="conta_curta", columns="MARCA", values="volume").fillna(0)
+    pivot_comp = pivot_comp.reindex(ordem).reindex(columns=MARCAS, fill_value=0)
+    pivot_pct = pivot_comp.div(pivot_comp.sum(axis=0), axis=1) * 100
+
+    pct_out = pivot_pct.reset_index().rename(columns={"conta_curta": "Conta"})
+    vol_out = pivot_vol.reset_index().rename(columns={"conta_curta": "Conta"})
+    return pct_out, vol_out
+
+
+def _chart_data_labels(chart: BarChart, num_fmt: str | None = None) -> None:
+    dl = DataLabelList()
+    dl.showVal = True
+    dl.showCatName = False
+    dl.showSerName = False
+    dl.showLegendKey = False
+    dl.showPercent = False
+    dl.dLblPos = "outEnd"
+    if num_fmt:
+        dl.numFmt = num_fmt
+    chart.dataLabels = dl
+
+
+def _cor_serie_marca(chart: BarChart) -> None:
+    for i, marca in enumerate(MARCAS):
+        if i < len(chart.series):
+            chart.series[i].graphicalProperties.solidFill = CORES_MARCA.get(marca, "888888")
+
+
+def escrever_mix_contas_interativo(wb: Workbook, df: pd.DataFrame, pos: int | None = 1) -> None:
+    """Aba com gráficos nativos Excel: mix % e R$/máquina (legenda clicável)."""
+    if SHEET_MIX_CONTAS in wb.sheetnames:
+        del wb[SHEET_MIX_CONTAS]
+    ws = wb.create_sheet(SHEET_MIX_CONTAS, pos)
+
+    ws["A1"] = "Mix de gastos por tipo de conta — gráficos interativos (clique na legenda para ocultar/mostrar marca)"
+    ws["A1"].font = Font(bold=True, size=12, color="004B8D")
+    ws.merge_cells("A1:F1")
+    ws["A2"] = (
+        "Top 6 rubricas do parque (sem ISS). Valores nas barras. "
+        "Filtre as tabelas abaixo pelo cabeçalho (▼) para refinar a visualização."
+    )
+    ws["A2"].font = Font(italic=True, size=10, color="555555")
+    ws.merge_cells("A2:F2")
+
+    pct_df, vol_df = montar_dados_mix_contas(df)
+
+    start_pct = 4
+    ws.cell(start_pct, 1, "% do volume da marca").font = Font(bold=True)
+    for r_idx, row in enumerate(dataframe_to_rows(pct_df, index=False, header=True), start_pct + 1):
+        for c_idx, val in enumerate(row, 1):
+            cell = ws.cell(row=r_idx, column=c_idx, value=val)
+            if c_idx > 1 and r_idx > start_pct + 1:
+                cell.number_format = "0.0"
+
+    n_pct = len(pct_df)
+    end_pct = start_pct + 1 + n_pct
+    tab_pct = Table(
+        displayName="TabMixPct",
+        ref=f"A{start_pct + 1}:{get_column_letter(len(pct_df.columns))}{end_pct}",
+    )
+    tab_pct.tableStyleInfo = TableStyleInfo(name="TableStyleMedium2", showRowStripes=True)
+    ws.add_table(tab_pct)
+
+    start_vol = end_pct + 3
+    ws.cell(start_vol, 1, "R$ médio / máquina do parque").font = Font(bold=True)
+    for r_idx, row in enumerate(dataframe_to_rows(vol_df, index=False, header=True), start_vol + 1):
+        for c_idx, val in enumerate(row, 1):
+            cell = ws.cell(row=r_idx, column=c_idx, value=val)
+            if c_idx > 1 and r_idx > start_vol + 1:
+                cell.number_format = '#,##0'
+
+    n_vol = len(vol_df)
+    end_vol = start_vol + 1 + n_vol
+    tab_vol = Table(
+        displayName="TabMixVol",
+        ref=f"A{start_vol + 1}:{get_column_letter(len(vol_df.columns))}{end_vol}",
+    )
+    tab_vol.tableStyleInfo = TableStyleInfo(name="TableStyleMedium9", showRowStripes=True)
+    ws.add_table(tab_vol)
+
+    chart_pct = BarChart()
+    chart_pct.type = "col"
+    chart_pct.grouping = "clustered"
+    chart_pct.title = "Mix de gastos por tipo de conta (top 6 rubricas)"
+    chart_pct.y_axis.title = "% do volume da marca"
+    chart_pct.x_axis.title = "Conta"
+    data_pct = Reference(ws, min_col=2, max_col=1 + len(MARCAS), min_row=start_pct + 1, max_row=end_pct)
+    cats_pct = Reference(ws, min_col=1, min_row=start_pct + 2, max_row=end_pct)
+    chart_pct.add_data(data_pct, titles_from_data=True)
+    chart_pct.set_categories(cats_pct)
+    chart_pct.height = 11
+    chart_pct.width = 18
+    _chart_data_labels(chart_pct, num_fmt="0.0")
+    _cor_serie_marca(chart_pct)
+    ws.add_chart(chart_pct, f"E{start_pct}")
+
+    chart_vol = BarChart()
+    chart_vol.type = "bar"
+    chart_vol.grouping = "clustered"
+    chart_vol.title = "Gasto por conta — custo médio por máquina"
+    chart_vol.x_axis.title = "R$ médio / máquina"
+    chart_vol.y_axis.title = "Conta"
+    data_vol = Reference(ws, min_col=2, max_col=1 + len(MARCAS), min_row=start_vol + 1, max_row=end_vol)
+    cats_vol = Reference(ws, min_col=1, min_row=start_vol + 2, max_row=end_vol)
+    chart_vol.add_data(data_vol, titles_from_data=True)
+    chart_vol.set_categories(cats_vol)
+    chart_vol.height = 11
+    chart_vol.width = 18
+    _chart_data_labels(chart_vol, num_fmt="#,##0")
+    _cor_serie_marca(chart_vol)
+    ws.add_chart(chart_vol, f"E{start_vol}")
+
+    ws.column_dimensions["A"].width = 34
+    for col in ("B", "C"):
+        ws.column_dimensions[col].width = 14
+
+
+def atualizar_aba_mix_contas(dest: Path | None = None) -> Path:
+    """Adiciona/atualiza só a aba Mix por conta, preservando demais abas do arquivo."""
+    dest = dest or OUT
+    if not dest.exists():
+        raise FileNotFoundError(f"Arquivo não encontrado: {dest}")
+
+    df = carregar_df_maq()
+    wb = load_workbook(dest)
+    escrever_mix_contas_interativo(wb, df, pos=1)
+    try:
+        wb.save(dest)
+    except PermissionError:
+        alt = dest.with_stem(f"{dest.stem}_mix_{datetime.now():%Y%m%d_%H%M%S}")
+        wb.save(alt)
+        print(f"Arquivo bloqueado; salvo em: {alt}")
+        return alt
+    return dest
 
 
 def montar_kpis(df: pd.DataFrame) -> list[tuple[str, str]]:
@@ -550,8 +734,9 @@ def escrever_como_usar(wb: Workbook) -> None:
         ("4. Mês×Maq LIEB / HYUN", "Todas as máquinas da marca — clique na legenda para mostrar/ocultar linhas."),
         ("5. Gasto_mês_máquina", "Base longa → Tabela Dinâmica + Slicer em Máquina (escolha livre)."),
         ("6. Série mensal", "Comparativo Liebherr × Hyundai (média/máq do parque)."),
-        ("7. Fonte_Dados", "Pivot customizada com filtros por Divisão, Conta, Filial."),
-        ("8. Gráficos", "Todas as figuras do notebook (parque completo, sem top N)."),
+        ("7. Mix por conta", "Gráficos nativos: % do volume e R$/máquina — legenda clicável + filtros nas tabelas."),
+        ("8. Fonte_Dados", "Pivot customizada com filtros por Divisão, Conta, Filial."),
+        ("9. Gráficos", "Todas as figuras do notebook (parque completo, sem top N)."),
         ("", ""),
         ("Tabela Dinâmica sugerida (como na planilha do diretor)", ""),
         ("Linhas", "Local → Marca → Máquina"),
@@ -572,11 +757,15 @@ def escrever_como_usar(wb: Workbook) -> None:
     ws.column_dimensions["B"].width = 70
 
 
-def exportar_dashboard(dest: Path | None = None) -> Path:
+def exportar_dashboard(dest: Path | None = None, preservar_abas_existentes: bool = False) -> Path:
     dest = dest or OUT
     dest.parent.mkdir(parents=True, exist_ok=True)
 
     df = carregar_df_maq()
+
+    if preservar_abas_existentes and dest.exists():
+        return atualizar_aba_mix_contas(dest)
+
     fonte = montar_fonte_dados(df)
     hier, levels = montar_hierarquia_local(df)
     pivot = montar_pivot_local_ano(df)
@@ -588,6 +777,7 @@ def exportar_dashboard(dest: Path | None = None) -> Path:
     escrever_pivot_resumo(wb, pivot)
     escrever_gasto_mes_maquina(wb, df)
     escrever_serie_mensal_chart(wb, df)
+    escrever_mix_contas_interativo(wb, df, pos=6)
     escrever_fonte_dados(wb, fonte)
     escrever_graficos(wb)
     escrever_como_usar(wb)
@@ -603,5 +793,11 @@ def exportar_dashboard(dest: Path | None = None) -> Path:
 
 
 if __name__ == "__main__":
-    path = exportar_dashboard()
+    import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == "--mix-only":
+        path = atualizar_aba_mix_contas()
+    else:
+        preservar = "--preservar" in sys.argv
+        path = exportar_dashboard(preservar_abas_existentes=preservar)
     print(f"Dashboard Excel: {path.resolve()}")

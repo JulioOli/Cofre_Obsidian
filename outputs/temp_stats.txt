@@ -1,0 +1,11 @@
+Registros: 90
+TIPO: {'MÁQUINA': 48, 'VEÍCULO': 42}
+LOC/SERV: {'SERVIÇO': 68, 'LOCAÇÃO': 22}
+PROP: {'RSE': 88, 'G3S 01': 2}
+Soma deprec mensal: 2,584,125.00
+Perna1: {'RSE para G&S correspondente': 49, 'RSE para G3S correspondente': 17, 'RSE para G&S Barueri': 11, 'RSE para G3S 5': 9, 'RSE direto para cliente': 2, 'USADA NA EMPRESA (G3S)': 1, 'VERIFICAR G3S PARA G&S ': 1}
+Perna2: {'G&S para G3S correspondente': 51, 'G&S para cliente': 8, 'G&S para Cliente': 1}
+Perna3: ['CTE', 'NFS', 'VER HORA', 'AGUARDAR', 'MARCONDES VALIDAR', 'FATURAR MAIO', 'POR TONELADA']
+FATURA RSE MARÇO 2026: {'NÃO': 53, 'OK': 24, 'OK - G&S **': 10, 'OK - G&S 06*': 1, 'OK  - G&S **': 1, '?': 1}
+FATURA RSE ABRIL 2026 (1°): {'OK': 82}
+FATURA RSE MAIO 2026 (1°): {'OK': 84}

@@ -1,0 +1,304 @@
+=== ABAS ===
+1. BASE DADOS
+2. PARÂMETROS
+3. MEDIÇÕES PARA NFS - G&S
+4. RESUMO 1
+5. RESUMO 2
+6. VALIDACÃO RECEITAS G&S  04.2026
+7. VALIDACÃO RECEITAS G&S  05.2026
+8. OBSERVAÇÕES
+================================================================================
+ABA: BASE DADOS
+Dimensoes: 102 linhas x 34 colunas
+--- Primeiras 20 linhas ---
+                             0                  1                        2                            3                            4                 5             6             7                   8        9        10             11                   12                                                                                                13                                   14                               15                               16                                   17                                       18                                     19                                     20                 21         22               23               24                              25                     26                          27                            28                               29                         30                            31                               32                         33
+0   ESCAVADEIRA COM GARRA DINAM  STATUS DO VEÍCULO              LOCALIZAÇÃO             PRIMEIRA "PERNA"              SEGUNDA "PERNA"  TERCEIRA "PERNA"  PROPRIETÁRIO  N.º CONTRATO  LOCAÇÃO OU SERVIÇO    PLACA     TIPO          MARCA               MODELO                                                                                        IMPLEMENTO  Preço Compra Equipamento 0 fev/2025  Preço Compra Veículo 0 fev/2025  Preço Rollon+Caçamba 0 fev/2025  Preço Implemento 0 Garra 0 fev/2025  Preço Implemento 0 Eletroima 0 fev/2025  Preço Implemento 0 Tesoura 0 fev/2025  Preço Implemento 0 Peneira 0 fev/2025  ∑ Conjunto (Base)  VIDA ÚTIL  PAYBACK\n(ANOS)  PAYBACK (MESES)  VALOR DA LOCAÇÃO (DEPRECIAÇÃO)  FATURA RSE MARÇO 2026  FATURA RSE ABRIL 2026 (1°)  2° PERNA EMISSAO NFS 04/2026  VALOR DE MEDIÇÕES 04/2026 (NFS)  FATURA RSE MAIO 2026 (1°)  2° PERNA EMISSAO NFS 05/2026  VALOR DE MEDIÇÕES 05/2026 (NFS)  OBSERVAÇÕES CONTROLADORIA
+1                             1            REGULAR   SP - PRUDENTE - SUCATA  RSE para G3S correspondente                          NaN               NaN           RSE           417             LOCAÇÃO  BAL0004  MÁQUINA        CAPITAL  PRESIDENTE PRUDENTE                                                         BALANÇA RODOVIARIA - CONCRETO - 21 METROS                               250000                                0                                0                                    0                                        0                                      0                                      0             250000          5                5               60                     2083.333333                    NÃO                          OK                           NaN                              NaN                         OK                           NaN                              NaN                CONTRATO OK
+2                             2            REGULAR        MS - CAMPO GRANDE  RSE para G3S correspondente                          NaN               NaN           RSE           418             LOCAÇÃO  BAL0007  MÁQUINA         PADRÃO          TRÊS LAGOAS                                                         BALANÇA RODOVIARIA - METALICA - 21 METROS                               250000                                0                                0                                    0                                        0                                      0                                      0             250000          5                5               60                     2083.333333                    NÃO                          OK                           NaN                              NaN                         OK                           NaN                              NaN                CONTRATO OK
+3                             3            REGULAR            MS - DOURADOS  RSE para G3S correspondente                          NaN               NaN           RSE           419             LOCAÇÃO  BAL0006  MÁQUINA         PADRÃO             DOURADOS                                                         BALANÇA RODOVIARIA - METALICA - 21 METROS                               250000                                0                                0                                    0                                        0                                      0                                      0             250000          5                5               60                     2083.333333                    NÃO                          OK                           NaN                              NaN                         OK                           NaN                              NaN                CONTRATO OK
+4                             4            REGULAR            PR - LONDRINA  RSE para G3S correspondente                          NaN               NaN           RSE           420             LOCAÇÃO  BAL0003  MÁQUINA        CAPITAL             LONDRINA                                                         BALANÇA RODOVIARIA - METALICA - 21 METROS                               250000                                0                                0                                    0                                        0                                      0                                      0             250000          5                5               60                     2083.333333                    NÃO                          OK                           NaN                              NaN                         OK                           NaN                              NaN                CONTRATO OK
+5                             5            REGULAR             PR - MARINGÁ  RSE para G3S correspondente                          NaN               NaN           RSE           421             LOCAÇÃO  BAL0001  MÁQUINA        CAPITAL              MARINGÁ                                                         BALANÇA RODOVIARIA - METALICA - 21 METROS                               250000                                0                                0                                    0                                        0                                      0                                      0             250000          5                5               60                     2083.333333                    NÃO                          OK                           NaN                              NaN                         OK                           NaN                              NaN                CONTRATO OK
+6                             6            REGULAR           G3S - Filial 5               RSE para G3S 5                          NaN               NaN           RSE           422             LOCAÇÃO  EJZ7495  VEÍCULO           FORD          CARGO 815 E                                                                CAMINHÃO / 3/4 - CARROCERIA ABERTA                                    0                           480000                            30000                                    0                                        0                                      0                                      0             510000          5                5               60                            8500                     OK                          OK                           NaN                              NaN                         OK                           NaN                              NaN                CONTRATO OK
+7                             7            REGULAR           G3S - Filial 5               RSE para G3S 5                          NaN               NaN           RSE           423             LOCAÇÃO  EJZ7496  VEÍCULO           FORD          CARGO 815 E                                                                CAMINHÃO / 3/4 - CARROCERIA ABERTA                                    0                           480000                            30000                                    0                                        0                                      0                                      0             510000          5                5               60                            8500                     OK                          OK                           NaN                              NaN                         OK                           NaN                              NaN                CONTRATO OK
+8                             8            REGULAR  SP - PRUDENTE - RESERVA  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           289             SERVIÇO  NRQ7727  VEÍCULO  MERCEDES-BENZ           ATEGO 2425                                             CAMINHÃO / CACAMBA BASCULANTE / GARRA PALFINGER C 80Z                                    0                           500000                            80000                               397000                                        0                                      0                                      0             977000          5                5               60                    16283.333333                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+9                             9            REGULAR  SP - PRUDENTE - RESERVA  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           290             SERVIÇO  NRV7727  VEÍCULO  MERCEDES-BENZ           ATEGO 2425                                          CAMINHÃO / CACAMBA BASCULANTENTE - GARRA PALFINGER C 80Z                                    0                           500000                            80000                               397000                                        0                                      0                                      0             977000          5                5               60                    16283.333333                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+10                           10            REGULAR  SP - PRUDENTE - RESERVA  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           434             SERVIÇO  OON3B85  VEÍCULO          VOLVO          VM 270 6X2R                                         CAMINHÃO / CACAMBA BASCULANTENTE - GARRA PALFINGER M 100L                                    0                           500000                            80000                               404500                                        0                                      0                                      0             984500          5                5               60                    16408.333333                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+11                           11            REGULAR  SP - PRUDENTE - RESERVA  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           435             SERVIÇO  FBU7329  VEÍCULO          VOLVO          VM 330 6X2R                     CAMINHÃO / CACAMBA NÃO BASCULANTE INDUSPLAN - GARRA TRASEIRO PALFINGER M 100L                                    0                           540000                            40000                               582000                                        0                                      0                                      0            1162000          5                5               60                    19366.666667                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+12                           12            REGULAR  SP - PRUDENTE - RESERVA  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           295             SERVIÇO  FJQ5A08  VEÍCULO           FORD         CARGO 2431 L                     CAMINHÃO / CACAMBA NÃO BASCULANTE INDUSPLAN - GARRA TRASEIRO PALFINGER M 100L                                    0                           500000                            40000                               582000                                        0                                      0                                      0            1122000          5                5               60                           18700                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+13                           13            REGULAR        MS - CAMPO GRANDE  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           411             SERVIÇO  GHI3A74  VEÍCULO          VOLVO          VM 330 6X2R  CAMINHÃO / CACAMBA NÃO BASCULANTE INDUSPLAN - GARRA TRASEIRO PALFINGER M 100L / ELETROIMA ZOLOAR                                    0                           540000                            40000                               582000                                        0                                      0                                      0            1162000          5                5               60                    19366.666667                    NÃO                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+14                           14            REGULAR             PR - MARINGÁ  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           308             SERVIÇO  GGE5059  VEÍCULO           FORD         CARGO 2431 L  CAMINHÃO / CACAMBA NÃO BASCULANTE INDUSPLAN - GARRA TRASEIRO PALFINGER M 100L / ELETROIMA ZOLOAR                                    0                           500000                            40000                               582000                                        0                                      0                                      0            1122000          5                5               60                           18700                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+15                           15            REGULAR            MS - DOURADOS  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           281             SERVIÇO  TKI2E74  VEÍCULO          VOLVO          VM 330 6X2R                                                                CAMINHÃO / ROLLON ROLLOF G25 IMAVI                                    0                                0                                0                                    0                                        0                                      0                                      0             550000          -                -                -                     9166.666667                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+16                           16            REGULAR        MS - CAMPO GRANDE  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           303             SERVIÇO  GDG8E75  VEÍCULO          VOLVO          VM 330 6X2R                                      CAMINHÃO / ROLLON ROLLOFF - BUSA G25 - GARRA PALFINGER C 80Z                                    0                           540000                           125000                               397000                                        0                                      0                                      0            1062000          5                5               60                           17700                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+17                           17            REGULAR            MS - DOURADOS  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           279             SERVIÇO  BKW9I57  VEÍCULO          VOLVO          VM 330 6X2R                                      CAMINHÃO / ROLLON ROLLOFF - BUSA G25 - GARRA PALFINGER C 80Z                                    0                           540000                           125000                               397000                                        0                                      0                                      0            1062000          5                5               60                           17700                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+18                           18            REGULAR            PR - LONDRINA  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           306             SERVIÇO  GDA9J63  VEÍCULO          VOLVO          VM 330 6X2R                                      CAMINHÃO / ROLLON ROLLOFF - BUSA G25 - GARRA PALFINGER C 80Z                                    0                           540000                           125000                               397000                                        0                                      0                                      0            1062000          5                5               60                           17700                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+19                           19            REGULAR             PR - MARINGÁ  RSE para G&S correspondente  G&S para G3S correspondente               CTE           RSE           294             SERVIÇO  BZL7H95  VEÍCULO          VOLVO          VM 330 6X2R                                      CAMINHÃO / ROLLON ROLLOFF - BUSA G25 - GARRA PALFINGER C 80Z                                    0                           540000                           125000                               397000                                        0                                      0                                      0            1062000          5                5               60                           17700                     OK                          OK                           NaN                                -                         OK                           NaN                                -                CONTRATO OK
+--- Ultimas 8 linhas ---
+      0    1    2    3    4    5    6    7    8    9    10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25   26   27   28   29   30   31   32   33
+94   NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+95   NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+96   NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+97   NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+98   NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+99   NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+100  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN
+101  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN    0
+Linhas com mais preenchimento: [0, 8, 9, 10, 11]
+
+================================================================================
+ABA: PARÂMETROS
+Dimensoes: 43 linhas x 10 colunas
+--- Primeiras 20 linhas ---
+     0                                                                  1                   2                      3             4                    5           6            7            8                              9
+0   ID                                               MÁQUINA + IMPLEMENTO  LOCAÇÃO OU SERVIÇO  LOCAÇÃO FIXA E MENSAL  HORA-MAQUINA  TONELADA PROCESSADA  DIAS / MÊS  HORAS / DIA  HORAS / MÊS  CAPACIDADE DE PRODUÇÃO (100%)
+1    1                         ESCAVADEIRA / GARRA CHB / ELETROIMA ZOLOAR             SERVIÇO                      -           400                    -          22            7          154                          61600
+2    2                                        ESCAVADEIRA / GARRA DINAMAC             SERVIÇO                      -           400                    -          22            7          154                          61600
+3    3                     ESCAVADEIRA / GARRA DINAMAC / ELETROIMA ZOLOAR             SERVIÇO                      -           400                    -          22            7          154                          61600
+4    4                                       ESCAVADEIRA / GARRA LIEBHERR             SERVIÇO                      -           512                    -          22            7          154                          78848
+5    5                    ESCAVADEIRA / GARRA LIEBHERR / ELETROIMA ZOLOAR             SERVIÇO                      -           512                    -          22            7          154                          78848
+6    6                              ESCAVADEIRA / PENEIRA ITALIANA MB S16             SERVIÇO                      -           298                    -          22            7          154                          45892
+7    7                                       ESCAVADEIRA / PENEIRA MB S18             SERVIÇO                      -           298                    -          22            7          154                          45892
+8    8                                        ESCAVADEIRA / TESOURA ARDEN             SERVIÇO                      -        342.88                    -          22            7          154                       52803.52
+9    9                                          ESCAVADEIRA / TESOURA VTN             SERVIÇO                      -        342.88                    -          22            7          154                       52803.52
+10  10  ESCAVADEIRA LIEBHERR LH30M COM 1 GARRA - MAIS 2 GARRAS ADICIONAIS             SERVIÇO                      -        512.63                    -          22            7          154                       78945.02
+11  11                                                       PRENSA 30X30             LOCAÇÃO                      -           760                    -          22            7          154                         117040
+12  12                                                       PRENSA 40X40             LOCAÇÃO                      -           760                    -          22            7          154                         117040
+13  13                                                       PRENSA 60X60             LOCAÇÃO                      -           760                    -          22            7          154                         117040
+14  14                                               PRENSA MÓVEL JCH200M             SERVIÇO                      -           760                    -          22            7          154                         117040
+15  15                                             PRENSA SEMIFIXA JCG600             LOCAÇÃO           39058.333333             0                    -           -            -            -                   39058.333333
+16  16                                                 PRENSA FIXA JCG800             LOCAÇÃO               69531.25             -                    -           -            -            -                       69531.25
+17  17                          BALANÇA RODOVIARIA - CONCRETO - 21 METROS             LOCAÇÃO            2083.333333             -                    -           -            -            -                    2083.333333
+18  18                          BALANÇA RODOVIARIA - METALICA - 21 METROS             LOCAÇÃO            2083.333333             -                    -           -            -            -                    2083.333333
+19  19                                 CAMINHÃO / 3/4 - CARROCERIA ABERTA             LOCAÇÃO                   8500             -                    -           -            -            -                           8500
+--- Ultimas 8 linhas ---
+     0                                 1        2             3  4  5  6  7  8             9
+35  35               ESCAVADEIRA / GARRA  SERVIÇO   7433.333333  -  -  -  -  -   7433.333333
+36  36  JULIETA ROLLON ROLLOFF - 3 EIXOS  SERVIÇO   2166.666667  -  -  -  -  -   2166.666667
+37  37      MANIPULADOR / GARRA LIEBHERR  SERVIÇO  20833.333333  -  -  -  -  -  20833.333333
+38  38           MÁQUINA CORTADEIRA - C4  LOCAÇÃO    833.333333  -  -  -  -  -    833.333333
+39  39     MÁQUINA DOBRADEIRA - P3 2V-2D  LOCAÇÃO    833.333333  -  -  -  -  -    833.333333
+40  40        MÁQUINA ESTRIBADEIRA ACO 8  LOCAÇÃO          6500  -  -  -  -  -          6500
+41  41                PRENSA FIXA JCG800  LOCAÇÃO      69531.25  -  -  -  -  -      69531.25
+42  42                            TILTER  LOCAÇÃO          7500  -  -  -  -  -          7500
+Linhas com mais preenchimento: [0, 1, 2, 3, 4]
+
+================================================================================
+ABA: MEDIÇÕES PARA NFS - G&S
+Dimensoes: 47 linhas x 17 colunas
+--- Primeiras 20 linhas ---
+     0                                                1        2                         3                   4                      5             6                    7           8                    9                  10               11           12           13                   14               15   16
+0    ID                             MÁQUINA + IMPLEMENTO    PLACA               LOCALIZAÇÃO  LOCAÇÃO OU SERVIÇO  LOCAÇÃO FIXA E MENSAL  HORA-MAQUINA  TONELADA PROCESSADA  DIAS / MÊS          COMPETÊNCIA  HORIMETRO INICIAL  HORIMETRO FINAL  HORAS / DIA  HORAS / MÊS  TONELADA PROCESSADA  VALOR A FATURAR  NaN
+1     1       ESCAVADEIRA / GARRA CHB / ELETROIMA ZOLOAR  EHH0008             PR - LONDRINA             SERVIÇO                      -           400                    -          20  2026-04-30 00:00:00             4502.4           4531.4            3           29                    -            11600  NaN
+2     2                      ESCAVADEIRA / GARRA DINAMAC  EHH0007    SP - PRUDENTE - SUCATA             SERVIÇO                      -           400                    -          20  2026-04-30 00:00:00                NaN             51.8            3           60                    -            24000  NaN
+3     3   ESCAVADEIRA / GARRA DINAMAC / ELETROIMA ZOLOAR  EHH0004  PR - MARINGÁ - CID. ALTA             SERVIÇO                      -           400                    -          20  2026-04-30 00:00:00             9314.2           9420.6            3        106.4                    -          42560.0  NaN
+4     4                     ESCAVADEIRA / GARRA LIEBHERR  EHL0014              PR - MARINGÁ             SERVIÇO                      -           512                    -          20  2026-04-30 00:00:00            16086.5            16238            3        151.5                    -            77568  NaN
+5     5  ESCAVADEIRA / GARRA LIEBHERR / ELETROIMA ZOLOAR  EHL0043              PR - MARINGÁ             SERVIÇO                      -           512                    -          20  2026-04-30 00:00:00              10641            10761            3          120                    -            61440  NaN
+6     6  ESCAVADEIRA / GARRA LIEBHERR / ELETROIMA ZOLOAR  EHH0038         MS - CAMPO GRANDE             SERVIÇO                      -           512                    -          20  2026-04-30 00:00:00             5334.4           5481.2            3        146.8                    -          75161.6  NaN
+7     7  ESCAVADEIRA / GARRA LIEBHERR / ELETROIMA ZOLOAR  EHH0036             MS - DOURADOS             SERVIÇO                      -           512                    -          20  2026-04-10 00:00:00               5513             5632            3          119                    -            60928  NaN
+8     8  ESCAVADEIRA / GARRA LIEBHERR / ELETROIMA ZOLOAR  EHH0040             PR - LONDRINA             SERVIÇO                      -           512                    -          20  2026-04-11 00:00:00             6099.5           6209.2            3        109.7                    -          56166.4  NaN
+9     9  ESCAVADEIRA / GARRA LIEBHERR / ELETROIMA ZOLOAR  EHH0039              PR - MARINGÁ             SERVIÇO                      -           512                    -          20  2026-04-12 00:00:00             1589.8           1763.1            3        173.3                    -          88729.6  NaN
+10   10            ESCAVADEIRA / PENEIRA ITALIANA MB S16  EHH0002             PR - LONDRINA             SERVIÇO                      -           298                    -          20  2026-04-13 00:00:00              10407          10418.3            3         11.3                    -           3367.4  NaN
+11   11                        ESCAVADEIRA / TESOURA VTN  EHH0003             MS - DOURADOS             SERVIÇO                      -        342.88                    -          22  2026-04-14 00:00:00            13540.7          13562.5            7         21.8                    -         7474.784  NaN
+12   12                             PRENSA MÓVEL JCH200M  QXH2G14  SP - SELETIVA - VARIAVEL             SERVIÇO                      -             -                  100           -  2026-04-15 00:00:00                NaN              NaN            -            -                275.4          27540.0  NaN
+13   13                             PRENSA MÓVEL JCH200M  PHH0062  SP - SELETIVA - VARIAVEL             SERVIÇO                      -             -                  100           -  2026-04-16 00:00:00                NaN              NaN            -            -              1891.25           189125  NaN
+14   14                           ESCAVADEIRA  GARRA CHB  EHH0006              PR - MARINGÁ             SERVIÇO                      -           400                    -          20  2026-04-17 00:00:00             9468.9           9551.3            3         82.4                    -          32960.0  NaN
+15   15                              ESCAVADEIRA / GARRA  EHH0019         MS - CAMPO GRANDE             SERVIÇO                      -           400                    -          20  2026-04-18 00:00:00            13132.3          13205.9            3         73.6                    -          29440.0  NaN
+16   16                     MANIPULADOR / GARRA LIEBHERR  EHL0042             MS - DOURADOS             SERVIÇO                      -           512                    -          20  2026-04-19 00:00:00               4999             5098            3           99                    -            50688  NaN
+17  NaN       ESCAVADEIRA / GARRA CHB / ELETROIMA ZOLOAR  EHH0008             PR - LONDRINA             SERVIÇO                      -           400                    -          20  2026-05-01 00:00:00             4531.4           4568.8            3         37.4                    -          14960.0  NaN
+18  NaN                      ESCAVADEIRA / GARRA DINAMAC  EHH0007    SP - PRUDENTE - SUCATA             SERVIÇO                      -           400                    -          20  2026-05-02 00:00:00               51.8               74            3         22.2                    -           8880.0  NaN
+19  NaN   ESCAVADEIRA / GARRA DINAMAC / ELETROIMA ZOLOAR  EHH0004  PR - MARINGÁ - CID. ALTA             SERVIÇO                      -           400                    -          20  2026-05-03 00:00:00             9420.6           9420.6            3            0                    -                0  NaN
+--- Ultimas 8 linhas ---
+     0                    1             2    3    4    5    6    7    8    9    10   11   12   13      14       15                                                  16
+39  NaN  Emissão CTE 03/2026  G&S Prudente  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  41 CTE  82610.8  No mês 3 foi emitido referente a todas as coletas?
+40  NaN  Emissão CTE 03/2026  G&S Dourados  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  55 CTE   110585                                                 NaN
+41  NaN  Emissão CTE 03/2026  G&S Londrina  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN       0        0                                                 NaN
+42  NaN  Emissão CTE 03/2026   G&S Maringa  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  69 CTE  87531.2                                                 NaN
+43  NaN                  NaN           NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN     NaN      NaN                                                 NaN
+44  NaN                  NaN           NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN     NaN      NaN                                                 NaN
+45  NaN                  NaN           NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN     NaN      NaN                                                 NaN
+46  NaN                  NaN           NaN  NaN  NaN  NaN  NaN  NaN       NaN  NaN  NaN  NaN  NaN     NaN      NaN                                                 NaN
+Linhas com mais preenchimento: [0, 1, 3, 4, 5]
+
+================================================================================
+ABA: RESUMO 1
+Dimensoes: 47 linhas x 2 colunas
+--- Primeiras 20 linhas ---
+                              0                                1
+0             STATUS DO VEÍCULO                           (Tudo)
+1                          TIPO                           (Tudo)
+2            LOCAÇÃO OU SERVIÇO                           (Tudo)
+3                           NaN                              NaN
+4   Unidade Operacional > Ativo   VALOR DA LOCAÇÃO (DEPRECIAÇÃO)
+5          ARCELOR - PIRACICABA                            47000
+6          RSE para G&S Barueri                            47000
+7                G3S - Filial 5                     53833.333333
+8                RSE para G3S 5                     53833.333333
+9             MS - CAMPO GRANDE                     79033.333333
+10  RSE para G&S correspondente                          76950.0
+11  RSE para G3S correspondente                      2083.333333
+12                MS - DOURADOS                           113300
+13  RSE para G&S correspondente                            67825
+14  RSE para G3S correspondente                            45475
+15                PR - LONDRINA                     46316.666667
+16  RSE para G&S correspondente                     44233.333333
+17  RSE para G3S correspondente                      2083.333333
+18                 PR - MARINGÁ                    216647.916667
+19  RSE para G&S correspondente                    135033.333333
+--- Ultimas 8 linhas ---
+                              0              1
+39     SP - SELETIVA (variável)  107333.333333
+40         RSE para G&S Barueri  107333.333333
+41                          RSE   72158.333333
+42  RSE para G&S correspondente          63825
+43  RSE para G3S correspondente    8333.333333
+44      SP - PRUDENTE - SUCATA     2166.666667
+45  RSE para G&S correspondente    2166.666667
+46                  Total Geral      1292062.5
+Linhas com mais preenchimento: [0, 1, 2, 4, 5]
+
+================================================================================
+ABA: RESUMO 2
+Dimensoes: 43 linhas x 8 colunas
+--- Primeiras 20 linhas ---
+                       0                                    1          2          3                                      4         5         6           7
+0                    NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+1    2026-04-01 00:00:00                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+2                    NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+3      RSE a receber G3S                               G3S 01     G3S 03     G3S 04                                 G3S 05    G3S 06    G3S 08       TOTAL
+4                    NaN                              2083.33      45475  155614.59                               53833.32  81614.58   2083.33   340704.15
+5                    NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+6      RSE a receber G&S                               G&S 01     G&S 03     G&S 04                                 G&S 05    G&S 06    G&S 07       TOTAL
+7                    NaN                               168925      67825  141691.68                              240016.67  76950.01  44233.34    739641.7
+8                    NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+9   RSE a receber GERDAU  LOCAÇÃO DE PRENSA JCH 200 - EQO6E99        NaN        NaN                                    NaN       NaN       NaN       38000
+10                   NaN  LOCAÇÃO DE PRENSA JCH 200 - EWU6041        NaN        NaN                                    NaN       NaN       NaN       38000
+11                   NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+12                   NaN                                  NaN        NaN        NaN           TOTAL FATURAS -  LOCAÇÃO RSE       NaN       NaN  1156345.85
+13                   NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+14                   NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+15                   NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+16     G&S a receber G3S                               G3S 01     G3S 03     G3S 04                                 G3S 06    G3S 08    G3S 11       TOTAL
+17                   NaN                             104601.6  139065.78      24000                               358447.6  122473.8     90160   838748.78
+18                   NaN                                  NaN        NaN        NaN                                    NaN       NaN       NaN         NaN
+19                   NaN                                  NaN        NaN        NaN   TOTAL NOTAS SERVIÇOS -  MEDIÇÕES G&S       NaN       NaN   838748.78
+--- Ultimas 8 linhas ---
+                    0         1          2         3                                      4        5       6           7
+35                NaN       NaN        NaN       NaN           TOTAL FATURAS -  LOCAÇÃO RSE      NaN     NaN  1184362.52
+36                NaN       NaN        NaN       NaN                                    NaN      NaN     NaN         NaN
+37                NaN       NaN        NaN       NaN                                    NaN      NaN     NaN         NaN
+38                NaN       NaN        NaN       NaN                                    NaN      NaN     NaN         NaN
+39  G&S a receber G3S    G3S 01     G3S 03    G3S 04                                 G3S 06   G3S 08  G3S 11       TOTAL
+40                NaN  146191.6  162578.61  169123.2                               234112.6  82450.2       0   794456.21
+41                NaN       NaN        NaN       NaN                                    NaN      NaN     NaN         NaN
+42                NaN       NaN        NaN       NaN   TOTAL NOTAS SERVIÇOS -  MEDIÇÕES G&S      NaN     NaN   794456.21
+Linhas com mais preenchimento: [3, 6, 16, 26, 29]
+
+================================================================================
+ABA: VALIDACÃO RECEITAS G&S  04.2026
+Dimensoes: 24 linhas x 9 colunas
+--- Primeiras 20 linhas ---
+                                                            0             1    2                            3    4    5           6                      7    8
+0                                                         G&S           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+1                                         Emissão CTE 04/2026  G&S Prudente  CTE                      66621.3  NaN  NaN         NaN                    NaN  NaN
+2                                         Emissão CTE 04/2026  G&S Dourados  CTE                     123051.1  NaN  NaN         NaN                    NaN  NaN
+3                                         Emissão CTE 04/2026   G&S Maringa  CTE                      68239.7  NaN  NaN         NaN                    NaN  NaN
+4                                                         NaN           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+5                                                CTEs 04/2026           NaN  NaN                          NaN  NaN  NaN   257912.10                    CTE  NaN
+6   Notas Fiscais de Serviços (Clientes Externos) G&S Barueri           NaN  NaN                          NaN  NaN  NaN   624595.97  NFS Clientes Externos  NaN
+7                  Notas Fiscais de Serviços (G3S - Medições)           NaN  NaN                          NaN  NaN  NaN   838748.78     NFS G3S - Medições  NaN
+8                                                         NaN           NaN  NaN  Faturamento Total - 04/2026  NaN  NaN  1721256.85                    NaN  NaN
+9                                                         NaN           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+10                                                        NaN           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+11                                                        NaN           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+12                                                        RSE           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+13                    Faturas de Locação (Clientes Externos)            NaN  NaN                          NaN  NaN  NaN    93786.02                    NaN  NaN
+14                               Faturas (G3S /G&S- Locações)           NaN  NaN                          NaN  NaN  NaN  1156345.85                    NaN  NaN
+15                                                        NaN           NaN  NaN  Faturamento Total - 04/2026  NaN  NaN  1250131.87                    NaN  NaN
+16                                                        NaN           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+17                                                        NaN           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+18                                                        NaN           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+19       DEMONSTRATIVO DE FATURAMENTO G&S - 1° TRIMESTRE/2026           NaN  NaN                          NaN  NaN  NaN         NaN                    NaN  NaN
+--- Ultimas 8 linhas ---
+                                                       0                        1           2       3           4                 5   6          7    8
+16                                                   NaN                      NaN         NaN     NaN         NaN               NaN NaN        NaN  NaN
+17                                                   NaN                      NaN         NaN     NaN         NaN               NaN NaN        NaN  NaN
+18                                                   NaN                      NaN         NaN     NaN         NaN               NaN NaN        NaN  NaN
+19  DEMONSTRATIVO DE FATURAMENTO G&S - 1° TRIMESTRE/2026                      NaN         NaN     NaN         NaN               NaN NaN        NaN  NaN
+20                                                   NaN                      NaN         NFS     CTE       TOTAL  DEC. FATURAMENTO NaN  DIFERENÇA  NaN
+21                                                   NaN  Faturamento G&S 01/2026   233730.49       0   233730.49         233730.49 NaN          0   OK
+22                                                   NaN  Faturamento G&S 02/2026  1021109.05       0  1021109.05        1021109.05 NaN          0   OK
+23                                                   NaN  Faturamento G&S 03/2026   606258.33  280727   886985.33         886594.33 NaN       -391   **
+Linhas com mais preenchimento: [21, 22, 23, 20, 1]
+
+================================================================================
+ABA: VALIDACÃO RECEITAS G&S  05.2026
+Dimensoes: 25 linhas x 8 colunas
+--- Primeiras 20 linhas ---
+                                                            0             1           2                                3    4    5           6                      7
+0                                                         G&S           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+1                                         Emissão CTE 05/2026  G&S Prudente  TOTAL CTEs                          96420.6  NaN  NaN         NaN                    NaN
+2                                         Emissão CTE 05/2026  G&S Dourados  TOTAL CTEs                         123809.4  NaN  NaN         NaN                    NaN
+3                                         Emissão CTE 05/2026   G&S Maringa  TOTAL CTEs                         118073.5  NaN  NaN         NaN                    NaN
+4                                         Emissão CTE 05/2026  G&S Londrina  TOTAL CTEs                             1251  NaN  NaN         NaN                    NaN
+5                                                         NaN           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+6                                                CTEs 05/2026           NaN         NaN                              NaN  NaN  NaN   339554.50                    CTE
+7   Notas Fiscais de Serviços (Clientes Externos) G&S Barueri           NaN         NaN                              NaN  NaN  NaN   579270.31  NFS Clientes Externos
+8                  Notas Fiscais de Serviços (G3S - Medições)           NaN         NaN                              NaN  NaN  NaN   794456.21     NFS G3S - Medições
+9                                                         NaN           NaN         NaN  Faturamento Total G&S - 05/2026  NaN  NaN  1713281.02                    NaN
+10                                                        NaN           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+11                                                        NaN           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+12                                                        NaN           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+13                                                        RSE           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+14                    Faturas de Locação (Clientes Externos)            NaN         NaN                              NaN  NaN  NaN   158541.49                    NaN
+15                               Faturas (G3S /G&S- Locações)           NaN         NaN                              NaN  NaN  NaN  1108362.50                    NaN
+16                                                        NaN           NaN         NaN  Faturamento Total RSE - 05/2026  NaN  NaN  1266903.99                    NaN
+17                                                        NaN           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+18                                                        NaN           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+19                                                        NaN           NaN         NaN                              NaN  NaN  NaN         NaN                    NaN
+--- Ultimas 8 linhas ---
+                                                       0                        1           2         3           4                 5   6           7
+17                                                   NaN                      NaN         NaN       NaN         NaN               NaN NaN         NaN
+18                                                   NaN                      NaN         NaN       NaN         NaN               NaN NaN         NaN
+19                                                   NaN                      NaN         NaN       NaN         NaN               NaN NaN         NaN
+20  DEMONSTRATIVO DE FATURAMENTO G&S - 2° TRIMESTRE/2026                      NaN         NaN       NaN         NaN               NaN NaN         NaN
+21                                                   NaN                      NaN         NFS       CTE       TOTAL  DEC. FATURAMENTO NaN   DIFERENÇA
+22                                                   NaN  Faturamento G&S 04/2026  1463344.75  257912.1  1721256.85                 0 NaN -1721256.85
+23                                                   NaN  Faturamento G&S 05/2026           0         0           0                 0 NaN           0
+24                                                   NaN  Faturamento G&S 06/2026           0         0           0                 0 NaN           0
+Linhas com mais preenchimento: [22, 23, 24, 21, 1]
+
+================================================================================
+ABA: OBSERVAÇÕES
+Dimensoes: 28 linhas x 1 colunas
+--- Primeiras 20 linhas ---
+                                                                                                                                                     0
+0                                                                                                                         Análise Previa de Resultados
+1   Enviar para Prado e Ossucci, Faturas, Notas de Serviços e CTEs emitidos (e/ou projeção) pela G&S, mês 04/2026, para conferência de possível Lucro.
+2                                                                                       Despesas, Notas de Compras e etc .. Pegam diretamente no Sagi?
+3                                                                                              Obs: G&S dar lucro! (Lucro Real) - Lucro somente na RSE
+4                                                                                                                                                  NaN
+5                                                                                                  Marcondes 22/04 - Validação de Ativos para Cobrança
+6                                                                                               Verificar quais caminhões (placas) vão ser utilizados?
+7                                                                                                         Verificar caminhões reservas (vai precisar?)
+8                                                                                    O que não for utilizar trazer para Prudente (para possivel venda)
+9                                                                                                                                                  NaN
+10                                                                                                                                                 NaN
+11                                                                                                                                   GISELE E ANDRESSA
+12                                                                                          1 - Prensa Movel - Validar periodo de fechamento (26 a 25)
+13                                                                                   2 - Mensalmente vir o volume R$ 100,00 / tonelada com emissao NFS
+14                                                                                                                                                 NaN
+15                                                                                                                      Escavadeira por hora utilizada
+16                                                                                            Vir por hora - Unidade que será faturada (Unid de Venda)
+17                                                                         Pagar de acordo com o controle da produção (encima é o calculo de comissao)
+18                                                                                                               Quando ficar no patio tambem calcular
+19                                                                                                        Carragemento direto + processamento em pátio
+--- Ultimas 8 linhas ---
+                                                                                                                                                        0
+20  Entendimento: G3S é um Cliente, como se fosse externo (Mobilizou ou Desmobilizou vir contrato, reajuste, aditivo, mudança de hora) - Tudo Formalizado
+21                                                                                                                Todo controle de contratos e Financeiro
+22                                                                                                                                                    NaN
+23                                Acrescentar esses novos contratos no controle de faturamento das maquinas que é feito atualmente para clientes externos
+24                                                                                                                                       Hora/Valor/Prazo
+25                                                                                                                                                    NaN
+26                                                                                                                           Fechamento Medições - Dia 25
+27                                                                           Dia 26 - Fechamento Gisele - Envio a Andressa (Todos os relatorios por hora)
+Linhas com mais preenchimento: [0, 1, 2, 3, 5]

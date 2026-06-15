@@ -1,0 +1,17 @@
+EHH0002 total=11 limpos=3 bruta=1.51 limpa=11.62
+EHH0003 total=3 limpos=3 bruta=9.49 limpa=9.49
+EHH0004 total=15 limpos=7 bruta=9.44 limpa=10.82
+EHH0006 total=14 limpos=11 bruta=14.33 limpa=14.48
+EHH0007 total=16 limpos=11 bruta=15.61 limpa=10.75
+EHH0008 total=9 limpos=9 bruta=11.21 limpa=11.21
+EHH0009 total=7 limpos=7 bruta=18.91 limpa=18.91
+EHH0019 total=18 limpos=16 bruta=16.54 limpa=14.79
+EHH0036 total=33 limpos=29 bruta=13.5 limpa=14.15
+EHH0038 total=39 limpos=38 bruta=14.99 limpa=14.94
+EHH0039 total=33 limpos=27 bruta=7.97 limpa=11.39
+EHH0040 total=26 limpos=26 bruta=11.59 limpa=11.59
+EHL0014 total=50 limpos=40 bruta=10.51 limpa=16.42
+EHL0028 total=31 limpos=27 bruta=8.92 limpa=13.6
+EHL0042 total=20 limpos=18 bruta=11.24 limpa=12.45
+EHL0043 total=11 limpos=8 bruta=6.82 limpa=5.9
+EHL0070 total=12 limpos=10 bruta=17.45 limpa=15.01

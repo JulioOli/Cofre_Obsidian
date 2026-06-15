@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import re
 from dataclasses import dataclass
+from calendar import monthrange
 from datetime import date, datetime
 from pathlib import Path
 
@@ -27,6 +28,7 @@ REFS = ROOT / "02-Referencias"
 
 _CC_LINE = re.compile(r"^\s*(\d+(?:\.\d+)*)\s*;")
 _LEAF_CC = re.compile(r"^(\d+(?:\.\d+)*)\.?\s+(.+)$")
+_PLACA_COD_CC = re.compile(r"^(\S+)\s+(\d+(?:\.\d+)+)\s*$")
 
 # Coluna Segmento por código n1 (X.Y) — igual ao uso no FECHAMENTO_ODBC / folha corrigida.
 SEGMENTO_POR_N1: dict[str, str] = {
@@ -78,6 +80,9 @@ FILIAL_POR_N2_COD: dict[str, str] = {
     "1.7.7": "G&S MARINGA",
     "1.7.8": "G&S PRUDENTE",
     "1.7.2": "G&S PRUDENTE",
+    "1.7.9": "G&S PRUDENTE",
+    "1.7.10": "G&S PRUDENTE",
+    "1.6.3": "RSE",
     "1.8.1": "G3S PRUDENTE",
 }
 
@@ -116,6 +121,12 @@ class ParametrosFolha:
 def _norm_desc(s: str) -> str:
     s = re.sub(r"\s+", " ", s.strip())
     return s
+
+
+def _descr_sagi_placeholder(desc: str) -> bool:
+    """SAGI usa XXXXXX (ou vazio) quando o ativo ainda não foi nomeado no cadastro."""
+    d = _norm_desc(desc).upper()
+    return not d or d == "XXXXXX" or set(d) == {"X"}
 
 
 def carregar_mapa_cc_sagi(path: Path) -> dict[str, str]:
@@ -161,9 +172,21 @@ def parse_n4_entrada(valor: str, mapa_cc: dict[str, str]) -> tuple[str, str]:
     if parsed is not None:
         return parsed
     cod = texto.rstrip(".")
-    if not re.fullmatch(r"\d+(?:\.\d+)*", cod):
-        raise ValueError(f"n4 inválido (esperado código ou 'COD DESC'): {valor!r}")
-    return cod, mapa_cc.get(cod, "")
+    if re.fullmatch(r"\d+(?:\.\d+)*", cod):
+        return cod, mapa_cc.get(cod, "")
+    # Relatórios de combustível: "PLACA 1.2.2.5.1" — placa vira descrição do n4.
+    m_placa_cod = _PLACA_COD_CC.match(texto)
+    if m_placa_cod:
+        placa, cod = m_placa_cod.group(1), m_placa_cod.group(2)
+        sagi = mapa_cc.get(cod, "")
+        if sagi and not _descr_sagi_placeholder(sagi):
+            return cod, sagi
+        return cod, placa
+    m_cod_final = re.search(r"(\d+(?:\.\d+)+)\s*$", texto)
+    if m_cod_final:
+        cod = m_cod_final.group(1)
+        return cod, mapa_cc.get(cod, "")
+    raise ValueError(f"n4 inválido (esperado código ou 'COD DESC'): {valor!r}")
 
 
 def tamanhos_prefixo_niveis(num_partes: int) -> tuple[int, int, int, int]:
@@ -186,10 +209,12 @@ def descricao_no_nivel(
     mapa: dict[str, str],
 ) -> str:
     sagi = mapa.get(cod_nivel, "")
+    if sagi and not _descr_sagi_placeholder(sagi):
+        return sagi
+    if cod_nivel == cod_folha and descr_folha:
+        return descr_folha
     if sagi:
         return sagi
-    if cod_nivel == cod_folha:
-        return descr_folha
     return ""
 
 
@@ -215,7 +240,11 @@ def montar_linha_fechamento(
 ) -> dict[str, object]:
     cod_folha, descr_folha = parse_n4_entrada(rotulo_n4, mapa_cc)
     cod_folha = normalizar_codigo_cc(cod_folha)
-    descr_folha = mapa_cc.get(cod_folha) or descr_folha
+    sagi_n4 = mapa_cc.get(cod_folha, "")
+    if sagi_n4 and not _descr_sagi_placeholder(sagi_n4):
+        descr_folha = sagi_n4
+    elif not descr_folha and sagi_n4:
+        descr_folha = sagi_n4
     partes = cod_folha.split(".")
     t1, t2, t3, t4 = tamanhos_prefixo_niveis(len(partes))
 
@@ -290,13 +319,54 @@ def _valor_numerico(val) -> float:
     return parse_valor_br(val)
 
 
-def carregar_entrada(path: Path) -> pd.DataFrame:
-    if path.suffix.lower() in {".xlsx", ".xls"}:
-        df = pd.read_excel(path, sheet_name=0, dtype=object)
-    else:
-        df = pd.read_csv(path, sep=";", encoding="latin-1", dtype=str)
-    df = df.loc[:, [c for c in df.columns if str(c).strip() and not str(c).startswith("Unnamed")]]
+_MES_PT: dict[str, int] = {
+    "janeiro": 1,
+    "fevereiro": 2,
+    "marco": 3,
+    "março": 3,
+    "abril": 4,
+    "maio": 5,
+    "junho": 6,
+    "julho": 7,
+    "agosto": 8,
+    "setembro": 9,
+    "outubro": 10,
+    "novembro": 11,
+    "dezembro": 12,
+}
 
+
+def competencia_da_aba(nome_aba: str) -> tuple[int, int] | None:
+    """Ex.: 'Maio 2026' -> (2026, 5). Retorna None se o nome não tiver mês/ano reconhecíveis."""
+    partes = re.split(r"\s+", str(nome_aba).strip())
+    if len(partes) < 2:
+        return None
+    mes_txt = partes[0].lower()
+    if mes_txt not in _MES_PT:
+        return None
+    try:
+        ano = int(partes[1])
+    except ValueError:
+        return None
+    return ano, _MES_PT[mes_txt]
+
+
+def ultimo_dia_mes(ano: int, mes: int) -> date:
+    return date(ano, mes, monthrange(ano, mes)[1])
+
+
+def data_pagamento_padrao(data_nf: date) -> date:
+    if data_nf.month == 12:
+        return date(data_nf.year + 1, 1, 8)
+    return date(data_nf.year, data_nf.month + 1, 8)
+
+
+def titulo_competencia(prefixo: str, ano: int, mes: int) -> str:
+    return f"{prefixo}_{mes:02d}_{ano}"
+
+
+def _normalizar_colunas_entrada(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.loc[:, [c for c in df.columns if str(c).strip() and not str(c).startswith("Unnamed")]]
     col_cc = next(
         (
             c
@@ -309,6 +379,76 @@ def carregar_entrada(path: Path) -> pd.DataFrame:
     )
     col_vl = next((c for c in df.columns if "valor" in str(c).lower()), df.columns[1])
     return df.rename(columns={col_cc: "n4_CC", col_vl: "valor_nf"})
+
+
+def carregar_entrada(path: Path, sheet: str | int | None = None) -> pd.DataFrame:
+    if path.suffix.lower() in {".xlsx", ".xls"}:
+        df = pd.read_excel(path, sheet_name=0 if sheet is None else sheet, dtype=object)
+    else:
+        df = pd.read_csv(path, sep=";", encoding="latin-1", dtype=str)
+    return _normalizar_colunas_entrada(df)
+
+
+def carregar_todas_abas(path: Path) -> list[tuple[str, pd.DataFrame, tuple[int, int] | None]]:
+    xl = pd.ExcelFile(path)
+    abas: list[tuple[str, pd.DataFrame, tuple[int, int] | None]] = []
+    for nome in xl.sheet_names:
+        df = _normalizar_colunas_entrada(pd.read_excel(path, sheet_name=nome, dtype=object))
+        abas.append((nome, df, competencia_da_aba(nome)))
+    abas.sort(
+        key=lambda item: (
+            item[2] if item[2] is not None else (9999, 99),
+            item[0],
+        )
+    )
+    return abas
+
+
+def prefixo_titulo(titulo: str) -> str:
+    if "_" in titulo:
+        return titulo.split("_", 1)[0]
+    return titulo
+
+
+def observacao_competencia(
+    data_nf: date,
+    observacao_cli: str | None,
+    cod_conta: str,
+) -> str:
+    if observacao_cli is not None:
+        return observacao_cli.replace("{competencia}", data_nf.strftime("%m/%Y"))
+    if cod_conta == CONTA_FOLHA_COD:
+        return f"Processamento de Folha {data_nf.strftime('%d/%m/%Y')}"
+    return f"Custo combustível {data_nf.strftime('%m/%Y')} por máquina"
+
+
+def parametros_folha_competencia(
+    args: argparse.Namespace,
+    ano: int,
+    mes: int,
+    cod_conta_descr: str,
+) -> ParametrosFolha:
+    data_nf = ultimo_dia_mes(ano, mes)
+    data_pagamento = (
+        _parse_data(args.data_pagamento)
+        if args.data_pagamento_fixa
+        else data_pagamento_padrao(data_nf)
+    )
+    prefixo = args.titulo_prefix or prefixo_titulo(args.titulo)
+    return ParametrosFolha(
+        titulo=titulo_competencia(prefixo, ano, mes),
+        observacao=observacao_competencia(data_nf, args.observacao, args.cod_conta),
+        credor=args.credor,
+        origem=args.origem,
+        sistema=args.sistema,
+        dados_auxiliares=args.dados_auxiliares,
+        data_nf=data_nf,
+        data_pagamento=data_pagamento,
+        multiplicador_valor=args.multiplicador_valor,
+        cod_conta=args.cod_conta,
+        conta=args.conta,
+        cod_conta_descr=cod_conta_descr,
+    )
 
 
 def _parse_data(s: str) -> date:
@@ -359,8 +499,25 @@ def main() -> None:
         default=None,
         help="Arquivo Excel gerado. Padrão: <entrada>_fechamento.xlsx (ou base_R_fechamento_folha_pagamento.xlsx para a folha).",
     )
+    ap.add_argument(
+        "--sheet",
+        default=None,
+        help="Aba do Excel de entrada (nome ou índice). Padrão: primeira aba.",
+    )
+    ap.add_argument(
+        "--all-sheets",
+        action="store_true",
+        help="Lê todas as abas do Excel e consolida numa única saída. "
+        "Competência (data_nf, titulo, observação) vem do nome da aba (ex.: 'Maio 2026').",
+    )
     ap.add_argument("--sheet-out", default="Fechamento")
     ap.add_argument("--titulo", default="FOPA_04_2026")
+    ap.add_argument(
+        "--titulo-prefix",
+        default=None,
+        help="Com --all-sheets: prefixo do titulo por aba (ex.: COMB -> COMB_05_2026). "
+        "Padrão: parte antes do '_' em --titulo.",
+    )
     ap.add_argument(
         "--observacao",
         default=None,
@@ -372,6 +529,11 @@ def main() -> None:
     ap.add_argument("--dados-auxiliares", default="Processamento de folha")
     ap.add_argument("--data-nf", default="2026-04-30")
     ap.add_argument("--data-pagamento", default="2026-05-08")
+    ap.add_argument(
+        "--data-pagamento-fixa",
+        action="store_true",
+        help="Com --all-sheets: usa --data-pagamento para todas as linhas em vez do dia 8 do mês seguinte.",
+    )
     ap.add_argument(
         "--multiplicador-valor",
         type=float,
@@ -407,46 +569,69 @@ def main() -> None:
     if not args.cc_sagi.exists():
         raise FileNotFoundError(args.cc_sagi.resolve())
 
-    data_nf = _parse_data(args.data_nf)
-    data_pagamento = _parse_data(args.data_pagamento)
-    observacao = (
-        args.observacao
-        if args.observacao is not None
-        else f"Processamento de Folha {data_nf.strftime('%d/%m/%Y')}"
-    )
-
     cod_conta_descr = (
         args.cod_conta_descr
         if args.cod_conta_descr is not None
         else f"{args.cod_conta} {args.conta}".strip()
     )
 
-    folha = ParametrosFolha(
-        titulo=args.titulo,
-        observacao=observacao,
-        credor=args.credor,
-        origem=args.origem,
-        sistema=args.sistema,
-        dados_auxiliares=args.dados_auxiliares,
-        data_nf=data_nf,
-        data_pagamento=data_pagamento,
-        multiplicador_valor=args.multiplicador_valor,
-        cod_conta=args.cod_conta,
-        conta=args.conta,
-        cod_conta_descr=cod_conta_descr,
-    )
-
     mapa_cc = carregar_mapa_cc_sagi(args.cc_sagi)
 
-    df_r = carregar_entrada(input_path)
-
     linhas: list[dict[str, object]] = []
-    for _, row in df_r.iterrows():
-        rot = str(row["n4_CC"]).strip()
-        if not rot or rot.lower() == "nan":
-            continue
-        vl = _valor_numerico(row["valor_nf"])
-        linhas.append(montar_linha_fechamento(len(linhas) + 1, rot, vl, mapa_cc, folha))
+    abas_lidas = 0
+
+    if args.all_sheets:
+        if input_path.suffix.lower() not in {".xlsx", ".xls"}:
+            raise ValueError("--all-sheets só se aplica a arquivos Excel (.xlsx/.xls).")
+        if args.sheet is not None:
+            raise ValueError("Use --sheet ou --all-sheets, não os dois.")
+        for nome_aba, df_r, competencia in carregar_todas_abas(input_path):
+            if competencia is None:
+                raise ValueError(
+                    f"Aba {nome_aba!r} sem competência reconhecível. "
+                    "Esperado nome como 'Maio 2026'."
+                )
+            ano, mes = competencia
+            folha = parametros_folha_competencia(args, ano, mes, cod_conta_descr)
+            abas_lidas += 1
+            for _, row in df_r.iterrows():
+                rot = str(row["n4_CC"]).strip()
+                if not rot or rot.lower() == "nan":
+                    continue
+                vl = _valor_numerico(row["valor_nf"])
+                linhas.append(montar_linha_fechamento(len(linhas) + 1, rot, vl, mapa_cc, folha))
+    else:
+        data_nf = _parse_data(args.data_nf)
+        data_pagamento = _parse_data(args.data_pagamento)
+        observacao = observacao_competencia(data_nf, args.observacao, args.cod_conta)
+        folha = ParametrosFolha(
+            titulo=args.titulo,
+            observacao=observacao,
+            credor=args.credor,
+            origem=args.origem,
+            sistema=args.sistema,
+            dados_auxiliares=args.dados_auxiliares,
+            data_nf=data_nf,
+            data_pagamento=data_pagamento,
+            multiplicador_valor=args.multiplicador_valor,
+            cod_conta=args.cod_conta,
+            conta=args.conta,
+            cod_conta_descr=cod_conta_descr,
+        )
+        sheet_in: str | int | None = args.sheet
+        if sheet_in is not None and str(sheet_in).isdigit():
+            sheet_in = int(sheet_in)
+        df_r = carregar_entrada(input_path, sheet=sheet_in)
+        abas_lidas = 1
+        for _, row in df_r.iterrows():
+            rot = str(row["n4_CC"]).strip()
+            if not rot or rot.lower() == "nan":
+                continue
+            vl = _valor_numerico(row["valor_nf"])
+            linhas.append(montar_linha_fechamento(len(linhas) + 1, rot, vl, mapa_cc, folha))
+
+    if not linhas:
+        raise ValueError("Nenhuma linha gerada. Verifique o arquivo de entrada.")
 
     out_df = pd.DataFrame(linhas)
     cols = _colunas_layout(layout)
@@ -461,7 +646,11 @@ def main() -> None:
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     gravar_fechamento_excel(out_df, output_path, sheet_name=args.sheet_out)
-    print(f"Gravado: {output_path.resolve()} ({len(out_df)} linhas). Layout: {layout.name}")
+    msg_abas = f", {abas_lidas} abas" if args.all_sheets else ""
+    print(
+        f"Gravado: {output_path.resolve()} ({len(out_df)} linhas{msg_abas}). "
+        f"Layout: {layout.name}"
+    )
 
 
 if __name__ == "__main__":

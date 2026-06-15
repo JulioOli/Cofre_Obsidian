@@ -15,7 +15,7 @@ depois, quando estiver na landing page:
 quando chegar nessa vai poder gerar o relatório com o filtro preferido; sempre marcar antes as caixinhas ↓ 
 
 - [x] Exibir Classificação Financeira
-- [x] Exibir Filtros
+- [x] Exibir Centro de Custo.
 
 ___
 [[Guia Sistemas]]

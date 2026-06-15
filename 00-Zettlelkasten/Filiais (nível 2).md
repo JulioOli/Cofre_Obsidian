@@ -5,7 +5,7 @@ tags:
   - centro-de-custo
   - filiais
   - G3S
-atualizado: 08/04/2026
+atualizado: 09/06/2026
 ---
 24/03/2026 - 09:22
 
@@ -28,7 +28,7 @@ atualizado: 08/04/2026
 | Presidente Prudente | 1.2.5      | 2.2.5      | SP     | Altíssima granularidade: 17 veículos + 11 máquinas + Prensa Fixa |
 | Assis               | 1.2.6      | 2.2.6      | SP     | ⚠️ Sem veículos/máquinas cadastrados                             |
 | Campo Grande        | 1.2.7      | 2.2.7      | MS     | 5 veículos + 2 máquinas + Projeto Corumba                        |
-| Maringá Cidade Alta | 1.2.8      | 2.2.8      | PR     | ⚠️ Sem veículos/máquinas cadastrados                             |
+| Maringá Cidade Alta | 1.2.8      | 2.2.8      | PR     | ~={green}Pátio de recebimento de coleta=~ — sem frota própria cadastrada |
 
 ### Detalhe de Ativos — Corporativo Sucata (`1.2.1`)
 
@@ -187,6 +187,14 @@ atualizado: 08/04/2026
 
 ### Assis (`1.2.6`) e Maringá Cidade Alta (`1.2.8`)
 
+#### ~={Titulo}Maringá Cidade Alta=~
+
+~={green}Maringá Cidade Alta=~ (`1.2.8` / `2.2.8`) é um ==pátio destinado a receber coleta== — ponto de recebimento de material coletado, distinto de [[Filiais (nível 2)#Detalhe de Ativos — Maringá Distrito (`1.2.4`)|Maringá Distrito]] (`1.2.4`), que concentra frota e operação de processamento.
+
+Por isso não há veículos nem máquinas cadastrados analiticamente nesta filial: a atividade é de ==recebimento/armazenamento de coleta==, não de operação com ativos próprios no pátio.
+
+#### ~={Titulo}Assis=~
+
 > ⚠️ **Sem ativos cadastrados.** Custos de combustível e manutenção alocados no CC genérico de Logística. Dificulta comparativo de eficiência com outras filiais.
 
 | Departamento | CC Assis | CC Mar. Cid. Alta |
@@ -195,6 +203,8 @@ atualizado: 08/04/2026
 | Comercial | 1.2.6.2 | 1.2.8.2 |
 | Operacional | 1.2.6.3 | 1.2.8.3 |
 | Logística | 1.2.6.4 | 1.2.8.4 |
+
+> Em **Maringá Cidade Alta**, lançamentos de frete de coleta (`6.6.6`) e custos de pátio (`7.6.x`) tendem a aparecer nos departamentos **Operacional** (`1.2.8.3`) e **Logística** (`1.2.8.4`), conforme [[Departamentos (nível 3)]].
 
 ---
 

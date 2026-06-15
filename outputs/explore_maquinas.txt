@@ -1,0 +1,21 @@
+BASE sheets: ['base_maquinas_2025_2026']
+rows: 6425
+cols: ['Divisao', 'n1_cod_centro_custo', 'n1_centro_custo', 'n1_CC', 'n2_cod_centro_custo', 'n2_centro_custo', 'n2_CC', 'n3_cod_centro_custo', 'n3_centro_custo', 'n3_CC', 'n4_cod_centro_custo', 'n4_centro_custo', 'n4_CC', 'MARCA', 'cod_conta', 'conta', 'cod_conta-descr', 'filial', 'titulo', 'valor_nf', 'valor_pago', 'valor_conta', 'observacao', 'data_nf', 'data_pagamento', 'cod_credor_forn_cli_func', 'credor_forn_cli_func', 'Origem', 'Sistema', 'Dados auxiliares', 'Valor Oficial', 'MODELO DE QUEBRA MARCONDES 1', 'MODELO DE QUEBRA MARCONDES 2', 'DE-PARA1', 'DE-PARA2', 'CUSTEIO VARIÁVEL']
+diesel rows: 990
+diesel contas: {'7.1.22': 812, '7.1.4': 178}
+diesel total: -408085.29000000004
+
+n3 unique sample (1.7):
+  ARCELOR - BARRA MANSA/RJ
+  ARCELOR - IRACEMAPOLIS/SP
+  ARCELOR - PIRACICABA/SP
+  ARCELOR - RESENDE/RJ
+  ARCELOR BARRA MANSA RJ
+  ARCELOR RESENDE RJ
+  OPERACIONAL
+  TUPY - JOINVILLE/SC
+
+maquinas unicas: 26
+
+EE cols: ['ID', 'STATUS DO VEÍCULO', 'LOCALIZAÇÃO', 'PRIMEIRA "PERNA"', 'SEGUNDA "PERNA"', 'TERCEIRA "PERNA"', 'PROPRIETÁRIO', 'N.º CONTRATO', 'LOCAÇÃO OU SERVIÇO', 'PLACA', 'TIPO', 'IMPLEMENTO', 'Preço Compra Equipamento 0 fev/2025', 'Preço Compra Veículo 0 fev/2025', 'Preço Rollon+Caçamba 0 fev/2025', 'Preço Implemento 0 Garra 0 fev/2025', 'Preço Implemento 0 Eletroima 0 fev/2025', 'Preço Implemento 0 Tesoura 0 fev/2025', 'Preço Implemento 0 Peneira 0 fev/2025', '∑ Conjunto (Base)', 'VIDA ÚTIL', 'PAYBACK\n(ANOS)', 'PAYBACK (MESES)', 'VALOR DA LOCAÇÃO (DEPRECIAÇÃO)', 'FATURA RSE MARÇO 2026', 'FATURA RSE ABRIL 2026 (1°)', '2° PERNA EMISSAO NFS', 'VALOR DE MEDIÇÕES 04/2026 (NFS)', 'OBSERVAÇÕES CONTROLADORIA']
+EE rows: 44

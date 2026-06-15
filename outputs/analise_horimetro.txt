@@ -1,0 +1,62 @@
+=== EHH0002 ===
+   data_abastecimento  volume_litros  horimetro  horas_trabalhadas  media_lh_evento  media_lh_calculada                                                                               alertas
+0          2026-01-03           94.5     9999.6                0.3       315.000000          315.000000  horímetro suspeito (≥9000); horas trabalhadas muito baixas; L/h do evento muito alto
+1          2026-01-26          203.5     9999.7                0.0      2035.000000                 NaN  horímetro suspeito (≥9000); horas trabalhadas muito baixas; L/h do evento muito alto
+2          2026-04-16          224.0     9999.8                0.0      2240.000000                 NaN  horímetro suspeito (≥9000); horas trabalhadas muito baixas; L/h do evento muito alto
+3          2026-05-28            2.5     9999.9                0.0        25.000000                 NaN                            horímetro suspeito (≥9000); horas trabalhadas muito baixas
+4          2026-05-28          158.5    10000.0                0.0      1585.000000                 NaN  horímetro suspeito (≥9000); horas trabalhadas muito baixas; L/h do evento muito alto
+5          2026-06-03           62.5    10446.8              447.0         0.139884            0.139821                                                            horímetro suspeito (≥9000)
+6          2026-06-05           65.0    10455.8                9.0         7.222222            7.222222                                                            horímetro suspeito (≥9000)
+7          2026-06-08           67.0    10459.2                3.0        19.705882           22.333333                                                            horímetro suspeito (≥9000)
+8          2026-06-08           65.5    10463.9                5.0        13.936170           13.100000                                                            horímetro suspeito (≥9000)
+9          2026-06-09           40.0    10633.9              170.0         0.235294            0.235294                                                            horímetro suspeito (≥9000)
+10         2026-06-09          106.5    10721.0               87.0         1.222732            1.224138                                                            horímetro suspeito (≥9000)
+
+=== Contagem eventos problematicos ===
+horimetro_9000+: 153 de 348
+horas_menor_0_5: 26 de 348
+media_planilha_maior_40: 15 de 348
+
+=== Comparacao media bruta vs limpa ===
+      placa  eventos  eventos_ruins  media_bruta  media_limpa  media_planilha
+12  EHL0014       50             50        10.51          NaN             NaN
+13  EHL0028       31             31         8.92          NaN             NaN
+7   EHH0019       18             18        16.54          NaN             NaN
+2   EHH0004       15             15         9.44          NaN             NaN
+3   EHH0006       14             14        14.33          NaN             NaN
+0   EHH0002       11             11         1.51          NaN             NaN
+15  EHL0043       11             11         6.82          NaN             NaN
+4   EHH0007       16              3        15.61        13.41             NaN
+1   EHH0003        3              3         9.49          NaN             NaN
+8   EHH0036       33              2        13.50        12.66             NaN
+10  EHH0039       33              2         7.97         7.69             NaN
+14  EHL0042       20              1        11.24        10.71             NaN
+9   EHH0038       39              1        14.99        14.94             NaN
+16  EHL0070       12              1        17.45        16.22             NaN
+6   EHH0009        7              0        18.91        18.91             NaN
+5   EHH0008        9              0        11.21        11.21             NaN
+11  EHH0040       26              0        11.59        11.59             NaN
+
+=== Sequencia horimetro EHH0002 ===
+2026-01-03 | hrm 9999.6 | horas 0.3 | L 94.5 | L/h plan 315.0
+2026-01-26 | hrm 9999.7 | horas 0.0 | L 203.5 | L/h plan 2034.9999999925967
+2026-04-16 | hrm 9999.8 | horas 0.0 | L 224.0 | L/h plan 2240.0000000325963
+2026-05-28 | hrm 9999.9 | horas 0.0 | L 2.5 | L/h plan 24.99999999990905
+2026-05-28 | hrm 10000.0 | horas 0.0 | L 158.5 | L/h plan 1584.9999999942338
+2026-06-03 | hrm 10446.8 | horas 447.0 | L 62.5 | L/h plan 0.139883616830797
+2026-06-05 | hrm 10455.8 | horas 9.0 | L 65.0 | L/h plan 7.222222222222222
+2026-06-08 | hrm 10459.2 | horas 3.0 | L 67.0 | L/h plan 19.705882352932743
+2026-06-08 | hrm 10463.9 | horas 5.0 | L 65.5 | L/h plan 13.936170212769193
+2026-06-09 | hrm 10633.9 | horas 170.0 | L 40.0 | L/h plan 0.23529411764705882
+2026-06-09 | hrm 10721.0 | horas 87.0 | L 106.5 | L/h plan 1.2227324913892026
+
+=== Maquinas com eventos horimetro 9000+ ===
+placa
+EHL0014    50
+EHL0028    31
+EHH0019    18
+EHH0004    15
+EHH0006    14
+EHH0002    11
+EHL0043    11
+EHH0003     3

@@ -1,0 +1,44 @@
+=== Diesel por tipo combustivel ===
+tipo_combustivel
+Externo (Posto)    190298.97
+Interno           -598384.26
+
+=== Diesel por grupo contrato ===
+grupo_contrato
+Arcelor                    23337.01
+G&S (operacional)          -7390.82
+Outros                    -45716.79
+RSE                      -175158.25
+Seletiva (interno G3S)   -276756.63
+Tupy                       73600.19
+
+=== Cruzamento contrato x tipo ===
+grupo_contrato          tipo_combustivel
+Arcelor                 Externo (Posto)      13331.31
+                        Interno              10005.70
+G&S (operacional)       Externo (Posto)      -7390.82
+Outros                  Externo (Posto)       2945.36
+                        Interno             -48662.15
+RSE                     Interno            -175158.25
+Seletiva (interno G3S)  Externo (Posto)     145894.66
+                        Interno            -422651.29
+Tupy                    Externo (Posto)      35518.46
+                        Interno              38081.73
+
+=== Por placa (top 15 diesel) ===
+placa
+EHL0014   -42853.52
+FRT7548   -33615.36
+GDU0275   -33222.11
+EHH0038   -26532.61
+EHH0039   -22911.81
+EHL0042   -22412.06
+EHL0043   -22394.09
+EHH0007   -21927.54
+EHH0009   -19442.10
+EHH0036   -17376.90
+EJZ7496   -12021.48
+EWU6088   -10438.29
+FBU7329    -9442.21
+EJZ7495    -6680.68
+EWU6003    -4455.56
