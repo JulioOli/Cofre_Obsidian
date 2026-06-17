@@ -30,8 +30,8 @@ tags:
 | `documento` | texto | Nº da NF/boleto/documento | `SALDO ADT CLI/FOR` = migração legado |
 | `codigo_pessoa` | número | Código do fornecedor/cliente | — |
 | `nome` | texto | Nome do fornecedor/cliente | 12 nulos (~0%) |
-| `valor_plano` | texto | Valor planejado (negativo=despesa) | String — converter. Negativo = despesa |
-| `valor_centro` | texto | Valor rateado ao CC | Geralmente = `valor_plano` |
+| `valor_plano` | texto | Valor rateado ao **plano de contas** (negativo=despesa) | String — converter. Em rateio, soma das linhas fecha o `valor_bruto` |
+| `valor_centro` | texto | Valor rateado ao **centro de custo** | Igual a `valor_plano` **sem rateio**; diverge quando há quebra por CC × conta. No fechamento, vira `valor_conta` e `Valor Oficial` — ver [[Valores ODBC e Fechamento — Mapeamento de Colunas]] |
 | `observacao` | texto | Texto livre | Pode ter quebras de linha — causa erro no CSV |
 | `nota` | texto | Nota interna | 13.155 nulos (21,6%) |
 | `cab_pagrec_id` | número | ID do documento origem | — |

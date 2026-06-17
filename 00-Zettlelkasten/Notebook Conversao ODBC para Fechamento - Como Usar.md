@@ -14,7 +14,7 @@ O notebook monta as 34 colunas do fechamento a partir das colunas ODBC — **nã
 
 **Notebook:** `04-Notebooks/Fechamento/conversao_odbc_para_fechamento.ipynb`
 
-**Relacionado:** [[Analise Base Financeira]] · [[Premissas - Fechamento]] · [[Script de Auditoria Semanal de Lancamentos ODBC - Como Usar]]
+**Relacionado:** [[Valores ODBC e Fechamento — Mapeamento de Colunas]] · [[Analise Base Financeira]] · [[Premissas - Fechamento]] · [[Script de Auditoria Semanal de Lancamentos ODBC - Como Usar]]
 
 ## ~={Titulo}Escopo=~
 
@@ -40,18 +40,21 @@ Para outras origens, existem notebooks irmãos:
 
 ## ~={Titulo}Mapeamento de valores=~
 
+Detalhamento conceitual: [[Valores ODBC e Fechamento — Mapeamento de Colunas]].
+
 | Coluna no fechamento | Coluna ODBC |
 |---|---|
-| `valor_conta` | `valor_plano` (sinal preservado — sem `-abs` na gravação) |
-| `valor_pago` | `valor_bruto` |
-| `Valor Oficial` | `valor_bruto` |
-| `valor_nf` | `valor_bruto` |
+| `valor_nf` | `valor_bruto` (NF valor cheio) |
+| `valor_pago` | `iterea_valpago` |
+| `valor_conta` | `valor_centro` (sinal preservado — sem `-abs` na gravação) |
+| `Valor Oficial` | `valor_centro` |
 
 As somas são conferidas automaticamente ao final de cada exportação. Se tudo estiver certo, os totais da saída batem com os da entrada:
 
 ```
-ODBC valor_bruto = saida valor_pago = Valor Oficial
-ODBC valor_plano = saida valor_conta
+ODBC valor_bruto    = saida valor_nf
+ODBC iterea_valpago = saida valor_pago
+ODBC valor_centro   = saida valor_conta = Valor Oficial
 ```
 
 ## ~={Titulo}Passo a passo=~
@@ -64,7 +67,7 @@ ODBC valor_plano = saida valor_conta
 
 Colunas **obrigatórias** na entrada:
 
-`codcen`, `descen`, `codcdc`, `descdc`, `filial`, `documento`, `valor_bruto`, `valor_centro`, `observacao`, `lancamento`, `iterea_pagamento`, `codigo_pessoa`, `nome`, `nota`
+`codcen`, `descen`, `codcdc`, `descdc`, `filial`, `documento`, `valor_bruto`, `valor_plano`, `valor_centro`, `iterea_valpago`, `observacao`, `lancamento`, `iterea_pagamento`, `codigo_pessoa`, `nome`, `nota`
 
 Se alguma faltar, o notebook lista quais estão ausentes.
 
@@ -83,7 +86,7 @@ Sempre que abrir o notebook (ou depois de atualizações no código), faça **Re
 Na célula 1, a saída esperada inclui:
 
 ```text
-Notebook v2.3 — sem arquivo MODELO externo
+Notebook v2.4 — sem arquivo MODELO externo
 Parametros carregados com sucesso.
 Layout de saida: 34 colunas (fixo no notebook)
 ```
@@ -153,8 +156,9 @@ Gera um único arquivo: `{stem_do_arquivo}_fechamento.xlsx`.
 Após cada mês (e no consolidado), o notebook imprime os totais. Exemplo:
 
 ```text
-04/2026: ODBC valor_bruto=1,234,567.89 | saida valor_pago=1,234,567.89 | Valor Oficial=1,234,567.89
-04/2026: ODBC valor_plano=-987,654.32 | saida valor_conta=-987,654.32
+04/2026: ODBC valor_bruto=1,234,567.89 | saida valor_nf=1,234,567.89
+04/2026: ODBC iterea_valpago=987,654.32 | saida valor_pago=987,654.32
+04/2026: ODBC valor_centro=-500,000.00 | saida valor_conta=-500,000.00 | Valor Oficial=-500,000.00
 ```
 
 Se os pares não baterem, verifique:

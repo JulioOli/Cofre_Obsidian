@@ -10,7 +10,7 @@ tags:
 # ~={Titulo}Índice — Controladoria G3S (Seletiva)=~
 
 > Notas de referência geradas a partir dos arquivos oficiais do sistema Sygecom.
-> **Última atualização:** 25/03/2026
+> **Última atualização:** 17/06/2026
 > Quando os arquivos fonte forem atualizados, solicitar revisão das notas abaixo.
 
 ---
@@ -26,6 +26,7 @@ tags:
 | [[Estrutura Empresarial G3S]] | Relação entre G3S, G&S, GSE/RSE, Transmóvel e demais CNPJs do grupo          |
 | [[Guia Sistemas]]                 | Procedimentos práticos no sistema: CC vs PC, Troca em Lote, Rateios, CIF/FOB |
 | [[Analise Base Financeira]]   | Dicionário de dados, filtros e armadilhas do ODBC (base.csv)                 |
+| [[Valores ODBC e Fechamento — Mapeamento de Colunas]] | Lógica de `valor_bruto`, `valor_centro`, `valor_plano` e mapeamento para o fechamento |
 | [[BCBI - Classificação Analítico Plano de Contas]] | Mapeamento contas SAGI → tipo custo/receita no Analítico do BCBI (Seletiva) |
 
 ---
