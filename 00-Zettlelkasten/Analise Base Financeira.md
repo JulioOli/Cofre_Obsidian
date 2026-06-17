@@ -80,6 +80,7 @@ Para extrair as dimensões (pandas):
 | G8S / Ekipa Serv. G&S | Começa com `1.7` ou `2.7` |
 | Familiares (sócios) | Começa com `1.9` ou `2.9` |
 | Intercompany | `1.10.1` ou `2.10.1` |
+| Projeto IA da Bracofer | `== '1.3.1.8.3'` |
 
 > **Relatórios SAGI (sucata):** o **Relatório de Entrada** corresponde, em termos de CC, à **família `1.x.x.x`** (compra / despesa), em especial `1.2.x.2` + `6.1.1`; o **Relatório de Saída** à **família `2.x.x.x`** (venda / receita), em especial `2.2.x.2` + `4.1.1`. Ver [[Guia Sistemas]].
 
@@ -164,6 +165,8 @@ Documentos `SALDO ADT CLI`, `SALDO ADT FOR`, `MIGRADO` etc. são saldos de abert
 
 | O que verificar | Coluna | Critério |
 |---|---|---|
+| Projeto IA classificado corretamente | `codcen` + `codcdc` | `codcen == '1.3.1.8.3'` com conta coerente com a natureza do gasto |
+| Rateio no Projeto IA | `codcen` + valores | Em `1.3.1.8.3`, manter critérios de rateio vigentes quando houver compartilhamento |
 | Contas genéricas (poluem DRE) | `codcdc` | `5.4.6`, `5.4.11`, `7.11.4`, `7.11.6`, `7.1.16` |
 | Lançamentos de sócios | `codcen` | Começa com `1.9` ou `2.9` |
 | Operações intercompany | `codcen` | `1.10.1` ou `2.10.1` |

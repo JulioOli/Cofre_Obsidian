@@ -12,12 +12,17 @@ Abas:
   - Como usar: instruções de filtro / pivot / slicer
 
 CLI:
-  --mix-only   atualiza só a aba Mix por conta (preserva edições manuais)
-  --preservar  alias de preservar_abas_existentes na exportação completa
+  --mix-only           recria a aba Mix por conta (layout padrão; apaga edições manuais)
+  --mix-valores-only   atualiza só os números na aba Mix (preserva layout e gráficos)
+  --sync-all           sincroniza todas as abas numéricas com a base (preserva layout)
+  --fonte-only  atualiza só a aba Fonte_Dados (preserva edições manuais)
+  --visao-only  atualiza KPIs e gráficos da Visão Geral (preserva demais abas)
+  --preservar   alias de preservar_abas_existentes na exportação completa
 """
 from __future__ import annotations
 
 import re
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -32,6 +37,11 @@ from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
 ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT / "scripts") not in sys.path:
+    sys.path.insert(0, str(ROOT / "scripts"))
+
+from gerar_analise_contratos_diesel_maquinas import parse_numero_br  # noqa: E402
+
 BASE = ROOT / "02-Referencias" / "Custos-Maquinas" / "relatorio_marcas_maquinas_base.xlsx"
 OUT = ROOT / "outputs" / "tabelas" / "dashboard_liebherr_hyundai.xlsx"
 FIG_DIR = ROOT / "outputs" / "figuras" / "liebherr_hyundai"
@@ -61,6 +71,8 @@ ORDEM_LOCAIS = [
     "Ambar", "Tupy", "Pátio de Manutenção", "Matheus", "Multi Aço",
 ]
 CONTAS_EXCLUIR = frozenset({"7.4.5"})
+# Mesmas rubricas da aba «Gasto geral» e abas de Manutenção / Combustível / Contratos
+CONTAS_ANALISE = frozenset({"7.1.1", "7.1.2", "7.1.18", "7.1.4", "7.1.22"})
 SHEET_MIX_CONTAS = "Mix por conta"
 ROTULOS_CONTA = {
     "7.1.1": "7.1.1 Peças de manutenção",
@@ -68,6 +80,12 @@ ROTULOS_CONTA = {
     "7.1.2": "7.1.2 Manutenção veíc./máq.",
     "7.1.22": "7.1.22 Diesel (interno)",
     "7.1.4": "7.1.4 Diesel (posto)",
+}
+# Agrupamento manual da aba Mix (Manutenção = serviço + fretes; Peças = 7.1.1)
+GRUPOS_MIX_CONTAS: dict[str, frozenset[str]] = {
+    "Manutenção": frozenset({"7.1.2", "7.1.18"}),
+    "Diesel": frozenset({"7.1.4", "7.1.22"}),
+    "Peças de manutenção": frozenset({"7.1.1"}),
 }
 
 FIGURAS_APRESENTACAO = [
@@ -93,6 +111,9 @@ def extrair_id_maquina(valor) -> str | None:
 def carregar_df_maq() -> pd.DataFrame:
     raw = pd.read_excel(BASE, sheet_name="base_maquinas_2025_2026")
     raw["valor_conta_num"] = pd.to_numeric(raw["valor_conta"], errors="coerce")
+    falt = raw["valor_conta_num"].isna() & raw["valor_conta"].notna()
+    if falt.any():
+        raw.loc[falt, "valor_conta_num"] = raw.loc[falt, "valor_conta"].map(parse_numero_br)
     raw["gasto_abs"] = raw["valor_conta_num"].abs()
     raw["data_nf"] = pd.to_datetime(raw["data_nf"], errors="coerce", dayfirst=True)
     raw["MARCA"] = raw["MARCA"].astype(str).str.strip().str.upper()
@@ -105,42 +126,72 @@ def carregar_df_maq() -> pd.DataFrame:
     )
     df = raw[raw["no_parque"] & raw["MARCA"].isin(MARCAS)].copy()
     cod = df["cod_conta"].astype(str).str.strip()
-    df = df[~cod.isin(CONTAS_EXCLUIR)].copy()
+    df = df[cod.isin(CONTAS_ANALISE)].copy()
     df["local_operacao"] = df["maq_id"].map(LOCAL_POR_MAQUINA)
     return df
 
 
 def montar_fonte_dados(df: pd.DataFrame) -> pd.DataFrame:
-    return df[
-        [
-            "ano_nf", "mes_nf", "local_operacao", "MARCA", "maq_id", "Divisao", "filial",
-            "cod_conta", "conta", "gasto_abs", "valor_conta_num",
-        ]
-    ].rename(columns={
+    cols_base = [
+        "ano_nf", "mes_nf", "data_nf", "local_operacao", "MARCA", "maq_id",
+        "Divisao", "filial", "n3_centro_custo", "n4_centro_custo",
+        "cod_conta", "conta", "titulo", "gasto_abs", "valor_conta_num",
+        "Origem", "Sistema", "Arquivo_Fonte", "Tipo_Fonte", "observacao",
+    ]
+    cols = [c for c in cols_base if c in df.columns]
+    out = df[cols].rename(columns={
         "ano_nf": "Ano",
         "mes_nf": "Mês",
+        "data_nf": "Data_NF",
         "local_operacao": "Local",
         "MARCA": "Marca",
         "maq_id": "Máquina",
         "Divisao": "Divisão",
         "filial": "Filial_SAGI",
+        "n3_centro_custo": "N3_CC",
+        "n4_centro_custo": "N4_CC",
         "cod_conta": "Conta_Código",
         "conta": "Conta",
+        "titulo": "Titulo",
         "gasto_abs": "Gasto_Abs",
         "valor_conta_num": "Valor_Conta",
-    }).sort_values(["Local", "Marca", "Máquina", "Ano", "Mês"])
+        "Origem": "Origem",
+        "Sistema": "Sistema",
+        "Arquivo_Fonte": "Arquivo_Fonte",
+        "Tipo_Fonte": "Tipo_Fonte",
+        "observacao": "Observacao",
+    })
+    return out.sort_values(["Local", "Marca", "Máquina", "Ano", "Mês", "Conta_Código"])
+
+
+MESES_ANALISADOS_POR_ANO = {2025: 12, 2026: 3}
+
+
+def meses_analisados(ano: int) -> int:
+    """Meses do recorte por ano (fixo: 12 em 2025, 3 em jan–mar/2026)."""
+    return MESES_ANALISADOS_POR_ANO.get(int(ano), 12)
+
+
+def meses_totais_periodo(df: pd.DataFrame) -> int:
+    anos = sorted(int(a) for a in df["ano_nf"].dropna().unique())
+    return sum(meses_analisados(a) for a in anos)
+
+
+def custo_mensal_por_maq_marca(df: pd.DataFrame, marca: str) -> float:
+    sub = df[df["MARCA"] == marca]
+    if sub.empty:
+        return 0.0
+    return float(sub["gasto_abs"].sum()) / meses_totais_periodo(df) / QTD_PARQUE[marca]
 
 
 def media_mensal_grupo(df: pd.DataFrame, group_cols: list[str]) -> pd.DataFrame:
     agg = (
         df.groupby(group_cols + ["ano_nf"], observed=True)
-        .agg(
-            gasto_total=("gasto_abs", "sum"),
-            meses_com_gasto=("mes_nf", "nunique"),
-        )
+        .agg(gasto_total=("gasto_abs", "sum"))
         .reset_index()
     )
-    agg["media_mensal"] = agg["gasto_total"] / agg["meses_com_gasto"].clip(lower=1)
+    agg["meses_analisados"] = agg["ano_nf"].map(meses_analisados)
+    agg["media_mensal"] = agg["gasto_total"] / agg["meses_analisados"]
     return agg
 
 
@@ -149,7 +200,7 @@ def montar_hierarquia_local(df: pd.DataFrame) -> tuple[pd.DataFrame, list[int]]:
     anos = sorted(int(a) for a in df["ano_nf"].dropna().unique())
     col_media = [f"Média mensal {a}" for a in anos]
     col_gasto = [f"Gasto total {a}" for a in anos]
-    col_meses = [f"Meses c/ gasto {a}" for a in anos]
+    col_meses = [f"Meses analisados {a}" for a in anos]
     cols = ["Local", "Nível", "Marca", "Máquina", *col_gasto, *col_meses, *col_media]
 
     maq_agg = media_mensal_grupo(df, ["local_operacao", "MARCA", "maq_id"])
@@ -164,7 +215,7 @@ def montar_hierarquia_local(df: pd.DataFrame) -> tuple[pd.DataFrame, list[int]]:
         if sub.empty:
             return 0.0, 0, 0.0
         r = sub.iloc[0]
-        return float(r["gasto_total"]), int(r["meses_com_gasto"]), float(r["media_mensal"])
+        return float(r["gasto_total"]), int(r["meses_analisados"]), float(r["media_mensal"])
 
     rows: list[dict] = []
     levels: list[int] = []
@@ -248,7 +299,11 @@ def montar_dados_mix_contas(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFram
         .sum()
         .reset_index(name="volume")
     )
-    por_conta["volume_por_maq"] = por_conta["volume"] / por_conta["MARCA"].map(QTD_PARQUE)
+    por_conta["volume_por_maq"] = (
+        por_conta["volume"]
+        / por_conta["MARCA"].map(QTD_PARQUE)
+        / meses_totais_periodo(df)
+    )
 
     top_contas = (
         por_conta.groupby("conta", observed=True)["volume"].sum().nlargest(6).index.tolist()
@@ -275,6 +330,227 @@ def montar_dados_mix_contas(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFram
     pct_out = pivot_pct.reset_index().rename(columns={"conta_curta": "Conta"})
     vol_out = pivot_vol.reset_index().rename(columns={"conta_curta": "Conta"})
     return pct_out, vol_out
+
+
+def montar_dados_mix_contas_agrupado(df: pd.DataFrame) -> dict[str, dict[str, float]]:
+    """R$/máquina/mês e % do volume por grupo manual (Manutenção / Diesel / Peças)."""
+    meses = meses_totais_periodo(df)
+    totais_marca = df.groupby("MARCA", observed=True)["gasto_abs"].sum()
+    out: dict[str, dict[str, float]] = {}
+    for grupo, contas in GRUPOS_MIX_CONTAS.items():
+        sub = df[df["cod_conta"].isin(contas)]
+        vol_por_marca = sub.groupby("MARCA", observed=True)["gasto_abs"].sum()
+        rpm = {
+            m: float(vol_por_marca.get(m, 0.0)) / QTD_PARQUE[m] / meses
+            for m in MARCAS
+        }
+        pct = {
+            m: float(vol_por_marca.get(m, 0.0)) / float(totais_marca[m]) * 100
+            if totais_marca[m]
+            else 0.0
+            for m in MARCAS
+        }
+        out[grupo] = {**{f"rpm_{m}": rpm[m] for m in MARCAS}, **{f"pct_{m}": pct[m] for m in MARCAS}}
+    return out
+
+
+def _localizar_tabelas_mix(ws) -> list[tuple[int, int, str]]:
+    """Retorna (linha_cabecalho, col_conta, tipo) com tipo 'rpm' ou 'pct'."""
+    found: list[tuple[int, int, str]] = []
+    for r in range(1, 30):
+        for c in range(1, 20):
+            if ws.cell(r, c).value != "Conta":
+                continue
+            if ws.cell(r, c + 1).value != "LIEBHERR" or ws.cell(r, c + 2).value != "HYUNDAI":
+                continue
+            titulo = ""
+            for hc in range(max(1, c - 1), c + 3):
+                val = ws.cell(r - 1, hc).value
+                if isinstance(val, str) and val.strip():
+                    titulo = val
+            tipo = "pct" if "%" in titulo else "rpm"
+            found.append((r, c, tipo))
+    return found
+
+
+FMT_MIX_PCT = '0.0"%"'
+FMT_MIX_RPM_CHART = '#,##0'
+
+
+def _aplicar_formato_celulas_mix(ws, hdr_row: int, col_conta: int, tipo: str, r_max: int = 30) -> None:
+    r = hdr_row + 1
+    while r <= r_max:
+        label = ws.cell(r, col_conta).value
+        if label is None:
+            break
+        c_lie = ws.cell(r, col_conta + 1)
+        c_hyu = ws.cell(r, col_conta + 2)
+        if tipo == "pct":
+            c_lie.number_format = FMT_MIX_PCT
+            c_hyu.number_format = FMT_MIX_PCT
+        r += 1
+
+
+def _aplicar_formato_graficos_mix(ws) -> None:
+    for ch in ws._charts:
+        if not ch.series:
+            continue
+        ref = ""
+        s0 = ch.series[0]
+        if s0.val and s0.val.numRef and s0.val.numRef.f:
+            ref = s0.val.numRef.f.upper()
+        if "$O$" in ref or "$P$" in ref:
+            _chart_data_labels(ch, num_fmt=FMT_MIX_PCT)
+        elif "$C$" in ref or "$D$" in ref:
+            _chart_data_labels(ch, num_fmt=FMT_MIX_RPM_CHART)
+
+
+def atualizar_valores_mix_preservando_layout(wb: Workbook, df: pd.DataFrame) -> None:
+    """Atualiza células de valor nas tabelas existentes; não altera layout dos gráficos."""
+    if SHEET_MIX_CONTAS not in wb.sheetnames:
+        raise KeyError(f"Aba ausente: {SHEET_MIX_CONTAS}")
+    ws = wb[SHEET_MIX_CONTAS]
+    dados = montar_dados_mix_contas_agrupado(df)
+    tabelas = _localizar_tabelas_mix(ws)
+    if not tabelas:
+        raise ValueError("Tabelas do Mix não encontradas (cabeçalho Conta / LIEBHERR / HYUNDAI).")
+
+    for hdr_row, col_conta, tipo in tabelas:
+        r = hdr_row + 1
+        while True:
+            label = ws.cell(r, col_conta).value
+            if label is None:
+                break
+            label_s = str(label).strip()
+            if label_s not in dados:
+                r += 1
+                continue
+            vals = dados[label_s]
+            c_lie = ws.cell(r, col_conta + 1)
+            c_hyu = ws.cell(r, col_conta + 2)
+            if tipo == "rpm":
+                c_lie.value = vals["rpm_LIEBHERR"]
+                c_hyu.value = vals["rpm_HYUNDAI"]
+            else:
+                c_lie.value = vals["pct_LIEBHERR"]
+                c_hyu.value = vals["pct_HYUNDAI"]
+                c_lie.number_format = FMT_MIX_PCT
+                c_hyu.number_format = FMT_MIX_PCT
+            r += 1
+        if tipo == "pct":
+            _aplicar_formato_celulas_mix(ws, hdr_row, col_conta, tipo)
+
+    _aplicar_formato_graficos_mix(ws)
+
+
+LOCAL_EXCEL_TO_DF: dict[str, str] = {
+    "Prudente": "Prudente",
+    "Maringá": "Maringá",
+    "Londrina": "Londrina",
+    "Dourados": "Dourados",
+    "Campo Grande": "Campo Grande",
+    "AM-BAR": "Ambar",
+    "Tupy": "Tupy",
+    "Pátio de Manutenção": "Pátio de Manutenção",
+    "Matheus": "Matheus",
+    "Multi Aço": "Multi Aço",
+}
+MAQ_ID_RE = re.compile(r"^(EHL\d+|EHH\d+)$", re.I)
+SHEET_DETALHADO_LOCAL = "Gasto por Local - Detalhado"
+SHEET_RESUMO_LOCAL = "Resumo Local×Marca"
+
+
+def _gasto_maquina_ano(df: pd.DataFrame, maq_id: str, ano: int) -> float:
+    return float(df[(df["maq_id"] == maq_id) & (df["ano_nf"] == ano)]["gasto_abs"].sum())
+
+
+def _maquinas_local_marca(local: str, marca: str) -> list[str]:
+    return [m for m in PARQUE[marca] if LOCAL_POR_MAQUINA.get(m) == local]
+
+
+def atualizar_gasto_local_detalhado(wb: Workbook, df: pd.DataFrame) -> None:
+    """Atualiza gastos e médias (÷12 / ÷3) nas linhas de máquina; agregados viram fórmulas."""
+    if SHEET_DETALHADO_LOCAL not in wb.sheetnames:
+        return
+    ws = wb[SHEET_DETALHADO_LOCAL]
+
+    for r in range(4, ws.max_row + 1):
+        mid = ws.cell(r, 3).value
+        if not isinstance(mid, str) or not MAQ_ID_RE.match(mid.strip()):
+            continue
+        mid = mid.strip().upper()
+        ws.cell(r, 4, round(_gasto_maquina_ano(df, mid, 2025), 2))
+        ws.cell(r, 5, round(_gasto_maquina_ano(df, mid, 2026), 2))
+        ws.cell(r, 6, 12)
+        ws.cell(r, 7, 3)
+        ws.cell(r, 8, f"=D{r}/12")
+        ws.cell(r, 9, f"=E{r}/3")
+
+    for r in range(4, ws.max_row + 1):
+        c = ws.cell(r, 3).value
+        if not isinstance(c, str) or not c.startswith("=COUNTA"):
+            continue
+        children: list[int] = []
+        for rr in range(r + 1, ws.max_row + 1):
+            mid = ws.cell(rr, 3).value
+            if isinstance(mid, str) and MAQ_ID_RE.match(mid.strip()):
+                children.append(rr)
+            elif isinstance(mid, str) and mid.startswith("=COUNTA"):
+                break
+        if children:
+            ws.cell(r, 4, f"={'+'.join(f'D{x}' for x in children)}")
+            ws.cell(r, 5, f"={'+'.join(f'E{x}' for x in children)}")
+            ws.cell(r, 6, 12)
+            ws.cell(r, 7, 3)
+            ws.cell(r, 8, f"=D{r}/12")
+            ws.cell(r, 9, f"=E{r}/3")
+
+    for r in range(4, ws.max_row + 1):
+        loc = ws.cell(r, 1).value
+        if not loc or ws.cell(r, 2).value is not None:
+            continue
+        c = ws.cell(r, 3).value
+        if not (isinstance(c, str) and c.startswith("=C")):
+            continue
+        brand_rows: list[int] = []
+        for rr in range(r + 1, ws.max_row + 1):
+            loc2 = ws.cell(rr, 1).value
+            if loc2 and ws.cell(rr, 2).value is None and rr > r:
+                break
+            if loc2 == loc and ws.cell(rr, 2).value is not None:
+                mid = ws.cell(rr, 3).value
+                if not (isinstance(mid, str) and MAQ_ID_RE.match(mid.strip())):
+                    brand_rows.append(rr)
+        if brand_rows:
+            ws.cell(r, 4, f"={'+'.join(f'D{x}' for x in brand_rows)}")
+            ws.cell(r, 5, f"={'+'.join(f'E{x}' for x in brand_rows)}")
+            ws.cell(r, 6, 12)
+            ws.cell(r, 7, 3)
+            ws.cell(r, 8, f"=D{r}/12")
+            ws.cell(r, 9, f"=E{r}/3")
+
+
+def atualizar_resumo_local_marca(wb: Workbook, df: pd.DataFrame) -> None:
+    """Atualiza gasto total e média mensal (÷12 / ÷3) por local × marca."""
+    if SHEET_RESUMO_LOCAL not in wb.sheetnames:
+        return
+    ws = wb[SHEET_RESUMO_LOCAL]
+    agg = media_mensal_grupo(df, ["local_operacao", "MARCA"])
+
+    for r in range(4, ws.max_row + 1):
+        loc_ex = ws.cell(r, 1).value
+        marca = ws.cell(r, 2).value
+        if not loc_ex or not marca:
+            continue
+        local = LOCAL_EXCEL_TO_DF.get(str(loc_ex).strip(), str(loc_ex).strip())
+        maqs = _maquinas_local_marca(local, str(marca).strip())
+        ws.cell(r, 3, len(maqs))
+        for ano, col_g, col_m, meses in ((2025, 5, 4, 12), (2026, 7, 6, 3)):
+            sub = agg[(agg["local_operacao"] == local) & (agg["MARCA"] == marca) & (agg["ano_nf"] == ano)]
+            gasto = float(sub["gasto_total"].iloc[0]) if len(sub) else 0.0
+            media = gasto / meses if meses else 0.0
+            ws.cell(r, col_g, round(gasto, 2))
+            ws.cell(r, col_m, round(media, 2))
 
 
 def _chart_data_labels(chart: BarChart, num_fmt: str | None = None) -> None:
@@ -386,7 +662,7 @@ def escrever_mix_contas_interativo(wb: Workbook, df: pd.DataFrame, pos: int | No
 
 
 def atualizar_aba_mix_contas(dest: Path | None = None) -> Path:
-    """Adiciona/atualiza só a aba Mix por conta, preservando demais abas do arquivo."""
+    """Recria a aba Mix por conta com layout padrão (apaga edições manuais)."""
     dest = dest or OUT
     if not dest.exists():
         raise FileNotFoundError(f"Arquivo não encontrado: {dest}")
@@ -404,13 +680,98 @@ def atualizar_aba_mix_contas(dest: Path | None = None) -> Path:
     return dest
 
 
+def atualizar_aba_mix_valores(dest: Path | None = None) -> Path:
+    """Atualiza só os números na aba Mix por conta (layout e gráficos intactos)."""
+    dest = dest or OUT
+    if not dest.exists():
+        raise FileNotFoundError(f"Arquivo não encontrado: {dest}")
+
+    df = carregar_df_maq()
+    wb = load_workbook(dest)
+    atualizar_valores_mix_preservando_layout(wb, df)
+    try:
+        wb.save(dest)
+    except PermissionError:
+        alt = dest.with_stem(f"{dest.stem}_mixval_{datetime.now():%Y%m%d_%H%M%S}")
+        wb.save(alt)
+        print(f"Arquivo bloqueado; salvo em: {alt}")
+        return alt
+    return dest
+
+
+def atualizar_visao_geral(dest: Path | None = None) -> Path:
+    """Atualiza KPIs e gráficos da aba Visão Geral / Apresentação."""
+    dest = dest or OUT
+    if not dest.exists():
+        raise FileNotFoundError(f"Arquivo não encontrado: {dest}")
+
+    df = carregar_df_maq()
+    kpis = montar_kpis(df)
+    kpi_map = dict(kpis)
+    # Compatível com rótulo manual «Período observado»
+    kpi_map["Período observado"] = kpi_map.get("Período", "")
+
+    wb = load_workbook(dest)
+    nome = "Visão Geral" if "Visão Geral" in wb.sheetnames else "Apresentação"
+    ws = wb[nome]
+
+    ws.cell(
+        4,
+        1,
+        "Comparação pelo custo médio mensal por máquina do parque: "
+        "gasto total ÷ meses analisados no ano (12 em 2025, 3 em 2026) ÷ tamanho do parque (÷7 ou ÷16).",
+    )
+
+    for r in range(1, ws.max_row + 1):
+        label = ws.cell(r, 1).value
+        if label in kpi_map:
+            ws.cell(r, 2, kpi_map[label])
+
+    ws._images = []
+    img_row = 4
+    for i, fname in enumerate(FIGURAS_APRESENTACAO):
+        path = FIG_DIR / fname
+        if not path.exists():
+            continue
+        col = 4 + (i % 2) * 18
+        row = img_row + (i // 2) * 16
+        img = XLImage(str(path))
+        img.width = min(img.width, 480)
+        img.height = min(img.height, 280)
+        ws.add_image(img, f"{get_column_letter(col)}{row}")
+
+    try:
+        wb.save(dest)
+    except PermissionError:
+        alt = dest.with_stem(f"{dest.stem}_visao_{datetime.now():%Y%m%d_%H%M%S}")
+        wb.save(alt)
+        print(f"Arquivo bloqueado; salvo em: {alt}")
+        return alt
+    return dest
+
+
+def atualizar_aba_fonte_dados(dest: Path | None = None) -> Path:
+    """Atualiza só a aba Fonte_Dados, preservando demais abas do arquivo."""
+    dest = dest or OUT
+    if not dest.exists():
+        raise FileNotFoundError(f"Arquivo não encontrado: {dest}")
+
+    df = carregar_df_maq()
+    fonte = montar_fonte_dados(df)
+    wb = load_workbook(dest)
+    escrever_fonte_dados(wb, fonte, substituir=True)
+    try:
+        wb.save(dest)
+    except PermissionError:
+        alt = dest.with_stem(f"{dest.stem}_fonte_{datetime.now():%Y%m%d_%H%M%S}")
+        wb.save(alt)
+        print(f"Arquivo bloqueado; salvo em: {alt}")
+        return alt
+    return dest
+
+
 def montar_kpis(df: pd.DataFrame) -> list[tuple[str, str]]:
-    vol_maq = df.groupby("MARCA", observed=True)["gasto_abs"].sum()
-    meses = df.groupby("MARCA", observed=True)["mes_nf"].nunique()
-    custo_mes = {
-        m: vol_maq.get(m, 0) / max(meses.get(m, 1), 1) / QTD_PARQUE[m]
-        for m in MARCAS
-    }
+    custo_mes = {m: custo_mensal_por_maq_marca(df, m) for m in MARCAS}
     loc = media_mensal_grupo(df, ["local_operacao"])
     loc_total = loc.groupby("local_operacao", observed=True)["gasto_total"].sum()
     top_local = loc_total.idxmax() if len(loc_total) else "—"
@@ -418,13 +779,18 @@ def montar_kpis(df: pd.DataFrame) -> list[tuple[str, str]]:
     c_l, c_h = custo_mes["LIEBHERR"], custo_mes["HYUNDAI"]
     diff = abs(c_l - c_h) / min(c_l, c_h) * 100 if min(c_l, c_h) else 0
     maior = "LIEBHERR" if c_l >= c_h else "HYUNDAI"
+    meses_txt = ", ".join(f"{meses_analisados(a)} em {a}" for a in sorted(df["ano_nf"].dropna().unique()))
 
     return [
         ("Comparativo justo", f"{maior} ~{diff:.0f}% mais cara (média mensal/máq do parque)"),
         ("LIEBHERR", f"R$ {c_l:,.0f} / máq / mês  ({QTD_PARQUE['LIEBHERR']} máq.)"),
         ("HYUNDAI", f"R$ {c_h:,.0f} / máq / mês  ({QTD_PARQUE['HYUNDAI']} máq.)"),
         ("Unidade líder em gasto", str(top_local)),
-        ("Período", f"{df['mes_nf'].min()} → {df['mes_nf'].max()} (sem ISS)"),
+        (
+            "Período",
+            f"{df['mes_nf'].min()} → {df['mes_nf'].max()} "
+            f"(média: ÷{meses_txt}; manutenção + combustível)",
+        ),
     ]
 
 
@@ -473,7 +839,8 @@ def escrever_apresentacao(wb: Workbook, kpis: list[tuple[str, str]]) -> None:
     r = 4
     ws.cell(r, 1, "Mensagem principal").font = Font(bold=True, size=12)
     r += 1
-    ws.cell(r, 1, "Compare marcas pelo custo médio mensal por máquina do parque (÷7 ou ÷16), não pelo total bruto.")
+    ws.cell(r, 1, "Compare marcas pelo custo médio mensal por máquina do parque "
+                 "(gasto ÷ meses do ano: 12 em 2025, 3 em 2026; depois ÷7 ou ÷16).")
     r += 2
     ws.cell(r, 1, "Indicador").font = Font(bold=True)
     ws.cell(r, 2, "Valor").font = Font(bold=True)
@@ -571,14 +938,17 @@ def escrever_pivot_resumo(wb: Workbook, pivot: pd.DataFrame) -> None:
     _autosize(ws)
 
 
-def escrever_fonte_dados(wb: Workbook, fonte: pd.DataFrame) -> None:
+def escrever_fonte_dados(wb: Workbook, fonte: pd.DataFrame, substituir: bool = False) -> None:
+    if substituir and "Fonte_Dados" in wb.sheetnames:
+        del wb["Fonte_Dados"]
     ws = wb.create_sheet("Fonte_Dados")
     ws["A1"] = (
-        "Selecione qualquer célula → Inserir → Tabela Dinâmica. "
-        "Sugestão: Linhas Local > Marca > Máquina | Colunas Ano | Valores Média de Gasto_Abs (ou soma)."
+        "Base auditável jan/2025–mar/2026 — coluna Arquivo_Fonte indica a planilha de origem. "
+        "Inserir → Tabela Dinâmica: Linhas Local > Marca > Máquina | Colunas Ano | Valores Gasto_Abs."
     )
     ws["A1"].font = Font(italic=True, color="333333")
-    ws.merge_cells("A1:L1")
+    end_letter = get_column_letter(max(len(fonte.columns), 12))
+    ws.merge_cells(f"A1:{end_letter}1")
     start = 3
     for r_idx, row in enumerate(dataframe_to_rows(fonte, index=False, header=True), start):
         for c_idx, val in enumerate(row, 1):
@@ -757,6 +1127,33 @@ def escrever_como_usar(wb: Workbook) -> None:
     ws.column_dimensions["B"].width = 70
 
 
+def sincronizar_dashboard_com_base(dest: Path | None = None) -> Path:
+    """Sincroniza todas as abas numéricas com a base consolidada (preserva layout manual)."""
+    dest = dest or OUT
+    if not dest.exists():
+        raise FileNotFoundError(dest)
+
+    from atualizar_abas_gasto_filtrado import atualizar_dashboard
+
+    atualizar_dashboard(dest)
+    atualizar_aba_mix_valores(dest)
+    atualizar_visao_geral(dest)
+    atualizar_aba_fonte_dados(dest)
+
+    df = carregar_df_maq()
+    wb = load_workbook(dest)
+    atualizar_gasto_local_detalhado(wb, df)
+    atualizar_resumo_local_marca(wb, df)
+    try:
+        wb.save(dest)
+    except PermissionError:
+        alt = dest.with_stem(f"{dest.stem}_sync_{datetime.now():%Y%m%d_%H%M%S}")
+        wb.save(alt)
+        print(f"Arquivo bloqueado; salvo em: {alt}")
+        return alt
+    return dest
+
+
 def exportar_dashboard(dest: Path | None = None, preservar_abas_existentes: bool = False) -> Path:
     dest = dest or OUT
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -797,6 +1194,14 @@ if __name__ == "__main__":
 
     if len(sys.argv) > 1 and sys.argv[1] == "--mix-only":
         path = atualizar_aba_mix_contas()
+    elif len(sys.argv) > 1 and sys.argv[1] == "--mix-valores-only":
+        path = atualizar_aba_mix_valores()
+    elif len(sys.argv) > 1 and sys.argv[1] == "--sync-all":
+        path = sincronizar_dashboard_com_base()
+    elif len(sys.argv) > 1 and sys.argv[1] == "--fonte-only":
+        path = atualizar_aba_fonte_dados()
+    elif len(sys.argv) > 1 and sys.argv[1] == "--visao-only":
+        path = atualizar_visao_geral()
     else:
         preservar = "--preservar" in sys.argv
         path = exportar_dashboard(preservar_abas_existentes=preservar)

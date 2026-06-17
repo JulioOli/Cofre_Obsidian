@@ -5,7 +5,7 @@ tags:
   - centro-de-custo
   - divisoes
   - G3S
-atualizado: 08/04/2026
+atualizado: 16/06/2026
 ---
 24/03/2026 - 09:22
 
@@ -80,6 +80,12 @@ Principal unidade de negócio. Compra, processa e vende sucatas metálicas em m�
 Distribuição de ferro novo (barras, perfis). Presente apenas em Presidente Prudente.
 
 **Departamentos:** Administrativo · Comercial · Operacional · Logística · Corte e Dobra · Veículos · Máquinas e Equipamentos · Projetos
+
+**Projetos (Bracofer):**
+- `1.3.1.8` — Projetos (estrutura sintética)
+- `1.3.1.8.3` — Inteligência Artificial (IA) (~={blue}uso exclusivo para iniciativas de IA da Loja Braçofer=~)
+- No Supply, corresponde ao projeto `0010 - PROJETO IA`
+- A criação do CC de IA ==não altera a natureza contábil da despesa==; apenas melhora a rastreabilidade por projeto
 
 > ⚠️ Sub-representada no Plano de Contas: apenas contas `5.8` (Ferro Novo) com granularidade insuficiente para análise de margens.
 

@@ -68,7 +68,13 @@ def parse_data_fechamento(v):
     s = str(v).strip()
     if not s or s.lower() in {"nan", "nat", "none", "-"}:
         return pd.NaT
-    for fmt in ("%d/%m/%Y", "%d/%m/%y", "%Y-%m-%d"):
+    for fmt in (
+        "%d/%m/%Y",
+        "%d/%m/%y",
+        "%Y-%m-%d",
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%d %H:%M:%S.%f",
+    ):
         dt = pd.to_datetime(s, format=fmt, errors="coerce")
         if not pd.isna(dt):
             return dt.normalize()
@@ -76,6 +82,23 @@ def parse_data_fechamento(v):
     if pd.isna(dt):
         return pd.NaT
     return dt.normalize()
+
+
+def normalizar_colunas_data(
+    df: pd.DataFrame,
+    colunas: tuple[str, ...],
+) -> pd.DataFrame:
+    """Aplica parse_data_fechamento nas colunas de data informadas."""
+    out = df.copy()
+    for nome in colunas:
+        col = _col_por_nome(out.columns, nome)
+        if col:
+            out[col] = out[col].map(parse_data_fechamento)
+    return out
+
+
+# Colunas de data nos relatorios brutos do ATUA (dd/mm/yy com espaco final).
+COLS_DATA_ATUA = ("dt_emissao", "dt_lancamento_", "dt_lancamento")
 
 
 def preparar_dataframe_fechamento(

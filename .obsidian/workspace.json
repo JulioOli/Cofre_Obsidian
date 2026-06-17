@@ -6,7 +6,6 @@
       {
         "id": "ec8a574d36102cbf",
         "type": "tabs",
-        "dimension": 60.79088471849866,
         "children": [
           {
             "id": "6f36df44bed45351",
@@ -14,86 +13,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-Zettlelkasten/Melhoria BCBI.md",
+                "file": "00-Zettlelkasten/Assessment geothermal AOGWs Alberta (Applied Energy 2024).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Melhoria BCBI"
+              "title": "Assessment geothermal AOGWs Alberta (Applied Energy 2024)"
             }
-          },
-          {
-            "id": "ac2834d20ba6a1ba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00-Zettlelkasten/Índice Controladoria.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Índice Controladoria"
-            },
-            "group": "24501af68aca27c8"
           }
         ],
         "stacked": true
-      },
-      {
-        "id": "8d74b3b845ac85f4",
-        "type": "tabs",
-        "dimension": 39.20911528150134,
-        "children": [
-          {
-            "id": "988e465f67e1ac7b",
-            "type": "leaf",
-            "state": {
-              "type": "localgraph",
-              "state": {
-                "file": "00-Zettlelkasten/Índice Controladoria.md",
-                "options": {
-                  "collapse-filter": true,
-                  "search": "",
-                  "localJumps": 2,
-                  "localBacklinks": true,
-                  "localForelinks": true,
-                  "localInterlinks": false,
-                  "showTags": false,
-                  "showAttachments": false,
-                  "hideUnresolved": false,
-                  "collapse-color-groups": true,
-                  "colorGroups": [],
-                  "collapse-display": true,
-                  "showArrow": false,
-                  "textFadeMultiplier": 0,
-                  "nodeSizeMultiplier": 1,
-                  "lineSizeMultiplier": 1,
-                  "collapse-forces": true,
-                  "centerStrength": 0.46875,
-                  "repelStrength": 13.4375,
-                  "linkStrength": 0.692708333333333,
-                  "linkDistance": 30,
-                  "scale": 0.5087618855792584,
-                  "close": true
-                }
-              },
-              "icon": "lucide-git-fork",
-              "title": "Graph of Índice Controladoria"
-            },
-            "group": "24501af68aca27c8"
-          },
-          {
-            "id": "99a5b2968cdc46fe",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -266,40 +195,41 @@
   },
   "active": "6f36df44bed45351",
   "lastOpenFiles": [
-    "02-Referencias/Supply_bracofer/Maio/~$Relatório Contas a Pagar de 01-05-2026 até 31-05-2026.xlsx",
+    "02-Referencias/Custos-Maquinas/~$relatorio_custoComb_mes (arquivo do gui).xlsx",
+    "00-Zettlelkasten/Relatório Custo Combustível por Máquina — Fechamento.md",
+    "00-Zettlelkasten/Organic Rankine Cycle (ORC).md",
+    "00-Zettlelkasten/Assessment geothermal AOGWs Alberta (Applied Energy 2024).md",
+    "02-Referencias/Custos-Maquinas/DA80FEC0",
+    "02-Referencias/Custos-Maquinas/~$relatorio_custoComb_placas_jan-mar_fechamento.xlsx",
+    "02-Referencias/Custos-Maquinas/~$relatorio_custoComb_mes_fechamento.xlsx",
+    "02-Referencias/ATUA/Maio/ATUA_receitas_fechamento_05-2026.xlsx",
+    "02-Referencias/ATUA/Maio/~$ATUA_receitas_fechamento_05-2026 (nome provisório).xlsx",
+    "02-Referencias/ATUA/Maio/ATUA_receitas_fechamento_05-2026 (nome provisório).xlsx",
+    "00-Zettlelkasten/Coaxial double pipe DBHE.md",
+    "outputs/temp_check_atua_despesas.py",
+    "02-Referencias/Meus_Dados/57004EC0",
+    "00-Zettlelkasten/ERP - O que e.md",
+    "00-Zettlelkasten/Estrutura Empresarial G3S.md",
+    "02-Referencias/Plano de Contas.pdf",
+    "00-Zettlelkasten/Tipos de Movimentação.md",
+    "00-Zettlelkasten/Analise Base Financeira.md",
+    "00-Zettlelkasten/Gerando Relatório de Contas a Pagar da Bracofer (Supply).md",
+    "00-Zettlelkasten/VPS (Servidor Virtual Privado).md",
+    "00-Zettlelkasten/Departamentos (nível 3).md",
+    "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md",
     "00-Zettlelkasten/Índice Controladoria.md",
     "00-Zettlelkasten/Melhoria BCBI.md",
     "00-Zettlelkasten/Script de Conversão de CC e PC - Como Usar.md",
     "00-Zettlelkasten/BCBI - Auditoria Analítico jan-mai 2026.md",
     "00-Zettlelkasten/BCBI - Classificação Analítico Plano de Contas.md",
-    "00-Zettlelkasten/Tipos de Movimentação.md",
-    "00-Zettlelkasten/ERP - O que e.md",
-    "00-Zettlelkasten/VPS (Servidor Virtual Privado).md",
-    "00-Zettlelkasten/Gerando Relatório de Contas a Pagar da Bracofer (Supply).md",
-    "00-Zettlelkasten/Analise Base Financeira.md",
     "00-Zettlelkasten/Premissas - Fechamento.md",
     "00-Zettlelkasten/Guia Sistemas.md",
-    "00-Zettlelkasten/Departamentos (nível 3).md",
-    "00-Zettlelkasten/Estrutura Empresarial G3S.md",
     "00-Zettlelkasten/Filiais (nível 2).md",
     "00-Zettlelkasten/Divisões (nível 1).md",
     "00-Zettlelkasten/qtd de máquinas por filial.md",
     "00-Zettlelkasten/Entre Empresas - Faturamento de Máquinas Intercompany.md",
     "00-Zettlelkasten/Scripts utilitários — folha R e CC.md",
     "00-Zettlelkasten/Notebook Conversao ODBC para Fechamento - Como Usar.md",
-    "02-Referencias/Custos-Maquinas/F8E45AB0",
-    "02-Referencias/Custos-Maquinas/EEFC4AB0",
-    "02-Referencias/Custos-Maquinas/48BA4AB0",
-    "02-Referencias/Custos-Maquinas/~$medias_consumo_diesel_tratado.xlsx",
-    "02-Referencias/Custos-Maquinas/medias_consumo_diesel_tratado.xlsx",
-    "scripts/__pycache__/medias_consumo_diesel.cpython-313.pyc",
-    "scripts/tratar_medias_consumo_diesel.py",
-    "scripts/medias_consumo_diesel.py",
-    "02-Referencias/Custos-Maquinas/~$analise_contratos_diesel_maquinas.xlsx",
-    "02-Referencias/Custos-Maquinas/AA46C9B0",
-    "00-Zettlelkasten/coisas pra apagar.md",
-    "00-Zettlelkasten/nota.md",
-    "00-Zettlelkasten/fechamento.md",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/05_top_maquinas_2026.png",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/05_top_maquinas_2025.png",
     "outputs/figuras/liebherr_hyundai/05_top_maquinas_2026.png",
@@ -310,8 +240,6 @@
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/05_top_maquinas.png",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/04_serie_mensal_2026.png",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/04_serie_mensal_2025.png",
-    "outputs/relatorios/comparativo_liebherr_hyundai/README.md",
-    "00-Zettlelkasten/Critério de Rateio - Pilares.md",
     "Lançamentos estranhos - Março.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import re
 import shutil
+import sys
 from pathlib import Path
 
 import matplotlib
@@ -13,25 +14,25 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT / "outputs" / "relatorios" / "comparativo_liebherr_hyundai") not in sys.path:
+    sys.path.insert(0, str(ROOT / "outputs" / "relatorios" / "comparativo_liebherr_hyundai"))
+
+from export_dashboard_excel import (  # noqa: E402
+    CONTAS_ANALISE,
+    PARQUE,
+    QTD_PARQUE,
+    carregar_df_maq,
+    meses_analisados,
+    meses_totais_periodo,
+)
+
 OUT_DIR = Path(__file__).resolve().parent
 FIG_SRC = ROOT / "outputs" / "figuras" / "liebherr_hyundai"
 FIG_LOCAL = OUT_DIR / "figuras"
-XLSX = ROOT / "outputs" / "tabelas" / "comparativo_liebherr_hyundai.xlsx"
-BASE = ROOT / "02-Referencias" / "Custos-Maquinas" / "relatorio_marcas_maquinas_base.xlsx"
 
 CORES = {"LIEBHERR": "#F4C430", "HYUNDAI": "#004B8D"}
 MARCAS = ["LIEBHERR", "HYUNDAI"]
-PARQUE = {
-    "LIEBHERR": ["EHL0013", "EHL0014", "EHL0028", "EHL0041", "EHL0042", "EHL0043", "EHL0070"],
-    "HYUNDAI": [
-        "EHH0002", "EHH0003", "EHH0004", "EHH0006", "EHH0007", "EHH0008", "EHH0009",
-        "EHH0015", "EHH0019", "EHH0036", "EHH0037", "EHH0038", "EHH0039", "EHH0040",
-        "EHH0044", "EHH0046",
-    ],
-}
-QTD_PARQUE = {m: len(v) for m, v in PARQUE.items()}
 YLABEL_MAQ = "R$ médio / máquina"
-CONTAS_EXCLUIR_GRAFICOS: frozenset[str] = frozenset({"7.4.5"})  # ISS
 
 ROTULOS_CONTA = {
     "7.1.1": "7.1.1 Peças de manutenção",
@@ -60,10 +61,9 @@ ALIASES = {
 }
 
 
-def extrair_id_maquina(valor) -> str | None:
-    s = re.sub(r"\s+", "", str(valor).strip().upper())
-    m = re.match(r"^(EHL\d+|EHH\d+)", s)
-    return m.group(1) if m else None
+def carregar_df() -> tuple[pd.DataFrame, pd.DataFrame]:
+    df_maq = carregar_df_maq()
+    return df_maq, df_maq.copy()
 
 
 def ranking_maquinas_parque(df_maq: pd.DataFrame, ano: int | None = None) -> pd.DataFrame:
@@ -106,25 +106,6 @@ def rotulo_conta_grafico(cod: str, conta: str) -> str:
     return f"{cod} {str(conta)[:35]}"
 
 
-def carregar_df() -> tuple[pd.DataFrame, pd.DataFrame]:
-    df = pd.read_excel(BASE, sheet_name="base_maquinas_2025_2026")
-    df = df[df["MARCA"].isin(MARCAS)].copy()
-    df["valor_conta_num"] = pd.to_numeric(df["valor_conta"], errors="coerce")
-    df["gasto_abs"] = df["valor_conta_num"].abs()
-    df["data_nf"] = pd.to_datetime(df["data_nf"], errors="coerce", dayfirst=True)
-    df["ano_nf"] = df["data_nf"].dt.year
-    df["mes_nf"] = df["data_nf"].dt.to_period("M").astype(str)
-    df["maq_id"] = df["n4_centro_custo"].map(extrair_id_maquina)
-    df["no_parque"] = df.apply(
-        lambda r: r["maq_id"] in PARQUE.get(r["MARCA"], []) if pd.notna(r["maq_id"]) else False,
-        axis=1,
-    )
-    df_maq = df[df["no_parque"]].copy()
-    cod = df_maq["cod_conta"].astype(str).str.strip()
-    df_maq_graf = df_maq[~cod.isin(CONTAS_EXCLUIR_GRAFICOS)].copy()
-    return df, df_maq_graf
-
-
 def gerar_figuras(df: pd.DataFrame, df_maq: pd.DataFrame) -> None:
     FIG_SRC.mkdir(parents=True, exist_ok=True)
     marcas_ord = MARCAS
@@ -133,8 +114,11 @@ def gerar_figuras(df: pd.DataFrame, df_maq: pd.DataFrame) -> None:
         df_maq.groupby(["MARCA", "ano_nf"])["gasto_abs"].sum().reset_index(name="volume_parque")
     )
     por_ano_vol_maq["parque"] = por_ano_vol_maq["MARCA"].map(QTD_PARQUE)
+    por_ano_vol_maq["meses_ano"] = por_ano_vol_maq["ano_nf"].map(meses_analisados)
     por_ano_vol_maq["custo_por_maquina_parque"] = (
-        por_ano_vol_maq["volume_parque"] / por_ano_vol_maq["parque"]
+        por_ano_vol_maq["volume_parque"]
+        / por_ano_vol_maq["parque"]
+        / por_ano_vol_maq["meses_ano"]
     )
 
     anos_ord = sorted(por_ano_vol_maq["ano_nf"].dropna().unique())
@@ -169,8 +153,8 @@ def gerar_figuras(df: pd.DataFrame, df_maq: pd.DataFrame) -> None:
                 )
     ax.set_xticks(x + w / 2)
     ax.set_xticklabels([str(int(a)) for a in anos_ord])
-    ax.set_title("Custo médio por máquina do parque — por ano")
-    ax.set_ylabel(YLABEL_MAQ + " / ano")
+    ax.set_title("Custo médio mensal por máquina do parque — por ano")
+    ax.set_ylabel(YLABEL_MAQ)
     ax.legend(fontsize=8)
     plt.tight_layout()
     fig.savefig(FIG_SRC / "01_volume_por_ano.png", dpi=130)
@@ -181,7 +165,11 @@ def gerar_figuras(df: pd.DataFrame, df_maq: pd.DataFrame) -> None:
         .sum()
         .reset_index(name="volume")
     )
-    por_conta["volume_por_maq"] = por_conta["volume"] / por_conta["MARCA"].map(QTD_PARQUE)
+    por_conta["volume_por_maq"] = (
+        por_conta["volume"]
+        / por_conta["MARCA"].map(QTD_PARQUE)
+        / meses_totais_periodo(df_maq)
+    )
 
     top_contas = (
         por_conta.groupby("conta", observed=True)["volume"].sum().nlargest(6).index.tolist()

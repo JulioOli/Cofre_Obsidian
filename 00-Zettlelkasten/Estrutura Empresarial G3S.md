@@ -55,6 +55,7 @@ flowchart TD
 - É a **empresa-âncora** do grupo: a maior parte dos lançamentos está aqui.
 - O SAGI é conectado em CNPJ da G3S. A filial ativa no canto direito superior da tela do SAGI (ex: `G3S PRUDENTE`) indica qual estabelecimento está operando.
 - A **Bracofer** opera no **Supply**, sistema próprio da loja de ferro novo — é nele que ficam as **NFs de venda** dessa divisão (não no SAGI).
+- Para iniciativas de IA da Loja Braçofer, usar o CC `1.3.1.8.3` no SAGI e o projeto `0010 - PROJETO IA` no Supply, sem alterar a natureza contábil da despesa.
 - → **CCs:** `1.2` / `2.2` (Seletiva), `1.3` / `2.3` (Bracofer)
 
 ---

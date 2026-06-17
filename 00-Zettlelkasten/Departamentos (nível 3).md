@@ -5,7 +5,7 @@ tags:
   - centro-de-custo
   - departamentos
   - G3S
-atualizado: 09/06/2026
+atualizado: 16/06/2026
 ---
 24/03/2026 - 09:22
 
@@ -149,6 +149,25 @@ Exclusivo da **Bracofer** em Presidente Prudente (`1.3.1.5`).
 - `6.2.1` Mão de Obra — Corte de Sucata
 - `6.2.2` Materiais — Corte de Sucata
 - `7.1.1` Peças de Manutenção
+
+---
+
+## Projetos (Bracofer)
+Estrutura de projetos da Bracofer em Presidente Prudente (`1.3.1.8`), com desdobramentos específicos por iniciativa.
+
+**CC de referência (IA):**
+- `1.3.1.8.3` — Inteligência Artificial (IA)
+- Supply: `0010 - PROJETO IA`
+
+**Quando usar:**
+- Assinaturas e licenças de ferramentas de IA
+- Consultoria de implantação de IA
+- Treinamentos de IA
+- Automações/assistentes, integrações e serviços especializados de IA
+
+> ⚠️ O CC de IA identifica o projeto, mas ==não altera a classificação contábil por natureza do gasto== no Plano de Contas.
+>  
+> Exemplo: licença de IA permanece em conta administrativa/sistemas; treinamento de IA permanece em conta de treinamento; ambos podem ser lançados no CC `1.3.1.8.3` quando vinculados ao projeto IA.
 
 ---
 

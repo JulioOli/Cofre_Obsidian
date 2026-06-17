@@ -1,12 +1,44 @@
 {
   "recentFiles": [
     {
-      "basename": "Melhoria BCBI",
-      "path": "00-Zettlelkasten/Melhoria BCBI.md"
+      "basename": "Assessment geothermal AOGWs Alberta (Applied Energy 2024)",
+      "path": "00-Zettlelkasten/Assessment geothermal AOGWs Alberta (Applied Energy 2024).md"
+    },
+    {
+      "basename": "Relatório Custo Combustível por Máquina — Fechamento",
+      "path": "00-Zettlelkasten/Relatório Custo Combustível por Máquina — Fechamento.md"
+    },
+    {
+      "basename": "Organic Rankine Cycle (ORC)",
+      "path": "00-Zettlelkasten/Organic Rankine Cycle (ORC).md"
+    },
+    {
+      "basename": "ERP - O que e",
+      "path": "00-Zettlelkasten/ERP - O que e.md"
+    },
+    {
+      "basename": "Estrutura Empresarial G3S",
+      "path": "00-Zettlelkasten/Estrutura Empresarial G3S.md"
+    },
+    {
+      "basename": "Plano de Contas",
+      "path": "02-Referencias/Plano de Contas.pdf"
+    },
+    {
+      "basename": "Tipos de Movimentação",
+      "path": "00-Zettlelkasten/Tipos de Movimentação.md"
+    },
+    {
+      "basename": "Notebook Normalizacao Despesas ATUA - Como Usar",
+      "path": "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md"
     },
     {
       "basename": "Índice Controladoria",
       "path": "00-Zettlelkasten/Índice Controladoria.md"
+    },
+    {
+      "basename": "Melhoria BCBI",
+      "path": "00-Zettlelkasten/Melhoria BCBI.md"
     },
     {
       "basename": "Script de Conversão de CC e PC - Como Usar",
@@ -19,14 +51,6 @@
     {
       "basename": "BCBI - Classificação Analítico Plano de Contas",
       "path": "00-Zettlelkasten/BCBI - Classificação Analítico Plano de Contas.md"
-    },
-    {
-      "basename": "Tipos de Movimentação",
-      "path": "00-Zettlelkasten/Tipos de Movimentação.md"
-    },
-    {
-      "basename": "ERP - O que e",
-      "path": "00-Zettlelkasten/ERP - O que e.md"
     },
     {
       "basename": "VPS (Servidor Virtual Privado)",
@@ -51,10 +75,6 @@
     {
       "basename": "Departamentos (nível 3)",
       "path": "00-Zettlelkasten/Departamentos (nível 3).md"
-    },
-    {
-      "basename": "Estrutura Empresarial G3S",
-      "path": "00-Zettlelkasten/Estrutura Empresarial G3S.md"
     },
     {
       "basename": "Filiais (nível 2)",
@@ -85,16 +105,8 @@
       "path": "02-Referencias/Centro de Custo.pdf"
     },
     {
-      "basename": "Plano de Contas",
-      "path": "02-Referencias/Plano de Contas.pdf"
-    },
-    {
       "basename": "notas de contas a subir",
       "path": "00-Zettlelkasten/notas de contas a subir.md"
-    },
-    {
-      "basename": "Notebook Normalizacao Despesas ATUA - Como Usar",
-      "path": "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md"
     },
     {
       "basename": "Script de Auditoria Semanal de Lancamentos ODBC - Como Usar",
@@ -111,10 +123,6 @@
     {
       "basename": "coisas pra apagar",
       "path": "00-Zettlelkasten/coisas pra apagar.md"
-    },
-    {
-      "basename": "Organic Rankine Cycle (ORC)",
-      "path": "00-Zettlelkasten/Organic Rankine Cycle (ORC).md"
     },
     {
       "basename": "Critério de Rateio - Pilares",
@@ -191,10 +199,6 @@
     {
       "basename": "New note",
       "path": "03-Templates/New note.md"
-    },
-    {
-      "basename": "linguagem interpretada",
-      "path": "00-Zettlelkasten/linguagem interpretada.md"
     }
   ],
   "omittedPaths": [],

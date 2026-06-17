@@ -5,7 +5,7 @@ tags:
   - centro-de-custo
   - filiais
   - G3S
-atualizado: 09/06/2026
+atualizado: 16/06/2026
 ---
 24/03/2026 - 09:22
 
@@ -256,7 +256,9 @@ Por isso não há veículos nem máquinas cadastrados analiticamente nesta filia
 | 1.3.1.7.4 | DPS0050 |
 | 1.3.1.7.5 | DPS0051 |
 
-**Projetos:** Escritório Novo (`1.3.1.8.1`) · Espaço do Serralheiro e Calheiro (`1.3.1.8.2`)
+**Projetos:** Escritório Novo (`1.3.1.8.1`) · Espaço do Serralheiro e Calheiro (`1.3.1.8.2`) · Inteligência Artificial (IA) (`1.3.1.8.3`)
+
+> Diretriz operacional (gestão): no Supply, iniciativas de IA da Loja Braçofer devem usar `0010 - PROJETO IA`, mantendo correspondência com o CC `1.3.1.8.3` no SAGI.
 
 ---
 
