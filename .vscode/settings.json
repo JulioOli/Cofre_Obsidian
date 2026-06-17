@@ -1,0 +1,7 @@
+{
+    "workbench.editorAssociations": {
+        "*.pyc": "default",
+        "file:/**/*.csv": "jupyter-data-wrangler",
+        "file:/**/*.xlsx": "jupyter-data-wrangler"
+    }
+}
