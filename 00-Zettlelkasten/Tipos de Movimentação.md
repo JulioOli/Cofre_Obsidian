@@ -5,13 +5,13 @@ tags:
   - plano-de-contas
   - tipos-movimentacao
   - G3S
-atualizado: 01/04/2026
+atualizado: 18/06/2026
 ---
 24/03/2026 - 09:22
 
 # ~={Titulo}Tipos de Movimentação — Plano de Contas G3S=~
 
-> **Fonte:** `Plano de Contas.pdf` — 01/04/2026 — 238 contas cadastradas
+> **Fonte:** `Plano de Contas.pdf` / `Plano de Contas.csv` — 16/06/2026 — 240 contas cadastradas
 > **Natureza:** `D` = Débito (saída) · `R` = Crédito (entrada)
 
 ---
@@ -192,6 +192,46 @@ atualizado: 01/04/2026
 | 7.2.5 | Publicidade e Propaganda |
 | 7.2.6 | Eventos Endomarketing |
 | 7.2.7 | Patrocínios |
+| **7.2.8** | **Material Gráfico** ⭐ |
+| **7.2.9** | **Feiras e Exposições** ⭐ |
+
+#### ~={Titulo}7.2.8 — Material Gráfico=~
+
+> Criada em jun/2026 para detalhar despesas de **ações promocionais e eventos corporativos**.
+> Uso restrito a materiais gráficos de **divulgação institucional, promocional ou comercial**.
+
+**Exemplos de aplicação:**
+- Impressão de folders e panfletos
+- Catálogos de produtos
+- Banners e faixas promocionais
+- Cartazes e materiais de divulgação
+- Adesivos promocionais
+- Credenciais e crachás para eventos
+- Materiais impressos para feiras e exposições
+- Plotagem de painéis e materiais institucionais
+
+**~={red}Não usar para:=~**
+- Materiais operacionais de uso interno no pátio ou nas caixas (ex.: QR codes de operação, etiquetas de processo, sinalização funcional) → preferir `7.5.5` Material de Escritório ou `7.1.16` Serviços de Terceiros; em dúvida, consultar Qualidade antes do lançamento
+- Infraestrutura de feiras (estandes, locação, sonorização) → usar `7.2.9`
+
+#### ~={Titulo}7.2.9 — Feiras e Exposições=~
+
+> Criada em jun/2026. Despesas **diretamente relacionadas à participação** em feiras, exposições, mostras e eventos do segmento.
+
+**Exemplos de aplicação:**
+- Taxas de inscrição e participação em feiras e exposições
+- Credenciamento de colaboradores, clientes e representantes
+- Locação de estandes
+- Taxas cobradas pela organização do evento
+- Montagem básica disponibilizada pelo organizador
+- Locação de tendas, mesas, cadeiras e mobiliário para eventos
+- Locação de televisores, painéis de LED e equipamentos audiovisuais
+- Serviços de sonorização e iluminação
+- Serviços de decoração de estandes e espaços promocionais
+- Montagem e desmontagem de estruturas para eventos
+- Infraestrutura necessária para participação em feiras, exposições e eventos corporativos
+
+> ⚠️ **Orientação do gestor (jun/2026):** a correta classificação é fundamental para a qualidade gerencial. Centros de custo e critérios de rateio **permanecem inalterados**. Em caso de dúvida, consultar a área de **Qualidade** antes do lançamento.
 
 ### 7.3 — Pessoal
 | Código | Descrição |

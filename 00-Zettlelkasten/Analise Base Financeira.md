@@ -5,6 +5,7 @@ tags:
   - base-financeira
   - analise-dados
   - G3S
+atualizado: 18/06/2026
 ---
 25/03/2026 - 09:00
 
@@ -117,6 +118,9 @@ Para extrair as dimensões (pandas):
 | `1.1` (G3S Escritório) | `7.5.7` | Honorários contábeis centrais |
 | `1.9.x` (Familiar) | `7.11.2` | Pagamento a sócios |
 | `1.10.1` (Intercompany) | `5.4.7` | Operação entre empresas do grupo |
+| `1.1.12` / `1.2.x.2` (Marketing / Comercial) | `7.2.8` | Material gráfico promocional ou institucional |
+| `1.1.12` / `1.2.x.2` (Marketing / Comercial) | `7.2.9` | Despesas de participação em feiras e exposições |
+| `1.2.x.3` / `1.2.1.11` (Operacional / Caixas) | `7.5.5` | Material operacional de uso interno (ex.: QR nas caixas) |
 
 ---
 
@@ -142,13 +146,16 @@ df['pago'] = df['iterea_pagamento'] != 'NAO PAGO'
 df['data_pagamento'] = pd.to_datetime(df['iterea_pagamento'], errors='coerce')
 ```
 
-### 4. Operação intercompany distorce totais
+### 4. `7.2.8` Material Gráfico ≠ material operacional
+A conta `7.2.8` (criada jun/2026) é exclusiva para materiais de **divulgação institucional, promocional ou comercial**. Materiais de uso operacional interno — como QR codes nas caixas do pátio — **não** devem ir nessa conta; usar `7.5.5` ou `7.1.16`. Em dúvida, consultar Qualidade antes do lançamento. Ver [[Tipos de Movimentação]].
+
+### 5. Operação intercompany distorce totais
 O registro `AJUSTESALDO300925` (R$27,9M) em `RSE` com `OPERAÇÕES ENTRE EMPRESAS` infla o volume bruto total. Isolar antes de análises de rentabilidade:
 ```python
 df_operacional = df[df['descdc'] != 'OPERAÇÕES ENTRE EMPRESAS']
 ```
 
-### 5. Encoding com caracteres corrompidos
+### 6. Encoding com caracteres corrompidos
 O arquivo usa ISO-8859-1 ou UTF-8 com BOM. Ao abrir no Excel ou Python, especificar encoding:
 ```python
 df = pd.read_csv('base.csv', sep=';', encoding='utf-8-sig', on_bad_lines='skip')
@@ -156,7 +163,7 @@ df = pd.read_csv('base.csv', sep=';', encoding='utf-8-sig', on_bad_lines='skip')
 df = pd.read_csv('base.csv', sep=';', encoding='latin-1')
 ```
 
-### 6. Registros migrados com `SALDO ADT CLI/FOR`
+### 7. Registros migrados com `SALDO ADT CLI/FOR`
 Documentos `SALDO ADT CLI`, `SALDO ADT FOR`, `MIGRADO` etc. são saldos de abertura, não transações reais. Filtrar para análises de movimentação real.
 
 ---

@@ -49,12 +49,12 @@ Em lançamentos **sem rateio** (uma linha = um documento inteiro), `valor_plano`
 
 Regra vigente a partir da **v2.4** do notebook `conversao_odbc_para_fechamento.ipynb` (validada com o gestor em jun/2026):
 
-| Coluna fechamento | ← | Coluna ODBC |
-|---|---|---|
-| `valor_nf` | ← | `valor_bruto` |
-| `valor_pago` | ← | `iterea_valpago` |
-| `valor_conta` | ← | `valor_centro` |
-| `Valor Oficial` | ← | `valor_centro` |
+| Coluna fechamento | ←   | Coluna ODBC      |
+| ----------------- | --- | ---------------- |
+| `valor_nf`        | ←   | `valor_bruto`    |
+| `valor_pago`      | ←   | `iterea_valpago` |
+| `valor_conta`     | ←   | `valor_centro`   |
+| `Valor Oficial`   | ←   | `valor_centro`   |
 
 ~={yellow}Destaque:=~ o **Valor Oficial** deve vir de `valor_centro`, **não** de `valor_plano`. O `valor_plano` reflete o rateio pelo **plano de contas**; o fechamento oficial trabalha com o rateio pelo **centro de custo**.
 

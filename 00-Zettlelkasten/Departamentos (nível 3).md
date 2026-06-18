@@ -5,7 +5,7 @@ tags:
   - centro-de-custo
   - departamentos
   - G3S
-atualizado: 16/06/2026
+atualizado: 18/06/2026
 ---
 24/03/2026 - 09:22
 
@@ -60,7 +60,7 @@ Presente em **todas** as divisões operacionais. Concentra despesas administrati
 Responsável pelas operações de compra e venda. Na Seletiva, pode ser desdobrado em **Comercial Compra** e **Comercial Venda** no corporativo.
 
 **Contas do Plano mais usadas:**
-- `7.2` Comercial (Comissão, Viagem, Publicidade, Prêmios)
+- `7.2` Comercial (Comissão, Publicidade, Prêmios, **Material Gráfico `7.2.8`**, **Feiras e Exposições `7.2.9`**)
 - `6.1` Compras de Sucatas
 - `4.1` Vendas de Sucatas
 - `5.4.3` Pesagens Avulsas
@@ -214,7 +214,7 @@ Cada veículo com seu próprio CC. Permite rastrear o custo total de propriedade
 | 1.1.8 | Ambiental | Licenças ambientais, CETESB |
 | 1.1.9 | Recursos Humanos | Gestão de pessoal centralizada |
 | 1.1.11 | Segurança do Trabalho | EPI, CIPA, treinamentos |
-| 1.1.12 | Marketing | Publicidade e propaganda |
+| 1.1.12 | Marketing | Publicidade (`7.2.5`), material gráfico promocional (`7.2.8`), feiras (`7.2.9`) |
 | 1.1.13 | TIC | Infraestrutura de tecnologia |
 | 1.1.14 | Suprimentos | Compras corporativas |
 | 1.1.15 | Manutenção Máquinas e Veículos | Manutenção centralizada |
@@ -237,6 +237,9 @@ Cada veículo com seu próprio CC. Permite rastrear o custo total de propriedade
 | INSS folha | `7.3.3` | Administrativo / Operacional |
 | Pedágio | `7.1.12` | Logística / Transporte |
 | Aluguel de pátio | `7.6.4` | Operacional |
+| Folder, banner ou adesivo promocional | `7.2.8` | Marketing / Comercial |
+| Participação em feira ou exposição | `7.2.9` | Marketing / Comercial |
+| QR code ou material operacional de caixa | `7.5.5` ou `7.1.16` | Operacional / Caixas — **não** `7.2.8` |
 
 ---
 

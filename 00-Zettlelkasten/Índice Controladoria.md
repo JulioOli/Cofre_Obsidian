@@ -10,7 +10,7 @@ tags:
 # ~={Titulo}Índice — Controladoria G3S (Seletiva)=~
 
 > Notas de referência geradas a partir dos arquivos oficiais do sistema Sygecom.
-> **Última atualização:** 17/06/2026
+> **Última atualização:** 18/06/2026
 > Quando os arquivos fonte forem atualizados, solicitar revisão das notas abaixo.
 
 ---
@@ -55,8 +55,9 @@ O campo `descen` segue o padrão:
 - **CNPJ:** 20.947.332/0004-38
 - **Setor:** Reciclagem e comercialização de sucatas
 - **Total de Centros de Custo:** 632
-- **Total de Contas no Plano:** 238
+- **Total de Contas no Plano:** 240
 - **Sistema:** Sygecom
-- **Fonte:** `Centro de Custo.pdf` · `Plano de Contas.pdf` (02-Referencias) — impressos em 25/03/2026
+- **Fonte:** `Centro de Custo.pdf` · `Plano de Contas.pdf` (02-Referencias) — impressos em 16/06/2026
+- **Novas contas (jun/2026):** `7.2.8` Material Gráfico · `7.2.9` Feiras e Exposições — ver [[Tipos de Movimentação]]
 
 ___
