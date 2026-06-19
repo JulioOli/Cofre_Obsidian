@@ -4,37 +4,43 @@
     "type": "split",
     "children": [
       {
-        "id": "ec8a574d36102cbf",
+        "id": "f329d2cc7f352dfa",
         "type": "tabs",
         "children": [
           {
-            "id": "6f36df44bed45351",
+            "id": "a492e8e541705fcf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-Zettlelkasten/premissas pra arrumar ainda mais o relatório de fechamento depois da conversão do ODBC.md",
-                "mode": "source",
+                "file": "00-Zettlelkasten/Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "premissas pra arrumar ainda mais o relatório de fechamento depois da conversão do ODBC"
+              "title": "Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "6274ad58eaeed820",
+        "type": "tabs",
+        "children": [
           {
-            "id": "7c305a722ead5c0b",
+            "id": "b690a14ca346b5bf",
             "type": "leaf",
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md",
+                "file": "00-Zettlelkasten/Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
-                  "localJumps": 2,
+                  "localJumps": 1,
                   "localBacklinks": true,
                   "localForelinks": true,
-                  "localInterlinks": false,
+                  "localInterlinks": true,
                   "showTags": false,
                   "showAttachments": false,
                   "hideUnresolved": false,
@@ -46,21 +52,35 @@
                   "nodeSizeMultiplier": 1,
                   "lineSizeMultiplier": 1,
                   "collapse-forces": true,
-                  "centerStrength": 0.518713248970312,
-                  "repelStrength": 14.9064449064449,
-                  "linkStrength": 0.674636174636175,
+                  "centerStrength": 0,
+                  "repelStrength": 0,
+                  "linkStrength": 0,
                   "linkDistance": 30,
-                  "scale": 0.5087618855792585,
+                  "scale": 0.7132754626224413,
                   "close": true
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Valores ODBC e Fechamento — Mapeamento de Colunas"
+              "title": "Graph of Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO"
             },
-            "group": "b4f069b5b0d66ed7"
+            "group": "b625c54a283f8dd8"
+          },
+          {
+            "id": "8cf17a75a2cc9781",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-Zettlelkasten/Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO"
+            },
+            "group": "b625c54a283f8dd8"
           }
-        ],
-        "stacked": true
+        ]
       }
     ],
     "direction": "vertical"
@@ -230,43 +250,44 @@
       "bases:Create new base": false
     }
   },
-  "active": "6f36df44bed45351",
+  "active": "b690a14ca346b5bf",
   "lastOpenFiles": [
-    "02-Referencias/Plano de Contas.pdf",
-    "00-Zettlelkasten/premissas pra arrumar ainda mais o relatório de fechamento depois da conversão do ODBC.md",
-    "02-Referencias/Centro de Custo.pdf",
-    "02-Referencias/SAGI/sagi_rel_centro_de_custo.csv",
-    "02-Referencias/SAGI/centro-de-custo_apenas-ativos - Copia.csv",
-    "02-Referencias/SAGI/centro-de-custo_apenas-ativos.csv",
-    "02-Referencias/SAGI/Não confirmado 687846.crdownload",
-    "02-Referencias/SAGI/sagi_rel_centro_custo.csv",
-    "02-Referencias/SAGI/sagi_rel_plano_conta.csv",
-    "02-Referencias/SAGI/Centro de Custo.csv",
-    "02-Referencias/SAGI/Plano de Contas.csv",
-    "00-Zettlelkasten/Script de Conversão de CC e PC - Como Usar.md",
+    "02-Referencias/ATUA/Abril/ATUA_custo_frete_fechamento_04-2026.xlsx",
+    "02-Referencias/ATUA/Abril/ATUA_despesas_fechamento_04-2026.xlsx",
+    "02-Referencias/ATUA/Abril/ATUA_receitas_fechamento_04-2026.xlsx",
+    "02-Referencias/ATUA/Abril/6D888ED0",
+    "02-Referencias/ATUA/Abril/FAE78ED0",
+    "02-Referencias/ATUA/Abril/58878ED0",
+    "02-Referencias/ATUA/Abril/~$ATUA_despesas_fechamento_04-2026(2).xlsx",
+    "02-Referencias/ATUA/Abril/ATUA_custo_frete_fechamento_04-2026(2).xlsx",
+    "02-Referencias/ATUA/Abril/ATUA_despesas_fechamento_04-2026(2).xlsx",
+    "02-Referencias/ATUA/Abril/ATUA_receitas_fechamento_04-2026(2).xlsx",
+    "00-Zettlelkasten/Premissas - Fechamento.md",
+    "02-Referencias/ATUA/Abril/Não confirmado 167513.crdownload",
+    "00-Zettlelkasten/Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO.md",
     "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md",
+    "00-Zettlelkasten/Relatório Custo Combustível por Máquina — Fechamento.md",
     "00-Zettlelkasten/Índice Controladoria.md",
+    "00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md",
+    "00-Zettlelkasten/Tipos de Movimentação.md",
+    "00-Zettlelkasten/Script de Auditoria de Custos Fixos - Como Usar.md",
+    "00-Zettlelkasten/Assessment geothermal AOGWs Alberta (Applied Energy 2024).md",
+    "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md",
+    "00-Zettlelkasten/Reunião.md",
+    "00-Zettlelkasten/premissas pra arrumar ainda mais o relatório de fechamento depois da conversão do ODBC.md",
+    "00-Zettlelkasten/Gerando Relatório de Contas a Pagar da Bracofer (Supply).md",
+    "00-Zettlelkasten/Script de Conversão de CC e PC - Como Usar.md",
     "00-Zettlelkasten/Critério de Rateio - Pilares.md",
     "00-Zettlelkasten/Analise Base Financeira.md",
-    "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md",
-    "00-Zettlelkasten/Untitled.md",
-    "00-Zettlelkasten/Gerando Relatório de Contas a Pagar da Bracofer (Supply).md",
-    "00-Zettlelkasten/Premissas - Fechamento.md",
-    "00-Zettlelkasten/Assessment geothermal AOGWs Alberta (Applied Energy 2024).md",
-    "00-Zettlelkasten/Relatório Custo Combustível por Máquina — Fechamento.md",
     "00-Zettlelkasten/Organic Rankine Cycle (ORC).md",
     "00-Zettlelkasten/Coaxial double pipe DBHE.md",
     "00-Zettlelkasten/ERP - O que e.md",
     "00-Zettlelkasten/Estrutura Empresarial G3S.md",
-    "00-Zettlelkasten/Tipos de Movimentação.md",
     "00-Zettlelkasten/VPS (Servidor Virtual Privado).md",
     "00-Zettlelkasten/Departamentos (nível 3).md",
     "00-Zettlelkasten/Melhoria BCBI.md",
     "00-Zettlelkasten/BCBI - Auditoria Analítico jan-mai 2026.md",
     "00-Zettlelkasten/BCBI - Classificação Analítico Plano de Contas.md",
-    "00-Zettlelkasten/Guia Sistemas.md",
-    "00-Zettlelkasten/Filiais (nível 2).md",
-    "00-Zettlelkasten/Divisões (nível 1).md",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/05_top_maquinas_2026.png",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/05_top_maquinas_2025.png",
     "outputs/figuras/liebherr_hyundai/05_top_maquinas_2026.png",
