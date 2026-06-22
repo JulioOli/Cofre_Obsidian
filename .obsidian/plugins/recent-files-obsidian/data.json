@@ -1,8 +1,36 @@
 {
   "recentFiles": [
     {
+      "basename": "Critério de Rateio - Pilares",
+      "path": "00-Zettlelkasten/Critério de Rateio - Pilares.md"
+    },
+    {
       "basename": "Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO",
       "path": "00-Zettlelkasten/Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO.md"
+    },
+    {
+      "basename": "Valores ODBC e Fechamento — Mapeamento de Colunas",
+      "path": "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md"
+    },
+    {
+      "basename": "Plano de Contas",
+      "path": "02-Referencias/Plano de Contas.pdf"
+    },
+    {
+      "basename": "Entre Empresas - Faturamento de Máquinas Intercompany",
+      "path": "00-Zettlelkasten/Entre Empresas - Faturamento de Máquinas Intercompany.md"
+    },
+    {
+      "basename": "Analise Base Financeira",
+      "path": "00-Zettlelkasten/Analise Base Financeira.md"
+    },
+    {
+      "basename": "Reunião com a Cristina",
+      "path": "00-Zettlelkasten/Reunião com a Cristina.md"
+    },
+    {
+      "basename": "Gerando Relatório de Contas a Pagar da Bracofer (Supply)",
+      "path": "00-Zettlelkasten/Gerando Relatório de Contas a Pagar da Bracofer (Supply).md"
     },
     {
       "basename": "Premissas - Fechamento",
@@ -11,10 +39,6 @@
     {
       "basename": "Centro de Custo",
       "path": "02-Referencias/Centro de Custo.pdf"
-    },
-    {
-      "basename": "Valores ODBC e Fechamento — Mapeamento de Colunas",
-      "path": "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md"
     },
     {
       "basename": "Relatório Custo Combustível por Máquina — Fechamento",
@@ -29,20 +53,8 @@
       "path": "00-Zettlelkasten/Script de Auditoria de Custos Fixos - Como Usar.md"
     },
     {
-      "basename": "Reunião",
-      "path": "00-Zettlelkasten/Reunião.md"
-    },
-    {
       "basename": "premissas pra arrumar ainda mais o relatório de fechamento depois da conversão do ODBC",
       "path": "00-Zettlelkasten/premissas pra arrumar ainda mais o relatório de fechamento depois da conversão do ODBC.md"
-    },
-    {
-      "basename": "Gerando Relatório de Contas a Pagar da Bracofer (Supply)",
-      "path": "00-Zettlelkasten/Gerando Relatório de Contas a Pagar da Bracofer (Supply).md"
-    },
-    {
-      "basename": "Plano de Contas",
-      "path": "02-Referencias/Plano de Contas.pdf"
     },
     {
       "basename": "Script de Conversão de CC e PC - Como Usar",
@@ -51,14 +63,6 @@
     {
       "basename": "Índice Controladoria",
       "path": "00-Zettlelkasten/Índice Controladoria.md"
-    },
-    {
-      "basename": "Critério de Rateio - Pilares",
-      "path": "00-Zettlelkasten/Critério de Rateio - Pilares.md"
-    },
-    {
-      "basename": "Analise Base Financeira",
-      "path": "00-Zettlelkasten/Analise Base Financeira.md"
     },
     {
       "basename": "Notebook Normalizacao Despesas ATUA - Como Usar",
@@ -115,10 +119,6 @@
     {
       "basename": "qtd de máquinas por filial",
       "path": "00-Zettlelkasten/qtd de máquinas por filial.md"
-    },
-    {
-      "basename": "Entre Empresas - Faturamento de Máquinas Intercompany",
-      "path": "00-Zettlelkasten/Entre Empresas - Faturamento de Máquinas Intercompany.md"
     },
     {
       "basename": "Scripts utilitários — folha R e CC",

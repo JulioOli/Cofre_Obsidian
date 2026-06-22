@@ -5,7 +5,7 @@ tags:
   - fechamento
   - excel
   - dre
-atualizado: 19/06/2026
+atualizado: 22/06/2026 (revisão Base Cristina completa)
 ---
 19/06/26 - 09:30
 
@@ -20,6 +20,157 @@ Nota de análise estrutural da planilha **`FECHAMENTO GERAL 2026 (HUGO).xlsx`**,
 A planilha funciona como um ~={orange}modelo gerencial de fechamento=~: ela recebe lançamentos analíticos na aba `Base`, classifica cada conta por um `De-Para` de DRE/custeio e, a partir disso, monta visões de resultado por mês, unidade, centro de custo, custeio por absorção, custeio variável, qualidade de classificação, custo de máquinas e rateio manual de salários.
 
 > ~={red}Ponto crítico:=~ a planilha mistura **base transacional**, **fórmulas**, **tabelas dinâmicas** e **classificações manuais**. Por isso, ao atualizar dados, não basta colar novas linhas: é necessário conferir fórmulas, atualizar intervalos de pivôs e validar o `De-Para`.
+
+___
+
+### ~={Titulo}Atualização — visões da Cristina (jun/2026)=~
+
+As abas experimentais da Cristina **não vieram** no save do `FECHAMENTO GERAL 2026 (HUGO).xlsx`. Elas foram salvas separadamente em:
+
+```text
+02-Referencias/Fechamento/Visoes Cris.xlsx
+```
+
+#### ~={blue}O que a Cristina criou=~
+
+| Aba | Dimensão | Função |
+|---|---|---|
+| `Base Cristina` | **18.264 linhas** × 36 colunas | Base completa colada a partir do fechamento Hugo — mesmo layout de colunas (`A:AI` + 1 coluna vazia), **sem colunas novas ainda** |
+| `Visao A Cristina` | pivô `A5:G201` | Visão **analítica por filial/unidade** dentro do segmento: filtros em `n1_centro_custo`, `Origem` e `CUSTEIO VARIÁVEL`; linhas descem até `n4_centro_custo` + `conta` + `observacao`; colunas = mês |
+| `Visao B Cristina` | pivô `A1:M3709` | Visão **por segmento (`sdssds`)** — é a da imagem enviada: linhas = `Origem` → `conta` → `credor` → `observacao`; colunas = segmentos (BRACOFER, EKIPA, PILARES, SELETIVA, TRANSMOVE, etc.); valor = `Soma de Valor Oficial` |
+
+> ~={red}Atenção na colagem:=~ a `Base Cristina` **não tem linha de cabeçalho** — a linha 1 já é dado (`id = 1775`). Os nomes das colunas existem apenas no cache das tabelas dinâmicas. Para manutenção futura, inserir a linha de cabeçalho padrão antes dos dados.
+
+Conferência com a `Base` do Hugo (22/06/2026):
+
+| Métrica | Hugo `Base` | `Base Cristina` |
+|---|---:|---:|
+| Linhas de dados | 18.264 | 18.264 |
+| IDs únicos | 18.011 | 18.011 |
+| Soma `Valor Oficial` | R$ 5.345.577,15 | R$ 5.346.580,65 |
+| Variantes de `Origem` | 4 grafias | 2 grafias (`Entradas (Origem)` / `Saídas (Aplicações)`) |
+
+Os pivôs da Cristina agora apontam para `Base Cristina!A1:AI18265`, alinhado ao volume real de linhas.
+
+#### ~={blue}Intenção da nova estrutura=~
+
+A Cristina está montando a visão que a empresa precisa: **quanto cada segmento responde por cada tipo de gasto/receita**, cruzando:
+
+```text
+Origem (entrada/saída)
+  → conta
+  → fornecedor/cliente
+  → segmento (sdssds)
+  → Valor Oficial
+```
+
+Isso é o passo certo para rateio justo e coerência com o BCBI — desde que `Origem`, `sdssds`, CC e sinal do valor sigam regras consistentes.
+
+___
+
+### ~={Titulo}Por que há segmentos negativos sob "Entradas (Origem)"?=~
+
+~={red}Isso não é bug do pivô.=~ É efeito de **três regras diferentes convivendo na mesma linha**:
+
+| Dimensão | Regra na base | Exemplo |
+|---|---|---|
+| `Origem` | Conta **4.x / 5.x** → Entrada; demais → Saída | `5.6.1` → Entrada; `7.3.5` → deveria ser Saída |
+| `n1_cod_centro_custo` | **1.x** = CC despesa; **2.x** = CC receita | `2.7` = receita; `1.2` = despesa Seletiva |
+| `Valor Oficial` | Vem do `valor_centro` do SAGI — **sinal econômico do fluxo** | Despesa paga → negativo; receita recebida → positivo |
+
+~={yellow}Conclusão:=~ **`Origem` não é calculada pelo CC.** Um lançamento pode ter CC `2.x` (receita) e ainda assim `Valor Oficial` negativo — ou ter `Origem = Entrada` por causa da conta, mas valor negativo por causa do sinal do rateio.
+
+Na `Base` completa do Hugo (18.264 linhas), existiam **46 lançamentos** com `Origem` contendo "Entrada" e `Valor Oficial < 0`, somando **-R$ 534.248,94**.
+
+Na **`Base Cristina` atualizada**, após a colagem completa, restam **19 lançamentos** nessa condição, somando **-R$ 26.481,35** — ou seja, **27 casos foram corrigidos** na colagem (principalmente locações `5.6.1` e alguns `7.x` que passaram de `Entradas` para `Saídas`).
+
+#### ~={blue}Causa 1 — Locação intercompany (~-R$ 479k) — corrigido na Base Cristina=~
+
+| Campo | Valor típico |
+|---|---|
+| Conta | `5.6.1 LOCAÇÃO DE MÁQUINAS E EQUIPAMENTOS` |
+| `Origem` no Hugo | `Entrada (Origem)` — pela regra da conta 5.x |
+| `Origem` na Base Cristina | **`Saídas (Aplicações)`** — corrigido na colagem |
+| CC | `1.2` (despesa Seletiva) |
+| `Valor Oficial` | Negativo (pagamento intercompany) |
+
+Eram **18 lançamentos** da SELETIVA pagando locação de máquinas. Na Visão B da Cristina **não aparecem mais sob Entradas** — passaram para Saídas. Isso eliminou ~90% do volume que distorcia o grupo Entradas.
+
+#### ~={blue}Causa 2 — Despesas 7.x com `Origem` errada (19 casos restantes — imagem da Cristina)=~
+
+Restam **19 lançamentos** com conta **7.x** (despesa) ainda rotulados como **`Entradas (Origem)`**, totalizando **-R$ 26.481,35**. São exatamente os itens que continuam vermelhos na Visão B.
+
+Exemplos exatos da Visão B:
+
+| Conta | Segmento | CC | Valor Oficial | Fornecedor |
+|---|---|---|---:|---|
+| `FERIAS` | EKIPA INTRALOGISTICA | `2.7` | -6.536,51 | Daniel Junior Santos |
+| `ALIMENTAÇÃO DO TRABALHADOR` | EKIPA INTRALOGISTICA | `2.7` | -2.952,00 | Silvano Vieira de Santana |
+| `ALUGUEL DE FUNCIONÁRIO` | EKIPA INTRALOGISTICA | `2.7` | -2.600,00 | Davidson Thiago dos Santos |
+| `PRO LABORE` | PILARES | `2.1` | -1.442,69 (×7) | acionistas |
+| `ENERGIA ELÉTRICA` | SELETIVA | `2.2` | -977,58 | Energisa |
+| `CONSULTORIA` | RSE | `2.6` | -103,00 | Polivida |
+| `EXAMES MÉDICOS` | EKIPA CONTEINER | `2.5` | -106,00 | Polivida |
+| `DESPESAS DE VIAGEM` | EKIPA INTRALOGISTICA | `2.7` | -188,00 | — |
+| `MATERIAL DE COPA/COZINHA` | SELETIVA | `2.2` | -688,57 | — |
+
+Contas afetadas (19 lançamentos): `PRO LABORE` (7×), `MATERIAL DE COPA/COZINHA` (2×), `ENERGIA ELÉTRICA` (2×), `ALUGUEL DE FUNCIONÁRIO` (2×), mais 1× cada de `FERIAS`, `ALIMENTAÇÃO`, `JUROS E MULTAS`, `CONSULTORIA`, `EXAMES MÉDICOS`, `DESPESAS DE VIAGEM`.
+
+Nesses casos:
+
+- O **sinal negativo está correto** — são despesas pagas.
+- O **CC 2.x** indica que o lançamento caiu em centro de custo de receita (possível erro de CC no SAGI ou rateio para filial errada).
+- A coluna **`Origem` está errada** — deveria ser Saída, não Entrada.
+
+Por isso o pivô da Cristina mostra linhas como `FERIAS` e `ALIMENTAÇÃO` dentro do grupo **Entradas (Origem)** com valores vermelhos: o pivô agrupa pelo campo `Origem` literal da base, e esse campo foi preenchido incorretamente na origem (SAGI/importação), não pelo código do CC.
+
+#### ~={blue}Causa 3 — Outras receitas 4.x/5.x com sinal negativo=~
+
+Restam poucos casos além da locação, como:
+
+- `ADIANTAMENTO CLIENTE SUCATA` negativo
+- `VENDAS DE SUCATAS` negativo (devolução/estorno)
+- `PERDCOMP RESSARCIMENTO` negativo
+
+São receitas contábeis com movimento inverso (estorno, devolução, ajuste).
+
+#### ~={blue}Resumo visual do paradoxo=~
+
+```text
+                    ┌─────────────────────────────────────┐
+  CC 2.x (receita)  │  FÉRIAS · CC 2.7 · conta 7.3.19     │
+                    │  Origem = "Entradas"  ← ERRADO       │
+                    │  Valor Oficial = -6.536  ← CORRETO   │
+                    └─────────────────────────────────────┘
+
+                    ┌─────────────────────────────────────┐
+  CC 1.2 (despesa)  │  LOCAÇÃO · CC 1.2 · conta 5.6.1    │
+                    │  Origem = "Entrada"  ← pela conta    │
+                    │  Valor Oficial = -39.058  ← pagamento│
+                    └─────────────────────────────────────┘
+```
+
+#### ~={blue}O que fazer na nova Base da Cristina=~
+
+Para a visão por segmento ficar fidedigna:
+
+1. **Separar três campos**, não misturar num só:
+   - `tipo_fluxo` — entrada ou saída de caixa (pelo sinal e natureza do documento)
+   - `natureza_conta` — receita 4/5, despesa 6/7/8/9
+   - `segmento_responsavel` — sdssds / filial / % rateio
+
+2. **Recalcular `Origem` por regra única** — idealmente `cod_conta`, não CC:
+   ```text
+   4.x / 5.x → Entrada (Origem)
+   demais    → Saida (Aplicacoes)
+   ```
+   E padronizar a grafia (hoje existem 4 variantes na base).
+
+3. **Auditar CC 2.x com conta 7.x** — despesa em CC de receita é erro de lançamento ou rateio mal feito (ver [[Analise Base Financeira]] e regra 2 da auditoria).
+
+4. **Tratar locação 5.6.1 negativa à parte** — classificar como intercompany, não como receita operacional do segmento pagador.
+
+5. **No pivô da Visão B**, considerar filtrar ou criar campo calculado `Origem corrigida` antes de agrupar — senão despesas continuarão aparecendo sob Entradas.
 
 ___
 
@@ -652,4 +803,4 @@ O ponto mais sensível é garantir que ~={cyan}`Valor Oficial`=~ e as classifica
 
 ___
 
-[[Notebook Conversao ODBC para Fechamento - Como Usar]] · [[Valores ODBC e Fechamento — Mapeamento de Colunas]] · [[Analise Base Financeira]] · [[Premissas - Fechamento]] · [[Tipos de Movimentação]] · [[Divisões (nível 1)]] ·[[Filiais (nível 2)]] · [[Departamentos (nível 3)]] · [[Relatório Custo Combustível por Máquina — Fechamento]]
+[[Notebook Conversao ODBC para Fechamento - Como Usar]] · [[Valores ODBC e Fechamento — Mapeamento de Colunas]] · [[Analise Base Financeira]] · [[Premissas - Fechamento]] · [[Entre Empresas - Faturamento de Máquinas Intercompany]] · [[Tipos de Movimentação]] · [[Divisões (nível 1)]] · [[Filiais (nível 2)]] · [[Departamentos (nível 3)]] · [[Relatório Custo Combustível por Máquina — Fechamento]]
