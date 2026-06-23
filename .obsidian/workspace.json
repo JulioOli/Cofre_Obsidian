@@ -12,12 +12,14 @@
             "id": "a492e8e541705fcf",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "02-Referencias/Centro de Custo.pdf"
+                "file": "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Centro de Custo"
+              "icon": "lucide-file",
+              "title": "Valores ODBC e Fechamento — Mapeamento de Colunas"
             }
           },
           {
@@ -280,20 +282,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "a492e8e541705fcf",
+  "active": "c3770d272971586d",
   "lastOpenFiles": [
-    "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md",
-    "02-Referencias/ATUA/Jan/214ED2F0",
-    "02-Referencias/ATUA/Jan/881ED2F0",
-    "02-Referencias/ATUA/Jan/~$ATUA_custo_frete_fechamento_01-2026.xlsx",
-    "02-Referencias/ATUA/Jan/ATUA_custo_frete_fechamento_01-2026.xlsx",
-    "02-Referencias/ATUA/Jan/66ACD2F0",
-    "02-Referencias/ATUA/Jan/~$ATUA_receitas_fechamento_01-2026.xlsx",
-    "02-Referencias/ATUA/Jan/ATUA_receitas_fechamento_01-2026.xlsx",
-    "02-Referencias/ATUA/Fev/402AD2F0",
-    "02-Referencias/ATUA/Fev/~$ATUA_receitas_fechamento_02-2026.xlsx",
-    "02-Referencias/ATUA/Fev/DC49D2F0",
+    "02-Referencias/Supply_bracofer/Maio/Não confirmado 392509.crdownload",
+    "02-Referencias/Supply_bracofer/Abril/Relatório Contas a Pagar de 30-04-2026 até 30-04-2026.xlsx",
+    "02-Referencias/Supply_bracofer/Abril/Não confirmado 151176.crdownload",
+    "02-Referencias/Supply_bracofer/Março/Não confirmado 933218.crdownload",
+    "02-Referencias/Supply_bracofer/Fevereiro/Relatório Contas a Pagar de 01-02-2026 até 28-02-2026.xlsx",
+    "02-Referencias/Supply_bracofer/Fevereiro/Não confirmado 84997.crdownload",
+    "02-Referencias/Supply_bracofer/Janeiro/Relatório Contas a Pagar de 01-01-2026 até 31-01-2026.xlsx",
+    "02-Referencias/Supply_bracofer/Janeiro/Não confirmado 134691.crdownload",
+    "04-Notebooks/Fechamento/__pycache__/gerar_supply_lote.cpython-313.pyc",
+    "04-Notebooks/Fechamento/__pycache__",
+    "02-Referencias/Supply_bracofer/Junho/BRACOFER_fechamento_06-2026.xlsx",
     "00-Zettlelkasten/Premissas - Fechamento.md",
+    "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md",
     "00-Zettlelkasten/pedido marcondes.md",
     "00-Zettlelkasten/Reunião com a Cristina.md",
     "01-Anexos/Pasted image 20260623091245.png",

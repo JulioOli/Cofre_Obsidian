@@ -1,0 +1,30 @@
+﻿..\..\.venv\Scripts\python.exe : 
+C:\Users\julio.santana\Documents\Projects\Cofre_Trabalho\.venv\Lib\site-packages\openpyxl\styles\stylesheet.py:237: 
+UserWarning: Workbook contains no default style, apply openpyxl's default
+No C:\Users\julio.santana\AppData\Local\Temp\ps-script-8cab9023-a3e5-4b0c-840d-c49e411d4e6f.ps1:105 caractere:98
++ ... echamento"; ..\..\.venv\Scripts\python.exe gerar_supply_lote.py --de  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\julio....npyxl's default:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  warn("Workbook contains no default style, apply openpyxl's default")
+Gerando 4 mes(es): 01/2026 a 04/2026
+
+Gabarito de colunas ODBC: ..\..\02-Referencias\Fechamento\FECHAMENTO_ODBC_2026_05.xlsx
+Referencias SAGI: 241 contas (plano-de-contas_apenas-ativos.csv), 0 centros (sagi_rel_centro_custo.csv).
+MAPA_PC_BRACOFER: 40 entradas fixas + 2010101 (Servicos) + descricoes do CSV SAGI.
+Entrada consolidada: C:\Users\julio.santana\Documents\Projects\Cofre_Trabalho\02-Referencias\Supply_bracofer\_referencia\Relat¾rio Contas a Pagar de 01-01-2026 atÚ 23-06-2026.xlsx
+Total parseado: 1483 linhas | layout: wide/wide_cf
+[AVISO] 144 linha(s) sem data de pagamento parseavel (nao entram em nenhum mes).
+[OK] 01/2026 | 140 linhas | liquido R$ 357,717.08
+  -> Relatorio Contas a Pagar 01-2026 - Normalizado.xlsx
+  -> BRACOFER_fechamento_01-2026.xlsx
+[OK] 02/2026 | 189 linhas | liquido R$ 762,499.21
+  -> Relatorio Contas a Pagar 02-2026 - Normalizado.xlsx
+  -> BRACOFER_fechamento_02-2026.xlsx
+[OK] 03/2026 | 257 linhas | liquido R$ 1,416,315.83
+  -> Relatorio Contas a Pagar 03-2026 - Normalizado.xlsx
+  -> BRACOFER_fechamento_03-2026.xlsx
+[OK] 04/2026 | 275 linhas | liquido R$ 1,336,230.62
+  -> Relatorio Contas a Pagar 04-2026 - Normalizado.xlsx
+  -> BRACOFER_fechamento_04-2026.xlsx
