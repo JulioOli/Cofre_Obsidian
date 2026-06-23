@@ -36,5 +36,7 @@ Juntar colunas B e D
 
 Resultado Operacional - Vamos chamer de "Custo Alocado"
 
+Estrutura; Plano de Contas, Gasto e Despesa
+
 ___
 [[Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO]]

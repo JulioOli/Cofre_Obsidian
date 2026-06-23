@@ -26,7 +26,7 @@ ___
 #### ~={orange}como gerar o ATUA:=~
 
 ![[../01-Anexos/Pasted image 20260603092247.png]]
-![[../01-Anexos/Pasted image 20260603092332.png]]
+![[../01-Anexos/Pasted image 20260623091245.png]]
 
 ___
 ### ~ links

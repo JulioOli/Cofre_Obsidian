@@ -12,14 +12,12 @@
             "id": "a492e8e541705fcf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md",
-                "mode": "preview",
-                "source": false
+                "file": "02-Referencias/Centro de Custo.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Valores ODBC e Fechamento — Mapeamento de Colunas"
+              "icon": "lucide-file-text",
+              "title": "Centro de Custo"
             }
           },
           {
@@ -28,16 +26,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-Zettlelkasten/Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO.md",
+                "file": "00-Zettlelkasten/Critério de Rateio - Pilares.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO"
+              "title": "Critério de Rateio - Pilares"
             }
           }
         ],
-        "currentTab": 1,
         "stacked": true
       },
       {
@@ -105,7 +102,7 @@
               "type": "markdown",
               "state": {
                 "file": "00-Zettlelkasten/Critério de Rateio - Pilares.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -113,7 +110,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -283,26 +280,28 @@
       "bases:Create new base": false
     }
   },
-  "active": "cc7a7ed70e6ec8ea",
+  "active": "a492e8e541705fcf",
   "lastOpenFiles": [
-    "02-Referencias/FOPA/6DE7BDE0",
-    "02-Referencias/FOPA/~$premio_total_por_colaborador_MAI2026.xlsx",
-    "00-Zettlelkasten/Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO.md",
-    "02-Referencias/Supply_bracofer/Abril/_arquivo/Relatorio Contas a Pagar 04-2026 - export alternativo.xlsx",
-    "02-Referencias/Supply_bracofer/Abril/BRACOFER_fechamento_04-2026 (antigo).xlsx",
-    "02-Referencias/Supply_bracofer/Dezembro/_arquivo",
-    "02-Referencias/Supply_bracofer/Dezembro",
-    "02-Referencias/Supply_bracofer/Novembro/_arquivo",
-    "02-Referencias/Supply_bracofer/Novembro",
-    "02-Referencias/Supply_bracofer/Outubro/_arquivo",
-    "02-Referencias/Supply_bracofer/Outubro",
-    "02-Referencias/Supply_bracofer/Setembro/_arquivo",
     "00-Zettlelkasten/Valores ODBC e Fechamento — Mapeamento de Colunas.md",
+    "02-Referencias/ATUA/Jan/214ED2F0",
+    "02-Referencias/ATUA/Jan/881ED2F0",
+    "02-Referencias/ATUA/Jan/~$ATUA_custo_frete_fechamento_01-2026.xlsx",
+    "02-Referencias/ATUA/Jan/ATUA_custo_frete_fechamento_01-2026.xlsx",
+    "02-Referencias/ATUA/Jan/66ACD2F0",
+    "02-Referencias/ATUA/Jan/~$ATUA_receitas_fechamento_01-2026.xlsx",
+    "02-Referencias/ATUA/Jan/ATUA_receitas_fechamento_01-2026.xlsx",
+    "02-Referencias/ATUA/Fev/402AD2F0",
+    "02-Referencias/ATUA/Fev/~$ATUA_receitas_fechamento_02-2026.xlsx",
+    "02-Referencias/ATUA/Fev/DC49D2F0",
+    "00-Zettlelkasten/Premissas - Fechamento.md",
+    "00-Zettlelkasten/pedido marcondes.md",
+    "00-Zettlelkasten/Reunião com a Cristina.md",
+    "01-Anexos/Pasted image 20260623091245.png",
+    "00-Zettlelkasten/Critério de Rateio - Pilares.md",
+    "00-Zettlelkasten/Estrutura da Planilha FECHAMENTO GERAL 2026 HUGO.md",
     "00-Zettlelkasten/Entre Empresas - Faturamento de Máquinas Intercompany.md",
     "00-Zettlelkasten/Analise Base Financeira.md",
-    "00-Zettlelkasten/Reunião com a Cristina.md",
     "00-Zettlelkasten/Gerando Relatório de Contas a Pagar da Bracofer (Supply).md",
-    "00-Zettlelkasten/Premissas - Fechamento.md",
     "00-Zettlelkasten/Relatório Custo Combustível por Máquina — Fechamento.md",
     "00-Zettlelkasten/Índice Controladoria.md",
     "00-Zettlelkasten/Script de Auditoria Semanal de Lancamentos ODBC - Como Usar.md",
@@ -312,7 +311,6 @@
     "00-Zettlelkasten/Notebook Normalizacao Despesas ATUA - Como Usar.md",
     "00-Zettlelkasten/premissas pra arrumar ainda mais o relatório de fechamento depois da conversão do ODBC.md",
     "00-Zettlelkasten/Script de Conversão de CC e PC - Como Usar.md",
-    "00-Zettlelkasten/Critério de Rateio - Pilares.md",
     "00-Zettlelkasten/Organic Rankine Cycle (ORC).md",
     "00-Zettlelkasten/Coaxial double pipe DBHE.md",
     "00-Zettlelkasten/ERP - O que e.md",
@@ -320,7 +318,6 @@
     "00-Zettlelkasten/VPS (Servidor Virtual Privado).md",
     "00-Zettlelkasten/Departamentos (nível 3).md",
     "00-Zettlelkasten/Melhoria BCBI.md",
-    "00-Zettlelkasten/BCBI - Auditoria Analítico jan-mai 2026.md",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/05_top_maquinas_2026.png",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/05_top_maquinas_2025.png",
     "outputs/figuras/liebherr_hyundai/05_top_maquinas_2026.png",
@@ -330,7 +327,6 @@
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/07_custo_medio_maquina.png",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/05_top_maquinas.png",
     "outputs/relatorios/comparativo_liebherr_hyundai/figuras/04_serie_mensal_2026.png",
-    "outputs/relatorios/comparativo_liebherr_hyundai/figuras/04_serie_mensal_2025.png",
     "Lançamentos estranhos - Março.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/O governo Lula gasta demais?.canvas",
     "00-Cadernos (zettlelkasten)/Coisas Aleatórias/Nunca rolou.canvas",
